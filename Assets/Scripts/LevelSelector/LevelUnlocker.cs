@@ -1,4 +1,5 @@
-﻿using TowerDefense.Research;
+﻿using LevelSelector;
+using TowerDefense.Research;
 
 namespace TowerDefense
 {
@@ -27,12 +28,7 @@ namespace TowerDefense
             ResearchManager.Instance.researchPoints++;
             ResearchManager.Instance.SaveResearchData();
         }
-
-        // Rückgabe des höchsten freigeschalteten Levels
-        public static int GetUnlockedLevel()
-        {
-            return PlayerPrefs.GetInt("unlockedLevel",2);
-        }
+        
     }
 
 }

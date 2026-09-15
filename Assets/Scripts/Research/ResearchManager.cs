@@ -71,9 +71,7 @@ namespace TowerDefense.Research
                 DontDestroyOnLoad(gameObject);
 
                 savePath = Path.Combine(Application.persistentDataPath, "researchData.json");
-
-				SaveResearchData();
-
+                
                 LoadTowersFromPrefabs();
                 LoadResearchData();
                 

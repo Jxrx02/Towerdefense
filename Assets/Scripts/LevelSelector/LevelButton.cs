@@ -1,46 +1,52 @@
-﻿namespace TowerDefense
-{
+﻿using LevelSelector.Definitions;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelButton : MonoBehaviour
+namespace LevelSelector
 {
-    public int levelIndex;
-    
-    public Sprite unlockedSprite;
-    public Sprite lockedSprite;
-    void Start()
+    public class LevelButton : MonoBehaviour
     {
-        Button button = GetComponent<Button>();
-        Image buttonImage = GetComponent<Image>();
+        [SerializeField]
+        private LevelDefinition levelDefinition;
 
-        if (levelIndex <= LevelUnlocker.GetUnlockedLevel())
+        [SerializeField]
+        private Sprite unlockedSprite;
+
+        [SerializeField]
+        private Sprite lockedSprite;
+
+        private Button button;
+        private Image buttonImage;
+
+        private void Awake()
         {
-            buttonImage.sprite = unlockedSprite;
-
-            button.interactable = true;
+            button = GetComponent<Button>();
+            buttonImage = GetComponent<Image>();
         }
-        else
+
+        private void Start()
         {
-            buttonImage.sprite = lockedSprite;
-            button.interactable = false;
+            Refresh();
         }
 
+        public void Refresh()
+        {
+            bool unlocked =
+                levelDefinition.levelIndex <=
+                LevelProgressManager.GetUnlockedLevel();
+
+            buttonImage.sprite =
+                unlocked ? unlockedSprite : lockedSprite;
+
+            button.interactable = unlocked;
+        }
+
+        public void SelectLevel()
+        {
+            if (levelDefinition == null)
+                return;
+
+            LevelSelectorManager.Instance.OpenLevel(levelDefinition);
+        }
     }
-
-    public void DeleteProgress()
-    {
-        PlayerPrefs.DeleteKey("unlockedLevel");
-    }
-
-    public void UnlockAllLvls()
-    {
-        PlayerPrefs.SetInt("unlockedLevel", 10);
-        PlayerPrefs.Save();
-
-    }
-
-}
-
 }

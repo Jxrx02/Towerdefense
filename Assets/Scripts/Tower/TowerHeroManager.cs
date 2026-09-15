@@ -117,12 +117,6 @@ namespace TowerDefense
                 enemies.Remove(enemy);
             }
 
-            if (enemies.Count == 0)
-            {
-                
-                Actions.onLvlComplete.Invoke();
-
-            }
         }
         
         

@@ -1,4 +1,6 @@
 using UnityEngine.Rendering.Universal;
+using LevelSelector;
+using LevelSelector.Definitions;
 
 namespace TowerDefense
 {
@@ -68,6 +70,11 @@ namespace TowerDefense
         private Coroutine _earlyStartCoroutine;
         private StatDiffDisplay statDiffDisplay;
 
+        // ── Level Runtime Stats ─────────────────────────────────────
+
+        private float _levelStartTime;
+        private int _enemiesKilled;
+        private bool _levelFinished;
         
         public bool isDay = true;
 
@@ -111,6 +118,8 @@ namespace TowerDefense
         private void OnWaveSpawnComplete()
         {
             _allWavesSpawned = true;
+            
+            Actions.onLvlComplete.Invoke();
         }
 
         /// <summary>
@@ -242,7 +251,11 @@ namespace TowerDefense
             waveManager.GetComponent<WaveManager>()?.OnGameStarted();
 
             SetStartWaveButtonVisible(false);
-
+            
+            _levelStartTime = Time.time;
+            _enemiesKilled = 0;
+            _levelFinished = false;
+            
             TriggerNextWave(0);
 
             Debug.Log("Game gestartet – erste Welle gestartet.");
@@ -340,24 +353,98 @@ namespace TowerDefense
         private void LvlCompleted()
         {
             if (!_allWavesSpawned) return;
+            FinishLevel();
             FindAnyObjectByType<LevelUnlocker>().CompleteLevel();
             endScreen.gameObject.SetActive(true);
         }
-
-        /* public void OnStartWaveClick()
+        public void FinishLevel()
         {
-            OneClickInWorldListener.ListenOnce((Vector3 pos) =>
+            if (_levelFinished)
+                return;
+
+            _levelFinished = true;
+
+            LevelLoadoutManager loadoutManager = LevelLoadoutManager.Instance;
+
+            if (loadoutManager == null)
             {
-                clickToStartGameObject.SetActive(false);
-                waveManager.gameObject.SetActive(true);
+                Debug.LogError(
+                    "LevelLoadoutManager wurde nicht gefunden. " +
+                    "Das Level kann nicht abgeschlossen werden.");
 
-                // Erste Welle freigeben
-                
-                waveManager.GetComponent<WaveManager>()?.OnGameStarted();
-                Debug.Log("Game gestartet");
-            });
-        } */
+                return;
+            }
 
+            LevelLoadout loadout = loadoutManager.CurrentLoadout;
+
+            if (loadout == null)
+            {
+                Debug.LogError("Kein aktuelles LevelLoadout vorhanden.");
+                return;
+            }
+
+            int completionTime = Mathf.Max(0, Mathf.RoundToInt(Time.time - _levelStartTime));
+            int score = CalculateLevelScore(completionTime);
+
+            LevelResult result = new LevelResult
+            {
+                levelIndex = loadout.levelIndex,
+                victory = true,
+                score = score,
+                completionTime = completionTime,
+                remainingHealth = cur_health,
+                enemiesKilled = _enemiesKilled,
+                wavesCompleted = _waveIndex,
+                coinsEarned = cur_coins - start_coins <=0?0:cur_coins-start_coins
+            };
+
+            LevelDefinition levelDefinition = loadout.levelDefinition;
+
+            if (levelDefinition == null)
+            {
+                Debug.LogError("Keine LevelDefinition im aktuellen Loadout gefunden.");
+                return;
+            }
+
+            LevelProgressManager.Instance.CompleteLevel(
+                result,
+                levelDefinition);
+
+            Debug.Log(
+                $"Level {result.levelIndex} abgeschlossen! " +
+                $"Score: {result.score} | " +
+                $"Zeit: {result.completionTime}s | " +
+                $"Kills: {result.enemiesKilled}");
+
+            if (endScreen != null)
+                endScreen.SetActive(true);
+        }
+
+        private int CalculateLevelScore(int completionTime)
+        {
+            int score = 0;
+
+            // Gegner
+            score += _enemiesKilled * 10;
+
+            // Überlebte Wellen
+            score += _waveIndex * 100;
+
+            // Verbleibendes Leben
+            score += cur_health * 50;
+
+            // Verbleibendes Gold
+            score += cur_coins * 2;
+
+            // Zeitbonus
+            int timeBonus =
+                Mathf.Max(0, 1000 - completionTime * 2);
+
+            score += timeBonus;
+
+            return Mathf.Max(0, score);
+        }
+        
         public Boolean CanPurchase(int price)  => (cur_coins - price) >= 0;
 
         public Boolean DoPurchase(int price)
@@ -410,6 +497,7 @@ namespace TowerDefense
 
         public void GainCoins(GameObject enemy)
         {
+            _enemiesKilled++;
             cur_coins += enemy.GetComponent<Enemy>().enemyConfig.goldReward;
             UpdateStats();
         }
