@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TowerDefense;
 using TowerDefense.GridMovement;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+using UnityEngine.UI;
 public class WallGroup : MonoBehaviour
 {
     private readonly List<Vector3Int> wallCells = new();
@@ -16,7 +17,11 @@ public class WallGroup : MonoBehaviour
     private bool isDestroyed;
     public bool IsDestroyed => isDestroyed;
 
-
+    private float interactionHoldDuration = 4f;
+    
+    private Coroutine interactionCoroutine;
+    private Hero interactingHero;
+    
     private int maxHP;
     public int MaxHP => maxHP;
 
@@ -237,7 +242,7 @@ public class WallGroup : MonoBehaviour
     {
         foreach (WallSegment segment in segments.Values)
         {
-            segment.SetBuiltVisual();
+            segment.SetBuilt();
         }
     }
 
@@ -252,6 +257,117 @@ public class WallGroup : MonoBehaviour
             segment.RefreshVisual();
         }
     }
+
+    public void EnterInteractionRange(Hero hero)
+    {
+        if (!LevelManager.instance.isDay)
+        {
+            Debug.Log("Its night");
+            return;
+        }
+
+        if (isBuilt && !isDestroyed)
+            return;
+
+        interactingHero = hero;
+
+        ShowInteractionPopup();
+
+        if (interactionCoroutine != null)
+            StopCoroutine(interactionCoroutine);
+
+        interactionCoroutine = StartCoroutine(HoldInteraction());
+    }
+    public void ExitInteractionRange(Hero hero)
+    {
+        if (hero != interactingHero)
+            return;
+
+        interactingHero = null;
+
+        if (interactionCoroutine != null)
+        {
+            StopCoroutine(interactionCoroutine);
+            interactionCoroutine = null;
+        }
+
+        HideInteractionPopup();
+    }
+    private IEnumerator HoldInteraction()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(
+                () => Input.GetKeyDown(KeyCode.E)
+            );
+
+            float holdTimer = 0f;
+
+            while (Input.GetKey(KeyCode.E))
+            {
+                holdTimer += Time.deltaTime;
+
+                float progress =
+                    Mathf.Clamp01(
+                        holdTimer / interactionHoldDuration
+                    );
+
+                InteractionPopup.instance.SetProgress(progress);
+
+                if (holdTimer >= interactionHoldDuration)
+                {
+                    CompleteInteraction();
+                    interactionCoroutine = null;
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            InteractionPopup.instance.ResetProgress();
+        }
+    }
+
+    private void CompleteInteraction()
+    {
+        if (!LevelManager.instance.isDay)
+            return;
+
+        if (isDestroyed)
+        {
+            Repair();
+        }
+        else if (!isBuilt)
+        {
+            Build();
+        }
+
+        HideInteractionPopup();
+    }
+    private Vector3 GetInteractionPosition()
+    {
+        if (segments.Count == 0)
+            return transform.position;
+
+        Vector3 center = Vector3.zero;
+
+        foreach (WallSegment segment in this.segments.Values)
+        {
+            center += segment.transform.position;
+        }
+
+        return center / segments.Count;
+    }
+    private void ShowInteractionPopup()
+    {
+        InteractionPopup.instance.Show(GetInteractionPosition());
+    }
+
+    private void HideInteractionPopup()
+    {
+        InteractionPopup.instance.Hide();
+    }
+
 
     // =========================================================
     // REMOVE SEGMENT

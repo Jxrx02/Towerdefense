@@ -51,21 +51,17 @@ namespace TowerDefense
 
             if (spriteRenderer == null)
             {
-                spriteRenderer =
-                    GetComponent<SpriteRenderer>();
+                spriteRenderer = GetComponent<SpriteRenderer>();
 
                 if (spriteRenderer == null)
                 {
-                    spriteRenderer =
-                        gameObject.AddComponent<SpriteRenderer>();
+                    spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
                 }
             }
 
-            spriteRenderer.sortingOrder =
-                sortingOrder;
+            spriteRenderer.sortingOrder = sortingOrder;
 
-            spriteRenderer.sortingLayerName =
-                sortingLayerName;
+            spriteRenderer.sortingLayerName = sortingLayerName;
 
             SetUnbuiltVisual();
         }
@@ -106,15 +102,7 @@ namespace TowerDefense
                     this
                 );
             }
-
-            if (builtMaterial == null)
-            {
-                Debug.LogError(
-                    $"WallSegment '{name}': " +
-                    "Kein Built Material zugewiesen!",
-                    this
-                );
-            }
+            
         }
 
         // =========================================================
@@ -130,7 +118,7 @@ namespace TowerDefense
         // MATERIAL
         // =========================================================
 
-        public void SetBuiltVisual()
+        private void SetBuiltVisual()
         {
             if (spriteRenderer == null)
                 return;

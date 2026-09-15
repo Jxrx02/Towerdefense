@@ -299,8 +299,12 @@ namespace TowerDefense.GridMovement
                 return;
             }
 
-            List<Vector3Int> wallCells =
-                new List<Vector3Int>();
+            // =========================================================
+            // ALLE WALL-ZELLEN SAMMELN
+            // =========================================================
+
+            HashSet<Vector3Int> unprocessedCells =
+                new HashSet<Vector3Int>();
 
             BoundsInt bounds =
                 wallTilemap.cellBounds;
@@ -320,10 +324,10 @@ namespace TowerDefense.GridMovement
                     continue;
                 }
 
-                wallCells.Add(cell);
+                unprocessedCells.Add(cell);
             }
 
-            if (wallCells.Count == 0)
+            if (unprocessedCells.Count == 0)
             {
                 Debug.Log(
                     "GridManager: Keine Wall-Zellen auf der WallTilemap gefunden."
@@ -333,47 +337,52 @@ namespace TowerDefense.GridMovement
             }
 
             // =========================================================
-            // MITTELPUNKT DER WALLGRUPPE
+            // ZUSAMMENHÄNGENDE WALLGROUPS ERMITTELN
             // =========================================================
 
-            Vector3Int minCell = wallCells[0];
-            Vector3Int maxCell = wallCells[0];
+            int groupIndex = 0;
 
-            foreach (Vector3Int cell in wallCells)
+            while (unprocessedCells.Count > 0)
             {
-                minCell = Vector3Int.Min(minCell, cell);
-                maxCell = Vector3Int.Max(maxCell, cell);
-            }
+                // Beliebige noch nicht verarbeitete Zelle auswählen
+                Vector3Int startCell = GetFirstCell(unprocessedCells);
 
-            Vector3 minWorld =
-                groundTilemap.CellToWorld(minCell);
+                // Alle zusammenhängenden Zellen dieser Gruppe finden
+                List<Vector3Int> groupCells =
+                    FindConnectedWallCells(
+                        startCell,
+                        unprocessedCells
+                    );
 
-            Vector3 maxWorld =
-                groundTilemap.CellToWorld(
-                    maxCell + Vector3Int.one
+                if (groupCells.Count == 0)
+                    break;
+
+                // =====================================================
+                // WALLGROUP ERSTELLEN
+                // =====================================================
+
+                Vector3 groupCenter =
+                    CalculateWallGroupCenter(groupCells);
+
+                GameObject groupObject =
+                    new GameObject(
+                        $"WallGroup_{groupIndex}"
+                    );
+
+                groupObject.transform.position =
+                    groupCenter;
+
+                WallGroup wallGroup =
+                    groupObject.AddComponent<WallGroup>();
+
+                wallGroup.Initialize(
+                    groupCells,
+                    groundTilemap,
+                    wallSegmentPrefab
                 );
 
-            Vector3 wallGroupCenter =
-                (minWorld + maxWorld) * 0.5f;
-
-            // =========================================================
-            // LEERES WALLGROUP-GAMEOBJECT ERSTELLEN
-            // =========================================================
-
-            GameObject groupObject =
-                new GameObject("WallGroup");
-
-            groupObject.transform.position =
-                wallGroupCenter;
-
-            WallGroup wallGroup =
-                groupObject.AddComponent<WallGroup>();
-
-            wallGroup.Initialize(
-                wallCells,
-                groundTilemap,
-                wallSegmentPrefab
-            );
+                groupIndex++;
+            }
 
             // =========================================================
             // WALLTILEMAP NUR ALS EDITOR-VORLAGE
@@ -382,10 +391,75 @@ namespace TowerDefense.GridMovement
             wallTilemap.gameObject.SetActive(false);
 
             Debug.Log(
-                $"GridManager: WallGroup mit " +
-                $"{wallCells.Count} Segmenten erstellt. " +
-                "Walls sind noch NICHT gebaut und blockieren das Grid nicht."
+                $"GridManager: {groupIndex} WallGroups erstellt."
             );
+        }
+        private Vector3Int GetFirstCell(
+            HashSet<Vector3Int> cells)
+        {
+            foreach (Vector3Int cell in cells)
+            {
+                return cell;
+            }
+
+            return default;
+        }
+        private List<Vector3Int> FindConnectedWallCells(
+            Vector3Int startCell,
+            HashSet<Vector3Int> unprocessedCells)
+        {
+            List<Vector3Int> connectedCells =
+                new List<Vector3Int>();
+
+            Queue<Vector3Int> queue =
+                new Queue<Vector3Int>();
+
+            queue.Enqueue(startCell);
+            unprocessedCells.Remove(startCell);
+
+            // Nur horizontal + vertikal
+            Vector3Int[] directions =
+            {
+                Vector3Int.up,
+                Vector3Int.down,
+                Vector3Int.left,
+                Vector3Int.right
+            };
+
+            while (queue.Count > 0)
+            {
+                Vector3Int currentCell =
+                    queue.Dequeue();
+
+                connectedCells.Add(currentCell);
+
+                foreach (Vector3Int direction in directions)
+                {
+                    Vector3Int neighbour =
+                        currentCell + direction;
+
+                    if (!unprocessedCells.Contains(neighbour))
+                        continue;
+
+                    unprocessedCells.Remove(neighbour);
+                    queue.Enqueue(neighbour);
+                }
+            }
+
+            return connectedCells;
+        }
+        private Vector3 CalculateWallGroupCenter(
+            List<Vector3Int> cells)
+        {
+            Vector3 center = Vector3.zero;
+
+            foreach (Vector3Int cell in cells)
+            {
+                center +=
+                    groundTilemap.GetCellCenterWorld(cell);
+            }
+
+            return center / cells.Count;
         }
         // =========================================================
         // GRID

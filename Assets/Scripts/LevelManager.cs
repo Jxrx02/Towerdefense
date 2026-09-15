@@ -1,3 +1,5 @@
+using UnityEngine.Rendering.Universal;
+
 namespace TowerDefense
 {
     using System;
@@ -30,6 +32,16 @@ namespace TowerDefense
         public Text txt_money;
         public Text txt_health;
 
+        [Header("Day / Night")]
+        public GameObject dayScene;
+        public GameObject nightScene;
+        public Light2D sceneLight;
+
+        [SerializeField] private float dayNightTransitionDuration = 1.5f;
+
+        private readonly Color nightColor = new Color32(19, 40, 91, 255); // #13285B
+        private readonly Color dayColor = Color.white;
+        
         [Tooltip("Text der den Frühstart-Bonus anzeigt, z.B. '+ 85 Gold'")]
         public Text txt_earlyBonus;
         [Tooltip("Button zum manuellen Starten der nächsten Welle")]
@@ -56,9 +68,13 @@ namespace TowerDefense
         private Coroutine _earlyStartCoroutine;
         private StatDiffDisplay statDiffDisplay;
 
+        
+        public bool isDay = true;
+
         private void Awake()
         {
             statDiffDisplay = GetComponent<StatDiffDisplay>();
+            isDay = true;
         }
 
         void Start()
@@ -101,20 +117,23 @@ namespace TowerDefense
         /// Wird aufgerufen wenn alle Gegner einer Welle besiegt wurden.
         /// Startet das Frühstart-Fenster.
         /// </summary>
-        
+
         private void OnWaveCleared()
         {
-            if (_allWavesSpawned) return; // letzte Welle – kein Frühstart nötig
+            if (_allWavesSpawned)
+                return;
 
             if (_earlyStartCoroutine != null)
                 StopCoroutine(_earlyStartCoroutine);
 
             _waveIndex++;
 
-            bool hardPause = (_waveIndex % 3 == 0);
-
-            if (hardPause)
+            isDay = (_waveIndex % 3 == 0);
+            
+            if (isDay)
             {
+                // 3 Waves geschafft → neuer Tag
+                SetDay();
                 _earlyStartCoroutine = StartCoroutine(WaitForPlayerStart());
             }
             else
@@ -215,12 +234,15 @@ namespace TowerDefense
 
             clickToStartGameObject?.SetActive(false);
 
+            // Nacht beginnt mit der ersten Welle
+            SetNight();
+
             waveManager.gameObject.SetActive(true);
-            // Erste Welle freigeben
+
             waveManager.GetComponent<WaveManager>()?.OnGameStarted();
 
             SetStartWaveButtonVisible(false);
-            
+
             TriggerNextWave(0);
 
             Debug.Log("Game gestartet – erste Welle gestartet.");
@@ -261,7 +283,55 @@ namespace TowerDefense
             var waveManagerComponent = waveManager.GetComponent<WaveManager>();
             waveManagerComponent.AllowNextWave();        
         }
+        private void SetNight()
+        {
+            if (dayScene != null)
+                dayScene.SetActive(false);
 
+            if (nightScene != null)
+                nightScene.SetActive(true);
+
+            StartCoroutine(TransitionLight(nightColor, 0.7f));
+        }
+
+        private void SetDay()
+        {
+            if (dayScene != null)
+                dayScene.SetActive(true);
+
+            if (nightScene != null)
+                nightScene.SetActive(false);
+
+            StartCoroutine(TransitionLight(dayColor, 1f));
+        }
+        private IEnumerator TransitionLight(Color targetColor, float targetIntensity)
+        {
+            if (sceneLight == null)
+                yield break;
+
+            Color startColor = sceneLight.color;
+            float startIntensity = sceneLight.intensity;
+
+            float elapsed = 0f;
+
+            while (elapsed < dayNightTransitionDuration)
+            {
+                elapsed += Time.deltaTime;
+
+                float t = Mathf.Clamp01(elapsed / dayNightTransitionDuration);
+
+                // Smooth transition
+                t = Mathf.SmoothStep(0f, 1f, t);
+
+                sceneLight.color = Color.Lerp(startColor, targetColor, t);
+                sceneLight.intensity = Mathf.Lerp(startIntensity, targetIntensity, t);
+
+                yield return null;
+            }
+
+            sceneLight.color = targetColor;
+            sceneLight.intensity = targetIntensity;
+        }
         private void ShowBonusPopup(int bonus)
         {
 

@@ -373,7 +373,7 @@ namespace TowerDefense
             }
             else
             {
-                if (notOutlinedMaterial != null)
+                if (notOutlinedMaterial != null && this is not WallSegment)
                     sr.material = notOutlinedMaterial;
             }
         }

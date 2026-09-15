@@ -18,7 +18,9 @@ namespace TowerDefense
 
         private bool interactionMode = false;
         //private bool hasReachedTargetPosition;
+        [SerializeField] private float interactionHoldDuration = 1f;
 
+        private Coroutine interactionCoroutine;        
         [Header("Weapons")]
         [SerializeField] private Projectile[] equippedProjectiles;
         [SerializeField] private int activeWeaponIndex;
@@ -45,7 +47,7 @@ namespace TowerDefense
             HandleMovement();
             HandleAnimation();
 
-            if (Input.GetKeyDown(KeyCode.E) && currentTower != null)
+            if (Input.GetKeyDown(KeyCode.E) && currentTower != null && currentTower is not WallSegment)
             {
                 TowerHeroManager.instance.SelectTower(currentTower);
             }
@@ -69,6 +71,9 @@ namespace TowerDefense
 
         public new void EnterTowerRange(Tower tower)
         {
+            
+            currentTower = tower;
+
             if (currentTower != null)
             {
                 currentTower.SetHighlighted(false);
@@ -76,11 +81,14 @@ namespace TowerDefense
                 currentTower.SetIsSelected(false);
             }
 
-            currentTower = tower;
 
-            currentTower.SetHighlighted(true);
-            currentTower.SetInteraction(true);
-            
+            if (currentTower is not WallSegment)
+            {
+                currentTower.SetHighlighted(true);
+                currentTower.SetInteraction(true); 
+            }
+
+
             if (currentTower is WallSegment wall)
             {
                 WallGroup wallGroup = wall.WallGroup;
@@ -89,10 +97,13 @@ namespace TowerDefense
                 {
                     wallGroup.SetUnbuiltVisual();
                 }
+                
+                if (LevelManager.instance.isDay)
+                {
+                    wallGroup.EnterInteractionRange(this);
+                }
             }
 
-            
-            InteractWithCurrentTower();
             Debug.Log(tower.towerName + " ist in Range");
         }
 
@@ -101,62 +112,25 @@ namespace TowerDefense
             if (tower != currentTower)
                 return;
 
+            if (currentTower is WallSegment wall)
+            {
+                wall.WallGroup.ExitInteractionRange(this);
+
+                if (!wall.WallGroup.IsBuilt)
+                {
+                    wall.WallGroup.SetUnbuiltVisual();
+                }
+            }
+
             currentTower.SetHighlighted(false);
             currentTower.SetInteraction(false);
             currentTower.SetIsSelected(false);
-
-            
-            if (currentTower is WallSegment wall)
-            {
-                WallGroup wallGroup = wall.WallGroup;
-
-                if (!wallGroup.IsBuilt)
-                {
-                    wallGroup.SetUnbuiltVisual();
-                }
-            }
 
             SetInteraction(false);
 
             TowerHeroManager.instance.DeselectTower();
         }
-        public void InteractWithCurrentTower()
-        {
-            if (currentTower == null)
-                return;
-            
-            if (currentTower is WallSegment wall)
-            {
-                WallGroup wallGroup = wall.WallGroup;
-
-                if (wallGroup.IsDestroyed)
-                {
-                    wallGroup.Repair();
-                    Debug.Log("WAll repariert");
-
-                    return;
-                }
-                if (!wallGroup.IsBuilt)
-                {
-                    Debug.Log(
-                        
-                        " ist eine unbebaute WallGroup und kann gebaut werden."
-                    );
-                    wallGroup.Build();
-                }      else
-                {
-                    Debug.Log(
-                        " ist eine gebaute WallGroup."
-                    );
-                }
-
-                return;
-            }
-            
-
-
-            // normale Tower-Interaktion
-        }
+        
         // ------------------------------------------------------------------
         // ANIMATION
         // ------------------------------------------------------------------
