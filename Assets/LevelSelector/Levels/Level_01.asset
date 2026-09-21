@@ -20,8 +20,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 10f3e4633e3d06b40aa620302191cd46, type: 2}
   availablePerks:
   - {fileID: 11400000, guid: 21e5dbab79ac06c45b948f5a3a6bdbdf, type: 2}
+  - {fileID: 11400000, guid: 689852b3d77210b48b78194bfb9babea, type: 2}
   availableMutators:
   - {fileID: 11400000, guid: 8fd0bdf32c21c084482a1c119bd64084, type: 2}
-  - {fileID: 11400000, guid: 8fd0bdf32c21c084482a1c119bd64084, type: 2}
+  - {fileID: 11400000, guid: 2f0531ebf250017489435d01fdcd34ac, type: 2}
   quests:
   - {fileID: 11400000, guid: c88d84d7a966a4647a4940c48e618e3e, type: 2}

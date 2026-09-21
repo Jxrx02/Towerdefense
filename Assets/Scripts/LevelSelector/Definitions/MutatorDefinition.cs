@@ -11,6 +11,16 @@ namespace LevelSelector.Definitions
 
         public Sprite icon;
 
+        
+        [Header("Score")]
+        [SerializeField]
+        private float scoreMultiplier = 1f;
+
+        public float ScoreMultiplier => scoreMultiplier;
+        
+        
         public abstract void Apply(LevelLoadout loadout);
+        
+
     }
 }

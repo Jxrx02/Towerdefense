@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector.Perks.AttackSpeedPerk
   perkName: Attackspeed
   description: 10% attackspeed
-  icon: {fileID: 0}
+  icon: {fileID: -7446991403511178770, guid: 10752ef0d10508b4abf8e2910e2647a6, type: 3}
+  scoreMultiplier: 0.9
   multiplier: 1.1

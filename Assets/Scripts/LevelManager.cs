@@ -357,6 +357,8 @@ namespace TowerDefense
             FindAnyObjectByType<LevelUnlocker>().CompleteLevel();
             endScreen.gameObject.SetActive(true);
         }
+
+        private LevelLoadout loadout;
         public void FinishLevel()
         {
             if (_levelFinished)
@@ -375,7 +377,7 @@ namespace TowerDefense
                 return;
             }
 
-            LevelLoadout loadout = loadoutManager.CurrentLoadout;
+            loadout = loadoutManager.CurrentLoadout;
 
             if (loadout == null)
             {
@@ -411,11 +413,19 @@ namespace TowerDefense
                 levelDefinition);
 
             Debug.Log(
-                $"Level {result.levelIndex} abgeschlossen! " +
-                $"Score: {result.score} | " +
-                $"Zeit: {result.completionTime}s | " +
-                $"Kills: {result.enemiesKilled}");
+                $"Level {result.levelIndex} abgeschlossen!\n" +
+                $"Score: {result.score}\n" +
+                $"Base Score: {CalculateLevelScore((int)result.completionTime)}\n" +
+                $"Score Multiplier: x{result.scoreMultiplier:F2}\n" +
+                $"Time: {result.completionTime}s\n" +
+                $"Waves: {result.wavesCompleted}\n" +
+                $"Coins earned: {result.coinsEarned}\n" +
+                $"Health: {result.remainingHealth}\n" +
+                $"Kills: {result.enemiesKilled}"
+            );
 
+            Debug.Log(BuildScoreMultiplierDebug());
+            
             if (endScreen != null)
                 endScreen.SetActive(true);
         }
@@ -430,21 +440,102 @@ namespace TowerDefense
             // Überlebte Wellen
             score += _waveIndex * 100;
 
-            // Verbleibendes Leben
-            score += cur_health * 50;
-
             // Verbleibendes Gold
             score += cur_coins * 2;
 
             // Zeitbonus
-            int timeBonus =
-                Mathf.Max(0, 1000 - completionTime * 2);
+            int timeBonus = Mathf.Max(0, 1000 - completionTime * 2);
 
             score += timeBonus;
+            
+            float mutatorMultiplier = CalculateScoreMultiplier();
 
-            return Mathf.Max(0, score);
+            return (int)Mathf.Max(0, score * mutatorMultiplier);
+        }
+        private float CalculateScoreMultiplier()
+        {
+            float multiplier = 1f;
+            
+            // Perks
+            foreach (PerkDefinition perk in loadout.perks)
+            {
+                if (perk == null)
+                    continue;
+
+                multiplier *= perk.ScoreMultiplier;
+            }
+
+            // Mutatoren
+            foreach (MutatorDefinition mutator in loadout.mutators)
+            {
+                if (mutator == null)
+                    continue;
+
+                multiplier *= mutator.ScoreMultiplier;
+            }
+            return multiplier;
         }
         
+        private string BuildScoreMultiplierDebug()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+            sb.AppendLine("========== SCORE MULTIPLIER ==========");
+
+            float totalMultiplier = 1f;
+
+            sb.AppendLine("Perks:");
+
+            if (loadout.perks == null || loadout.perks.Count == 0)
+            {
+                sb.AppendLine("  Keine");
+            }
+            else
+            {
+                foreach (PerkDefinition perk in loadout.perks)
+                {
+                    if (perk == null)
+                        continue;
+
+                    float multiplier = perk.ScoreMultiplier;
+                    totalMultiplier *= multiplier;
+
+                    sb.AppendLine(
+                        $"  {perk.name,-30} x{multiplier:F2}"
+                    );
+                }
+            }
+
+            sb.AppendLine();
+
+            sb.AppendLine("Mutatoren:");
+
+            if (loadout.mutators == null || loadout.mutators.Count == 0)
+            {
+                sb.AppendLine("  Keine");
+            }
+            else
+            {
+                foreach (MutatorDefinition mutator in loadout.mutators)
+                {
+                    if (mutator == null)
+                        continue;
+
+                    float multiplier = mutator.ScoreMultiplier;
+                    totalMultiplier *= multiplier;
+
+                    sb.AppendLine(
+                        $"  {mutator.name,-30} x{multiplier:F2}"
+                    );
+                }
+            }
+
+            sb.AppendLine();
+            sb.AppendLine($"Gesamt-Multiplikator: x{totalMultiplier:F2}");
+            sb.AppendLine("======================================");
+
+            return sb.ToString();
+        }
         public Boolean CanPurchase(int price)  => (cur_coins - price) >= 0;
 
         public Boolean DoPurchase(int price)

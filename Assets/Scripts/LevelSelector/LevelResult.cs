@@ -18,6 +18,7 @@ public class LevelResult
     public int wavesCompleted;
 
     public int coinsEarned;
+    public float scoreMultiplier;
 
     // Weitere Performance-Werte
     public int damageTaken;

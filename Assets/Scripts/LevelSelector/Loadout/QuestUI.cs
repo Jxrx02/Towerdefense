@@ -48,10 +48,9 @@ namespace LevelSelector
                 if (condition == null)
                     continue;
 
-                GameObject obj =
-                    Instantiate(
-                        conditionIconPrefab,
-                        conditionContainer);
+                GameObject obj = Instantiate(
+                    conditionIconPrefab,
+                    conditionContainer);
 
                 Image image = obj.GetComponent<Image>();
 
@@ -61,26 +60,17 @@ namespace LevelSelector
                 if (condition is WeaponQuestCondition weaponCondition)
                 {
                     if (weaponCondition.requiredWeapon != null)
-                    {
-                        image.sprite =
-                            weaponCondition.requiredWeapon.icon;
-                    }
+                        image.sprite = weaponCondition.requiredWeapon.icon;
                 }
                 else if (condition is PerkQuestCondition perkCondition)
                 {
                     if (perkCondition.requiredPerk != null)
-                    {
-                        image.sprite =
-                            perkCondition.requiredPerk.icon;
-                    }
+                        image.sprite = perkCondition.requiredPerk.icon;
                 }
                 else if (condition is MutatorQuestCondition mutatorCondition)
                 {
                     if (mutatorCondition.requiredMutator != null)
-                    {
-                        image.sprite =
-                            mutatorCondition.requiredMutator.icon;
-                    }
+                        image.sprite = mutatorCondition.requiredMutator.icon;
                 }
             }
         }

@@ -17,11 +17,18 @@ namespace LevelSelector
         [SerializeField] private Transform perkContainer;
         [SerializeField] private Transform mutatorContainer;
         [SerializeField] private Transform questContainer;
-
+        
+        
+        
         [Header("Level Details")]
-        [SerializeField] private Text textTitel;
+        [SerializeField] private Text textTitelLevel;
+        [SerializeField] private Text textDescriptionLevel;
+        
+        [SerializeField] private Text textDescriptionTitel;
         [SerializeField] private Text textDescription;
+        [SerializeField] private GameObject descriptionContainer;
 
+        
         [Header("Selection Counters")]
         [SerializeField] private Text textWeaponsSelected;
         [SerializeField] private Text textPerksSelected;
@@ -72,8 +79,8 @@ namespace LevelSelector
 
             panel.SetActive(true);
 
-            textTitel.text = level.levelName;
-            textDescription.text = level.description;
+            textTitelLevel.text = level.levelName;
+            textDescriptionLevel.text = level.description;
 
             ClearAllContainers();
 
@@ -315,7 +322,10 @@ namespace LevelSelector
 
         private void ShowWeaponDetails(WeaponDefinition weapon)
         {
-            textTitel.text = weapon.weaponName;
+            if(!descriptionContainer.gameObject.activeInHierarchy)
+                descriptionContainer.SetActive(true);
+            
+            textDescriptionTitel.text = weapon.weaponName;
 
             textDescription.text =
                 $"PASSIVE\n{weapon.passiveDescription}\n\n" +
@@ -324,13 +334,19 @@ namespace LevelSelector
 
         private void ShowPerkDetails(PerkDefinition perk)
         {
-            textTitel.text = perk.perkName;
+            if(!descriptionContainer.gameObject.activeInHierarchy)
+                descriptionContainer.SetActive(true);
+            
+            textDescriptionTitel.text = perk.perkName;
             textDescription.text = perk.description;
         }
 
         private void ShowMutatorDetails(MutatorDefinition mutator)
         {
-            textTitel.text = mutator.mutatorName;
+            if(!descriptionContainer.gameObject.activeInHierarchy)
+                descriptionContainer.SetActive(true);
+            
+            textDescriptionTitel.text = mutator.mutatorName;
             textDescription.text = mutator.description;
         }
 
@@ -360,8 +376,7 @@ namespace LevelSelector
 
             foreach (LevelQuestDefinition quest in currentLevel.quests)
             {
-                GameObject obj =
-                    Instantiate(questPrefab, questContainer);
+                GameObject obj =Instantiate(questPrefab, questContainer);
 
                 QuestUI questUI =
                     obj.GetComponent<QuestUI>();

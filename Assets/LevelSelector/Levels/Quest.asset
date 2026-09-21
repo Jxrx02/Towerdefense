@@ -16,3 +16,5 @@ MonoBehaviour:
   description: This is a quest
   conditions:
   - {fileID: 11400000, guid: 9d6e1563497bdf74ea3b0d204907645c, type: 2}
+  - {fileID: 11400000, guid: 055c03dad93cb3842bff38e5bf6cc19c, type: 2}
+  - {fileID: 11400000, guid: 89fbfc33c9de70e40b4bdf06a09c6dea, type: 2}
