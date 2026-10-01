@@ -53,7 +53,7 @@ namespace TowerDefense
                 }
             }
 
-            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+            ysort.UpdateSorting(this.wallGroup.transform.position.y + this.transform.position.y);
             
             SetUnbuiltVisual();
         }
@@ -99,7 +99,7 @@ namespace TowerDefense
         public void SetBuilt()
         {
             SetBuiltVisual();
-            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+            ysort.UpdateSorting(this.wallGroup.transform.position.y +this.transform.position.y);
 
         }
 
@@ -154,7 +154,7 @@ namespace TowerDefense
                 spriteRenderer.sprite = sprite;
             }
             
-            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+            ysort.UpdateSorting(this.wallGroup.transform.position.y + this.transform.position.y);
 
         }
 

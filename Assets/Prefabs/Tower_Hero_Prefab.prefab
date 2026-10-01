@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: -1222339928672116993}
   - component: {fileID: -7791449136621826653}
   - component: {fileID: -9131675977067723117}
+  - component: {fileID: -4241555220356924085}
   m_Layer: 7
   m_Name: Tower_Hero_Prefab
   m_TagString: Tower
@@ -515,19 +516,7 @@ MonoBehaviour:
   attack_sprites: []
   evolve_sprites: []
   dead_sprites: []
-  walk_sprites:
-  - {fileID: -7647609468298229693, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 5492226769168826229, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 7805808058020841573, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: -2213953214764555910, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 8717606186086948027, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: -1150411222521586684, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: -8507553586197868327, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 4400958823695829898, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: -3870969271624245100, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 2163622832421489456, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 1250639424060073822, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
-  - {fileID: 5034612978358575981, guid: 57a6edc08ed76dc43a69aa8afe784a37, type: 3}
+  walk_sprites: []
   directionalAnimations:
   - state: 4
     frames:
@@ -846,6 +835,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
   offset: 0
   multiplier: 100
+--- !u!114 &-4241555220356924085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b2726b9f7c4cd7bcd9158c2b67b6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tower.HeroOcclusion
+  normalMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
 --- !u!1 &7272062724337542213
 GameObject:
   m_ObjectHideFlags: 0
