@@ -22,12 +22,16 @@ MonoBehaviour:
   deadAnim:
   - {fileID: -6659192601353855828, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
   - {fileID: -6659192601353855828, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
-  attackAnim: []
+  attackAnim:
+  - {fileID: -790588007380544847, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
+  - {fileID: -6392509291605506218, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
+  - {fileID: -6392509291605506218, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
+  - {fileID: -9099574889442631424, guid: 5f2dc977e23ee4d438e0d50584aa8949, type: 3}
   health: 4
   tenacity: 0
   movementSpeed: 2
   xpDrop: 80
-  attackRange: 2
+  attackRange: 1
   attackCooldown: 1
   attackDamage: 2
   isMeele: 1

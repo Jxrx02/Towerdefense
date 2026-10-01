@@ -35,7 +35,7 @@ MonoBehaviour:
   movementSpeed: 1
   xpDrop: 40
   attackRange: 2
-  attackCooldown: 1
+  attackCooldown: 2
   attackDamage: 1
   isMeele: 0
   projectile: {fileID: 1633401857767853938, guid: 4fb0b0b29dcb4ed429e4bf6603031f52, type: 3}

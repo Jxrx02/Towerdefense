@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3788143043211686457}
   - component: {fileID: 4949638389114139711}
   - component: {fileID: 6413109965773258389}
+  - component: {fileID: -6660050570647986347}
   m_Layer: 6
   m_Name: Enemy_Prefab
   m_TagString: Enemy
@@ -164,6 +165,20 @@ MonoBehaviour:
   directionalAnimations: []
   destroyOnEndDeadAnimation: 0
   <animState>k__BackingField: 0
+--- !u!114 &-6660050570647986347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541066223521367457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  offset: 0
+  multiplier: 100
 --- !u!1 &8051571800795669770
 GameObject:
   m_ObjectHideFlags: 0

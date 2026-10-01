@@ -178,6 +178,9 @@ namespace TowerDefense
                     DirectionUtility.FromVector(movementInput);
 
                 spriteAnim.SetDirection(direction);
+                
+                
+                ysort.UpdateSorting();
             }
         }
 

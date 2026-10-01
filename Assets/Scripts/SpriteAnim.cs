@@ -179,7 +179,7 @@ public class SpriteAnim : MonoBehaviour
     // Legacy Sprites
     // -------------------------------------------------------------------
 
-    [Header("Legacy Sprites (Shop-Icons etc.)")]
+    [Header("Legacy Sprites")]
 
     public Sprite[] idle_sprites;
     public Sprite[] attack_sprites;

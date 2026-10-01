@@ -401,9 +401,9 @@ GameObject:
   - component: {fileID: 2179009691131905602}
   - component: {fileID: 876260232314397187}
   - component: {fileID: 1633344595018639211}
-  - component: {fileID: 3893182475523965384}
+  - component: {fileID: -506081660843074169}
   m_Layer: 7
-  m_Name: Tower_Cannon_Prefab
+  m_Name: Tower_slime_prefab
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +477,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  m_Sprite: {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e608a6e3a804045bfc7c8f2590b4c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: Feuerturm
+  towerName: Schleimturm
   towerDesc: Throws fire around
   towerInitPrice: 20
   placementType: 0
@@ -580,19 +580,14 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       attack_sprites:
-      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8075294252477977000, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8075294252477977000, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       pathShopIcon:
-      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 4fb0b0b29dcb4ed429e4bf6603031f52, type: 3}
       wallTile: {fileID: 0}
     - upgradeName: "Aggressive Gl\xFChw\xFCrmchen"
@@ -611,19 +606,14 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       attack_sprites:
-      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -581366183281798974, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -581366183281798974, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       pathShopIcon:
-      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 4399342878463685656, guid: 870d4730b61fcc9488eb2c8d3a8b9f20, type: 3}
       wallTile: {fileID: 0}
     - upgradeName: Flammenmeteor
@@ -642,19 +632,14 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 1016592964953662684, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1016592964953662684, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 9197018235897274741, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 9197018235897274741, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       attack_sprites:
-      - {fileID: 1016592964953662684, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 9197018235897274741, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1534173841661303901, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1534173841661303901, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       pathShopIcon:
-      - {fileID: 4034045644631955267, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4034045644631955267, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4034045644631955267, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 2976831095389296656, guid: c185f566b1fe7ad43bb66cb810d86e79, type: 3}
       wallTile: {fileID: 0}
     - upgradeName: Brennender Flammenmeteor
@@ -673,20 +658,14 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -8008813947110212789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8008813947110212789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4638614465549004491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4638614465549004491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       attack_sprites:
-      - {fileID: -8008813947110212789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4638614465549004491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3021309907912196362, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3021309907912196362, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       pathShopIcon:
-      - {fileID: 1856365622492549674, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1856365622492549674, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2294166892618916377, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7217625554825222258, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 2159509553888471292, guid: 6c24c8ad6bfe25641800abb8c43b1b6f, type: 3}
       wallTile: {fileID: 0}
     - upgradeName: Flammenwind
@@ -705,20 +684,14 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -1977500420919453744, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3624002037920005303, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3624002037920005303, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -1977500420919453744, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       attack_sprites:
-      - {fileID: -1977500420919453744, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3624002037920005303, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5554175496586017787, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5554175496586017787, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       pathShopIcon:
-      - {fileID: -7996892960580733590, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7996892960580733590, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 5913752507468782712, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4515625676128425292, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 1708488697088072388, guid: c79d750d9139d8249b7d1e15f959421f, type: 3}
       wallTile: {fileID: 0}
   - towerName: Lila Feuer
@@ -1093,20 +1066,21 @@ MonoBehaviour:
   mTimePerFrame: 0.125
   loop: 1
   idle_sprites:
-  - {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-  - {fileID: -4285783940327248292, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-  - {fileID: 9062258919097810594, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+  - {fileID: -5312510745892608744, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+  - {fileID: -8491116910715236777, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+  - {fileID: -5059091605707881395, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
   attack_sprites:
-  - {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-  - {fileID: -4285783940327248292, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-  - {fileID: 9062258919097810594, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: -5312510745892608744, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+  - {fileID: -8491116910715236777, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+  - {fileID: -8491116910715236777, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
   evolve_sprites: []
   dead_sprites: []
   walk_sprites: []
   directionalAnimations: []
   destroyOnEndDeadAnimation: 0
   <animState>k__BackingField: 1
---- !u!114 &3893182475523965384
+--- !u!114 &-506081660843074169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1146,7 +1120,7 @@ Transform:
   m_GameObject: {fileID: 4846675263847651107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.70000005, z: 0}
+  m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1240,7 +1214,7 @@ Transform:
   m_GameObject: {fileID: 5102061605546105367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.70000005, z: 0}
+  m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
   m_LocalScale: {x: 4.16, y: 4.16, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:

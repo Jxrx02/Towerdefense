@@ -317,14 +317,8 @@ namespace TowerDefense
                 EditorStyles.boldLabel
             );
 
-            SerializedProperty sortingOrder =
-                serializedObject.FindProperty("sortingOrder");
 
-            SerializedProperty sortingLayerName =
-                serializedObject.FindProperty("sortingLayerName");
-
-            EditorGUILayout.PropertyField(sortingOrder);
-            EditorGUILayout.PropertyField(sortingLayerName);
+            
         }
 
 

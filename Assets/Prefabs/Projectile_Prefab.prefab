@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2396021699890686625}
   - component: {fileID: 6473734021819118322}
   - component: {fileID: 3383669193516688753}
+  - component: {fileID: -5597592107144441149}
   m_Layer: 6
   m_Name: Projectile_Prefab
   m_TagString: Projectile
@@ -178,7 +179,7 @@ MonoBehaviour:
   hideTilCollision: 0
   canFindNewTarget: 0
   speed: 2.75
-  mode: 7
+  mode: 0
   aoeRadius: 1.5
   aoeVfxPrefab: {fileID: 4736630556181736464, guid: e45bb3901cec7d3409067438f9d3f4f1, type: 3}
   dotDuration: 2
@@ -205,6 +206,20 @@ MonoBehaviour:
   chainLinkDamage: 1
   turnSpeed: 360
   maxRedirectAngle: 90
+--- !u!114 &-5597592107144441149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476404959106327209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
+  offset: 0
+  multiplier: 100
 --- !u!1 &6871623523393184788
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,12 +24,15 @@ MonoBehaviour:
   - {fileID: -6710807524770986828, guid: cf45c9459520dab41ad4045357847af5, type: 3}
   - {fileID: -4905933388002790688, guid: cf45c9459520dab41ad4045357847af5, type: 3}
   - {fileID: -6339946794632722508, guid: cf45c9459520dab41ad4045357847af5, type: 3}
-  attackAnim: []
-  health: 1
+  attackAnim:
+  - {fileID: 4350892059848520236, guid: cf45c9459520dab41ad4045357847af5, type: 3}
+  - {fileID: -8636925932742952638, guid: cf45c9459520dab41ad4045357847af5, type: 3}
+  - {fileID: 2770225264186357993, guid: cf45c9459520dab41ad4045357847af5, type: 3}
+  health: 10
   tenacity: 1
   movementSpeed: 1
   xpDrop: 40
-  attackRange: 3
+  attackRange: 1
   attackCooldown: 1
   attackDamage: 1
   isMeele: 1

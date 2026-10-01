@@ -18,12 +18,6 @@ namespace TowerDefense
         [SerializeField]
         private Material builtMaterial;
 
-        [Header("Sorting")]
-        [SerializeField]
-        private int sortingOrder = 100;
-
-        [SerializeField]
-        private string sortingLayerName = "Details";
 
         private WallGroup wallGroup;
         private Vector3Int cell;
@@ -59,10 +53,8 @@ namespace TowerDefense
                 }
             }
 
-            spriteRenderer.sortingOrder = sortingOrder;
-
-            spriteRenderer.sortingLayerName = sortingLayerName;
-
+            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+            
             SetUnbuiltVisual();
         }
 
@@ -77,12 +69,7 @@ namespace TowerDefense
                 spriteRenderer =
                     gameObject.AddComponent<SpriteRenderer>();
             }
-
-            spriteRenderer.sortingOrder =
-                sortingOrder;
-
-            spriteRenderer.sortingLayerName =
-                sortingLayerName;
+            
 
             if (wallSprites == null ||
                 wallSprites.Length != 16)
@@ -112,6 +99,8 @@ namespace TowerDefense
         public void SetBuilt()
         {
             SetBuiltVisual();
+            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+
         }
 
         // =========================================================
@@ -164,6 +153,9 @@ namespace TowerDefense
             {
                 spriteRenderer.sprite = sprite;
             }
+            
+            ysort.UpdateSorting(this.wallGroup.transform.position.y);
+
         }
 
         // =========================================================

@@ -93,8 +93,8 @@ namespace TowerDefense
         protected Boolean isSelected;
         protected Boolean isHighlighted; 
         protected Boolean isInteracted;
-
         protected Boolean isPlaceable;
+        protected YSort ysort;
 
         protected (GameObject, int) target;
         private List<GameObject> _enemiesInRange = new List<GameObject>();
@@ -108,13 +108,16 @@ namespace TowerDefense
                 spriteAnim.animState = AnimationState.Idle_Animation;
 
             sr = GetComponent<SpriteRenderer>();
-
+            ysort = GetComponent<YSort>();
+            
             if (sr != null)
                 notOutlinedMaterial = sr.material;
 
             statDiffDisplay = GetComponent<StatDiffDisplay>();
             Actions.onEnemyDeath += this.IncreaseExp;
             DrawRangeIndicatior();
+            
+            
         }
 
 
@@ -185,6 +188,8 @@ namespace TowerDefense
                 isAttacking = false;
                 spriteAnim.animState = AnimationState.Idle_Animation;
             }
+            
+            ysort.UpdateSorting();
         }
 
 
@@ -333,6 +338,7 @@ namespace TowerDefense
          
         public void SetIsSelected(Boolean _isSelected)
         {
+            ysort.UpdateSorting();
             DrawRangeIndicatior();
             isSelected = _isSelected;
 
@@ -347,6 +353,7 @@ namespace TowerDefense
         }
         public void SetHighlighted(bool _isHighlighted)
         {
+            ysort.UpdateSorting();
             isHighlighted = _isHighlighted;
 
             if (sr == null)
@@ -440,6 +447,7 @@ namespace TowerDefense
         {
             if (pathIndex < 0 || pathIndex >= upgradePaths.Length) return;
 
+            
             UpgradePath path = upgradePaths[pathIndex];
             int currentLevel = pathLevels[pathIndex];
 
@@ -568,10 +576,12 @@ namespace TowerDefense
 
         public void EnterTowerRange(Tower tower)
         {
+            ysort.UpdateSorting();
             //TowerSynergy
         }
         public void ExitTowerRange(Tower tower)
         {
+            ysort.UpdateSorting();
         }
         public int CalculateSellPrice()
         {

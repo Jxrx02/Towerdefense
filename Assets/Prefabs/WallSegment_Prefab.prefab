@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 3807360598587681782}
   - component: {fileID: 1574092445128407524}
   - component: {fileID: 1789783872023118657}
+  - component: {fileID: 2129354349782649250}
   m_Layer: 7
   m_Name: WallSegment_Prefab
   m_TagString: Tower
@@ -764,8 +765,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 705220239
-  m_SortingLayer: 2
+  m_SortingLayerID: 852797597
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1122172968, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
@@ -910,8 +911,6 @@ MonoBehaviour:
   - {fileID: 7822810608373803639, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   unbuiltMaterial: {fileID: 2100000, guid: 4cc1ec4b4524e03489db952af4371efa, type: 2}
   builtMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  sortingOrder: 100
-  sortingLayerName: Details
 --- !u!58 &1789783872023118657
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -948,3 +947,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2.58
+--- !u!114 &2129354349782649250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899905071059491453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
+  offset: 0
+  multiplier: 100

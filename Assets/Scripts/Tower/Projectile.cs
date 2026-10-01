@@ -91,10 +91,12 @@ namespace TowerDefense
         private bool projectileIsDead;
         private SpriteAnim anim;
         private int remainingPierce;
-
+        private YSort ysort;
+        
         private void Awake()
         {
             anim = GetComponent<SpriteAnim>();
+            ysort = GetComponent<YSort>();
         }
 
         public void Init((GameObject, int) target, int damage)
@@ -149,6 +151,8 @@ namespace TowerDefense
                 else
                 {
                     MoveProjectileTowardsTarget();
+                    ysort.UpdateSorting();
+
                 }
             }
             else

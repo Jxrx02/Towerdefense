@@ -27,7 +27,7 @@ namespace TowerDefense
 
         // ── Visual / Animation ──────────────────────────────
         private SpriteAnim _spriteAnim;
-        private SpriteRenderer _spriteRenderer;
+        private YSort ySort;
 
         // ── Status Effects ───────────────────────────────────
         private float slowMultiplier = 1f;
@@ -50,11 +50,12 @@ namespace TowerDefense
 
         private void Start()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _spriteAnim = GetComponent<SpriteAnim>();
+            ySort = GetComponent<YSort>();
 
             ApplyConfig();
             CalculatePath();
+            ySort.UpdateSorting();
         }
 
         public void SetLevelEnd(Transform newTarget)
@@ -158,6 +159,8 @@ namespace TowerDefense
             {
                 if (enemyConfig != null && enemyConfig.movementSpeed > 0)
                     MoveAlongPath();
+                
+                ySort.UpdateSorting();
 
                 return;
             }
@@ -260,11 +263,11 @@ namespace TowerDefense
             if (attackTarget == null)
                 return;
             
-
             WallSegment wallSegment = attackTarget.GetComponent<WallSegment>();
 
             if (wallSegment == null)
                 return;
+            
 
             if (enemyConfig.isMeele)
             {

@@ -292,6 +292,7 @@ namespace TowerDefense
         /// </summary>
         private void TriggerNextWave(int earlyBonus)
         {
+            isDay = false;
             Debug.Log($"Nächste Welle gestartet. Frühstart-Bonus: {earlyBonus} Gold.");
             var waveManagerComponent = waveManager.GetComponent<WaveManager>();
             waveManagerComponent.AllowNextWave();        
