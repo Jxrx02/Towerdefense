@@ -65,7 +65,7 @@ namespace TowerDefense
 
             ysort.UpdateSorting(
                 wallGroup.transform.position.y +
-                transform.position.y
+                transform.localPosition.y
             );
         }
 
