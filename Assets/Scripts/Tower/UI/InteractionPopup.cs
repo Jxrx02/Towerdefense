@@ -22,6 +22,8 @@ namespace TowerDefense
         [SerializeField] private Transform upgradeStatsContainer;
         [SerializeField] private UpgradeStatEntry upgradeStatPrefab;
         
+        [SerializeField] private Text interactionText;
+
         [Header("Position")]
         [SerializeField] private Vector3 worldOffset = new Vector3(0f, 0.8f, 0f);
         
@@ -95,7 +97,7 @@ namespace TowerDefense
                 upgradeCost.text = $"{goldCost} Gold";
 
             Position(worldPosition);
-
+            interactionText.text = interactiontext;
             gameObject.SetActive(true);
         }
 

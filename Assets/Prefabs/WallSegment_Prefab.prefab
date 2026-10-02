@@ -878,6 +878,43 @@ MonoBehaviour:
   - towerName: Wooden Wall
     researchCost: 0
     levels:
+    - upgradeName: Wooden Wall
+      description: A simple wooden wall blocks the enemies paths but can be broken
+        by their attcks.
+      researchCost: 1
+      upgradeCost: 80
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 15
+      healthRegenPerSecond: 2
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites: []
+      attack_sprites: []
+      pathShopIcon: []
+      projectile: {fileID: 0}
+      wallSprites:
+      - {fileID: 1122172968, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -728984118, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -322282752, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 2251708977879825419, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1086554849524507838, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 707986047, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 2283871586314144915, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -791255275, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -2120341970, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -5775690697265436071, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1164720733, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 100747274, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -8885746418533784346, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 975779042, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -16075467, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 7822810608373803639, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
     - upgradeName: Stone Wall
       description: A stone wall has more health than a wooden wall
       researchCost: 1
