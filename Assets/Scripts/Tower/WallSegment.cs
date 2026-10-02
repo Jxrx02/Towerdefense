@@ -4,43 +4,46 @@ namespace TowerDefense
 {
     public class WallSegment : Wall
     {
-        
         [Header("Wall Visual")]
         [Tooltip("16 Sprites entsprechend der 4-Bit-Nachbarschaft.")]
         [SerializeField]
         private Sprite[] wallSprites = new Sprite[16];
 
-        [Tooltip("Material für eine noch nicht gebaute Wall.")]
         [SerializeField]
         private Material unbuiltMaterial;
 
-        [Tooltip("Material für eine gebaute Wall.")]
         [SerializeField]
         private Material builtMaterial;
 
-
         private WallGroup wallGroup;
         private Vector3Int cell;
-
         private SpriteRenderer spriteRenderer;
 
         public WallGroup WallGroup => wallGroup;
-
         public Vector3Int Cell => cell;
 
         public bool IsBuilt =>
             wallGroup != null &&
             wallGroup.IsBuilt;
 
-        // =========================================================
-        // INIT
-        // =========================================================
+        protected override void Awake()
+        {
+            base.Awake();
+
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer == null)
+                spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+
+            ValidateWallSprites();
+        }
 
         public void Initialize(
-            WallGroup wallGroup,
+            WallGroup group,
             Vector3Int cell)
         {
-            this.wallGroup = wallGroup;
+            wallGroup = group;
+            wallGroup.WallUpgradePath = upgradePaths[0];
             this.cell = cell;
 
             if (spriteRenderer == null)
@@ -48,116 +51,85 @@ namespace TowerDefense
                 spriteRenderer = GetComponent<SpriteRenderer>();
 
                 if (spriteRenderer == null)
-                {
                     spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-                }
             }
 
-            ysort.UpdateSorting(this.wallGroup.transform.position.y + this.transform.position.y);
-            
+            UpdateSorting();
             SetUnbuiltVisual();
         }
 
-        private void Awake()
+        private void UpdateSorting()
         {
-            base.Awake();
-            spriteRenderer =
-                GetComponent<SpriteRenderer>();
-
-            if (spriteRenderer == null)
-            {
-                spriteRenderer =
-                    gameObject.AddComponent<SpriteRenderer>();
-            }
-            
-
-            if (wallSprites == null ||
-                wallSprites.Length != 16)
-            {
-                Debug.LogError(
-                    $"WallSegment '{name}': " +
-                    "Es müssen genau 16 Wall-Sprites zugewiesen werden!",
-                    this
-                );
-            }
-
-            if (unbuiltMaterial == null)
-            {
-                Debug.LogError(
-                    $"WallSegment '{name}': " +
-                    "Kein Unbuilt Material zugewiesen!",
-                    this
-                );
-            }
-            
-        }
-
-        // =========================================================
-        // BUILD STATE
-        // =========================================================
-
-        public void SetBuilt()
-        {
-            SetBuiltVisual();
-            ysort.UpdateSorting(this.wallGroup.transform.position.y +this.transform.position.y);
-
-        }
-
-        // =========================================================
-        // MATERIAL
-        // =========================================================
-
-        private void SetBuiltVisual()
-        {
-            if (spriteRenderer == null)
+            if (ysort == null || wallGroup == null)
                 return;
 
-            if (builtMaterial != null)
-            {
-                spriteRenderer.material = builtMaterial;
-            }
+            ysort.UpdateSorting(
+                wallGroup.transform.position.y +
+                transform.position.y
+            );
         }
 
-        public void SetUnbuiltVisual()
+        // =========================================================
+        // UPGRADE
+        // =========================================================
+
+        public override void UpgradePath(int pathIndex)
         {
-            if (spriteRenderer == null)
+            if (pathIndex != 0)
                 return;
 
-            if (unbuiltMaterial != null)
+            if (wallGroup == null)
             {
-                spriteRenderer.material = unbuiltMaterial;
+                Debug.LogWarning(
+                    $"WallSegment '{name}' besitzt keine WallGroup.",
+                    this
+                );
+
+                return;
             }
+
+            wallGroup?.UpgradeWall();
         }
 
         // =========================================================
-        // VISUAL
+        // WALL SPRITES
         // =========================================================
+
+        public void SetWallSprites(Sprite[] newSprites)
+        {
+            if (newSprites == null || newSprites.Length != 16)
+            {
+                Debug.LogWarning(
+                    $"WallSegment '{name}': " +
+                    "Es müssen genau 16 Wall-Sprites vorhanden sein.",
+                    this
+                );
+
+                return;
+            }
+
+            wallSprites = newSprites;
+
+            RefreshVisual();
+        }
 
         public void RefreshVisual()
         {
             if (spriteRenderer == null)
                 return;
 
-            if (wallSprites == null ||
-                wallSprites.Length != 16)
-            {
+            if (wallSprites == null || wallSprites.Length != 16)
                 return;
-            }
-            
+
             int mask = CalculateNeighbourMask();
 
-            Sprite sprite =
-                wallSprites[mask];
+            Sprite sprite = wallSprites[mask];
 
             if (sprite != null)
-            {
                 spriteRenderer.sprite = sprite;
-            }
-            
-            ysort.UpdateSorting(this.wallGroup.transform.position.y + this.transform.position.y);
 
+            UpdateSorting();
         }
-
         // =========================================================
         // NEIGHBOURS
         // =========================================================
@@ -216,15 +188,30 @@ namespace TowerDefense
 
 
         // =========================================================
-        // DESTROY
+        // BUILD
         // =========================================================
 
-        protected override void DestroyTower()
+        public void SetBuilt()
         {
-            TowerHeroManager.instance.UnRegisterTower(this.gameObject);
-            //TowerHeroManager.instance.DeselectTower();
-            
+            SetBuiltVisual();
+            UpdateSorting();
         }
+
+        private void SetBuiltVisual()
+        {
+            if (spriteRenderer != null && builtMaterial != null)
+                spriteRenderer.material = builtMaterial;
+        }
+
+        public void SetUnbuiltVisual()
+        {
+            if (spriteRenderer != null && unbuiltMaterial != null)
+                spriteRenderer.material = unbuiltMaterial;
+        }
+
+        // =========================================================
+        // DAMAGE
+        // =========================================================
 
         public override void TakeDamage(int damage)
         {
@@ -234,13 +221,38 @@ namespace TowerDefense
             wallGroup.TakeDamage(damage);
         }
 
-        /*private void OnDestroy()
+        // =========================================================
+        // DESTROY
+        // =========================================================
+
+        protected override void DestroyTower()
         {
-            
-            if (wallGroup != null)
+            TowerHeroManager.instance.UnRegisterTower(gameObject);
+        }
+
+        // =========================================================
+        // VALIDATION
+        // =========================================================
+
+        private void ValidateWallSprites()
+        {
+            if (wallSprites == null || wallSprites.Length != 16)
             {
-                wallGroup.RemoveWallSegment(cell);
+                Debug.LogError(
+                    $"WallSegment '{name}': " +
+                    "Es müssen genau 16 Wall-Sprites zugewiesen werden!",
+                    this
+                );
             }
-        }*/
+
+            if (unbuiltMaterial == null)
+            {
+                Debug.LogError(
+                    $"WallSegment '{name}': " +
+                    "Kein Unbuilt Material zugewiesen!",
+                    this
+                );
+            }
+        }
     }
 }

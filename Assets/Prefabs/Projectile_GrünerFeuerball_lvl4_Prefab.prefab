@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 1683169024170217083}
   - component: {fileID: 9036675692478177174}
   - component: {fileID: 3569657282377384126}
+  - component: {fileID: 657876311679069918}
   m_Layer: 6
   m_Name: "Projectile_Gr\xFCnerFeuerball_lvl4_Prefab"
   m_TagString: Projectile
@@ -181,6 +182,7 @@ MonoBehaviour:
   evolve_sprites: []
   dead_sprites: []
   walk_sprites: []
+  directionalAnimations: []
   destroyOnEndDeadAnimation: 0
   <animState>k__BackingField: 0
 --- !u!114 &3569657282377384126
@@ -195,12 +197,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f353da48ee374edf8c9559d552487771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDmg: 1
   rotationAngleOffset: -90
   doRotation: 1
   lookAtTarget: 1
   hideTilCollision: 0
   canFindNewTarget: 2
   speed: 3
+  mode: 0
+  aoeRadius: 1.5
+  aoeVfxPrefab: {fileID: 0}
+  dotDuration: 3
+  dotInterval: 0.5
+  dotDamagePerTick: 5
+  chainDamage: 10
+  chainCount: 3
+  chainDamageFalloff: 0.2
+  chainRadius: 3
+  knockbackDistance: 1.5
+  knockbackDuration: 0.2
+  splitterCount: 5
+  splitterPrefab: {fileID: 0}
+  splitterDamage: 10
+  pierceCount: 5
+  blackHolePullDuration: 2
+  blackHoleRadius: 3
+  blackHoleVfxPrefab: {fileID: 0}
+  stickyDelay: 2
+  stickyAoeRadius: 1.5
+  stickyAoeDamage: 5
+  chainLinkRadius: 4
+  chainSlowAmount: 0.4
+  chainLinkDamage: 5
+  turnSpeed: 360
+  maxRedirectAngle: 90
+--- !u!114 &657876311679069918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025600629158941907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  offset: 0
+  multiplier: 100
 --- !u!1 &5490069826659906526
 GameObject:
   m_ObjectHideFlags: 0

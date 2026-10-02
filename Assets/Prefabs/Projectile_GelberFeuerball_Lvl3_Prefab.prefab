@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 6261124344156175679}
   - component: {fileID: 8156876489208251311}
   - component: {fileID: 6600946262265866873}
+  - component: {fileID: 5216408333680037821}
   m_Layer: 6
   m_Name: Projectile_GelberFeuerball_Lvl3_Prefab
   m_TagString: Projectile
@@ -294,6 +295,7 @@ MonoBehaviour:
   dotDuration: 3
   dotInterval: 0.5
   dotDamagePerTick: 5
+  chainDamage: 10
   chainCount: 3
   chainDamageFalloff: 0.2
   chainRadius: 3
@@ -308,9 +310,26 @@ MonoBehaviour:
   blackHoleVfxPrefab: {fileID: 0}
   stickyDelay: 2
   stickyAoeRadius: 1.5
+  stickyAoeDamage: 5
   chainLinkRadius: 4
   chainSlowAmount: 0.4
   chainLinkDamage: 5
+  turnSpeed: 360
+  maxRedirectAngle: 90
+--- !u!114 &5216408333680037821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976831095389296656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  offset: 0
+  multiplier: 100
 --- !u!1 &5696506367022806517
 GameObject:
   m_ObjectHideFlags: 0

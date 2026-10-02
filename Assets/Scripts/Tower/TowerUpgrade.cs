@@ -41,7 +41,9 @@ namespace ScriptableObjects
         public GameObject projectile;
         
         [Header("Wall")]
-        public RuleTile wallTile;
+        [Tooltip("16 Sprites entsprechend der 4-Bit-Nachbarschaft.")]
+        public Sprite[] wallSprites = new Sprite[16];
+        
     }
 
     [System.Serializable]

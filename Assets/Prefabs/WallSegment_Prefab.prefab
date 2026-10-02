@@ -850,13 +850,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95134c841ef84899b92ba863559d6679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.Wall
-  towerName: Wall
-  towerDesc: 
+  towerName: Wooden wall
+  towerDesc: A simple wooden wall blocks the enemies paths but can be broken by their
+    attcks.
   towerInitPrice: 10
-  placementType: 1
-  blocksPath: 1
   statHealthPoints: 10
-  currentHealth: 0
+  currentHealth: 10
   range: 0
   interactionrange: 2.58
   damage: 0
@@ -876,15 +875,82 @@ MonoBehaviour:
   statSlowMultiplier: 0
   spawnProjectileOffsetPoint: {fileID: 0}
   upgradePaths:
-  - towerName: 
+  - towerName: Wooden Wall
     researchCost: 0
-    levels: []
-  - towerName: 
-    researchCost: 0
-    levels: []
-  - towerName: 
-    researchCost: 0
-    levels: []
+    levels:
+    - upgradeName: Stone Wall
+      description: A stone wall has more health than a wooden wall
+      researchCost: 1
+      upgradeCost: 50
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 20
+      healthRegenPerSecond: 2
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites: []
+      attack_sprites: []
+      pathShopIcon: []
+      projectile: {fileID: 0}
+      wallSprites:
+      - {fileID: -397674751, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1102996643, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1989232113, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 7179213752728586108, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -3606865330109306140, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1431768115, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -4138127552453616812, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 553909238, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -877617348, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -6176962661876282165, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -220394569, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 21108169, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -4870142714023290337, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -337327512, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1116503184, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 3084265815330779543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+    - upgradeName: 'Reinforced Wall '
+      description: A reinforced wall has more health than a stone wall and also gets
+        some armor blocking physical damage
+      researchCost: 1
+      upgradeCost: 80
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 40
+      healthRegenPerSecond: 2
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites: []
+      attack_sprites: []
+      pathShopIcon: []
+      projectile: {fileID: 0}
+      wallSprites:
+      - {fileID: 1038864538, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 968704191, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -86556234, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -500882730, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1322854517, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 837430483, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 323991646, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -639583897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 222498543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1017639486, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1543452228, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1285648897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1145260661, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -177908023, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1459600825, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 639745540, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   pathLevels: 0000000000000000000000000000000000000000
   level: 1
   experience: 0

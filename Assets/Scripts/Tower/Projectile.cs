@@ -151,7 +151,6 @@ namespace TowerDefense
                 else
                 {
                     MoveProjectileTowardsTarget();
-                    ysort.UpdateSorting();
 
                 }
             }
@@ -223,6 +222,8 @@ namespace TowerDefense
         {
             Vector3 targetDirection =
                 (target.Item1.transform.position - transform.position).normalized;
+            
+            ysort.UpdateSorting();
 
             // Projektilrichtung langsam in Richtung des Targets drehen.
             projectileDirection = Vector3.RotateTowards(

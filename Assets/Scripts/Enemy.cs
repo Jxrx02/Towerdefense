@@ -212,7 +212,7 @@ namespace TowerDefense
 
             WallSegment wallSegment = attackTarget.GetComponent<WallSegment>();
 
-            if (wallSegment == null)
+            if (wallSegment == null ||wallSegment.WallGroup.HP<=0 ||wallSegment.WallGroup.IsDestroyed)
             {
                 attackTarget = null;
                 CalculatePath();

@@ -40,7 +40,8 @@ public class TowerShop : MonoBehaviour
         GameObject tower = Instantiate(towerPrefab);
         selectedTower = tower;
         isPlacingTower = true;
-        tower.GetComponent<OnTowerClickListener>()._enabled = false;
+        var listener = tower.GetComponent<OnTowerClickListener>();
+        if (listener != null) listener._enabled = false;
 
         tower.GetComponent<Collider2D>().enabled = false;
         

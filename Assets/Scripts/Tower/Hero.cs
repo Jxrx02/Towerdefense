@@ -18,15 +18,12 @@ namespace TowerDefense
 
         private bool interactionMode = false;
         //private bool hasReachedTargetPosition;
-        [SerializeField] private float interactionHoldDuration = 1f;
 
         private Coroutine interactionCoroutine;        
         [Header("Weapons")]
         [SerializeField] private Projectile[] equippedProjectiles;
         [SerializeField] private int activeWeaponIndex;
 
-        [SerializeField] public float maxMoveSpeed = 4f;
-        [SerializeField] public float acceleration = 10f;
 
         [HideInInspector]
         public Vector2 targetPosition;
@@ -97,6 +94,7 @@ namespace TowerDefense
                 {
                     wallGroup.SetUnbuiltVisual();
                 }
+
                 
                 if (LevelManager.instance.isDay)
                 {

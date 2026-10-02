@@ -16,12 +16,7 @@ namespace TowerDefense
         Strongest,
         Nearest
     }
-
-    public enum PlacementType
-    {
-        Tower,
-        Wall
-    }
+    
     public abstract class Tower : MonoBehaviour
     {
         [Header("Identity")]
@@ -29,9 +24,6 @@ namespace TowerDefense
         [SerializeField] public string towerDesc;
         [SerializeField] public int towerInitPrice;
 
-        [Header("Placement / World Interaction")]
-        [SerializeField] public PlacementType placementType = PlacementType.Tower;
-        [SerializeField] public bool blocksPath = false;
 
         [Header("Health")]
         [SerializeField] public int statHealthPoints;
@@ -93,7 +85,6 @@ namespace TowerDefense
         protected Boolean isSelected;
         protected Boolean isHighlighted; 
         protected Boolean isInteracted;
-        protected Boolean isPlaceable;
         protected YSort ysort;
 
         protected (GameObject, int) target;
@@ -443,7 +434,7 @@ namespace TowerDefense
 
         
         
-        public void UpgradePath(int pathIndex)
+        public virtual void UpgradePath(int pathIndex)
         {
             if (pathIndex < 0 || pathIndex >= upgradePaths.Length) return;
 
