@@ -1,6 +1,7 @@
 ﻿using TowerDefense;
 using UnityEngine;
 
+namespace TowerDefense{
 
 public class HeroInteractionArea : MonoBehaviour
  {
@@ -26,3 +27,4 @@ public class HeroInteractionArea : MonoBehaviour
          hero.ExitTowerRange(tower);
      }
  }
+}

@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: -1222339928672116993}
   - component: {fileID: -7791449136621826653}
   - component: {fileID: -9131675977067723117}
-  - component: {fileID: -4241555220356924085}
   m_Layer: 7
   m_Name: Tower_Hero_Prefab
   m_TagString: Tower
@@ -362,8 +361,6 @@ MonoBehaviour:
   towerName: Bogenheld
   towerDesc: 'Ein echter Robinhood '
   towerInitPrice: 40
-  placementType: 0
-  blocksPath: 0
   statHealthPoints: 0
   currentHealth: 0
   range: 6.16
@@ -409,7 +406,27 @@ MonoBehaviour:
       pathShopIcon:
       - {fileID: 5612204544531477646, guid: 1e828444256bb7f45bb9ed45f9a44601, type: 3}
       projectile: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Schnellschuss 2
       description: Schneller schuss 2
       researchCost: 4
@@ -431,7 +448,27 @@ MonoBehaviour:
       pathShopIcon:
       - {fileID: 5612204544531477646, guid: 1e828444256bb7f45bb9ed45f9a44601, type: 3}
       projectile: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   - towerName: "Fl\xE4chenschaden"
     researchCost: 1
     levels:
@@ -455,7 +492,27 @@ MonoBehaviour:
       attack_sprites: []
       pathShopIcon: []
       projectile: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   - towerName: Mehrfachschuss
     researchCost: 1
     levels:
@@ -479,7 +536,27 @@ MonoBehaviour:
       attack_sprites: []
       pathShopIcon: []
       projectile: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   pathLevels: 000000000000000000000000
   level: 1
   experience: 0
@@ -488,13 +565,10 @@ MonoBehaviour:
   isAttacking: 0
   projectilePrefab: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   moveSpeed: 4
-  interactionHoldDuration: 1
   equippedProjectiles:
   - {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   - {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   activeWeaponIndex: 0
-  maxMoveSpeed: 4
-  acceleration: 10
   targetPosition: {x: -7.047619, y: -6.9761906}
 --- !u!114 &7932739886474218458
 MonoBehaviour:
@@ -835,20 +909,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
   offset: 0
   multiplier: 100
---- !u!114 &-4241555220356924085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b2726b9f7c4cd7bcd9158c2b67b6e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tower.HeroOcclusion
-  normalMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
 --- !u!1 &7272062724337542213
 GameObject:
   m_ObjectHideFlags: 0

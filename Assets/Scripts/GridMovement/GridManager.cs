@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Tower;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -45,7 +46,7 @@ namespace TowerDefense.GridMovement
         private Tilemap wallTilemap;
 
         [Header("Wall")] [SerializeField] private WallSegment wallSegmentPrefab;
-
+        [SerializeField] private WallGate wallGatePrefab; 
         private Dictionary<Vector3Int, GridNode> nodes = new();
 
         // =========================================================
@@ -378,7 +379,8 @@ namespace TowerDefense.GridMovement
                 wallGroup.Initialize(
                     groupCells,
                     groundTilemap,
-                    wallSegmentPrefab
+                    wallSegmentPrefab,
+                    wallGatePrefab
                 );
 
                 groupIndex++;

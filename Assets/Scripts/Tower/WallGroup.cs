@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects;
+using Tower;
 using TowerDefense;
 using TowerDefense.GridMovement;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class WallGroup : MonoBehaviour
     private float interactionHoldDuration = 4f;
     
     private Coroutine interactionCoroutine;
-
+    
     private string towername, towerdesc;
     private int maxHP, wallinitprice;
     public int MaxHP => maxHP;
@@ -35,10 +36,11 @@ public class WallGroup : MonoBehaviour
     [SerializeField]
     private UpgradePath wallUpgradePath;
 
+    private WallGate wallGate;
     public int wallLevel = 0;
 
     public int WallLevel => wallLevel;
-
+    
     public UpgradePath WallUpgradePath
     {
         get => wallUpgradePath;
@@ -52,7 +54,8 @@ public class WallGroup : MonoBehaviour
     public void Initialize(
         IEnumerable<Vector3Int> cells,
         Tilemap groundTilemap,
-        WallSegment wallSegmentPrefab)
+        WallSegment wallSegmentPrefab,
+        WallGate wallGatePrefab)
     {
         wallCells.Clear();
         segments.Clear();
@@ -67,24 +70,40 @@ public class WallGroup : MonoBehaviour
                 continue;
 
             wallCells.Add(cell);
+        }
+        if (wallCells.Count == 0)
+            return;
 
+        Vector3Int middleCell = wallCells[wallCells.Count / 2];
+
+        bool isHorizontal =
+            wallCells.Max(c => c.x) - wallCells.Min(c => c.x) >=
+            wallCells.Max(c => c.y) - wallCells.Min(c => c.y);
+
+        foreach (Vector3Int cell in wallCells)
+        {
             Vector3 worldPosition =
                 groundTilemap.GetCellCenterWorld(cell);
 
             Vector3 localPosition =
                 transform.InverseTransformPoint(worldPosition);
 
+            bool isGatePosition = cell == middleCell;
+
             CreateWallSegment(
                 cell,
                 localPosition,
-                wallSegmentPrefab
+                wallSegmentPrefab,
+                wallGatePrefab,
+                isGatePosition,
+                isHorizontal
             );
 
             WallSegment segment = segments[cell];
+
             towername = segment.towerName;
             towerdesc = segment.towerDesc;
             wallinitprice = segment.towerInitPrice;
-
 
             maxHP += segment.HP;
         }
@@ -104,19 +123,36 @@ public class WallGroup : MonoBehaviour
     private void CreateWallSegment(
         Vector3Int cell,
         Vector3 localPosition,
-        WallSegment wallSegmentPrefab)
+        WallSegment wallSegmentPrefab,
+        WallGate wallGatePrefab,
+        bool isGatePosition,
+        bool isHorizontal)
     {
-        WallSegment segment =
-            Instantiate(
+        WallSegment segment;
+
+        if (isGatePosition)
+        {
+            wallGate = Instantiate(
+                wallGatePrefab,
+                transform
+            );
+
+            wallGate.InitializeGate(isHorizontal);
+            segment = wallGate;
+
+            wallGate.name = $"WallGate_{cell.x}_{cell.y}";
+        }
+        else
+        {
+            segment = Instantiate(
                 wallSegmentPrefab,
                 transform
             );
 
-        segment.name =
-            $"WallSegment_{cell.x}_{cell.y}";
+            segment.name = $"WallSegment_{cell.x}_{cell.y}";
+        }
 
-        segment.transform.localPosition =
-            localPosition;
+        segment.transform.localPosition = localPosition;
 
         segment.Initialize(
             this,
@@ -247,7 +283,7 @@ public class WallGroup : MonoBehaviour
         TowerUpgradeLevel currentLevel = GetCurrentUpgrade();
 
         if (currentLevel != null)
-            ApplyWallSprites(currentLevel.wallSprites);
+            ApplyWallSprites(currentLevel.wallSprites, currentLevel.gateHorizontalClosed,currentLevel.gateHorizontalOpen,currentLevel.gateVerticalClosed,currentLevel.gateVerticalOpen);
 
         RefreshVisuals();
 
@@ -305,10 +341,15 @@ public class WallGroup : MonoBehaviour
             maxHP += totalHealthIncrease;
             hp += totalHealthIncrease;
 
-            ApplyWallSprites(upgrade.wallSprites);
+            ApplyWallSprites(upgrade.wallSprites, upgrade.gateHorizontalClosed,upgrade.gateHorizontalOpen,upgrade.gateVerticalClosed,upgrade.gateVerticalOpen);
         }                                                                                          
 
-        private void ApplyWallSprites(Sprite[] newSprites)
+        private void ApplyWallSprites(
+            Sprite[] newSprites,
+            Sprite gateHorizontalClosed,
+            Sprite gateHorizontalOpen,
+            Sprite gateVerticalClosed,
+            Sprite gateVerticalOpen)
         {
             if (newSprites == null || newSprites.Length != 16)
             {
@@ -326,7 +367,19 @@ public class WallGroup : MonoBehaviour
                 if (segment == null)
                     continue;
 
-                segment.SetWallSprites(newSprites);
+                if (segment is WallGate gate)
+                {
+                    gate.SetGateSprites(
+                        gateHorizontalClosed,
+                        gateHorizontalOpen,
+                        gateVerticalClosed,
+                        gateVerticalOpen
+                    );
+                }
+                else
+                {
+                    segment.SetWallSprites(newSprites);
+                }
             }
         }
 
@@ -747,4 +800,8 @@ public class WallGroup : MonoBehaviour
     }
 
 
+    public void SetGateOpen(bool isOpen)
+    {
+        wallGate.SetGateOpen(isOpen);
+    }
 }

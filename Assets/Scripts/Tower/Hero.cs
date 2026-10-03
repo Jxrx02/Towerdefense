@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Tower;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -100,6 +101,12 @@ namespace TowerDefense
                 {
                     wallGroup.EnterInteractionRange(this);
                 }
+
+                if (wall is WallGate)
+                {
+                    wall.WallGroup.SetGateOpen(true);
+                }
+                
             }
 
             Debug.Log(tower.towerName + " ist in Range");
@@ -118,6 +125,7 @@ namespace TowerDefense
                 {
                     wall.WallGroup.SetUnbuiltVisual();
                 }
+                wall.WallGroup.SetGateOpen(false);
             }
 
             currentTower.SetHighlighted(false);

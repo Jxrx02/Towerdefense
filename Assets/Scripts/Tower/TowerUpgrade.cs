@@ -43,7 +43,11 @@ namespace ScriptableObjects
         [Header("Wall")]
         [Tooltip("16 Sprites entsprechend der 4-Bit-Nachbarschaft.")]
         public Sprite[] wallSprites = new Sprite[16];
-        
+        [Header("Wall Gate Sprites")]
+        public Sprite gateHorizontalClosed;
+        public Sprite gateHorizontalOpen;
+        public Sprite gateVerticalClosed;
+        public Sprite gateVerticalOpen;
     }
 
     [System.Serializable]
