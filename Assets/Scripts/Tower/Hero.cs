@@ -125,7 +125,11 @@ namespace TowerDefense
                 {
                     wall.WallGroup.SetUnbuiltVisual();
                 }
-                wall.WallGroup.SetGateOpen(false);
+                
+                if (wall is WallGate)
+                {
+                    wall.WallGroup.SetGateOpen(false);
+                }
             }
 
             currentTower.SetHighlighted(false);
