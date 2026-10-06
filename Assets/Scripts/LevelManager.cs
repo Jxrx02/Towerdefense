@@ -40,9 +40,9 @@ namespace TowerDefense
         public Light2D sceneLight;
 
         [SerializeField] private float dayNightTransitionDuration = 1.5f;
-
-        private readonly Color nightColor = new Color32(19, 40, 91, 255); // #13285B
-        private readonly Color dayColor = Color.white;
+        [SerializeField] private Color nightColor = new Color32(41, 62, 166, 255); // #13285B
+        [SerializeField] private float nightIntensity =1.6f;
+        [SerializeField] private Color dayColor = Color.white;
         
         [Tooltip("Text der den Frühstart-Bonus anzeigt, z.B. '+ 85 Gold'")]
         public Text txt_earlyBonus;
@@ -305,7 +305,7 @@ namespace TowerDefense
             if (nightScene != null)
                 nightScene.SetActive(true);
 
-            StartCoroutine(TransitionLight(nightColor, 0.7f));
+            StartCoroutine(TransitionLight(nightColor, nightIntensity));
         }
 
         private void SetDay()

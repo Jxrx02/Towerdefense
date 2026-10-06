@@ -101,11 +101,6 @@ namespace TowerDefense
                 {
                     wallGroup.EnterInteractionRange(this);
                 }
-
-                if (wall is WallGate)
-                {
-                    wall.WallGroup.SetGateOpen(true);
-                }
                 
             }
 
@@ -117,7 +112,7 @@ namespace TowerDefense
             if (tower != currentTower)
                 return;
 
-            if (currentTower is WallSegment wall)
+            if (tower is WallSegment wall)
             {
                 wall.WallGroup.ExitInteractionRange(this);
 
@@ -125,20 +120,17 @@ namespace TowerDefense
                 {
                     wall.WallGroup.SetUnbuiltVisual();
                 }
-                
-                if (wall is WallGate)
-                {
-                    wall.WallGroup.SetGateOpen(false);
-                }
+
             }
 
-            currentTower.SetHighlighted(false);
-            currentTower.SetInteraction(false);
-            currentTower.SetIsSelected(false);
+            tower.SetHighlighted(false);
+            tower.SetInteraction(false);
+            tower.SetIsSelected(false);
 
             SetInteraction(false);
 
             TowerHeroManager.instance.DeselectTower();
+
         }
         
         // ------------------------------------------------------------------
@@ -180,8 +172,14 @@ namespace TowerDefense
             if (movementInput.sqrMagnitude > 0.01f)
             {
                 // Position bewegen
-                transform.position +=
-                    (Vector3)(movementInput * moveSpeed * Time.deltaTime);
+                Vector3 movement = (movementInput * moveSpeed * Time.deltaTime);
+
+                Vector3 newPosition = transform.position + movement;
+
+                if (CanMoveTo(newPosition))
+                {
+                    transform.position = newPosition;
+                }
 
                 // Bewegungsrichtung in eine der 8 Richtungen umwandeln
                 FacingDirection direction =
@@ -193,7 +191,51 @@ namespace TowerDefense
                 ysort.UpdateSorting();
             }
         }
+        private bool CanMoveTo(Vector3 newPosition)
+        {
+            foreach (GameObject wallObject in TowerHeroManager.instance.walls)
+            {
+                if (wallObject == null)
+                    continue;
 
+                WallSegment wallSegment = wallObject.GetComponent<WallSegment>();
+
+                if (wallSegment == null || wallSegment.WallGroup.IsGateOpen() )
+                    continue;
+
+                float distance =
+                    Vector2.Distance(
+                        newPosition,
+                        wallSegment.transform.position
+                    );
+
+                if (distance > 0.4f)
+                {
+                    continue;
+
+                }
+
+                // Das mittlere Tile ist ein Gate
+                if (wallSegment is WallGate gate)
+                {
+                    // Geöffnet -> Hero darf durch
+                    if (gate.IsOpen)
+                    {
+                        Debug.Log("Distance: " + distance);
+
+                        continue;
+                    }
+    
+                    // Geschlossen -> blockieren
+                    return false;
+                }
+
+                // Normale Wand -> immer blockieren
+                return false;
+            }
+
+            return true;
+        }
         // ------------------------------------------------------------------
         // CLICK-TO-MOVE
         // ------------------------------------------------------------------

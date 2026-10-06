@@ -14,26 +14,30 @@ namespace Tower
     {
         private bool isOpen;
         private bool isHorizontal;
+        
+        public bool IsOpen
+        {
+            get => isOpen;
+        }
 
         [SerializeField]private Sprite horizontalClosed;
         [SerializeField]private Sprite horizontalOpen;
         [SerializeField]private Sprite verticalClosed;
         [SerializeField]private Sprite verticalOpen;
 
-        private SpriteRenderer spriteRenderer;
-
+        private BoxCollider2D boxCollider2D;
         protected override void Awake()
         {
             base.Awake();
 
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            sr = GetComponent<SpriteRenderer>();
         }
 
         public void InitializeGate(bool horizontal)
         {
             isHorizontal = horizontal;
             isOpen = false;
-
+            boxCollider2D = GetComponent<BoxCollider2D>();
             UpdateGateSprite();
         }
         
@@ -51,10 +55,14 @@ namespace Tower
             if (!_isOpen)
             {
                 isOpen = false;
+                boxCollider2D.enabled = true;
+
             }
             else
             {
                 isOpen = true;
+                boxCollider2D.enabled = false;
+
             }
             UpdateGateSprite();
 
@@ -62,22 +70,21 @@ namespace Tower
         }
 
 
-        public bool IsOpen => isOpen;
 
         private void UpdateGateSprite()
         {
-            if (spriteRenderer == null)
+            if (sr == null)
                 return;
 
             if (isHorizontal)
             {
-                spriteRenderer.sprite = isOpen
+                sr.sprite = isOpen
                     ? horizontalOpen
                     : horizontalClosed;
             }
             else
             {
-                spriteRenderer.sprite = isOpen
+                sr.sprite = isOpen
                     ? verticalOpen
                     : verticalClosed;
             }

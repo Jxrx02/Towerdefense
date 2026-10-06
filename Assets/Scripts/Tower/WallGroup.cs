@@ -489,6 +489,7 @@ public class WallGroup : MonoBehaviour
         string interactionText = "";
         string description = "";
         int cost = 0;
+        SetGateOpen(true);
 
         // 1. Noch nicht gebaut
         if (!isBuilt && !isDestroyed)
@@ -545,13 +546,13 @@ public class WallGroup : MonoBehaviour
     }
     public void ExitInteractionRange(Hero hero)
     {
-        
 
         if (interactionCoroutine != null)
         {
             StopCoroutine(interactionCoroutine);
             interactionCoroutine = null;
         }
+        SetGateOpen(false);
 
         HideInteractionPopup();
     }
@@ -800,6 +801,10 @@ public class WallGroup : MonoBehaviour
     }
 
 
+    public bool IsGateOpen()
+    {
+        return wallGate.IsOpen;
+    }
     public void SetGateOpen(bool isOpen)
     {
         wallGate.SetGateOpen(isOpen);

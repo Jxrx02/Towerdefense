@@ -10,6 +10,8 @@ namespace TowerDefense
      
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other == null)
+                return;
             var othertower = other.GetComponent<Tower>();
 
             if (othertower == null)

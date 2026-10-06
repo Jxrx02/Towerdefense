@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.44, y: 1.44, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7923408122177723011}
@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 1789783872023118657}
   - component: {fileID: 2129354349782649250}
   - component: {fileID: -7775270843740226351}
+  - component: {fileID: 4772887436820818603}
   m_Layer: 7
   m_Name: WallGate_Prefab
   m_TagString: Tower
@@ -873,7 +874,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.72
+  m_Radius: 0.7
 --- !u!114 &2129354349782649250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,11 +904,11 @@ MonoBehaviour:
   towerName: Wooden wall
   towerDesc: A simple wooden wall blocks the enemies paths but can be broken by their
     attcks.
-  towerInitPrice: 0
-  statHealthPoints: 0
-  currentHealth: 0
+  towerInitPrice: 10
+  statHealthPoints: 10
+  currentHealth: 10
   range: 0
-  interactionrange: 0.72
+  interactionrange: 0.7
   damage: 0
   timeInBetweenShots: 0.1
   attackSpeedMultiplier: 1
@@ -1080,3 +1081,49 @@ MonoBehaviour:
   horizontalOpen: {fileID: 1465779032, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   verticalClosed: {fileID: 1917598949, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   verticalOpen: {fileID: -1224501830, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+--- !u!61 &4772887436820818603
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899905071059491453}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.04}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.8125, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.82, y: 0.82}
+  m_EdgeRadius: 0
