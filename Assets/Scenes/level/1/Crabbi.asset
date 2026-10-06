@@ -32,7 +32,7 @@ MonoBehaviour:
   tenacity: 1
   movementSpeed: 1
   xpDrop: 40
-  attackRange: 1
+  attackRange: 2
   attackCooldown: 1
   attackDamage: 1
   isMeele: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
   fireResistance: 0
   iceWeakness: 0
   poisonImmunity: 100
-  canFly: 1
+  canFly: 0
   goldReward: 2
   penaltyOnReachingEnd: 1
   lightColor: {r: 0, g: 0, b: 0, a: 0}

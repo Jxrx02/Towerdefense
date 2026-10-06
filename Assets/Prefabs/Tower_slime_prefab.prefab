@@ -522,7 +522,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.7}
-  m_Radius: 2.08
+  m_Radius: 0.85
 --- !u!114 &5740189684470814928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,12 +538,11 @@ MonoBehaviour:
   towerName: Schleimturm
   towerDesc: Throws fire around
   towerInitPrice: 20
-  placementType: 0
-  blocksPath: 0
+  displayedStats: -1
   statHealthPoints: 0
   currentHealth: 0
   range: 4
-  interactionrange: 2.08
+  interactionrange: 0.85
   damage: 2
   timeInBetweenShots: 3
   attackSpeedMultiplier: 0.5
@@ -589,7 +588,27 @@ MonoBehaviour:
       - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 4fb0b0b29dcb4ed429e4bf6603031f52, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: "Aggressive Gl\xFChw\xFCrmchen"
       description: "Aggressive Gl\xFChw\xFCrmchen"
       researchCost: 2
@@ -615,7 +634,27 @@ MonoBehaviour:
       - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 4399342878463685656, guid: 870d4730b61fcc9488eb2c8d3a8b9f20, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Flammenmeteor
       description: Flammenmeteor
       researchCost: 3
@@ -641,7 +680,27 @@ MonoBehaviour:
       - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 2976831095389296656, guid: c185f566b1fe7ad43bb66cb810d86e79, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Brennender Flammenmeteor
       description: Brennender Flammenmeteor
       researchCost: 4
@@ -667,7 +726,27 @@ MonoBehaviour:
       - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 2159509553888471292, guid: 6c24c8ad6bfe25641800abb8c43b1b6f, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Flammenwind
       description: Flammenwind
       researchCost: 5
@@ -693,7 +772,27 @@ MonoBehaviour:
       - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
       projectile: {fileID: 1708488697088072388, guid: c79d750d9139d8249b7d1e15f959421f, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   - towerName: Lila Feuer
     researchCost: 1
     levels:
@@ -726,7 +825,27 @@ MonoBehaviour:
       - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 438a4a7599c8d4a4b85bfc4d9c328445, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Meteor
       description: Meteor
       researchCost: 2
@@ -756,7 +875,27 @@ MonoBehaviour:
       - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 02551105c9cf33e47941e44b38f9e1af, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Wurfklinge
       description: Wurfklinge
       researchCost: 3
@@ -788,7 +927,27 @@ MonoBehaviour:
       - {fileID: -743520308598173751, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 3371781621166705072, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 30f9e8b2d537bdc4d82d7dcf3af09cf4, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: 2x Wurfklinge
       description: 2x Wurfklinge
       researchCost: 4
@@ -820,7 +979,27 @@ MonoBehaviour:
       - {fileID: -1937774882048496333, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 6741509401962798408, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 1633401857767853938, guid: b8b5fdf76c1645b47be18dd4d9bea74c, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: 3x Wurfklinge
       description: 3x Wurfklinge
       researchCost: 5
@@ -852,7 +1031,27 @@ MonoBehaviour:
       - {fileID: -4867214797012565390, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 8604481560392185265, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 1633401857767853938, guid: c794ec6554274e64fb1a00ca34388aff, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   - towerName: "Gr\xFCnes Feuer"
     researchCost: 1
     levels:
@@ -885,7 +1084,27 @@ MonoBehaviour:
       - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 7495007649928885642, guid: ea9ca7aad1c83584390b632872349d12, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Verdeltes Gift
       description: Verdeltes Gift
       researchCost: 3
@@ -915,7 +1134,27 @@ MonoBehaviour:
       - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 4766138111058902196, guid: 59a6c65f849962f4f85e8ae512acca34, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: Bezwingendes Gift
       description: Bezwingendes Gift
       researchCost: 4
@@ -946,7 +1185,27 @@ MonoBehaviour:
       - {fileID: -5747409957852785965, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -5361302629430293146, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 6835351531220554840, guid: eacf480a833ca2141b8deae4e1e95e4f, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: "Erl\xF6sendes Gift"
       description: "Erl\xF6sendes Gift"
       researchCost: 5
@@ -978,7 +1237,27 @@ MonoBehaviour:
       - {fileID: 171157118631308253, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -7086453823303973806, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 3025600629158941907, guid: 2a7900d43070ef247ad75aaae6da2f62, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
     - upgradeName: "Schlagartiger Erl\xF6s"
       description: "Schlagartiger Erl\xF6s"
       researchCost: 6
@@ -1009,7 +1288,27 @@ MonoBehaviour:
       - {fileID: 2455972400853133168, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 4535553749048603678, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       projectile: {fileID: 7894704798256660347, guid: 7ca6925f754a5204fbf6d42d54cf036d, type: 3}
-      wallTile: {fileID: 0}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
   pathLevels: 000000000000000000000000
   level: 1
   experience: 0
@@ -1017,6 +1316,7 @@ MonoBehaviour:
   levelConfig: {fileID: 11400000, guid: f434a970578b9894dbaeb1a25b88b1e0, type: 2}
   isAttacking: 0
   projectilePrefab: {fileID: 3476404959106327209, guid: 73acc887856189a4f86d818886a51f26, type: 3}
+  towerConstructionSite: {fileID: 0}
 --- !u!114 &2179009691131905602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,7 +1515,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
-  m_LocalScale: {x: 4.16, y: 4.16, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 498680992231705948}

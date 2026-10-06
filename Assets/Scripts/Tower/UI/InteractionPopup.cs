@@ -72,7 +72,8 @@ namespace TowerDefense
             string interactiontext,
             string title,
             int goldCost,
-            string description
+            string description,
+            bool isUpgrade
         )
         {
             requiredCoins = Mathf.CeilToInt(goldCost / 10f);
@@ -84,17 +85,21 @@ namespace TowerDefense
             SetCoinsProgress(0);
 
             // Upgrade Info
-            if (upgradeInfoPanel != null)
-                upgradeInfoPanel.SetActive(true);
+            if (isUpgrade)
+            {
+                if (upgradeInfoPanel != null)
+                    upgradeInfoPanel.SetActive(true);
 
-            if (upgradeTitle != null)
-                upgradeTitle.text = title;
+                if (upgradeTitle != null)
+                    upgradeTitle.text = title;
 
-            if (upgradeDescription != null)
-                upgradeDescription.text = description;
+                if (upgradeDescription != null)
+                    upgradeDescription.text = description;
 
-            if (upgradeCost != null)
-                upgradeCost.text = $"{goldCost} Gold";
+                if (upgradeCost != null)
+                    upgradeCost.text = $"{goldCost} Gold";
+
+            }
 
             Position(worldPosition);
             interactionText.text = interactiontext;

@@ -855,6 +855,7 @@ MonoBehaviour:
   towerDesc: A simple wooden wall blocks the enemies paths but can be broken by their
     attcks.
   towerInitPrice: 10
+  displayedStats: 0
   statHealthPoints: 10
   currentHealth: 10
   range: 0
@@ -940,26 +941,26 @@ MonoBehaviour:
       pathShopIcon: []
       projectile: {fileID: 0}
       wallSprites:
-      - {fileID: -397674751, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1102996643, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1989232113, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 7179213752728586108, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -3606865330109306140, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 1431768115, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -4138127552453616812, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 553909238, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -877617348, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -6176962661876282165, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -220394569, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 21108169, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -4870142714023290337, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -337327512, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 1116503184, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 3084265815330779543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateHorizontalClosed: {fileID: -549532989406643408, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateHorizontalOpen: {fileID: -5371902545598938376, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateVerticalClosed: {fileID: 49986010, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateVerticalOpen: {fileID: 443883760, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1038864538, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 968704191, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -86556234, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -500882730, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1322854517, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 837430483, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 323991646, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -639583897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 222498543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1017639486, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1543452228, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1285648897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1145260661, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -177908023, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1459600825, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 639745540, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateHorizontalClosed: {fileID: 1850397857, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateHorizontalOpen: {fileID: 473004047, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateVerticalClosed: {fileID: -1623334676, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateVerticalOpen: {fileID: 1464771872, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
     - upgradeName: 'Reinforced Wall '
       description: A reinforced wall has more health than a stone wall and also gets
         some armor blocking physical damage
@@ -981,26 +982,26 @@ MonoBehaviour:
       pathShopIcon: []
       projectile: {fileID: 0}
       wallSprites:
-      - {fileID: 1038864538, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 968704191, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -86556234, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -500882730, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1322854517, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 837430483, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 323991646, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -639583897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 222498543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 1017639486, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1543452228, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1285648897, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -1145260661, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: -177908023, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 1459600825, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      - {fileID: 639745540, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateHorizontalClosed: {fileID: 1850397857, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateHorizontalOpen: {fileID: 473004047, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateVerticalClosed: {fileID: -1623334676, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
-      gateVerticalOpen: {fileID: 1464771872, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -397674751, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1102996643, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -1989232113, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 7179213752728586108, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -3606865330109306140, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1431768115, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -4138127552453616812, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 553909238, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -877617348, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -6176962661876282165, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -220394569, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 21108169, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -4870142714023290337, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: -337327512, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 1116503184, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      - {fileID: 3084265815330779543, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateHorizontalClosed: {fileID: -549532989406643408, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateHorizontalOpen: {fileID: -5371902545598938376, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateVerticalClosed: {fileID: 49986010, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
+      gateVerticalOpen: {fileID: 443883760, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   pathLevels: 0000000000000000000000000000000000000000
   level: 1
   experience: 0
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   levelConfig: {fileID: 11400000, guid: 0dd7c56731c43294c94b37cfe0f691c6, type: 2}
   isAttacking: 0
   projectilePrefab: {fileID: 0}
+  towerConstructionSite: {fileID: 0}
   wallSprites:
   - {fileID: 1122172968, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   - {fileID: -728984118, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}

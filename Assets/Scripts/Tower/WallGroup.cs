@@ -482,15 +482,16 @@ public class WallGroup : MonoBehaviour
 
     public void EnterInteractionRange(Hero hero)
     {
-        if (!LevelManager.instance.isDay)
-            return;
-
         Action action = null;
         string interactionText = "";
         string description = "";
         int cost = 0;
+        
         SetGateOpen(true);
-
+        
+        if (!LevelManager.instance.isDay)
+            return;
+        
         // 1. Noch nicht gebaut
         if (!isBuilt && !isDestroyed)
         {
@@ -501,7 +502,7 @@ public class WallGroup : MonoBehaviour
         }
 
         // 2. Zerstört
-        else if (isDestroyed)
+        else if (isDestroyed )
         {
             interactionText = "to repair";
             cost = GetCurrentRepairCost();
@@ -540,9 +541,8 @@ public class WallGroup : MonoBehaviour
 
         if (interactionCoroutine != null)
             StopCoroutine(interactionCoroutine);
-
-        interactionCoroutine =
-            StartCoroutine(HoldInteraction(action));
+        
+        interactionCoroutine = StartCoroutine(HoldInteraction(action));
     }
     public void ExitInteractionRange(Hero hero)
     {
@@ -611,89 +611,87 @@ public class WallGroup : MonoBehaviour
 
         return center / segments.Count;
     }
-    private void ShowInteractionPopup(
-    string interactiontext,
-    int goldCost,
-    string desc)
-{
-    if (InteractionPopup.instance == null)
-        return;
-
-    List<UpgradeStatData> stats = new List<UpgradeStatData>();
-
-    string title;
-    int segmentCount = segments.Count;
-
-    TowerUpgradeLevel currentLevel = GetCurrentUpgrade();
-    TowerUpgradeLevel nextLevel = GetNextUpgrade();
-
-    if (!isBuilt && !isDestroyed)
+    private void ShowInteractionPopup(string interactiontext, int goldCost, string desc)
     {
-        title = "Buy: " + towername;
+        if (InteractionPopup.instance == null)
+            return;
 
-        if (segmentCount > 0)
+        List<UpgradeStatData> stats = new List<UpgradeStatData>();
+
+        string title;
+        int segmentCount = segments.Count;
+
+        TowerUpgradeLevel currentLevel = GetCurrentUpgrade();
+        TowerUpgradeLevel nextLevel = GetNextUpgrade();
+
+        if (!isBuilt && !isDestroyed)
         {
+            title = "Buy: " + towername;
+
+            if (segmentCount > 0)
+            {
+                stats.Add(new UpgradeStatData(
+                    "Health",
+                    0,
+                    maxHP,
+                    InteractionPopup.instance.healthIcon,
+                    new Color(0.13f, 0.55f, 0.13f),
+                    $" ({maxHP / segmentCount} per wall)"
+                ));
+            }
+        }
+        else if (isDestroyed)
+        {
+            title = currentLevel == null
+                ? "Repair: " + towername
+                : "Repair: " + currentLevel.upgradeName;
+
+            if (segmentCount > 0)
+            {
+                stats.Add(new UpgradeStatData(
+                    "Health",
+                    0,
+                    maxHP,
+                    InteractionPopup.instance.healthIcon,
+                    new Color(0.13f, 0.55f, 0.13f),
+                    $" ({maxHP / segmentCount} per wall)"
+                ));
+            }
+        }
+        else if (isBuilt && !isDestroyed && nextLevel != null)
+        {
+            title = currentLevel == null
+                ? "Upgrade: " + towername + " to " + nextLevel.upgradeName
+                : "Upgrade: " + currentLevel.upgradeName + " to " + nextLevel.upgradeName;
+
+            int newHealth =
+                maxHP + nextLevel.healthpoints * segmentCount;
+
             stats.Add(new UpgradeStatData(
                 "Health",
-                0,
                 maxHP,
+                newHealth,
                 InteractionPopup.instance.healthIcon,
                 new Color(0.13f, 0.55f, 0.13f),
-                $" ({maxHP / segmentCount} per wall)"
+                $" (+{nextLevel.healthpoints} per wall)"
             ));
         }
-    }
-    else if (isDestroyed)
-    {
-        title = currentLevel == null
-            ? "Repair: " + towername
-            : "Repair: " + currentLevel.upgradeName;
-
-        if (segmentCount > 0)
+        else
         {
-            stats.Add(new UpgradeStatData(
-                "Health",
-                0,
-                maxHP,
-                InteractionPopup.instance.healthIcon,
-                new Color(0.13f, 0.55f, 0.13f),
-                $" ({maxHP / segmentCount} per wall)"
-            ));
+            return;
         }
+
+        InteractionPopup.instance.Show(
+            GetInteractionPosition(),
+            interactiontext,
+            title,
+            goldCost,
+            desc,
+            true
+        );
+
+        InteractionPopup.instance.ShowUpgradeStats(stats);
     }
-    else if (isBuilt && !isDestroyed && nextLevel != null)
-    {
-        title = currentLevel == null
-            ? "Upgrade: " + towername + " to " + nextLevel.upgradeName
-            : "Upgrade: " + currentLevel.upgradeName + " to " + nextLevel.upgradeName;
-
-        int newHealth =
-            maxHP + nextLevel.healthpoints * segmentCount;
-
-        stats.Add(new UpgradeStatData(
-            "Health",
-            maxHP,
-            newHealth,
-            InteractionPopup.instance.healthIcon,
-            new Color(0.13f, 0.55f, 0.13f),
-            $" (+{nextLevel.healthpoints} per wall)"
-        ));
-    }
-    else
-    {
-        return;
-    }
-
-    InteractionPopup.instance.Show(
-        GetInteractionPosition(),
-        interactiontext,
-        title,
-        goldCost,
-        desc
-    );
-
-    InteractionPopup.instance.ShowUpgradeStats(stats);
-}
 
     private void HideInteractionPopup()
     {

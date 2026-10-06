@@ -39,11 +39,13 @@ namespace TowerDefense.GridMovement
         [Header("Tilemaps")] [SerializeField] private Tilemap groundTilemap;
         [SerializeField] private Tilemap obstacleTilemap;
 
+        [SerializeField] private Tilemap towerTilemap;
+        [SerializeField] private TowerConstructionSite towerConstructionSitePrefab;
+        
         [Tooltip(
             "Tilemap, auf der im Editor die Positionen der geplanten Walls eingezeichnet werden."
         )]
-        [SerializeField]
-        private Tilemap wallTilemap;
+        [SerializeField] private Tilemap wallTilemap;
 
         [Header("Wall")] [SerializeField] private WallSegment wallSegmentPrefab;
         [SerializeField] private WallGate wallGatePrefab; 
@@ -64,6 +66,8 @@ namespace TowerDefense.GridMovement
         private void Start()
         {
             CreateWallGroupFromTilemap();
+            CreateTowerSitesFromTilemap();
+
         }
 
         // =========================================================
@@ -243,7 +247,76 @@ namespace TowerDefense.GridMovement
                 NotifyGridChanged();
             }
         }
+        // =========================================================
+        // TowerConstructionSite
+        // =========================================================
+        private void CreateTowerSitesFromTilemap()
+        {
+            if (towerTilemap == null)
+            {
+                Debug.LogError(
+                    "GridManager: Keine TowerTilemap zugewiesen!",
+                    this
+                );
 
+                return;
+            }
+
+            if (towerConstructionSitePrefab == null)
+            {
+                Debug.LogError(
+                    "GridManager: Kein TowerConstructionSite-Prefab zugewiesen!",
+                    this
+                );
+
+                return;
+            }
+
+            BoundsInt bounds =
+                towerTilemap.cellBounds;
+
+            int count = 0;
+
+            foreach (Vector3Int cell in bounds.allPositionsWithin)
+            {
+                if (!towerTilemap.HasTile(cell))
+                    continue;
+
+                if (!nodes.ContainsKey(cell))
+                {
+                    Debug.LogWarning(
+                        $"TowerTilemap-Zelle {cell} liegt nicht auf dem GroundGrid.",
+                        this
+                    );
+
+                    continue;
+                }
+
+                Vector3 worldPosition = groundTilemap.GetCellCenterWorld(cell);
+
+                TowerConstructionSite site =
+                    Instantiate(
+                        towerConstructionSitePrefab,
+                        worldPosition,
+                        Quaternion.identity
+                    );
+
+                site.Initialize(
+                    cell,
+                    worldPosition
+                );
+
+                count++;
+            }
+
+            towerTilemap.gameObject.SetActive(false);
+
+            Debug.Log(
+                $"GridManager: {count} TowerSites erstellt."
+            );
+        }
+        
+        
         // =========================================================
         // WALL GROUP
         // =========================================================

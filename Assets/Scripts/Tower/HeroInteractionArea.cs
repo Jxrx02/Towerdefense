@@ -15,6 +15,7 @@ public class HeroInteractionArea : MonoBehaviour
              return;
  
          hero.EnterTowerRange(tower);
+         
      }
  
      private void OnTriggerExit2D(Collider2D other)

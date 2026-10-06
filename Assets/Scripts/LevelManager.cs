@@ -19,7 +19,7 @@ namespace TowerDefense
         public int start_coins = 35;
         public int cur_health;
         public int start_health = 20;
-
+        public int wavesPerNight = 3;
         [Header("Frühstart-Bonus")]
         [Tooltip("Maximaler Bonus")]
         public int maxEarlyBonus = 120;
@@ -137,7 +137,7 @@ namespace TowerDefense
 
             _waveIndex++;
 
-            isDay = (_waveIndex % 3 == 0);
+            isDay = (_waveIndex % wavesPerNight == 0);
             
             if (isDay)
             {
@@ -292,6 +292,8 @@ namespace TowerDefense
         /// </summary>
         private void TriggerNextWave(int earlyBonus)
         {
+            SetNight();
+
             isDay = false;
             Debug.Log($"Nächste Welle gestartet. Frühstart-Bonus: {earlyBonus} Gold.");
             var waveManagerComponent = waveManager.GetComponent<WaveManager>();

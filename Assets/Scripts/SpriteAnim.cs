@@ -423,8 +423,7 @@ public class SpriteAnim : MonoBehaviour
 
                     PlayLegacyAnimation(
                         attack_sprites,
-                        OnAttackAnimationComplete,
-                        true
+                        OnAttackAnimationComplete
                     );
 
                     break;

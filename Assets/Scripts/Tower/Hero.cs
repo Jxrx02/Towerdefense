@@ -72,7 +72,7 @@ namespace TowerDefense
             
             currentTower = tower;
 
-            if (currentTower != null)
+            if (currentTower != null && LevelManager.instance.isDay)
             {
                 currentTower.SetHighlighted(false);
                 currentTower.SetInteraction(false);
@@ -80,7 +80,7 @@ namespace TowerDefense
             }
 
 
-            if (currentTower is not WallSegment)
+            if (currentTower is not WallSegment && LevelManager.instance.isDay)
             {
                 currentTower.SetHighlighted(true);
                 currentTower.SetInteraction(true); 
@@ -95,12 +95,9 @@ namespace TowerDefense
                 {
                     wallGroup.SetUnbuiltVisual();
                 }
-
                 
-                if (LevelManager.instance.isDay)
-                {
-                    wallGroup.EnterInteractionRange(this);
-                }
+                wallGroup.EnterInteractionRange(this);
+                
                 
             }
 

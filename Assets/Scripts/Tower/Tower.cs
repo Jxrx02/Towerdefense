@@ -9,6 +9,21 @@ using UnityEngine.UI;
 
 namespace TowerDefense
 {
+    [System.Flags]
+    public enum TowerDisplayedStats
+    {
+        None = 0,
+        Damage = 1 << 0,
+        Range = 1 << 1,
+        AttackSpeed = 1 << 2,
+        Health = 1 << 3,
+        Gold = 1 << 4,
+        Regen = 1 << 5,
+        DamageMultiplier = 1 << 6,
+        RangeMultiplier = 1 << 7,
+        AttackSpeedMultiplier = 1 << 8,
+        SlowMultiplier = 1 << 9
+    }
     public enum TargetType
     {
         First,
@@ -23,8 +38,10 @@ namespace TowerDefense
         [SerializeField] public string towerName;
         [SerializeField] public string towerDesc;
         [SerializeField] public int towerInitPrice;
-
-
+        [SerializeField] private TowerDisplayedStats displayedStats;
+        public TowerDisplayedStats DisplayedStats => displayedStats;
+        
+        
         [Header("Health")]
         [SerializeField] public int statHealthPoints;
         public int currentHealth;
@@ -89,6 +106,7 @@ namespace TowerDefense
 
         protected (GameObject, int) target;
         private List<GameObject> _enemiesInRange = new List<GameObject>();
+        [HideInInspector] public TowerConstructionSite towerConstructionSite;
 
         // ───────────────── INIT ─────────────────
         protected virtual void Awake()
@@ -147,7 +165,7 @@ namespace TowerDefense
             currentHealth -= damage;
 
             if (currentHealth <= 0)
-                DestroyTower();
+                BreakTower();
         }
 
         // ───────────────── ATTACK CORE ─────────────────
@@ -543,15 +561,27 @@ namespace TowerDefense
 
 
         // ───────────────── SELL ─────────────────
+        protected virtual void BreakTower()
+        {
 
+            Actions.onEnemyDeath -= this.IncreaseExp;
+            TowerHeroManager.instance.UnRegisterTower(this.gameObject);
+            TowerHeroManager.instance.DeselectTower();
+            
+            towerConstructionSite.IsDestroyed = true;
+            towerConstructionSite.gameObject.SetActive(true);
+
+        }
         protected virtual void DestroyTower()
         {
 
             Actions.onEnemyDeath -= this.IncreaseExp;
             TowerHeroManager.instance.UnRegisterTower(this.gameObject);
             TowerHeroManager.instance.DeselectTower();
-
+            towerConstructionSite.gameObject.SetActive(true);
+            towerConstructionSite.IsBuilt = false;
             Destroy(this.gameObject);
+            
         }
         public void SellTower()
         {

@@ -248,18 +248,13 @@ namespace TowerDefense
 
                 yield return new WaitForSeconds(enemyConfig.attackCooldown);
             }
-
-            if (attackTarget == null)
-            {
-                _spriteAnim.animState = AnimationState.Walk_Animation;
-            }
             
             isAttacking = false;
 
         }
 
         protected virtual void Shoot()
-        {
+        { 
             if (attackTarget == null)
                 return;
             
@@ -281,7 +276,7 @@ namespace TowerDefense
                     .Init((attackTarget, 0), enemyConfig.attackDamage);
             }
 
-            if (wallSegment.currentHealth <= 0)
+            if (wallSegment.WallGroup.HP <= 0)
             {
                 attackTarget = null;
                 currentPath = null;
