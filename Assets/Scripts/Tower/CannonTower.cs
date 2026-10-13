@@ -5,7 +5,7 @@ namespace TowerDefense
 {
     public class CannonTower : Tower
     {
-
+        [SerializeField] private bool flipTowerWhenAttack; 
         public override void Attack((GameObject, int) _target)
         {
             if (isAttacking) return;
@@ -24,11 +24,12 @@ namespace TowerDefense
         {
             Quaternion originalCanvasRotation = GetComponentInChildren<Canvas>().transform.rotation;
 
-            if (targetPos.x > transform.position.x)
-                transform.rotation = new Quaternion(0, 180, 0, 1);
-            else
-                transform.rotation = new Quaternion(0, 0, 0, 1);
-            
+            bool targetIsRight = targetPos.x > transform.position.x;
+            bool faceFlipped = targetIsRight == flipTowerWhenAttack;
+
+            transform.rotation = faceFlipped
+                ? Quaternion.Euler(0, 180, 0)
+                : Quaternion.identity;
             GetComponentInChildren<Canvas>().transform.rotation = originalCanvasRotation;
 
         }

@@ -291,7 +291,7 @@ MonoBehaviour:
   speed: 5
   mode: 1
   aoeRadius: 1.5
-  aoeVfxPrefab: {fileID: 0}
+  aoeVfxPrefab: {fileID: 4736630556181736464, guid: e45bb3901cec7d3409067438f9d3f4f1, type: 3}
   dotDuration: 3
   dotInterval: 0.5
   dotDamagePerTick: 5

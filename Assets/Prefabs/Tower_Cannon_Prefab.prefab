@@ -538,7 +538,7 @@ MonoBehaviour:
   towerName: Feuerturm
   towerDesc: Throws fire around
   towerInitPrice: 20
-  displayedStats: -1
+  displayedStats: 71
   statHealthPoints: 0
   currentHealth: 0
   range: 4
@@ -555,7 +555,7 @@ MonoBehaviour:
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0
-  statDmgMultiplier: 0
+  statDmgMultiplier: 1
   statAttackSpeedMultiplier: 0
   statSlowMultiplier: 0
   spawnProjectileOffsetPoint: {fileID: 8153726728699983278}
@@ -1344,6 +1344,7 @@ MonoBehaviour:
   isAttacking: 0
   projectilePrefab: {fileID: 3476404959106327209, guid: 73acc887856189a4f86d818886a51f26, type: 3}
   towerConstructionSite: {fileID: 0}
+  flipTowerWhenAttack: 1
 --- !u!114 &2179009691131905602
 MonoBehaviour:
   m_ObjectHideFlags: 0
