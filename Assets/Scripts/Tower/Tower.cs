@@ -147,7 +147,6 @@ namespace TowerDefense
                     statDiffDisplay.ShowDiff("Level", level - 1, level, Color.cornsilk);
                 }
             }
-            TowerUI.Instance.UpdateUI();
         }
 
         private void LevelUp()
@@ -334,14 +333,14 @@ namespace TowerDefense
         {
             targetPreference = (TargetType)(((int)targetPreference + 1) %
                                             System.Enum.GetValues(typeof(TargetType)).Length);
-            TowerUI.Instance.txtTargetPreference.text = targetPreference.ToString();
+
         }
 
         public void PreviousTargetType()
         {
             int count = System.Enum.GetValues(typeof(TargetType)).Length;
             targetPreference = (TargetType)(((int)targetPreference - 1 + count) % count);
-            TowerUI.Instance.txtTargetPreference.text = targetPreference.ToString();
+
         }
         // ───────────────── UI / SELECTION ─────────────────
          
@@ -530,7 +529,6 @@ namespace TowerDefense
                 Debug.Log($"Pfad {path} ist bereits maximal verbessert!");
             }
 
-            TowerUI.Instance.UpdateUI();
             DrawRangeIndicatior();
         }
         private void ShowProjectileDiff(GameObject oldPrefab, GameObject newPrefab)
@@ -557,13 +555,152 @@ namespace TowerDefense
                 }
                 statDiffDisplay.ShowDiff(stat.label, oldValue, stat.value, stat.color);
             }
+                }
+        // ───────────────── UPGRADE INTERACTION (Hold E) ─────────────────
+        private Coroutine upgradeInteractionCoroutine;
+        private const float UpgradeHoldDuration = 4f;
+        /// <summary>Index des Pfads, der bereits gekauft wurde, sonst -1.</summary>
+        public int GetActivePathIndex()
+        {
+            for (int i = 0; i < upgradePaths.Length && i < pathLevels.Length; i++)
+            {
+                if (pathLevels[i] > 0)
+                    return i;
+            }
+            return -1;
         }
 
+        /// <summary>Gesperrt, wenn bereits ein anderer Pfad gewählt wurde.</summary>
+        public bool IsPathLocked(int pathIndex)
+        {
+            int active = GetActivePathIndex();
+            return active >= 0 && active != pathIndex;
+        }
+        public virtual void EnterInteractionRange(Hero hero)
+        {
+            if (this is WallSegment || this is Hero)
+                return;
+
+            if (LevelManager.instance == null || !LevelManager.instance.isDay)
+                return;
+
+            if (InteractionPopup.instance == null)
+                return;
+
+            if (!InteractionPopup.instance.ShowTowerUpgrade(this, transform.position))
+                return;
+
+            if (upgradeInteractionCoroutine != null)
+                StopCoroutine(upgradeInteractionCoroutine);
+
+            upgradeInteractionCoroutine = StartCoroutine(HoldUpgradeInteraction());
+        }
+
+        public virtual void ExitInteractionRange(Hero hero)
+        {
+            StopUpgradeInteraction();
+        }
+
+        protected void StopUpgradeInteraction()
+        {
+            if (upgradeInteractionCoroutine != null)
+            {
+                StopCoroutine(upgradeInteractionCoroutine);
+                upgradeInteractionCoroutine = null;
+            }
+
+            if (InteractionPopup.instance != null)
+                InteractionPopup.instance.HideFor(this);
+        }
+
+        private IEnumerator HoldUpgradeInteraction()
+        {
+            InteractionPopup popup = InteractionPopup.instance;
+
+            while (true)
+            {
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+                float timer = 0f;
+                bool completed = false;
+
+                while (Input.GetKey(KeyCode.E))
+                {
+                    timer += Time.deltaTime;
+                    popup.SetProgress(Mathf.Clamp01(timer / UpgradeHoldDuration));
+
+                    if (timer >= UpgradeHoldDuration)
+                    {
+                        completed = true;
+                        break;
+                    }
+
+                    yield return null;
+                }
+
+                if (!completed)
+                {
+                    popup.ResetProgress();
+                    continue;
+                }
+
+                if (TryUpgradePath(popup.SelectedIndex))
+                {
+                    // Popup mit neuen Werten aktualisieren; false = alles maximal
+                    if (!popup.ShowTowerUpgrade(this, transform.position))
+                    {
+                        upgradeInteractionCoroutine = null;
+                        yield break;
+                    }
+                }
+                else
+                {
+                    popup.ResetProgress();
+                }
+
+                yield return new WaitUntil(() => !Input.GetKey(KeyCode.E));
+            }
+        }
+
+        public bool TryUpgradePath(int pathIndex)
+        {
+            if (pathIndex < 0 || pathIndex >= upgradePaths.Length) return false;
+            if (IsPathLocked(pathIndex)) return false;
+            if (upgradePaths[pathIndex] == null) return false;
+
+            int level = pathLevels[pathIndex];
+            if (level >= upgradePaths[pathIndex].levels.Length) return false;
+            if (!IsUpgradeUnlocked(pathIndex)) return false;
+
+            int cost = upgradePaths[pathIndex].levels[level].upgradeCost;
+            if (!LevelManager.instance.DoPurchase(cost)) return false;
+
+            UpgradePath(pathIndex);
+            return true;
+        }
+
+        public bool IsUpgradeUnlocked(int pathIndex)
+        {
+            var path = upgradePaths[pathIndex];
+            int level = pathLevels[pathIndex];
+
+            if (path == null || level >= path.levels.Length)
+                return false;
+
+            string pathName = path.towerName;
+            string upgradeName = path.levels[level].upgradeName;
+
+            var researchManager = TowerDefense.Research.ResearchManager.Instance;
+
+            return researchManager == null || researchManager.unlockedResearch.Any(t =>
+                t.researchedPaths.Any(p => p.pathName.Contains(pathName)) &&
+                t.researchedPaths.Any(p => p.unlockedUpgrades.Contains(upgradeName)));
+        }
 
         // ───────────────── SELL ─────────────────
         protected virtual void BreakTower()
         {
-
+            StopUpgradeInteraction();
             Actions.onEnemyDeath -= this.IncreaseExp;
             TowerHeroManager.instance.UnRegisterTower(this.gameObject);
             TowerHeroManager.instance.DeselectTower();
@@ -574,7 +711,7 @@ namespace TowerDefense
         }
         protected virtual void DestroyTower()
         {
-
+            StopUpgradeInteraction();
             Actions.onEnemyDeath -= this.IncreaseExp;
             TowerHeroManager.instance.UnRegisterTower(this.gameObject);
             TowerHeroManager.instance.DeselectTower();

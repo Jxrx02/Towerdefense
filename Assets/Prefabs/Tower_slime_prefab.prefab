@@ -538,7 +538,7 @@ MonoBehaviour:
   towerName: Schleimturm
   towerDesc: Throws fire around
   towerInitPrice: 20
-  displayedStats: -1
+  displayedStats: 15
   statHealthPoints: 5
   currentHealth: 0
   range: 3

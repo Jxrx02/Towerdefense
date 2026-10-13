@@ -23,21 +23,39 @@ namespace TowerDefense
             if (tower == null)
                 return;
 
+            Sprite icon = null;
+            SpriteRenderer sr = tower.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                icon = sr.sprite;
+
+            InitializeCustom(index, tower.towerName, icon);
+        }
+
+        /// <summary>Für Upgrade-Pfade (Name + Icon frei wählbar).</summary>
+        public void InitializeCustom(int index, string displayName, Sprite icon)
+        {
+            this.index = index;
+
             if (towerName != null)
-                towerName.text = tower.towerName;
+                towerName.text = displayName;
 
             if (towerIcon != null)
             {
-                SpriteRenderer sr =
-                    tower.GetComponent<SpriteRenderer>();
-
-                if (sr != null)
-                    towerIcon.sprite = sr.sprite;
+                towerIcon.sprite = icon;
+                towerIcon.enabled = icon != null;
             }
 
             SetSelected(false);
         }
+        public void SetLocked(bool locked)
+        {
+            CanvasGroup group = GetComponent<CanvasGroup>();
 
+            if (group == null)
+                group = gameObject.AddComponent<CanvasGroup>();
+
+            group.alpha = locked ? 0.35f : 1f;
+        }
         public void SetSelected(bool selected)
         {
             if (selectedFrame != null)
@@ -46,14 +64,14 @@ namespace TowerDefense
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (InteractionUISelectTower.instance != null)
-                InteractionUISelectTower.instance.SelectFromMouse(index);
+            if (InteractionPopup.instance != null)
+                InteractionPopup.instance.SelectFromMouse(index);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (InteractionUISelectTower.instance != null)
-                InteractionUISelectTower.instance.SelectFromMouse(index);
+            if (InteractionPopup.instance != null)
+                InteractionPopup.instance.SelectFromMouse(index);
         }
     }
 }

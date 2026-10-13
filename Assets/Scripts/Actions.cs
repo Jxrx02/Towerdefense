@@ -19,6 +19,8 @@ public static class Actions
 
     public static Action <WallGroup> onWallBuilt;
     public static Action <WallGroup> onWallDestroyed;
+    public static Action <WallGroup> onWallSold;
+
     public static Action <WallGroup> onWallRepair;
 
     public static Action onPlayerDeath;

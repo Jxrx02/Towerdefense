@@ -529,6 +529,10 @@ public class WallGroup : MonoBehaviour
         // 4. Bereits gebaut, nicht zerstört, aber maximales Level
         else
         {
+            interactionText = "";
+            cost = 0;
+            description = "This wall is fully upgraded.";
+            action = null;
             HideInteractionPopup();
             return;
         }
@@ -541,8 +545,10 @@ public class WallGroup : MonoBehaviour
 
         if (interactionCoroutine != null)
             StopCoroutine(interactionCoroutine);
-        
-        interactionCoroutine = StartCoroutine(HoldInteraction(action));
+
+        interactionCoroutine = action != null
+            ? StartCoroutine(HoldInteraction(action))
+            : null;
     }
     public void ExitInteractionRange(Hero hero)
     {
@@ -594,8 +600,7 @@ public class WallGroup : MonoBehaviour
             return;
         
         action?.Invoke();
-
-        HideInteractionPopup();
+        EnterInteractionRange(null);
     }
     private Vector3 GetInteractionPosition()
     {
@@ -678,7 +683,7 @@ public class WallGroup : MonoBehaviour
         }
         else
         {
-            return;
+            title = (currentLevel != null ? currentLevel.upgradeName : towername) + " (Max)";
         }
 
         InteractionPopup.instance.Show(
@@ -691,6 +696,9 @@ public class WallGroup : MonoBehaviour
         );
 
         InteractionPopup.instance.ShowUpgradeStats(stats);
+        if (isBuilt && !isDestroyed)
+            InteractionPopup.instance.SetWallSell(GetSellPrice(), SellWall);
+        
     }
 
     private void HideInteractionPopup()
@@ -698,7 +706,74 @@ public class WallGroup : MonoBehaviour
         InteractionPopup.instance.Hide();
     }
 
+    public int GetSellPrice()
+    {
+        int total = GetBuildCost();
 
+        for (int l = 1; l <= wallLevel; l++)
+        {
+            TowerUpgradeLevel lvl = GetUpgradeLevel(l);
+
+            if (lvl != null)
+                total += lvl.upgradeCost * segments.Count;
+        }
+
+        return total;
+    }
+
+    public void SellWall()
+    {
+        if (!isBuilt || isDestroyed)
+            return;
+
+        LevelManager.instance.cur_coins += GetSellPrice();
+
+        // Alle HP-Boni (Level 0 bis aktuell) zurücknehmen
+        int hpPerSegment = 0;
+
+        for (int l = 0; l <= wallLevel; l++)
+        {
+            TowerUpgradeLevel lvl = GetUpgradeLevel(l);
+
+            if (lvl != null)
+                hpPerSegment += lvl.healthpoints;
+        }
+
+        foreach (WallSegment segment in segments.Values)
+        {
+            if (segment == null)
+                continue;
+
+            segment.statHealthPoints -= hpPerSegment;
+            segment.currentHealth = segment.statHealthPoints;
+
+            if (TowerHeroManager.instance != null)
+                TowerHeroManager.instance.UnRegisterTower(segment.gameObject);
+        }
+
+        maxHP -= hpPerSegment * segments.Count;
+        hp = maxHP;
+
+        GridManager.Instance.RemoveWallGroup(wallCells);
+
+        isBuilt = false;
+        isDestroyed = false;
+        wallLevel = 0;
+
+        SetUnbuiltVisual();
+        RefreshVisuals();
+
+        Actions.onWallSold?.Invoke(this);
+
+        if (interactionCoroutine != null)
+        {
+            StopCoroutine(interactionCoroutine);
+            interactionCoroutine = null;
+        }
+
+        // Held steht noch in Reichweite: sofort wieder "to build" anzeigen
+        EnterInteractionRange(null);
+    }
     // =========================================================
     // REMOVE SEGMENT
     // =========================================================

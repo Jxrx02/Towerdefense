@@ -49,7 +49,6 @@ namespace TowerDefense
         [Tooltip("Button zum manuellen Starten der nächsten Welle")]
         public Button btn_startWave;
 
-        public GameObject towerUIPrefab;
         public GameObject waveManager;
         public GameObject clickToStartGameObject;
         [SerializeField] private DialogCanvas dialogCanvasPrefab;
@@ -99,7 +98,6 @@ namespace TowerDefense
             cur_coins  = start_coins;
             UpdateStats();
 
-            if (TowerUI.Instance == null)       Instantiate(towerUIPrefab);
             if (DialogCanvas.instance == null)  Instantiate(dialogCanvasPrefab);
             if (instance == null)               instance = this;
             else                                Destroy(gameObject);

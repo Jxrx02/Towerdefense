@@ -2,55 +2,56 @@
 
 namespace TowerDefense
 {
-    
-    
-
     public class TowerInteractionArea : MonoBehaviour
     {
-        private TowerConstructionSite towerConstructionSite;
-
-
-     
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other == null)
                 return;
-            var othertower = other.GetComponent<Tower>();
 
-           
-            if (othertower == null)
+            Tower otherTower = other.GetComponent<Tower>();
+
+            if (otherTower == null)
                 return;
-            
-            towerConstructionSite = GetComponentInParent<TowerConstructionSite>();
 
-            if (othertower.GetComponent<Hero>() && towerConstructionSite !=null)
+            Tower ownTower = GetComponentInParent<Tower>();
+
+            if (otherTower is Hero hero)
             {
-                
-                Debug.Log(othertower.towerName + " ist in Range");
-                towerConstructionSite.EnterInteractionRange(othertower.GetComponent<Hero>());
-            }        
- 
-            othertower.EnterTowerRange(this.gameObject.GetComponent<Tower>());
+                TowerConstructionSite site = GetComponentInParent<TowerConstructionSite>();
 
+                if (site != null)
+                    site.EnterInteractionRange(hero);
+                else if (ownTower != null && ownTower != otherTower)
+                    ownTower.EnterInteractionRange(hero);
+            }
 
-
+            otherTower.EnterTowerRange(ownTower);
         }
- 
+
         private void OnTriggerExit2D(Collider2D other)
         {
-            var othertower = other.GetComponent<Tower>();
- 
-            if (othertower == null)
+            if (other == null)
                 return;
- 
-            if (othertower.GetComponent<Hero>()&& towerConstructionSite !=null)
-            {
-                towerConstructionSite.ExitInteractionRange(other.GetComponent<Hero>());
-            }
-            
 
-            othertower.ExitTowerRange(this.gameObject.GetComponent<Tower>());
+            Tower otherTower = other.GetComponent<Tower>();
+
+            if (otherTower == null)
+                return;
+
+            Tower ownTower = GetComponentInParent<Tower>();
+
+            if (otherTower is Hero hero)
+            {
+                TowerConstructionSite site = GetComponentInParent<TowerConstructionSite>();
+
+                if (site != null)
+                    site.ExitInteractionRange(hero);
+                else if (ownTower != null && ownTower != otherTower)
+                    ownTower.ExitInteractionRange(hero);
+            }
+
+            otherTower.ExitTowerRange(ownTower);
         }
     }
-
 }

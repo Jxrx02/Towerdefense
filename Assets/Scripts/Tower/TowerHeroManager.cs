@@ -137,10 +137,7 @@ namespace TowerDefense
             instance.selectedTower.SetIsSelected(true);
             instance.selectedTower.SetInteraction(true);
             instance.selectedTower.SetHighlighted(true);
-
-            // UI anzeigen und aktualisieren
-            TowerUI.Instance.FocusTowerUI(tower);
-            TowerUI.Instance.gameObject.SetActive(true);
+            
         }
 
         public void DeselectTower()
@@ -152,9 +149,7 @@ namespace TowerDefense
                 instance.selectedTower.SetHighlighted(false);
                 instance.selectedTower = null;
             }
-
-            // UI ausblenden
-            TowerUI.Instance.gameObject.SetActive(false);
+            
         }
 
 
