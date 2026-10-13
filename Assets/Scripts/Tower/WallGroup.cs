@@ -229,13 +229,7 @@ public class WallGroup : MonoBehaviour
             }
         }
 
-        // Level 0 auf alle Segmente anwenden
-        TowerUpgradeLevel initialLevel = GetCurrentUpgrade();
 
-        if (initialLevel != null)
-        {
-            ApplyUpgrade(initialLevel);
-        }
 
         hp = maxHP;
 
@@ -546,18 +540,13 @@ public class WallGroup : MonoBehaviour
         if (interactionCoroutine != null)
             StopCoroutine(interactionCoroutine);
 
-        interactionCoroutine = action != null
-            ? StartCoroutine(HoldInteraction(action))
-            : null;
+        StartHold(action);
+
     }
     public void ExitInteractionRange(Hero hero)
     {
 
-        if (interactionCoroutine != null)
-        {
-            StopCoroutine(interactionCoroutine);
-            interactionCoroutine = null;
-        }
+        StopHold();
         SetGateOpen(false);
 
         HideInteractionPopup();
@@ -582,8 +571,8 @@ public class WallGroup : MonoBehaviour
 
                 if (holdTimer >= interactionHoldDuration)
                 {
-                    CompleteInteraction(action);
-                    interactionCoroutine = null;
+                    interactionCoroutine = null;       // zuerst leeren
+                    CompleteInteraction(action);       // startet ggf. neue Coroutine
                     yield break;
                 }
 
@@ -593,7 +582,22 @@ public class WallGroup : MonoBehaviour
             InteractionPopup.instance.ResetProgress();
         }
     }
+    private void StartHold(Action action)
+    {
+        StopHold();
 
+        if (action != null)
+            interactionCoroutine = StartCoroutine(HoldInteraction(action));
+    }
+
+    private void StopHold()
+    {
+        if (interactionCoroutine != null)
+        {
+            StopCoroutine(interactionCoroutine);
+            interactionCoroutine = null;
+        }
+    }
     private void CompleteInteraction(Action action)
     {
         if (!LevelManager.instance.isDay)

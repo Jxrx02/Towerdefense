@@ -209,6 +209,8 @@ namespace TowerDefense
             Position(worldPosition);
             interactionText.text = interactiontext;
             gameObject.SetActive(true);
+
+            RebuildLayout();
         }
 
         public void ShowUpgradeStats(List<UpgradeStatData> stats)
@@ -247,8 +249,19 @@ namespace TowerDefense
 
         private void RebuildLayout()
         {
-            if (rectTransform != null)
-                LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+            if (rectTransform == null || !gameObject.activeInHierarchy)
+                return;
+
+            Canvas.ForceUpdateCanvases();
+
+            // Von innen nach außen, damit jeder ContentSizeFitter die fertige Kindgröße kennt
+            if (upgradeStatsContainer != null)
+                LayoutRebuilder.ForceRebuildLayoutImmediate(upgradeStatsContainer as RectTransform);
+
+            if (upgradeInfoPanel != null)
+                LayoutRebuilder.ForceRebuildLayoutImmediate(upgradeInfoPanel.transform as RectTransform);
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
         }
         // --------------------------------------------------
         // TOWER PURCHASE
