@@ -24,7 +24,9 @@ namespace TowerDefense
 
         private GameObject attackTarget;
         private bool reachedFinalTarget;
-
+        private GridNode reservedSlot;
+        private Vector3 spreadOffset;
+        [SerializeField] private float spreadRadius = 0.3f;
         // ── Visual / Animation ──────────────────────────────
         private SpriteAnim _spriteAnim;
         private YSort ySort;
@@ -53,6 +55,8 @@ namespace TowerDefense
             _spriteAnim = GetComponent<SpriteAnim>();
             ySort = GetComponent<YSort>();
 
+            
+            spreadOffset = UnityEngine.Random.insideUnitCircle * spreadRadius;
             ApplyConfig();
             CalculatePath();
             ySort.UpdateSorting();
@@ -101,32 +105,46 @@ namespace TowerDefense
             if (nextPathTarget == null) return;
 
             nextPathTarget = lvlPathEnd;
-            
-
 
             PathResult result = PathfindingManager.Instance.FindPath(
                 transform.position,
-                nextPathTarget.position
+                nextPathTarget.position,
+                reservedSlot
             );
-            //Debug.Log("Result: " + "\n" + result.attackTarget + "\n" + result.targetNode.worldPosition );
 
             pathIndex = 0;
             currentPath = result?.path;
-
             attackTarget = result?.attackTarget;
-            
+
+            // Angriffsplatz neu reservieren, falls er sich geändert hat
+            GridNode newSlot = attackTarget != null ? result.targetNode : null;
+
+            if (newSlot != reservedSlot)
+            {
+                PathfindingManager.Instance.ReleaseSlot(reservedSlot);
+                PathfindingManager.Instance.ReserveSlot(newSlot);
+                reservedSlot = newSlot;
+            }
+
             reachedFinalTarget = Vector2.Distance(
                 transform.position,
                 lvlPathEnd.position
             ) < 0.6f;
-                
+
             if (attackTarget == null && currentPath == null)
             {
                 // kompletter Fail → nichts erreichbar
                 Debug.Log("Enemy stuck: no path and no attack target");
             }
         }
+        private void ReleaseAttackSlot()
+        {
+            if (reservedSlot == null || PathfindingManager.Instance == null)
+                return;
 
+            PathfindingManager.Instance.ReleaseSlot(reservedSlot);
+            reservedSlot = null;
+        }
         // ───────────────── UPDATE ───────────────────────────
 
         private void Update()
@@ -297,7 +315,9 @@ namespace TowerDefense
 
             float speed = enemyConfig.movementSpeed * slowMultiplier;
             Vector3 targetPos = currentPath[pathIndex];
-
+            if (attackTarget != null && pathIndex == currentPath.Count - 1)
+                targetPos += spreadOffset;
+            
             transform.position = Vector2.MoveTowards(
                 transform.position,
                 targetPos,
@@ -354,7 +374,8 @@ namespace TowerDefense
             if (isDead) return;
 
             isDead = true;
-
+            ReleaseAttackSlot();
+            
             if (enemyConfig.deathEffect != null)
                 Instantiate(enemyConfig.deathEffect, transform.position, Quaternion.identity);
 

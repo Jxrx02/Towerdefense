@@ -12,134 +12,124 @@ namespace TowerDefense.GridMovement
         {
             Instance = this;
         }
+        [Header("Crowding")]
+        [Tooltip("Aufschlag pro Gegner, der ein Angriffsfeld schon belegt. 10 = eine Zelle Umweg.")]
+        [SerializeField] private int crowdPenalty = 30;
 
+        private readonly Dictionary<GridNode, int> slotOccupancy = new();
 
-        public PathResult FindPath(Vector3 startWorld, Vector3 targetWorld)
+        public void ReserveSlot(GridNode node)
+        {
+            if (node == null) return;
+            slotOccupancy.TryGetValue(node, out int n);
+            slotOccupancy[node] = n + 1;
+        }
+
+        public void ReleaseSlot(GridNode node)
+        {
+            if (node == null) return;
+            if (!slotOccupancy.TryGetValue(node, out int n)) return;
+
+            if (n <= 1) slotOccupancy.Remove(node);
+            else slotOccupancy[node] = n - 1;
+        }
+
+        private int CrowdCost(GridNode node, GridNode ownSlot)
+        {
+            if (node == null) return 0;
+
+            slotOccupancy.TryGetValue(node, out int n);
+
+            // Den eigenen Platz nicht mitzählen, sonst wechselt der Gegner ständig
+            if (node == ownSlot) n--;
+
+            return Mathf.Max(0, n) * crowdPenalty;
+        }
+        
+        public PathResult FindPath(Vector3 startWorld, Vector3 targetWorld, GridNode ownSlot = null)
         {
             GridNode startNode = GridManager.Instance.GetNode(startWorld);
             GridNode targetNode = GridManager.Instance.GetNode(targetWorld);
 
-
-            if(startNode == null || targetNode == null)
+            if (startNode == null || targetNode == null)
                 return null;
-
-
             // normaler Weg
-            PathResult normalPath = FindPathInternal(startNode,targetNode);
+            PathResult normalPath = FindPathInternal(startNode, targetNode);
 
-
-            if(normalPath != null)
+            if (normalPath != null)
                 return normalPath;
-
-
-
+            
             // blockiert -> beste Wall suchen
-            WallPathResult wallResult = FindBestWallPath(startNode);
+            WallPathResult wallResult = FindBestWallPath(startNode, ownSlot);
 
-
-            if(wallResult == null)
-                return null;
-
-
-            return wallResult.pathResult;
+            return wallResult?.pathResult;
         }
-
 
 
         // =====================================================
         // WALL SEARCH
         // =====================================================
 
-        private WallPathResult FindBestWallPath(GridNode startNode)
+        private WallPathResult FindBestWallPath(GridNode startNode, GridNode ownSlot)
         {
             WallPathResult best = null;
 
-
-            foreach(GameObject wall in TowerHeroManager.instance.walls)
+            foreach (GameObject wall in TowerHeroManager.instance.walls)
             {
-                PathResult result = FindPathToWall(startNode,wall);
+                PathResult result = FindPathToWall(startNode, wall, ownSlot);
 
-
-                if(result == null)
+                if (result == null)
                     continue;
 
+                int cost = CalculatePathCost(result.path)
+                           + CrowdCost(result.targetNode, ownSlot);
 
-                int cost = CalculatePathCost(result.path);
-
-
-
-                if(best == null || cost < best.cost)
+                if (best == null || cost < best.cost)
                 {
-                    best = new WallPathResult
-                    {
-                        cost = cost,
-                        pathResult = result
-                    };
+                    best = new WallPathResult { cost = cost, pathResult = result };
                 }
             }
-
 
             return best;
         }
 
-
-
-        private PathResult FindPathToWall(GridNode startNode, GameObject wall)
+        private PathResult FindPathToWall(GridNode startNode, GameObject wall, GridNode ownSlot)
         {
             GridNode wallNode =
                 GridManager.Instance.GetNode(
                     wall.transform.position
                 );
 
-
             if(wallNode == null)
                 return null;
 
-
-
-            List<GridNode> attackPositions =
-                GetAttackPositions(wallNode);
-
-
-
+            
+            List<GridNode> attackPositions = GetAttackPositions(wallNode);
+            
             PathResult best = null;
 
             int bestCost = int.MaxValue;
-
-
-
-            foreach(GridNode position in attackPositions)
+            
+            foreach (GridNode position in attackPositions)
             {
-                PathResult result =
-                    FindPathInternal(
-                        startNode,
-                        position
-                    );
+                PathResult result = FindPathInternal(startNode, position);
 
-
-                if(result == null)
+                if (result == null)
                     continue;
 
+                int cost = CalculatePathCost(result.path) + CrowdCost(position, ownSlot);
 
-                int cost =
-                    CalculatePathCost(result.path);
-
-
-
-                if(cost < bestCost)
+                if (cost < bestCost)
                 {
                     bestCost = cost;
                     best = result;
                 }
             }
 
-
-
             if(best != null)
             {
                 best.attackTarget = wall;
             }
-
 
             return best;
         }
