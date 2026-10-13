@@ -539,9 +539,9 @@ MonoBehaviour:
   towerDesc: Throws fire around
   towerInitPrice: 20
   displayedStats: -1
-  statHealthPoints: 0
+  statHealthPoints: 5
   currentHealth: 0
-  range: 4
+  range: 3
   interactionrange: 0.85
   damage: 2
   timeInBetweenShots: 3
@@ -555,16 +555,16 @@ MonoBehaviour:
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0
-  statDmgMultiplier: 0
+  statDmgMultiplier: 1
   statAttackSpeedMultiplier: 0
   statSlowMultiplier: 0
   spawnProjectileOffsetPoint: {fileID: 8153726728699983278}
   upgradePaths:
-  - towerName: Gelbes Feuer
+  - towerName: Gelber Schleim
     researchCost: 1
     levels:
-    - upgradeName: Warmes Feuer
-      description: Warmes Feuer
+    - upgradeName: Gelber Schleim
+      description: Gelber Schleim
       researchCost: 1
       upgradeCost: 10
       damageIncrease: 2
@@ -579,38 +579,28 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -323178396360051315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5828535965263829301, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1523850105010501225, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -352066062104964174, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -323178396360051315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5828535965263829301, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1523850105010501225, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -352066062104964174, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 6943229415118912498, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -323178396360051315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5828535965263829301, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1523850105010501225, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -352066062104964174, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 4fb0b0b29dcb4ed429e4bf6603031f52, type: 3}
-      wallSprites:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+      wallSprites: []
       gateHorizontalClosed: {fileID: 0}
       gateHorizontalOpen: {fileID: 0}
       gateVerticalClosed: {fileID: 0}
       gateVerticalOpen: {fileID: 0}
     - upgradeName: "Aggressive Gl\xFChw\xFCrmchen"
-      description: "Aggressive Gl\xFChw\xFCrmchen"
+      description: "Aggressive Gl\xFChw\xFCrmchen..."
       researchCost: 2
       upgradeCost: 50
       damageIncrease: 2
@@ -625,14 +615,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 5137798567051597664, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 8290012125112790054, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4886365815903421719, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5448765401287397224, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 5137798567051597664, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 8290012125112790054, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4886365815903421719, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5448765401287397224, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: -197101474916017764, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: 5137798567051597664, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 8290012125112790054, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4886365815903421719, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5448765401287397224, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 4399342878463685656, guid: 870d4730b61fcc9488eb2c8d3a8b9f20, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -671,61 +667,21 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -6359513037423610491, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5463010271231459900, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3552706253947816667, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3911740954524992904, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -6359513037423610491, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5463010271231459900, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3552706253947816667, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3911740954524992904, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 7463995210281590798, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -6359513037423610491, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5463010271231459900, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3552706253947816667, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3911740954524992904, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 2976831095389296656, guid: c185f566b1fe7ad43bb66cb810d86e79, type: 3}
-      wallSprites:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      gateHorizontalClosed: {fileID: 0}
-      gateHorizontalOpen: {fileID: 0}
-      gateVerticalClosed: {fileID: 0}
-      gateVerticalOpen: {fileID: 0}
-    - upgradeName: Brennender Flammenmeteor
-      description: Brennender Flammenmeteor
-      researchCost: 4
-      upgradeCost: 150
-      damageIncrease: 2
-      rangeIncrease: 0.4
-      attackSpeedIncrease: 0.5
-      timeInBetweenShotsDecrease: 0.5
-      coinsEarnedPerSecond: 0
-      healthpoints: 0
-      healthRegenPerSecond: 0
-      rangeMultiplier: 0
-      dmgMultiplier: 0
-      attackSpeedMultiplier: 0
-      slowMultiplier: 0
-      idle_sprites:
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      attack_sprites:
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      pathShopIcon:
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 2060477959818264188, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      projectile: {fileID: 2159509553888471292, guid: 6c24c8ad6bfe25641800abb8c43b1b6f, type: 3}
       wallSprites:
       - {fileID: 0}
       - {fileID: 0}
@@ -763,14 +719,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -7760661375579992192, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -9126157378152313875, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6790278484469505511, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8500102318198507726, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -7760661375579992192, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -9126157378152313875, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6790278484469505511, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8500102318198507726, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
-      - {fileID: 4981648222633431240, guid: 2d0bf72d5b8813b4d80011757ec4a9f1, type: 3}
+      - {fileID: -7760661375579992192, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -9126157378152313875, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6790278484469505511, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8500102318198507726, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1708488697088072388, guid: c79d750d9139d8249b7d1e15f959421f, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -812,18 +774,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7669542575978952159, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3366556183091551505, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1405906479652225326, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4250041340190863796, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8870104200670459491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8870104200670459491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7669542575978952159, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3366556183091551505, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1405906479652225326, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4250041340190863796, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7669542575978952159, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3366556183091551505, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 1405906479652225326, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4250041340190863796, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 438a4a7599c8d4a4b85bfc4d9c328445, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -862,18 +826,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3245449772355695544, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6148889862802844315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6299775652016583673, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -919258951642834101, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5684525784721794843, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5684525784721794843, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3245449772355695544, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6148889862802844315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6299775652016583673, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -919258951642834101, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3245449772355695544, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6148889862802844315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6299775652016583673, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -919258951642834101, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 02551105c9cf33e47941e44b38f9e1af, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -912,73 +878,21 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 8172687665410199855, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 8172687665410199855, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3359805425772641770, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3359805425772641770, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 223626078483018033, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2745152698351328911, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5325674637050018685, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 5055565356710208046, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 8172687665410199855, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3359805425772641770, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4381965879425533198, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4381965879425533198, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 223626078483018033, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2745152698351328911, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5325674637050018685, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 5055565356710208046, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: -4962573125529450701, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -861196631499389465, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -743520308598173751, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3371781621166705072, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 223626078483018033, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2745152698351328911, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -5325674637050018685, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 5055565356710208046, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1633401857767853938, guid: 30f9e8b2d537bdc4d82d7dcf3af09cf4, type: 3}
-      wallSprites:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      gateHorizontalClosed: {fileID: 0}
-      gateHorizontalOpen: {fileID: 0}
-      gateVerticalClosed: {fileID: 0}
-      gateVerticalOpen: {fileID: 0}
-    - upgradeName: 2x Wurfklinge
-      description: 2x Wurfklinge
-      researchCost: 4
-      upgradeCost: 2
-      damageIncrease: 1
-      rangeIncrease: 2
-      attackSpeedIncrease: 2
-      timeInBetweenShotsDecrease: 0
-      coinsEarnedPerSecond: 0
-      healthpoints: 0
-      healthRegenPerSecond: 0
-      rangeMultiplier: 0
-      dmgMultiplier: 0
-      attackSpeedMultiplier: 0
-      slowMultiplier: 0
-      idle_sprites:
-      - {fileID: 7631460427293945420, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7043285915854749164, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7043285915854749164, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 7631460427293945420, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      attack_sprites:
-      - {fileID: 7631460427293945420, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7043285915854749164, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6814111094323648908, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6814111094323648908, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      pathShopIcon:
-      - {fileID: 2262387106028033824, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6430737979335254583, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -1937774882048496333, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6741509401962798408, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      projectile: {fileID: 1633401857767853938, guid: b8b5fdf76c1645b47be18dd4d9bea74c, type: 3}
       wallSprites:
       - {fileID: 0}
       - {fileID: 0}
@@ -1016,20 +930,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -1364185593318738102, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4029695628570095493, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4029695628570095493, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -1364185593318738102, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 252113284014907712, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4400598495284094829, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -44805373267216460, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2156528565672812997, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: -1364185593318738102, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4029695628570095493, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1914187793008001217, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 1914187793008001217, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 252113284014907712, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4400598495284094829, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -44805373267216460, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2156528565672812997, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: -7539894516110244210, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -8487518419623766626, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4867214797012565390, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 8604481560392185265, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 252113284014907712, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4400598495284094829, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -44805373267216460, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2156528565672812997, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 1633401857767853938, guid: c794ec6554274e64fb1a00ca34388aff, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -1071,18 +985,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -7232937077557311624, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8120245934179670928, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2744590140464181558, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6550442213082661315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6660048911344943545, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6660048911344943545, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -7232937077557311624, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8120245934179670928, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2744590140464181558, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6550442213082661315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -7232937077557311624, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -8120245934179670928, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2744590140464181558, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6550442213082661315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 7495007649928885642, guid: ea9ca7aad1c83584390b632872349d12, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -1121,18 +1037,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 106708418718093779, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2872143127335874417, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2957301983248390149, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3220183313202459290, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4013045085217533645, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4013045085217533645, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 106708418718093779, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2872143127335874417, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2957301983248390149, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3220183313202459290, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 106708418718093779, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 2872143127335874417, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -2957301983248390149, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3220183313202459290, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 4766138111058902196, guid: 59a6c65f849962f4f85e8ae512acca34, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -1171,19 +1089,20 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 3616906229736979580, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3616906229736979580, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6496863923224237520, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6496863923224237520, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -1425075300981002329, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4068624158461703924, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -3903595068316476952, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6007798011412381034, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 3616906229736979580, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6496863923224237520, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 7370187387240230276, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 7370187387240230276, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -1425075300981002329, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4068624158461703924, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -3903595068316476952, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6007798011412381034, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 1504079151469086159, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5747409957852785965, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -5361302629430293146, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -1425075300981002329, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -4068624158461703924, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -3903595068316476952, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 6007798011412381034, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 6835351531220554840, guid: eacf480a833ca2141b8deae4e1e95e4f, type: 3}
       wallSprites:
       - {fileID: 0}
@@ -1222,72 +1141,21 @@ MonoBehaviour:
       attackSpeedMultiplier: 0
       slowMultiplier: 0
       idle_sprites:
-      - {fileID: 2857193278425428648, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2857193278425428648, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6277006658830730452, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6277006658830730452, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2357976389594389661, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4111576185208465357, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6105605108153372315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3898998427463652753, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       attack_sprites:
-      - {fileID: 2857193278425428648, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 6277006658830730452, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3070817478832334422, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3070817478832334422, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2357976389594389661, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4111576185208465357, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6105605108153372315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3898998427463652753, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       pathShopIcon:
-      - {fileID: 4418311659838182297, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -6004271316563324771, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 171157118631308253, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: -7086453823303973806, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2357976389594389661, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 4111576185208465357, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: -6105605108153372315, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
+      - {fileID: 3898998427463652753, guid: 46b044966e440464aa52cf601f0b40b4, type: 3}
       projectile: {fileID: 3025600629158941907, guid: 2a7900d43070ef247ad75aaae6da2f62, type: 3}
-      wallSprites:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      gateHorizontalClosed: {fileID: 0}
-      gateHorizontalOpen: {fileID: 0}
-      gateVerticalClosed: {fileID: 0}
-      gateVerticalOpen: {fileID: 0}
-    - upgradeName: "Schlagartiger Erl\xF6s"
-      description: "Schlagartiger Erl\xF6s"
-      researchCost: 6
-      upgradeCost: 220
-      damageIncrease: 7
-      rangeIncrease: -0.2
-      attackSpeedIncrease: 0.1
-      timeInBetweenShotsDecrease: -0.1
-      coinsEarnedPerSecond: 0
-      healthpoints: 0
-      healthRegenPerSecond: 0
-      rangeMultiplier: 0
-      dmgMultiplier: 0
-      attackSpeedMultiplier: 0
-      slowMultiplier: 0
-      idle_sprites:
-      - {fileID: 4751600802636722970, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4751600802636722970, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 8440195294772646829, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 8440195294772646829, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      attack_sprites:
-      - {fileID: 4751600802636722970, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 8440195294772646829, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3070817478832334422, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 3070817478832334422, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      pathShopIcon:
-      - {fileID: 4535553749048603678, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 2455972400853133168, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      - {fileID: 4535553749048603678, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
-      projectile: {fileID: 7894704798256660347, guid: 7ca6925f754a5204fbf6d42d54cf036d, type: 3}
       wallSprites:
       - {fileID: 0}
       - {fileID: 0}

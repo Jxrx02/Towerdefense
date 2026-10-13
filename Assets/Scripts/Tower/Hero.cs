@@ -77,6 +77,7 @@ namespace TowerDefense
                 currentTower.SetHighlighted(false);
                 currentTower.SetInteraction(false);
                 currentTower.SetIsSelected(false);
+
             }
 
 
@@ -84,6 +85,7 @@ namespace TowerDefense
             {
                 currentTower.SetHighlighted(true);
                 currentTower.SetInteraction(true); 
+                
             }
 
 

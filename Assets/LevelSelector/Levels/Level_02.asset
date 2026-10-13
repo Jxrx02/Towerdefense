@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Level_02
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector.Definitions.LevelDefinition
   levelIndex: 2
-  levelName: adawdwd
-  description: ffefe
-  availableWeapons: []
-  availablePerks: []
-  availableMutators: []
+  levelName: Level 2
+  description: This is the description of lvl 2
+  availableWeapons:
+  - {fileID: 11400000, guid: ab745b2ac90026b43ac0b1573c8bd372, type: 2}
+  availablePerks:
+  - {fileID: 11400000, guid: 21e5dbab79ac06c45b948f5a3a6bdbdf, type: 2}
+  availableMutators:
+  - {fileID: 11400000, guid: 8fd0bdf32c21c084482a1c119bd64084, type: 2}
   quests: []
