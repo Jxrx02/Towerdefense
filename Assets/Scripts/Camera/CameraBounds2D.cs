@@ -5,21 +5,31 @@ public class CameraBounds2D : MonoBehaviour
     public Vector2 scaleBound = new Vector2(1, 1);
     public Vector2 offset;
 
-    [HideInInspector] public Vector2 maxXlimit;
-    [HideInInspector] public Vector2 maxYlimit;
-
-    Camera _camera;
-
-    public void Initialize(Camera temp_camera)
+    /// <summary>
+    /// Begrenzt eine Kamera-Position so, dass die komplette Kamera-Sicht innerhalb der Bounds bleibt.
+    /// Ist die Sicht größer als die Bounds, wird auf der jeweiligen Achse zentriert
+    /// (verhindert min > max und damit das Springen).
+    /// </summary>
+    public Vector3 Clamp(Vector3 pos, float orthoSize, float aspect)
     {
-        _camera = temp_camera;
-        CalculateBounds();
+        float halfW = orthoSize * aspect;
+        float halfH = orthoSize;
+
+        Vector2 center = (Vector2)transform.position + offset;
+
+        pos.x = ClampAxis(pos.x, center.x - scaleBound.x * 0.5f + halfW, center.x + scaleBound.x * 0.5f - halfW, center.x);
+        pos.y = ClampAxis(pos.y, center.y - scaleBound.y * 0.5f + halfH, center.y + scaleBound.y * 0.5f - halfH, center.y);
+        return pos;
     }
 
-    public void CalculateBounds()
+    /// <summary>Größte orthographicSize, bei der die Sicht noch komplett in die Bounds passt.</summary>
+    public float MaxOrthoSize(float aspect)
     {
-        float cameraHalfWidth = _camera.aspect * _camera.orthographicSize;
-        maxXlimit = new Vector2((transform.position.x + offset.x - (scaleBound.x / 2)) + cameraHalfWidth, (transform.position.x + offset.x + (scaleBound.x / 2)) - cameraHalfWidth);
-        maxYlimit = new Vector2((transform.position.y + offset.y - (scaleBound.y / 2)) + _camera.orthographicSize, (transform.position.y + offset.y + (scaleBound.y / 2)) - _camera.orthographicSize);
+        return Mathf.Min(scaleBound.y * 0.5f, scaleBound.x * 0.5f / aspect);
+    }
+
+    static float ClampAxis(float value, float min, float max, float center)
+    {
+        return min > max ? center : Mathf.Clamp(value, min, max);
     }
 }
