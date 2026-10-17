@@ -801,6 +801,11 @@ public class WallGroup : MonoBehaviour
     {
         Actions.onWallDestroyed?.Invoke(this);
         
+        CameraZoom.Instance.ShakeCamera(0.5f, 0.5f);          // Dauer, Stärke (Welteinheiten, typisch 0.1–0.5)
+
+        CameraZoom.Instance.FocusOn(this.gameObject, 1f);   
+        
+        
         isDestroyed = true;
         isBuilt = false;
 

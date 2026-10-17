@@ -589,6 +589,8 @@ namespace TowerDefense
             else
                 ShowDeathScreen();
             UpdateStats();
+            
+            CameraZoom.Instance.ShakeCamera(0.3f, 0.25f);          // Dauer, Stärke (Welteinheiten, typisch 0.1–0.5)
         }
 
         public void GainCoins(GameObject enemy)

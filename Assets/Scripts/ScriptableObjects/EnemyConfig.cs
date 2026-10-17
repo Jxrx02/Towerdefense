@@ -37,7 +37,8 @@ namespace ScriptableObjects
         
         [Header("Special Attributes")]
         public int evasionChance; // Chance to dodge attacks (percentage)
-    
+        //armor, healthregen,...
+
         [Header("Damage Interaction")]
         public float fireResistance; // Modifier for fire-based attacks (percentage reduction)
         public float iceWeakness; // Modifier for ice-based attacks (percentage increase)
