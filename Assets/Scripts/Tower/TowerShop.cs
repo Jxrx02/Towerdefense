@@ -24,7 +24,6 @@ namespace TowerDefense
             if (selectedTower != null) return;
         
             var tow = towerPrefab.GetComponent<TowerDefense.Tower>();
-            if (tow is Hero && LevelManager.instance.heroFielded) return;
 
             if (LevelManager.instance.DoPurchase(tow.towerInitPrice) == false)
             {
@@ -64,8 +63,7 @@ namespace TowerDefense
                     hero.SetIsSelected(false);
                     hero.transform.position = mousePosition;
                     hero.isAttacking = false;
-                
-                    levelManager.heroFielded = true;
+
                 }
             
                 if (selectedTower.TryGetComponent(out WallGroup wall))

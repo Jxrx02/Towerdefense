@@ -723,8 +723,6 @@ namespace TowerDefense
         public void SellTower()
         {
             LevelManager.instance.cur_coins += CalculateSellPrice();
-            if (this is Hero && LevelManager.instance.heroFielded)
-                LevelManager.instance.heroFielded = false;
 
             DestroyTower();
 

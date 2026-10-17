@@ -61,7 +61,7 @@ namespace TowerDefense
         public Sprite img_play;
         public GameObject btn_image_pause;
 
-        public Boolean heroFielded;
+        public Hero hero;
 
         // ── Frühstart-State ───────────────────────────────────────
         private float _earlyStartTimer = 0f;
@@ -81,6 +81,7 @@ namespace TowerDefense
         {
             statDiffDisplay = GetComponent<StatDiffDisplay>();
             isDay = true;
+            
         }
 
         void Start()
@@ -94,6 +95,9 @@ namespace TowerDefense
             // besiegt wurde (alle Gegner tot/entkommen) → Frühstart-Fenster öffnen
             Actions.onWaveCleared      += OnWaveCleared;
 
+
+            hero = GameObject.FindAnyObjectByType<Hero>();
+                
             cur_health = start_health;
             cur_coins  = start_coins;
             UpdateStats();
