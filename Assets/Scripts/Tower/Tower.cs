@@ -449,7 +449,10 @@ namespace TowerDefense
 
                 onShoot?.Invoke();
 
-                yield return new WaitForSeconds(timeInBetweenShots / (1f + AuraAttackSpeed));
+                yield return new WaitForSeconds(
+                    timeInBetweenShots /
+                    (attackSpeedMultiplier * (1f + AuraAttackSpeed))
+                );
                 isAttacking = false;
             }
             else

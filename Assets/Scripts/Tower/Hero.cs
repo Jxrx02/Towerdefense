@@ -396,31 +396,32 @@ namespace TowerDefense
 
         private IEnumerator HeroAttackCoroutine()
         {
-            // Kleine Verzögerung bis zum eigentlichen Schuss.
-            // Diesen Wert später passend zum Schuss-Frame deiner Animation einstellen.
-            yield return new WaitForSeconds(0.15f);
+            spriteAnim.SetAttackSpeed(
+                attackSpeedMultiplier * (1f + AuraAttackSpeed)
+            );
 
-            // Ziel könnte während der Animation verschwunden sein
+            spriteAnim.animState = AnimationState.BowRangedAttack;
+
+            bool animationComplete = false;
+            void AnimationFinished(AnimationState obj) => animationComplete = true;
+
+            spriteAnim.OnDirectionalAnimationComplete += AnimationFinished;
+
+            yield return new WaitUntil(() => animationComplete);
+
+            spriteAnim.OnDirectionalAnimationComplete -= AnimationFinished;
+
             if (target.Item1 != null)
-            {
                 Shoot();
-            }
-
-            // Warten, bis die Angriffsdauer vorbei ist
-            yield return new WaitForSeconds(0.2f);
-
+            
             isAttacking = false;
 
-            // Danach wieder Idle/Run
-            bool moving = movementInput.sqrMagnitude > 0.01f;
-
-            spriteAnim.SetState(
-                moving
-                    ? AnimationState.Run
-                    : AnimationState.Idle,
-                true
-            );
+            yield return new WaitForSeconds(
+                timeInBetweenShots /
+                (attackSpeedMultiplier * (1f + AuraAttackSpeed))
+            ); 
         }
+
 
         // ------------------------------------------------------------------
         // LOOK DIRECTION

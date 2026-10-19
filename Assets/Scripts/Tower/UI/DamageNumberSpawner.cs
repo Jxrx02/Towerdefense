@@ -57,7 +57,7 @@ namespace TowerDefense
         [Tooltip("Frames Hit Stop bei jedem Treffer auf dieses Objekt (0 = aus). Sinnvoll nur für den Helden.")]
         [SerializeField] private int hitStopFramesOnHit = 0;
 
-        public Vitals vitals;
+        private Vitals vitals;
         private bool bound;
         private bool poolBuilt;
         private readonly List<FloatingNumber> pool = new List<FloatingNumber>();

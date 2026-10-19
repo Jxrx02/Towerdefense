@@ -18,7 +18,7 @@ namespace TowerDefense
                 isAttacking = true;
                 StartCoroutine(BaseAttackCoroutine(AnimationState.Attack_Animation, Shoot));
             }
-        }
+        } 
         
         protected override void UpdateLookDirection(Vector3 targetPos)
         {
