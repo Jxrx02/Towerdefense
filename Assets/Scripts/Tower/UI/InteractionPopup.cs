@@ -15,7 +15,8 @@ namespace TowerDefense
             None,
             Wall,
             TowerPurchase,
-            TowerUpgrade
+            TowerUpgrade,
+            Inspect          // Klick auf Turm, Held oder Gegner: aktuelle Stats
         }
 
         [Header("Coins")]
@@ -92,6 +93,18 @@ namespace TowerDefense
         [SerializeField] public Sprite magicPenIcon;
         [SerializeField] public Sprite omnivampIcon;
 
+        [Header("Stat Icons (Inspektion)")]
+        [SerializeField] public Sprite shieldIcon;
+        [SerializeField] public Sprite blockIcon;
+        [SerializeField] public Sprite antiHealIcon;
+        [SerializeField] public Sprite moveSpeedIcon;
+        [SerializeField] public Sprite evasionIcon;
+        [SerializeField] public Sprite levelIcon;
+
+        [Header("Inspektion (Klick auf Turm, Held, Gegner)")]
+        [Tooltip("Sekunden zwischen zwei Aktualisierungen der angezeigten Werte")]
+        [SerializeField] private float inspectRefreshInterval = 0.25f;
+
         private readonly List<CoinUI> coins = new List<CoinUI>();
 
         private RectTransform rectTransform;
@@ -108,6 +121,13 @@ namespace TowerDefense
         private readonly List<Tower> purchaseTowers = new List<Tower>();
         private readonly List<TowerSelectionEntry> entries = new List<TowerSelectionEntry>();
         private int selectedIndex = -1;
+
+        // Inspektion
+        private object inspectTarget;
+        private string inspectKey;
+        private float inspectTimer;
+        private readonly List<InspectStat> inspectBuffer = new List<InspectStat>();
+        private readonly List<UpgradeStatEntry> inspectEntries = new List<UpgradeStatEntry>();
 
         /// <summary>Index des aktuell gewählten Turms (Kauf) bzw. Upgrade-Pfads (Upgrade).</summary>
         public int SelectedIndex => selectedIndex;
@@ -134,6 +154,12 @@ namespace TowerDefense
 
         private void Update()
         {
+            if (mode == PopupMode.Inspect)
+            {
+                UpdateInspect();
+                return;
+            }
+
             if (mode == PopupMode.TowerUpgrade)
                 RefreshTowerInfo();
 
@@ -913,6 +939,242 @@ namespace TowerDefense
         }
 
         // --------------------------------------------------
+        // INSPEKTION (Klick auf Turm, Held oder Gegner)
+        // --------------------------------------------------
+
+        public bool IsInspecting => mode == PopupMode.Inspect;
+
+        /// <summary>Kauf-, Upgrade- oder Mauer-Popup ist offen. Inspektion darf es nicht überschreiben.</summary>
+        public bool IsBusyWithInteraction => mode != PopupMode.None && mode != PopupMode.Inspect;
+
+        public void ShowInspect(Tower tower)
+        {
+            if (tower == null || IsBusyWithInteraction)
+                return;
+
+            string title = tower.towerName;
+            string description = tower.towerDesc;
+
+            // Mauern: Name und Beschreibung der aktuellen Ausbaustufe der Gruppe
+            if (tower is WallSegment wall && wall.WallGroup != null)
+            {
+                TowerUpgradeLevel level = wall.WallGroup.GetCurrentUpgrade();
+                if (level != null)
+                {
+                    title = level.upgradeName;
+                    description = level.description;
+                }
+            }
+
+            BeginInspect(tower, title, description);
+        }
+
+        public void ShowInspect(Enemy enemy)
+        {
+            if (enemy == null || IsBusyWithInteraction)
+                return;
+
+            EnemyConfig cfg = enemy.enemyConfig;
+            BeginInspect(enemy, cfg != null ? cfg.name : enemy.name, cfg != null ? cfg.description : "");
+        }
+
+        private void BeginInspect(object target, string title, string description)
+        {
+            mode = PopupMode.Inspect;
+            owner = target;
+            inspectTarget = target;
+            upgradeTarget = null;
+            selectedIndex = -1;
+            inspectKey = null;
+            inspectTimer = 0f;
+            inspectEntries.Clear();
+
+            ClearEntries();
+            SetTowerInfoActive(false);
+            wallSellAction = null;
+
+            if (towerSelectionPanel != null)
+                towerSelectionPanel.SetActive(false);
+
+            Vector3 position = GetInspectPosition();
+            anchorPosition = position;
+
+            ShowInternal(position, "", title, 0, description, true);
+
+            if (upgradeCost != null)
+                upgradeCost.text = "";
+
+            RefreshInspect();
+        }
+
+        private void UpdateInspect()
+        {
+            if (!IsInspectTargetAlive())
+            {
+                Hide();
+                return;
+            }
+
+            // Bewegliche Ziele (Gegner, Held): Popup folgt
+            Position(GetInspectPosition());
+
+            inspectTimer -= Time.unscaledDeltaTime;
+            if (inspectTimer <= 0f)
+            {
+                inspectTimer = inspectRefreshInterval;
+                RefreshInspect();
+            }
+        }
+
+        private bool IsInspectTargetAlive()
+        {
+            switch (inspectTarget)
+            {
+                case Tower t:
+                    return t != null && t.gameObject.activeInHierarchy && t.IsTargetable;
+                case Enemy e:
+                    return e != null && (e.Vitals == null || !e.Vitals.IsDead);
+                default:
+                    return false;
+            }
+        }
+
+        private Vector3 GetInspectPosition()
+        {
+            if (inspectTarget is Tower t && t != null)
+                return t.transform.position;
+
+            if (inspectTarget is Enemy e && e != null)
+                return e.transform.position;
+
+            return anchorPosition;
+        }
+
+        private void RefreshInspect()
+        {
+            inspectBuffer.Clear();
+
+            if (inspectTarget is Tower tower)
+                InspectStats.Collect(tower, inspectBuffer);
+            else if (inspectTarget is Enemy enemy)
+                InspectStats.Collect(enemy, inspectBuffer);
+
+            // Zeilen nur neu bauen, wenn sich die Zeilenliste ändert (z. B. Shred beginnt: Rüstung zeigt "alt → neu").
+            // Sonst werden nur die Werte aktualisiert, das spart Layout-Arbeit.
+            var key = new System.Text.StringBuilder();
+            foreach (InspectStat stat in inspectBuffer)
+                key.Append((int)stat.id).Append(stat.Changed ? '~' : '.').Append(',');
+
+            string newKey = key.ToString();
+
+            if (newKey != inspectKey || inspectEntries.Count != inspectBuffer.Count)
+            {
+                RebuildInspectEntries();
+                inspectKey = newKey;
+            }
+
+            for (int i = 0; i < inspectBuffer.Count && i < inspectEntries.Count; i++)
+                ApplyInspectStat(inspectEntries[i], inspectBuffer[i]);
+        }
+
+        private void RebuildInspectEntries()
+        {
+            inspectEntries.Clear();
+
+            if (upgradeStatsContainer == null || upgradeStatPrefab == null)
+                return;
+
+            DestroyChildren(upgradeStatsContainer);
+
+            for (int i = 0; i < inspectBuffer.Count; i++)
+                inspectEntries.Add(Instantiate(upgradeStatPrefab, upgradeStatsContainer));
+
+            RebuildLayout();
+        }
+
+        private void ApplyInspectStat(UpgradeStatEntry entry, InspectStat stat)
+        {
+            if (entry == null)
+                return;
+
+            Sprite icon = IconFor(stat.id);
+
+            // Ohne Icon steht der Stat-Name hinter dem Wert, damit die Zeile erkennbar bleibt
+            string label = (icon == null && !string.IsNullOrEmpty(stat.name) ? " " + stat.name : "") + stat.extraLabel;
+
+            Color color = ColorFor(stat);
+
+            if (stat.Changed)
+                entry.Setup(icon, stat.baseValue, stat.value, color, label, stat.valueSuffix, stat.decimals);
+            else
+                entry.SetupSingle(icon, stat.value, color, label, stat.valueSuffix, stat.decimals);
+        }
+
+        private Sprite IconFor(StatId id)
+        {
+            switch (id)
+            {
+                case StatId.Level: return levelIcon;
+                case StatId.Health: return healthIcon;
+                case StatId.Shield: return shieldIcon;
+                case StatId.Block: return blockIcon;
+                case StatId.AntiHeal: return antiHealIcon;
+                case StatId.Armor: return armorIcon;
+                case StatId.MagicResist: return magicResistIcon;
+                case StatId.Damage: return damageIcon;
+                case StatId.AttackSpeed: return attackSpeedIcon;
+                case StatId.Range: return rangeIcon;
+                case StatId.Crit: return critChanceIcon;
+                case StatId.CritDamage: return critDamageIcon;
+                case StatId.Lethality: return lethalityIcon;
+                case StatId.ArmorPen: return armorPenIcon;
+                case StatId.MagicPen:
+                case StatId.MagicPenPercent: return magicPenIcon;
+                case StatId.Omnivamp: return omnivampIcon;
+                case StatId.Regen: return regenIcon;
+                case StatId.MoveSpeed: return moveSpeedIcon;
+                case StatId.Evasion: return evasionIcon;
+                case StatId.Gold: return goldIcon;
+                case StatId.GiveRange: return rangeMultiplierIcon;
+                case StatId.GiveDamage: return damageMultiplierIcon;
+                case StatId.GiveAttackSpeed: return attackSpeedMultiplierIcon;
+                case StatId.GiveSlow: return slowMultiplierIcon;
+                default: return null;
+            }
+        }
+
+        private Color ColorFor(InspectStat stat)
+        {
+            // Geändert gegenüber dem Grundwert: grün = verbessert (Aura, Buff), rot = verschlechtert (Shred, Slow)
+            if (stat.Changed)
+                return stat.value > stat.baseValue ? new Color(0.35f, 1f, 0.4f) : new Color(1f, 0.35f, 0.3f);
+
+            switch (stat.id)
+            {
+                case StatId.Health: return new Color(0.3f, 0.85f, 0.35f);
+                case StatId.Shield: return Color.white;
+                case StatId.Block: return new Color(0.75f, 0.45f, 1f);
+                case StatId.AntiHeal: return new Color(0.75f, 0.2f, 0.3f);
+                case StatId.Armor: return armorColor;
+                case StatId.MagicResist: return magicResistColor;
+                case StatId.Damage: return Color.red;
+                case StatId.AttackSpeed: return new Color(1f, 0.35f, 0.6f);
+                case StatId.Range: return new Color(0.2f, 0.8f, 1f);
+                case StatId.Crit:
+                case StatId.CritDamage: return critColor;
+                case StatId.Lethality:
+                case StatId.ArmorPen: return penColor;
+                case StatId.MagicPen:
+                case StatId.MagicPenPercent: return magicPenColor;
+                case StatId.Omnivamp: return omnivampColor;
+                case StatId.Regen: return new Color(0.3f, 1f, 0.3f);
+                case StatId.Gold: return new Color(1f, 0.84f, 0f);
+                case StatId.MoveSpeed: return new Color(0.9f, 0.9f, 0.5f);
+                default: return Color.white;
+            }
+        }
+
+        // --------------------------------------------------
         // HIDE
         // --------------------------------------------------
 
@@ -922,6 +1184,10 @@ namespace TowerDefense
             owner = null;
             upgradeTarget = null;
             selectedIndex = -1;
+
+            inspectTarget = null;
+            inspectKey = null;
+            inspectEntries.Clear();
 
             ClearEntries();
             SetTowerInfoActive(false);

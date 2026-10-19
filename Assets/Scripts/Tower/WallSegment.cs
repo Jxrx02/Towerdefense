@@ -217,10 +217,14 @@ namespace TowerDefense
 
         public override DamageResult TakeDamage(DamageInfo info)
         {
-            if (wallGroup == null)
+            if (wallGroup.healthBarVitals == null)
                 return default;
-            
+
+            wallGroup.TakeDamage(info);
+
             return wallGroup.healthBarVitals.TakeDamage(info);
+            
+
 
         }
         

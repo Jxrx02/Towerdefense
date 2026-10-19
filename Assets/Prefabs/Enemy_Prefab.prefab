@@ -197,12 +197,13 @@ MonoBehaviour:
   damageCanvas: {fileID: 3771438740894118788}
   damageTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
   poolSize: 6
-  startY: 1.75
-  endY: 2.15
+  startY: 1
+  endY: 1.4
   duration: 0.8
   horizontalSpread: 0.25
   critPunchScale: 1.5
   shieldRowOffset: 0.18
+  horizontalDrift: 0.35
   normalDamageColor: {r: 1, g: 1, b: 1, a: 1}
   criticalDamageColor: {r: 1, g: 0.25, b: 0.15, a: 1}
   shieldDamageColor: {r: 0.4, g: 0.8, b: 1, a: 1}
@@ -217,6 +218,7 @@ MonoBehaviour:
   detachOnDeath: 1
   hitStopFramesOnCrit: 3
   hitStopFramesOnHit: 0
+  vitals: {fileID: 0}
 --- !u!114 &-3310549229669275929
 MonoBehaviour:
   m_ObjectHideFlags: 0

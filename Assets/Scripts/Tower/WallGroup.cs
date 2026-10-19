@@ -981,6 +981,7 @@ public class WallGroup : MonoBehaviour
         
         if (hp <= 0)
         {
+            hp = 0;
             DisableWallGroup();
         }
     }

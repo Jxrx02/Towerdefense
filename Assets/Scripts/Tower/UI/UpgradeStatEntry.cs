@@ -32,7 +32,13 @@ namespace TowerDefense
             }
 
             if (oldValueText != null)
+            {
+                oldValueText.gameObject.SetActive(true);
                 oldValueText.text = FormatValue(oldValue, suffix, decimals);
+            }
+
+            if (arrow != null)
+                arrow.gameObject.SetActive(true);
 
             if (newValueText != null)
             {
@@ -43,6 +49,46 @@ namespace TowerDefense
             if (suffixNewValueText != null)
             {
                 suffixNewValueText.text = suffixNewValueOnly;
+                suffixNewValueText.color = color;
+            }
+
+            gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// Zeigt nur einen aktuellen Wert (ohne alten Wert und Pfeil), z. B. im Inspektions-Popup.
+        /// 'label' steht hinter dem Wert (Stat-Name, falls kein Icon da ist, oder z. B. " / 110 HP").
+        /// </summary>
+        public void SetupSingle(
+            Sprite icon,
+            float value,
+            Color color,
+            string label,
+            string suffix = "",
+            int decimals = 0
+        )
+        {
+            if (statIcon != null)
+            {
+                statIcon.sprite = icon;
+                statIcon.enabled = icon != null;
+            }
+
+            if (oldValueText != null)
+                oldValueText.gameObject.SetActive(false);
+
+            if (arrow != null)
+                arrow.gameObject.SetActive(false);
+
+            if (newValueText != null)
+            {
+                newValueText.text = FormatValue(value, suffix, decimals);
+                newValueText.color = color;
+            }
+
+            if (suffixNewValueText != null)
+            {
+                suffixNewValueText.text = label;
                 suffixNewValueText.color = color;
             }
 

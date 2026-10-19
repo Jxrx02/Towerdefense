@@ -18,15 +18,16 @@ namespace TowerDefense
         [SerializeField] private int poolSize = 8;
 
         [Header("Animation")]
-        [SerializeField] private float startY = 1.75f;
-        [SerializeField] private float endY = 2.15f;
+        [SerializeField] private float startY = 1f;
+        [SerializeField] private float endY = 1.5f;
         [SerializeField] private float duration = 0.8f;
         [SerializeField] private float horizontalSpread = 0.25f;
         [Tooltip("Zusätzliche Größe bei kritischen Treffern (1 = keine)")]
         [SerializeField] private float critPunchScale = 1.5f;
         [Tooltip("Schildschaden-Zahl erscheint so viel tiefer als die HP-Zahl, damit sich beide nicht überlagern")]
         [SerializeField] private float shieldRowOffset = 0.18f;
-
+        [Tooltip("Wie weit eine Zahl beim Aufsteigen zur Seite driftet (Richtung zufällig links oder rechts)")]
+        [SerializeField] private float horizontalDrift = 0.35f;
         [Header("Colors")]
         [SerializeField] private Color normalDamageColor = Color.white;
         [SerializeField] private Color criticalDamageColor = new Color(1f, 0.25f, 0.15f);
@@ -264,10 +265,15 @@ namespace TowerDefense
             if (number == null)
                 return;
 
-            float randomX = Random.Range(-horizontalSpread, horizontalSpread);
+            float startX = Random.Range(-horizontalSpread, horizontalSpread);
 
-            Vector3 from = new Vector3(randomX, startY + yOffset, 0f);
-            Vector3 to = new Vector3(randomX, endY + yOffset, 0f);
+            // Jede Zahl driftet in eine zufällige Richtung, mit etwas Variation in Weite und Höhe
+            float direction = Random.value < 0.5f ? -1f : 1f;
+            float endX = startX + direction * Random.Range(horizontalDrift * 0.4f, horizontalDrift);
+            float endHeight = endY + Random.Range(-0.08f, 0.08f);
+
+            Vector3 from = new Vector3(startX, startY + yOffset, 0f);
+            Vector3 to = new Vector3(endX, endHeight + yOffset, 0f);
 
             number.Play(value, color, bold, from, to, duration, punch);
         }
