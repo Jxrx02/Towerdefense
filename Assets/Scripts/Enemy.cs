@@ -20,8 +20,10 @@ namespace TowerDefense
     {
         public EnemyConfig enemyConfig;
         [SerializeField] private float spreadRadius = 0.3f;
+        [Tooltip("Fügt automatisch eine HP-Leiste hinzu")]
+        [SerializeField] private bool autoAddHealthBar = true;
 
-        private const float RetargetInterval = 0.1f;
+        private const float RetargetInterval = 0.3f;
         private const float UnreachableCooldown = 3f;
 
         // ── Komponenten ─────────────────────────────────────
@@ -69,6 +71,9 @@ namespace TowerDefense
 
         private bool IsCrowdControlled => isKnockbacking || isBeingPulled;
 
+        /// <summary>Aktueller Tempo-Faktor durch Verlangsamung (1 = normal). Für die Anzeige.</summary>
+        public float SlowMultiplier => slowMultiplier;
+
         // ───────────────── INIT ─────────────────────────────
 
         private void Awake()
@@ -81,6 +86,9 @@ namespace TowerDefense
 
             vitals.Died += HandleDied;
             vitals.Blocked += HandleBlocked;
+
+            if (autoAddHealthBar && !TryGetComponent<HealthBar>(out _))
+                gameObject.AddComponent<HealthBar>();
         }
 
         private void OnEnable()
@@ -309,8 +317,8 @@ namespace TowerDefense
                 pathBlocker = blocker != null ? blocker.GetComponent<Tower>() : null;
             }
 
-            pathIndex = 0;
             currentPath = result?.path;
+            pathIndex = FindStartIndex(currentPath);
 
             // Angriffsplatz neu reservieren, falls er sich geändert hat
             GridNode newSlot = result?.attackTarget != null ? result.targetNode : null;
@@ -321,7 +329,35 @@ namespace TowerDefense
                 reservedSlot = newSlot;
             }
 
-            reachedFinalTarget = Vector2.Distance(transform.position, levelEnd.position) < 0.9f;
+            reachedFinalTarget = Vector2.Distance(transform.position, levelEnd.position) < 0.6f;
+        }
+
+        /// <summary>
+        /// Der neue Pfad beginnt in der Mitte der Kachel, auf der der Gegner steht. Steht er schon ein Stück weiter
+        /// in Laufrichtung, würde er dorthin zurücklaufen und dann erst weiter (das "Wobbeln" nach jeder Neuberechnung).
+        /// Deshalb werden Wegpunkte übersprungen, die der Gegner bereits passiert hat.
+        /// </summary>
+        private int FindStartIndex(List<Vector3> path)
+        {
+            if (path == null || path.Count < 2)
+                return 0;
+
+            Vector2 position = transform.position;
+            int index = 0;
+
+            while (index < path.Count - 1)
+            {
+                Vector2 current = path[index];
+                Vector2 next = path[index + 1];
+
+                // Liegt der Gegner schon hinter diesem Wegpunkt in Richtung des nächsten, ist er passiert
+                if (Vector2.Dot(position - current, next - current) > 0f)
+                    index++;
+                else
+                    break;
+            }
+
+            return index;
         }
 
         private void ReleaseAttackSlot()
