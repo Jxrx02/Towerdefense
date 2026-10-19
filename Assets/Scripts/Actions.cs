@@ -9,6 +9,8 @@ using UnityEngine;
 
 public static class Actions
 {
+    public static Action <GameObject> onHeroDeath;
+
     public static Action <GameObject> onEnemyReachedEnd;
     public static Action <GameObject> onEnemyDeath;
     public static Action <GameObject> onEnemySpawn;

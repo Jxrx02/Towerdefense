@@ -7,16 +7,32 @@ namespace TowerDefense.GridMovement
     {
         public static PathfindingManager Instance;
 
+        [Header("Crowding")]
+        [Tooltip("Aufschlag pro Gegner, der ein Angriffsfeld schon belegt. Wird auf die Weg-Kosten (gCost) addiert.")]
+        [SerializeField] private int crowdPenalty = 30;
+
+        private readonly Dictionary<GridNode, int> slotOccupancy = new();
+
+        // Wiederverwendete Puffer (kein Garbage pro Suche). Nicht reentrant, aber alles läuft im Main-Thread.
+        private readonly Dictionary<GridNode, GameObject> goalToTarget = new();
+        private readonly HashSet<GridNode> closed = new();
+        private readonly List<HeapEntry> heap = new();
+        private readonly List<GameObject> singleTarget = new(1);
+
+        private struct HeapEntry
+        {
+            public GridNode node;
+            public int priority;
+        }
 
         private void Awake()
         {
             Instance = this;
         }
-        [Header("Crowding")]
-        [Tooltip("Aufschlag pro Gegner, der ein Angriffsfeld schon belegt. 10 = eine Zelle Umweg.")]
-        [SerializeField] private int crowdPenalty = 30;
 
-        private readonly Dictionary<GridNode, int> slotOccupancy = new();
+        // =====================================================
+        // SLOTS (Angriffsfelder)
+        // =====================================================
 
         public void ReserveSlot(GridNode node)
         {
@@ -45,7 +61,15 @@ namespace TowerDefense.GridMovement
 
             return Mathf.Max(0, n) * crowdPenalty;
         }
-        
+
+        // =====================================================
+        // PUBLIC API
+        // =====================================================
+
+        /// <summary>
+        /// Weg zum Ziel. Ist er frei, wird er zurückgegeben (A*). Ist er versperrt, wird der günstigste
+        /// angreifbare Mauerabschnitt gesucht (attackTarget = Mauer).
+        /// </summary>
         public PathResult FindPath(Vector3 startWorld, Vector3 targetWorld, GridNode ownSlot = null)
         {
             GridNode startNode = GridManager.Instance.GetNode(startWorld);
@@ -53,346 +77,315 @@ namespace TowerDefense.GridMovement
 
             if (startNode == null || targetNode == null)
                 return null;
-            // normaler Weg
-            PathResult normalPath = FindPathInternal(startNode, targetNode);
 
+            PathResult normalPath = FindPathInternal(startNode, targetNode);
             if (normalPath != null)
                 return normalPath;
-            
-            // blockiert -> beste Wall suchen
-            WallPathResult wallResult = FindBestWallPath(startNode, ownSlot);
 
-            return wallResult?.pathResult;
+            return FindBestAttackPath(startNode, AttackableWalls(), ownSlot);
         }
 
-
-        // =====================================================
-        // WALL SEARCH
-        // =====================================================
-
-        private WallPathResult FindBestWallPath(GridNode startNode, GridNode ownSlot)
+        /// <summary>
+        /// Weg zu einem bestimmten Ziel (Turm, Held, Mauer): zum günstigsten freien Feld daneben.
+        /// attackTarget = das Ziel. Null, wenn kein Angriffsfeld erreichbar ist.
+        /// </summary>
+        public PathResult FindPathToTarget(Vector3 startWorld, GameObject target, GridNode ownSlot = null)
         {
-            WallPathResult best = null;
+            if (target == null) return null;
 
+            GridNode startNode = GridManager.Instance.GetNode(startWorld);
+            if (startNode == null) return null;
+
+            singleTarget.Clear();
+            singleTarget.Add(target);
+            return FindBestAttackPath(startNode, singleTarget, ownSlot);
+        }
+
+        // =====================================================
+        // ANGRIFFSPFAD (eine Suche für beliebig viele Ziele)
+        // =====================================================
+
+        private IEnumerable<GameObject> AttackableWalls()
+        {
             foreach (GameObject wall in TowerHeroManager.instance.walls)
             {
-                PathResult result = FindPathToWall(startNode, wall, ownSlot);
+                if (wall != null && wall.TryGetComponent(out Tower tower) && tower.IsTargetable)
+                    yield return wall;
+            }
+        }
 
-                if (result == null)
-                    continue;
+        /// <summary>
+        /// Dijkstra vom Start aus über das ganze Grid, bricht ab, sobald kein besseres Angriffsfeld mehr möglich ist.
+        /// Ersetzt "pro Mauer und pro Feld ein eigener A*" und skaliert dadurch auch mit vielen Zielen (Türme, Held, Mauern).
+        /// Kosten = Weglänge (gCost) + Crowd-Aufschlag des Angriffsfelds.
+        /// </summary>
+        private PathResult FindBestAttackPath(GridNode startNode, IEnumerable<GameObject> targets, GridNode ownSlot)
+        {
+            // 1) Angriffsfelder sammeln: Feld -> Ziel
+            goalToTarget.Clear();
 
-                int cost = CalculatePathCost(result.path)
-                           + CrowdCost(result.targetNode, ownSlot);
+            foreach (GameObject target in targets)
+            {
+                if (target == null) continue;
 
-                if (best == null || cost < best.cost)
+                GridNode targetNode = GridManager.Instance.GetNode(target.transform.position);
+                if (targetNode == null) continue;
+
+                foreach (GridNode position in GetAttackPositions(targetNode))
                 {
-                    best = new WallPathResult { cost = cost, pathResult = result };
+                    if (!goalToTarget.ContainsKey(position))
+                        goalToTarget[position] = target;
                 }
             }
 
-            return best;
-        }
-
-        private PathResult FindPathToWall(GridNode startNode, GameObject wall, GridNode ownSlot)
-        {
-            GridNode wallNode =
-                GridManager.Instance.GetNode(
-                    wall.transform.position
-                );
-
-            if(wallNode == null)
+            if (goalToTarget.Count == 0)
                 return null;
 
-            
-            List<GridNode> attackPositions = GetAttackPositions(wallNode);
-            
-            PathResult best = null;
+            // 2) Suche
+            ResetNodes();
+            closed.Clear();
+            heap.Clear();
 
-            int bestCost = int.MaxValue;
-            
-            foreach (GridNode position in attackPositions)
+            startNode.gCost = 0;
+            HeapPush(startNode, 0);
+
+            GridNode bestGoal = null;
+            int bestTotal = int.MaxValue;
+
+            while (heap.Count > 0)
             {
-                PathResult result = FindPathInternal(startNode, position);
+                GridNode current = HeapPop().node;
 
-                if (result == null)
-                    continue;
+                if (closed.Contains(current))
+                    continue;                       // veralteter Eintrag
 
-                int cost = CalculatePathCost(result.path) + CrowdCost(position, ownSlot);
+                if (current.gCost >= bestTotal)
+                    break;                          // alles Weitere ist mindestens so teuer
 
-                if (cost < bestCost)
+                closed.Add(current);
+
+                if (goalToTarget.ContainsKey(current))
                 {
-                    bestCost = cost;
-                    best = result;
+                    int total = current.gCost + CrowdCost(current, ownSlot);
+                    if (total < bestTotal)
+                    {
+                        bestTotal = total;
+                        bestGoal = current;
+                    }
+                }
+
+                foreach (GridNode neighbour in current.neighbours)
+                {
+                    if (!neighbour.walkable || closed.Contains(neighbour))
+                        continue;
+
+                    if (!CanMoveDiagonal(current, neighbour))
+                        continue;
+
+                    int cost = current.gCost + GetDistance(current, neighbour) + neighbour.movementCost;
+
+                    if (cost < neighbour.gCost)
+                    {
+                        neighbour.gCost = cost;
+                        neighbour.parent = current;
+                        HeapPush(neighbour, cost);
+                    }
                 }
             }
 
-            if(best != null)
-            {
-                best.attackTarget = wall;
-            }
+            if (bestGoal == null)
+                return null;
 
-            return best;
+            return new PathResult
+            {
+                path = RetracePath(startNode, bestGoal),
+                targetNode = bestGoal,
+                attackTarget = goalToTarget[bestGoal]
+            };
         }
 
-
-
-        private List<GridNode> GetAttackPositions(GridNode wallNode)
+        private List<GridNode> GetAttackPositions(GridNode targetNode)
         {
             List<GridNode> result = new();
 
-
-            foreach(GridNode neighbour in wallNode.neighbours)
+            foreach (GridNode neighbour in targetNode.neighbours)
             {
-                if(neighbour.walkable)
+                if (neighbour.walkable)
                     result.Add(neighbour);
             }
-
 
             return result;
         }
 
-
-
         // =====================================================
-        // A STAR
+        // A* (freier Weg zum Ziel)
         // =====================================================
 
-        private PathResult FindPathInternal(
-            GridNode startNode,
-            GridNode targetNode)
+        private PathResult FindPathInternal(GridNode startNode, GridNode targetNode)
         {
             List<GridNode> open = new();
-            HashSet<GridNode> closed = new();
+            HashSet<GridNode> closedSet = new();
 
-
-            foreach(GridNode node in GridManager.Instance.GetAllNodes())
-            {
-                node.gCost = int.MaxValue;
-                node.hCost = 0;
-                node.parent = null;
-            }
-
-
+            ResetNodes();
 
             startNode.gCost = 0;
-            startNode.hCost =
-                GetDistance(startNode,targetNode);
-
-
+            startNode.hCost = GetDistance(startNode, targetNode);
             open.Add(startNode);
 
-
-
-            while(open.Count > 0)
+            while (open.Count > 0)
             {
                 GridNode current = open[0];
 
-
-                for(int i=1;i<open.Count;i++)
+                for (int i = 1; i < open.Count; i++)
                 {
-                    if(open[i].fCost < current.fCost)
+                    if (open[i].fCost < current.fCost)
                         current = open[i];
                 }
 
-
                 open.Remove(current);
-                closed.Add(current);
+                closedSet.Add(current);
 
-
-
-                if(current == targetNode)
+                if (current == targetNode)
                 {
                     return new PathResult
                     {
-                        path =
-                        RetracePath(
-                            startNode,
-                            targetNode
-                        ),
-
+                        path = RetracePath(startNode, targetNode),
                         targetNode = targetNode
                     };
                 }
 
-
-
-                foreach(GridNode neighbour in current.neighbours)
+                foreach (GridNode neighbour in current.neighbours)
                 {
-                    if(!neighbour.walkable)
+                    if (!neighbour.walkable || closedSet.Contains(neighbour))
                         continue;
 
-
-                    if(closed.Contains(neighbour))
+                    if (!CanMoveDiagonal(current, neighbour))
                         continue;
 
+                    int cost = current.gCost + GetDistance(current, neighbour) + neighbour.movementCost;
 
-                    if(!CanMoveDiagonal(current,neighbour))
-                        continue;
-
-
-
-                    int cost =
-                        current.gCost +
-                        GetDistance(current,neighbour) +
-                        neighbour.movementCost;
-
-
-
-                    if(cost < neighbour.gCost)
+                    if (cost < neighbour.gCost)
                     {
                         neighbour.gCost = cost;
+                        neighbour.hCost = GetDistance(neighbour, targetNode);
+                        neighbour.parent = current;
 
-                        neighbour.hCost =
-                            GetDistance(
-                                neighbour,
-                                targetNode
-                            );
-
-
-                        neighbour.parent=current;
-
-
-                        if(!open.Contains(neighbour))
+                        if (!open.Contains(neighbour))
                             open.Add(neighbour);
                     }
                 }
             }
 
-
             return null;
         }
 
+        // =====================================================
+        // BINARY HEAP (Min-Heap nach priority, lazy deletion)
+        // =====================================================
 
+        private void HeapPush(GridNode node, int priority)
+        {
+            heap.Add(new HeapEntry { node = node, priority = priority });
+
+            int i = heap.Count - 1;
+            while (i > 0)
+            {
+                int parent = (i - 1) / 2;
+                if (heap[parent].priority <= heap[i].priority) break;
+
+                (heap[parent], heap[i]) = (heap[i], heap[parent]);
+                i = parent;
+            }
+        }
+
+        private HeapEntry HeapPop()
+        {
+            HeapEntry top = heap[0];
+
+            int last = heap.Count - 1;
+            heap[0] = heap[last];
+            heap.RemoveAt(last);
+
+            int i = 0;
+            int count = heap.Count;
+
+            while (true)
+            {
+                int left = 2 * i + 1;
+                int right = left + 1;
+                int smallest = i;
+
+                if (left < count && heap[left].priority < heap[smallest].priority) smallest = left;
+                if (right < count && heap[right].priority < heap[smallest].priority) smallest = right;
+
+                if (smallest == i) break;
+
+                (heap[i], heap[smallest]) = (heap[smallest], heap[i]);
+                i = smallest;
+            }
+
+            return top;
+        }
 
         // =====================================================
         // UTIL
         // =====================================================
 
-
-        private int CalculatePathCost(List<Vector3> path)
+        private static void ResetNodes()
         {
-            int cost=0;
-
-
-            foreach(Vector3 pos in path)
+            foreach (GridNode node in GridManager.Instance.GetAllNodes())
             {
-                GridNode node =
-                    GridManager.Instance.GetNode(pos);
-
-
-                if(node!=null)
-                    cost += node.movementCost;
+                node.gCost = int.MaxValue;
+                node.hCost = 0;
+                node.parent = null;
             }
-
-
-            return cost;
         }
 
-
-
-        private List<Vector3> RetracePath(
-            GridNode start,
-            GridNode end)
+        private List<Vector3> RetracePath(GridNode start, GridNode end)
         {
             List<Vector3> path = new();
 
+            GridNode current = end;
 
-            GridNode current=end;
-
-
-            while(current != start)
+            while (current != start)
             {
                 path.Add(current.worldPosition);
-                current=current.parent;
+                current = current.parent;
             }
 
-
             path.Add(start.worldPosition);
-
-
             path.Reverse();
-
 
             return path;
         }
 
-
-
-        private int GetDistance(
-            GridNode a,
-            GridNode b)
+        private int GetDistance(GridNode a, GridNode b)
         {
-            int x =
-                Mathf.Abs(
-                    a.cell.x-b.cell.x
-                );
+            int x = Mathf.Abs(a.cell.x - b.cell.x);
+            int y = Mathf.Abs(a.cell.y - b.cell.y);
 
-            int y =
-                Mathf.Abs(
-                    a.cell.y-b.cell.y
-                );
-
-
-            return Mathf.Min(x,y)*14 +
-                   Mathf.Abs(x-y)*10;
+            return Mathf.Min(x, y) * 14 + Mathf.Abs(x - y) * 10;
         }
 
-
-
-        private bool CanMoveDiagonal(
-            GridNode current,
-            GridNode next)
+        private bool CanMoveDiagonal(GridNode current, GridNode next)
         {
-            int dx =
-                next.cell.x-current.cell.x;
+            int dx = next.cell.x - current.cell.x;
+            int dy = next.cell.y - current.cell.y;
 
-            int dy =
-                next.cell.y-current.cell.y;
-
-
-
-            if(Mathf.Abs(dx)!=1 ||
-               Mathf.Abs(dy)!=1)
+            if (Mathf.Abs(dx) != 1 || Mathf.Abs(dy) != 1)
                 return true;
 
+            GridNode h = GridManager.Instance.GetNode(current.cell + new Vector3Int(dx, 0, 0));
+            GridNode v = GridManager.Instance.GetNode(current.cell + new Vector3Int(0, dy, 0));
 
-
-            GridNode h =
-                GridManager.Instance.GetNode(
-                    current.cell +
-                    new Vector3Int(dx,0,0)
-                );
-
-
-            GridNode v =
-                GridManager.Instance.GetNode(
-                    current.cell +
-                    new Vector3Int(0,dy,0)
-                );
-
-
-
-            return h != null &&
-                   v != null &&
-                   h.walkable &&
-                   v.walkable;
+            return h != null && v != null && h.walkable && v.walkable;
         }
     }
-
-
 
     public class PathResult
     {
         public List<Vector3> path;
         public GridNode targetNode;
         public GameObject attackTarget;
-    }
-
-
-
-    public class WallPathResult
-    {
-        public int cost;
-        public PathResult pathResult;
     }
 }

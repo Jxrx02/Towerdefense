@@ -1,62 +1,96 @@
-﻿using System;
+﻿using TowerDefense;
 using UnityEngine;
 
 namespace ScriptableObjects
 {
-    public enum EnemyType
-    {
-        IgnoreWalls,   // berechnet einmal, ignoriert Änderungen
-        Adaptive,   // recalculates bei Blockänderung
-        Clever      // rechnet regelmäßig + optional optimiert
-    }
-    
     [CreateAssetMenu(fileName = "New Enemy", menuName = "ScriptableObjects/Enemy")]
     public class EnemyConfig : ScriptableObject
     {
-        [Header("AI Type")]
-        public EnemyType enemyType;
-        
         [Header("Basic Info")]
-        public string description; // Description of the enemy
-        public Sprite[] walkAnim; // Walk animation sprites
-        public Sprite[] deadAnim; // Walk animation sprites
-        public Sprite[] attackAnim; // Walk animation sprites
+        public string description;
+        public Sprite[] walkAnim;
+        public Sprite[] deadAnim;
+        public Sprite[] attackAnim;
 
         [Header("Core Stats")]
-        public int health; // Health points
-        public int tenacity; // Resistance to crowd control effects (percentage reduction)
-        public int movementSpeed; // Movement speed (units per second)
+        public int health;
+        public int tenacity;            // Resistenz gegen CC (Prozent)
+        public float movementSpeed;     // Einheiten pro Sekunde
         public int xpDrop;
 
-        [Header("Combat Stats")] 
-        public int attackRange;
-        public int attackCooldown;
-        public int attackDamage;
-        public Boolean isMeele=true;
-        public GameObject projectile;
-        
-        [Header("Special Attributes")]
-        public int evasionChance; // Chance to dodge attacks (percentage)
-        //armor, healthregen,...
+        [Header("Defense (LoL-Stats)")]
+        public float armor;
+        public float magicResist;
+        public float healthRegenPerSecond;
 
-        [Header("Damage Interaction")]
-        public float fireResistance; // Modifier for fire-based attacks (percentage reduction)
-        public float iceWeakness; // Modifier for ice-based attacks (percentage increase)
-        public float poisonImmunity; // Boolean-like value (0 = none, 1 = immune)
-    
+        [Header("Schilde")]
+        [Tooltip("HP-Schild beim Spawn: zählt wie zusätzliche HP und absorbiert Schaden nach der Rüstung")]
+        public float startShield;
+        [Tooltip("Sekunden, bis das HP-Schild verfällt. 0 = bleibt, bis es aufgebraucht ist")]
+        public float shieldDuration;
+        [Tooltip("Block-Schild beim Spawn: blockt die nächsten Treffer komplett (0 = keins)")]
+        public int blockCharges;
+        [Tooltip("Sekunden, bis das Block-Schild verfällt. 0 = bis alle Ladungen verbraucht sind")]
+        public float blockDuration;
+        [Tooltip("Sekunden, bis sich das Block-Schild erneuert, nachdem die letzte Ladung verbraucht wurde. 0 = nie")]
+        public float blockRechargeTime;
+
+        [Header("Combat Stats")]
+        public float attackRange;
+        public float attackCooldown;
+        public int attackDamage;
+        public DamageType damageType = DamageType.Physical;
+        [Tooltip("Crit, Lethality, Pen, Omnivamp dieses Gegners")]
+        public OffenseStats offense = new OffenseStats();
+        public bool isMeele = true;
+        public GameObject projectile;   // nur für Fernkämpfer (isMeele = false)
+
+        [Header("Pathing")]
+        [Tooltip("Sekunden zwischen zwei Wegberechnungen zum Levelende")]
+        public float repathInterval = 1.5f;
+        [Tooltip("Sekunden zwischen zwei Wegberechnungen, solange ein Turm/Held verfolgt wird (Helden bewegen sich)")]
+        public float chaseRepathInterval = 0.5f;
+
+        [Header("Targeting")]
+        [Tooltip("Türme/Helden innerhalb dieser Reichweite werden aktiv verfolgt und angegriffen")]
+        public float aggroRange = 4f;
+        [Tooltip("Außerhalb dieser Reichweite lässt der Gegner sein Ziel wieder los")]
+        public float leashRange = 6f;
+        [Tooltip("Reihenfolge = Priorität. Kategorien, die hier fehlen, werden nicht aktiv verfolgt. " +
+                 "Mauern, die den Weg zum Levelende versperren, werden immer angegriffen.")]
+        public TargetCategory[] targetPriority = { TargetCategory.Hero, TargetCategory.Tower };
+
+        [Header("Special Attributes")]
+        public int evasionChance;       // Prozent
+
         [Header("Abilities")]
-        public bool canFly; // If the enemy can fly
+        public bool canFly;
 
         [Header("Economic Impact")]
-        public int goldReward; // Gold rewarded when killed
-        public int penaltyOnReachingEnd; // Player's penalty if the enemy reaches the end (e.g., health or score loss)
-    
+        public int goldReward;
+        public int penaltyOnReachingEnd;
+
         [Header("Visual Effects")]
         public Color lightColor;
-        public Boolean hasLight;
-        public GameObject deathEffect; // Effect shown on death
-        public GameObject hitEffect; // Effect shown when hit
-        public GameObject evasionEffect; // Effect shown when hit
+        public bool hasLight;
+        public GameObject deathEffect;
+        public GameObject hitEffect;
+        public GameObject evasionEffect;
+        [Tooltip("Effekt, wenn ein Treffer vom Block-Schild abgefangen wird")]
+        public GameObject blockEffect;
 
+        /// <summary>0 = höchste Priorität, -1 = darf nicht aktiv verfolgt werden.</summary>
+        public int GetPriorityRank(TargetCategory category)
+        {
+            if (targetPriority == null) return -1;
+            for (int i = 0; i < targetPriority.Length; i++)
+                if (targetPriority[i] == category) return i;
+            return -1;
+        }
+
+        private void OnValidate()
+        {
+            leashRange = Mathf.Max(leashRange, aggroRange);
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace TowerDefense
         [SerializeField] private Image statIcon;
         [SerializeField] private Text oldValueText;
         [SerializeField] private Text newValueText;
+        [Tooltip("Steht hinter dem neuen Wert. Zeigt den Stat-Namen, wenn kein Icon zugewiesen ist.")]
         [SerializeField] private Text suffixNewValueText;
 
         [Header("Optional")]
@@ -35,11 +36,16 @@ namespace TowerDefense
 
             if (newValueText != null)
             {
-                newValueText.text = FormatValue(newValue, suffix,decimals);
+                newValueText.text = FormatValue(newValue, suffix, decimals);
                 newValueText.color = color;
-                suffixNewValueText.text = suffixNewValueOnly;
             }
-            
+
+            if (suffixNewValueText != null)
+            {
+                suffixNewValueText.text = suffixNewValueOnly;
+                suffixNewValueText.color = color;
+            }
+
             gameObject.SetActive(true);
         }
 

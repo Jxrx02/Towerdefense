@@ -90,6 +90,7 @@ namespace TowerDefense
             Actions.onEnemyDeath       += GainCoins;
             Actions.onLvlComplete      += LvlCompleted;
             Actions.onWaveSpawnComplete += OnWaveSpawnComplete;
+            Actions.onHeroDeath += LoseHealth;
 
             // Neues Event: wird vom WaveManager gefeuert wenn eine Welle vollständig
             // besiegt wurde (alle Gegner tot/entkommen) → Frühstart-Fenster öffnen
@@ -582,15 +583,20 @@ namespace TowerDefense
             btn_image_pause.GetComponent<Image>().sprite = img_play;
         }
 
-        public void LoseHealth(GameObject enemy)
+
+        public void LoseHealth(GameObject enemyOrHero)
         {
-            if (cur_health > 0)
-                cur_health -= enemy.GetComponent<Enemy>().currentHealth;
-            else
+            var enemy = enemyOrHero.GetComponent<Enemy>();
+            var damage = enemy != null ? enemy.currentHealth : 1;
+
+            cur_health -= damage;
+
+            if (cur_health <= 0)
                 ShowDeathScreen();
+
             UpdateStats();
-            
-            CameraZoom.Instance.ShakeCamera(0.3f, 0.25f);          // Dauer, Stärke (Welteinheiten, typisch 0.1–0.5)
+
+            CameraZoom.Instance.ShakeCamera(0.3f, 0.25f);
         }
 
         public void GainCoins(GameObject enemy)

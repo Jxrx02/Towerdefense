@@ -26,10 +26,22 @@ namespace TowerDefense
             wallGroup != null &&
             wallGroup.IsBuilt;
 
+        /// <summary>
+        /// Zerstörte Mauern sind keine Ziele mehr. Der PathfindingManager filtert seine Mauerliste damit,
+        /// dadurch gibt es keine Endlosschleife aus "Ziel ungültig, neu berechnen".
+        /// </summary>
+        public override bool IsTargetable =>
+            base.IsTargetable && wallGroup != null && !wallGroup.IsDestroyed && wallGroup.HP > 0;
+
         protected override void Awake()
         {
             base.Awake();
+            
+            HealthBar segmentHealthBar = GetComponent<HealthBar>();
 
+            if (segmentHealthBar != null)
+                segmentHealthBar.enabled = false;
+            
             spriteRenderer = GetComponent<SpriteRenderer>();
 
             if (spriteRenderer == null)
@@ -130,6 +142,7 @@ namespace TowerDefense
 
             UpdateSorting();
         }
+
         // =========================================================
         // NEIGHBOURS
         // =========================================================
@@ -156,36 +169,23 @@ namespace TowerDefense
             int mask = 0;
 
             // Oben
-            if (wallGroup.ContainsCell(
-                    cell + Vector3Int.up))
-            {
+            if (wallGroup.ContainsCell(cell + Vector3Int.up))
                 mask |= 1;
-            }
 
             // Rechts
-            if (wallGroup.ContainsCell(
-                    cell + Vector3Int.right))
-            {
+            if (wallGroup.ContainsCell(cell + Vector3Int.right))
                 mask |= 2;
-            }
 
             // Unten
-            if (wallGroup.ContainsCell(
-                    cell + Vector3Int.down))
-            {
+            if (wallGroup.ContainsCell(cell + Vector3Int.down))
                 mask |= 4;
-            }
 
             // Links
-            if (wallGroup.ContainsCell(
-                    cell + Vector3Int.left))
-            {
+            if (wallGroup.ContainsCell(cell + Vector3Int.left))
                 mask |= 8;
-            }
 
             return mask;
         }
-
 
         // =========================================================
         // BUILD
@@ -213,13 +213,18 @@ namespace TowerDefense
         // DAMAGE
         // =========================================================
 
-        public override void TakeDamage(int damage)
+
+
+        public override DamageResult TakeDamage(DamageInfo info)
         {
             if (wallGroup == null)
-                return;
+                return default;
+            
+            return wallGroup.healthBarVitals.TakeDamage(info);
 
-            wallGroup.TakeDamage(damage);
         }
+        
+
 
         // =========================================================
         // DESTROY
@@ -254,7 +259,5 @@ namespace TowerDefense
                 );
             }
         }
-
-
     }
 }

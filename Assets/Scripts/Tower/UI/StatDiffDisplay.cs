@@ -8,6 +8,7 @@ namespace TowerDefense
     [RequireComponent(typeof(Tower))]
     public class StatDiffDisplay : MonoBehaviour
     {
+        [SerializeField] private GameObject statDiffCanvas;
         [SerializeField] private GameObject statTextPrefab;
         [SerializeField] private int poolSize = 15;
 
@@ -31,7 +32,6 @@ namespace TowerDefense
 
         private void Awake()
         {
-            var statDiffCanvas = GetComponentInChildren<Canvas>();
             if (statDiffCanvas == null)
                 return;
 

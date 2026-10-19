@@ -541,11 +541,37 @@ MonoBehaviour:
   displayedStats: 71
   statHealthPoints: 0
   currentHealth: 0
+  baseArmor: 0
+  baseMagicResist: 0
+  autoAddVitals: 1
+  bonusPerLevel:
+    health: 0
+    healthRegen: 0
+    damage: 0
+    range: 0
+    cooldownDecrease: 0
+    armor: 0
+    magicResist: 0
+    critChance: 0
+    critDamage: 0
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
   range: 4
   interactionrange: 0.65
   damage: 2
   timeInBetweenShots: 3
   attackSpeedMultiplier: 0.5
+  offense:
+    critChance: 0
+    critDamage: 1.75
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
   rangeIndicator: {fileID: 4932997999966992105}
   rangeIndicatorOffset: {x: 0, y: 0.7, z: 0}
   interactionIndicator: {fileID: 6494477706845606113}
@@ -566,6 +592,21 @@ MonoBehaviour:
     - upgradeName: Warmes Feuer
       description: Warmes Feuer
       researchCost: 1
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 10
       damageIncrease: 2
       rangeIncrease: 0.4
@@ -617,6 +658,21 @@ MonoBehaviour:
     - upgradeName: "Aggressive Gl\xFChw\xFCrmchen"
       description: "Aggressive Gl\xFChw\xFCrmchen"
       researchCost: 2
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 50
       damageIncrease: 2
       rangeIncrease: 0.4
@@ -668,6 +724,21 @@ MonoBehaviour:
     - upgradeName: Flammenmeteor
       description: Flammenmeteor
       researchCost: 3
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 100
       damageIncrease: 2
       rangeIncrease: 0.4
@@ -719,6 +790,21 @@ MonoBehaviour:
     - upgradeName: Brennender Flammenmeteor
       description: Brennender Flammenmeteor
       researchCost: 4
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 150
       damageIncrease: 2
       rangeIncrease: 0.4
@@ -771,6 +857,21 @@ MonoBehaviour:
     - upgradeName: Flammenwind
       description: Flammenwind
       researchCost: 5
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 200
       damageIncrease: 2
       rangeIncrease: 0.4
@@ -826,6 +927,21 @@ MonoBehaviour:
     - upgradeName: Lila Einschlag
       description: Lila Einschlag
       researchCost: 1
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 2
       damageIncrease: 1
       rangeIncrease: 2
@@ -876,6 +992,21 @@ MonoBehaviour:
     - upgradeName: Meteor
       description: Meteor
       researchCost: 2
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 2
       damageIncrease: 1
       rangeIncrease: 2
@@ -926,6 +1057,21 @@ MonoBehaviour:
     - upgradeName: Wurfklinge
       description: Wurfklinge
       researchCost: 3
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 2
       damageIncrease: 1
       rangeIncrease: 2
@@ -978,6 +1124,21 @@ MonoBehaviour:
     - upgradeName: 2x Wurfklinge
       description: 2x Wurfklinge
       researchCost: 4
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 2
       damageIncrease: 1
       rangeIncrease: 2
@@ -1030,6 +1191,21 @@ MonoBehaviour:
     - upgradeName: 3x Wurfklinge
       description: 3x Wurfklinge
       researchCost: 5
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 2
       damageIncrease: 1
       rangeIncrease: 2
@@ -1085,6 +1261,21 @@ MonoBehaviour:
     - upgradeName: Gift
       description: Gift
       researchCost: 2
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 12
       damageIncrease: 5
       rangeIncrease: 0.4
@@ -1135,6 +1326,21 @@ MonoBehaviour:
     - upgradeName: Verdeltes Gift
       description: Verdeltes Gift
       researchCost: 3
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 60
       damageIncrease: 3
       rangeIncrease: 0.2
@@ -1185,6 +1391,21 @@ MonoBehaviour:
     - upgradeName: Bezwingendes Gift
       description: Bezwingendes Gift
       researchCost: 4
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 120
       damageIncrease: 5
       rangeIncrease: 0.2
@@ -1236,6 +1457,21 @@ MonoBehaviour:
     - upgradeName: "Erl\xF6sendes Gift"
       description: "Erl\xF6sendes Gift"
       researchCost: 5
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 150
       damageIncrease: 5
       rangeIncrease: 0.2
@@ -1288,6 +1524,21 @@ MonoBehaviour:
     - upgradeName: "Schlagartiger Erl\xF6s"
       description: "Schlagartiger Erl\xF6s"
       researchCost: 6
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 220
       damageIncrease: 7
       rangeIncrease: -0.2
@@ -1372,6 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7af52e42084a29a5b19b2bc98af867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statDiffCanvas: {fileID: 0}
   statTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
   poolSize: 5
   startY: 1.75

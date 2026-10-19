@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TowerDefense;
+using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace ScriptableObjects
         public int researchCost;
         
         [Header("Base Stats Upgrade")]
+        public StatBonus bonus;
         public int upgradeCost; // Kosten für das nächste Upgrade
         public int damageIncrease; // Schadenserhöhung
         public float rangeIncrease; // Reichweitenerhöhung

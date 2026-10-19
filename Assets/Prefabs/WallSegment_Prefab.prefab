@@ -807,6 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7af52e42084a29a5b19b2bc98af867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statDiffCanvas: {fileID: 0}
   statTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
   poolSize: 5
   startY: 1.75
@@ -858,11 +859,36 @@ MonoBehaviour:
   displayedStats: 0
   statHealthPoints: 10
   currentHealth: 10
+  baseArmor: 2
+  baseMagicResist: 1
+  bonusPerLevel:
+    health: 0
+    healthRegen: 0
+    damage: 0
+    range: 0
+    cooldownDecrease: 0
+    armor: 0
+    magicResist: 0
+    critChance: 0
+    critDamage: 0
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
   range: 0
   interactionrange: 1
   damage: 0
   timeInBetweenShots: 0.1
   attackSpeedMultiplier: 1
+  offense:
+    critChance: 0
+    critDamage: 1.75
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
   rangeIndicator: {fileID: 6642679538933387214}
   rangeIndicatorOffset: {x: 0, y: 0, z: 0}
   interactionIndicator: {fileID: 5973805779799042870}
@@ -884,6 +910,21 @@ MonoBehaviour:
       description: A simple wooden wall blocks the enemies paths but can be broken
         by their attcks.
       researchCost: 1
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 80
       damageIncrease: 0
       rangeIncrease: 0
@@ -924,6 +965,21 @@ MonoBehaviour:
     - upgradeName: Stone Wall
       description: A stone wall has more health than a wooden wall
       researchCost: 1
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 50
       damageIncrease: 0
       rangeIncrease: 0
@@ -965,6 +1021,21 @@ MonoBehaviour:
       description: A reinforced wall has more health than a stone wall and also gets
         some armor blocking physical damage
       researchCost: 1
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
       upgradeCost: 80
       damageIncrease: 0
       rangeIncrease: 0

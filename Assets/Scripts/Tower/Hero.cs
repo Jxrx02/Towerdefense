@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Tower;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,19 +21,30 @@ namespace TowerDefense
         private bool interactionMode = false;
         //private bool hasReachedTargetPosition;
 
-        private Coroutine interactionCoroutine;        
+        private Coroutine interactionCoroutine;
+
         [Header("Weapons")]
         [SerializeField] private Projectile[] equippedProjectiles;
         [SerializeField] private int activeWeaponIndex;
 
+        [Header("Tod / Respawn")]
+        [SerializeField] private float respawnTime = 5f;
+
+        private bool isDowned;
+        private Vector3 spawnPosition;
+        private readonly List<SpriteRenderer> hiddenRenderers = new List<SpriteRenderer>();
 
         [HideInInspector]
         public Vector2 targetPosition;
+
+        /// <summary>Gegner dürfen den Helden nur angreifen, solange er nicht außer Gefecht ist.</summary>
+        public override bool IsTargetable => base.IsTargetable && !isDowned;
 
         private void Start()
         {
             TowerHeroManager.instance.RegisterTower(this.gameObject);
 
+            spawnPosition = transform.position;
             targetPosition = transform.position;
 
             // Start-Richtung
@@ -42,6 +54,9 @@ namespace TowerDefense
 
         private void Update()
         {
+            if (isDowned)
+                return;
+
             HandleMovement();
             HandleAnimation();
 
@@ -64,12 +79,79 @@ namespace TowerDefense
         }
 
         // ------------------------------------------------------------------
+        // DAMAGE / TOD
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Der Held hat keine Baustelle (towerConstructionSite), deshalb eigene Variante statt Tower.BreakTower:
+        /// kurz außer Gefecht, dann Respawn am Startpunkt.
+        /// </summary>
+        protected override void BreakTower()
+        {
+            if (isDowned)
+                return;
+
+            StartCoroutine(DownedRoutine());
+        }
+
+        private IEnumerator DownedRoutine()
+        {
+            isDowned = true;
+            isAttacking = false;
+            movementInput = Vector2.zero;
+            currentTower = null;
+
+            TowerHeroManager.instance.DeselectTower();
+            SetVisible(false);
+
+            yield return new WaitForSeconds(respawnTime);
+
+            transform.position = spawnPosition;
+            targetPosition = spawnPosition;
+            RestoreFullHealth();
+            SetVisible(true);
+            
+            Actions.onHeroDeath.Invoke(this.gameObject);
+
+            spriteAnim.SetDirection(FacingDirection.Down);
+            spriteAnim.SetState(AnimationState.Idle);
+
+            isDowned = false;
+        }
+
+        /// <summary>Blendet nur Renderer aus, die gerade sichtbar sind (Reichweiten-Anzeigen bleiben unberührt).</summary>
+        private void SetVisible(bool visible)
+        {
+            if (!visible)
+            {
+                hiddenRenderers.Clear();
+
+                foreach (var r in GetComponentsInChildren<SpriteRenderer>())
+                {
+                    if (!r.enabled) continue;
+
+                    r.enabled = false;
+                    hiddenRenderers.Add(r);
+                }
+            }
+            else
+            {
+                foreach (var r in hiddenRenderers)
+                {
+                    if (r != null)
+                        r.enabled = true;
+                }
+
+                hiddenRenderers.Clear();
+            }
+        }
+
+        // ------------------------------------------------------------------
         // TOWER INTERACTION
         // ------------------------------------------------------------------
 
         public new void EnterTowerRange(Tower tower)
         {
-            
             currentTower = tower;
 
             if (currentTower != null && LevelManager.instance.isDay)
@@ -77,17 +159,13 @@ namespace TowerDefense
                 currentTower.SetHighlighted(false);
                 currentTower.SetInteraction(false);
                 currentTower.SetIsSelected(false);
-
             }
-
 
             if (currentTower is not WallSegment && LevelManager.instance.isDay)
             {
                 currentTower.SetHighlighted(true);
-                currentTower.SetInteraction(true); 
-                
+                currentTower.SetInteraction(true);
             }
-
 
             if (currentTower is WallSegment wall)
             {
@@ -97,10 +175,8 @@ namespace TowerDefense
                 {
                     wallGroup.SetUnbuiltVisual();
                 }
-                
+
                 wallGroup.EnterInteractionRange(this);
-                
-                
             }
 
             Debug.Log(tower.towerName + " ist in Range");
@@ -119,7 +195,6 @@ namespace TowerDefense
                 {
                     wall.WallGroup.SetUnbuiltVisual();
                 }
-
             }
 
             tower.SetHighlighted(false);
@@ -129,9 +204,8 @@ namespace TowerDefense
             SetInteraction(false);
 
             TowerHeroManager.instance.DeselectTower();
-
         }
-        
+
         // ------------------------------------------------------------------
         // ANIMATION
         // ------------------------------------------------------------------
@@ -185,11 +259,11 @@ namespace TowerDefense
                     DirectionUtility.FromVector(movementInput);
 
                 spriteAnim.SetDirection(direction);
-                
-                
+
                 ysort.UpdateSorting();
             }
         }
+
         private bool CanMoveTo(Vector3 newPosition)
         {
             foreach (GameObject wallObject in TowerHeroManager.instance.walls)
@@ -199,7 +273,7 @@ namespace TowerDefense
 
                 WallSegment wallSegment = wallObject.GetComponent<WallSegment>();
 
-                if (wallSegment == null || wallSegment.WallGroup.IsGateOpen() )
+                if (wallSegment == null || wallSegment.WallGroup.IsGateOpen())
                     continue;
 
                 float distance =
@@ -211,7 +285,6 @@ namespace TowerDefense
                 if (distance > 0.4f)
                 {
                     continue;
-
                 }
 
                 // Das mittlere Tile ist ein Gate
@@ -224,7 +297,7 @@ namespace TowerDefense
 
                         continue;
                     }
-    
+
                     // Geschlossen -> blockieren
                     return false;
                 }
@@ -235,6 +308,7 @@ namespace TowerDefense
 
             return true;
         }
+
         // ------------------------------------------------------------------
         // CLICK-TO-MOVE
         // ------------------------------------------------------------------
@@ -287,7 +361,7 @@ namespace TowerDefense
 
         public override void Attack((GameObject, int) _target)
         {
-            if (isAttacking)
+            if (isDowned || isAttacking)
                 return;
 
             target = _target;
@@ -319,6 +393,7 @@ namespace TowerDefense
 
             StartCoroutine(HeroAttackCoroutine());
         }
+
         private IEnumerator HeroAttackCoroutine()
         {
             // Kleine Verzögerung bis zum eigentlichen Schuss.
@@ -346,6 +421,7 @@ namespace TowerDefense
                 true
             );
         }
+
         // ------------------------------------------------------------------
         // LOOK DIRECTION
         // ------------------------------------------------------------------

@@ -21,10 +21,11 @@ namespace TowerDefense
 
         void Start()
         {
+            
             Actions.onEnemySpawn += RegisterEnemy;
             Actions.onEnemyReachedEnd += UnregisterEnemy;
             Actions.onEnemyDeath += UnregisterEnemy;
-            
+
         }
 
         void Awake()
@@ -118,7 +119,6 @@ namespace TowerDefense
             }
 
         }
-        
         
         
         

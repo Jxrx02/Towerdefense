@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4949638389114139711}
   - component: {fileID: 6413109965773258389}
   - component: {fileID: -6660050570647986347}
+  - component: {fileID: 7728532180919239103}
+  - component: {fileID: -3310549229669275929}
   m_Layer: 6
   m_Name: Enemy_Prefab
   m_TagString: Enemy
@@ -29,10 +31,11 @@ Transform:
   m_GameObject: {fileID: 541066223521367457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.051279, y: -2.8868594, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6584376446482850250}
   - {fileID: 5238005416861841787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,6 +182,167 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::YSort
   offset: 0
   multiplier: 100
+--- !u!114 &7728532180919239103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541066223521367457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce616dc729b54ff79548eb8ba5ee54cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.DamageNumberSpawner
+  damageCanvas: {fileID: 3771438740894118788}
+  damageTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
+  poolSize: 6
+  startY: 1.75
+  endY: 2.15
+  duration: 0.8
+  horizontalSpread: 0.25
+  critPunchScale: 1.5
+  shieldRowOffset: 0.18
+  normalDamageColor: {r: 1, g: 1, b: 1, a: 1}
+  criticalDamageColor: {r: 1, g: 0.25, b: 0.15, a: 1}
+  shieldDamageColor: {r: 0.4, g: 0.8, b: 1, a: 1}
+  blockedColor: {r: 0.75, g: 0.45, b: 1, a: 1}
+  healColor: {r: 0.35, g: 1, b: 0.45, a: 1}
+  criticalPrefix: 'CRIT '
+  blockedText: BLOCK
+  healPrefix: +
+  showHealNumbers: 1
+  minHealToShow: 1
+  keepUpright: 1
+  detachOnDeath: 1
+  hitStopFramesOnCrit: 3
+  hitStopFramesOnHit: 0
+--- !u!114 &-3310549229669275929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541066223521367457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79659bedfd7d476e8e877ebc7cffe6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
+  width: 1
+  height: 0.12
+  padding: 0.12
+  autoOffset: 1
+  manualOffset: {x: 0, y: 0}
+  alwaysVisible: 0
+  hideDelay: 2.5
+  fadeTime: 0.25
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0.65}
+  healthColor: {r: 0.25, g: 0.85, b: 0.35, a: 1}
+  blockColor: {r: 0.65, g: 0.35, b: 1, a: 1}
+  shieldColor: {r: 1, g: 1, b: 1, a: 1}
+  lagColor: {r: 1, g: 0.85, b: 0.2, a: 0.95}
+  criticalColor: {r: 0.95, g: 0.15, b: 0.1, a: 1}
+  healFlashColor: {r: 0.7, g: 1, b: 0.75, a: 1}
+  antiHealColor: {r: 0.55, g: 0.05, b: 0.15, a: 1}
+  tickColor: {r: 0, g: 0, b: 0, a: 0.55}
+  lagDelay: 0.35
+  lagSpeed: 0.9
+  criticalThreshold: 0.25
+  criticalPulseSpeed: 8
+  tickEveryHP: 0
+  minHealthForTicks: 250
+  maxTicks: 24
+  majorTickEvery: 10
+  tickWidth: 0.015
+  showBlockPips: 1
+  maxPips: 5
+  sortingLayerName: Player
+  sortingOrder: 200
+--- !u!1 &3771438740894118788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6584376446482850250}
+  - component: {fileID: 1938650078332590322}
+  - component: {fileID: 6219407048362147760}
+  m_Layer: 7
+  m_Name: CanvasDamageNumber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6584376446482850250
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771438740894118788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2029738155229517890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4.64, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1938650078332590322
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771438740894118788}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: -1731315795
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
+--- !u!114 &6219407048362147760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771438740894118788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 16
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
 --- !u!1 &8051571800795669770
 GameObject:
   m_ObjectHideFlags: 0

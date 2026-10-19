@@ -32,9 +32,16 @@ public class WallGroup : MonoBehaviour
     private int hp;
     public int HP => hp;
     
+    // =========================================================
+    public Vitals healthBarVitals;
+    private HealthBar groupHealthBar;
+    private DamageNumberSpawner damageNumberSpawner;
+    private GameObject damageCanvasObject;
+    private readonly List<Vitals> segmentVitals = new List<Vitals>();
+    // =========================================================
+
     [Header("Wall Upgrade")]
-    [SerializeField]
-    private UpgradePath wallUpgradePath;
+    [SerializeField] private UpgradePath wallUpgradePath;
 
     private WallGate wallGate;
     public int wallLevel = 0;
@@ -110,11 +117,187 @@ public class WallGroup : MonoBehaviour
 
         hp = maxHP;
         isBuilt = false;
+        InitializeGroupHealthBar();
+        InitializeGroupDamageNumbers();
 
         SetUnbuiltVisual();
         // Erst nachdem ALLE Segmente existieren,
         // werden die Nachbarschaften berechnet.
         RefreshVisuals();
+    }
+    private void InitializeGroupDamageNumbers()
+    {
+        if (damageNumberSpawner != null)
+            return;
+
+        // Laufzeitinstanz des Helden suchen.
+        Hero hero = FindFirstObjectByType<Hero>();
+
+        if (hero == null)
+        {
+            Debug.LogWarning(
+                $"WallGroup '{name}': Kein Hero in der Szene gefunden. " +
+                "DamageNumbers werden nicht initialisiert.",
+                this
+            );
+            return;
+        }
+
+        // Das Damage-Text-Prefab aus dem Spawner des Helden übernehmen.
+        DamageNumberSpawner heroSpawner = hero.GetComponent<DamageNumberSpawner>();
+
+        if (heroSpawner == null || heroSpawner.DamageTextPrefab == null)
+        {
+            Debug.LogWarning(
+                $"WallGroup '{name}': Der Hero besitzt keinen " +
+                "DamageNumberSpawner mit zugewiesenem Text-Prefab.",
+                this
+            );
+            return;
+        }
+
+        GameObject textPrefab = heroSpawner.DamageTextPrefab;
+        GameObject heroCanvas = heroSpawner.DamageCanvas;
+
+        // Eigenes Canvas für diese WallGroup erzeugen.
+        damageCanvasObject = new GameObject(
+            "WallGroupDamageCanvas",
+            typeof(RectTransform),
+            typeof(Canvas)
+        );
+
+        damageCanvasObject.transform.SetParent(transform, false);
+        damageCanvasObject.transform.localPosition = Vector3.zero;
+        damageCanvasObject.transform.localRotation = Quaternion.identity;
+
+        Canvas canvas = damageCanvasObject.GetComponent<Canvas>();
+
+        // Die Darstellungseinstellungen des Hero-Canvas übernehmen,
+        // sofern dort ein Canvas vorhanden ist.
+        if (heroCanvas != null)
+        {
+            Canvas sourceCanvas = heroCanvas.GetComponent<Canvas>();
+
+            RectTransform sourceRect =
+                heroCanvas.GetComponent<RectTransform>();
+
+            RectTransform targetRect =
+                damageCanvasObject.GetComponent<RectTransform>();
+
+            if (sourceCanvas != null)
+            {
+                canvas.renderMode = sourceCanvas.renderMode;
+                canvas.worldCamera = sourceCanvas.worldCamera;
+                canvas.sortingLayerID = sourceCanvas.sortingLayerID;
+                canvas.sortingOrder = sourceCanvas.sortingOrder;
+                canvas.pixelPerfect = sourceCanvas.pixelPerfect;
+            }
+
+            if (sourceRect != null)
+            {
+                targetRect.sizeDelta = sourceRect.sizeDelta;
+                targetRect.localScale = sourceRect.localScale;
+            }
+
+            damageCanvasObject.transform.localPosition =
+                heroCanvas.transform.localPosition;
+        }
+        else
+        {
+            // Fallback, wenn der Hero-Spawner kein Canvas referenziert.
+            canvas.renderMode = RenderMode.WorldSpace;
+
+            RectTransform rect =
+                damageCanvasObject.GetComponent<RectTransform>();
+
+            rect.sizeDelta = new Vector2(500f, 300f);
+            rect.localScale = Vector3.one * 0.01f;
+        }
+
+        // Den Spawner auf der dynamisch erzeugten WallGroup anlegen.
+        damageNumberSpawner = gameObject.AddComponent<DamageNumberSpawner>();
+
+        damageNumberSpawner.Initialize(
+            damageCanvasObject,
+            textPrefab
+        );
+    }
+    private void InitializeSegmentVitals()
+    {
+        segmentVitals.Clear();
+
+        WallSegment[] segments = GetComponentsInChildren<WallSegment>(true);
+
+        foreach (WallSegment segment in segments)
+        {
+            if (segment == null)
+                continue;
+
+            Vitals segmentVital = segment.GetComponent<Vitals>();
+
+            if (segmentVital == null)
+                continue;
+
+            if (segmentVitals.Contains(segmentVital))
+                continue;
+
+            segmentVitals.Add(segmentVital);
+            segmentVital.Damaged += HandleSegmentDamaged;
+            segmentVital.Healed += HandleSegmentHealed;
+
+        }
+    }
+    private void HandleSegmentDamaged(DamageResult result)
+    {
+        if (damageNumberSpawner == null)
+            return;
+
+        damageNumberSpawner.ForwardDamageEvent(result);
+    }
+    private void HandleSegmentHealed(float heal)
+    {
+        if (damageNumberSpawner == null)
+            return;
+
+        damageNumberSpawner.ForwardHealEvent(heal);
+        SyncGroupHealthBar();
+    }
+    private void OnDestroy()
+    {
+        foreach (Vitals segmentVital in segmentVitals)
+        {
+            if (segmentVital != null)
+            {
+                segmentVital.Damaged -= HandleSegmentDamaged;
+                segmentVital.Healed -= HandleSegmentHealed;
+            }
+
+        }
+
+        segmentVitals.Clear();
+    }
+    
+    private void InitializeGroupHealthBar()
+    {
+        // Eigene Vitals-Komponente für die aggregierte HP-Anzeige.
+        if (!TryGetComponent(out healthBarVitals))
+            healthBarVitals = gameObject.AddComponent<Vitals>();
+
+        healthBarVitals.SetHealthForDisplay(hp, maxHP);
+
+        // HealthBar
+        if (!TryGetComponent(out groupHealthBar))
+            groupHealthBar = gameObject.AddComponent<HealthBar>();
+
+        groupHealthBar.alwaysVisible = false;
+    }
+
+    private void SyncGroupHealthBar()
+    {
+        if (healthBarVitals == null)
+            return;
+
+        healthBarVitals.SetHealthForDisplay(hp, maxHP);
     }
     // =========================================================
     // CREATE WALL SEGMENT
@@ -232,7 +415,7 @@ public class WallGroup : MonoBehaviour
 
 
         hp = maxHP;
-
+        SyncGroupHealthBar();
         RefreshVisuals();
 
         Actions.onWallBuilt?.Invoke(this);
@@ -253,7 +436,7 @@ public class WallGroup : MonoBehaviour
         GridManager.Instance.PlaceWallGroup(wallCells);
 
         hp = maxHP;
-
+        SyncGroupHealthBar();
         isBuilt = true;
         isDestroyed = false;
 
@@ -334,7 +517,8 @@ public class WallGroup : MonoBehaviour
 
             maxHP += totalHealthIncrease;
             hp += totalHealthIncrease;
-
+            
+            SyncGroupHealthBar();
             ApplyWallSprites(upgrade.wallSprites, upgrade.gateHorizontalClosed,upgrade.gateHorizontalOpen,upgrade.gateVerticalClosed,upgrade.gateVerticalOpen);
         }                                                                                          
 
@@ -757,7 +941,7 @@ public class WallGroup : MonoBehaviour
 
         maxHP -= hpPerSegment * segments.Count;
         hp = maxHP;
-
+        SyncGroupHealthBar();
         GridManager.Instance.RemoveWallGroup(wallCells);
 
         isBuilt = false;
@@ -781,19 +965,22 @@ public class WallGroup : MonoBehaviour
     // =========================================================
     // REMOVE SEGMENT
     // =========================================================
-    public void TakeDamage(int damage)
+    public void TakeDamage(DamageInfo info)
     {
         if (!isBuilt || isDestroyed)
             return;
 
-        if (damage <= 0)
+        if (info.FinalAmount <= 0)
             return;
 
-        hp -= damage;
+        hp = (int)Mathf.Max(0, hp - info.FinalAmount);
 
+        SyncGroupHealthBar();
+        
+        healthBarVitals.TakeDamage(info);
+        
         if (hp <= 0)
         {
-            hp = 0;
             DisableWallGroup();
         }
     }
@@ -810,6 +997,7 @@ public class WallGroup : MonoBehaviour
         isBuilt = false;
 
         // Zellen wieder begehbar machen
+        SyncGroupHealthBar();
         GridManager.Instance.RemoveWallGroup(wallCells);
 
         // Segmente aus dem aktiven Tower-/Wall-System entfernen
@@ -844,7 +1032,7 @@ public class WallGroup : MonoBehaviour
 
         wallCells.Clear();
         segments.Clear();
-
+        SyncGroupHealthBar();
         isBuilt = false;
 
         Destroy(gameObject);

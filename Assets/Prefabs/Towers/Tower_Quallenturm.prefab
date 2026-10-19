@@ -1,0 +1,1391 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &230905043190037931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498680992231705948}
+  - component: {fileID: 5122664726838377537}
+  - component: {fileID: 5292349416167266462}
+  m_Layer: 7
+  m_Name: InteractionIndicator (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498680992231705948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230905043190037931}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99, y: 0.99, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5998746309796255900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5122664726838377537
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230905043190037931}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1731315795
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_MaskInteraction: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.495283, g: 1, b: 0.5054693, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!331 &5292349416167266462
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230905043190037931}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_MaskAlphaCutoff: 1
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
+  m_MaskSource: 0
+--- !u!1 &1445721711633885064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061803233883542865}
+  - component: {fileID: 8437903671026638882}
+  - component: {fileID: 4328554353491148878}
+  m_Layer: 7
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1061803233883542865
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445721711633885064}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2873620863628583086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &8437903671026638882
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445721711633885064}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: -1731315795
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
+--- !u!114 &4328554353491148878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445721711633885064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 16
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!1 &3751961141019920574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373327469587707113}
+  - component: {fileID: 3505241450742606357}
+  - component: {fileID: 6070801352947612472}
+  m_Layer: 7
+  m_Name: RangeIndicator (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373327469587707113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751961141019920574}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99, y: 0.99, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 511527334623907270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3505241450742606357
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751961141019920574}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1731315795
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_MaskInteraction: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.12156863}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!331 &6070801352947612472
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751961141019920574}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_MaskAlphaCutoff: 1
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
+  m_MaskSource: 0
+--- !u!1 &4401361267732537802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2873620863628583086}
+  - component: {fileID: 5801284891670225972}
+  - component: {fileID: 2496791565365021527}
+  - component: {fileID: 5740189684470814928}
+  - component: {fileID: 2179009691131905602}
+  - component: {fileID: 876260232314397187}
+  - component: {fileID: 1633344595018639211}
+  - component: {fileID: 3893182475523965384}
+  - component: {fileID: 7186011197280611218}
+  m_Layer: 7
+  m_Name: Tower_Quallenturm
+  m_TagString: Tower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2873620863628583086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.32, y: -3.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8153726728699983278}
+  - {fileID: 511527334623907270}
+  - {fileID: 5998746309796255900}
+  - {fileID: 1061803233883542865}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5801284891670225972
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 852797597
+  m_SortingLayer: 3
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.8125, y: 1.125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!58 &2496791565365021527
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.7}
+  m_Radius: 0.65
+--- !u!114 &5740189684470814928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e608a6e3a804045bfc7c8f2590b4c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerName: Quallenturm
+  towerDesc: "Entl\xE4dt Blitze, die von Gegner zu Gegner springen.\nBlitzziele:
+    2 \xB7 Blitzschaden: 8 \xB7 Blitzradius: 3 \xB7 Blitzabfall: 20 %\nSchaden 4,
+    alle 1,8 s, Reichweite 5,5, 100 HP, Magieresistenz 10"
+  towerInitPrice: 14
+  displayedStats: 64559
+  statHealthPoints: 100
+  currentHealth: 100
+  baseArmor: 0
+  baseMagicResist: 10
+  autoAddVitals: 1
+  bonusPerLevel:
+    health: 8
+    healthRegen: 0
+    damage: 1
+    range: 0
+    cooldownDecrease: 0
+    armor: 0
+    magicResist: 1
+    critChance: 0.01
+    critDamage: 0
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
+  range: 5.5
+  interactionrange: 1.5
+  damage: 4
+  timeInBetweenShots: 1.8
+  attackSpeedMultiplier: 1
+  offense:
+    critChance: 0
+    critDamage: 1.75
+    lethality: 0
+    armorPenPercent: 0
+    magicPenFlat: 0
+    magicPenPercent: 0
+    omnivamp: 0
+  rangeIndicator: {fileID: 4932997999966992105}
+  rangeIndicatorOffset: {x: 0, y: 0.7, z: 0}
+  interactionIndicator: {fileID: 6494477706845606113}
+  interactionIndicatorOffset: {x: 0, y: 0, z: 0}
+  outlineMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
+  targetPreference: 0
+  statCoinsEarnedPerSecond: 0
+  statHealthRegenPerSecond: 0
+  statRangeMultiplier: 0
+  statDmgMultiplier: 0
+  statAttackSpeedMultiplier: 0
+  statSlowMultiplier: 0
+  spawnProjectileOffsetPoint: {fileID: 8153726728699983278}
+  upgradePaths:
+  - towerName: Quallenturm - Gewitterwolke
+    researchCost: 10
+    levels:
+    - upgradeName: Leitgel
+      description: "Blitzziele: 2 \u2192 4 \xB7 Blitzradius: 3 \u2192 3,5\n+20 HP"
+      researchCost: 8
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
+      upgradeCost: 26
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 20
+      healthRegenPerSecond: 0
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -8075294252477977000, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -8075294252477977000, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -7328504360478788311, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: d1c30f7a42b59994eaf3a526d2dc6eb5, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+    - upgradeName: Donnerquallen
+      description: "Blitzziele: 4 \u2192 7 \xB7 Blitzschaden: 8 \u2192 9 \xB7 Blitzradius:
+        3,5 \u2192 4 \xB7 Blitzabfall: 20 % \u2192 10 %\n+1 Schaden, +15 % Magic
+        Pen"
+      researchCost: 16
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0.15
+        omnivamp: 0
+      upgradeCost: 56
+      damageIncrease: 1
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 0
+      healthRegenPerSecond: 0
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4988104175449635697, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -581366183281798974, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -581366183281798974, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2621304324239856913, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: 4fb8ba1ccbe2b684da46f3b0cda7cbd2, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+  - towerName: Quallenturm - Stachelqualle
+    researchCost: 10
+    levels:
+    - upgradeName: Nesselgift
+      description: "Blitzziele: 2 \u2192 1 \xB7 Blitzschaden: 8 \u2192 20\n-0,1 s
+        Abklingzeit, +15 % Crit-Chance, +12 Magic Pen"
+      researchCost: 8
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0.15
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 12
+        magicPenPercent: 0
+        omnivamp: 0
+      upgradeCost: 26
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0.1
+      coinsEarnedPerSecond: 0
+      healthpoints: 0
+      healthRegenPerSecond: 0
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -8870104200670459491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -8870104200670459491, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 7003946911834999105, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: 3f8ff838aac1ca54f8be7aeef9d1eedc, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+    - upgradeName: Stromschlag
+      description: "Blitzschaden: 20 \u2192 34\n+2 Schaden, +10 % Crit-Chance, +50
+        % Crit-Schaden, +10 Magic Pen"
+      researchCost: 16
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 0
+        critChance: 0.1
+        critDamage: 0.5
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 10
+        magicPenPercent: 0
+        omnivamp: 0
+      upgradeCost: 56
+      damageIncrease: 2
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 0
+      healthRegenPerSecond: 0
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -5684525784721794843, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -5684525784721794843, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -1915210143210892900, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: e3e0ceaf866775a40a5702bedc34248e, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+  - towerName: Quallenturm - Biolumineszenz
+    researchCost: 10
+    levels:
+    - upgradeName: Leuchtglibber
+      description: "+200 HP, +10 R\xFCstung, +30 Magieresistenz"
+      researchCost: 8
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 10
+        magicResist: 30
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0
+      upgradeCost: 26
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 200
+      healthRegenPerSecond: 0
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4250865264634046285, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -6660048911344943545, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -6660048911344943545, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 5181666928351800044, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: a1a2b680d2171d449b1e690c48e5cc9b, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+    - upgradeName: Lichtfalle
+      description: "Blitzziele: 2 \u2192 3 \xB7 Blitzschaden: 8 \u2192 9 \xB7 Blitzabfall:
+        20 % \u2192 15 %\n+250 HP, +2 HP/s Regeneration, +30 Magieresistenz, +6 %
+        Omnivamp"
+      researchCost: 16
+      bonus:
+        health: 0
+        healthRegen: 0
+        damage: 0
+        range: 0
+        cooldownDecrease: 0
+        armor: 0
+        magicResist: 30
+        critChance: 0
+        critDamage: 0
+        lethality: 0
+        armorPenPercent: 0
+        magicPenFlat: 0
+        magicPenPercent: 0
+        omnivamp: 0.06
+      upgradeCost: 56
+      damageIncrease: 0
+      rangeIncrease: 0
+      attackSpeedIncrease: 0
+      timeInBetweenShotsDecrease: 0
+      coinsEarnedPerSecond: 0
+      healthpoints: 250
+      healthRegenPerSecond: 2
+      rangeMultiplier: 0
+      dmgMultiplier: 0
+      attackSpeedMultiplier: 0
+      slowMultiplier: 0
+      idle_sprites:
+      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      attack_sprites:
+      - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -2281658426445258989, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 4013045085217533645, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: 4013045085217533645, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      pathShopIcon:
+      - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      - {fileID: -4834950895480601932, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+      projectile: {fileID: 8985508962564218780, guid: de3e64af35b4f7e409c9ec7621290718, type: 3}
+      wallSprites:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      gateHorizontalClosed: {fileID: 0}
+      gateHorizontalOpen: {fileID: 0}
+      gateVerticalClosed: {fileID: 0}
+      gateVerticalOpen: {fileID: 0}
+  pathLevels: 000000000000000000000000
+  level: 1
+  experience: 0
+  requiredExperience: 0
+  levelConfig: {fileID: 11400000, guid: f434a970578b9894dbaeb1a25b88b1e0, type: 2}
+  isAttacking: 0
+  projectilePrefab: {fileID: 8985508962564218780, guid: d6e6e100cbfbb5349be988705a5547e7, type: 3}
+  towerConstructionSite: {fileID: 0}
+  flipTowerWhenAttack: 1
+--- !u!114 &2179009691131905602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b883c1daea164d7687ea0d8ad22f1835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.61, y: 2.3}
+  offset: {x: 0, y: 0.62}
+  _enabled: 1
+--- !u!114 &876260232314397187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7af52e42084a29a5b19b2bc98af867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statDiffCanvas: {fileID: 0}
+  statTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
+  poolSize: 5
+  startY: 1.75
+  endY: 2.15
+  duration: 1
+--- !u!114 &1633344595018639211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c06338dcf3f3834e9ea0d40eccd0c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteAnim
+  speed: 1
+  loopThrough: 0
+  mTimePerFrame: 0.125
+  loop: 1
+  idle_sprites:
+  - {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: -4285783940327248292, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: 9062258919097810594, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  attack_sprites:
+  - {fileID: -5529331394467618637, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: -4285783940327248292, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  - {fileID: 9062258919097810594, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
+  evolve_sprites: []
+  dead_sprites: []
+  walk_sprites: []
+  directionalAnimations: []
+  destroyOnEndDeadAnimation: 0
+  <animState>k__BackingField: 1
+--- !u!114 &3893182475523965384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
+  offset: 0
+  multiplier: 100
+--- !u!114 &7186011197280611218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401361267732537802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79659bedfd7d476e8e877ebc7cffe6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
+  width: 1
+  height: 0.12
+  padding: 0.12
+  autoOffset: 1
+  manualOffset: {x: 0, y: 0}
+  alwaysVisible: 0
+  hideDelay: 2.5
+  fadeTime: 0.25
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0.65}
+  healthColor: {r: 0.25, g: 0.85, b: 0.35, a: 1}
+  blockColor: {r: 0.65, g: 0.35, b: 1, a: 1}
+  shieldColor: {r: 1, g: 1, b: 1, a: 1}
+  lagColor: {r: 1, g: 0.85, b: 0.2, a: 0.95}
+  criticalColor: {r: 0.95, g: 0.15, b: 0.1, a: 1}
+  healFlashColor: {r: 0.7, g: 1, b: 0.75, a: 1}
+  antiHealColor: {r: 0.55, g: 0.05, b: 0.15, a: 1}
+  tickColor: {r: 0, g: 0, b: 0, a: 0.55}
+  lagDelay: 0.35
+  lagSpeed: 0.9
+  criticalThreshold: 0.25
+  criticalPulseSpeed: 8
+  tickEveryHP: 0
+  minHealthForTicks: 250
+  maxTicks: 24
+  majorTickEvery: 10
+  tickWidth: 0.015
+  showBlockPips: 1
+  maxPips: 5
+  sortingLayerName: Player
+  sortingOrder: 200
+--- !u!1 &4846675263847651107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511527334623907270}
+  - component: {fileID: 4932997999966992105}
+  m_Layer: 7
+  m_Name: RangeIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511527334623907270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846675263847651107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 373327469587707113}
+  m_Father: {fileID: 2873620863628583086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4932997999966992105
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846675263847651107}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1731315795
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_MaskInteraction: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.12156863}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!1 &5102061605546105367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5998746309796255900}
+  - component: {fileID: 6494477706845606113}
+  - component: {fileID: 5636474689946052040}
+  - component: {fileID: 2545424255103235338}
+  m_Layer: 7
+  m_Name: InteractionIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5998746309796255900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102061605546105367}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 498680992231705948}
+  m_Father: {fileID: 2873620863628583086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6494477706845606113
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102061605546105367}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -1731315795
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_MaskInteraction: 2
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.2216981, g: 1, b: 0.34535596, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!114 &5636474689946052040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102061605546105367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a635cfd397a4818ba870b035b8e3fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerInteractionArea
+--- !u!58 &2545424255103235338
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102061605546105367}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.00000011920929}
+  m_Radius: 0.49999997
+--- !u!1 &9159420448219065433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8153726728699983278}
+  m_Layer: 7
+  m_Name: spawnProjectileOffsetPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8153726728699983278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159420448219065433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2873620863628583086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
