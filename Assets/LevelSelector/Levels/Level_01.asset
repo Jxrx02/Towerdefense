@@ -16,6 +16,7 @@ MonoBehaviour:
   levelName: The Beginning
   description: Defend the settlement...
   availableWeapons:
+  - {fileID: 11400000, guid: c961a95b112f85e49a474cf98de2a9e5, type: 2}
   - {fileID: 11400000, guid: ab745b2ac90026b43ac0b1573c8bd372, type: 2}
   - {fileID: 11400000, guid: 10f3e4633e3d06b40aa620302191cd46, type: 2}
   availablePerks:

@@ -15,6 +15,7 @@ MonoBehaviour:
   weaponName: Lightningbow
   passiveDescription: Creates a small lightning between enemies which deals dmg
   activeDescription: 
+  heroConfig: {fileID: 11400000, guid: 7b0133d5a414bb44680a239847e9e767, type: 2}
   projectile: {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   active: {fileID: 0}
   icon: {fileID: 0}

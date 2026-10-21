@@ -15,6 +15,7 @@ MonoBehaviour:
   weaponName: Bow
   passiveDescription: 'passive: shoots a simple arrow on enemy'
   activeDescription: 'Active: create a small burst of arrows'
+  heroConfig: {fileID: 11400000, guid: 7b0133d5a414bb44680a239847e9e767, type: 2}
   projectile: {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   active: {fileID: 11400000, guid: 0abf812085ec1764eb764a5789fc0bc1, type: 2}
   icon: {fileID: 7830008934347407587, guid: 10752ef0d10508b4abf8e2910e2647a6, type: 3}

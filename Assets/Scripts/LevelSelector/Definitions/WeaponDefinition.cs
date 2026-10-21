@@ -16,7 +16,7 @@ namespace LevelSelector.Definitions
 
         [TextArea(2, 5)]
         public string activeDescription;
-
+        public HeroWeaponConfig heroConfig;
         [Header("Weapon")]
         public Projectile projectile;
 

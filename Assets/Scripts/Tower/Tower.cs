@@ -485,7 +485,10 @@ namespace TowerDefense
         /// <summary>
         /// Spawnt ein Projektil und überträgt Schaden (inkl. Crit, Penetration, Omnivamp) vom Turm.
         /// </summary>
-        protected void Shoot()
+        /// 
+        protected void Shoot() => Shoot(1f);
+
+        protected void Shoot(float damageMultiplier)
         {
             if (target.Item1 == null)
                 return;
@@ -505,7 +508,7 @@ namespace TowerDefense
                 return;
 
             // Schaden inklusive Aura-Bonus von Support-Türmen in der Nähe
-            int finalTowerDamage = Mathf.RoundToInt(damage * (1f + AuraDamage));
+            int finalTowerDamage = Mathf.RoundToInt(damage * (1f + AuraDamage) * damageMultiplier);
 
             // Die Schadensart kommt vom Projektil-Prefab (Projectile.damageType)
             DamageInfo info = offense.CreateDamage(finalTowerDamage, DamageType.Physical, gameObject);

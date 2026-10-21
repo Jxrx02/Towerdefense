@@ -301,16 +301,16 @@ GameObject:
   m_Component:
   - component: {fileID: 8917714398140067651}
   - component: {fileID: 2232504076401236655}
+  - component: {fileID: 818318868362160219}
   - component: {fileID: 8793094164187565305}
-  - component: {fileID: 8879415244484785402}
-  - component: {fileID: 7932739886474218458}
-  - component: {fileID: 8318729998589778377}
-  - component: {fileID: -1222339928672116993}
   - component: {fileID: -7791449136621826653}
   - component: {fileID: -9131675977067723117}
-  - component: {fileID: 818318868362160219}
-  - component: {fileID: 8750746098749655267}
   - component: {fileID: 8661839007190430251}
+  - component: {fileID: 8750746098749655267}
+  - component: {fileID: 8318729998589778377}
+  - component: {fileID: -1222339928672116993}
+  - component: {fileID: 8879415244484785402}
+  - component: {fileID: 7932739886474218458}
   m_Layer: 7
   m_Name: Tower_Hero_Prefab
   m_TagString: Tower
@@ -398,6 +398,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!61 &818318868362160219
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8125, y: 1.0625}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.5, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!58 &8793094164187565305
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -434,6 +480,158 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1
+--- !u!50 &-7791449136621826653
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-9131675977067723117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
+  offset: 0
+  multiplier: 100
+--- !u!114 &8661839007190430251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce616dc729b54ff79548eb8ba5ee54cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.DamageNumberSpawner
+  damageCanvas: {fileID: 4292553794862919087}
+  damageTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
+  poolSize: 6
+  startY: 1.75
+  endY: 2.15
+  duration: 0.8
+  horizontalSpread: 0.25
+  critPunchScale: 1.5
+  shieldRowOffset: 0.18
+  horizontalDrift: 0.35
+  normalDamageColor: {r: 1, g: 1, b: 1, a: 1}
+  criticalDamageColor: {r: 1, g: 0.25, b: 0.15, a: 1}
+  shieldDamageColor: {r: 0.4, g: 0.8, b: 1, a: 1}
+  blockedColor: {r: 0.75, g: 0.45, b: 1, a: 1}
+  healColor: {r: 0.35, g: 1, b: 0.45, a: 1}
+  criticalPrefix: 'CRIT '
+  blockedText: BLOCK
+  healPrefix: +
+  showHealNumbers: 1
+  minHealToShow: 1
+  keepUpright: 1
+  detachOnDeath: 1
+  hitStopFramesOnCrit: 15
+  hitStopFramesOnHit: 10
+--- !u!114 &8750746098749655267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79659bedfd7d476e8e877ebc7cffe6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
+  width: 1
+  height: 0.12
+  padding: 0.12
+  autoOffset: 1
+  manualOffset: {x: 0, y: 0}
+  alwaysVisible: 1
+  hideDelay: 2.5
+  fadeTime: 0.25
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0.65}
+  healthColor: {r: 0.25, g: 0.85, b: 0.35, a: 1}
+  blockColor: {r: 0.65, g: 0.35, b: 1, a: 1}
+  shieldColor: {r: 1, g: 1, b: 1, a: 1}
+  lagColor: {r: 1, g: 0.85, b: 0.2, a: 0.95}
+  criticalColor: {r: 0.95, g: 0.15, b: 0.1, a: 1}
+  healFlashColor: {r: 0.7, g: 1, b: 0.75, a: 1}
+  antiHealColor: {r: 0.55, g: 0.05, b: 0.15, a: 1}
+  tickColor: {r: 0, g: 0, b: 0, a: 0.55}
+  lagDelay: 0.35
+  lagSpeed: 0.9
+  criticalThreshold: 0.25
+  criticalPulseSpeed: 8
+  tickEveryHP: 0
+  minHealthForTicks: 250
+  maxTicks: 24
+  majorTickEvery: 10
+  tickWidth: 0.015
+  showBlockPips: 1
+  maxPips: 5
+  sortingLayerName: Player
+  sortingOrder: 200
+--- !u!114 &8318729998589778377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b883c1daea164d7687ea0d8ad22f1835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 2, y: 2}
+  offset: {x: 0, y: 0}
+  _enabled: 1
+--- !u!114 &-1222339928672116993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7af52e42084a29a5b19b2bc98af867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statDiffCanvas: {fileID: 2415533882120108049}
+  statTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
+  poolSize: 5
+  startY: 1.75
+  endY: 2.15
+  duration: 1
 --- !u!114 &8879415244484785402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +652,6 @@ MonoBehaviour:
   currentHealth: 0
   baseArmor: 0
   baseMagicResist: 0
-  autoAddVitals: 1
   bonusPerLevel:
     health: 10
     healthRegen: 0.1
@@ -740,11 +937,36 @@ MonoBehaviour:
   isAttacking: 0
   projectilePrefab: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   towerConstructionSite: {fileID: 0}
-  moveSpeed: 4
-  equippedProjectiles:
-  - {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-  - {fileID: 6878188701427382421, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
-  activeWeaponIndex: 0
+  runSpeed: 4
+  motorSettings:
+    walkFactor: 0.5
+    sprintFactor: 1.5
+    walkBackFactor: 0.45
+    dashDistance: 3
+    dashDuration: 0.25
+    dashCooldown: 1
+    dashInvulnerability: 0.15
+    dodgeDistance: 2.2
+    dodgeBackDistance: 1.8
+    dodgeDuration: 0.35
+    dodgeCooldown: 0.8
+    dodgeInvulnerability: 0.3
+    jumpDistance: 1.2
+    jumpDuration: 0.5
+    jumpCooldown: 0.8
+    jumpInvulnerability: 0.2
+  inputSettings:
+    lightAttack: 106
+    heavyAttack: 107
+    block: 108
+    sprint: 304
+    walk: 308
+    dash: 113
+    dodge: 306
+    jump: 102
+  defaultWeapon: {fileID: 0}
+  combatStanceDuration: 4
+  hitCooldown: 0.5
   respawnTime: 5
   targetPosition: {x: -7.047619, y: -6.9761906}
 --- !u!114 &7932739886474218458
@@ -1013,203 +1235,6 @@ MonoBehaviour:
     chargeLoopEndFrame: 0
   destroyOnEndDeadAnimation: 0
   <animState>k__BackingField: 0
---- !u!114 &8318729998589778377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b883c1daea164d7687ea0d8ad22f1835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: {x: 2, y: 2}
-  offset: {x: 0, y: 0}
-  _enabled: 1
---- !u!114 &-1222339928672116993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7af52e42084a29a5b19b2bc98af867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statDiffCanvas: {fileID: 2415533882120108049}
-  statTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
-  poolSize: 5
-  startY: 1.75
-  endY: 2.15
-  duration: 1
---- !u!50 &-7791449136621826653
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &-9131675977067723117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70af9ea6b4c4390898bdda837abb78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.YSort
-  offset: 0
-  multiplier: 100
---- !u!61 &818318868362160219
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8125, y: 1.0625}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.6}
-  m_EdgeRadius: 0
---- !u!114 &8750746098749655267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79659bedfd7d476e8e877ebc7cffe6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
-  width: 1
-  height: 0.12
-  padding: 0.12
-  autoOffset: 1
-  manualOffset: {x: 0, y: 0}
-  alwaysVisible: 1
-  hideDelay: 2.5
-  fadeTime: 0.25
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0.65}
-  healthColor: {r: 0.25, g: 0.85, b: 0.35, a: 1}
-  blockColor: {r: 0.65, g: 0.35, b: 1, a: 1}
-  shieldColor: {r: 1, g: 1, b: 1, a: 1}
-  lagColor: {r: 1, g: 0.85, b: 0.2, a: 0.95}
-  criticalColor: {r: 0.95, g: 0.15, b: 0.1, a: 1}
-  healFlashColor: {r: 0.7, g: 1, b: 0.75, a: 1}
-  antiHealColor: {r: 0.55, g: 0.05, b: 0.15, a: 1}
-  tickColor: {r: 0, g: 0, b: 0, a: 0.55}
-  lagDelay: 0.35
-  lagSpeed: 0.9
-  criticalThreshold: 0.25
-  criticalPulseSpeed: 8
-  tickEveryHP: 0
-  minHealthForTicks: 250
-  maxTicks: 24
-  majorTickEvery: 10
-  tickWidth: 0.015
-  showBlockPips: 1
-  maxPips: 5
-  sortingLayerName: Player
-  sortingOrder: 200
---- !u!114 &8661839007190430251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124600919171900943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce616dc729b54ff79548eb8ba5ee54cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.DamageNumberSpawner
-  damageCanvas: {fileID: 4292553794862919087}
-  damageTextPrefab: {fileID: 7405248465969971765, guid: e3c9765711bf9d049a6b52fb72c03261, type: 3}
-  poolSize: 6
-  startY: 1.75
-  endY: 2.15
-  duration: 0.8
-  horizontalSpread: 0.25
-  critPunchScale: 1.5
-  shieldRowOffset: 0.18
-  normalDamageColor: {r: 1, g: 1, b: 1, a: 1}
-  criticalDamageColor: {r: 1, g: 0.25, b: 0.15, a: 1}
-  shieldDamageColor: {r: 0.4, g: 0.8, b: 1, a: 1}
-  blockedColor: {r: 0.75, g: 0.45, b: 1, a: 1}
-  healColor: {r: 0.35, g: 1, b: 0.45, a: 1}
-  criticalPrefix: 'CRIT '
-  blockedText: BLOCK
-  healPrefix: +
-  showHealNumbers: 1
-  minHealToShow: 1
-  keepUpright: 1
-  detachOnDeath: 1
-  hitStopFramesOnCrit: 15
-  hitStopFramesOnHit: 10
 --- !u!1 &7272062724337542213
 GameObject:
   m_ObjectHideFlags: 0

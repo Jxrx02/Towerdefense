@@ -1,0 +1,2434 @@
+{ "frames": {
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle_0": {
+    "frame": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle_1": {
+    "frame": { "x": 128, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle_2": {
+    "frame": { "x": 256, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle_3": {
+    "frame": { "x": 384, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle_4": {
+    "frame": { "x": 512, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DR>_0": {
+    "frame": { "x": 0, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DR>_1": {
+    "frame": { "x": 128, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DR>_2": {
+    "frame": { "x": 256, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DR>_3": {
+    "frame": { "x": 384, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DR>_4": {
+    "frame": { "x": 512, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<R>_0": {
+    "frame": { "x": 0, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<R>_1": {
+    "frame": { "x": 128, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<R>_2": {
+    "frame": { "x": 256, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<R>_3": {
+    "frame": { "x": 384, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<R>_4": {
+    "frame": { "x": 512, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UR>_0": {
+    "frame": { "x": 0, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UR>_1": {
+    "frame": { "x": 128, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UR>_2": {
+    "frame": { "x": 256, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UR>_3": {
+    "frame": { "x": 384, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UR>_4": {
+    "frame": { "x": 512, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<U>_0": {
+    "frame": { "x": 0, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<U>_1": {
+    "frame": { "x": 128, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<U>_2": {
+    "frame": { "x": 256, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<U>_3": {
+    "frame": { "x": 384, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<U>_4": {
+    "frame": { "x": 512, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UL>_0": {
+    "frame": { "x": 0, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UL>_1": {
+    "frame": { "x": 128, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UL>_2": {
+    "frame": { "x": 256, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UL>_3": {
+    "frame": { "x": 384, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<UL>_4": {
+    "frame": { "x": 512, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<L>_0": {
+    "frame": { "x": 0, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<L>_1": {
+    "frame": { "x": 128, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<L>_2": {
+    "frame": { "x": 256, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<L>_3": {
+    "frame": { "x": 384, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<L>_4": {
+    "frame": { "x": 512, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DL>_0": {
+    "frame": { "x": 0, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DL>_1": {
+    "frame": { "x": 128, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DL>_2": {
+    "frame": { "x": 256, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DL>_3": {
+    "frame": { "x": 384, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Idle<DL>_4": {
+    "frame": { "x": 512, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited_0": {
+    "frame": { "x": 0, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited_1": {
+    "frame": { "x": 128, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited_2": {
+    "frame": { "x": 256, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DR>_0": {
+    "frame": { "x": 0, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DR>_1": {
+    "frame": { "x": 128, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DR>_2": {
+    "frame": { "x": 256, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<R>_0": {
+    "frame": { "x": 0, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<R>_1": {
+    "frame": { "x": 128, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<R>_2": {
+    "frame": { "x": 256, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UR>_0": {
+    "frame": { "x": 0, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UR>_1": {
+    "frame": { "x": 128, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UR>_2": {
+    "frame": { "x": 256, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<U>_0": {
+    "frame": { "x": 0, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<U>_1": {
+    "frame": { "x": 128, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<U>_2": {
+    "frame": { "x": 256, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UL>_0": {
+    "frame": { "x": 0, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UL>_1": {
+    "frame": { "x": 128, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<UL>_2": {
+    "frame": { "x": 256, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<L>_0": {
+    "frame": { "x": 0, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<L>_1": {
+    "frame": { "x": 128, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<L>_2": {
+    "frame": { "x": 256, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DL>_0": {
+    "frame": { "x": 0, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DL>_1": {
+    "frame": { "x": 128, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Hited<DL>_2": {
+    "frame": { "x": 256, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_0": {
+    "frame": { "x": 0, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_1": {
+    "frame": { "x": 128, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_2": {
+    "frame": { "x": 256, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_3": {
+    "frame": { "x": 384, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_4": {
+    "frame": { "x": 512, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle_5": {
+    "frame": { "x": 640, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_0": {
+    "frame": { "x": 0, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_1": {
+    "frame": { "x": 128, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_2": {
+    "frame": { "x": 256, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_3": {
+    "frame": { "x": 384, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_4": {
+    "frame": { "x": 512, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DR>_5": {
+    "frame": { "x": 640, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_0": {
+    "frame": { "x": 0, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_1": {
+    "frame": { "x": 128, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_2": {
+    "frame": { "x": 256, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_3": {
+    "frame": { "x": 384, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_4": {
+    "frame": { "x": 512, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<R>_5": {
+    "frame": { "x": 640, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_0": {
+    "frame": { "x": 0, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_1": {
+    "frame": { "x": 128, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_2": {
+    "frame": { "x": 256, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_3": {
+    "frame": { "x": 384, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_4": {
+    "frame": { "x": 512, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UR>_5": {
+    "frame": { "x": 640, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_0": {
+    "frame": { "x": 0, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_1": {
+    "frame": { "x": 128, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_2": {
+    "frame": { "x": 256, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_3": {
+    "frame": { "x": 384, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_4": {
+    "frame": { "x": 512, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<U>_5": {
+    "frame": { "x": 640, "y": 2560, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_0": {
+    "frame": { "x": 0, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_1": {
+    "frame": { "x": 128, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_2": {
+    "frame": { "x": 256, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_3": {
+    "frame": { "x": 384, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_4": {
+    "frame": { "x": 512, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<UL>_5": {
+    "frame": { "x": 640, "y": 2688, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_0": {
+    "frame": { "x": 0, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_1": {
+    "frame": { "x": 128, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_2": {
+    "frame": { "x": 256, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_3": {
+    "frame": { "x": 384, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_4": {
+    "frame": { "x": 512, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<L>_5": {
+    "frame": { "x": 640, "y": 2816, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_0": {
+    "frame": { "x": 0, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_1": {
+    "frame": { "x": 128, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_2": {
+    "frame": { "x": 256, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_3": {
+    "frame": { "x": 384, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_4": {
+    "frame": { "x": 512, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_BatleIdle<DL>_5": {
+    "frame": { "x": 640, "y": 2944, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_0": {
+    "frame": { "x": 0, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_1": {
+    "frame": { "x": 128, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_2": {
+    "frame": { "x": 256, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_3": {
+    "frame": { "x": 384, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_4": {
+    "frame": { "x": 512, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_5": {
+    "frame": { "x": 640, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_6": {
+    "frame": { "x": 768, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_7": {
+    "frame": { "x": 896, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_8": {
+    "frame": { "x": 1024, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_9": {
+    "frame": { "x": 1152, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_10": {
+    "frame": { "x": 1280, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked_11": {
+    "frame": { "x": 1408, "y": 3072, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_0": {
+    "frame": { "x": 0, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_1": {
+    "frame": { "x": 128, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_2": {
+    "frame": { "x": 256, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_3": {
+    "frame": { "x": 384, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_4": {
+    "frame": { "x": 512, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_5": {
+    "frame": { "x": 640, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_6": {
+    "frame": { "x": 768, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_7": {
+    "frame": { "x": 896, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_8": {
+    "frame": { "x": 1024, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_9": {
+    "frame": { "x": 1152, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_10": {
+    "frame": { "x": 1280, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_11": {
+    "frame": { "x": 1408, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DR>_12": {
+    "frame": { "x": 1536, "y": 3200, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_0": {
+    "frame": { "x": 0, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_1": {
+    "frame": { "x": 128, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_2": {
+    "frame": { "x": 256, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_3": {
+    "frame": { "x": 384, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_4": {
+    "frame": { "x": 512, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_5": {
+    "frame": { "x": 640, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_6": {
+    "frame": { "x": 768, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_7": {
+    "frame": { "x": 896, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_8": {
+    "frame": { "x": 1024, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_9": {
+    "frame": { "x": 1152, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_10": {
+    "frame": { "x": 1280, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_11": {
+    "frame": { "x": 1408, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<R>_12": {
+    "frame": { "x": 1536, "y": 3328, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_0": {
+    "frame": { "x": 0, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_1": {
+    "frame": { "x": 128, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_2": {
+    "frame": { "x": 256, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_3": {
+    "frame": { "x": 384, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_4": {
+    "frame": { "x": 512, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_5": {
+    "frame": { "x": 640, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_6": {
+    "frame": { "x": 768, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_7": {
+    "frame": { "x": 896, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_8": {
+    "frame": { "x": 1024, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_9": {
+    "frame": { "x": 1152, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_10": {
+    "frame": { "x": 1280, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_11": {
+    "frame": { "x": 1408, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UR>_12": {
+    "frame": { "x": 1536, "y": 3456, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_0": {
+    "frame": { "x": 0, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_1": {
+    "frame": { "x": 128, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_2": {
+    "frame": { "x": 256, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_3": {
+    "frame": { "x": 384, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_4": {
+    "frame": { "x": 512, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_5": {
+    "frame": { "x": 640, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_6": {
+    "frame": { "x": 768, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_7": {
+    "frame": { "x": 896, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_8": {
+    "frame": { "x": 1024, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_9": {
+    "frame": { "x": 1152, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_10": {
+    "frame": { "x": 1280, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_11": {
+    "frame": { "x": 1408, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<U>_12": {
+    "frame": { "x": 1536, "y": 3584, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_0": {
+    "frame": { "x": 0, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_1": {
+    "frame": { "x": 128, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_2": {
+    "frame": { "x": 256, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_3": {
+    "frame": { "x": 384, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_4": {
+    "frame": { "x": 512, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_5": {
+    "frame": { "x": 640, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_6": {
+    "frame": { "x": 768, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_7": {
+    "frame": { "x": 896, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_8": {
+    "frame": { "x": 1024, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_9": {
+    "frame": { "x": 1152, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_10": {
+    "frame": { "x": 1280, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_11": {
+    "frame": { "x": 1408, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<UL>_12": {
+    "frame": { "x": 1536, "y": 3712, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_0": {
+    "frame": { "x": 0, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_1": {
+    "frame": { "x": 128, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_2": {
+    "frame": { "x": 256, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_3": {
+    "frame": { "x": 384, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_4": {
+    "frame": { "x": 512, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_5": {
+    "frame": { "x": 640, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_6": {
+    "frame": { "x": 768, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_7": {
+    "frame": { "x": 896, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_8": {
+    "frame": { "x": 1024, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_9": {
+    "frame": { "x": 1152, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_10": {
+    "frame": { "x": 1280, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_11": {
+    "frame": { "x": 1408, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<L>_12": {
+    "frame": { "x": 1536, "y": 3840, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_0": {
+    "frame": { "x": 0, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_1": {
+    "frame": { "x": 128, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_2": {
+    "frame": { "x": 256, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_3": {
+    "frame": { "x": 384, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_4": {
+    "frame": { "x": 512, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_5": {
+    "frame": { "x": 640, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_6": {
+    "frame": { "x": 768, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_7": {
+    "frame": { "x": 896, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_8": {
+    "frame": { "x": 1024, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_9": {
+    "frame": { "x": 1152, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_10": {
+    "frame": { "x": 1280, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_11": {
+    "frame": { "x": 1408, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Blocked<DL>_12": {
+    "frame": { "x": 1536, "y": 3968, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_0": {
+    "frame": { "x": 0, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_1": {
+    "frame": { "x": 128, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_2": {
+    "frame": { "x": 256, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_3": {
+    "frame": { "x": 384, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_4": {
+    "frame": { "x": 512, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_5": {
+    "frame": { "x": 640, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_6": {
+    "frame": { "x": 768, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_7": {
+    "frame": { "x": 896, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_8": {
+    "frame": { "x": 1024, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_9": {
+    "frame": { "x": 1152, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death_10": {
+    "frame": { "x": 1280, "y": 4096, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_0": {
+    "frame": { "x": 0, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_1": {
+    "frame": { "x": 128, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_2": {
+    "frame": { "x": 256, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_3": {
+    "frame": { "x": 384, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_4": {
+    "frame": { "x": 512, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_5": {
+    "frame": { "x": 640, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_6": {
+    "frame": { "x": 768, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_7": {
+    "frame": { "x": 896, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_8": {
+    "frame": { "x": 1024, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_9": {
+    "frame": { "x": 1152, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DR>_10": {
+    "frame": { "x": 1280, "y": 4224, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_0": {
+    "frame": { "x": 0, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_1": {
+    "frame": { "x": 128, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_2": {
+    "frame": { "x": 256, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_3": {
+    "frame": { "x": 384, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_4": {
+    "frame": { "x": 512, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_5": {
+    "frame": { "x": 640, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_6": {
+    "frame": { "x": 768, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_7": {
+    "frame": { "x": 896, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_8": {
+    "frame": { "x": 1024, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_9": {
+    "frame": { "x": 1152, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<R>_10": {
+    "frame": { "x": 1280, "y": 4352, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_0": {
+    "frame": { "x": 0, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_1": {
+    "frame": { "x": 128, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_2": {
+    "frame": { "x": 256, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_3": {
+    "frame": { "x": 384, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_4": {
+    "frame": { "x": 512, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_5": {
+    "frame": { "x": 640, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_6": {
+    "frame": { "x": 768, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_7": {
+    "frame": { "x": 896, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_8": {
+    "frame": { "x": 1024, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_9": {
+    "frame": { "x": 1152, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UR>_10": {
+    "frame": { "x": 1280, "y": 4480, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_0": {
+    "frame": { "x": 0, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_1": {
+    "frame": { "x": 128, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_2": {
+    "frame": { "x": 256, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_3": {
+    "frame": { "x": 384, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_4": {
+    "frame": { "x": 512, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_5": {
+    "frame": { "x": 640, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_6": {
+    "frame": { "x": 768, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_7": {
+    "frame": { "x": 896, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_8": {
+    "frame": { "x": 1024, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_9": {
+    "frame": { "x": 1152, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<U>_10": {
+    "frame": { "x": 1280, "y": 4608, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_0": {
+    "frame": { "x": 0, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_1": {
+    "frame": { "x": 128, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_2": {
+    "frame": { "x": 256, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_3": {
+    "frame": { "x": 384, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_4": {
+    "frame": { "x": 512, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_5": {
+    "frame": { "x": 640, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_6": {
+    "frame": { "x": 768, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_7": {
+    "frame": { "x": 896, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_8": {
+    "frame": { "x": 1024, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_9": {
+    "frame": { "x": 1152, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<UL>_10": {
+    "frame": { "x": 1280, "y": 4736, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_0": {
+    "frame": { "x": 0, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_1": {
+    "frame": { "x": 128, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_2": {
+    "frame": { "x": 256, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_3": {
+    "frame": { "x": 384, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_4": {
+    "frame": { "x": 512, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_5": {
+    "frame": { "x": 640, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_6": {
+    "frame": { "x": 768, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_7": {
+    "frame": { "x": 896, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_8": {
+    "frame": { "x": 1024, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_9": {
+    "frame": { "x": 1152, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<L>_10": {
+    "frame": { "x": 1280, "y": 4864, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_0": {
+    "frame": { "x": 0, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_1": {
+    "frame": { "x": 128, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_2": {
+    "frame": { "x": 256, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_3": {
+    "frame": { "x": 384, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_4": {
+    "frame": { "x": 512, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_5": {
+    "frame": { "x": 640, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_6": {
+    "frame": { "x": 768, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_7": {
+    "frame": { "x": 896, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_8": {
+    "frame": { "x": 1024, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_9": {
+    "frame": { "x": 1152, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Idle_Combatidle_block_dead_hit_TwoHand_Death<DL>_10": {
+    "frame": { "x": 1280, "y": 4992, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 500
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.32-x64",
+  "format": "RGBA8888",
+  "size": { "w": 1664, "h": 5120 },
+  "scale": "1"
+ }
+}
