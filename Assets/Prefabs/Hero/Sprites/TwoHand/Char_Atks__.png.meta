@@ -10146,7 +10146,7 @@ TextureImporter:
       name: Char_Atks___408
       rect:
         serializedVersion: 2
-        x: 1573
+        x: 1572
         y: 439
         width: 41
         height: 38
@@ -10605,35 +10605,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Char_Atks___429
-      rect:
-        serializedVersion: 2
-        x: 426
-        y: 190
-        width: 17
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c97f6798a5511b30800000000000000
-      internalID: 4256277305425361351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Char_Atks___430
       rect:
         serializedVersion: 2
-        x: 440
-        y: 193
-        width: 20
-        height: 30
+        x: 426
+        y: 185
+        width: 34
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -10653,9 +10631,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 552
-        y: 191
+        y: 185
         width: 36
-        height: 31
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
