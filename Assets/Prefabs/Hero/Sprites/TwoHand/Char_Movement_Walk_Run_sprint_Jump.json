@@ -1,0 +1,2482 @@
+{ "frames": {
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_000": {
+    "frame": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_001": {
+    "frame": { "x": 128, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_002": {
+    "frame": { "x": 256, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_003": {
+    "frame": { "x": 384, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_004": {
+    "frame": { "x": 512, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_005": {
+    "frame": { "x": 640, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_006": {
+    "frame": { "x": 768, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_007": {
+    "frame": { "x": 896, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk_008": {
+    "frame": { "x": 1024, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_000": {
+    "frame": { "x": 1152, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_001": {
+    "frame": { "x": 1280, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_002": {
+    "frame": { "x": 1408, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_003": {
+    "frame": { "x": 1536, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_004": {
+    "frame": { "x": 1664, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_005": {
+    "frame": { "x": 1792, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_006": {
+    "frame": { "x": 0, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_007": {
+    "frame": { "x": 128, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DR>_008": {
+    "frame": { "x": 256, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_000": {
+    "frame": { "x": 384, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_001": {
+    "frame": { "x": 512, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_002": {
+    "frame": { "x": 640, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_003": {
+    "frame": { "x": 768, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_004": {
+    "frame": { "x": 896, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_005": {
+    "frame": { "x": 1024, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_006": {
+    "frame": { "x": 1152, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_007": {
+    "frame": { "x": 1280, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<R>_008": {
+    "frame": { "x": 1408, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_000": {
+    "frame": { "x": 1536, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_001": {
+    "frame": { "x": 1664, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_002": {
+    "frame": { "x": 1792, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_003": {
+    "frame": { "x": 0, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_004": {
+    "frame": { "x": 128, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_005": {
+    "frame": { "x": 256, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_006": {
+    "frame": { "x": 384, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_007": {
+    "frame": { "x": 512, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UR>_008": {
+    "frame": { "x": 640, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_000": {
+    "frame": { "x": 768, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_001": {
+    "frame": { "x": 896, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_002": {
+    "frame": { "x": 1024, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_003": {
+    "frame": { "x": 1152, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_004": {
+    "frame": { "x": 1280, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_005": {
+    "frame": { "x": 1408, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_006": {
+    "frame": { "x": 1536, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_007": {
+    "frame": { "x": 1664, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<U>_008": {
+    "frame": { "x": 1792, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_000": {
+    "frame": { "x": 0, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_001": {
+    "frame": { "x": 128, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_002": {
+    "frame": { "x": 256, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_003": {
+    "frame": { "x": 384, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_004": {
+    "frame": { "x": 512, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_005": {
+    "frame": { "x": 640, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_006": {
+    "frame": { "x": 768, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_007": {
+    "frame": { "x": 896, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<UL>_008": {
+    "frame": { "x": 1024, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_000": {
+    "frame": { "x": 1152, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_001": {
+    "frame": { "x": 1280, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_002": {
+    "frame": { "x": 1408, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_003": {
+    "frame": { "x": 1536, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_004": {
+    "frame": { "x": 1664, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_005": {
+    "frame": { "x": 1792, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_006": {
+    "frame": { "x": 0, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_007": {
+    "frame": { "x": 128, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<L>_008": {
+    "frame": { "x": 256, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_000": {
+    "frame": { "x": 384, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_001": {
+    "frame": { "x": 512, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_002": {
+    "frame": { "x": 640, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_003": {
+    "frame": { "x": 768, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_004": {
+    "frame": { "x": 896, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_005": {
+    "frame": { "x": 1024, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_006": {
+    "frame": { "x": 1152, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_007": {
+    "frame": { "x": 1280, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Walk<DL>_008": {
+    "frame": { "x": 1408, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 120
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]_000": {
+    "frame": { "x": 1536, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]_001": {
+    "frame": { "x": 1664, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_002": {
+    "frame": { "x": 1792, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_003": {
+    "frame": { "x": 0, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_004": {
+    "frame": { "x": 128, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_005": {
+    "frame": { "x": 256, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_006": {
+    "frame": { "x": 384, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_007": {
+    "frame": { "x": 512, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_008": {
+    "frame": { "x": 640, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run_009": {
+    "frame": { "x": 768, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<DR>_000": {
+    "frame": { "x": 896, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<DR>_001": {
+    "frame": { "x": 1024, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_002": {
+    "frame": { "x": 1152, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_003": {
+    "frame": { "x": 1280, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_004": {
+    "frame": { "x": 1408, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_005": {
+    "frame": { "x": 1536, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_006": {
+    "frame": { "x": 1664, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_007": {
+    "frame": { "x": 1792, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_008": {
+    "frame": { "x": 0, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DR>_009": {
+    "frame": { "x": 128, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<R>_000": {
+    "frame": { "x": 256, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<R>_001": {
+    "frame": { "x": 384, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_002": {
+    "frame": { "x": 512, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_003": {
+    "frame": { "x": 640, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_004": {
+    "frame": { "x": 768, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_005": {
+    "frame": { "x": 896, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_006": {
+    "frame": { "x": 1024, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_007": {
+    "frame": { "x": 1152, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_008": {
+    "frame": { "x": 1280, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<R>_009": {
+    "frame": { "x": 1408, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<UR>_000": {
+    "frame": { "x": 1536, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<UR>_001": {
+    "frame": { "x": 1664, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_002": {
+    "frame": { "x": 1792, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_003": {
+    "frame": { "x": 0, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_004": {
+    "frame": { "x": 128, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_005": {
+    "frame": { "x": 256, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_006": {
+    "frame": { "x": 384, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_007": {
+    "frame": { "x": 512, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_008": {
+    "frame": { "x": 640, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UR>_009": {
+    "frame": { "x": 768, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<U>_000": {
+    "frame": { "x": 896, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<U>_001": {
+    "frame": { "x": 1024, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_002": {
+    "frame": { "x": 1152, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_003": {
+    "frame": { "x": 1280, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_004": {
+    "frame": { "x": 1408, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_005": {
+    "frame": { "x": 1536, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_006": {
+    "frame": { "x": 1664, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_007": {
+    "frame": { "x": 1792, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_008": {
+    "frame": { "x": 0, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<U>_009": {
+    "frame": { "x": 128, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<UL>_000": {
+    "frame": { "x": 256, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<UL>_001": {
+    "frame": { "x": 384, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_002": {
+    "frame": { "x": 512, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_003": {
+    "frame": { "x": 640, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_004": {
+    "frame": { "x": 768, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_005": {
+    "frame": { "x": 896, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_006": {
+    "frame": { "x": 1024, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_007": {
+    "frame": { "x": 1152, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_008": {
+    "frame": { "x": 1280, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<UL>_009": {
+    "frame": { "x": 1408, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<L>_000": {
+    "frame": { "x": 1536, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<L>_001": {
+    "frame": { "x": 1664, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_002": {
+    "frame": { "x": 1792, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_003": {
+    "frame": { "x": 0, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_004": {
+    "frame": { "x": 128, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_005": {
+    "frame": { "x": 256, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_006": {
+    "frame": { "x": 384, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_007": {
+    "frame": { "x": 512, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_008": {
+    "frame": { "x": 640, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<L>_009": {
+    "frame": { "x": 768, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<DL>_000": {
+    "frame": { "x": 896, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run[In]<DL>_001": {
+    "frame": { "x": 1024, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_002": {
+    "frame": { "x": 1152, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_003": {
+    "frame": { "x": 1280, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_004": {
+    "frame": { "x": 1408, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_005": {
+    "frame": { "x": 1536, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_006": {
+    "frame": { "x": 1664, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_007": {
+    "frame": { "x": 1792, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_008": {
+    "frame": { "x": 0, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Run<DL>_009": {
+    "frame": { "x": 128, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 80
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_000": {
+    "frame": { "x": 256, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_001": {
+    "frame": { "x": 384, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_002": {
+    "frame": { "x": 512, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_003": {
+    "frame": { "x": 640, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_004": {
+    "frame": { "x": 768, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint_005": {
+    "frame": { "x": 896, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_000": {
+    "frame": { "x": 1024, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_001": {
+    "frame": { "x": 1152, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_002": {
+    "frame": { "x": 1280, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_003": {
+    "frame": { "x": 1408, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_004": {
+    "frame": { "x": 1536, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DR>_005": {
+    "frame": { "x": 1664, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_000": {
+    "frame": { "x": 1792, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_001": {
+    "frame": { "x": 0, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_002": {
+    "frame": { "x": 128, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_003": {
+    "frame": { "x": 256, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_004": {
+    "frame": { "x": 384, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<R>_005": {
+    "frame": { "x": 512, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_000": {
+    "frame": { "x": 640, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_001": {
+    "frame": { "x": 768, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_002": {
+    "frame": { "x": 896, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_003": {
+    "frame": { "x": 1024, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_004": {
+    "frame": { "x": 1152, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UR>_005": {
+    "frame": { "x": 1280, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_000": {
+    "frame": { "x": 1408, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_001": {
+    "frame": { "x": 1536, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_002": {
+    "frame": { "x": 1664, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_003": {
+    "frame": { "x": 1792, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_004": {
+    "frame": { "x": 0, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<U>_005": {
+    "frame": { "x": 128, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_000": {
+    "frame": { "x": 256, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_001": {
+    "frame": { "x": 384, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_002": {
+    "frame": { "x": 512, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_003": {
+    "frame": { "x": 640, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_004": {
+    "frame": { "x": 768, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<UL>_005": {
+    "frame": { "x": 896, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_000": {
+    "frame": { "x": 1024, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_001": {
+    "frame": { "x": 1152, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_002": {
+    "frame": { "x": 1280, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_003": {
+    "frame": { "x": 1408, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_004": {
+    "frame": { "x": 1536, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<L>_005": {
+    "frame": { "x": 1664, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_000": {
+    "frame": { "x": 1792, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_001": {
+    "frame": { "x": 0, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_002": {
+    "frame": { "x": 128, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_003": {
+    "frame": { "x": 256, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_004": {
+    "frame": { "x": 384, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Sprint<DL>_005": {
+    "frame": { "x": 512, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_000": {
+    "frame": { "x": 640, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping_000": {
+    "frame": { "x": 768, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping_001": {
+    "frame": { "x": 896, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping_002": {
+    "frame": { "x": 1024, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall_000": {
+    "frame": { "x": 1152, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall_001": {
+    "frame": { "x": 1280, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling_000": {
+    "frame": { "x": 1408, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling_001": {
+    "frame": { "x": 1536, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling_002": {
+    "frame": { "x": 1664, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]_000": {
+    "frame": { "x": 1792, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]_001": {
+    "frame": { "x": 0, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_DR_000": {
+    "frame": { "x": 128, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DR>_000": {
+    "frame": { "x": 256, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DR>_001": {
+    "frame": { "x": 384, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DR>_002": {
+    "frame": { "x": 512, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<DR>_000": {
+    "frame": { "x": 640, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<DR>_001": {
+    "frame": { "x": 768, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DR>_000": {
+    "frame": { "x": 896, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DR>_001": {
+    "frame": { "x": 1024, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DR>_002": {
+    "frame": { "x": 1152, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<DR>_000": {
+    "frame": { "x": 1280, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<DR>_001": {
+    "frame": { "x": 1408, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump<R>_000": {
+    "frame": { "x": 1536, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<R>_000": {
+    "frame": { "x": 1664, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<R>_001": {
+    "frame": { "x": 1792, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<R>_002": {
+    "frame": { "x": 0, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<R>_000": {
+    "frame": { "x": 128, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<R>_001": {
+    "frame": { "x": 256, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<R>_000": {
+    "frame": { "x": 384, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<R>_001": {
+    "frame": { "x": 512, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<R>_002": {
+    "frame": { "x": 640, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<R>_000": {
+    "frame": { "x": 768, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<R>_001": {
+    "frame": { "x": 896, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_UR_000": {
+    "frame": { "x": 1024, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UR>_000": {
+    "frame": { "x": 1152, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UR>_001": {
+    "frame": { "x": 1280, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UR>_002": {
+    "frame": { "x": 1408, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<UR>_000": {
+    "frame": { "x": 1536, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<UR>_001": {
+    "frame": { "x": 1664, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UR>_000": {
+    "frame": { "x": 1792, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UR>_001": {
+    "frame": { "x": 0, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UR>_002": {
+    "frame": { "x": 128, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<UR>_000": {
+    "frame": { "x": 256, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<UR>_001": {
+    "frame": { "x": 384, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_U_000": {
+    "frame": { "x": 512, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jump<U>_000": {
+    "frame": { "x": 640, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jump<U>_001": {
+    "frame": { "x": 768, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jump<U>_002": {
+    "frame": { "x": 896, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<U>_000": {
+    "frame": { "x": 1024, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<U>_001": {
+    "frame": { "x": 1152, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<U>_000": {
+    "frame": { "x": 1280, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<U>_001": {
+    "frame": { "x": 1408, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<U>_002": {
+    "frame": { "x": 1536, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<U>_000": {
+    "frame": { "x": 1664, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<U>_001": {
+    "frame": { "x": 1792, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_UL_000": {
+    "frame": { "x": 0, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UL>_000": {
+    "frame": { "x": 128, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UL>_001": {
+    "frame": { "x": 256, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<UL>_002": {
+    "frame": { "x": 384, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<UL>_000": {
+    "frame": { "x": 512, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<UL>_001": {
+    "frame": { "x": 640, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UL>_000": {
+    "frame": { "x": 768, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UL>_001": {
+    "frame": { "x": 896, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<UL>_002": {
+    "frame": { "x": 1024, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<UL>_000": {
+    "frame": { "x": 1152, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<UL>_001": {
+    "frame": { "x": 1280, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_L_000": {
+    "frame": { "x": 1408, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<L>_000": {
+    "frame": { "x": 1536, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<L>_001": {
+    "frame": { "x": 1664, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<L>_002": {
+    "frame": { "x": 1792, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<L>_000": {
+    "frame": { "x": 0, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<L>_001": {
+    "frame": { "x": 128, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<L>_000": {
+    "frame": { "x": 256, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<L>_001": {
+    "frame": { "x": 384, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<L>_002": {
+    "frame": { "x": 512, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<L>_000": {
+    "frame": { "x": 640, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<L>_001": {
+    "frame": { "x": 768, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump___Jump_DL_000": {
+    "frame": { "x": 896, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DL>_000": {
+    "frame": { "x": 1024, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DL>_001": {
+    "frame": { "x": 1152, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Jumping<DL>_002": {
+    "frame": { "x": 1280, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<DL>_000": {
+    "frame": { "x": 1408, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall<DL>_001": {
+    "frame": { "x": 1536, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DL>_000": {
+    "frame": { "x": 1664, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DL>_001": {
+    "frame": { "x": 1792, "y": 2304, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Falling<DL>_002": {
+    "frame": { "x": 0, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<DL>_000": {
+    "frame": { "x": 128, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_Movement_Walk_Run_sprint_Jump__Fall[Out]<DL>_001": {
+    "frame": { "x": 256, "y": 2432, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.32-x64",
+  "format": "RGBA8888",
+  "size": { "w": 2000, "h": 2560 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Walk", "from": 0, "to": 8, "direction": "forward" },
+   { "name": "Walk<DR>", "from": 9, "to": 17, "direction": "forward" },
+   { "name": "Walk<R>", "from": 18, "to": 26, "direction": "forward" },
+   { "name": "Walk<UR>", "from": 27, "to": 35, "direction": "forward" },
+   { "name": "Walk<U>", "from": 36, "to": 44, "direction": "forward" },
+   { "name": "Walk<UL>", "from": 45, "to": 53, "direction": "forward" },
+   { "name": "Walk<L>", "from": 54, "to": 62, "direction": "forward" },
+   { "name": "Walk<DL>", "from": 63, "to": 71, "direction": "forward" },
+   { "name": "_Run", "from": 72, "to": 151, "direction": "forward" },
+   { "name": "Run", "from": 72, "to": 81, "direction": "forward" },
+   { "name": "Run[In]", "from": 72, "to": 73, "direction": "forward" },
+   { "name": "Run<DR>", "from": 82, "to": 91, "direction": "forward" },
+   { "name": "Run[In]<DR>", "from": 82, "to": 83, "direction": "forward" },
+   { "name": "Run<R>", "from": 92, "to": 101, "direction": "forward" },
+   { "name": "Run[In]<R>", "from": 92, "to": 93, "direction": "forward" },
+   { "name": "Run<UR>", "from": 102, "to": 111, "direction": "forward" },
+   { "name": "Run[In]<UR>", "from": 102, "to": 103, "direction": "forward" },
+   { "name": "Run<U>", "from": 112, "to": 121, "direction": "forward" },
+   { "name": "Run[In]<U>", "from": 112, "to": 113, "direction": "forward" },
+   { "name": "Run<UL>", "from": 122, "to": 131, "direction": "forward" },
+   { "name": "Run[In]<UL>", "from": 122, "to": 123, "direction": "forward" },
+   { "name": "Run<L>", "from": 132, "to": 141, "direction": "forward" },
+   { "name": "Run[In]<L>", "from": 132, "to": 133, "direction": "forward" },
+   { "name": "Run<DL>", "from": 142, "to": 151, "direction": "forward" },
+   { "name": "Run[In]<DL>", "from": 142, "to": 143, "direction": "forward" },
+   { "name": "_Sprint", "from": 152, "to": 199, "direction": "forward" },
+   { "name": "Sprint", "from": 152, "to": 157, "direction": "forward" },
+   { "name": "Sprint<DR>", "from": 158, "to": 163, "direction": "forward" },
+   { "name": "Sprint<R>", "from": 164, "to": 169, "direction": "forward" },
+   { "name": "Sprint<UR>", "from": 170, "to": 175, "direction": "forward" },
+   { "name": "Sprint<U>", "from": 176, "to": 181, "direction": "forward" },
+   { "name": "Sprint<UL>", "from": 182, "to": 187, "direction": "forward" },
+   { "name": "Sprint<L>", "from": 188, "to": 193, "direction": "forward" },
+   { "name": "Sprint<DL>", "from": 194, "to": 199, "direction": "forward" },
+   { "name": "_Jump", "from": 200, "to": 210, "direction": "forward" },
+   { "name": "Jumping", "from": 201, "to": 203, "direction": "forward" },
+   { "name": "Fall", "from": 204, "to": 205, "direction": "forward" },
+   { "name": "Falling", "from": 206, "to": 208, "direction": "forward" },
+   { "name": "Fall[Out]", "from": 209, "to": 210, "direction": "forward" },
+   { "name": "_Jump_DR", "from": 211, "to": 221, "direction": "forward" },
+   { "name": "Jumping<DR>", "from": 212, "to": 214, "direction": "forward" },
+   { "name": "Fall<DR>", "from": 215, "to": 216, "direction": "forward" },
+   { "name": "Falling<DR>", "from": 217, "to": 219, "direction": "forward" },
+   { "name": "Fall[Out]<DR>", "from": 220, "to": 221, "direction": "forward" },
+   { "name": "_Jump<R>", "from": 222, "to": 232, "direction": "forward" },
+   { "name": "Jumping<R>", "from": 223, "to": 225, "direction": "forward" },
+   { "name": "Fall<R>", "from": 226, "to": 227, "direction": "forward" },
+   { "name": "Falling<R>", "from": 228, "to": 230, "direction": "forward" },
+   { "name": "Fall[Out]<R>", "from": 231, "to": 232, "direction": "forward" },
+   { "name": "_Jump_UR", "from": 233, "to": 243, "direction": "forward" },
+   { "name": "Jumping<UR>", "from": 234, "to": 236, "direction": "forward" },
+   { "name": "Fall<UR>", "from": 237, "to": 238, "direction": "forward" },
+   { "name": "Falling<UR>", "from": 239, "to": 241, "direction": "forward" },
+   { "name": "Fall[Out]<UR>", "from": 242, "to": 243, "direction": "forward" },
+   { "name": "_Jump_U", "from": 244, "to": 254, "direction": "forward" },
+   { "name": "Jump<U>", "from": 245, "to": 247, "direction": "forward" },
+   { "name": "Fall<U>", "from": 248, "to": 249, "direction": "forward" },
+   { "name": "Falling<U>", "from": 250, "to": 252, "direction": "forward" },
+   { "name": "Fall[Out]<U>", "from": 253, "to": 254, "direction": "forward" },
+   { "name": "_Jump_UL", "from": 255, "to": 265, "direction": "forward" },
+   { "name": "Jumping<UL>", "from": 256, "to": 258, "direction": "forward" },
+   { "name": "Fall<UL>", "from": 259, "to": 260, "direction": "forward" },
+   { "name": "Falling<UL>", "from": 261, "to": 263, "direction": "forward" },
+   { "name": "Fall[Out]<UL>", "from": 264, "to": 265, "direction": "forward" },
+   { "name": "_Jump_L", "from": 266, "to": 276, "direction": "forward" },
+   { "name": "Jumping<L>", "from": 267, "to": 269, "direction": "forward" },
+   { "name": "Fall<L>", "from": 270, "to": 271, "direction": "forward" },
+   { "name": "Falling<L>", "from": 272, "to": 274, "direction": "forward" },
+   { "name": "Fall[Out]<L>", "from": 275, "to": 276, "direction": "forward" },
+   { "name": "_Jump_DL", "from": 277, "to": 287, "direction": "forward" },
+   { "name": "Jumping<DL>", "from": 278, "to": 280, "direction": "forward" },
+   { "name": "Fall<DL>", "from": 281, "to": 282, "direction": "forward" },
+   { "name": "Falling<DL>", "from": 283, "to": 285, "direction": "forward" },
+   { "name": "Fall[Out]<DL>", "from": 286, "to": 287, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "CharBody", "cels": [{ "frame": 0, "color": "#fe5b59ff" }] },
+   { "name": "Char", "group": "CharBody" },
+   { "name": "FXBack", "group": "Char" },
+   { "name": "RunDust", "group": "FXBack", "opacity": 255, "blendMode": "normal" },
+   { "name": "RunDust_2", "group": "FXBack", "opacity": 255, "blendMode": "normal" },
+   { "name": "Shadow", "group": "Char", "opacity": 43, "blendMode": "normal" },
+   { "name": "HairBack", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Legs", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Torso", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "LegsGroup", "group": "Char" },
+   { "name": "PlateLegs", "group": "LegsGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ChestGroup", "group": "Char" },
+   { "name": "ChestPlateGroup", "group": "Char" },
+   { "name": "PlateChest", "group": "ChestPlateGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ArmsGroup", "group": "Char" },
+   { "name": "Arms", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<L>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<TwoHand>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "GlovesGroup", "group": "Char" },
+   { "name": "PlateBracers", "group": "GlovesGroup" },
+   { "name": "Back", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "Front", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "Head", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Head[F]", "group": "Char", "opacity": 0, "blendMode": "normal" },
+   { "name": "HairGroup", "group": "Char" },
+   { "name": "Hair01", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair02", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair02", "opacity": 0, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair02", "opacity": 0, "blendMode": "normal" },
+   { "name": "Hair03", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair04", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair05", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair06", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Ear", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "HelmetGroup", "group": "Char" },
+   { "name": "Mask01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hood01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hat01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Helmet02", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "PlateHelmet", "group": "HelmetGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "AccessoryGroup", "group": "Char" },
+   { "name": "Capes", "group": "AccessoryGroup" },
+   { "name": "Cape05", "group": "Capes" },
+   { "name": "Cape04", "group": "Capes" },
+   { "name": "Layer 2", "group": "Cape04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape03", "group": "Capes" },
+   { "name": "Back", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape02", "group": "Capes" },
+   { "name": "Back", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "KnightCape", "group": "Capes" },
+   { "name": "Back", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Bags", "group": "AccessoryGroup" },
+   { "name": "Quiver", "group": "Bags", "opacity": 255, "blendMode": "normal" },
+   { "name": "WeaponGroup", "group": "Char" },
+   { "name": "TwoHand", "group": "WeaponGroup" },
+   { "name": "GreatSword", "group": "TwoHand" },
+   { "name": "Back", "group": "GreatSword", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "GreatSword", "opacity": 255, "blendMode": "normal" },
+   { "name": "OneHand", "group": "WeaponGroup" },
+   { "name": "Baston", "group": "OneHand", "opacity": 255, "blendMode": "normal" },
+   { "name": "Staff", "group": "OneHand", "opacity": 255, "blendMode": "normal" },
+   { "name": "LongSword", "group": "OneHand", "opacity": 0, "blendMode": "normal" },
+   { "name": "Pallete", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "CharBody", "cels": [{ "frame": 0, "color": "#fe5b59ff" }] },
+   { "name": "Blue", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "FX", "opacity": 255, "blendMode": "normal", "cels": [{ "frame": 0, "color": "#fe5b59ff" }] },
+   { "name": "Outline", "group": "FX", "opacity": 0, "blendMode": "normal" },
+   { "name": "Slashs", "group": "FX" },
+   { "name": "RapierSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "SwordSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "GreatSwordSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "PunchSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "HitBoxes", "group": "CharBody" },
+   { "name": "Functions", "group": "CharBody" },
+   { "name": "AtkFunctions", "group": "Functions", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

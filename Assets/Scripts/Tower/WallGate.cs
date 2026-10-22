@@ -25,7 +25,6 @@ namespace Tower
         [SerializeField]private Sprite verticalClosed;
         [SerializeField]private Sprite verticalOpen;
 
-        private BoxCollider2D boxCollider2D;
         protected override void Awake()
         {
             base.Awake();
@@ -37,7 +36,6 @@ namespace Tower
         {
             isHorizontal = horizontal;
             isOpen = false;
-            boxCollider2D = GetComponent<BoxCollider2D>();
             UpdateGateSprite();
         }
         
@@ -52,21 +50,8 @@ namespace Tower
         }
         public void SetGateOpen(bool _isOpen)
         {
-            if (!_isOpen)
-            {
-                isOpen = false;
-                boxCollider2D.enabled = true;
-
-            }
-            else
-            {
-                isOpen = true;
-                boxCollider2D.enabled = false;
-
-            }
+            isOpen = _isOpen;
             UpdateGateSprite();
-
-
         }
 
 

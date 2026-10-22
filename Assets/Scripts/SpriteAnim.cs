@@ -129,31 +129,36 @@ public class DirectionalFrames
 public class StateAnimationEntry
 {
     public AnimationState state;
-
     public DirectionalFrames frames;
 
-    [Tooltip(
-        "An für loopende Animationen wie Idle und Run. " +
-        "Aus für One-Shot-Animationen wie Angriffe."
-    )]
+    [Tooltip("Aktiviert die Wiederholung der Animation.")]
     public bool loop = true;
+
+    [Header("Run-In")]
+
+    [Tooltip(
+        "Anzahl der Run-In-Frames, die vor dem Run-Loop " +
+        "einmalig abgespielt werden. Wird nur für Run verwendet."
+    )]
+    [Min(0)]
+    public int runInFrameCount = 2;
 
     [Header("Charge")]
 
     [Tooltip(
         "Für BowRangedAttack und BowUpAttack aktivieren."
     )]
-    public bool isChargeable = false;
+    public bool isChargeable;
 
     [Tooltip(
         "Frame, ab dem die Charging-Schleife beginnt."
     )]
-    public int chargeLoopStartFrame = 0;
+    public int chargeLoopStartFrame;
 
     [Tooltip(
         "Letzter Frame der Charging-Schleife."
     )]
-    public int chargeLoopEndFrame = 0;
+    public int chargeLoopEndFrame;
 }
 
 public class SpriteAnim : MonoBehaviour
@@ -174,7 +179,7 @@ public class SpriteAnim : MonoBehaviour
 
     [SerializeField]
     public bool loop = true;
-
+    private bool runInCompleted;
     // -------------------------------------------------------------------
     // Legacy Sprites
     // -------------------------------------------------------------------
@@ -344,10 +349,13 @@ public class SpriteAnim : MonoBehaviour
         mElapsedTime = 0f;
 
         isCharging = false;
+        runInCompleted = false;
 
         directionalSpeedMultiplier = 1f;
 
         enabled = true;
+
+        SetSprite();
     }
 
     // -------------------------------------------------------------------
@@ -531,53 +539,76 @@ public class SpriteAnim : MonoBehaviour
     // Hero Directional Animation
     // -------------------------------------------------------------------
 
-    private void PlayDirectionalFrame()
-    {
-        if (_lookup == null)
-            BuildLookup();
-
-        if (!_lookup.TryGetValue(
-                animState,
-                out StateAnimationEntry entry))
-            return;
-
-        if (entry.frames == null)
-            return;
-
-        Sprite[] frames =
-            entry.frames.Get(currentDirection);
-
-        if (frames == null ||
-            frames.Length == 0)
-            return;
-
-        if (mCurrentFrame >= 0 &&
-            mCurrentFrame < frames.Length)
-        {
-            SetSpriteRendererOrImage(
-                frames[mCurrentFrame]
-            );
-        }
-
-        if (mCurrentFrame >= frames.Length)
-        {
-            if (entry.loop)
-            {
-                mCurrentFrame = 0;
-            }
-            else
-            {
-                mCurrentFrame =
-                    frames.Length - 1;
-
-                enabled = false;
-
-                OnDirectionalAnimationComplete?.Invoke(
-                    entry.state
-                );
-            }
-        }
-    }
+   private void PlayDirectionalFrame()
+   {
+       if (_lookup == null)
+           BuildLookup();
+   
+       if (!_lookup.TryGetValue(
+               animState,
+               out StateAnimationEntry entry))
+           return;
+   
+       if (entry.frames == null)
+           return;
+   
+       Sprite[] frames = entry.frames.Get(currentDirection);
+   
+       if (frames == null || frames.Length == 0)
+           return;
+   
+       int runInFrameCount = GetRunInFrameCount(entry, frames);
+   
+       if (animState == AnimationState.Run &&
+           mCurrentFrame >= runInFrameCount)
+       {
+           runInCompleted = true;
+       }
+   
+       if (mCurrentFrame >= 0 && mCurrentFrame < frames.Length)
+       {
+           SetSpriteRendererOrImage(frames[mCurrentFrame]);
+       }
+   
+       if (mCurrentFrame < frames.Length)
+           return;
+   
+       if (entry.loop)
+       {
+           mCurrentFrame = GetLoopStartFrame(runInFrameCount);
+           return;
+       }
+   
+       mCurrentFrame = frames.Length - 1;
+       enabled = false;
+   
+       OnDirectionalAnimationComplete?.Invoke(entry.state);
+   }
+   
+   private int GetRunInFrameCount(
+       StateAnimationEntry entry,
+       Sprite[] frames)
+   {
+       if (animState != AnimationState.Run)
+           return 0;
+   
+       if (frames.Length <= entry.runInFrameCount)
+           return 0;
+   
+       return Mathf.Clamp(
+           entry.runInFrameCount,
+           0,
+           frames.Length - 1
+       );
+   }
+   
+   private int GetLoopStartFrame(int runInFrameCount)
+   {
+       if (animState == AnimationState.Run && runInCompleted)
+           return runInFrameCount;
+   
+       return 0;
+   }
 
     // -------------------------------------------------------------------
     // Renderer

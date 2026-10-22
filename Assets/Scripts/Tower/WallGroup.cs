@@ -336,7 +336,7 @@ public class WallGroup : MonoBehaviour
         }
 
         segment.transform.localPosition = localPosition;
-
+        segment.GetComponent<BoxCollider2D>().enabled = false;
         segment.Initialize(
             this,
             cell
@@ -647,6 +647,7 @@ public class WallGroup : MonoBehaviour
         }
     }
 
+
     // =========================================================
     // REFRESH VISUALS
     // =========================================================
@@ -666,7 +667,7 @@ public class WallGroup : MonoBehaviour
         int cost = 0;
         
         SetGateOpen(true);
-        
+
         if (!LevelManager.instance.isDay)
             return;
         
@@ -677,6 +678,7 @@ public class WallGroup : MonoBehaviour
             cost = GetBuildCost();
             description = towerdesc;
             action = Build;
+            
         }
 
         // 2. Zerstört
@@ -689,6 +691,7 @@ public class WallGroup : MonoBehaviour
                 "This wall has been destroyed and has to be rebuilt!";
 
             action = Repair;
+            
         }
 
         // 3. Gebaut und Upgrade verfügbar
@@ -702,6 +705,7 @@ public class WallGroup : MonoBehaviour
             description = nextUpgrade.description;
 
             action = UpgradeWall;
+            
         }
 
         // 4. Bereits gebaut, nicht zerstört, aber maximales Level
@@ -712,6 +716,7 @@ public class WallGroup : MonoBehaviour
             description = "This wall is fully upgraded.";
             action = null;
             HideInteractionPopup();
+
             return;
         }
 

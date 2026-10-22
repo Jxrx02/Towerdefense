@@ -18,7 +18,7 @@ MonoBehaviour:
   targetingRange: 2
   attackCooldown: 0
   moveSpeedMultiplier: 1
-  projectilePrefab: {fileID: 8985508962564218780, guid: 13cf8ae231d943b4d856099b096f11db, type: 3}
+  projectilePrefab: {fileID: 0}
   autoAttack: 1
   useUpAttack: 0
   upAttack: 26
@@ -137,8 +137,8 @@ MonoBehaviour:
     recovery: 0.08
     comboWindow: 0.4
     superArmor: 1
-    maxChargeBonus: 1.3
-    cameraShakeStrength: 0
+    maxChargeBonus: 2
+    cameraShakeStrength: 0.1
     cameraShakeDuration: 0.1
   - anim: 20
     damageMultiplier: 2.4

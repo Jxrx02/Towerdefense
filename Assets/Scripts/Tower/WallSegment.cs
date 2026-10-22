@@ -22,6 +22,7 @@ namespace TowerDefense
         public WallGroup WallGroup => wallGroup;
         public Vector3Int Cell => cell;
 
+        public BoxCollider2D boxCollider2D;
         public bool IsBuilt =>
             wallGroup != null &&
             wallGroup.IsBuilt;
@@ -48,6 +49,7 @@ namespace TowerDefense
                 spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
 
             ValidateWallSprites();
+            boxCollider2D = GetComponent<BoxCollider2D>();
         }
 
         public void Initialize(
@@ -193,6 +195,7 @@ namespace TowerDefense
 
         public void SetBuilt()
         {
+            boxCollider2D.isTrigger = false;
             SetBuiltVisual();
             UpdateSorting();
         }
@@ -200,13 +203,21 @@ namespace TowerDefense
         private void SetBuiltVisual()
         {
             if (spriteRenderer != null && builtMaterial != null)
+            {
                 spriteRenderer.material = builtMaterial;
+                boxCollider2D.isTrigger = true;
+
+            }
         }
 
         public void SetUnbuiltVisual()
         {
             if (spriteRenderer != null && unbuiltMaterial != null)
+            {
                 spriteRenderer.material = unbuiltMaterial;
+                boxCollider2D.isTrigger = false;
+            }
+            
         }
 
         // =========================================================
