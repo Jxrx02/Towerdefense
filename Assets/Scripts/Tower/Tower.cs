@@ -853,7 +853,11 @@ namespace TowerDefense
             }
 
             if (damageFlashCoroutine != null)
+            {
                 StopCoroutine(damageFlashCoroutine);
+                RestoreOriginalMaterials();
+
+            }
 
             damageFlashCoroutine = StartCoroutine(DamageFlashRoutine());
         }
@@ -862,9 +866,7 @@ namespace TowerDefense
         {
             SpriteRenderer[] renderers =
                 GetComponentsInChildren<SpriteRenderer>(true);
-
-            originalMaterials.Clear();
-
+            
             foreach (SpriteRenderer sr in renderers)
             {
                 if (sr == null)
@@ -876,6 +878,12 @@ namespace TowerDefense
 
             yield return new WaitForSeconds(damageFlashDuration);
 
+            RestoreOriginalMaterials();
+            damageFlashCoroutine = null;
+        }
+
+        private void RestoreOriginalMaterials()
+        {
             foreach (var entry in originalMaterials)
             {
                 if (entry.Key != null)
@@ -883,7 +891,6 @@ namespace TowerDefense
             }
 
             originalMaterials.Clear();
-            damageFlashCoroutine = null;
         }
         // ───────────────── UPGRADE INTERACTION (Hold E) ─────────────────
         private Coroutine upgradeInteractionCoroutine;

@@ -179,7 +179,6 @@ public class SpriteAnim : MonoBehaviour
 
     [SerializeField]
     public bool loop = true;
-    private bool runInCompleted;
     // -------------------------------------------------------------------
     // Legacy Sprites
     // -------------------------------------------------------------------
@@ -349,7 +348,6 @@ public class SpriteAnim : MonoBehaviour
         mElapsedTime = 0f;
 
         isCharging = false;
-        runInCompleted = false;
 
         directionalSpeedMultiplier = 1f;
 
@@ -556,15 +554,7 @@ public class SpriteAnim : MonoBehaviour
    
        if (frames == null || frames.Length == 0)
            return;
-   
-       int runInFrameCount = GetRunInFrameCount(entry, frames);
-   
-       if (animState == AnimationState.Run &&
-           mCurrentFrame >= runInFrameCount)
-       {
-           runInCompleted = true;
-       }
-   
+       
        if (mCurrentFrame >= 0 && mCurrentFrame < frames.Length)
        {
            SetSpriteRendererOrImage(frames[mCurrentFrame]);
@@ -572,12 +562,7 @@ public class SpriteAnim : MonoBehaviour
    
        if (mCurrentFrame < frames.Length)
            return;
-   
-       if (entry.loop)
-       {
-           mCurrentFrame = GetLoopStartFrame(runInFrameCount);
-           return;
-       }
+       
    
        mCurrentFrame = frames.Length - 1;
        enabled = false;
@@ -602,13 +587,7 @@ public class SpriteAnim : MonoBehaviour
        );
    }
    
-   private int GetLoopStartFrame(int runInFrameCount)
-   {
-       if (animState == AnimationState.Run && runInCompleted)
-           return runInFrameCount;
-   
-       return 0;
-   }
+
 
     // -------------------------------------------------------------------
     // Renderer

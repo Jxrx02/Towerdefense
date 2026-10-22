@@ -50,7 +50,18 @@ namespace Tower
         }
         public void SetGateOpen(bool _isOpen)
         {
-            isOpen = _isOpen;
+            if (!_isOpen)
+            {
+                isOpen = false;
+                boxCollider2D.isTrigger = false;
+
+            }
+            else
+            {
+                isOpen = true;
+                boxCollider2D.isTrigger = true;
+
+            }
             UpdateGateSprite();
         }
 

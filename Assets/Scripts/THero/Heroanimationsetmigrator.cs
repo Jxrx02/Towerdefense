@@ -28,7 +28,6 @@ namespace TowerDefense.EditorTools
                 return;
 
             var clips = new List<HeroClip>();
-
             foreach (StateAnimationEntry entry in source.directionalAnimations)
             {
                 if (entry == null)

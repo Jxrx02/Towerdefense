@@ -28,6 +28,10 @@ namespace TowerDefense
         private bool layered;
         private bool visible = true;
 
+        private Color flashColor = Color.white;
+        private float flashDuration = 0.2f;
+        private float flashTimer;
+        
         public event Action<HeroAnim> BodyFinished;
         public event Action<HeroAnim, int> BodyEvent;
 
@@ -80,6 +84,8 @@ namespace TowerDefense
                 legsRenderer.sortingLayerID = bodyRenderer.sortingLayerID;
                 legsRenderer.sortingOrder = bodyRenderer.sortingOrder - 1;
             }
+
+            UpdateFlash();
         }
 
         // ------------------------------------------------------------------
@@ -110,7 +116,24 @@ namespace TowerDefense
         {
             body.SetCharging(value);
         }
-
+        /// <summary>Taste losgelassen: aus der Aufladeschleife direkt in den Schlag springen.</summary>
+        public void ReleaseCharge()
+        {
+            body.ReleaseCharge();
+        }
+        /// <summary>Kurzes Aufblitzen des Helden, z. B. bei voller Aufladung.</summary>
+        public void Flash(Color color, float duration)
+        {
+            flashColor = color;
+            flashDuration = Mathf.Max(0.01f, duration);
+            flashTimer = flashDuration;
+        }
+        /// <summary>Erster Frame des Schlags nach der Aufladeschleife (für den Einstieg in Stufe-2-Clips)</summary>
+        public int GetReleaseFrame(HeroAnim anim)
+        {
+            HeroClip clip = GetClip(anim);
+            return clip != null && clip.isChargeable ? clip.GetReleaseFrame(FrameCount(clip)) : 0;
+        }
         // ------------------------------------------------------------------
         // Abfragen
         // ------------------------------------------------------------------
@@ -155,24 +178,30 @@ namespace TowerDefense
             body.Play(clip, useLayers ? clip.upperBodyFrames : clip.frames, FrameTime(clip), speed, startFrame);
 
             if (useLayers)
-                PlayLegs(locomotion.Value);
+                PlayLegs(locomotion.Value, true);   
 
             SetLayered(useLayers);
             return true;
         }
 
-        /// <summary>
-        /// Spielt die erste vorhandene Animation der Liste, falls sie nicht schon läuft.
-        /// Für Dauerzustände wie Idle und Laufen, die jeden Frame aufgerufen werden dürfen.
-        /// </summary>
-        public bool PlayLooped(HeroAnim[] fallbackOrder)
+        /// <param name="skipIntro">
+        /// true, wenn der Held schon in Bewegung war (z. B. nach einem Angriff): bei Clips mit Schleifenstart
+        /// (Run: run-in, run-loop) wird das Anlaufen übersprungen.
+        /// </param>
+        public bool PlayLooped(HeroAnim[] fallbackOrder, bool skipIntro = false)
         {
             foreach (HeroAnim anim in fallbackOrder)
             {
                 if (IsCurrent(anim))
                     return true;
 
-                if (Play(anim))
+                HeroClip clip = GetClip(anim);
+                if (clip == null || !clip.HasFrames)
+                    continue;
+
+                int start = skipIntro ? clip.GetLoopStart(FrameCount(clip)) : 0;
+
+                if (Play(anim, 1f, null, start))
                     return true;
             }
 
@@ -195,13 +224,13 @@ namespace TowerDefense
                 body.SetFrames(wantLayers ? currentClip.upperBodyFrames : currentClip.frames);
 
                 if (wantLayers)
-                    PlayLegs(locomotion.Value);
+                    PlayLegs(locomotion.Value, false); 
 
                 SetLayered(wantLayers);
             }
             else if (wantLayers && legs.Current != locomotion.Value)
             {
-                PlayLegs(locomotion.Value);
+                PlayLegs(locomotion.Value, true);
             }
         }
 
@@ -219,12 +248,29 @@ namespace TowerDefense
                    set.GetLegs(locomotion.Value) != null;
         }
 
-        private void PlayLegs(HeroAnim locomotion)
+        private void PlayLegs(HeroAnim locomotion, bool skipIntro)
         {
             HeroClip legClip = set.GetLegs(locomotion);
-            legs.Play(legClip, legClip.frames, FrameTime(legClip), 1f);
+            int start = skipIntro ? legClip.GetLoopStart(FrameCount(legClip)) : 0;
+            legs.Play(legClip, legClip.frames, FrameTime(legClip), 1f, start);
         }
+        private int FrameCount(HeroClip clip)
+        {
+            Sprite[] sprites = clip.frames.GetWithFallback(facing);
+            return sprites != null ? sprites.Length : 0;
+        }
+        /// <summary>Flash über Körper und Beine, blendet zurück auf Weiß.</summary>
+        private void UpdateFlash()
+        {
+            if (flashTimer <= 0f)
+                return;
 
+            flashTimer -= Time.unscaledDeltaTime;
+
+            Color color = Color.Lerp(Color.white, flashColor, Mathf.Clamp01(flashTimer / flashDuration));
+            bodyRenderer.color = color;
+            legsRenderer.color = color;
+        }
         private void SetLayered(bool value)
         {
             layered = value;

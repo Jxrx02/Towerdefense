@@ -336,7 +336,11 @@ public class WallGroup : MonoBehaviour
         }
 
         segment.transform.localPosition = localPosition;
-        segment.GetComponent<BoxCollider2D>().enabled = false;
+
+        var sbc = segment.GetComponent<BoxCollider2D>();
+        sbc.enabled = true;
+        sbc.isTrigger = true;
+        
         segment.Initialize(
             this,
             cell

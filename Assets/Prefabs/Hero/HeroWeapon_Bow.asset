@@ -125,3 +125,4 @@ MonoBehaviour:
     maxChargeBonus: 1.5
     cameraShakeStrength: 0
     cameraShakeDuration: 0.1
+  activeAbility: {fileID: 0}

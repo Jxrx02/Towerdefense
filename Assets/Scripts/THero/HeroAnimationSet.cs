@@ -59,6 +59,24 @@ using UnityEngine;
         {
             bodyLookup = null;
             legLookup = null;
+
+            foreach (HeroClip clip in bodyClips)
+            {
+                if (clip == null) continue;
+
+                if (clip.anim.IsChargedAttack())
+                    clip.isChargeable = true;
+
+                clip.loopStartFrame = Mathf.Max(0, clip.loopStartFrame);
+                clip.chargeLoopStartFrame = Mathf.Max(0, clip.chargeLoopStartFrame);
+                clip.chargeLoopEndFrame = Mathf.Max(clip.chargeLoopStartFrame, clip.chargeLoopEndFrame);
+            }
+
+            foreach (HeroClip clip in legClips)
+            {
+                if (clip != null)
+                    clip.loopStartFrame = Mathf.Max(0, clip.loopStartFrame);
+            }
         }
 
 #if UNITY_EDITOR

@@ -205,8 +205,6 @@ namespace TowerDefense
             if (spriteRenderer != null && builtMaterial != null)
             {
                 spriteRenderer.material = builtMaterial;
-                boxCollider2D.isTrigger = true;
-
             }
         }
 
@@ -215,7 +213,7 @@ namespace TowerDefense
             if (spriteRenderer != null && unbuiltMaterial != null)
             {
                 spriteRenderer.material = unbuiltMaterial;
-                boxCollider2D.isTrigger = false;
+                boxCollider2D.isTrigger = true;
             }
             
         }
@@ -235,9 +233,6 @@ namespace TowerDefense
             PlayDamageFlash();
 
             return wallGroup.healthBarVitals.TakeDamage(info);
-            
-
-
         }
         
 

@@ -98,4 +98,16 @@ namespace TowerDefense
             return null;
         }
     }
+    
+    
+    public static class HeroAnimExtensions
+    {
+        /// <summary>Aufgeladene Angriffe haben eine Aufladeschleife (Frames, die sich beim Halten der Taste wiederholen).</summary>
+        public static bool IsChargedAttack(this HeroAnim anim)
+        {
+            return anim == HeroAnim.ChargedAttack1 || anim == HeroAnim.ChargedAttack2 ||
+                   anim == HeroAnim.ChargedHeavyAttack1 || anim == HeroAnim.ChargedHeavyAttack2 ||
+                   anim == HeroAnim.ChargedAttack || anim == HeroAnim.ChargedUpAttack;
+        }
+    }
 }

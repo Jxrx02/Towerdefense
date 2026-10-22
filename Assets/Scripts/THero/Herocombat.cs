@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace TowerDefense
 {
@@ -18,7 +19,16 @@ namespace TowerDefense
         void FireProjectile(GameObject enemy, int index, float damageMultiplier);
         void NotifyCombatActivity();
     }
+    /// <summary>Was die Aufladeanzeige braucht.</summary>
+    public interface IChargeSource
+    {
+        bool IsCharging { get; }
 
+        /// <summary>0 bis 1, bei 1 ist der Angriff voll aufgeladen</summary>
+        float ChargeProgress { get; }
+
+        event Action FullyCharged;
+    }
     /// <summary>
     /// Angriffslogik des Helden: Kombos (leicht und schwer), Aufladen, Bogenschüsse, Treffererkennung.
     ///
@@ -26,13 +36,13 @@ namespace TowerDefense
     ///   Taste halten -> aufladen, beim Loslassen aufgeladener Angriff (Stufe 2 bei voller Aufladung)
     ///   Taste während des Angriffs -> wird gemerkt und direkt danach ausgeführt
     /// </summary>
-    public sealed class HeroCombat
+    public sealed class HeroCombat : IChargeSource
     {
         private enum Phase { None, Pressing, Charging, Swinging, Recovering }
 
         private const float LungeDuration = 0.12f;
         private const float MinHitDistance = 0.35f;
-
+        
         private readonly IHeroCombatHost host;
         private readonly HeroAnimator animator;
         private readonly HeroMotor motor;
@@ -70,7 +80,19 @@ namespace TowerDefense
         public bool HasSuperArmor => phase == Phase.Swinging && currentData != null && currentData.superArmor;
         public Vector2 LockedAim => lockedAim;
         public FacingDirection LockedFacing => lockedFacing;
+        
+        // Aufladeanzeige
+        private HeroChargeIndicator chargeIndicator;
+        private static readonly Color FullChargeFlash = new Color(1f, 0.9f, 0.5f);
+        private bool fullyChargedRaised;
+        
+        public event Action FullyCharged;
+        public bool IsCharging => phase == Phase.Charging;
 
+        public float ChargeProgress =>
+            phase == Phase.Charging && weapon != null
+                ? Mathf.Clamp01((Time.time - chargeStart) / Mathf.Max(0.05f, weapon.fullChargeTime))
+                : 0f;
         /// <summary>Tempo-Faktor für die Bewegung während der aktuellen Phase</summary>
         public float MoveSpeedMultiplier
         {
@@ -87,6 +109,14 @@ namespace TowerDefense
             this.host = host;
             this.animator = animator;
             this.motor = motor;
+            
+            chargeIndicator = host.HostTransform.GetComponent<HeroChargeIndicator>();
+            if (chargeIndicator == null)
+            {
+                chargeIndicator = host.HostTransform.gameObject
+                    .AddComponent<HeroChargeIndicator>();
+            }
+            chargeIndicator.Bind(this);
 
             animator.BodyFinished += OnBodyFinished;
             animator.BodyEvent += OnBodyEvent;
@@ -96,6 +126,12 @@ namespace TowerDefense
         {
             animator.BodyFinished -= OnBodyFinished;
             animator.BodyEvent -= OnBodyEvent;
+            
+            if (chargeIndicator != null)
+            {
+                chargeIndicator.Bind(null);
+                UnityEngine.Object.Destroy(chargeIndicator);
+            }
         }
 
         public void SetWeapon(HeroWeaponConfig newWeapon)
@@ -299,7 +335,8 @@ namespace TowerDefense
             chargeKind = kind;
             chargeAnim = anim.Value;
             chargeStart = Time.time;
-
+            fullyChargedRaised = false;
+            
             LockAim(aim);
             animator.Play(chargeAnim, 1f, locomotion);
             animator.SetCharging(true);
@@ -314,6 +351,14 @@ namespace TowerDefense
 
             // Beim Aufladen kann weiter gezielt werden
             LockAim(aim);
+
+            // Volle Aufladung: einmal aufblitzen
+            if (!fullyChargedRaised && ChargeProgress >= 1f)
+            {
+                fullyChargedRaised = true;
+                animator.Flash(FullChargeFlash, 0.25f);
+                FullyCharged?.Invoke();
+            }
 
             if (!held)
                 ReleaseCharge(locomotion);
@@ -331,22 +376,22 @@ namespace TowerDefense
 
             lastKind = chargeKind;
 
-            // Gleiche Animation: einfach weiterlaufen lassen, nur nicht mehr in der Schleife bleiben
+            // Gleiche Animation: weiterlaufen lassen, aber aus der Aufladeschleife direkt in den Schlag springen
             if (anim.Value == chargeAnim)
             {
                 currentAnim = chargeAnim;
                 currentData = weapon.GetAttack(chargeAnim);
                 strikePending = true;
                 buffered = null;
-                animator.SetCharging(false);
+
+                // Phase zuerst setzen: ReleaseCharge kann den Schlag-Event sofort auslösen
                 phase = Phase.Swinging;
+                animator.ReleaseCharge();
                 return;
             }
 
             // Stufe 2: Clip wechseln und hinter der Aufladeschleife einsteigen
-            HeroClip clip = animator.GetClip(anim.Value);
-            int startFrame = clip != null && clip.isChargeable ? clip.chargeLoopEndFrame + 1 : 0;
-            BeginSwing(anim.Value, chargeKind, lockedAim, locomotion, startFrame);
+            BeginSwing(anim.Value, chargeKind, lockedAim, locomotion, animator.GetReleaseFrame(anim.Value));
         }
 
         // ------------------------------------------------------------------

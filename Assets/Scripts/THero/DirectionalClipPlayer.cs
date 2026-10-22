@@ -31,7 +31,7 @@ namespace TowerDefense
         public bool IsFinished { get; private set; }
         public bool IsPlaying => clip != null && !IsFinished;
 
-        private int FrameCount => sprites != null ? sprites.Length : 0;
+        public int FrameCount => sprites != null ? sprites.Length : 0;
 
         public DirectionalClipPlayer(SpriteRenderer target)
         {
@@ -53,7 +53,7 @@ namespace TowerDefense
 
             RefreshSprites();
             frame = Mathf.Clamp(startFrame, 0, Mathf.Max(0, FrameCount - 1));
-            eventFrame = clip.eventFrame >= 0 ? clip.eventFrame : FrameCount / 2;
+            eventFrame = clip.GetEventFrame(FrameCount);
 
             Apply();
         }
@@ -82,7 +82,29 @@ namespace TowerDefense
         {
             charging = value;
         }
+        /// <summary>
+        /// Taste losgelassen: sofort hinter die Aufladeschleife springen (Schlag), statt erst die Schleife zu beenden.
+        /// </summary>
+        public void ReleaseCharge()
+        {
+            if (!charging)
+                return;
 
+            charging = false;
+
+            if (clip == null || !clip.isChargeable || FrameCount == 0)
+                return;
+
+            int releaseFrame = clip.GetReleaseFrame(FrameCount);
+
+            if (frame < releaseFrame)
+            {
+                frame = releaseFrame;
+                elapsed = 0f;
+                Apply();
+                RaiseEventIfDue();
+            }
+        }
         public void Tick(float deltaTime)
         {
             if (clip == null || IsFinished || FrameCount == 0)
@@ -101,15 +123,21 @@ namespace TowerDefense
         {
             frame++;
 
-            // Aufladen: zwischen Start- und Endframe der Schleife bleiben
-            if (charging && clip.isChargeable && frame > clip.chargeLoopEndFrame)
-                frame = Mathf.Clamp(clip.chargeLoopStartFrame, 0, FrameCount - 1);
+            // Aufladen: Ausholen läuft einmal, dann wiederholt sich die Aufladeschleife
+            if (charging && clip.isChargeable)
+            {
+                clip.GetChargeRange(FrameCount, out int loopStart, out int loopEnd);
+
+                if (frame > loopEnd)
+                    frame = loopStart;
+            }
 
             if (frame >= FrameCount)
             {
                 if (clip.loop)
                 {
-                    frame = 0;
+                    // Zurück zum Schleifenstart (Run: die ersten Frames sind nur das Anlaufen)
+                    frame = clip.GetLoopStart(FrameCount);
                     eventRaised = false;
                 }
                 else

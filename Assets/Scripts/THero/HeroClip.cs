@@ -17,7 +17,10 @@ namespace TowerDefense
         public DirectionalFrames upperBodyFrames;
 
         public bool loop;
-
+        [Tooltip("Frame, zu dem eine Schleife zurückspringt. Frames davor laufen nur einmal beim Start. " +
+                 "Beispiel Run: die ersten 2 Frames sind das Anlaufen (run-in), der Rest die Schleife, also Wert 2.")]
+        public int loopStartFrame;
+        
         [Tooltip("Sekunden pro Frame. 0 = Standardwert des Sets")]
         public float timePerFrame;
 
@@ -49,6 +52,45 @@ namespace TowerDefense
             }
 
             return false;
+        }
+        
+        
+        /// <summary>Ist die Aufladeschleife angegeben?</summary>
+        public bool HasChargeLoop => isChargeable && (chargeLoopStartFrame > 0 || chargeLoopEndFrame > 0);
+
+        public int GetEventFrame(int frameCount)
+        {
+            return eventFrame >= 0 ? eventFrame : frameCount / 2;
+        }
+
+        public int GetLoopStart(int frameCount)
+        {
+            return loop ? Mathf.Clamp(loopStartFrame, 0, Mathf.Max(0, frameCount - 1)) : 0;
+        }
+
+        /// <summary>Frames der Aufladeschleife. Nicht angegeben: auf dem Frame vor dem Schlag anhalten.</summary>
+        public void GetChargeRange(int frameCount, out int start, out int end)
+        {
+            if (HasChargeLoop)
+            {
+                start = chargeLoopStartFrame;
+                end = chargeLoopEndFrame;
+            }
+            else
+            {
+                start = end = Mathf.Max(0, GetEventFrame(frameCount) - 1);
+            }
+
+            int last = Mathf.Max(0, frameCount - 1);
+            start = Mathf.Clamp(start, 0, last);
+            end = Mathf.Clamp(end, start, last);
+        }
+
+        /// <summary>Erster Frame des Schlags nach dem Loslassen</summary>
+        public int GetReleaseFrame(int frameCount)
+        {
+            GetChargeRange(frameCount, out _, out int end);
+            return Mathf.Min(end + 1, Mathf.Max(0, frameCount - 1));
         }
     }
 
