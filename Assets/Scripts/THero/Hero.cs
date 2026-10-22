@@ -245,6 +245,7 @@ namespace TowerDefense
         public void EquipWeapon(WeaponDefinition definition)
         {
             EquipWeapon(definition != null ? definition.heroConfig : null);
+            weapon.activeAbility = definition.active;
         }
 
         public void EquipWeapon(HeroWeaponConfig config)
@@ -272,6 +273,11 @@ namespace TowerDefense
             state = HeroState.Free;
         }
 
+        public void ExecuteActive()
+        {
+            weapon.activeAbility.Execute(this.gameObject);
+        }
+        
         public HeroWeaponConfig Weapon => weapon;
         
         // ------------------------------------------------------------------
@@ -455,10 +461,16 @@ private void OnVitalsDamaged(DamageResult result)
             if (state == HeroState.Dead || Time.time < invulnerableUntil)
                 return default;
 
-            // Block: nur Angriffe von vorn werden gemindert
-            if (state == HeroState.Blocking && weapon != null && weapon.canBlock && IsFromFront(info.source))
+            // Block: Nur Angriffe von vorn werden gemindert.
+            if (state == HeroState.Blocking &&
+                weapon != null &&
+                weapon.canBlock &&
+                IsFromFront(info.source))
+            {
                 info.amount *= 1f - Mathf.Clamp01(weapon.blockDamageReduction);
-
+            }
+            PlayDamageFlash();
+            
             return base.TakeDamage(info);
         }
 

@@ -546,7 +546,6 @@ MonoBehaviour:
   currentHealth: 100
   baseArmor: 0
   baseMagicResist: 10
-  autoAddVitals: 1
   bonusPerLevel:
     health: 8
     healthRegen: 0
@@ -581,6 +580,8 @@ MonoBehaviour:
   interactionIndicatorOffset: {x: 0, y: 0, z: 0}
   outlineMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
   targetPreference: 2
+  whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
+  damageFlashDuration: 0.12
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0

@@ -555,8 +555,8 @@ MonoBehaviour:
   minHealToShow: 1
   keepUpright: 1
   detachOnDeath: 1
-  hitStopFramesOnCrit: 15
-  hitStopFramesOnHit: 10
+  hitStopFramesOnCrit: 3
+  hitStopFramesOnHit: 0
 --- !u!114 &8750746098749655267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
   criticalThreshold: 0.25
   criticalPulseSpeed: 8
   tickEveryHP: 0
-  minHealthForTicks: 250
+  minHealthForTicks: 100
   maxTicks: 24
   majorTickEvery: 10
   tickWidth: 0.015
@@ -648,7 +648,7 @@ MonoBehaviour:
   towerDesc: 'Ein echter Robinhood '
   towerInitPrice: 40
   displayedStats: 0
-  statHealthPoints: 10
+  statHealthPoints: 160
   currentHealth: 0
   baseArmor: 0
   baseMagicResist: 0
@@ -670,8 +670,8 @@ MonoBehaviour:
   range: 6.16
   interactionrange: 1
   damage: 7
-  timeInBetweenShots: 1.2
-  attackSpeedMultiplier: 2
+  timeInBetweenShots: 3.2
+  attackSpeedMultiplier: 1
   offense:
     critChance: 0
     critDamage: 1.75
@@ -686,6 +686,8 @@ MonoBehaviour:
   interactionIndicatorOffset: {x: 0, y: 0, z: 0}
   outlineMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
   targetPreference: 0
+  whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
+  damageFlashDuration: 1
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0
@@ -957,16 +959,16 @@ MonoBehaviour:
     jumpInvulnerability: 0.2
   inputSettings:
     lightAttack: 106
-    heavyAttack: 107
+    heavyAttack: 101
     block: 108
     sprint: 304
     walk: 308
     dash: 113
     dodge: 306
     jump: 102
-  defaultWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: 8335c18ed2af4d04b88edb2f0a875dca, type: 2}
   combatStanceDuration: 4
-  hitCooldown: 0.5
+  hitCooldown: 0.2
   respawnTime: 5
   targetPosition: {x: -7.047619, y: -6.9761906}
 --- !u!114 &7932739886474218458
@@ -1042,6 +1044,7 @@ MonoBehaviour:
       - {fileID: 3623066901586341126, guid: c7149a3eed267864d9cd3822cadd8344, type: 3}
       - {fileID: -5361779496586751100, guid: c7149a3eed267864d9cd3822cadd8344, type: 3}
     loop: 1
+    runInFrameCount: 2
     isChargeable: 0
     chargeLoopStartFrame: 0
     chargeLoopEndFrame: 0
@@ -1136,6 +1139,7 @@ MonoBehaviour:
       - {fileID: -6576022141405866045, guid: 7c1a26de3ff902242a2c3c970fdd763b, type: 3}
       - {fileID: 1315868346178363662, guid: 7c1a26de3ff902242a2c3c970fdd763b, type: 3}
     loop: 1
+    runInFrameCount: 2
     isChargeable: 0
     chargeLoopStartFrame: 0
     chargeLoopEndFrame: 0
@@ -1230,6 +1234,7 @@ MonoBehaviour:
       - {fileID: 5936902381901186314, guid: acc7b0009aef51143b0b960b2098fbdb, type: 3}
       - {fileID: -5612713679810923103, guid: acc7b0009aef51143b0b960b2098fbdb, type: 3}
     loop: 0
+    runInFrameCount: 2
     isChargeable: 0
     chargeLoopStartFrame: 0
     chargeLoopEndFrame: 0

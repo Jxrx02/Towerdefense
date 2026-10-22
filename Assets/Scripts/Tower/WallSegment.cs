@@ -232,6 +232,7 @@ namespace TowerDefense
                 return default;
 
             wallGroup.TakeDamage(info);
+            PlayDamageFlash();
 
             return wallGroup.healthBarVitals.TakeDamage(info);
             

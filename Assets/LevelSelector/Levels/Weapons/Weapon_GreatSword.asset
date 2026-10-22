@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e5ee3b92254d0c95728c687e3b2af1, type: 3}
+  m_Name: Weapon_GreatSword
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSelector.Definitions.WeaponDefinition
+  weaponName: Great Sword
+  passiveDescription: 'passive: shoots a simple arrow on enemy'
+  activeDescription: 'Active: create a small burst of arrows'
+  heroConfig: {fileID: 11400000, guid: 044b516acf73ef44c83f973b965f3896, type: 2}
+  projectile: {fileID: 0}
+  active: {fileID: 0}
+  icon: {fileID: 6087842111913400440, guid: 2259d9654e3728a4286cc02ec8d9d5ea, type: 3}

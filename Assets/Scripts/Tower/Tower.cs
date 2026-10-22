@@ -103,7 +103,15 @@ namespace TowerDefense
         protected internal SpriteAnim spriteAnim;
         protected SpriteRenderer sr;
         private StatDiffDisplay statDiffDisplay;
+        [Header("Damage Flash")]
+        [SerializeField] private Material whiteFlashMaterial;
+        [SerializeField] private float damageFlashDuration = 0.05f;
+        private Coroutine damageFlashCoroutine;
 
+        private readonly Dictionary<SpriteRenderer, Material>
+            originalMaterials = new Dictionary<SpriteRenderer, Material>();
+        
+        
         [Header("Economic / Utility Stats")]
         [SerializeField] public float statCoinsEarnedPerSecond;
         [SerializeField] public float statHealthRegenPerSecond;
@@ -413,10 +421,15 @@ namespace TowerDefense
         /// </summary>
         public virtual DamageResult TakeDamage(DamageInfo info)
         {
-            if (vitals != null)
-                return vitals.TakeDamage(info);
+            if (vitals == null)
+                return default;
 
-            return default;
+            DamageResult result = vitals.TakeDamage(info);
+
+            if (result.healthDamage > 0f || result.shieldDamage > 0f)
+                PlayDamageFlash();
+
+            return result;
         }
 
         protected void SyncHealth() => currentHealth = Mathf.CeilToInt(vitals.Health);
@@ -830,7 +843,48 @@ namespace TowerDefense
                 statDiffDisplay.ShowDiff(stat.label, oldValue, stat.value, stat.color);
             }
         }
+        protected void PlayDamageFlash()
+        {
+            if (whiteFlashMaterial == null)
+            {
+                Debug.LogWarning(
+                    $"White Flash Material fehlt auf {name}.", this);
+                return;
+            }
 
+            if (damageFlashCoroutine != null)
+                StopCoroutine(damageFlashCoroutine);
+
+            damageFlashCoroutine = StartCoroutine(DamageFlashRoutine());
+        }
+
+        private IEnumerator DamageFlashRoutine()
+        {
+            SpriteRenderer[] renderers =
+                GetComponentsInChildren<SpriteRenderer>(true);
+
+            originalMaterials.Clear();
+
+            foreach (SpriteRenderer sr in renderers)
+            {
+                if (sr == null)
+                    continue;
+
+                originalMaterials[sr] = sr.sharedMaterial;
+                sr.sharedMaterial = whiteFlashMaterial;
+            }
+
+            yield return new WaitForSeconds(damageFlashDuration);
+
+            foreach (var entry in originalMaterials)
+            {
+                if (entry.Key != null)
+                    entry.Key.sharedMaterial = entry.Value;
+            }
+
+            originalMaterials.Clear();
+            damageFlashCoroutine = null;
+        }
         // ───────────────── UPGRADE INTERACTION (Hold E) ─────────────────
         private Coroutine upgradeInteractionCoroutine;
         private const float UpgradeHoldDuration = 4f;

@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class DominantColorPivotTool : EditorWindow
 {
-    private const string TargetColorOne = "#3F3F74";
-    private const string TargetColorTwo = "#306082";
+    private const string TargetColorOne = "#D9A066";
+    private const string TargetColorTwo = "#EEC39A";
 
     private Color32 colorOne;
     private Color32 colorTwo;

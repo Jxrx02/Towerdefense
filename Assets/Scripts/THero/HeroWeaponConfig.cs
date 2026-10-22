@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LevelSelector.Definitions;
 using UnityEngine;
 
 namespace TowerDefense
@@ -92,7 +93,8 @@ namespace TowerDefense
 
         [Header("Angriffsdaten")]
         public List<HeroAttackData> attacks = new List<HeroAttackData>();
-
+        
+        [HideInInspector] public WeaponActiveDefinition activeAbility;
         private static readonly HeroAttackData Fallback = new HeroAttackData();
 
         public bool IsRanged => weaponType == HeroWeaponType.Bow;

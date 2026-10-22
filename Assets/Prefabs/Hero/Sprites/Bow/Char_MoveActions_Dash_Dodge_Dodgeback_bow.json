@@ -1,0 +1,1802 @@
+{ "frames": {
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash_000": {
+    "frame": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash_001": {
+    "frame": { "x": 128, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash_002": {
+    "frame": { "x": 256, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash_003": {
+    "frame": { "x": 384, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash_004": {
+    "frame": { "x": 512, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]_000": {
+    "frame": { "x": 640, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]_001": {
+    "frame": { "x": 768, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]_002": {
+    "frame": { "x": 896, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]_003": {
+    "frame": { "x": 1024, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DR>_000": {
+    "frame": { "x": 1152, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DR>_001": {
+    "frame": { "x": 1280, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DR>_002": {
+    "frame": { "x": 1408, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DR>_003": {
+    "frame": { "x": 1536, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DR>_004": {
+    "frame": { "x": 1664, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DR>_000": {
+    "frame": { "x": 1792, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DR>_001": {
+    "frame": { "x": 0, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DR>_002": {
+    "frame": { "x": 128, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DR>_003": {
+    "frame": { "x": 256, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<R>_000": {
+    "frame": { "x": 384, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<R>_001": {
+    "frame": { "x": 512, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<R>_002": {
+    "frame": { "x": 640, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<R>_003": {
+    "frame": { "x": 768, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<R>_004": {
+    "frame": { "x": 896, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<R>_000": {
+    "frame": { "x": 1024, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<R>_001": {
+    "frame": { "x": 1152, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<R>_002": {
+    "frame": { "x": 1280, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<R>_003": {
+    "frame": { "x": 1408, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UR>_000": {
+    "frame": { "x": 1536, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UR>_001": {
+    "frame": { "x": 1664, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UR>_002": {
+    "frame": { "x": 1792, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UR>_003": {
+    "frame": { "x": 0, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UR>_004": {
+    "frame": { "x": 128, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UR>_000": {
+    "frame": { "x": 256, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UR>_001": {
+    "frame": { "x": 384, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UR>_002": {
+    "frame": { "x": 512, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UR>_003": {
+    "frame": { "x": 640, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<U>_000": {
+    "frame": { "x": 768, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<U>_001": {
+    "frame": { "x": 896, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<U>_002": {
+    "frame": { "x": 1024, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<U>_003": {
+    "frame": { "x": 1152, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<U>_004": {
+    "frame": { "x": 1280, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<U>_000": {
+    "frame": { "x": 1408, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<U>_001": {
+    "frame": { "x": 1536, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<U>_002": {
+    "frame": { "x": 1664, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<U>_003": {
+    "frame": { "x": 1792, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UL>_000": {
+    "frame": { "x": 0, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UL>_001": {
+    "frame": { "x": 128, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UL>_002": {
+    "frame": { "x": 256, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UL>_003": {
+    "frame": { "x": 384, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<UL>_004": {
+    "frame": { "x": 512, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UL>_000": {
+    "frame": { "x": 640, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UL>_001": {
+    "frame": { "x": 768, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UL>_002": {
+    "frame": { "x": 896, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<UL>_003": {
+    "frame": { "x": 1024, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<L>_000": {
+    "frame": { "x": 1152, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<L>_001": {
+    "frame": { "x": 1280, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<L>_002": {
+    "frame": { "x": 1408, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<L>_003": {
+    "frame": { "x": 1536, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<L>_004": {
+    "frame": { "x": 1664, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<L>_000": {
+    "frame": { "x": 1792, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<L>_001": {
+    "frame": { "x": 0, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<L>_002": {
+    "frame": { "x": 128, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<L>_003": {
+    "frame": { "x": 256, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DL>_000": {
+    "frame": { "x": 384, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DL>_001": {
+    "frame": { "x": 512, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DL>_002": {
+    "frame": { "x": 640, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DL>_003": {
+    "frame": { "x": 768, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dash<DL>_004": {
+    "frame": { "x": 896, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DL>_000": {
+    "frame": { "x": 1024, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DL>_001": {
+    "frame": { "x": 1152, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DL>_002": {
+    "frame": { "x": 1280, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Sprint[Out]<DL>_003": {
+    "frame": { "x": 1408, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_000": {
+    "frame": { "x": 1536, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_001": {
+    "frame": { "x": 1664, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_002": {
+    "frame": { "x": 1792, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_003": {
+    "frame": { "x": 0, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_004": {
+    "frame": { "x": 128, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_005": {
+    "frame": { "x": 256, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_006": {
+    "frame": { "x": 384, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_007": {
+    "frame": { "x": 512, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_008": {
+    "frame": { "x": 640, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge_009": {
+    "frame": { "x": 768, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_000": {
+    "frame": { "x": 896, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_001": {
+    "frame": { "x": 1024, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_002": {
+    "frame": { "x": 1152, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_003": {
+    "frame": { "x": 1280, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_004": {
+    "frame": { "x": 1408, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_005": {
+    "frame": { "x": 1536, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_006": {
+    "frame": { "x": 1664, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_007": {
+    "frame": { "x": 1792, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_008": {
+    "frame": { "x": 0, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DR>_009": {
+    "frame": { "x": 128, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_000": {
+    "frame": { "x": 256, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_001": {
+    "frame": { "x": 384, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_002": {
+    "frame": { "x": 512, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_003": {
+    "frame": { "x": 640, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_004": {
+    "frame": { "x": 768, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_005": {
+    "frame": { "x": 896, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_006": {
+    "frame": { "x": 1024, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_007": {
+    "frame": { "x": 1152, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_008": {
+    "frame": { "x": 1280, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<R>_009": {
+    "frame": { "x": 1408, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_000": {
+    "frame": { "x": 1536, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_001": {
+    "frame": { "x": 1664, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_002": {
+    "frame": { "x": 1792, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_003": {
+    "frame": { "x": 0, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_004": {
+    "frame": { "x": 128, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_005": {
+    "frame": { "x": 256, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_006": {
+    "frame": { "x": 384, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_007": {
+    "frame": { "x": 512, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_008": {
+    "frame": { "x": 640, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UR>_009": {
+    "frame": { "x": 768, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_000": {
+    "frame": { "x": 896, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_001": {
+    "frame": { "x": 1024, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_002": {
+    "frame": { "x": 1152, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_003": {
+    "frame": { "x": 1280, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_004": {
+    "frame": { "x": 1408, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_005": {
+    "frame": { "x": 1536, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_006": {
+    "frame": { "x": 1664, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_007": {
+    "frame": { "x": 1792, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_008": {
+    "frame": { "x": 0, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<U>_009": {
+    "frame": { "x": 128, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_000": {
+    "frame": { "x": 256, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_001": {
+    "frame": { "x": 384, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_002": {
+    "frame": { "x": 512, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_003": {
+    "frame": { "x": 640, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_004": {
+    "frame": { "x": 768, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_005": {
+    "frame": { "x": 896, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_006": {
+    "frame": { "x": 1024, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_007": {
+    "frame": { "x": 1152, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_008": {
+    "frame": { "x": 1280, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<UL>_009": {
+    "frame": { "x": 1408, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_000": {
+    "frame": { "x": 1536, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_001": {
+    "frame": { "x": 1664, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_002": {
+    "frame": { "x": 1792, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_003": {
+    "frame": { "x": 0, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_004": {
+    "frame": { "x": 128, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_005": {
+    "frame": { "x": 256, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_006": {
+    "frame": { "x": 384, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_007": {
+    "frame": { "x": 512, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_008": {
+    "frame": { "x": 640, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<L>_009": {
+    "frame": { "x": 768, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_000": {
+    "frame": { "x": 896, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_001": {
+    "frame": { "x": 1024, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_002": {
+    "frame": { "x": 1152, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_003": {
+    "frame": { "x": 1280, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_004": {
+    "frame": { "x": 1408, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_005": {
+    "frame": { "x": 1536, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_006": {
+    "frame": { "x": 1664, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_007": {
+    "frame": { "x": 1792, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_008": {
+    "frame": { "x": 0, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___Dodge<DL>_009": {
+    "frame": { "x": 128, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_000": {
+    "frame": { "x": 256, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_001": {
+    "frame": { "x": 384, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_002": {
+    "frame": { "x": 512, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_003": {
+    "frame": { "x": 640, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_004": {
+    "frame": { "x": 768, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_005": {
+    "frame": { "x": 896, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash_006": {
+    "frame": { "x": 1024, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_000": {
+    "frame": { "x": 1152, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_001": {
+    "frame": { "x": 1280, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_002": {
+    "frame": { "x": 1408, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_003": {
+    "frame": { "x": 1536, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_004": {
+    "frame": { "x": 1664, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_005": {
+    "frame": { "x": 1792, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DR>_006": {
+    "frame": { "x": 0, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_000": {
+    "frame": { "x": 128, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_001": {
+    "frame": { "x": 256, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_002": {
+    "frame": { "x": 384, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_003": {
+    "frame": { "x": 512, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_004": {
+    "frame": { "x": 640, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_005": {
+    "frame": { "x": 768, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<R>_006": {
+    "frame": { "x": 896, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_000": {
+    "frame": { "x": 1024, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_001": {
+    "frame": { "x": 1152, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_002": {
+    "frame": { "x": 1280, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_003": {
+    "frame": { "x": 1408, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_004": {
+    "frame": { "x": 1536, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_005": {
+    "frame": { "x": 1664, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UR>_006": {
+    "frame": { "x": 1792, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_000": {
+    "frame": { "x": 0, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_001": {
+    "frame": { "x": 128, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_002": {
+    "frame": { "x": 256, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_003": {
+    "frame": { "x": 384, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_004": {
+    "frame": { "x": 512, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_005": {
+    "frame": { "x": 640, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<U>_006": {
+    "frame": { "x": 768, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_000": {
+    "frame": { "x": 896, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_001": {
+    "frame": { "x": 1024, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_002": {
+    "frame": { "x": 1152, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_003": {
+    "frame": { "x": 1280, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_004": {
+    "frame": { "x": 1408, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_005": {
+    "frame": { "x": 1536, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<UL>_006": {
+    "frame": { "x": 1664, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_000": {
+    "frame": { "x": 1792, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_001": {
+    "frame": { "x": 0, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_002": {
+    "frame": { "x": 128, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_003": {
+    "frame": { "x": 256, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_004": {
+    "frame": { "x": 384, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_005": {
+    "frame": { "x": 512, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<L>_006": {
+    "frame": { "x": 640, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_000": {
+    "frame": { "x": 768, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_001": {
+    "frame": { "x": 896, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_002": {
+    "frame": { "x": 1024, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_003": {
+    "frame": { "x": 1152, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_004": {
+    "frame": { "x": 1280, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_005": {
+    "frame": { "x": 1408, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_MoveActions_Dash_Dodge_Dodgeback___BackDash<DL>_006": {
+    "frame": { "x": 1536, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.32-x64",
+  "image": "Char_MoveActions_Dash_Dodge_Dodgeback_bow.png",
+  "format": "RGBA8888",
+  "size": { "w": 2000, "h": 1792 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Dash", "from": 0, "to": 8, "direction": "forward" },
+   { "name": "Sprint[Out]", "from": 5, "to": 8, "direction": "forward" },
+   { "name": "Run[Out]", "from": 5, "to": 8, "direction": "forward" },
+   { "name": "Dash<DR>", "from": 9, "to": 17, "direction": "forward" },
+   { "name": "Sprint[Out]<DR>", "from": 14, "to": 17, "direction": "forward" },
+   { "name": "Run[Out]<DR>", "from": 14, "to": 17, "direction": "forward" },
+   { "name": "Dash<R>", "from": 18, "to": 26, "direction": "forward" },
+   { "name": "Sprint[Out]<R>", "from": 23, "to": 26, "direction": "forward" },
+   { "name": "Run[Out]<R>", "from": 23, "to": 26, "direction": "forward" },
+   { "name": "Dash<UR>", "from": 27, "to": 35, "direction": "forward" },
+   { "name": "Sprint[Out]<UR>", "from": 32, "to": 35, "direction": "forward" },
+   { "name": "Run[Out]<UR>", "from": 32, "to": 35, "direction": "forward" },
+   { "name": "Dash<U>", "from": 36, "to": 44, "direction": "forward" },
+   { "name": "Sprint[Out]<U>", "from": 41, "to": 44, "direction": "forward" },
+   { "name": "Run[Out]<U>", "from": 41, "to": 44, "direction": "forward" },
+   { "name": "Dash<UL>", "from": 45, "to": 53, "direction": "forward" },
+   { "name": "Sprint[Out]<UL>", "from": 50, "to": 53, "direction": "forward" },
+   { "name": "Run[Out]<UL>", "from": 50, "to": 53, "direction": "forward" },
+   { "name": "Dash<L>", "from": 54, "to": 62, "direction": "forward" },
+   { "name": "Sprint[Out]<L>", "from": 59, "to": 62, "direction": "forward" },
+   { "name": "Run[Out]<L>", "from": 59, "to": 62, "direction": "forward" },
+   { "name": "Dash<DL>", "from": 63, "to": 71, "direction": "forward" },
+   { "name": "Sprint[Out]<DL>", "from": 68, "to": 71, "direction": "forward" },
+   { "name": "Run[Out]<DL>", "from": 68, "to": 71, "direction": "forward" },
+   { "name": "Dodge", "from": 72, "to": 81, "direction": "forward" },
+   { "name": "Dodge<DR>", "from": 82, "to": 91, "direction": "forward" },
+   { "name": "Dodge<R>", "from": 92, "to": 101, "direction": "forward" },
+   { "name": "Dodge<UR>", "from": 102, "to": 111, "direction": "forward" },
+   { "name": "Dodge<U>", "from": 112, "to": 121, "direction": "forward" },
+   { "name": "Dodge<UL>", "from": 122, "to": 131, "direction": "forward" },
+   { "name": "Dodge<L>", "from": 132, "to": 141, "direction": "forward" },
+   { "name": "Dodge<DL>", "from": 142, "to": 151, "direction": "forward" },
+   { "name": "BackDash", "from": 152, "to": 158, "direction": "forward" },
+   { "name": "BackDash<DR>", "from": 159, "to": 165, "direction": "forward" },
+   { "name": "BackDash<R>", "from": 166, "to": 172, "direction": "forward" },
+   { "name": "BackDash<UR>", "from": 173, "to": 179, "direction": "forward" },
+   { "name": "BackDash<U>", "from": 180, "to": 186, "direction": "forward" },
+   { "name": "BackDash<UL>", "from": 187, "to": 193, "direction": "forward" },
+   { "name": "BackDash<L>", "from": 194, "to": 200, "direction": "forward" },
+   { "name": "BackDash<DL>", "from": 201, "to": 207, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "CharBody", "cels": [{ "frame": 0, "color": "#fe5b59ff" }, { "frame": 1, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 5, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 6, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 7, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 10, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 14, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 15, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 16, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 19, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 23, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 24, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 25, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 28, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 32, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 33, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 34, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 37, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 41, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 42, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 43, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 46, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 50, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 51, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 52, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 55, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 59, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 60, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 61, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 64, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 68, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 69, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 70, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 152, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 155, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 157, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 159, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 162, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 164, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 166, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 169, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 171, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 173, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 176, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 178, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 180, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 183, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 185, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 187, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 190, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 192, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 194, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 197, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 199, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 201, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 204, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 206, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 4, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 7, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 13, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 16, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 22, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 25, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 31, "color": "#6acd5bff", "data": "eventSkipDash" }, { "frame": 34, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 40, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 43, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 49, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 52, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 58, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 61, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 67, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 70, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 79, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 87, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 97, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 107, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 117, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 127, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 137, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 147, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 157, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 164, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 171, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 178, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 185, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 192, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 199, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 206, "color": "#57b9f2ff", "data": "event:RecoverState" }] },
+   { "name": "Char", "group": "CharBody" },
+   { "name": "Shadow", "group": "Char", "opacity": 43, "blendMode": "normal" },
+   { "name": "HeadBack", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Legs", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Torso", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "LegsGroup", "group": "Char" },
+   { "name": "PlateLegs", "group": "LegsGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ChestGroup", "group": "Char" },
+   { "name": "ChestPlateGroup", "group": "Char" },
+   { "name": "PlateChest", "group": "ChestPlateGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ArmsGroup", "group": "Char" },
+   { "name": "Arms", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<L>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<TwoHand>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "GlovesGroup", "group": "Char" },
+   { "name": "PlateBracers", "group": "GlovesGroup" },
+   { "name": "Back", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "Front", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "Head", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Head[F]", "group": "Char", "opacity": 0, "blendMode": "normal" },
+   { "name": "HairGroup", "group": "Char" },
+   { "name": "Hair01", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair02", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair02", "opacity": 0, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair02", "opacity": 0, "blendMode": "normal" },
+   { "name": "Hair03", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair04", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair05", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair06", "group": "HairGroup" },
+   { "name": "HairBack", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Ear", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "HelmetGroup", "group": "Char" },
+   { "name": "Mask01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hood01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hat01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Helmet02", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "PlateHelmet", "group": "HelmetGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "AccessoryGroup", "group": "Char" },
+   { "name": "Capes", "group": "AccessoryGroup" },
+   { "name": "Cape05", "group": "Capes" },
+   { "name": "Cape04", "group": "Capes" },
+   { "name": "Layer 2", "group": "Cape04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape03", "group": "Capes" },
+   { "name": "Back", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape02", "group": "Capes" },
+   { "name": "Back", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "KnightCape", "group": "Capes" },
+   { "name": "Back", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Bags", "group": "AccessoryGroup" },
+   { "name": "Quiver", "group": "Bags", "opacity": 255, "blendMode": "normal" },
+   { "name": "WeaponGroup", "group": "Char" },
+   { "name": "TwoHand", "group": "WeaponGroup" },
+   { "name": "Bow", "group": "TwoHand" },
+   { "name": "Back", "group": "Bow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arrow", "group": "Bow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Pallete", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "CharBody", "cels": [{ "frame": 0, "color": "#fe5b59ff" }] },
+   { "name": "Blue", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "FX", "opacity": 255, "blendMode": "overlay", "cels": [{ "frame": 0, "color": "#fe5b59ff" }] },
+   { "name": "Outline", "group": "FX", "opacity": 0, "blendMode": "normal" },
+   { "name": "Slashs", "group": "FX" },
+   { "name": "RapierSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "GreatSwordSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "SwordSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "PunchSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "Functions", "group": "CharBody", "cels": [{ "frame": 1, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 5, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 6, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 7, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 10, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 14, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 15, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 16, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 19, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 23, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 24, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 25, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 28, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 32, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 33, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 34, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 37, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 41, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 42, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 43, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 46, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 50, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 51, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 52, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 55, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 59, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 60, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 61, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 64, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 68, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 69, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 70, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 152, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 155, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 157, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 159, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 162, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 164, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 166, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 169, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 171, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 173, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 176, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 178, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 180, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 183, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 185, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 187, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 190, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 192, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 194, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 197, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 199, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 201, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 204, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 206, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 4, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 7, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 13, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 16, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 22, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 25, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 31, "color": "#6acd5bff", "data": "eventSkipDash" }, { "frame": 34, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 40, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 43, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 49, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 52, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 58, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 61, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 67, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 70, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 79, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 87, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 97, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 107, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 117, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 127, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 137, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 147, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 157, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 164, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 171, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 178, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 185, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 192, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 199, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 206, "color": "#57b9f2ff", "data": "event:RecoverState" }] },
+   { "name": "MoveFunctions", "group": "Functions", "opacity": 255, "blendMode": "normal", "cels": [{ "frame": 1, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 5, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 6, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 7, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 10, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 14, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 15, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 16, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 19, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 23, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 24, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 25, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 28, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 32, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 33, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 34, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 37, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 41, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 42, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 43, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 46, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 50, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 51, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 52, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 55, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 59, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 60, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 61, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 64, "color": "#57b9f2ff", "data": "event:OnDoDash" }, { "frame": 68, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 69, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 70, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 152, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 155, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 157, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 159, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 162, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 164, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 166, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 169, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 171, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 173, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 176, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 178, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 180, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 183, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 185, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 187, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 190, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 192, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 194, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 197, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 199, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }, { "frame": 201, "color": "#57b9f2ff", "data": "event:OnDoBackDash" }, { "frame": 204, "color": "#cbdbfcff", "data": "event:OnDoBreak" }, { "frame": 206, "color": "#a5a5a7ff", "data": "event:OnResetVelocity" }] },
+   { "name": "RecFunctions", "group": "Functions", "opacity": 255, "blendMode": "normal", "cels": [{ "frame": 4, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 7, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 13, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 16, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 22, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 25, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 31, "color": "#6acd5bff", "data": "eventSkipDash" }, { "frame": 34, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 40, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 43, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 49, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 52, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 58, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 61, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 67, "color": "#6acd5bff", "data": "event:SkipDash" }, { "frame": 70, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 79, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 87, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 97, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 107, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 117, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 127, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 137, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 147, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 157, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 164, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 171, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 178, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 185, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 192, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 199, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 206, "color": "#57b9f2ff", "data": "event:RecoverState" }] }
+  ],
+  "slices": [
+  ]
+ }
+}

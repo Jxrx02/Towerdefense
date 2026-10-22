@@ -945,6 +945,8 @@ MonoBehaviour:
   interactionIndicatorOffset: {x: 0, y: 0, z: 0}
   outlineMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
   targetPreference: 3
+  whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
+  damageFlashDuration: 0.12
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0
@@ -1150,6 +1152,7 @@ MonoBehaviour:
   - {fileID: 0}
   unbuiltMaterial: {fileID: 2100000, guid: 4cc1ec4b4524e03489db952af4371efa, type: 2}
   builtMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  boxCollider2D: {fileID: 0}
   horizontalClosed: {fileID: -1936352707, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   horizontalOpen: {fileID: 1465779032, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
   verticalClosed: {fileID: 1917598949, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}

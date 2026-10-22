@@ -14,6 +14,7 @@ namespace TowerDefense
         public override void Execute(GameObject user)
         {
             // Lightning-Logik
+            Debug.Log("Lightingactive");
         }
     }
 }

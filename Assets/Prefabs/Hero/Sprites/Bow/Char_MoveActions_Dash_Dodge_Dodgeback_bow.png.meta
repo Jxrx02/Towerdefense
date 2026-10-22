@@ -1,0 +1,6214 @@
+fileFormatVersion: 2
+guid: 861323f9b86c68d439d722b7a6cf3f35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1950473493038419962
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_0
+  - first:
+      213: -3177922283260181151
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_1
+  - first:
+      213: -2940980701850894650
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_2
+  - first:
+      213: -4706354679603081120
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_3
+  - first:
+      213: -5659395424673055497
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_4
+  - first:
+      213: 4669804657853631760
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_5
+  - first:
+      213: 2760470478565480915
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_6
+  - first:
+      213: 8826569689977695058
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_7
+  - first:
+      213: -3543213770693256256
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_8
+  - first:
+      213: -8860152036982224139
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_9
+  - first:
+      213: -6350869351260648605
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_10
+  - first:
+      213: -200100280338698095
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_11
+  - first:
+      213: -6519029937818598897
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_12
+  - first:
+      213: -1219761215860138885
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_13
+  - first:
+      213: 6063455228979278220
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_14
+  - first:
+      213: -1063627858037786171
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_15
+  - first:
+      213: -8787212572500107140
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_16
+  - first:
+      213: 6521936658173087582
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_17
+  - first:
+      213: 7622321503548006219
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_18
+  - first:
+      213: 3133434297965740364
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_19
+  - first:
+      213: 3525954756173132695
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_20
+  - first:
+      213: 1095951973370061074
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_21
+  - first:
+      213: -8967752618586314262
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_22
+  - first:
+      213: -542075532897833297
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_23
+  - first:
+      213: 198878441842915033
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_24
+  - first:
+      213: 2762942535721116373
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_25
+  - first:
+      213: -7301824650306334428
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_26
+  - first:
+      213: 6117210924738607402
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_27
+  - first:
+      213: -3603139883371086143
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_28
+  - first:
+      213: -6984652642199469674
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_29
+  - first:
+      213: 7754557935386816939
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_30
+  - first:
+      213: 8029554727894738836
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_31
+  - first:
+      213: 244350278227044441
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_32
+  - first:
+      213: -6771601907633830341
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_33
+  - first:
+      213: -8283138282984690065
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_34
+  - first:
+      213: -3657778568789089221
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_35
+  - first:
+      213: -8441243286900997193
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_36
+  - first:
+      213: 5054369194895977681
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_37
+  - first:
+      213: -8601530605601047048
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_38
+  - first:
+      213: -2919940211640655727
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_39
+  - first:
+      213: 8580863130243351039
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_40
+  - first:
+      213: -1500711924933019522
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_41
+  - first:
+      213: 3839907623434729733
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_42
+  - first:
+      213: 4653867986221333085
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_43
+  - first:
+      213: -8437666023768454873
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_44
+  - first:
+      213: -6457709336623284087
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_45
+  - first:
+      213: 4824597533865639352
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_46
+  - first:
+      213: -7104247702694826228
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_47
+  - first:
+      213: 7290824267309989591
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_48
+  - first:
+      213: -144776726050332259
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_49
+  - first:
+      213: 1333838578422980774
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_50
+  - first:
+      213: -1256923208228383597
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_51
+  - first:
+      213: 72864769512938010
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_52
+  - first:
+      213: -6115461278320039234
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_53
+  - first:
+      213: -4899760825034091925
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_54
+  - first:
+      213: 4165053316318937176
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_55
+  - first:
+      213: 371373330485159163
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_56
+  - first:
+      213: 5856077403366062505
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_57
+  - first:
+      213: -2060635859105889143
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_58
+  - first:
+      213: 7169360105454562080
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_59
+  - first:
+      213: 592382657787011171
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_60
+  - first:
+      213: -411784422889721657
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_61
+  - first:
+      213: -6631958796741811015
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_62
+  - first:
+      213: 913037185866070699
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_63
+  - first:
+      213: 6801429219474977474
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_64
+  - first:
+      213: -7026534743233792156
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_65
+  - first:
+      213: 858996317687474232
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_66
+  - first:
+      213: 7055118196015484334
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_67
+  - first:
+      213: 4819133498059532768
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_68
+  - first:
+      213: 1485998208577612425
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_69
+  - first:
+      213: 5883689127255451535
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_70
+  - first:
+      213: 7439501868912847445
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_71
+  - first:
+      213: 2287527360300616428
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_72
+  - first:
+      213: -4683903825400653881
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_73
+  - first:
+      213: 5935482227544325218
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_74
+  - first:
+      213: -3594353416136561573
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_75
+  - first:
+      213: 7459902841532580802
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_76
+  - first:
+      213: 7332110611938248329
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_77
+  - first:
+      213: 997152442952989192
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_78
+  - first:
+      213: -6570415296143358184
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_79
+  - first:
+      213: 8172261811069635528
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_80
+  - first:
+      213: 4879918033402420131
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_81
+  - first:
+      213: -180956395923380449
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_82
+  - first:
+      213: 1470279977570186085
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_83
+  - first:
+      213: -3448209842785220531
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_84
+  - first:
+      213: 8159987748585007927
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_85
+  - first:
+      213: 7257963058793109004
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_86
+  - first:
+      213: 49960066287877508
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_87
+  - first:
+      213: 870793832915343030
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_88
+  - first:
+      213: -5191676890374512806
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_89
+  - first:
+      213: -449349994663439012
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_90
+  - first:
+      213: -1886056173011150167
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_91
+  - first:
+      213: -4100465739695478975
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_92
+  - first:
+      213: 6776488136259034742
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_93
+  - first:
+      213: -4316869061669578523
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_94
+  - first:
+      213: -5458686952013636748
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_95
+  - first:
+      213: 3790336387714510236
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_96
+  - first:
+      213: -2522426414558398289
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_97
+  - first:
+      213: 6672562993780503092
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_98
+  - first:
+      213: 6329752344248415232
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_99
+  - first:
+      213: -8168633358795511605
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_100
+  - first:
+      213: -113909431217359513
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_101
+  - first:
+      213: 5791686987622000070
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_102
+  - first:
+      213: -344295316980313520
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_103
+  - first:
+      213: 2041354513880382612
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_104
+  - first:
+      213: 6342219842774779039
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_105
+  - first:
+      213: 8444374926691257706
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_106
+  - first:
+      213: -3623910600132348630
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_107
+  - first:
+      213: -5007786503482393574
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_108
+  - first:
+      213: 3282666443080537807
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_109
+  - first:
+      213: -1552351841480032746
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_110
+  - first:
+      213: 4797989326088953908
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_111
+  - first:
+      213: 1751596183818128383
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_112
+  - first:
+      213: -8215861648805667652
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_113
+  - first:
+      213: 2101871597103626068
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_114
+  - first:
+      213: 314493078696776014
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_115
+  - first:
+      213: -1333205214432497100
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_116
+  - first:
+      213: -2371638457170581135
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_117
+  - first:
+      213: 6363352823389817832
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_118
+  - first:
+      213: -4703884951442559969
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_119
+  - first:
+      213: -6869489584260497000
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_120
+  - first:
+      213: 8895698017742725271
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_121
+  - first:
+      213: -1320673845975953712
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_122
+  - first:
+      213: -2094288834899164092
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_123
+  - first:
+      213: -3080004194426511872
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_124
+  - first:
+      213: -7094420820481704520
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_125
+  - first:
+      213: -4566156048674875257
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_126
+  - first:
+      213: 6482282782702700347
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_127
+  - first:
+      213: 4933564066760150694
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_128
+  - first:
+      213: -3940323331558672831
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_129
+  - first:
+      213: 1027547765006893309
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_130
+  - first:
+      213: 2659591943682437021
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_131
+  - first:
+      213: -113297372546845747
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_132
+  - first:
+      213: -8338462042374516050
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_133
+  - first:
+      213: 2934090510215974616
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_134
+  - first:
+      213: -4900674193676495710
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_135
+  - first:
+      213: 3155829021966700673
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_136
+  - first:
+      213: 5336457903729199547
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_137
+  - first:
+      213: -2507704836127907008
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_138
+  - first:
+      213: 5214057914276925437
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_139
+  - first:
+      213: -8645659496543525728
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_140
+  - first:
+      213: -675032752094268758
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_141
+  - first:
+      213: -3662459166163168121
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_142
+  - first:
+      213: 1861871566145091982
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_143
+  - first:
+      213: 4126116526133925148
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_144
+  - first:
+      213: 350359744904174833
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_145
+  - first:
+      213: 153862189330523766
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_146
+  - first:
+      213: -8734389049026899684
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_147
+  - first:
+      213: 2856120327501050717
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_148
+  - first:
+      213: -2413840634083467030
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_149
+  - first:
+      213: -2800967542892336301
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_150
+  - first:
+      213: -7843882845218484307
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_151
+  - first:
+      213: 8689941489831066241
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_152
+  - first:
+      213: 7346438366497061145
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_153
+  - first:
+      213: 4042137127972039282
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_154
+  - first:
+      213: 2226095967819422884
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_155
+  - first:
+      213: -5764384371749589791
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_156
+  - first:
+      213: 3081969613464186807
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_157
+  - first:
+      213: -6788568883099803228
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_158
+  - first:
+      213: 9124718628281603298
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_159
+  - first:
+      213: 1611444407855393318
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_160
+  - first:
+      213: -1168796609394588510
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_161
+  - first:
+      213: -7399525815017447001
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_162
+  - first:
+      213: 3853152809447694153
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_163
+  - first:
+      213: 6941269137258524348
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_164
+  - first:
+      213: 8704910503344914290
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_165
+  - first:
+      213: 1612603767303687258
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_166
+  - first:
+      213: 6487464085269746712
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_167
+  - first:
+      213: 5898770502101032700
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_168
+  - first:
+      213: 2384950413981371157
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_169
+  - first:
+      213: 2067419566051369014
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_170
+  - first:
+      213: -4536716183408437929
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_171
+  - first:
+      213: -8058383638822464298
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_172
+  - first:
+      213: 5293266242116955979
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_173
+  - first:
+      213: 536956666094233087
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_174
+  - first:
+      213: -4016591563037215563
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_175
+  - first:
+      213: 3156256760649614102
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_176
+  - first:
+      213: -3632821907259998473
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_177
+  - first:
+      213: 917466623625387833
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_178
+  - first:
+      213: 2280441663069672507
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_179
+  - first:
+      213: 6308690885371143952
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_180
+  - first:
+      213: -2614259640193601961
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_181
+  - first:
+      213: -7517563315024523553
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_182
+  - first:
+      213: 8459053769456115476
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_183
+  - first:
+      213: -4608922519300319713
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_184
+  - first:
+      213: 4589924577474037087
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_185
+  - first:
+      213: 8841397530899104469
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_186
+  - first:
+      213: -4699164598743427887
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_187
+  - first:
+      213: -9132438451040081318
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_188
+  - first:
+      213: -5384598176092830979
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_189
+  - first:
+      213: 7199878398010429294
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_190
+  - first:
+      213: -4257922044371668414
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_191
+  - first:
+      213: -606377644985708258
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_192
+  - first:
+      213: 9179634461002273537
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_193
+  - first:
+      213: 1546803990398402541
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_194
+  - first:
+      213: 4614436055641860197
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_195
+  - first:
+      213: -5793999333842733218
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_196
+  - first:
+      213: 7780270650158469769
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_197
+  - first:
+      213: -975271095169322446
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_198
+  - first:
+      213: -3748611940290506825
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_199
+  - first:
+      213: -2449093058480451977
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_200
+  - first:
+      213: -7356337280315497551
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_201
+  - first:
+      213: -2259775165367735322
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_202
+  - first:
+      213: 7240713123784829962
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_203
+  - first:
+      213: -5435432765050192228
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_204
+  - first:
+      213: -3356781119449099044
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_205
+  - first:
+      213: 5480046124206510466
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_206
+  - first:
+      213: -5523550369682765088
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_207
+  - first:
+      213: 3789636493274932059
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_208
+  - first:
+      213: 1296703073022283148
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_209
+  - first:
+      213: 5505897083892468182
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_210
+  - first:
+      213: -3304392935752258969
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_211
+  - first:
+      213: -77128604713762784
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_212
+  - first:
+      213: -6873737813739741323
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_213
+  - first:
+      213: -3635524618071517285
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_214
+  - first:
+      213: -6230977956233569132
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_215
+  - first:
+      213: 8605842636307696481
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_216
+  - first:
+      213: 7310583774611931244
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_217
+  - first:
+      213: 12834682420529497
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_218
+  - first:
+      213: 7201138773842162906
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_219
+  - first:
+      213: 5072689189475350317
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_220
+  - first:
+      213: -118048324734811515
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_221
+  - first:
+      213: 5950418459331899476
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_222
+  - first:
+      213: 8582917867907084235
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_223
+  - first:
+      213: 615455332939721606
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_224
+  - first:
+      213: 3736205209372052396
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_225
+  - first:
+      213: -1391149101012697199
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_226
+  - first:
+      213: 4539873381130663316
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_227
+  - first:
+      213: -3506291740868827076
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_228
+  - first:
+      213: -1937902580811535480
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_229
+  - first:
+      213: 6502266142670307693
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_230
+  - first:
+      213: 4847024600935051582
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_231
+  - first:
+      213: -2166886257376300627
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_232
+  - first:
+      213: -8137652614414626208
+    second: Char_MoveActions_Dash_Dodge_Dodgeback_bow_233
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1772
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affce50de49711b10800000000000000
+      internalID: 1950473493038419962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1721
+        width: 20
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1658a7e4580c5e3d0800000000000000
+      internalID: -3177922283260181151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1721
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cef5e632a98f27d0800000000000000
+      internalID: -2940980701850894650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1721
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060d24faa5bafaeb0800000000000000
+      internalID: -4706354679603081120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_4
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1721
+        width: 19
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc34e498d9c571b0800000000000000
+      internalID: -5659395424673055497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_5
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1721
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d84d9389a7ec040800000000000000
+      internalID: 4669804657853631760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_6
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1718
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d919df46492f4620800000000000000
+      internalID: 2760470478565480915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_7
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1717
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ba95c2e564e7a70800000000000000
+      internalID: 8826569689977695058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_8
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1716
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb5e8a29d9f3dec0800000000000000
+      internalID: -3543213770693256256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_9
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1721
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa88bb5aaa6a0580800000000000000
+      internalID: -8860152036982224139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_10
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 1721
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b813f29fd2dd7a0800000000000000
+      internalID: -6350869351260648605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_11
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1721
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190b4feead9193df0800000000000000
+      internalID: -200100280338698095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_12
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1721
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f028f249fc0c785a0800000000000000
+      internalID: -6519029937818598897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_13
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1721
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c9bd103a9821fe0800000000000000
+      internalID: -1219761215860138885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_14
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1721
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c817bcab768b52450800000000000000
+      internalID: 6063455228979278220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_15
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1721
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9b274391c3d31f0800000000000000
+      internalID: -1063627858037786171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_16
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1593
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70e842d8bc8d0680800000000000000
+      internalID: -8787212572500107140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1593
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f410ef5d2928a50800000000000000
+      internalID: 6521936658173087582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_18
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1593
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fdccec50de7c960800000000000000
+      internalID: 7622321503548006219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_19
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1593
+        width: 45
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41064174e13c7b20800000000000000
+      internalID: 3133434297965740364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_20
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 1610
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7937ccf5b25bee030800000000000000
+      internalID: 3525954756173132695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_21
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1593
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2116c9f538a953f00800000000000000
+      internalID: 1095951973370061074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_22
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1601
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9659fa1842c8380800000000000000
+      internalID: -8967752618586314262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_23
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1601
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faea134cc292a78f0800000000000000
+      internalID: -542075532897833297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_24
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1601
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6b78f93ee82c200800000000000000
+      internalID: 198878441842915033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_25
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1593
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d26978f891f75620800000000000000
+      internalID: 2762942535721116373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_26
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1593
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 421dc42da25baaa90800000000000000
+      internalID: -7301824650306334428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_27
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1593
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29fe29fce2b4e450800000000000000
+      internalID: 6117210924738607402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_28
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1593
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cebf97cd531ffdc0800000000000000
+      internalID: -3603139883371086143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_29
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 1593
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691053e9d67811f90800000000000000
+      internalID: -6984652642199469674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_30
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1589
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1fae85b59bd9b60800000000000000
+      internalID: 7754557935386816939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_31
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 1593
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49769bc8b75be6f60800000000000000
+      internalID: 8029554727894738836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_32
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1593
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958ad7e884b146300800000000000000
+      internalID: 244350278227044441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_33
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1593
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36c02741ff6602a0800000000000000
+      internalID: -6771601907633830341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_34
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1593
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e22491e916c0d80800000000000000
+      internalID: -8283138282984690065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_35
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1465
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b342a4c75c5fc3dc0800000000000000
+      internalID: -3657778568789089221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_36
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1465
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b38d9544fdaada80800000000000000
+      internalID: -8441243286900997193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_37
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1462
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dca379e00ab42640800000000000000
+      internalID: 5054369194895977681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_38
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1463
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdbf70bc7931a880800000000000000
+      internalID: -8601530605601047048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_39
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1462
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190a7c719d94a77d0800000000000000
+      internalID: -2919940211640655727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_40
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1462
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1c668bd89551770800000000000000
+      internalID: 8580863130243351039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_41
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1465
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78bc2494766c2be0800000000000000
+      internalID: -1500711924933019522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_42
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1457
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509342983a71a4530800000000000000
+      internalID: 3839907623434729733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_43
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1465
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5af846b64cd59040800000000000000
+      internalID: 4653867986221333085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_44
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1465
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72906efb47367ea80800000000000000
+      internalID: -8437666023768454873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_45
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1465
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98088df929b9166a0800000000000000
+      internalID: -6457709336623284087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_46
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1465
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd794e25e964f240800000000000000
+      internalID: 4824597533865639352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_47
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1465
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f6d74ba54a86d90800000000000000
+      internalID: -7104247702694826228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_48
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 1465
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de3fccea063e2560800000000000000
+      internalID: 7290824267309989591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_49
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 1465
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91a600b556adfdf0800000000000000
+      internalID: -144776726050332259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_50
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1337
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a02d9ebe1fb28210800000000000000
+      internalID: 1333838578422980774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_51
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1333
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3945a9760038e8ee0800000000000000
+      internalID: -1256923208228383597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_52
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1337
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a957f2f1ed20100800000000000000
+      internalID: 72864769512938010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_53
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1337
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebae3145e54812ba0800000000000000
+      internalID: -6115461278320039234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_54
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1337
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62d77b5d7d800cb0800000000000000
+      internalID: -4899760825034091925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_55
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1334
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850c0cd7ced3dc930800000000000000
+      internalID: 4165053316318937176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_56
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1335
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf42f929312672500800000000000000
+      internalID: 371373330485159163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_57
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1334
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a973dc1f57f44150800000000000000
+      internalID: 5856077403366062505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_58
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1334
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984cf869a962763e0800000000000000
+      internalID: -2060635859105889143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_59
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1337
+        width: 45
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02be970f70fae7360800000000000000
+      internalID: 7169360105454562080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_60
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1354
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3602f7083e0983800800000000000000
+      internalID: 592382657787011171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_61
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1337
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c07e95cf3c094af0800000000000000
+      internalID: -411784422889721657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_62
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 1345
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b46d2bac9c86f3a0800000000000000
+      internalID: -6631958796741811015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_63
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 1345
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baaf44aab72cbac00800000000000000
+      internalID: 913037185866070699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_64
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1345
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2b4cfe6d7836e50800000000000000
+      internalID: 6801429219474977474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_65
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 1337
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467fb9311ebbc7e90800000000000000
+      internalID: -7026534743233792156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_66
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1337
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838612b8994cbeb00800000000000000
+      internalID: 858996317687474232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_67
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1337
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eadc5e1ae90d8e160800000000000000
+      internalID: 7055118196015484334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_68
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1337
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e92605326001e240800000000000000
+      internalID: 4819133498059532768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_69
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1209
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aa22f5f735f9410800000000000000
+      internalID: 1485998208577612425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_70
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1209
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87a3ee861017a150800000000000000
+      internalID: 5883689127255451535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_71
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1209
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55aa76a988b6e3760800000000000000
+      internalID: 7439501868912847445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_72
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1209
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea84bca30eeebf10800000000000000
+      internalID: 2287527360300616428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_73
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1209
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c796e4894e6ffeb0800000000000000
+      internalID: -4683903825400653881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_74
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1209
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c7c6f63a11f5250800000000000000
+      internalID: 5935482227544325218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_75
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1209
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ce7f99c9a4e1ec0800000000000000
+      internalID: -3594353416136561573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_76
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1209
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c30a703c16e68760800000000000000
+      internalID: 7459902841532580802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_77
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1209
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986837e11c3e0c560800000000000000
+      internalID: 7332110611938248329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_78
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 1209
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a302d1dd896dd00800000000000000
+      internalID: 997152442952989192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_79
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1209
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8170596891231d4a0800000000000000
+      internalID: -6570415296143358184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_80
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1209
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbcb4491d4b96170800000000000000
+      internalID: 8172261811069635528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_81
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1209
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab59f1b893f8b340800000000000000
+      internalID: 4879918033402420131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_82
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1209
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17e62ddd1d1d7df0800000000000000
+      internalID: -180956395923380449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_83
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 1209
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563b07789db776410800000000000000
+      internalID: 1470279977570186085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_84
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1079
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4808c9da6f7520d0800000000000000
+      internalID: -3448209842785220531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_85
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1081
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73be2f5bf991e3170800000000000000
+      internalID: 8159987748585007927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_86
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 1079
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06554892f679b460800000000000000
+      internalID: 7257963058793109004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_87
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1080
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d3b046a6e71b000800000000000000
+      internalID: 49960066287877508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_88
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 1081
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6158b906ea51c00800000000000000
+      internalID: 870793832915343030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_89
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1087
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f5f98ff5573f7b0800000000000000
+      internalID: -5191676890374512806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_90
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1081
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5513448f8693c9f0800000000000000
+      internalID: -449349994663439012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_91
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1081
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aadc3547e163d5e0800000000000000
+      internalID: -1886056173011150167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_92
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1081
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147aacb82283817c0800000000000000
+      internalID: -4100465739695478975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_93
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1088
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e5e5a7e0cea0e50800000000000000
+      internalID: 6776488136259034742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_94
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1081
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e89f4dc5766714c0800000000000000
+      internalID: -4316869061669578523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_95
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 1081
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47bda257329de34b0800000000000000
+      internalID: -5458686952013636748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_96
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1081
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9de5f0dcdaf99430800000000000000
+      internalID: 3790336387714510236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_97
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1081
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa83f245a8a8efcd0800000000000000
+      internalID: -2522426414558398289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_98
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 1081
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43234b9a0b4b99c50800000000000000
+      internalID: 6672562993780503092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_99
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1081
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0047f1b783cc7d750800000000000000
+      internalID: 6329752344248415232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_100
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1081
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8669c4d3f23ae80800000000000000
+      internalID: -8168633358795511605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_101
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 953
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765f8bfc9ff4b6ef0800000000000000
+      internalID: -113909431217359513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_102
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 953
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5267b21a4306050800000000000000
+      internalID: 5791686987622000070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_103
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 953
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052de8dbb31d83bf0800000000000000
+      internalID: -344295316980313520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_104
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 963
+        width: 39
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49cfa746d19545c10800000000000000
+      internalID: 2041354513880382612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_105
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 953
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9446003857140850800000000000000
+      internalID: 6342219842774779039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_106
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 962
+        width: 42
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6dc5af6142703570800000000000000
+      internalID: 8444374926691257706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_107
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 953
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25b65d628845bdc0800000000000000
+      internalID: -3623910600132348630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_108
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 959
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cbfec15b4c08ab0800000000000000
+      internalID: -5007786503482393574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_109
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 953
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc619e7dcbf5e8d20800000000000000
+      internalID: 3282666443080537807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_110
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 953
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61eb8229930f47ae0800000000000000
+      internalID: -1552351841480032746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_111
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 953
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430e5a90fd1e59240800000000000000
+      internalID: 4797989326088953908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_112
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 953
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbc866e27bee4810800000000000000
+      internalID: 1751596183818128383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_113
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 953
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbcde232c556bfd80800000000000000
+      internalID: -8215861648805667652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_114
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 953
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45738d4d4195b2d10800000000000000
+      internalID: 2101871597103626068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_115
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 953
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e415a00f9cd4d5400800000000000000
+      internalID: 314493078696776014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_116
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 953
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4327d0dcbe08f7de0800000000000000
+      internalID: -1333205214432497100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_117
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 953
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17921b0836f361fd0800000000000000
+      internalID: -2371638457170581135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_118
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 953
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb01aaadab2f4850800000000000000
+      internalID: 6363352823389817832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_119
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 834
+        width: 39
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ce5f41f8178beb0800000000000000
+      internalID: -4703884951442559969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_120
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 825
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89148e58e9baaa0a0800000000000000
+      internalID: -6869489584260497000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_121
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 825
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 790a3b8373ed37b70800000000000000
+      internalID: 8895698017742725271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_122
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 825
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de447262260cade0800000000000000
+      internalID: -1320673845975953712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_123
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 825
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 444c4c296679fe2e0800000000000000
+      internalID: -2094288834899164092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_124
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 825
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e9e74f080a145d0800000000000000
+      internalID: -3080004194426511872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_125
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 825
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd7d040add8b8d90800000000000000
+      internalID: -7094420820481704520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_126
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 825
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7889bb92441c1a0c0800000000000000
+      internalID: -4566156048674875257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_127
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 825
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3700a4a8d1b5f950800000000000000
+      internalID: 6482282782702700347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_128
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 825
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aecedb216a877440800000000000000
+      internalID: 4933564066760150694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_129
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 825
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146f2428ec82159c0800000000000000
+      internalID: -3940323331558672831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_130
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 825
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df08bf28f35924e00800000000000000
+      internalID: 1027547765006893309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_131
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 835
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9faeaa18c4c8e420800000000000000
+      internalID: 2659591943682437021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_132
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 825
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc33c53d3ac7d6ef0800000000000000
+      internalID: -113297372546845747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_133
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 825
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2503793f4d74c80800000000000000
+      internalID: -8338462042374516050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_134
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 825
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de844806cbf7b820800000000000000
+      internalID: 2934090510215974616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_135
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 825
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a41df529ce4dfbb0800000000000000
+      internalID: -4900674193676495710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_136
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 697
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180913276c1cbcb20800000000000000
+      internalID: 3155829021966700673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_137
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 697
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9ca9e8038ee0a40800000000000000
+      internalID: 5336457903729199547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_138
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 697
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0432119ecb7d23dd0800000000000000
+      internalID: -2507704836127907008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_139
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 697
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff4aca3c0e0c5840800000000000000
+      internalID: 5214057914276925437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_140
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 697
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a46a8b9e72740880800000000000000
+      internalID: -8645659496543525728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_141
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 706
+        width: 39
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2baa7d94dc1a6f0800000000000000
+      internalID: -675032752094268758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_142
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 697
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784987cfac45c2dc0800000000000000
+      internalID: -3662459166163168121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_143
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 697
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e897a752352b6d910800000000000000
+      internalID: 1861871566145091982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_144
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 697
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15d4129e19e24930800000000000000
+      internalID: 4126116526133925148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_145
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 697
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc1c9ae45abcd400800000000000000
+      internalID: 350359744904174833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_146
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 697
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676e86398d0a22200800000000000000
+      internalID: 153862189330523766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_147
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 697
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1190bacf6739c680800000000000000
+      internalID: -8734389049026899684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_148
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 697
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53f8743e4af2a720800000000000000
+      internalID: 2856120327501050717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_149
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 697
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae02d0d7bb0508ed0800000000000000
+      internalID: -2413840634083467030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_150
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 707
+        width: 39
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35be0822cd6f029d0800000000000000
+      internalID: -2800967542892336301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_151
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 697
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafc8f66c1ee42390800000000000000
+      internalID: -7843882845218484307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_152
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 706
+        width: 42
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a3f446ebfd89870800000000000000
+      internalID: 8689941489831066241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_153
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 697
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919bb5f65cac3f560800000000000000
+      internalID: 7346438366497061145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_154
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 575
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ae03e3d4e881830800000000000000
+      internalID: 4042137127972039282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_155
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 569
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac5ec50d7ea4ee10800000000000000
+      internalID: 2226095967819422884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_156
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 569
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec6d0574fac000b0800000000000000
+      internalID: -5764384371749589791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_157
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 569
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfa413d80b55ca20800000000000000
+      internalID: 3081969613464186807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_158
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 569
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1e09571982ac1a0800000000000000
+      internalID: -6788568883099803228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_159
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 569
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e45d126f3381ae70800000000000000
+      internalID: 9124718628281603298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_160
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 569
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62aa281b6200d5610800000000000000
+      internalID: 1611444407855393318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_161
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 569
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4ca522da997cfe0800000000000000
+      internalID: -1168796609394588510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_162
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 569
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a16d81c97a9f4990800000000000000
+      internalID: -7399525815017447001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_163
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 576
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f9d68b016297530800000000000000
+      internalID: 3853152809447694153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_164
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 569
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe2da00187545060800000000000000
+      internalID: 6941269137258524348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_165
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 569
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fb0717bfd0ec870800000000000000
+      internalID: 8704910503344914290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_166
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 569
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5cc799159e116610800000000000000
+      internalID: 1612603767303687258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_167
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 569
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8149b97a63a180a50800000000000000
+      internalID: 6487464085269746712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_168
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 569
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfed845c484acd150800000000000000
+      internalID: 5898770502101032700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_169
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 569
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51bc748f3cb091120800000000000000
+      internalID: 2384950413981371157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_170
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 569
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6302f244423f0bc10800000000000000
+      internalID: 2067419566051369014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_171
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 441
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7559c21faa85a01c0800000000000000
+      internalID: -4536716183408437929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_172
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 441
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4da2096ceda2090800000000000000
+      internalID: -8058383638822464298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_173
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 441
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fa2fe2a95757940800000000000000
+      internalID: 5293266242116955979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_174
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 441
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5235e2e37a37700800000000000000
+      internalID: 536956666094233087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_175
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 441
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4f55511433248c0800000000000000
+      internalID: -4016591563037215563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_176
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 441
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613027e1dc64dcb20800000000000000
+      internalID: 3156256760649614102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_177
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 441
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7feb28d09bf959dc0800000000000000
+      internalID: -3632821907259998473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_178
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 441
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fd772880f7bbc00800000000000000
+      internalID: 917466623625387833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_179
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 441
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34d44a3c91c5af10800000000000000
+      internalID: 2280441663069672507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_180
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 441
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017aa447fe8fc8750800000000000000
+      internalID: 6308690885371143952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_181
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 441
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75eae9b45b848bbd0800000000000000
+      internalID: -2614259640193601961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_182
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 441
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde8477aeff3ca790800000000000000
+      internalID: -7517563315024523553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_183
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 441
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f5c58d598946570800000000000000
+      internalID: 8459053769456115476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_184
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 441
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f165ec74361d900c0800000000000000
+      internalID: -4608922519300319713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_185
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 441
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55cc22b510b2bf30800000000000000
+      internalID: 4589924577474037087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_186
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 313
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2c14be534f2ba70800000000000000
+      internalID: 8841397530899104469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_187
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 313
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d49ec6d1b639ceb0800000000000000
+      internalID: -4699164598743427887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_188
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 313
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a23a05d9f034180800000000000000
+      internalID: -9132438451040081318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_189
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 313
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df245c7dc701645b0800000000000000
+      internalID: -5384598176092830979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_190
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 313
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f8b63a14b1be360800000000000000
+      internalID: 7199878398010429294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_191
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 313
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242fbe7c572d8e4c0800000000000000
+      internalID: -4257922044371668414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_192
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 313
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1193ee9eb6b597f0800000000000000
+      internalID: -606377644985708258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_193
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 313
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10399ff08ec946f70800000000000000
+      internalID: 9179634461002273537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_194
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 313
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def7ad0b80a577510800000000000000
+      internalID: 1546803990398402541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_195
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 324
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568a94fe425c90040800000000000000
+      internalID: 4614436055641860197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_196
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 313
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e573475cd44979fa0800000000000000
+      internalID: -5793999333842733218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_197
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 313
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982d7174fe219fb60800000000000000
+      internalID: 7780270650158469769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_198
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 313
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232f9bc2b142772f0800000000000000
+      internalID: -975271095169322446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_199
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 313
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf42322d414afbc0800000000000000
+      internalID: -3748611940290506825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_200
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 313
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ec563d6d2130ed0800000000000000
+      internalID: -2449093058480451977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_201
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 313
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3e4d6183a09e990800000000000000
+      internalID: -7356337280315497551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_202
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 194
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eba10cb57aa3a0e0800000000000000
+      internalID: -2259775165367735322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_203
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 195
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c24bf193e2c7460800000000000000
+      internalID: 7240713123784829962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_204
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 196
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ef9a6c2b67194b0800000000000000
+      internalID: -5435432765050192228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_205
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 185
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd49f7a5b515a61d0800000000000000
+      internalID: -3356781119449099044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_206
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 185
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281d51a5ae80d0c40800000000000000
+      internalID: 5480046124206510466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_207
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 185
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eac41c24386853b0800000000000000
+      internalID: -5523550369682765088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_208
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 185
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b536281ff4e779430800000000000000
+      internalID: 3789636493274932059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_209
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 185
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d86ae1390def110800000000000000
+      internalID: 1296703073022283148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_210
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 196
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9054fe930e86c40800000000000000
+      internalID: 5505897083892468182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_211
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 185
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a2d22e1207422d0800000000000000
+      internalID: -3304392935752258969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_212
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 185
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020c30251fbfdeef0800000000000000
+      internalID: -77128604713762784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_213
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 185
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f5fd480e39b90a0800000000000000
+      internalID: -6873737813739741323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_214
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 185
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97d8a72f950c8dc0800000000000000
+      internalID: -3635524618071517285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_215
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 185
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c986bdf8e1789a0800000000000000
+      internalID: -6230977956233569132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_216
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 185
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b080238481e6770800000000000000
+      internalID: 8605842636307696481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_217
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 185
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c608a7ab539647560800000000000000
+      internalID: 7310583774611931244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_218
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 185
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9590b7e53199d2000800000000000000
+      internalID: 12834682420529497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_219
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 185
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad47721cf859fe360800000000000000
+      internalID: 7201138773842162906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_220
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 185
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2774aa01ffc56640800000000000000
+      internalID: 5072689189475350317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_221
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 57
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5820ad19cab9c5ef0800000000000000
+      internalID: -118048324734811515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_222
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 57
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450b765ef02249250800000000000000
+      internalID: 5950418459331899476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_223
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 57
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf64fc9356ac1770800000000000000
+      internalID: 8582917867907084235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_224
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 57
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bedfe4d598a8800800000000000000
+      internalID: 615455332939721606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_225
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 57
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabc598b7daa9d330800000000000000
+      internalID: 3736205209372052396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_226
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 57
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fb8846345a1bce0800000000000000
+      internalID: -1391149101012697199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_227
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 57
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4957b8f69ced00f30800000000000000
+      internalID: 4539873381130663316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_228
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 57
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38a0a22d36275fc0800000000000000
+      internalID: -3506291740868827076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_229
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 57
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b6a65cedf2b15e0800000000000000
+      internalID: -1937902580811535480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_230
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 57
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61c9e43b90bc3a50800000000000000
+      internalID: 6502266142670307693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_231
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 57
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e313054a137144340800000000000000
+      internalID: 4847024600935051582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_232
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 57
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1f868fd6cade1e0800000000000000
+      internalID: -2166886257376300627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_MoveActions_Dash_Dodge_Dodgeback_bow_233
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 57
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0629944ff00411f80800000000000000
+      internalID: -8137652614414626208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_0: 1950473493038419962
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_1: -3177922283260181151
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_10: -6350869351260648605
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_100: -8168633358795511605
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_101: -113909431217359513
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_102: 5791686987622000070
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_103: -344295316980313520
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_104: 2041354513880382612
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_105: 6342219842774779039
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_106: 8444374926691257706
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_107: -3623910600132348630
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_108: -5007786503482393574
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_109: 3282666443080537807
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_11: -200100280338698095
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_110: -1552351841480032746
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_111: 4797989326088953908
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_112: 1751596183818128383
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_113: -8215861648805667652
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_114: 2101871597103626068
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_115: 314493078696776014
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_116: -1333205214432497100
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_117: -2371638457170581135
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_118: 6363352823389817832
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_119: -4703884951442559969
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_12: -6519029937818598897
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_120: -6869489584260497000
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_121: 8895698017742725271
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_122: -1320673845975953712
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_123: -2094288834899164092
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_124: -3080004194426511872
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_125: -7094420820481704520
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_126: -4566156048674875257
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_127: 6482282782702700347
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_128: 4933564066760150694
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_129: -3940323331558672831
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_13: -1219761215860138885
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_130: 1027547765006893309
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_131: 2659591943682437021
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_132: -113297372546845747
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_133: -8338462042374516050
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_134: 2934090510215974616
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_135: -4900674193676495710
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_136: 3155829021966700673
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_137: 5336457903729199547
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_138: -2507704836127907008
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_139: 5214057914276925437
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_14: 6063455228979278220
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_140: -8645659496543525728
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_141: -675032752094268758
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_142: -3662459166163168121
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_143: 1861871566145091982
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_144: 4126116526133925148
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_145: 350359744904174833
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_146: 153862189330523766
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_147: -8734389049026899684
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_148: 2856120327501050717
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_149: -2413840634083467030
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_15: -1063627858037786171
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_150: -2800967542892336301
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_151: -7843882845218484307
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_152: 8689941489831066241
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_153: 7346438366497061145
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_154: 4042137127972039282
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_155: 2226095967819422884
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_156: -5764384371749589791
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_157: 3081969613464186807
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_158: -6788568883099803228
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_159: 9124718628281603298
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_16: -8787212572500107140
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_160: 1611444407855393318
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_161: -1168796609394588510
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_162: -7399525815017447001
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_163: 3853152809447694153
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_164: 6941269137258524348
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_165: 8704910503344914290
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_166: 1612603767303687258
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_167: 6487464085269746712
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_168: 5898770502101032700
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_169: 2384950413981371157
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_17: 6521936658173087582
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_170: 2067419566051369014
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_171: -4536716183408437929
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_172: -8058383638822464298
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_173: 5293266242116955979
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_174: 536956666094233087
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_175: -4016591563037215563
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_176: 3156256760649614102
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_177: -3632821907259998473
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_178: 917466623625387833
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_179: 2280441663069672507
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_18: 7622321503548006219
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_180: 6308690885371143952
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_181: -2614259640193601961
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_182: -7517563315024523553
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_183: 8459053769456115476
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_184: -4608922519300319713
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_185: 4589924577474037087
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_186: 8841397530899104469
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_187: -4699164598743427887
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_188: -9132438451040081318
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_189: -5384598176092830979
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_19: 3133434297965740364
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_190: 7199878398010429294
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_191: -4257922044371668414
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_192: -606377644985708258
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_193: 9179634461002273537
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_194: 1546803990398402541
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_195: 4614436055641860197
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_196: -5793999333842733218
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_197: 7780270650158469769
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_198: -975271095169322446
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_199: -3748611940290506825
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_2: -2940980701850894650
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_20: 3525954756173132695
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_200: -2449093058480451977
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_201: -7356337280315497551
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_202: -2259775165367735322
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_203: 7240713123784829962
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_204: -5435432765050192228
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_205: -3356781119449099044
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_206: 5480046124206510466
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_207: -5523550369682765088
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_208: 3789636493274932059
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_209: 1296703073022283148
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_21: 1095951973370061074
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_210: 5505897083892468182
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_211: -3304392935752258969
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_212: -77128604713762784
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_213: -6873737813739741323
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_214: -3635524618071517285
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_215: -6230977956233569132
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_216: 8605842636307696481
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_217: 7310583774611931244
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_218: 12834682420529497
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_219: 7201138773842162906
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_22: -8967752618586314262
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_220: 5072689189475350317
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_221: -118048324734811515
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_222: 5950418459331899476
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_223: 8582917867907084235
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_224: 615455332939721606
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_225: 3736205209372052396
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_226: -1391149101012697199
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_227: 4539873381130663316
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_228: -3506291740868827076
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_229: -1937902580811535480
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_23: -542075532897833297
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_230: 6502266142670307693
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_231: 4847024600935051582
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_232: -2166886257376300627
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_233: -8137652614414626208
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_24: 198878441842915033
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_25: 2762942535721116373
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_26: -7301824650306334428
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_27: 6117210924738607402
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_28: -3603139883371086143
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_29: -6984652642199469674
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_3: -4706354679603081120
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_30: 7754557935386816939
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_31: 8029554727894738836
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_32: 244350278227044441
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_33: -6771601907633830341
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_34: -8283138282984690065
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_35: -3657778568789089221
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_36: -8441243286900997193
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_37: 5054369194895977681
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_38: -8601530605601047048
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_39: -2919940211640655727
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_4: -5659395424673055497
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_40: 8580863130243351039
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_41: -1500711924933019522
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_42: 3839907623434729733
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_43: 4653867986221333085
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_44: -8437666023768454873
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_45: -6457709336623284087
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_46: 4824597533865639352
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_47: -7104247702694826228
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_48: 7290824267309989591
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_49: -144776726050332259
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_5: 4669804657853631760
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_50: 1333838578422980774
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_51: -1256923208228383597
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_52: 72864769512938010
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_53: -6115461278320039234
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_54: -4899760825034091925
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_55: 4165053316318937176
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_56: 371373330485159163
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_57: 5856077403366062505
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_58: -2060635859105889143
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_59: 7169360105454562080
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_6: 2760470478565480915
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_60: 592382657787011171
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_61: -411784422889721657
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_62: -6631958796741811015
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_63: 913037185866070699
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_64: 6801429219474977474
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_65: -7026534743233792156
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_66: 858996317687474232
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_67: 7055118196015484334
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_68: 4819133498059532768
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_69: 1485998208577612425
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_7: 8826569689977695058
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_70: 5883689127255451535
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_71: 7439501868912847445
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_72: 2287527360300616428
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_73: -4683903825400653881
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_74: 5935482227544325218
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_75: -3594353416136561573
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_76: 7459902841532580802
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_77: 7332110611938248329
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_78: 997152442952989192
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_79: -6570415296143358184
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_8: -3543213770693256256
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_80: 8172261811069635528
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_81: 4879918033402420131
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_82: -180956395923380449
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_83: 1470279977570186085
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_84: -3448209842785220531
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_85: 8159987748585007927
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_86: 7257963058793109004
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_87: 49960066287877508
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_88: 870793832915343030
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_89: -5191676890374512806
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_9: -8860152036982224139
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_90: -449349994663439012
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_91: -1886056173011150167
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_92: -4100465739695478975
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_93: 6776488136259034742
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_94: -4316869061669578523
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_95: -5458686952013636748
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_96: 3790336387714510236
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_97: -2522426414558398289
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_98: 6672562993780503092
+      Char_MoveActions_Dash_Dodge_Dodgeback_bow_99: 6329752344248415232
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
