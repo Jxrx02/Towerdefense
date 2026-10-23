@@ -303,7 +303,7 @@ MonoBehaviour:
     shredKey: shred
     slowAmount: 0
     slowDuration: 2
-  mode: 0
+  mode: 3
   aoeRadius: 5
   aoeVfxPrefab: {fileID: 4736630556181736464, guid: e45bb3901cec7d3409067438f9d3f4f1, type: 3}
   dotDuration: 3

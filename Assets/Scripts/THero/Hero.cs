@@ -103,8 +103,12 @@ namespace TowerDefense
 
             if (Vitals != null)
                 Vitals.Damaged += OnVitalsDamaged;
+            
+            if(LevelLoadoutManager.Instance != null)
+                EquipFromLoadout();
+            else
+                EquipWeapon(defaultWeapon);
 
-            EquipFromLoadout();
             SetFacing(FacingDirection.Down);
         }
         private void Update()
@@ -683,11 +687,11 @@ namespace TowerDefense
             {
                 WallGroup wallGroup = wall.WallGroup;
 
-                if (!wallGroup.IsBuilt && !wallGroup.IsDestroyed)
+                /*if (!wallGroup.IsBuilt && !wallGroup.IsDestroyed)
                 {
                     wallGroup.SetUnbuiltVisual();
                 }
-
+                */
                 wallGroup.EnterInteractionRange(this);
             }
 
@@ -703,10 +707,10 @@ namespace TowerDefense
             {
                 wall.WallGroup.ExitInteractionRange(this);
 
-                if (!wall.WallGroup.IsBuilt)
+                /*if (!wall.WallGroup.IsBuilt)
                 {
                     wall.WallGroup.SetUnbuiltVisual();
-                }
+                }*/
             }
 
             tower.SetHighlighted(false);

@@ -1087,6 +1087,8 @@ public class WallGroup : MonoBehaviour
     }
     public void SetGateOpen(bool isOpen)
     {
+        if (IsGateOpen() == isOpen)
+            return;
         wallGate.SetGateOpen(isOpen);
     }
 }

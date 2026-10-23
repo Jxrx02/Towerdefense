@@ -9,13 +9,17 @@ namespace TowerDefense
     /// Die Leiste hängt nicht am Helden und wird von Rotation und Spiegelung nicht beeinflusst.
     /// </summary>
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(110)]   // nach der HealthBar, an der er hängt
+
     public class HeroChargeIndicator : MonoBehaviour
     {
         [Header("Größe & Position")]
         public float width = 0.9f;
         public float height = 0.09f;
-        [Tooltip("Versatz zum Helden. Negativ = unter den Füßen.")]
-        public Vector2 offset = new Vector2(0f, -0.2f);
+        [Tooltip("Abstand zur HealthBar (0 = Ränder berühren sich)")]
+        public float gap = 0.01f;
+        [Tooltip("Nur ohne HealthBar: Abstand über dem Sprite")]
+        public float padding = 0.12f;
 
         [Header("Farben")]
         public Color backgroundColor = new Color(0f, 0f, 0f, 0.7f);
@@ -40,7 +44,15 @@ namespace TowerDefense
         private float visibility;
         private float shownProgress;
         private float flashAlpha;
-
+        private HealthBar healthBar;
+        private SpriteRenderer targetSprite;
+        private float offsetY;
+        private float offsetTimer;
+        
+        private void Start()
+        {
+            healthBar = GetComponent<HealthBar>();
+        }
         public void Bind(IChargeSource chargeSource)
         {
             Unbind();
@@ -107,22 +119,23 @@ namespace TowerDefense
             if (!visible)
                 return;
 
-            root.position = transform.position + new Vector3(offset.x, offset.y, 0f);
-            root.rotation = Quaternion.identity;
+            float barWidth = healthBar != null ? healthBar.width : width;
+            Follow();
 
-            float left = -width * 0.5f;
+            float left = -barWidth * 0.5f;
+
             bool full = shownProgress >= 1f;
 
             // Hintergrund mit kleinem Rand
             background.transform.localPosition = new Vector3(left - 0.02f, 0f, 0f);
-            background.transform.localScale = new Vector3(width + 0.04f, height + 0.04f, 1f);
+            background.transform.localScale = new Vector3(barWidth + 0.04f, height + 0.04f, 1f);
             Tint(background, backgroundColor);
 
             // Füllung
             fill.enabled = shownProgress > 0.001f;
             fill.transform.localPosition = new Vector3(left, 0f, 0f);
-            fill.transform.localScale = new Vector3(width * shownProgress, height, 1f);
-            Tint(fill, ProgressColor(shownProgress, full));
+            fill.transform.localScale = new Vector3(barWidth * shownProgress, height, 1f);
+            Tint(fill, ProgressColor(shownProgress, shownProgress >= 1f));
 
             // Aufblitzen bei voller Aufladung
             flash.enabled = flashAlpha > 0f;
@@ -130,14 +143,53 @@ namespace TowerDefense
             {
                 flashAlpha -= Time.unscaledDeltaTime / Mathf.Max(0.01f, flashTime);
                 flash.transform.localPosition = new Vector3(left, 0f, 0f);
-                flash.transform.localScale = new Vector3(width, height, 1f);
+                flash.transform.localScale = new Vector3(barWidth, height, 1f);
 
                 Color color = flashColor;
                 color.a = Mathf.Clamp01(flashAlpha) * 0.8f;
                 Tint(flash, color);
             }
         }
+        private void Follow()
+        {
+            Vector3 position;
 
+            if (healthBar != null)
+            {
+                Vector3 healthPosition = healthBar.WorldPosition;
+
+                float above = healthBar.Height * 0.5f
+                              + 0.02f
+                              + gap
+                              + height * 0.5f;
+
+                position = new Vector3(
+                    healthPosition.x,
+                    healthPosition.y + above,
+                    healthPosition.z
+                );
+            }
+            else
+            {
+                offsetTimer -= Time.unscaledDeltaTime;
+
+                if (offsetTimer <= 0f)
+                {
+                    offsetTimer = 0.5f;
+
+                    if (targetSprite == null)
+                        targetSprite = GetComponent<SpriteRenderer>();
+
+                    if (targetSprite != null && targetSprite.sprite != null)
+                        offsetY = targetSprite.bounds.max.y - transform.position.y + padding;
+                }
+
+                position = transform.position + new Vector3(0f, offsetY, 0f);
+            }
+
+            root.position = position;
+            root.rotation = Quaternion.identity;
+        }
         private Color ProgressColor(float progress, bool full)
         {
             Color color = progress < 0.5f

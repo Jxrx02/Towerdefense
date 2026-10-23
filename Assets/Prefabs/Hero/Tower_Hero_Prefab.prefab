@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}
@@ -957,10 +958,13 @@ MonoBehaviour:
     jumpDuration: 0.5
     jumpCooldown: 0.8
     jumpInvulnerability: 0.2
+    dashStamina: 0
+    dodgeStamina: 0
+    jumpStamina: 0
   inputSettings:
-    lightAttack: 106
-    heavyAttack: 101
-    block: 108
+    lightAttack: 323
+    heavyAttack: 325
+    block: 98
     sprint: 304
     walk: 308
     dash: 113
@@ -969,6 +973,7 @@ MonoBehaviour:
   defaultWeapon: {fileID: 11400000, guid: 8335c18ed2af4d04b88edb2f0a875dca, type: 2}
   combatStanceDuration: 4
   hitCooldown: 0.2
+  showStaminaBar: 1
   respawnTime: 5
   targetPosition: {x: -7.047619, y: -6.9761906}
 --- !u!114 &7932739886474218458

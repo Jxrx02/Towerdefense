@@ -35,7 +35,7 @@ namespace Tower
         public void InitializeGate(bool horizontal)
         {
             isHorizontal = horizontal;
-            isOpen = false;
+            isOpen = true;
             UpdateGateSprite();
         }
         

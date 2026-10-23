@@ -17,11 +17,14 @@ namespace TowerDefense
     /// Die Leiste hängt nicht am Objekt, deshalb wird sie von Spiegelung und Rotation nicht beeinflusst.
     /// </summary>
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(100)]
     public class HealthBar : MonoBehaviour
     {
         [Header("Größe & Position")]
         public float width = 1f;
         public float height = 0.12f;
+        [Tooltip("Feste Höhe über dem Objekt. Größer 0 überschreibt die automatische Höhe komplett.")]
+        public float fixedHeight;
         [Tooltip("Abstand zwischen Oberkante des Sprites und der Leiste")]
         public float padding = 0.12f;
         [Tooltip("Höhe automatisch aus dem Sprite bestimmen")]
@@ -87,7 +90,7 @@ namespace TowerDefense
         private SpriteRenderer targetSprite;
 
         private float offsetY = 1f;
-        private float offsetTimer;
+        private float peakOffset;
         private float visibility;
         private float lastChangeTime = -999f;
         private float lagValue;
@@ -410,7 +413,7 @@ namespace TowerDefense
             if (anti > 0f)
             {
                 float h = height * 0.25f;
-                Place(antiHeal, 0f, 1f, -(height * 0.5f + h * 0.5f + 0.01f), h);
+                Place(antiHeal, 0f, 1f, -(height * 0.5f - h * 0.5f), h);
                 Color a = antiHealColor;
                 a.a = Mathf.Lerp(0.5f, 1f, Mathf.Clamp01(anti));
                 Tint(antiHeal, a);
@@ -440,17 +443,24 @@ namespace TowerDefense
 
         private void Follow()
         {
-            offsetTimer -= Time.unscaledDeltaTime;
-
-            if (autoOffset && offsetTimer <= 0f)
+            if (fixedHeight > 0f)
             {
-                offsetTimer = 0.5f;
-
+                offsetY = fixedHeight;
+            }
+            else if (autoOffset)
+            {
                 if (targetSprite == null)
                     targetSprite = GetComponent<SpriteRenderer>();
 
                 if (targetSprite != null && targetSprite.sprite != null)
-                    offsetY = targetSprite.bounds.max.y - transform.position.y + padding;
+                {
+                    // Die Sprite-Grenzen ändern sich mit jeder Animationspose (Waffe hoch, nur Oberkörper, ...).
+                    // Folgte die Leiste ihnen, würde sie hüpfen. Deshalb gilt die höchste gesehene Pose,
+                    // die nur langsam wieder sinkt, und die Höhe wird geglättet.
+                    float candidate = targetSprite.bounds.max.y - transform.position.y + padding;
+                    peakOffset = Mathf.Max(candidate, peakOffset - 0.02f * Time.unscaledDeltaTime);
+                    offsetY = Mathf.Lerp(offsetY, peakOffset, 1f - Mathf.Exp(-12f * Time.unscaledDeltaTime));
+                }
             }
 
             Vector3 p = transform.position;
