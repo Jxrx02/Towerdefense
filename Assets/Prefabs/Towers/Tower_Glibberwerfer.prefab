@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Schleudert z\xE4he Klumpen, die abprallen und Gegner verlangsamen.\nAbpraller:
     1 \xB7 Slow: 15 % (1,5 s)\nSchaden 8, alle 1,6 s, Reichweite 6, 110 HP, R\xFCstung
     5"
-  towerInitPrice: 8
+  towerInitPrice: 3
   displayedStats: 64559
   statHealthPoints: 110
   currentHealth: 110
@@ -1095,6 +1095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

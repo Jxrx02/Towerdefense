@@ -855,7 +855,7 @@ MonoBehaviour:
   towerName: Wooden wall
   towerDesc: A simple wooden wall blocks the enemies paths but can be broken by their
     attcks.
-  towerInitPrice: 10
+  towerInitPrice: 1
   displayedStats: 0
   statHealthPoints: 10
   currentHealth: 10

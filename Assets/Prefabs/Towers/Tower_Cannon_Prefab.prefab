@@ -538,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Feuerturm
   towerDesc: Throws fire around
-  towerInitPrice: 20
+  towerInitPrice: 3
   displayedStats: 71
   statHealthPoints: 0
   currentHealth: 0
@@ -1689,6 +1689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

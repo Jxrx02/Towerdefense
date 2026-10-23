@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Spannt klebrige F\xE4den zwischen Gegnern und verlangsamt sie.\nFadenradius:
     4 \xB7 Fadenslow: 40 % \xB7 Fadenschaden: 3 alle 0,5 s\nSchaden 6, alle 2,4 s,
     Reichweite 5, 120 HP, R\xFCstung 5, Magieresistenz 5"
-  towerInitPrice: 12
+  towerInitPrice: 3
   displayedStats: 12239
   statHealthPoints: 120
   currentHealth: 120
@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

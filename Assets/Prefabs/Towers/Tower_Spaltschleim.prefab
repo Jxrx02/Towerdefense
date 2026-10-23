@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Klumpen, die beim Aufprall in kleine Schleimlinge zerplatzen.\nSplitter:
     3 \xB7 Splitterschaden: 3\nSchaden 8, alle 2 s, Reichweite 5,5, 110 HP, R\xFCstung
     3, Magieresistenz 3"
-  towerInitPrice: 12
+  towerInitPrice: 3
   displayedStats: 31791
   statHealthPoints: 110
   currentHealth: 110
@@ -1094,6 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

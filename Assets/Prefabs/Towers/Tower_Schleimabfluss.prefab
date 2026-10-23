@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Rei\xDFt Gegner in einen Schleimstrudel und zerquetscht sie.\nSogdauer:
     2 s \xB7 Sogradius: 3\nSchaden 14, alle 5 s, Reichweite 6,5, 100 HP, Magieresistenz
     10"
-  towerInitPrice: 16
+  towerInitPrice: 3
   displayedStats: 27695
   statHealthPoints: 100
   currentHealth: 100
@@ -1094,6 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

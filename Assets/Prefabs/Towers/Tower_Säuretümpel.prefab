@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Spuckt \xE4tzende S\xE4ure, die Gegner \xFCber Zeit zersetzt.\nGift:
     4 alle 0,5 s \xB7 Gift-Dauer: 3 s\nSchaden 5, alle 2,2 s, Reichweite 5,5, 100
     HP, Magieresistenz 5"
-  towerInitPrice: 10
+  towerInitPrice: 3
   displayedStats: 10255
   statHealthPoints: 100
   currentHealth: 100
@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

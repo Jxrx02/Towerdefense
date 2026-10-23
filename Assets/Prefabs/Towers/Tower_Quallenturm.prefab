@@ -540,7 +540,7 @@ MonoBehaviour:
   towerDesc: "Entl\xE4dt Blitze, die von Gegner zu Gegner springen.\nBlitzziele:
     2 \xB7 Blitzschaden: 8 \xB7 Blitzradius: 3 \xB7 Blitzabfall: 20 %\nSchaden 4,
     alle 1,8 s, Reichweite 5,5, 100 HP, Magieresistenz 10"
-  towerInitPrice: 14
+  towerInitPrice: 3
   displayedStats: 64559
   statHealthPoints: 100
   currentHealth: 100
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HealthBar
   width: 1
   height: 0.12
+  fixedHeight: 0
   padding: 0.12
   autoOffset: 1
   manualOffset: {x: 0, y: 0}

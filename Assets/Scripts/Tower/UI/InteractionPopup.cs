@@ -221,7 +221,7 @@ namespace TowerDefense
             bool isUpgrade
         )
         {
-            requiredCoins = Mathf.CeilToInt(goldCost / 10f);
+            requiredCoins = Mathf.CeilToInt(goldCost);
 
             CreateCoins(requiredCoins);
 
