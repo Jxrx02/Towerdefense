@@ -37,7 +37,8 @@ namespace TowerDefense
         [Tooltip("So lange bleibt der Held nach einer Kampfaktion in der Kampfhaltung (CombatIdle)")]
         [SerializeField] private float combatStanceDuration = 4f;
         [SerializeField] private float hitCooldown = 0.5f;
-
+        [SerializeField] private bool showStaminaBar = true;
+        
         [Header("Tod / Respawn")]
         [SerializeField] private float respawnTime = 5f;
 
@@ -58,6 +59,8 @@ namespace TowerDefense
 
         private float loadoutDamageMultiplier = 1f;
         private float loadoutAttackSpeedMultiplier = 1f;
+        private Stamina stamina;
+
 
         private float invulnerableUntil;
         private float lastCombatTime = -999f;
@@ -82,6 +85,13 @@ namespace TowerDefense
 
             motor = new HeroMotor(transform, CanMoveTo);
             combat = new HeroCombat(this, animator, motor);
+            
+            stamina = GetComponent<Stamina>();
+            if (stamina == null)
+                stamina = gameObject.AddComponent<Stamina>();
+
+            if (showStaminaBar)
+                gameObject.AddComponent<StaminaBar>().Bind(stamina);
         }
 
         private void Start()
@@ -107,7 +117,7 @@ namespace TowerDefense
 
             HandleInteractionKeys();
             motor.Tick(dt);
-
+            stamina.RegenPaused = combat.IsCharging;   // beim Aufladen füllt sich die Ausdauer nicht
             switch (state)
             {
                 case HeroState.Free:       TickFree(lastInput, dt); break;
@@ -356,106 +366,110 @@ namespace TowerDefense
         // 2.7 Block, Dash, Ausweichen, Sprung, Treffer-Reaktion
         // ------------------------------------------------------------------
         private bool TryStartBlocking(HeroInputState input)
-{
-    if (!weapon.canBlock || !input.blockHeld || !animator.HasClip(HeroAnim.Block))
-        return false;
-
-    GameObject enemy = FindEnemy();
-    if (enemy != null)
-        SetFacing(DirectionUtility.FromVector(enemy.transform.position - transform.position));
-
-    state = HeroState.Blocking;
-    lastCombatTime = Time.time;
-    animator.Play(HeroAnim.Block, 1f, GetLocomotion(input, FacingVector, true, true));
-    return true;
-}
-
-private bool TryStartMoveAction(HeroInputState input)
-{
-    float now = Time.time;
-    bool moving = input.move.sqrMagnitude > 0.01f;
-    Vector2 forward = FacingVector;
-
-    if (input.dashPressed && now >= dashReadyTime && animator.HasClip(HeroAnim.Dash))
-    {
-        dashReadyTime = now + motorSettings.dashCooldown;
-        BeginMoveAction(HeroAnim.Dash, moving ? input.move : forward,
-            motorSettings.dashDistance, motorSettings.dashDuration, motorSettings.dashInvulnerability, true);
-        return true;
-    }
-
-    if (input.dodgePressed && now >= dodgeReadyTime)
-    {
-        // Ohne Eingabe oder entgegen der Blickrichtung: nach hinten ausweichen
-        bool backwards = !moving || Vector2.Dot(input.move.normalized, forward) < -0.5f;
-        HeroAnim anim = backwards && animator.HasClip(HeroAnim.DodgeBackwards) ? HeroAnim.DodgeBackwards : HeroAnim.Dodge;
-
-        if (animator.HasClip(anim))
         {
-            dodgeReadyTime = now + motorSettings.dodgeCooldown;
-            BeginMoveAction(anim, backwards ? -forward : input.move,
-                backwards ? motorSettings.dodgeBackDistance : motorSettings.dodgeDistance,
-                motorSettings.dodgeDuration, motorSettings.dodgeInvulnerability, !backwards);
+            if (!weapon.canBlock || !input.blockHeld || !animator.HasClip(HeroAnim.Block))
+                return false;
+
+            GameObject enemy = FindEnemy();
+            if (enemy != null)
+                SetFacing(DirectionUtility.FromVector(enemy.transform.position - transform.position));
+
+            state = HeroState.Blocking;
+            lastCombatTime = Time.time;
+            animator.Play(HeroAnim.Block, 1f, GetLocomotion(input, FacingVector, true, true));
             return true;
         }
-    }
 
-    if (input.jumpPressed && now >= jumpReadyTime && animator.HasClip(HeroAnim.Jump))
-    {
-        jumpReadyTime = now + motorSettings.jumpCooldown;
-        BeginMoveAction(HeroAnim.Jump, moving ? input.move : forward,
-            motorSettings.jumpDistance, motorSettings.jumpDuration, motorSettings.jumpInvulnerability, true);
-        return true;
-    }
+        private bool TryStartMoveAction(HeroInputState input)
+        {
+            float now = Time.time;
+            bool moving = input.move.sqrMagnitude > 0.01f;
+            Vector2 forward = FacingVector;
+            
+            if (input.dashPressed && now >= dashReadyTime && animator.HasClip(HeroAnim.Dash) &&
+                stamina.TrySpend(motorSettings.dashStamina))
+            {
+                dashReadyTime = now + motorSettings.dashCooldown;
+                BeginMoveAction(HeroAnim.Dash, moving ? input.move : forward,
+                    motorSettings.dashDistance, motorSettings.dashDuration, motorSettings.dashInvulnerability, true);
+                return true;
+            }
+            
+            // beim Ausweichen:
+            if (input.dodgePressed && now >= dodgeReadyTime
+                &&(animator.HasClip(HeroAnim.Dodge) || animator.HasClip(HeroAnim.DodgeBackwards)) 
+                && stamina.TrySpend(motorSettings.dodgeStamina) )
+            {
+                // Ohne Eingabe oder entgegen der Blickrichtung: nach hinten ausweichen
+                bool backwards = !moving || Vector2.Dot(input.move.normalized, forward) < -0.5f;
+                HeroAnim anim = backwards && animator.HasClip(HeroAnim.DodgeBackwards) ? HeroAnim.DodgeBackwards : HeroAnim.Dodge;
 
-    return false;
-}
+                if (animator.HasClip(anim))
+                {
+                    dodgeReadyTime = now + motorSettings.dodgeCooldown;
+                    BeginMoveAction(anim, backwards ? -forward : input.move,
+                        backwards ? motorSettings.dodgeBackDistance : motorSettings.dodgeDistance,
+                        motorSettings.dodgeDuration, motorSettings.dodgeInvulnerability, !backwards);
+                    return true;
+                }
+            }
+            if (input.jumpPressed && now >= jumpReadyTime && animator.HasClip(HeroAnim.Jump) &&
+                stamina.TrySpend(motorSettings.jumpStamina))
+            {
+                jumpReadyTime = now + motorSettings.jumpCooldown;
+                BeginMoveAction(HeroAnim.Jump, moving ? input.move : forward,
+                    motorSettings.jumpDistance, motorSettings.jumpDuration, motorSettings.jumpInvulnerability, true);
+                return true;
+            }
 
-private void BeginMoveAction(HeroAnim anim, Vector2 direction, float distance, float duration,
-    float invulnerability, bool faceDirection)
-{
-    combat.Cancel();
+            return false;
+        }
 
-    state = HeroState.MoveAction;
-    moveActionEnd = Time.time + duration;
-    invulnerableUntil = Mathf.Max(invulnerableUntil, Time.time + invulnerability);
-    lastCombatTime = Time.time;
+        private void BeginMoveAction(HeroAnim anim, Vector2 direction, float distance, float duration,
+            float invulnerability, bool faceDirection)
+        {
+            combat.Cancel();
 
-    if (faceDirection)
-        SetFacing(DirectionUtility.FromVector(direction));
+            state = HeroState.MoveAction;
+            moveActionEnd = Time.time + duration;
+            invulnerableUntil = Mathf.Max(invulnerableUntil, Time.time + invulnerability);
+            lastCombatTime = Time.time;
 
-    motor.StartImpulse(direction, distance, duration);
+            if (faceDirection)
+                SetFacing(DirectionUtility.FromVector(direction));
 
-    // Animation so beschleunigen oder bremsen, dass sie genau zur Dauer der Bewegung passt
-    float clipDuration = animator.GetClipDuration(anim);
-    animator.Play(anim, clipDuration > 0f ? clipDuration / duration : 1f);
-}
+            motor.StartImpulse(direction, distance, duration);
 
-private void OnVitalsDamaged(DamageResult result)
-{
-    if (state == HeroState.Dead || state == HeroState.MoveAction || result.blocked)
-        return;
+            // Animation so beschleunigen oder bremsen, dass sie genau zur Dauer der Bewegung passt
+            float clipDuration = animator.GetClipDuration(anim);
+            animator.Play(anim, clipDuration > 0f ? clipDuration / duration : 1f);
+        }
 
-    if (result.healthDamage <= 0f && result.shieldDamage <= 0f)
-        return;
+        private void OnVitalsDamaged(DamageResult result)
+        {
+            if (state == HeroState.Dead || state == HeroState.MoveAction || result.blocked)
+                return;
 
-    lastCombatTime = Time.time;
+            if (result.healthDamage <= 0f && result.shieldDamage <= 0f)
+                return;
 
-    // Schwere Angriffe haben Super Armor, außerdem eine Pause zwischen zwei Reaktionen
-    if (combat.HasSuperArmor || Time.time < hitReadyTime || !animator.HasClip(HeroAnim.Hit))
-        return;
+            lastCombatTime = Time.time;
 
-    combat.Cancel();
-    motor.CancelImpulse();
+            // Schwere Angriffe haben Super Armor, außerdem eine Pause zwischen zwei Reaktionen
+            if (combat.HasSuperArmor || Time.time < hitReadyTime || !animator.HasClip(HeroAnim.Hit))
+                return;
 
-    state = HeroState.Hit;
-    hitReadyTime = Time.time + hitCooldown;
-    hitEnd = Time.time + animator.GetClipDuration(HeroAnim.Hit);
-    animator.Play(HeroAnim.Hit);
-}
-// ------------------------------------------------------------------
-// 2.8 Schaden: Ausweichphasen und Block 
-// ------------------------------------------------------------------
+            combat.Cancel();
+            motor.CancelImpulse();
+
+            state = HeroState.Hit;
+            hitReadyTime = Time.time + hitCooldown;
+            hitEnd = Time.time + animator.GetClipDuration(HeroAnim.Hit);
+            animator.Play(HeroAnim.Hit);
+        }
+        // ------------------------------------------------------------------
+        // 2.8 Schaden: Ausweichphasen und Block 
+        // ------------------------------------------------------------------
         public override DamageResult TakeDamage(DamageInfo info)
         {
             if (state == HeroState.Dead || Time.time < invulnerableUntil)
@@ -515,6 +529,7 @@ private void OnVitalsDamaged(DamageResult result)
             transform.position = spawnPosition;
             targetPosition = spawnPosition;
             RestoreFullHealth();
+            stamina.Refill();
             SetVisible(true);
 
             Actions.onHeroDeath?.Invoke(gameObject);
@@ -618,6 +633,7 @@ private void OnVitalsDamaged(DamageResult result)
         DamageInfo IHeroCombatHost.CreateDamage(float amount, DamageType type) =>
             offense.CreateDamage(amount, type, gameObject);
 
+        bool IHeroCombatHost.TrySpendStamina(float amount) => stamina.TrySpend(amount);
         bool IHeroCombatHost.TryFindTarget(out GameObject enemy, out int index)
         {
             enemy = null;

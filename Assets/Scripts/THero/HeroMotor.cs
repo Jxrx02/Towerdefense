@@ -30,6 +30,12 @@ namespace TowerDefense
         public float jumpCooldown = 0.8f;
         public float jumpInvulnerability = 0.2f;
 
+        
+        [Header("Ausdauer-Kosten (0 = kostenlos)")]
+        public float dashStamina;
+        public float dodgeStamina;
+        public float jumpStamina;
+        
         public float SpeedFactor(HeroAnim locomotion)
         {
             switch (locomotion)

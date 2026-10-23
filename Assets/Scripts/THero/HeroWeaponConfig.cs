@@ -32,7 +32,10 @@ namespace TowerDefense
         public float comboWindow = 0.4f;
         [Tooltip("Kann während dieses Angriffs nicht von einem Treffer unterbrochen werden")]
         public bool superArmor;
-
+        
+        [Header("Ausdauer")]
+        [Tooltip("Wird beim Beginn des Angriffs verbraucht (aufgeladene Angriffe: beim Beginn des Aufladens)")]
+        [Min(0f)] public float staminaCost = 12f;
         [Header("Aufgeladen")]
         [Tooltip("Schadensbonus bei voller Aufladung (1 = kein Bonus)")]
         public float maxChargeBonus = 1f;
@@ -167,7 +170,29 @@ namespace TowerDefense
             AddAttack(HeroAnim.ChargedHeavyAttack1, 2.8f * heavyScale, move: 0.25f, armor: true, chargeBonus: 1.3f, shake: 0.15f, range: 1.8f, arc: 140f);
             AddAttack(HeroAnim.ChargedHeavyAttack2, 4.0f * heavyScale, move: 0.2f, armor: true, chargeBonus: 1.5f, shake: 0.25f, range: 2.0f, arc: 160f, recovery: 0.3f);
         }
-
+        private static float DefaultStaminaCost(HeroAnim anim)
+        {
+            switch (anim)
+            {
+                case HeroAnim.Attack1:
+                case HeroAnim.Attack2:
+                case HeroAnim.Attack3: return 12f;
+                case HeroAnim.HeavyAttack1: 
+                case HeroAnim.HeavyAttack2: 
+                case HeroAnim.HeavyAttack3: return 33f;
+                case HeroAnim.ChargedAttack1: return 70f;
+                case HeroAnim.ChargedAttack2: return 70f;
+                case HeroAnim.ChargedHeavyAttack1: return 70f;
+                case HeroAnim.ChargedHeavyAttack2: return 70f;
+                case HeroAnim.RangedAttack1:
+                case HeroAnim.RangedAttack2:
+                case HeroAnim.UpAttack: 
+                case HeroAnim.RangedAttack3: return 12f;
+                case HeroAnim.ChargedAttack: return 70f;
+                case HeroAnim.ChargedUpAttack: return 70f;
+                default: return 12;
+            }
+        }
         private void AddAttack(HeroAnim anim, float damage, float move = 0.6f, bool armor = false,
             float chargeBonus = 1f, float shake = 0f, float range = 1.4f, float arc = 110f,
             float lunge = 0.25f, float recovery = 0.08f)
@@ -183,7 +208,8 @@ namespace TowerDefense
                 range = range,
                 arcDegrees = arc,
                 lungeDistance = lunge,
-                recovery = recovery
+                recovery = recovery,
+                staminaCost = DefaultStaminaCost(anim)
             });
         }
     }

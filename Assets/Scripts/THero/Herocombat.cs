@@ -13,7 +13,8 @@ namespace TowerDefense
         float AttackDamage { get; }
 
         float AttackSpeedMultiplier { get; }
-
+        /// <summary>Verbraucht Ausdauer. false = zu wenig, der Angriff beginnt nicht.</summary>
+        bool TrySpendStamina(float amount);
         DamageInfo CreateDamage(float amount, DamageType type);
         bool TryFindTarget(out GameObject enemy, out int index);
         void FireProjectile(GameObject enemy, int index, float damageMultiplier);
@@ -237,10 +238,22 @@ namespace TowerDefense
         // ------------------------------------------------------------------
         private void StartTap(HeroAttackKind kind, Vector2 aim, HeroAnim? locomotion)
         {
+            // Kombo-Position merken: ohne Ausdauer darf die Kombo nicht weiterlaufen
+            int previousIndex = lastComboIndex;
+            int previousLength = lastComboLength;
+
             HeroAnim? anim = PickTapAnimation(kind, aim);
 
             if (anim == null)
             {
+                phase = Phase.None;
+                return;
+            }
+
+            if (!host.TrySpendStamina(weapon.GetAttack(anim.Value).staminaCost))
+            {
+                lastComboIndex = previousIndex;
+                lastComboLength = previousLength;
                 phase = Phase.None;
                 return;
             }
@@ -373,7 +386,13 @@ namespace TowerDefense
             HeroAnim? anim = PickChargeAnimation(chargeKind, lockedAim, tier);
             if (anim == null)
                 anim = chargeAnim;
-
+            
+            // Aufgeladene Angriffe kosten beim Beginn des Aufladens
+            if (!host.TrySpendStamina(weapon.GetAttack(anim.Value).staminaCost))
+            {
+                phase = Phase.None;
+                return;
+            }
             lastKind = chargeKind;
 
             // Gleiche Animation: weiterlaufen lassen, aber aus der Aufladeschleife direkt in den Schlag springen

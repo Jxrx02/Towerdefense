@@ -35,7 +35,11 @@ namespace TowerDefense
         [Tooltip("Sekunden, die die Leiste nach der letzten Änderung sichtbar bleibt, wenn sie voll ist")]
         public float hideDelay = 2.5f;
         public float fadeTime = 0.25f;
-
+        /// <summary>Weltposition der Leiste, für Anzeigen darunter (Stamina-Leiste)</summary>
+        public Vector3 WorldPosition => root != null ? root.position : transform.position;
+        /// <summary>Höhe der Leiste in Welteinheiten</summary>
+        public float Height => height;
+        
         [Header("Farben")]
         public Color backgroundColor = new Color(0f, 0f, 0f, 0.65f);
         public Color healthColor = new Color(0.25f, 0.85f, 0.35f);
