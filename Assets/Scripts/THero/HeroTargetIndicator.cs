@@ -50,15 +50,8 @@ namespace TowerDefense
                 Hide();
                 return;
             }
-
-            Renderer targetRenderer =
-                currentTarget.GetComponentInChildren<Renderer>();
-
             Vector3 position = currentTarget.transform.position;
-
-            if (targetRenderer != null)
-                position.y = targetRenderer.bounds.max.y;
-
+            
             position.y += verticalOffset;
 
             crosshair.transform.position = position;

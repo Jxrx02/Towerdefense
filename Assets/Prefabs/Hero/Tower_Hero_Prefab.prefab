@@ -311,6 +311,8 @@ GameObject:
   - component: {fileID: -1222339928672116993}
   - component: {fileID: 8879415244484785402}
   - component: {fileID: 7932739886474218458}
+  - component: {fileID: 8094885780038395976}
+  - component: {fileID: 5826282350147664319}
   m_Layer: 7
   m_Name: Tower_Hero_Prefab
   m_TagString: Tower
@@ -579,12 +581,12 @@ MonoBehaviour:
   hideDelay: 2.5
   fadeTime: 0.25
   backgroundColor: {r: 0, g: 0, b: 0, a: 0.65}
-  healthColor: {r: 0.25, g: 0.85, b: 0.35, a: 1}
+  healthColor: {r: 0.2509804, g: 0.5941634, b: 0.8509804, a: 1}
   blockColor: {r: 0.65, g: 0.35, b: 1, a: 1}
   shieldColor: {r: 1, g: 1, b: 1, a: 1}
   lagColor: {r: 1, g: 0.85, b: 0.2, a: 0.95}
   criticalColor: {r: 0.95, g: 0.15, b: 0.1, a: 1}
-  healFlashColor: {r: 0.7, g: 1, b: 0.75, a: 1}
+  healFlashColor: {r: 0.69803923, g: 0.9097301, b: 1, a: 1}
   antiHealColor: {r: 0.55, g: 0.05, b: 0.15, a: 1}
   tickColor: {r: 0, g: 0, b: 0, a: 0.55}
   lagDelay: 0.35
@@ -668,9 +670,9 @@ MonoBehaviour:
     magicPenFlat: 0
     magicPenPercent: 0
     omnivamp: 0
-  range: 6.16
+  range: 2
   interactionrange: 1
-  damage: 7
+  damage: 1
   timeInBetweenShots: 3.2
   attackSpeedMultiplier: 1
   offense:
@@ -688,7 +690,7 @@ MonoBehaviour:
   outlineMaterial: {fileID: 2100000, guid: fb640c70274ee704a9029b0be1691a4e, type: 2}
   targetPreference: 0
   whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
-  damageFlashDuration: 1
+  damageFlashDuration: 0.01
   statCoinsEarnedPerSecond: 0
   statHealthRegenPerSecond: 0
   statRangeMultiplier: 0
@@ -962,17 +964,17 @@ MonoBehaviour:
     dodgeStamina: 0
     jumpStamina: 0
   inputSettings:
-    lightAttack: 323
-    heavyAttack: 325
+    lightAttack: 118
+    heavyAttack: 32
     block: 98
     sprint: 304
     walk: 308
     dash: 113
     dodge: 306
     jump: 102
-  defaultWeapon: {fileID: 11400000, guid: 8335c18ed2af4d04b88edb2f0a875dca, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 044b516acf73ef44c83f973b965f3896, type: 2}
   combatStanceDuration: 4
-  hitCooldown: 0.2
+  hitCooldown: 0.08
   showStaminaBar: 1
   respawnTime: 5
   targetPosition: {x: -7.047619, y: -6.9761906}
@@ -1245,6 +1247,46 @@ MonoBehaviour:
     chargeLoopEndFrame: 0
   destroyOnEndDeadAnimation: 0
   <animState>k__BackingField: 0
+--- !u!114 &8094885780038395976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3089dbc51bdf4fb39ea6b0fd1543296e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HeroChargeIndicator
+  width: 0.9
+  height: 0.09
+  gap: 0.01
+  padding: 0.12
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0.7}
+  lowColor: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  midColor: {r: 1, g: 0.85, b: 0.2, a: 1}
+  fullColor: {r: 1, g: 0.45, b: 0.1, a: 1}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  fadeTime: 0.12
+  fullPulseSpeed: 14
+  flashTime: 0.25
+  sortingLayerName: Player
+  sortingOrder: 210
+--- !u!114 &5826282350147664319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124600919171900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe28d6f6b5d647db9e11ce4febe66e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HeroTargetIndicator
+  crosshairPrefab: {fileID: 9211437329410623738, guid: 443c2db9546a2494bab36382db8297e8, type: 3}
+  verticalOffset: 0
 --- !u!1 &7272062724337542213
 GameObject:
   m_ObjectHideFlags: 0
