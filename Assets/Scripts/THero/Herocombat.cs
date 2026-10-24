@@ -144,12 +144,14 @@ namespace TowerDefense
             cooldownEnd = 0f;
         }
 
+
         public void Cancel()
         {
             phase = Phase.None;
             strikePending = false;
             buffered = null;
             chargeFraction = 0f;
+            currentData = null;
             animator.SetCharging(false);
         }
 
@@ -165,6 +167,11 @@ namespace TowerDefense
             if (weapon == null)
                 return;
 
+            
+            if (TryInterruptWithChargedAttack(input, aim, locomotion)) return;
+
+
+
             if (phase == Phase.None && canStart)
                 TryBeginPress(input);
 
@@ -175,6 +182,38 @@ namespace TowerDefense
                 case Phase.Swinging: BufferInput(input); break;
                 case Phase.Recovering: UpdateRecovering(input, aim, locomotion); break;
             }
+        }
+
+        private bool TryInterruptWithChargedAttack(
+            in HeroInputState input,
+            Vector2 aim,
+            HeroAnim? locomotion)
+        {
+            if (phase == Phase.Charging)
+                return false;
+
+            HeroAttackKind kind;
+
+            if (input.heavyPressed && weapon.HasHeavy && CanCharge(HeroAttackKind.Heavy))
+            {
+                kind = HeroAttackKind.Heavy;
+            }
+            else if (input.lightPressed && CanCharge(HeroAttackKind.Light))
+            {
+                kind = HeroAttackKind.Light;
+            }
+            else
+            {
+                return false;
+            }
+
+            Cancel();
+            pressKind = kind;
+            pressTime = Time.time;
+            phase = Phase.Pressing;
+
+            UpdatePressing(input, aim, locomotion);
+            return true;
         }
 
         /// <summary>Automatischer Angriff (Bogen): Ziel in Reichweite, Held ist frei.</summary>

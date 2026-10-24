@@ -327,7 +327,9 @@ namespace TowerDefense
                 return HeroAnim.WalkBack;
         
             if (input.walk || slow) return HeroAnim.Walk;
-            if (input.sprint && !locked) return HeroAnim.Sprint;
+            
+            bool canSprint = vitals != null && vitals.Health >= vitals.MaxHealth;
+            if (input.sprint && !locked && canSprint) return HeroAnim.Sprint;
             return HeroAnim.Run;
         }
         
@@ -460,8 +462,9 @@ namespace TowerDefense
             lastCombatTime = Time.time;
 
             // Schwere Angriffe haben Super Armor, außerdem eine Pause zwischen zwei Reaktionen
-            if (combat.HasSuperArmor || Time.time < hitReadyTime || !animator.HasClip(HeroAnim.Hit))
+            if (combat.IsCharging || combat.HasSuperArmor || Time.time < hitReadyTime || !animator.HasClip(HeroAnim.Hit))
                 return;
+            
 
             combat.Cancel();
             motor.CancelImpulse();
