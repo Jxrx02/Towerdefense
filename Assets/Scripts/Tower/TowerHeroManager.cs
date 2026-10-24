@@ -53,7 +53,7 @@ namespace TowerDefense
                 if (target.Item1 != null)
                 {
                     _tower.Attack(target);
-                    Debug.Log(_tower.towerName + " attacks: " + target);
+                  //  Debug.Log(_tower.towerName + " attacks: " + target);
 
                 }
             }

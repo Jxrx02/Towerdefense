@@ -28,6 +28,15 @@ MonoBehaviour:
   - bursts:
     - burstConfigs:
       - {fileID: 11400000, guid: c68b2a6c35f41c449b1139b075381c72, type: 2}
+      - {fileID: 11400000, guid: 992bdc976c5eba44da2c0bc1cc8e8d5b, type: 2}
+      - {fileID: 11400000, guid: 465374b84d292ee47be6955d9272ff87, type: 2}
+      - {fileID: 11400000, guid: c957fc1a2a92f884f8c17c9b96422b54, type: 2}
+      spawnInterval: 2
+    - burstConfigs:
+      - {fileID: 11400000, guid: c68b2a6c35f41c449b1139b075381c72, type: 2}
+      - {fileID: 11400000, guid: 992bdc976c5eba44da2c0bc1cc8e8d5b, type: 2}
+      - {fileID: 11400000, guid: 465374b84d292ee47be6955d9272ff87, type: 2}
+      - {fileID: 11400000, guid: c957fc1a2a92f884f8c17c9b96422b54, type: 2}
       spawnInterval: 2
     timeBetweenBursts: 2
   - bursts:

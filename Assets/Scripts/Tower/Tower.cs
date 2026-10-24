@@ -1038,19 +1038,51 @@ namespace TowerDefense
         // ───────────────── BREAK / SELL ─────────────────
         protected virtual void BreakTower()
         {
+            if (isBroken)
+                return;
+
             isBroken = true;
+
             Active.Remove(this);
             Supporters.Remove(this);
 
             StopUpgradeInteraction();
-            Actions.onEnemyDeath -= this.IncreaseExp;
-            TowerHeroManager.instance.UnRegisterTower(this.gameObject);
-            TowerHeroManager.instance.DeselectTower();
+            Actions.onEnemyDeath -= IncreaseExp;
 
-            towerConstructionSite.IsDestroyed = true;
-            towerConstructionSite.gameObject.SetActive(true);
+            if (TowerHeroManager.instance != null)
+            {
+                TowerHeroManager.instance.UnRegisterTower(gameObject);
+                TowerHeroManager.instance.DeselectTower();
+            }
+
+            // Erst die weiterhin aktive Baustelle für die Reparatur bereitstellen.
+            if (towerConstructionSite != null)
+            {
+                towerConstructionSite.HandleTowerDestroyed(this);
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"Der zerstörte Turm '{name}' hat keine TowerConstructionSite.",
+                    this);
+            }
+
+            // Die Baustelle bleibt als Fokusziel aktiv, auch wenn der Turm
+            // direkt danach deaktiviert wird.
+            if (CameraZoom.Instance != null)
+            {
+                CameraZoom.Instance.ShakeCamera(0.5f, 0.5f);
+
+                GameObject focusTarget = towerConstructionSite != null
+                    ? towerConstructionSite.gameObject
+                    : gameObject;
+
+                CameraZoom.Instance.FocusOn(focusTarget, 1f);
+            }
+
+            // Nicht Destroy(gameObject): Der Turm wird für die Reparatur behalten.
+            gameObject.SetActive(false);
         }
-
         /// <summary>Aufrufen, wenn ein zerstörter Turm wieder aufgebaut/repariert wird.</summary>
         public void ResetBroken()
         {
@@ -1066,12 +1098,18 @@ namespace TowerDefense
             Supporters.Remove(this);
 
             StopUpgradeInteraction();
-            Actions.onEnemyDeath -= this.IncreaseExp;
-            TowerHeroManager.instance.UnRegisterTower(this.gameObject);
-            TowerHeroManager.instance.DeselectTower();
-            towerConstructionSite.gameObject.SetActive(true);
-            towerConstructionSite.IsBuilt = false;
-            Destroy(this.gameObject);
+            Actions.onEnemyDeath -= IncreaseExp;
+
+            if (TowerHeroManager.instance != null)
+            {
+                TowerHeroManager.instance.UnRegisterTower(gameObject);
+                TowerHeroManager.instance.DeselectTower();
+            }
+
+            if (towerConstructionSite != null)
+                towerConstructionSite.HandleTowerSold(this);
+
+            Destroy(gameObject);
         }
 
         public void SellTower()
@@ -1093,7 +1131,45 @@ namespace TowerDefense
         {
             ysort.UpdateSorting();
         }
+        public int CalculateRepairPrice()
+        {
+            int baseRepairCost = (int)(towerInitPrice * 0.7f);
+            int activePathIndex = GetActivePathIndex();
 
+            if (activePathIndex < 0 ||
+                activePathIndex >= upgradePaths.Length ||
+                activePathIndex >= pathLevels.Length)
+            {
+                return baseRepairCost;
+            }
+
+            UpgradePath path = upgradePaths[activePathIndex];
+
+            if (path == null ||
+                path.levels == null ||
+                path.levels.Length == 0)
+            {
+                return baseRepairCost;
+            }
+
+            int purchasedLevels = pathLevels[activePathIndex];
+
+            if (purchasedLevels <= 0)
+                return baseRepairCost;
+
+            int currentLevelIndex = Mathf.Min(
+                purchasedLevels - 1,
+                path.levels.Length - 1);
+
+            TowerUpgradeLevel currentUpgrade = path.levels[currentLevelIndex];
+
+            if (currentUpgrade == null)
+                return baseRepairCost;
+
+            return Mathf.Max(
+                0,
+                (int)(currentUpgrade.upgradeCost * 0.7f));
+        }
         public int CalculateSellPrice()
         {
             int coins = towerInitPrice;
