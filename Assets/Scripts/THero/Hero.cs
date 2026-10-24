@@ -60,7 +60,7 @@ namespace TowerDefense
         private float loadoutDamageMultiplier = 1f;
         private float loadoutAttackSpeedMultiplier = 1f;
         private Stamina stamina;
-
+        private HeroTargetIndicator targetIndicator;
 
         private float invulnerableUntil;
         private float lastCombatTime = -999f;
@@ -85,6 +85,11 @@ namespace TowerDefense
 
             motor = new HeroMotor(transform, CanMoveTo);
             combat = new HeroCombat(this, animator, motor);
+            
+            targetIndicator = GetComponent<HeroTargetIndicator>();
+            if (targetIndicator == null)
+                targetIndicator = gameObject.AddComponent<HeroTargetIndicator>();
+            targetIndicator.Initialize(this);
             
             stamina = GetComponent<Stamina>();
             if (stamina == null)
