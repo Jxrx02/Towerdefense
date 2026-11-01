@@ -1,0 +1,2274 @@
+{ "frames": {
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]_0": {
+    "frame": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]_1": {
+    "frame": { "x": 128, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]_2": {
+    "frame": { "x": 256, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]_3": {
+    "frame": { "x": 384, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]_4": {
+    "frame": { "x": 512, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]_5": {
+    "frame": { "x": 640, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]_6": {
+    "frame": { "x": 768, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_7": {
+    "frame": { "x": 896, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_8": {
+    "frame": { "x": 1024, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_9": {
+    "frame": { "x": 1152, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_10": {
+    "frame": { "x": 1280, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_11": {
+    "frame": { "x": 1408, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DR>_12": {
+    "frame": { "x": 1536, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DR>_13": {
+    "frame": { "x": 1664, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DR>_14": {
+    "frame": { "x": 1792, "y": 0, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DR>_15": {
+    "frame": { "x": 0, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DR>_16": {
+    "frame": { "x": 128, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]_17": {
+    "frame": { "x": 256, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]_18": {
+    "frame": { "x": 384, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_19": {
+    "frame": { "x": 512, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_20": {
+    "frame": { "x": 640, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_21": {
+    "frame": { "x": 768, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_22": {
+    "frame": { "x": 896, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release_23": {
+    "frame": { "x": 1024, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<R>_24": {
+    "frame": { "x": 1152, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<R>_25": {
+    "frame": { "x": 1280, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<R>_26": {
+    "frame": { "x": 1408, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<R>_27": {
+    "frame": { "x": 1536, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<R>_28": {
+    "frame": { "x": 1664, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<R>_29": {
+    "frame": { "x": 1792, "y": 128, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<R>_30": {
+    "frame": { "x": 0, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<R>_31": {
+    "frame": { "x": 128, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<R>_32": {
+    "frame": { "x": 256, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<R>_33": {
+    "frame": { "x": 384, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<R>_34": {
+    "frame": { "x": 512, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<R>_35": {
+    "frame": { "x": 640, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UR>_36": {
+    "frame": { "x": 768, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UR>_37": {
+    "frame": { "x": 896, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UR>_38": {
+    "frame": { "x": 1024, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UR>_39": {
+    "frame": { "x": 1152, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UR>_40": {
+    "frame": { "x": 1280, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<UR>_41": {
+    "frame": { "x": 1408, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<UR>_42": {
+    "frame": { "x": 1536, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UR>_43": {
+    "frame": { "x": 1664, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UR>_44": {
+    "frame": { "x": 1792, "y": 256, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UR>_45": {
+    "frame": { "x": 0, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UR>_46": {
+    "frame": { "x": 128, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UR>_47": {
+    "frame": { "x": 256, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<U>_48": {
+    "frame": { "x": 384, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<U>_49": {
+    "frame": { "x": 512, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<U>_50": {
+    "frame": { "x": 640, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<U>_51": {
+    "frame": { "x": 768, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<U>_52": {
+    "frame": { "x": 896, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<U>_53": {
+    "frame": { "x": 1024, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<U>_54": {
+    "frame": { "x": 1152, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<U>_55": {
+    "frame": { "x": 1280, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<U>_56": {
+    "frame": { "x": 1408, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<U>_57": {
+    "frame": { "x": 1536, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<U>_58": {
+    "frame": { "x": 1664, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<U>_59": {
+    "frame": { "x": 1792, "y": 384, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UL>_60": {
+    "frame": { "x": 0, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UL>_61": {
+    "frame": { "x": 128, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UL>_62": {
+    "frame": { "x": 256, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UL>_63": {
+    "frame": { "x": 384, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<UL>_64": {
+    "frame": { "x": 512, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<UL>_65": {
+    "frame": { "x": 640, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<UL>_66": {
+    "frame": { "x": 768, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UL>_67": {
+    "frame": { "x": 896, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UL>_68": {
+    "frame": { "x": 1024, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UL>_69": {
+    "frame": { "x": 1152, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UL>_70": {
+    "frame": { "x": 1280, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<UL>_71": {
+    "frame": { "x": 1408, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<L>_72": {
+    "frame": { "x": 1536, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<L>_73": {
+    "frame": { "x": 1664, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<L>_74": {
+    "frame": { "x": 1792, "y": 512, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<L>_75": {
+    "frame": { "x": 0, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<L>_76": {
+    "frame": { "x": 128, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<L>_77": {
+    "frame": { "x": 256, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<L>_78": {
+    "frame": { "x": 384, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<L>_79": {
+    "frame": { "x": 512, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<L>_80": {
+    "frame": { "x": 640, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<L>_81": {
+    "frame": { "x": 768, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<L>_82": {
+    "frame": { "x": 896, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<L>_83": {
+    "frame": { "x": 1024, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DL>_84": {
+    "frame": { "x": 1152, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DL>_85": {
+    "frame": { "x": 1280, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DL>_86": {
+    "frame": { "x": 1408, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DL>_87": {
+    "frame": { "x": 1536, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]<DL>_88": {
+    "frame": { "x": 1664, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<DL>_89": {
+    "frame": { "x": 1792, "y": 640, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW][Loop]<DL>_90": {
+    "frame": { "x": 0, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 50
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<DL>_91": {
+    "frame": { "x": 128, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<DL>_92": {
+    "frame": { "x": 256, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<DL>_93": {
+    "frame": { "x": 384, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<DL>_94": {
+    "frame": { "x": 512, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedAtk[BOW]Release<DL>_95": {
+    "frame": { "x": 640, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]_96": {
+    "frame": { "x": 768, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]_97": {
+    "frame": { "x": 896, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]_98": {
+    "frame": { "x": 1024, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]_99": {
+    "frame": { "x": 1152, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]_100": {
+    "frame": { "x": 1280, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]_101": {
+    "frame": { "x": 1408, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_102": {
+    "frame": { "x": 1536, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_103": {
+    "frame": { "x": 1664, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_104": {
+    "frame": { "x": 1792, "y": 768, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_105": {
+    "frame": { "x": 0, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_106": {
+    "frame": { "x": 128, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_107": {
+    "frame": { "x": 256, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_108": {
+    "frame": { "x": 384, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_109": {
+    "frame": { "x": 512, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]_110": {
+    "frame": { "x": 640, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_111": {
+    "frame": { "x": 768, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_112": {
+    "frame": { "x": 896, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_113": {
+    "frame": { "x": 1024, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_114": {
+    "frame": { "x": 1152, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_115": {
+    "frame": { "x": 1280, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release_116": {
+    "frame": { "x": 1408, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DR>_117": {
+    "frame": { "x": 1536, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DR>_118": {
+    "frame": { "x": 1664, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DR>_119": {
+    "frame": { "x": 1792, "y": 896, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DR>_120": {
+    "frame": { "x": 0, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<DR>_121": {
+    "frame": { "x": 128, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<DR>_122": {
+    "frame": { "x": 256, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_123": {
+    "frame": { "x": 384, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_124": {
+    "frame": { "x": 512, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_125": {
+    "frame": { "x": 640, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_126": {
+    "frame": { "x": 768, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_127": {
+    "frame": { "x": 896, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_128": {
+    "frame": { "x": 1024, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_129": {
+    "frame": { "x": 1152, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_130": {
+    "frame": { "x": 1280, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DR>_131": {
+    "frame": { "x": 1408, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DR>_132": {
+    "frame": { "x": 1536, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DR>_133": {
+    "frame": { "x": 1664, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DR>_134": {
+    "frame": { "x": 1792, "y": 1024, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DR>_135": {
+    "frame": { "x": 0, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DR>_136": {
+    "frame": { "x": 128, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<R>_137": {
+    "frame": { "x": 256, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<R>_138": {
+    "frame": { "x": 384, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<R>_139": {
+    "frame": { "x": 512, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<R>_140": {
+    "frame": { "x": 640, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<R>_141": {
+    "frame": { "x": 768, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<R>_142": {
+    "frame": { "x": 896, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_143": {
+    "frame": { "x": 1024, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_144": {
+    "frame": { "x": 1152, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_145": {
+    "frame": { "x": 1280, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_146": {
+    "frame": { "x": 1408, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_147": {
+    "frame": { "x": 1536, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_148": {
+    "frame": { "x": 1664, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_149": {
+    "frame": { "x": 1792, "y": 1152, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_150": {
+    "frame": { "x": 0, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<R>_151": {
+    "frame": { "x": 128, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_152": {
+    "frame": { "x": 256, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_153": {
+    "frame": { "x": 384, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_154": {
+    "frame": { "x": 512, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_155": {
+    "frame": { "x": 640, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_156": {
+    "frame": { "x": 768, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<R>_157": {
+    "frame": { "x": 896, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UR>_158": {
+    "frame": { "x": 1024, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UR>_159": {
+    "frame": { "x": 1152, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UR>_160": {
+    "frame": { "x": 1280, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UR>_161": {
+    "frame": { "x": 1408, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<UR>_162": {
+    "frame": { "x": 1536, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<UR>_163": {
+    "frame": { "x": 1664, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_164": {
+    "frame": { "x": 1792, "y": 1280, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_165": {
+    "frame": { "x": 0, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_166": {
+    "frame": { "x": 128, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_167": {
+    "frame": { "x": 256, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_168": {
+    "frame": { "x": 384, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_169": {
+    "frame": { "x": 512, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_170": {
+    "frame": { "x": 640, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_171": {
+    "frame": { "x": 768, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UR>_172": {
+    "frame": { "x": 896, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_173": {
+    "frame": { "x": 1024, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_174": {
+    "frame": { "x": 1152, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_175": {
+    "frame": { "x": 1280, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_176": {
+    "frame": { "x": 1408, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_177": {
+    "frame": { "x": 1536, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UR>_178": {
+    "frame": { "x": 1664, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<U>_179": {
+    "frame": { "x": 1792, "y": 1408, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<U>_180": {
+    "frame": { "x": 0, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<U>_181": {
+    "frame": { "x": 128, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<U>_182": {
+    "frame": { "x": 256, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<U>_183": {
+    "frame": { "x": 384, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<U>_184": {
+    "frame": { "x": 512, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_185": {
+    "frame": { "x": 640, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_186": {
+    "frame": { "x": 768, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_187": {
+    "frame": { "x": 896, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_188": {
+    "frame": { "x": 1024, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_189": {
+    "frame": { "x": 1152, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_190": {
+    "frame": { "x": 1280, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_191": {
+    "frame": { "x": 1408, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_192": {
+    "frame": { "x": 1536, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<U>_193": {
+    "frame": { "x": 1664, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_194": {
+    "frame": { "x": 1792, "y": 1536, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_195": {
+    "frame": { "x": 0, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_196": {
+    "frame": { "x": 128, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_197": {
+    "frame": { "x": 256, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_198": {
+    "frame": { "x": 384, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<U>_199": {
+    "frame": { "x": 512, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UL>_200": {
+    "frame": { "x": 640, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UL>_201": {
+    "frame": { "x": 768, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UL>_202": {
+    "frame": { "x": 896, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<UL>_203": {
+    "frame": { "x": 1024, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<UL>_204": {
+    "frame": { "x": 1152, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<UL>_205": {
+    "frame": { "x": 1280, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_206": {
+    "frame": { "x": 1408, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_207": {
+    "frame": { "x": 1536, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_208": {
+    "frame": { "x": 1664, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_209": {
+    "frame": { "x": 1792, "y": 1664, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_210": {
+    "frame": { "x": 0, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_211": {
+    "frame": { "x": 128, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_212": {
+    "frame": { "x": 256, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_213": {
+    "frame": { "x": 384, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<UL>_214": {
+    "frame": { "x": 512, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_215": {
+    "frame": { "x": 640, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_216": {
+    "frame": { "x": 768, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_217": {
+    "frame": { "x": 896, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_218": {
+    "frame": { "x": 1024, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_219": {
+    "frame": { "x": 1152, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<UL>_220": {
+    "frame": { "x": 1280, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<L>_221": {
+    "frame": { "x": 1408, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<L>_222": {
+    "frame": { "x": 1536, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<L>_223": {
+    "frame": { "x": 1664, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<L>_224": {
+    "frame": { "x": 1792, "y": 1792, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<L>_225": {
+    "frame": { "x": 0, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<L>_226": {
+    "frame": { "x": 128, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_227": {
+    "frame": { "x": 256, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_228": {
+    "frame": { "x": 384, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_229": {
+    "frame": { "x": 512, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_230": {
+    "frame": { "x": 640, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_231": {
+    "frame": { "x": 768, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_232": {
+    "frame": { "x": 896, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_233": {
+    "frame": { "x": 1024, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_234": {
+    "frame": { "x": 1152, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<L>_235": {
+    "frame": { "x": 1280, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_236": {
+    "frame": { "x": 1408, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_237": {
+    "frame": { "x": 1536, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_238": {
+    "frame": { "x": 1664, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_239": {
+    "frame": { "x": 1792, "y": 1920, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_240": {
+    "frame": { "x": 0, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<L>_241": {
+    "frame": { "x": 128, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DL>_242": {
+    "frame": { "x": 256, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DL>_243": {
+    "frame": { "x": 384, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DL>_244": {
+    "frame": { "x": 512, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW]<DL>_245": {
+    "frame": { "x": 640, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<DL>_246": {
+    "frame": { "x": 768, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk[BOW][Loop]<DL>_247": {
+    "frame": { "x": 896, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_248": {
+    "frame": { "x": 1024, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_249": {
+    "frame": { "x": 1152, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_250": {
+    "frame": { "x": 1280, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_251": {
+    "frame": { "x": 1408, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_252": {
+    "frame": { "x": 1536, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_253": {
+    "frame": { "x": 1664, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_254": {
+    "frame": { "x": 1792, "y": 2048, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_255": {
+    "frame": { "x": 0, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW][Loop]<DL>_256": {
+    "frame": { "x": 128, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DL>_257": {
+    "frame": { "x": 256, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DL>_258": {
+    "frame": { "x": 384, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DL>_259": {
+    "frame": { "x": 512, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DL>_260": {
+    "frame": { "x": 640, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   },
+   "Char_RangedAtks_ChargedAttack1_ChargedAttack2_ChargedHeavyAtk2[BOW]Release<DL>_261": {
+    "frame": { "x": 768, "y": 2176, "w": 128, "h": 128 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 128, "h": 128 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 70
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.32-x64",
+  "image": "Char_RangedAtks_ChargedAttack1_ChargedAttack2.png",
+  "format": "RGBA8888",
+  "size": { "w": 2000, "h": 2304 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "ChargedAtk[BOW]", "from": 0, "to": 4, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]", "from": 5, "to": 6, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release", "from": 7, "to": 11, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<DR>", "from": 12, "to": 16, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]", "from": 17, "to": 18, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release", "from": 19, "to": 23, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<R>", "from": 24, "to": 28, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<R>", "from": 29, "to": 30, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<R>", "from": 31, "to": 35, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<UR>", "from": 36, "to": 40, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<UR>", "from": 41, "to": 42, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<UR>", "from": 43, "to": 47, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<U>", "from": 48, "to": 52, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<U>", "from": 53, "to": 54, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<U>", "from": 55, "to": 59, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<UL>", "from": 60, "to": 64, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<UL>", "from": 65, "to": 66, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<UL>", "from": 67, "to": 71, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<L>", "from": 72, "to": 76, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<L>", "from": 77, "to": 78, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<L>", "from": 79, "to": 83, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]<DL>", "from": 84, "to": 88, "direction": "forward" },
+   { "name": "ChargedAtk[BOW][Loop]<DL>", "from": 89, "to": 90, "direction": "forward" },
+   { "name": "ChargedAtk[BOW]Release<DL>", "from": 91, "to": 95, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]", "from": 96, "to": 99, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]", "from": 100, "to": 101, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release", "from": 102, "to": 116, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]", "from": 102, "to": 110, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release", "from": 111, "to": 116, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<DR>", "from": 117, "to": 120, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<DR>", "from": 121, "to": 122, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<DR>", "from": 123, "to": 136, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<DR>", "from": 123, "to": 131, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<DR>", "from": 132, "to": 136, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<R>", "from": 137, "to": 140, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<R>", "from": 141, "to": 142, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<R>", "from": 143, "to": 157, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<R>", "from": 143, "to": 151, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<R>", "from": 152, "to": 157, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<UR>", "from": 158, "to": 161, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<UR>", "from": 162, "to": 163, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<UR>", "from": 164, "to": 178, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<UR>", "from": 164, "to": 172, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<UR>", "from": 173, "to": 178, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<U>", "from": 179, "to": 182, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<U>", "from": 183, "to": 184, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<U>", "from": 185, "to": 199, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<U>", "from": 185, "to": 193, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<U>", "from": 194, "to": 199, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<UL>", "from": 200, "to": 203, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<UL>", "from": 204, "to": 205, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<UL>", "from": 206, "to": 220, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<UL>", "from": 206, "to": 214, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<UL>", "from": 215, "to": 220, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<L>", "from": 221, "to": 224, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<L>", "from": 225, "to": 226, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<L>", "from": 227, "to": 241, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<L>", "from": 227, "to": 235, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<L>", "from": 236, "to": 241, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]<DL>", "from": 242, "to": 245, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW][Loop]<DL>", "from": 246, "to": 247, "direction": "forward" },
+   { "name": "ChargedHeavyAtk[BOW]Release<DL>", "from": 248, "to": 261, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW][Loop]<DL>", "from": 248, "to": 256, "direction": "forward" },
+   { "name": "ChargedHeavyAtk2[BOW]Release<DL>", "from": 257, "to": 261, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "CharBody", "cels": [{ "frame": 7, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 19, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 31, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 43, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 55, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 67, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 79, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 91, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 102, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 103, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 106, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 109, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 110, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 123, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 124, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 127, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 130, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 131, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 143, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 144, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 147, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 150, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 151, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 164, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 165, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 168, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 171, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 172, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 185, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 186, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 189, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 192, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 193, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 206, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 207, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 210, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 213, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 214, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 227, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 228, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 231, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 234, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 235, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 248, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 249, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 252, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 255, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 256, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 114, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 135, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 156, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 177, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 198, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 219, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 240, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 260, "color": "#57b9f2ff", "data": "event:RecoverState" }] },
+   { "name": "Char", "group": "CharBody" },
+   { "name": "FXBack", "group": "Char" },
+   { "name": "RunDust", "group": "FXBack", "opacity": 255, "blendMode": "normal" },
+   { "name": "RunDust_2", "group": "FXBack", "opacity": 255, "blendMode": "normal" },
+   { "name": "Shadow", "group": "Char", "opacity": 43, "blendMode": "normal" },
+   { "name": "HeadBack", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "HairBack", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "ArmsBack", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Legs", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Torso", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "LegsGroup", "group": "Char" },
+   { "name": "PlateLegs", "group": "LegsGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ChestGroup", "group": "Char" },
+   { "name": "ChestPlateGroup", "group": "Char" },
+   { "name": "PlateChest", "group": "ChestPlateGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "ArmsGroup", "group": "Char" },
+   { "name": "Arms", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<TwoHand>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arms<L>", "group": "ArmsGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Head", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "Head[F]", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "GlovesGroup", "group": "Char" },
+   { "name": "PlateBracers", "group": "GlovesGroup" },
+   { "name": "Back", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "Front", "group": "PlateBracers", "opacity": 0, "blendMode": "normal" },
+   { "name": "HairGroup", "group": "Char" },
+   { "name": "Hair01", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair01", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair02", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair02", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair02", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair03", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair04", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair05", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair05", "opacity": 255, "blendMode": "normal" },
+   { "name": "Hair06", "group": "HairGroup" },
+   { "name": "Back", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Hair06", "opacity": 255, "blendMode": "normal" },
+   { "name": "Ear", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "HelmetGroup", "group": "Char" },
+   { "name": "Mask01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hood01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "W_Hat01", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "Helmet02", "group": "HelmetGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "PlateHelmet", "group": "HelmetGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "AccessoryGroup", "group": "Char" },
+   { "name": "Capes", "group": "AccessoryGroup" },
+   { "name": "Cape04", "group": "Capes" },
+   { "name": "Layer 2", "group": "Cape04", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape03", "group": "Capes" },
+   { "name": "Back", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape03", "opacity": 255, "blendMode": "normal" },
+   { "name": "Cape02", "group": "Capes" },
+   { "name": "Back", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "Cape02", "opacity": 255, "blendMode": "normal" },
+   { "name": "KnightCape", "group": "Capes" },
+   { "name": "Back", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "KnightCape", "opacity": 255, "blendMode": "normal" },
+   { "name": "Bags", "group": "AccessoryGroup" },
+   { "name": "Quiver", "group": "Bags", "opacity": 255, "blendMode": "normal" },
+   { "name": "ShieldGroup", "group": "Char" },
+   { "name": "RoundShield", "group": "ShieldGroup", "opacity": 255, "blendMode": "normal" },
+   { "name": "IronShield", "group": "ShieldGroup", "opacity": 0, "blendMode": "normal" },
+   { "name": "WeaponGroup", "group": "Char" },
+   { "name": "TwoHand", "group": "WeaponGroup" },
+   { "name": "Bow", "group": "TwoHand" },
+   { "name": "Back", "group": "Bow", "opacity": 255, "blendMode": "normal" },
+   { "name": "Arrow", "group": "Bow", "opacity": 255, "blendMode": "normal" },
+   { "name": "GreatSword", "group": "TwoHand" },
+   { "name": "Back", "group": "GreatSword", "opacity": 255, "blendMode": "normal" },
+   { "name": "Front", "group": "GreatSword", "opacity": 255, "blendMode": "normal" },
+   { "name": "OneHand", "group": "WeaponGroup" },
+   { "name": "Baston", "group": "OneHand", "opacity": 255, "blendMode": "normal" },
+   { "name": "Staff", "group": "OneHand", "opacity": 255, "blendMode": "normal" },
+   { "name": "Rapier", "group": "OneHand", "opacity": 255, "blendMode": "normal" },
+   { "name": "LongSword", "group": "OneHand", "opacity": 0, "blendMode": "normal" },
+   { "name": "Pallete", "group": "Char", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "CharBody" },
+   { "name": "Red", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "Blue", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "FX", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "ChargeFX", "group": "FX", "opacity": 255, "blendMode": "normal" },
+   { "name": "Slashs", "group": "FX" },
+   { "name": "RapierSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "SlashDefault", "group": "Slashs", "opacity": 255, "blendMode": "overlay" },
+   { "name": "SwordSlash", "group": "Slashs", "opacity": 255, "blendMode": "normal" },
+   { "name": "HitBoxes", "group": "CharBody" },
+   { "name": "Functions", "group": "CharBody", "cels": [{ "frame": 7, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 19, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 31, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 43, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 55, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 67, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 79, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 91, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 102, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 103, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 106, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 109, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 110, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 123, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 124, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 127, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 130, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 131, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 143, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 144, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 147, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 150, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 151, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 164, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 165, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 168, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 171, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 172, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 185, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 186, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 189, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 192, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 193, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 206, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 207, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 210, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 213, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 214, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 227, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 228, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 231, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 234, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 235, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 248, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 249, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 252, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 255, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 256, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 114, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 135, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 156, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 177, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 198, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 219, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 240, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 260, "color": "#57b9f2ff", "data": "event:RecoverState" }] },
+   { "name": "AtkFunctions", "group": "Functions", "opacity": 255, "blendMode": "normal", "cels": [{ "frame": 7, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 19, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 31, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 43, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 55, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 67, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 79, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 91, "color": "#fe5b59ff", "data": "event:OnDoShot, \"ArrowCharged\"" }, { "frame": 102, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 103, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 106, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 109, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 110, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 123, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 124, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 127, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 130, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 131, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 143, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 144, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 147, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 150, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 151, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 164, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 165, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 168, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 171, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 172, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 185, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 186, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 189, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 192, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 193, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 206, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 207, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 210, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 213, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 214, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 227, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 228, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 231, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 234, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 235, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }, { "frame": 248, "color": "#fe5b59ff", "data": "event:OnShotOnArea, \"ArrowUp(F)\"" }, { "frame": 249, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 252, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 255, "color": "#d186dfff", "data": "event:OnShotOnAreaLoop, \"ArrowUp(F)\"" }, { "frame": 256, "color": "#ac3232ff", "data": "event:DoCombo, \"ChargedHeavyAtk2[BOW][Loop]\"" }] },
+   { "name": "RecFuntions", "group": "Functions", "opacity": 255, "blendMode": "normal", "cels": [{ "frame": 114, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 135, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 156, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 177, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 198, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 219, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 240, "color": "#57b9f2ff", "data": "event:RecoverState" }, { "frame": 260, "color": "#57b9f2ff", "data": "event:RecoverState" }] }
+  ],
+  "slices": [
+  ]
+ }
+}

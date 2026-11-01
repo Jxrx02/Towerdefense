@@ -299,6 +299,49 @@ public class WallGroup : MonoBehaviour
 
         healthBarVitals.SetHealthForDisplay(hp, maxHP);
     }
+    /// <summary>
+    /// Heilt eine intakte Mauer zu Beginn der Nacht vollständig.
+    /// Zerstörte Mauern müssen weiterhin manuell repariert werden.
+    /// </summary>
+    public void HealAtNight()
+    {
+        if (!isBuilt || isDestroyed || hp <= 0)
+            return;
+
+        foreach (WallSegment segment in segments.Values)
+        {
+            if (segment == null)
+                continue;
+
+            // HP der einzelnen Segmente aktualisieren.
+            segment.currentHealth = segment.statHealthPoints;
+
+            // Falls das Segment eigene Vitals besitzt, ebenfalls nur dessen HP heilen.
+            Vitals segmentVitals = segment.Vitals;
+
+            if (segmentVitals != null &&
+                !segmentVitals.IsDead &&
+                segmentVitals.Health > 0f)
+            {
+                float missingHealth =
+                    segmentVitals.MaxHealth - segmentVitals.Health;
+
+                if (missingHealth > 0f)
+                {
+                    segmentVitals.Heal(
+                        missingHealth,
+                        null,
+                        true,
+                        true
+                    );
+                }
+            }
+        }
+
+        // Die WallGroup verwaltet die gemeinsamen Lebenspunkte.
+        hp = maxHP;
+        SyncGroupHealthBar();
+    }
     // =========================================================
     // CREATE WALL SEGMENT
     // =========================================================

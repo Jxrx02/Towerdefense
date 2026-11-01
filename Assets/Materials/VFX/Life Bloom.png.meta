@@ -1,0 +1,1035 @@
+fileFormatVersion: 2
+guid: 937ce3a5ca1009041a2bf2ff793664f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -22294769664941334
+    second: Life Bloom_0
+  - first:
+      213: 682713053525917138
+    second: Life Bloom_1
+  - first:
+      213: 5849971427490012857
+    second: Life Bloom_2
+  - first:
+      213: -236749369486736290
+    second: Life Bloom_3
+  - first:
+      213: -5175590094200981668
+    second: Life Bloom_4
+  - first:
+      213: -1342954845293749044
+    second: Life Bloom_5
+  - first:
+      213: 7377804646515085149
+    second: Life Bloom_6
+  - first:
+      213: -1232421872963118364
+    second: Life Bloom_7
+  - first:
+      213: 4904589307081832091
+    second: Life Bloom_8
+  - first:
+      213: 6998523118452566211
+    second: Life Bloom_9
+  - first:
+      213: -2916583933881903801
+    second: Life Bloom_10
+  - first:
+      213: -8751641104986211414
+    second: Life Bloom_11
+  - first:
+      213: -1052223704022927154
+    second: Life Bloom_12
+  - first:
+      213: 5467446726960712323
+    second: Life Bloom_13
+  - first:
+      213: -9184560454089577032
+    second: Life Bloom_14
+  - first:
+      213: -4587979958554219351
+    second: Life Bloom_15
+  - first:
+      213: 2610975518037337294
+    second: Life Bloom_16
+  - first:
+      213: -902210590676354056
+    second: Life Bloom_17
+  - first:
+      213: 9091891507773279326
+    second: Life Bloom_18
+  - first:
+      213: -1020817204717517986
+    second: Life Bloom_19
+  - first:
+      213: 9187277293235477311
+    second: Life Bloom_20
+  - first:
+      213: 6519193244281232635
+    second: Life Bloom_21
+  - first:
+      213: 5078274002397063717
+    second: Life Bloom_22
+  - first:
+      213: 889984119324641782
+    second: Life Bloom_23
+  - first:
+      213: 2702433131017966663
+    second: Life Bloom_24
+  - first:
+      213: -2514064366449358132
+    second: Life Bloom_25
+  - first:
+      213: 8479490639444380892
+    second: Life Bloom_26
+  - first:
+      213: -5064332069120032202
+    second: Life Bloom_27
+  - first:
+      213: 3288098346728213304
+    second: Life Bloom_28
+  - first:
+      213: -8158602283680318458
+    second: Life Bloom_29
+  - first:
+      213: 988167516033439755
+    second: Life Bloom_30
+  - first:
+      213: 8802474807133134606
+    second: Life Bloom_31
+  - first:
+      213: -4097249555650202174
+    second: Life Bloom_32
+  - first:
+      213: -2762372246497434087
+    second: Life Bloom_33
+  - first:
+      213: 4482867558629479803
+    second: Life Bloom_34
+  - first:
+      213: -4062364480528946260
+    second: Life Bloom_35
+  - first:
+      213: 3119417360648608249
+    second: Life Bloom_36
+  - first:
+      213: -4830600869144440548
+    second: Life Bloom_37
+  - first:
+      213: 2758652327777758394
+    second: Life Bloom_38
+  - first:
+      213: 7459667597255640829
+    second: Life Bloom_39
+  - first:
+      213: 7141555871182225597
+    second: Life Bloom_40
+  - first:
+      213: -8341882384290520035
+    second: Life Bloom_41
+  - first:
+      213: -5502517570756246584
+    second: Life Bloom_42
+  - first:
+      213: 5587606857746814571
+    second: Life Bloom_43
+  - first:
+      213: -7817270197692924728
+    second: Life Bloom_44
+  - first:
+      213: 4216395616986291004
+    second: Life Bloom_45
+  - first:
+      213: 5499574452774066683
+    second: Life Bloom_46
+  - first:
+      213: -4699390653964740538
+    second: Life Bloom_47
+  - first:
+      213: -5930225474981686340
+    second: Life Bloom_48
+  - first:
+      213: -1159211131095553074
+    second: Life Bloom_49
+  - first:
+      213: -7280385211189778790
+    second: Life Bloom_50
+  - first:
+      213: -1297376596030945511
+    second: Life Bloom_51
+  - first:
+      213: -4616281761276078694
+    second: Life Bloom_52
+  - first:
+      213: 4107878477151005671
+    second: Life Bloom_53
+  - first:
+      213: -3535316421849579511
+    second: Life Bloom_54
+  - first:
+      213: -2270860897453714485
+    second: Life Bloom_55
+  - first:
+      213: 7994990515023019365
+    second: Life Bloom_56
+  - first:
+      213: 3946672751446128920
+    second: Life Bloom_57
+  - first:
+      213: -2522306580965373437
+    second: Life Bloom_58
+  - first:
+      213: 4489795748171335984
+    second: Life Bloom_59
+  - first:
+      213: 405506551474611356
+    second: Life Bloom_60
+  - first:
+      213: 8849993211885063672
+    second: Life Bloom_61
+  - first:
+      213: 2458634285769470588
+    second: Life Bloom_62
+  - first:
+      213: -4124764644513806978
+    second: Life Bloom_63
+  - first:
+      213: 3517336205185503434
+    second: Life Bloom_64
+  - first:
+      213: -1478123468428338936
+    second: Life Bloom_65
+  - first:
+      213: -4759532056171667667
+    second: Life Bloom_66
+  - first:
+      213: 4179702658656383570
+    second: Life Bloom_67
+  - first:
+      213: 6486922158668745441
+    second: Life Bloom_68
+  - first:
+      213: 8726990674962391656
+    second: Life Bloom_69
+  - first:
+      213: -3095683185077194070
+    second: Life Bloom_70
+  - first:
+      213: 8610014635799900830
+    second: Life Bloom_71
+  - first:
+      213: 2601156114983463185
+    second: Life Bloom_72
+  - first:
+      213: -4062591031579110903
+    second: Life Bloom_73
+  - first:
+      213: -3982255402205697163
+    second: Life Bloom_74
+  - first:
+      213: 1791648801853551989
+    second: Life Bloom_75
+  - first:
+      213: -5268609868863904566
+    second: Life Bloom_76
+  - first:
+      213: 1239531087351958503
+    second: Life Bloom_77
+  - first:
+      213: -1761830220323528074
+    second: Life Bloom_78
+  - first:
+      213: -438838548917450816
+    second: Life Bloom_79
+  - first:
+      213: -6393551939325982911
+    second: Life Bloom_80
+  - first:
+      213: -5971757161778905865
+    second: Life Bloom_81
+  - first:
+      213: 772281631176178752
+    second: Life Bloom_82
+  - first:
+      213: 6485104024983905093
+    second: Life Bloom_83
+  - first:
+      213: 5594181276419975029
+    second: Life Bloom_84
+  - first:
+      213: -1179065261912316931
+    second: Life Bloom_85
+  - first:
+      213: 2280079032348841022
+    second: Life Bloom_86
+  - first:
+      213: -4927403697764445008
+    second: Life Bloom_87
+  - first:
+      213: 7994493942433070245
+    second: Life Bloom_88
+  - first:
+      213: -480788328605555533
+    second: Life Bloom_89
+  - first:
+      213: -7403415938263339480
+    second: Life Bloom_90
+  - first:
+      213: -5395040683276450376
+    second: Life Bloom_91
+  - first:
+      213: 5630060623861243036
+    second: Life Bloom_92
+  - first:
+      213: -490740954645476497
+    second: Life Bloom_93
+  - first:
+      213: -3447758798238102454
+    second: Life Bloom_94
+  - first:
+      213: -8642481965638313277
+    second: Life Bloom_95
+  - first:
+      213: -1435059772542105702
+    second: Life Bloom_96
+  - first:
+      213: -8497378908177528076
+    second: Life Bloom_97
+  - first:
+      213: -3537820988021228658
+    second: Life Bloom_98
+  - first:
+      213: 3170458278622225487
+    second: Life Bloom_99
+  - first:
+      213: -9143855297827666361
+    second: Life Bloom_100
+  - first:
+      213: 3115934314043747991
+    second: Life Bloom_101
+  - first:
+      213: 5977021214509288201
+    second: Life Bloom_102
+  - first:
+      213: -3992880478931288983
+    second: Life Bloom_103
+  - first:
+      213: -1385394026941306826
+    second: Life Bloom_104
+  - first:
+      213: -5174777028983349928
+    second: Life Bloom_105
+  - first:
+      213: -1485401529931318166
+    second: Life Bloom_106
+  - first:
+      213: -8289124193611948019
+    second: Life Bloom_107
+  - first:
+      213: -1853285977335335076
+    second: Life Bloom_108
+  - first:
+      213: -6594147856727381445
+    second: Life Bloom_109
+  - first:
+      213: -4388001220696710440
+    second: Life Bloom_110
+  - first:
+      213: -2776129922141790398
+    second: Life Bloom_111
+  - first:
+      213: 2130849473835905956
+    second: Life Bloom_112
+  - first:
+      213: -1302606596343493973
+    second: Life Bloom_113
+  - first:
+      213: -8868643290189463734
+    second: Life Bloom_114
+  - first:
+      213: -1676192567165566478
+    second: Life Bloom_115
+  - first:
+      213: 7591869892069909532
+    second: Life Bloom_116
+  - first:
+      213: 3630436958171642950
+    second: Life Bloom_117
+  - first:
+      213: 5741693169988922623
+    second: Life Bloom_118
+  - first:
+      213: 5131587453708935212
+    second: Life Bloom_119
+  - first:
+      213: 4262928336617847097
+    second: Life Bloom_120
+  - first:
+      213: -7356332866248935760
+    second: Life Bloom_121
+  - first:
+      213: 1302692767318995909
+    second: Life Bloom_122
+  - first:
+      213: 980508539188017189
+    second: Life Bloom_123
+  - first:
+      213: -3942201154373980632
+    second: Life Bloom_124
+  - first:
+      213: 7769345911060604823
+    second: Life Bloom_125
+  - first:
+      213: 2074478667554690801
+    second: Life Bloom_126
+  - first:
+      213: 394644361658964255
+    second: Life Bloom_127
+  - first:
+      213: 507715556243371231
+    second: Life Bloom_128
+  - first:
+      213: -7589321703849496934
+    second: Life Bloom_129
+  - first:
+      213: -6381383486769915794
+    second: Life Bloom_130
+  - first:
+      213: 3704739199027534901
+    second: Life Bloom_131
+  - first:
+      213: -8192531861002953114
+    second: Life Bloom_132
+  - first:
+      213: 7535541468909527414
+    second: Life Bloom_133
+  - first:
+      213: -3395649668288622914
+    second: Life Bloom_134
+  - first:
+      213: 1088627601895420489
+    second: Life Bloom_135
+  - first:
+      213: 354256718434972578
+    second: Life Bloom_136
+  - first:
+      213: 5706343650937056927
+    second: Life Bloom_137
+  - first:
+      213: 2761818703416302633
+    second: Life Bloom_138
+  - first:
+      213: 8142761993552343400
+    second: Life Bloom_139
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Life Bloom_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633f68005cfaa184b9821fe99f90ab72
+      internalID: -22294769664941334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf2ffbc68aaa9b4b86f13ee829b6495
+      internalID: 682713053525917138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc594608c7f1698439aebe4073462949
+      internalID: 5849971427490012857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bc09e156448974fbd293579f7f2b5f
+      internalID: -236749369486736290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_4
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30175b59d3c6a74cbdfd1ab05060a24
+      internalID: -5175590094200981668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e005a37080fa5640962a37373739522
+      internalID: -1342954845293749044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_6
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b13120a50b63df4e94b525c602eb989
+      internalID: 7377804646515085149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_7
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd6d500e85350d4a95daed135f81cfc
+      internalID: -1232421872963118364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_8
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1406956df096af24e9eb916617e515d2
+      internalID: 4904589307081832091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_9
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359e5151ae1cf0c47b0046d160e50e2e
+      internalID: 6998523118452566211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_10
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109e339d74e44a74fbf75253b2bc3b89
+      internalID: -2916583933881903801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_11
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fb61e1ff1620446bf98337159df754
+      internalID: -8751641104986211414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_12
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082ca5c3d2789e14ba925a7052ac61d4
+      internalID: -1052223704022927154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_13
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768f8d5d30b7940429cf1a0b4689fb09
+      internalID: 5467446726960712323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_14
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbd041efc3424b4a97823a3277071e2
+      internalID: -9184560454089577032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_15
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd04fab40c7ac144a4fa17d70f44efb
+      internalID: -4587979958554219351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_16
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f445e995bd62a4998f3722d3241dbc
+      internalID: 2610975518037337294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_17
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99cbef4072153244999f20825d5c1b2
+      internalID: -902210590676354056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_18
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c459866acb6c754aa05d40cce1ffd24
+      internalID: 9091891507773279326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_19
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd92310e20648d4698b6479a925898d
+      internalID: -1020817204717517986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life Bloom_20
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 0
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83afb1d8a636e644bc418d91ba3f85b
+      internalID: 9187277293235477311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4bd8e49adcf5b6041b09637fca9c451f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":96.0},"gridSpriteOffset":{"x":110.0,"y":0.0},"gridSpritePadding":{"x":26.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Life Bloom_0: -22294769664941334
+      Life Bloom_1: 682713053525917138
+      Life Bloom_10: -2916583933881903801
+      Life Bloom_11: -8751641104986211414
+      Life Bloom_12: -1052223704022927154
+      Life Bloom_13: 5467446726960712323
+      Life Bloom_14: -9184560454089577032
+      Life Bloom_15: -4587979958554219351
+      Life Bloom_16: 2610975518037337294
+      Life Bloom_17: -902210590676354056
+      Life Bloom_18: 9091891507773279326
+      Life Bloom_19: -1020817204717517986
+      Life Bloom_2: 5849971427490012857
+      Life Bloom_20: 9187277293235477311
+      Life Bloom_3: -236749369486736290
+      Life Bloom_4: -5175590094200981668
+      Life Bloom_5: -1342954845293749044
+      Life Bloom_6: 7377804646515085149
+      Life Bloom_7: -1232421872963118364
+      Life Bloom_8: 4904589307081832091
+      Life Bloom_9: 6998523118452566211
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

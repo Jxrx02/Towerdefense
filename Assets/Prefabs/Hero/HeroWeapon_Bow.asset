@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: HeroWeapon_Bow
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefense.HeroWeaponConfig
   weaponType: 3
-  animationSet: {fileID: 11400000, guid: 7b0133d5a414bb44680a239847e9e767, type: 2}
+  animationSet: {fileID: 11400000, guid: fa7aaf75c2dbb7a4f9af802968d8c151, type: 2}
   baseDamage: 16
-  targetingRange: 2
+  targetingRange: 6
   attackCooldown: 0
   moveSpeedMultiplier: 1
   projectilePrefab: {fileID: 8985508962564218780, guid: 46a471d0b64dfb744abc682e247532b9, type: 3}
   autoAttack: 1
   useUpAttack: 0
-  upAttack: 26
+  upAttack: 24
   chargedUpAttack: 28
-  lightCombo: 170000001800000019000000
-  heavyCombo: 
-  chargedLight: 1b0000001c000000
-  chargedHeavy: 
+  lightCombo: 17000000
+  heavyCombo: 18000000
+  chargedLight: 1b000000
+  chargedHeavy: 1c000000
   chargeThreshold: 0.22
   fullChargeTime: 1
   chargeMoveMultiplier: 0.4
@@ -38,7 +38,7 @@ MonoBehaviour:
   - anim: 23
     damageMultiplier: 1
     damageType: 0
-    range: 1.4
+    range: 6
     arcDegrees: 110
     maxTargets: 3
     animationSpeed: 1
@@ -47,13 +47,14 @@ MonoBehaviour:
     recovery: 0.08
     comboWindow: 0.4
     superArmor: 0
+    staminaCost: 12
     maxChargeBonus: 1
     cameraShakeStrength: 0
     cameraShakeDuration: 0.1
   - anim: 24
     damageMultiplier: 1
     damageType: 0
-    range: 1.4
+    range: 6
     arcDegrees: 110
     maxTargets: 3
     animationSpeed: 1
@@ -62,43 +63,14 @@ MonoBehaviour:
     recovery: 0.08
     comboWindow: 0.4
     superArmor: 0
-    maxChargeBonus: 1
-    cameraShakeStrength: 0
-    cameraShakeDuration: 0.1
-  - anim: 25
-    damageMultiplier: 1.2
-    damageType: 0
-    range: 1.4
-    arcDegrees: 110
-    maxTargets: 3
-    animationSpeed: 1
-    lungeDistance: 0
-    moveSpeedMultiplier: 0.7
-    recovery: 0.08
-    comboWindow: 0.4
-    superArmor: 0
-    maxChargeBonus: 1
-    cameraShakeStrength: 0
-    cameraShakeDuration: 0.1
-  - anim: 26
-    damageMultiplier: 1
-    damageType: 0
-    range: 1.4
-    arcDegrees: 110
-    maxTargets: 3
-    animationSpeed: 1
-    lungeDistance: 0
-    moveSpeedMultiplier: 0.7
-    recovery: 0.08
-    comboWindow: 0.4
-    superArmor: 0
+    staminaCost: 12
     maxChargeBonus: 1
     cameraShakeStrength: 0
     cameraShakeDuration: 0.1
   - anim: 27
     damageMultiplier: 2
     damageType: 0
-    range: 1.4
+    range: 6
     arcDegrees: 110
     maxTargets: 3
     animationSpeed: 1
@@ -106,14 +78,15 @@ MonoBehaviour:
     moveSpeedMultiplier: 0.5
     recovery: 0.08
     comboWindow: 0.4
-    superArmor: 0
+    superArmor: 1
+    staminaCost: 12
     maxChargeBonus: 1.5
     cameraShakeStrength: 0
     cameraShakeDuration: 0.1
   - anim: 28
     damageMultiplier: 2
     damageType: 0
-    range: 1.4
+    range: 6
     arcDegrees: 110
     maxTargets: 3
     animationSpeed: 1
@@ -121,7 +94,8 @@ MonoBehaviour:
     moveSpeedMultiplier: 0.5
     recovery: 0.08
     comboWindow: 0.4
-    superArmor: 0
+    superArmor: 1
+    staminaCost: 12
     maxChargeBonus: 1.5
     cameraShakeStrength: 0
     cameraShakeDuration: 0.1

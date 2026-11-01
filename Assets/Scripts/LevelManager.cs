@@ -146,6 +146,7 @@ namespace TowerDefense
             {
                 // 3 Waves geschafft → neuer Tag
                 SetDay();
+                HealAllTowersAtDay();
                 _earlyStartCoroutine = StartCoroutine(WaitForPlayerStart());
             }
             else
@@ -313,6 +314,27 @@ namespace TowerDefense
             StartCoroutine(TransitionLight(nightColor, nightIntensity));
         }
 
+        private void HealAllTowersAtDay()
+        {
+            // Aktive Türme heilen.
+            foreach (Tower tower in Tower.Active)
+            {
+                if (tower != null)
+                    tower.HealAtNight();
+            }
+
+            // Intakte Mauern heilen.
+            WallGroup[] wallGroups = FindObjectsByType<WallGroup>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+
+            foreach (WallGroup wallGroup in wallGroups)
+            {
+                if (wallGroup != null)
+                    wallGroup.HealAtNight();
+            }
+        }
         private void SetDay()
         {
             if (dayScene != null)

@@ -73,6 +73,7 @@ namespace TowerDefense
         public float blackHolePullDuration = 2f;
 
         [HideInInspector] public float blackHoleRadius = 3f;
+        [HideInInspector] public float blackHolePullSpeed = 3f; // NEU
         [HideInInspector] public GameObject blackHoleVfxPrefab;
 
         [Header("Sticky")] [HideInInspector] public float stickyDelay = 2f;
@@ -91,6 +92,7 @@ namespace TowerDefense
         private (GameObject, int) target;
         private int targetIndex;
         private bool projectileIsDead;
+        private bool effectRunning; // NEU: Effekt-Coroutine läuft, Projektil nicht mehr bewegen/neu treffen
         private SpriteAnim anim;
         private int remainingPierce;
         private YSort ysort;
@@ -151,6 +153,9 @@ namespace TowerDefense
                 Destroy(gameObject);
                 return;
             }
+
+            // Solange eine Effekt-Coroutine läuft, nichts mehr bewegen oder neu treffen
+            if (effectRunning) return;
 
             if (target.Item1 != null)
             {
@@ -265,6 +270,8 @@ namespace TowerDefense
 
         private void OnProjectileHitTarget()
         {
+            if (effectRunning) return;
+
             if (hideTilCollision)
                 foreach (Transform child in transform)
                     child.gameObject.SetActive(true);
@@ -286,6 +293,7 @@ namespace TowerDefense
 
                     if (target.Item1 != null)
                     {
+                        effectRunning = true;
                         StartCoroutine(ApplyDoT(target.Item1));
                         return; // Projektil lebt weiter
                     }
@@ -295,6 +303,7 @@ namespace TowerDefense
                 case ProjectileMode.ChainLightning:
                     if (target.Item1 != null)
                     {
+                        effectRunning = true;
                         StartCoroutine(ApplyChainLightning(target.Item1, chainDamage, chainCount));
                         return;
                     }
@@ -315,12 +324,19 @@ namespace TowerDefense
                     break;
 
                 case ProjectileMode.BlackHole:
+                    effectRunning = true;
                     StartCoroutine(ApplyBlackHole(hitPos));
-                    break;
+                    return; // Projektil lebt, bis die Coroutine fertig ist
+
                 case ProjectileMode.Sticky:
                     if (target.Item1 != null)
+                    {
+                        effectRunning = true;
                         StartCoroutine(ApplySticky(target.Item1));
-                    return; // Projektil stirbt erst nach Delay
+                        return; // Projektil stirbt erst nach Delay
+                    }
+
+                    break;
                 case ProjectileMode.Chainslow:
                     HitSingle();
                     if (target.Item1 != null)
@@ -336,7 +352,8 @@ namespace TowerDefense
                 return;
             }
 
-            anim.TriggerDeadAnimation(true);
+            if (anim != null)
+                anim.TriggerDeadAnimation(true);
             projectileIsDead = true;
         }
 
@@ -426,8 +443,11 @@ namespace TowerDefense
                 yield return null;
             }
 
-            anim.TriggerDeadAnimation(true);
+            effectRunning = false;
             projectileIsDead = true;
+
+            if (anim != null)
+                anim.TriggerDeadAnimation(true);
         }
 
         private IEnumerator ApplyChainLightning(
@@ -437,6 +457,7 @@ namespace TowerDefense
         {
             if (first == null)
             {
+                effectRunning = false;
                 projectileIsDead = true;
                 yield break;
             }
@@ -508,6 +529,7 @@ namespace TowerDefense
             }
 
             // Chain-Coroutine ist fertig -> Projectile definitiv beenden
+            effectRunning = false;
             projectileIsDead = true;
 
             if (anim != null)
@@ -630,9 +652,11 @@ namespace TowerDefense
                 blackHoleVfx = Instantiate(
                     blackHoleVfxPrefab,
                     center,
-                    Quaternion.identity
+                    Quaternion.Euler(0, 0, 90)   // vorher: Quaternion.identity
                 );
-                blackHoleVfx.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
+
+                if (blackHoleVfx.TryGetComponent(out SpriteRenderer sr))
+                    sr.sortingLayerName = "Player";
             }
 
             float elapsed = 0f;
@@ -658,7 +682,7 @@ namespace TowerDefense
                         go.transform.position = Vector3.MoveTowards(
                             go.transform.position,
                             center,
-                            3f * Time.deltaTime
+                            blackHolePullSpeed * Time.deltaTime
                         );
                     }
                 }
@@ -668,9 +692,7 @@ namespace TowerDefense
 
             // Black-Hole-VFX explizit zerstören
             if (blackHoleVfx != null)
-            {
                 Destroy(blackHoleVfx);
-            }
 
             // Abschließender Schaden
             ApplyAoeDamage(
@@ -681,6 +703,7 @@ namespace TowerDefense
             );
 
             // Projectile beenden
+            effectRunning = false;
             projectileIsDead = true;
 
             if (anim != null)
@@ -707,8 +730,12 @@ namespace TowerDefense
                 stickyAoeDamage,
                 aoeVfxPrefab
             );
-            anim.TriggerDeadAnimation(true);
+
+            effectRunning = false;
             projectileIsDead = true;
+
+            if (anim != null)
+                anim.TriggerDeadAnimation(true);
         }
 
         private void ApplyChainLink(GameObject enemyA, Vector3 hitPos)

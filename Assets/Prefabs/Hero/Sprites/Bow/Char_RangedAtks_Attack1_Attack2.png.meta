@@ -1,0 +1,5930 @@
+fileFormatVersion: 2
+guid: 98c269b5da17cc649be3651e289c0981
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2196267048761400843
+    second: Char_RangedAtks_Attack1_Attack2_0
+  - first:
+      213: 4431486082235576629
+    second: Char_RangedAtks_Attack1_Attack2_1
+  - first:
+      213: -754214795494080263
+    second: Char_RangedAtks_Attack1_Attack2_2
+  - first:
+      213: 6122567731937654654
+    second: Char_RangedAtks_Attack1_Attack2_3
+  - first:
+      213: 419638268306351106
+    second: Char_RangedAtks_Attack1_Attack2_4
+  - first:
+      213: 5002428156086233671
+    second: Char_RangedAtks_Attack1_Attack2_5
+  - first:
+      213: 2430351240640023978
+    second: Char_RangedAtks_Attack1_Attack2_6
+  - first:
+      213: 3999754139534879661
+    second: Char_RangedAtks_Attack1_Attack2_7
+  - first:
+      213: -3645596723070578017
+    second: Char_RangedAtks_Attack1_Attack2_8
+  - first:
+      213: -7354487954432685093
+    second: Char_RangedAtks_Attack1_Attack2_9
+  - first:
+      213: -7240628440601042558
+    second: Char_RangedAtks_Attack1_Attack2_10
+  - first:
+      213: 7996870067981189075
+    second: Char_RangedAtks_Attack1_Attack2_11
+  - first:
+      213: -1005885704387315829
+    second: Char_RangedAtks_Attack1_Attack2_12
+  - first:
+      213: -4031086648507285837
+    second: Char_RangedAtks_Attack1_Attack2_13
+  - first:
+      213: 2988404033659444000
+    second: Char_RangedAtks_Attack1_Attack2_14
+  - first:
+      213: -4882177696839869631
+    second: Char_RangedAtks_Attack1_Attack2_15
+  - first:
+      213: 1076862883328636863
+    second: Char_RangedAtks_Attack1_Attack2_16
+  - first:
+      213: -994939397279606140
+    second: Char_RangedAtks_Attack1_Attack2_17
+  - first:
+      213: 2596033242896043298
+    second: Char_RangedAtks_Attack1_Attack2_18
+  - first:
+      213: -7824184864230379773
+    second: Char_RangedAtks_Attack1_Attack2_19
+  - first:
+      213: -678091089182476757
+    second: Char_RangedAtks_Attack1_Attack2_20
+  - first:
+      213: -3578378007464056480
+    second: Char_RangedAtks_Attack1_Attack2_21
+  - first:
+      213: 4341500611302769792
+    second: Char_RangedAtks_Attack1_Attack2_22
+  - first:
+      213: 7382811900876999313
+    second: Char_RangedAtks_Attack1_Attack2_23
+  - first:
+      213: 949609781825063446
+    second: Char_RangedAtks_Attack1_Attack2_24
+  - first:
+      213: -5550384770865588073
+    second: Char_RangedAtks_Attack1_Attack2_25
+  - first:
+      213: 7217924553692964337
+    second: Char_RangedAtks_Attack1_Attack2_26
+  - first:
+      213: 5490920695419772588
+    second: Char_RangedAtks_Attack1_Attack2_27
+  - first:
+      213: -8475238034860172152
+    second: Char_RangedAtks_Attack1_Attack2_28
+  - first:
+      213: 1184793158874181803
+    second: Char_RangedAtks_Attack1_Attack2_29
+  - first:
+      213: 8693723134393892902
+    second: Char_RangedAtks_Attack1_Attack2_30
+  - first:
+      213: 601371401112095169
+    second: Char_RangedAtks_Attack1_Attack2_31
+  - first:
+      213: -129346115237925548
+    second: Char_RangedAtks_Attack1_Attack2_32
+  - first:
+      213: -2424854641031867074
+    second: Char_RangedAtks_Attack1_Attack2_33
+  - first:
+      213: -4604027662927717296
+    second: Char_RangedAtks_Attack1_Attack2_34
+  - first:
+      213: 473413819674192625
+    second: Char_RangedAtks_Attack1_Attack2_35
+  - first:
+      213: 7916789834571816951
+    second: Char_RangedAtks_Attack1_Attack2_36
+  - first:
+      213: -3259275340654881409
+    second: Char_RangedAtks_Attack1_Attack2_37
+  - first:
+      213: 232211827501202555
+    second: Char_RangedAtks_Attack1_Attack2_38
+  - first:
+      213: 4649944959433951152
+    second: Char_RangedAtks_Attack1_Attack2_39
+  - first:
+      213: 1033266436354890669
+    second: Char_RangedAtks_Attack1_Attack2_40
+  - first:
+      213: 1294825086258645351
+    second: Char_RangedAtks_Attack1_Attack2_41
+  - first:
+      213: 7320246417345797986
+    second: Char_RangedAtks_Attack1_Attack2_42
+  - first:
+      213: -5669292764634607059
+    second: Char_RangedAtks_Attack1_Attack2_43
+  - first:
+      213: 3216886524791486646
+    second: Char_RangedAtks_Attack1_Attack2_44
+  - first:
+      213: -2891134610155235854
+    second: Char_RangedAtks_Attack1_Attack2_45
+  - first:
+      213: -1061155219759637236
+    second: Char_RangedAtks_Attack1_Attack2_46
+  - first:
+      213: -8929078411919102824
+    second: Char_RangedAtks_Attack1_Attack2_47
+  - first:
+      213: -7361023771739745884
+    second: Char_RangedAtks_Attack1_Attack2_48
+  - first:
+      213: 3770820442380474547
+    second: Char_RangedAtks_Attack1_Attack2_49
+  - first:
+      213: 2479788441548480681
+    second: Char_RangedAtks_Attack1_Attack2_50
+  - first:
+      213: -6168557859430887217
+    second: Char_RangedAtks_Attack1_Attack2_51
+  - first:
+      213: 5420817497762785130
+    second: Char_RangedAtks_Attack1_Attack2_52
+  - first:
+      213: 1918472450724689604
+    second: Char_RangedAtks_Attack1_Attack2_53
+  - first:
+      213: 2695733599497445221
+    second: Char_RangedAtks_Attack1_Attack2_54
+  - first:
+      213: 1396650960585838029
+    second: Char_RangedAtks_Attack1_Attack2_55
+  - first:
+      213: -2957943905644344936
+    second: Char_RangedAtks_Attack1_Attack2_56
+  - first:
+      213: 6819456238762911793
+    second: Char_RangedAtks_Attack1_Attack2_57
+  - first:
+      213: 2919551490054645017
+    second: Char_RangedAtks_Attack1_Attack2_58
+  - first:
+      213: -6002581450260446623
+    second: Char_RangedAtks_Attack1_Attack2_59
+  - first:
+      213: 8299312079054091295
+    second: Char_RangedAtks_Attack1_Attack2_60
+  - first:
+      213: 8542925832490772359
+    second: Char_RangedAtks_Attack1_Attack2_61
+  - first:
+      213: 4586220557668637515
+    second: Char_RangedAtks_Attack1_Attack2_62
+  - first:
+      213: 4990670048589403429
+    second: Char_RangedAtks_Attack1_Attack2_63
+  - first:
+      213: -7301621899741975169
+    second: Char_RangedAtks_Attack1_Attack2_64
+  - first:
+      213: -7484972612366348413
+    second: Char_RangedAtks_Attack1_Attack2_65
+  - first:
+      213: -7329420817738982702
+    second: Char_RangedAtks_Attack1_Attack2_66
+  - first:
+      213: 6020924668447115524
+    second: Char_RangedAtks_Attack1_Attack2_67
+  - first:
+      213: -3345394301580032140
+    second: Char_RangedAtks_Attack1_Attack2_68
+  - first:
+      213: -5247932344461528404
+    second: Char_RangedAtks_Attack1_Attack2_69
+  - first:
+      213: -7480638739800785410
+    second: Char_RangedAtks_Attack1_Attack2_70
+  - first:
+      213: 3858823643681209665
+    second: Char_RangedAtks_Attack1_Attack2_71
+  - first:
+      213: 1555640110510037023
+    second: Char_RangedAtks_Attack1_Attack2_72
+  - first:
+      213: -3711553225748280388
+    second: Char_RangedAtks_Attack1_Attack2_73
+  - first:
+      213: -8778845925468151909
+    second: Char_RangedAtks_Attack1_Attack2_74
+  - first:
+      213: -6691731772674296389
+    second: Char_RangedAtks_Attack1_Attack2_75
+  - first:
+      213: -545787717782088812
+    second: Char_RangedAtks_Attack1_Attack2_76
+  - first:
+      213: -7078809365810882595
+    second: Char_RangedAtks_Attack1_Attack2_77
+  - first:
+      213: 5864845834557738519
+    second: Char_RangedAtks_Attack1_Attack2_78
+  - first:
+      213: 1842367888632796702
+    second: Char_RangedAtks_Attack1_Attack2_79
+  - first:
+      213: -8883575761332683358
+    second: Char_RangedAtks_Attack1_Attack2_80
+  - first:
+      213: 606109349770824413
+    second: Char_RangedAtks_Attack1_Attack2_81
+  - first:
+      213: 169872469606986900
+    second: Char_RangedAtks_Attack1_Attack2_82
+  - first:
+      213: -5074252424908145002
+    second: Char_RangedAtks_Attack1_Attack2_83
+  - first:
+      213: -7426785534339074051
+    second: Char_RangedAtks_Attack1_Attack2_84
+  - first:
+      213: 2115339566536441599
+    second: Char_RangedAtks_Attack1_Attack2_85
+  - first:
+      213: 4841715567449956108
+    second: Char_RangedAtks_Attack1_Attack2_86
+  - first:
+      213: 7344203751458165362
+    second: Char_RangedAtks_Attack1_Attack2_87
+  - first:
+      213: 4353768557023847058
+    second: Char_RangedAtks_Attack1_Attack2_88
+  - first:
+      213: -7169503305666434220
+    second: Char_RangedAtks_Attack1_Attack2_89
+  - first:
+      213: -3841544084129905370
+    second: Char_RangedAtks_Attack1_Attack2_90
+  - first:
+      213: -7395256327174270968
+    second: Char_RangedAtks_Attack1_Attack2_91
+  - first:
+      213: -3950457540461666060
+    second: Char_RangedAtks_Attack1_Attack2_92
+  - first:
+      213: -2718734839208945951
+    second: Char_RangedAtks_Attack1_Attack2_93
+  - first:
+      213: -7030876335665900461
+    second: Char_RangedAtks_Attack1_Attack2_94
+  - first:
+      213: 1064551784494625010
+    second: Char_RangedAtks_Attack1_Attack2_95
+  - first:
+      213: 3279512320740565014
+    second: Char_RangedAtks_Attack1_Attack2_96
+  - first:
+      213: -3280278139435368627
+    second: Char_RangedAtks_Attack1_Attack2_97
+  - first:
+      213: -3318658494152598202
+    second: Char_RangedAtks_Attack1_Attack2_98
+  - first:
+      213: -6908504382359578136
+    second: Char_RangedAtks_Attack1_Attack2_99
+  - first:
+      213: -5284897749364407253
+    second: Char_RangedAtks_Attack1_Attack2_100
+  - first:
+      213: 1584792428191763716
+    second: Char_RangedAtks_Attack1_Attack2_101
+  - first:
+      213: -3459418243125693791
+    second: Char_RangedAtks_Attack1_Attack2_102
+  - first:
+      213: -1888188931611741991
+    second: Char_RangedAtks_Attack1_Attack2_103
+  - first:
+      213: -5634749147933429097
+    second: Char_RangedAtks_Attack1_Attack2_104
+  - first:
+      213: -3029978645209336871
+    second: Char_RangedAtks_Attack1_Attack2_105
+  - first:
+      213: -8170693274485547207
+    second: Char_RangedAtks_Attack1_Attack2_106
+  - first:
+      213: -3766608629890774476
+    second: Char_RangedAtks_Attack1_Attack2_107
+  - first:
+      213: -4078424425941072227
+    second: Char_RangedAtks_Attack1_Attack2_108
+  - first:
+      213: -5476270858121543374
+    second: Char_RangedAtks_Attack1_Attack2_109
+  - first:
+      213: 4766944494626922328
+    second: Char_RangedAtks_Attack1_Attack2_110
+  - first:
+      213: -279085206260463810
+    second: Char_RangedAtks_Attack1_Attack2_111
+  - first:
+      213: -119039314158171186
+    second: Char_RangedAtks_Attack1_Attack2_112
+  - first:
+      213: -8136388080474726419
+    second: Char_RangedAtks_Attack1_Attack2_113
+  - first:
+      213: -4891072658685729566
+    second: Char_RangedAtks_Attack1_Attack2_114
+  - first:
+      213: 218748197116706928
+    second: Char_RangedAtks_Attack1_Attack2_115
+  - first:
+      213: 4806168842809628568
+    second: Char_RangedAtks_Attack1_Attack2_116
+  - first:
+      213: -8206197065801771634
+    second: Char_RangedAtks_Attack1_Attack2_117
+  - first:
+      213: -1075165246315440284
+    second: Char_RangedAtks_Attack1_Attack2_118
+  - first:
+      213: 1678945957427513945
+    second: Char_RangedAtks_Attack1_Attack2_119
+  - first:
+      213: 8187495729085849140
+    second: Char_RangedAtks_Attack1_Attack2_120
+  - first:
+      213: -453957139700394028
+    second: Char_RangedAtks_Attack1_Attack2_121
+  - first:
+      213: 5562395750445349289
+    second: Char_RangedAtks_Attack1_Attack2_122
+  - first:
+      213: -1468497314180913229
+    second: Char_RangedAtks_Attack1_Attack2_123
+  - first:
+      213: -992818022060782845
+    second: Char_RangedAtks_Attack1_Attack2_124
+  - first:
+      213: 7901989055810030372
+    second: Char_RangedAtks_Attack1_Attack2_125
+  - first:
+      213: -3402459764759376880
+    second: Char_RangedAtks_Attack1_Attack2_126
+  - first:
+      213: 972827426858030858
+    second: Char_RangedAtks_Attack1_Attack2_127
+  - first:
+      213: 5529555292447538500
+    second: Char_RangedAtks_Attack1_Attack2_128
+  - first:
+      213: -6968331004983837679
+    second: Char_RangedAtks_Attack1_Attack2_129
+  - first:
+      213: -5290927008989744651
+    second: Char_RangedAtks_Attack1_Attack2_130
+  - first:
+      213: 6732231121011980
+    second: Char_RangedAtks_Attack1_Attack2_131
+  - first:
+      213: -7802135835846024027
+    second: Char_RangedAtks_Attack1_Attack2_132
+  - first:
+      213: 8497328171964851674
+    second: Char_RangedAtks_Attack1_Attack2_133
+  - first:
+      213: 4252999478972562515
+    second: Char_RangedAtks_Attack1_Attack2_134
+  - first:
+      213: 3014232225278703810
+    second: Char_RangedAtks_Attack1_Attack2_135
+  - first:
+      213: -783436150544639173
+    second: Char_RangedAtks_Attack1_Attack2_136
+  - first:
+      213: -8842776837554348219
+    second: Char_RangedAtks_Attack1_Attack2_137
+  - first:
+      213: 7473349990088561966
+    second: Char_RangedAtks_Attack1_Attack2_138
+  - first:
+      213: -4870990980327833132
+    second: Char_RangedAtks_Attack1_Attack2_139
+  - first:
+      213: 3875587355082029501
+    second: Char_RangedAtks_Attack1_Attack2_140
+  - first:
+      213: -451760552382395719
+    second: Char_RangedAtks_Attack1_Attack2_141
+  - first:
+      213: 2062674395697657831
+    second: Char_RangedAtks_Attack1_Attack2_142
+  - first:
+      213: 5606913509532342482
+    second: Char_RangedAtks_Attack1_Attack2_143
+  - first:
+      213: -8516429617664316749
+    second: Char_RangedAtks_Attack1_Attack2_144
+  - first:
+      213: 4014463971987776538
+    second: Char_RangedAtks_Attack1_Attack2_145
+  - first:
+      213: -401182928950231842
+    second: Char_RangedAtks_Attack1_Attack2_146
+  - first:
+      213: 6532371771254343570
+    second: Char_RangedAtks_Attack1_Attack2_147
+  - first:
+      213: 1038210797982095254
+    second: Char_RangedAtks_Attack1_Attack2_148
+  - first:
+      213: -6473117911249467295
+    second: Char_RangedAtks_Attack1_Attack2_149
+  - first:
+      213: -3210179775576896849
+    second: Char_RangedAtks_Attack1_Attack2_150
+  - first:
+      213: 2579309845367965999
+    second: Char_RangedAtks_Attack1_Attack2_151
+  - first:
+      213: 7711227039093378221
+    second: Char_RangedAtks_Attack1_Attack2_152
+  - first:
+      213: 7538338474445042808
+    second: Char_RangedAtks_Attack1_Attack2_153
+  - first:
+      213: 2190105840740479940
+    second: Char_RangedAtks_Attack1_Attack2_154
+  - first:
+      213: 4969270518719977296
+    second: Char_RangedAtks_Attack1_Attack2_155
+  - first:
+      213: 1383055606255406961
+    second: Char_RangedAtks_Attack1_Attack2_156
+  - first:
+      213: -9405659509484324
+    second: Char_RangedAtks_Attack1_Attack2_157
+  - first:
+      213: 6978769945190333882
+    second: Char_RangedAtks_Attack1_Attack2_158
+  - first:
+      213: -9081913131364140958
+    second: Char_RangedAtks_Attack1_Attack2_159
+  - first:
+      213: -4068859975549369783
+    second: Char_RangedAtks_Attack1_Attack2_160
+  - first:
+      213: -2566371886824125271
+    second: Char_RangedAtks_Attack1_Attack2_161
+  - first:
+      213: -6398043245120569887
+    second: Char_RangedAtks_Attack1_Attack2_162
+  - first:
+      213: -8492536818339892147
+    second: Char_RangedAtks_Attack1_Attack2_163
+  - first:
+      213: -216968837952538325
+    second: Char_RangedAtks_Attack1_Attack2_164
+  - first:
+      213: -1360973232835939622
+    second: Char_RangedAtks_Attack1_Attack2_165
+  - first:
+      213: 83265609275599204
+    second: Char_RangedAtks_Attack1_Attack2_166
+  - first:
+      213: -4796204645494960316
+    second: Char_RangedAtks_Attack1_Attack2_167
+  - first:
+      213: -7857340356932003797
+    second: Char_RangedAtks_Attack1_Attack2_168
+  - first:
+      213: 8910546861681572069
+    second: Char_RangedAtks_Attack1_Attack2_169
+  - first:
+      213: -1608341925901735285
+    second: Char_RangedAtks_Attack1_Attack2_170
+  - first:
+      213: 9040241817067172937
+    second: Char_RangedAtks_Attack1_Attack2_171
+  - first:
+      213: -3686546785834989360
+    second: Char_RangedAtks_Attack1_Attack2_172
+  - first:
+      213: 5382781238973692905
+    second: Char_RangedAtks_Attack1_Attack2_173
+  - first:
+      213: -6444701224312003261
+    second: Char_RangedAtks_Attack1_Attack2_174
+  - first:
+      213: 7119593090584886090
+    second: Char_RangedAtks_Attack1_Attack2_175
+  - first:
+      213: -4167201280281691566
+    second: Char_RangedAtks_Attack1_Attack2_176
+  - first:
+      213: -7930023887448509479
+    second: Char_RangedAtks_Attack1_Attack2_177
+  - first:
+      213: -1279613569300951389
+    second: Char_RangedAtks_Attack1_Attack2_178
+  - first:
+      213: 640712585515674787
+    second: Char_RangedAtks_Attack1_Attack2_179
+  - first:
+      213: 1372081949851834733
+    second: Char_RangedAtks_Attack1_Attack2_180
+  - first:
+      213: 1014059619070566114
+    second: Char_RangedAtks_Attack1_Attack2_181
+  - first:
+      213: -60561531651986169
+    second: Char_RangedAtks_Attack1_Attack2_182
+  - first:
+      213: 4626411168011777494
+    second: Char_RangedAtks_Attack1_Attack2_183
+  - first:
+      213: -2197291573232610160
+    second: Char_RangedAtks_Attack1_Attack2_184
+  - first:
+      213: 3346537590817918885
+    second: Char_RangedAtks_Attack1_Attack2_185
+  - first:
+      213: 8085997250380051087
+    second: Char_RangedAtks_Attack1_Attack2_186
+  - first:
+      213: 2190745517771973443
+    second: Char_RangedAtks_Attack1_Attack2_187
+  - first:
+      213: 9120261833300600902
+    second: Char_RangedAtks_Attack1_Attack2_188
+  - first:
+      213: -4209169843684987417
+    second: Char_RangedAtks_Attack1_Attack2_189
+  - first:
+      213: 226768595311872116
+    second: Char_RangedAtks_Attack1_Attack2_190
+  - first:
+      213: 1474331695161564658
+    second: Char_RangedAtks_Attack1_Attack2_191
+  - first:
+      213: -8910050934997151639
+    second: Char_RangedAtks_Attack1_Attack2_192
+  - first:
+      213: -5886511558331596881
+    second: Char_RangedAtks_Attack1_Attack2_193
+  - first:
+      213: -8263783137302636775
+    second: Char_RangedAtks_Attack1_Attack2_194
+  - first:
+      213: 2692719254350889791
+    second: Char_RangedAtks_Attack1_Attack2_195
+  - first:
+      213: -7582170886219052339
+    second: Char_RangedAtks_Attack1_Attack2_196
+  - first:
+      213: 1669358685178111237
+    second: Char_RangedAtks_Attack1_Attack2_197
+  - first:
+      213: -3262929603619037516
+    second: Char_RangedAtks_Attack1_Attack2_198
+  - first:
+      213: 8550893863051218167
+    second: Char_RangedAtks_Attack1_Attack2_199
+  - first:
+      213: 3396007920090117684
+    second: Char_RangedAtks_Attack1_Attack2_200
+  - first:
+      213: 5267970451380421793
+    second: Char_RangedAtks_Attack1_Attack2_201
+  - first:
+      213: -1894060099765073036
+    second: Char_RangedAtks_Attack1_Attack2_202
+  - first:
+      213: -6494565403425375386
+    second: Char_RangedAtks_Attack1_Attack2_203
+  - first:
+      213: 5986812106211045387
+    second: Char_RangedAtks_Attack1_Attack2_204
+  - first:
+      213: 7024272860161651059
+    second: Char_RangedAtks_Attack1_Attack2_205
+  - first:
+      213: -7315329352491343200
+    second: Char_RangedAtks_Attack1_Attack2_206
+  - first:
+      213: 1123792241303925008
+    second: Char_RangedAtks_Attack1_Attack2_207
+  - first:
+      213: 3303869865559967812
+    second: Char_RangedAtks_Attack1_Attack2_208
+  - first:
+      213: -7514495666585601247
+    second: Char_RangedAtks_Attack1_Attack2_209
+  - first:
+      213: 5468771875103728333
+    second: Char_RangedAtks_Attack1_Attack2_210
+  - first:
+      213: 6778981131039194927
+    second: Char_RangedAtks_Attack1_Attack2_211
+  - first:
+      213: -2336562333773543967
+    second: Char_RangedAtks_Attack1_Attack2_212
+  - first:
+      213: -4364228212544853588
+    second: Char_RangedAtks_Attack1_Attack2_213
+  - first:
+      213: 2919177072981467125
+    second: Char_RangedAtks_Attack1_Attack2_214
+  - first:
+      213: -1608762439503699147
+    second: Char_RangedAtks_Attack1_Attack2_215
+  - first:
+      213: 182876263918468564
+    second: Char_RangedAtks_Attack1_Attack2_216
+  - first:
+      213: -8227271135790472169
+    second: Char_RangedAtks_Attack1_Attack2_217
+  - first:
+      213: 6841311803219918919
+    second: Char_RangedAtks_Attack1_Attack2_218
+  - first:
+      213: 2860058680768956422
+    second: Char_RangedAtks_Attack1_Attack2_219
+  - first:
+      213: -4872946825574382625
+    second: Char_RangedAtks_Attack1_Attack2_220
+  - first:
+      213: -2101631644805624394
+    second: Char_RangedAtks_Attack1_Attack2_221
+  - first:
+      213: 4464918152544589166
+    second: Char_RangedAtks_Attack1_Attack2_222
+  - first:
+      213: 7695812701373227012
+    second: Char_RangedAtks_Attack1_Attack2_223
+  - first:
+      213: 290713970941076096
+    second: Char_RangedAtks_Attack1_Attack2_224
+  - first:
+      213: 8745829453878326192
+    second: Char_RangedAtks_Attack1_Attack2_225
+  - first:
+      213: -6588306984517352323
+    second: Char_RangedAtks_Attack1_Attack2_226
+  - first:
+      213: -1693457062514254289
+    second: Char_RangedAtks_Attack1_Attack2_227
+  - first:
+      213: 5143796225580807873
+    second: Char_RangedAtks_Attack1_Attack2_228
+  - first:
+      213: -585971029923460859
+    second: Char_RangedAtks_Attack1_Attack2_229
+  - first:
+      213: -3676275398674338627
+    second: Char_RangedAtks_Attack1_Attack2_230
+  - first:
+      213: 8511203135559583630
+    second: Char_RangedAtks_Attack1_Attack2_231
+  - first:
+      213: -5789917667720142628
+    second: Char_RangedAtks_Attack1_Attack2_232
+  - first:
+      213: -5550707612877766714
+    second: Char_RangedAtks_Attack1_Attack2_233
+  - first:
+      213: 3759749015937717662
+    second: Char_RangedAtks_Attack1_Attack2_234
+  - first:
+      213: -8900553048473027008
+    second: Char_RangedAtks_Attack1_Attack2_235
+  - first:
+      213: -8595759373814489798
+    second: Char_RangedAtks_Attack1_Attack2_236
+  - first:
+      213: 9087397508485530639
+    second: Char_RangedAtks_Attack1_Attack2_237
+  - first:
+      213: -2603277972549781440
+    second: Char_RangedAtks_Attack1_Attack2_238
+  - first:
+      213: 3500200460626429676
+    second: Char_RangedAtks_Attack1_Attack2_239
+  - first:
+      213: -2247394759454748372
+    second: Char_RangedAtks_Attack1_Attack2_240
+  - first:
+      213: -2787355504577146420
+    second: Char_RangedAtks_Attack1_Attack2_241
+  - first:
+      213: 6865495145792827264
+    second: Char_RangedAtks_Attack1_Attack2_242
+  - first:
+      213: -3066979319614413301
+    second: Char_RangedAtks_Attack1_Attack2_243
+  - first:
+      213: -6475991165399967994
+    second: Char_RangedAtks_Attack1_Attack2_244
+  - first:
+      213: -1737798394738701894
+    second: Char_RangedAtks_Attack1_Attack2_245
+  - first:
+      213: -5885058086695363875
+    second: Char_RangedAtks_Attack1_Attack2_246
+  - first:
+      213: -1194397598292961792
+    second: Char_RangedAtks_Attack1_Attack2_247
+  - first:
+      213: 2060865339019535445
+    second: Char_RangedAtks_Attack1_Attack2_248
+  - first:
+      213: 2495816401783840920
+    second: Char_RangedAtks_Attack1_Attack2_249
+  - first:
+      213: 6599470139149976410
+    second: Char_RangedAtks_Attack1_Attack2_250
+  - first:
+      213: 5188560250285220109
+    second: Char_RangedAtks_Attack1_Attack2_251
+  - first:
+      213: -5344256514737472177
+    second: Char_RangedAtks_Attack1_Attack2_252
+  - first:
+      213: 4443590207945553168
+    second: Char_RangedAtks_Attack1_Attack2_253
+  - first:
+      213: -536201266053127615
+    second: Char_RangedAtks_Attack1_Attack2_254
+  - first:
+      213: 1091878268174624356
+    second: Char_RangedAtks_Attack1_Attack2_255
+  - first:
+      213: 5140881795191659079
+    second: Char_RangedAtks_Attack1_Attack2_256
+  - first:
+      213: 5810733387400062816
+    second: Char_RangedAtks_Attack1_Attack2_257
+  - first:
+      213: 7750533211891062082
+    second: Char_RangedAtks_Attack1_Attack2_258
+  - first:
+      213: -6967255454464907157
+    second: Char_RangedAtks_Attack1_Attack2_259
+  - first:
+      213: 7815461438875165467
+    second: Char_RangedAtks_Attack1_Attack2_260
+  - first:
+      213: 3498163282734990659
+    second: Char_RangedAtks_Attack1_Attack2_261
+  - first:
+      213: 5307843678897934797
+    second: Char_RangedAtks_Attack1_Attack2_262
+  - first:
+      213: 2957191302928903856
+    second: Char_RangedAtks_Attack1_Attack2_263
+  - first:
+      213: 3216926096416520410
+    second: Char_RangedAtks_Attack1_Attack2_264
+  - first:
+      213: 553318088086612177
+    second: Char_RangedAtks_Attack1_Attack2_265
+  - first:
+      213: -4175491482294089742
+    second: Char_RangedAtks_Attack1_Attack2_266
+  - first:
+      213: -5808455473259716832
+    second: Char_RangedAtks_Attack1_Attack2_267
+  - first:
+      213: 4389901503304643375
+    second: Char_RangedAtks_Attack1_Attack2_268
+  - first:
+      213: -548215308550923059
+    second: Char_RangedAtks_Attack1_Attack2_269
+  - first:
+      213: -1298033360727603309
+    second: Char_RangedAtks_Attack1_Attack2_270
+  - first:
+      213: -6187805895144859741
+    second: Char_RangedAtks_Attack1_Attack2_271
+  - first:
+      213: -8735609343944720846
+    second: Char_RangedAtks_Attack1_Attack2_272
+  - first:
+      213: 384950793157334547
+    second: Char_RangedAtks_Attack1_Attack2_273
+  - first:
+      213: -7344333622252492001
+    second: Char_RangedAtks_Attack1_Attack2_274
+  - first:
+      213: -6609793744628226076
+    second: Char_RangedAtks_Attack1_Attack2_275
+  - first:
+      213: 7491605034349248712
+    second: Char_RangedAtks_Attack1_Attack2_276
+  - first:
+      213: 3483405749754423033
+    second: Char_RangedAtks_Attack1_Attack2_277
+  - first:
+      213: 1221515206346431333
+    second: Char_RangedAtks_Attack1_Attack2_278
+  - first:
+      213: 6039235516328802468
+    second: Char_RangedAtks_Attack1_Attack2_279
+  - first:
+      213: 3911086226263718646
+    second: Char_RangedAtks_Attack1_Attack2_280
+  - first:
+      213: -7077335234375685509
+    second: Char_RangedAtks_Attack1_Attack2_281
+  - first:
+      213: -6634874290899663012
+    second: Char_RangedAtks_Attack1_Attack2_282
+  - first:
+      213: 4600049252581586026
+    second: Char_RangedAtks_Attack1_Attack2_283
+  - first:
+      213: 3540180895632154209
+    second: Char_RangedAtks_Attack1_Attack2_284
+  - first:
+      213: 2014104978042209413
+    second: Char_RangedAtks_Attack1_Attack2_285
+  - first:
+      213: -4397812960795730422
+    second: Char_RangedAtks_Attack1_Attack2_286
+  - first:
+      213: -4539015058461690049
+    second: Char_RangedAtks_Attack1_Attack2_287
+  - first:
+      213: -5308686709904810826
+    second: Char_RangedAtks_Attack1_Attack2_288
+  - first:
+      213: 8440897368140784883
+    second: Char_RangedAtks_Attack1_Attack2_289
+  - first:
+      213: 4523197061969225718
+    second: Char_RangedAtks_Attack1_Attack2_290
+  - first:
+      213: -3558688976364779876
+    second: Char_RangedAtks_Attack1_Attack2_291
+  - first:
+      213: 7944001337751459129
+    second: Char_RangedAtks_Attack1_Attack2_292
+  - first:
+      213: -2438323025240472022
+    second: Char_RangedAtks_Attack1_Attack2_293
+  - first:
+      213: 3529544293135279852
+    second: Char_RangedAtks_Attack1_Attack2_294
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1849
+        width: 20
+        height: 38
+      alignment: 9
+      pivot: {x: 0.51521736, y: 0.0909611}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f16ea661ca4581e0800000000000000
+      internalID: -2196267048761400843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1849
+        width: 26
+        height: 35
+      alignment: 9
+      pivot: {x: 0.31891027, y: 0.14017858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5313dbedc1dcf7d30800000000000000
+      internalID: 4431486082235576629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1849
+        width: 21
+        height: 33
+      alignment: 9
+      pivot: {x: 0.39333335, y: 0.1509091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f04b36b3ad7885f0800000000000000
+      internalID: -754214795494080263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1849
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.4266355, y: 0.15228148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77b967d9eab7f450800000000000000
+      internalID: 6122567731937654654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_4
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1849
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40539217, y: 0.15051903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2046f8c18cad2d500800000000000000
+      internalID: 419638268306351106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_5
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 1849
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40539217, y: 0.15051903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74aaee967e13c6540800000000000000
+      internalID: 5002428156086233671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_6
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1849
+        width: 34
+        height: 37
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad47c9a3975ab120800000000000000
+      internalID: 2430351240640023978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_7
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1849
+        width: 34
+        height: 36
+      alignment: 9
+      pivot: {x: 0.3409586, y: 0.14480452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dabefd3c23bf18730800000000000000
+      internalID: 3999754139534879661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1849
+        width: 31
+        height: 35
+      alignment: 9
+      pivot: {x: 0.34169653, y: 0.1489418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92dc07781d386dc0800000000000000
+      internalID: -3645596723070578017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_9
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1849
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.37086958, y: 0.13447204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb8623db2c9fe990800000000000000
+      internalID: -7354487954432685093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_10
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1849
+        width: 21
+        height: 37
+      alignment: 9
+      pivot: {x: 0.48392856, y: 0.10844594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2816267bbce148b90800000000000000
+      internalID: -7240628440601042558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_11
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1849
+        width: 28
+        height: 35
+      alignment: 9
+      pivot: {x: 0.28896105, y: 0.14343435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dff8f425f69afe60800000000000000
+      internalID: 7996870067981189075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_12
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1849
+        width: 20
+        height: 33
+      alignment: 9
+      pivot: {x: 0.41505376, y: 0.14076246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87b95108406a02f0800000000000000
+      internalID: -1005885704387315829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_13
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 1849
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.42740384, y: 0.14819005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be37e00d04be08c0800000000000000
+      internalID: -4031086648507285837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_14
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1849
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40555555, y: 0.14616756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b9d97a2a1f87920800000000000000
+      internalID: 2988404033659444000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_15
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1849
+        width: 25
+        height: 39
+      alignment: 9
+      pivot: {x: 0.46902654, y: 0.13592012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b568960450f3cb0800000000000000
+      internalID: -4882177696839869631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_16
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 1849
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.39974457, y: 0.1489418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb73b904619c1fe00800000000000000
+      internalID: 1076862883328636863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_17
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 1849
+        width: 31
+        height: 35
+      alignment: 9
+      pivot: {x: 0.34169653, y: 0.1489418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a9b1cb3e34132f0800000000000000
+      internalID: -994939397279606140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_18
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 1849
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.37086958, y: 0.13842711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d8ce3ea76f60420800000000000000
+      internalID: 2596033242896043298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_19
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 1849
+        width: 21
+        height: 37
+      alignment: 9
+      pivot: {x: 0.48392856, y: 0.10844594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f6f8ef159ea6390800000000000000
+      internalID: -7824184864230379773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_20
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1721
+        width: 21
+        height: 45
+      alignment: 9
+      pivot: {x: 0.40917107, y: 0.115843624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26bbef3fbfe696f0800000000000000
+      internalID: -678091089182476757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_21
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1721
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.35397196, y: 0.12327548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 069e809492c075ec0800000000000000
+      internalID: -3578378007464056480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_22
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1721
+        width: 25
+        height: 40
+      alignment: 9
+      pivot: {x: 0.33981308, y: 0.12943925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084c7d0cdcb104c30800000000000000
+      internalID: 4341500611302769792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_23
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1721
+        width: 29
+        height: 40
+      alignment: 9
+      pivot: {x: 0.2962963, y: 0.13032408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19acc4bde44057660800000000000000
+      internalID: 7382811900876999313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_24
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1721
+        width: 28
+        height: 33
+      alignment: 9
+      pivot: {x: 0.30491912, y: 0.1572327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a4be8b011bd2d00800000000000000
+      internalID: 949609781825063446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_25
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 1721
+        width: 27
+        height: 34
+      alignment: 9
+      pivot: {x: 0.31824416, y: 0.15332244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79891d5457219f2b0800000000000000
+      internalID: -5550384770865588073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_26
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1721
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.33048433, y: 0.15332244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f5607ea3283b2460800000000000000
+      internalID: 7217924553692964337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_27
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1721
+        width: 31
+        height: 38
+      alignment: 9
+      pivot: {x: 0.281473, y: 0.13949697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae1654c74ba33c40800000000000000
+      internalID: 5490920695419772588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_28
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1721
+        width: 32
+        height: 37
+      alignment: 9
+      pivot: {x: 0.2997685, y: 0.1408909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c974939e7e16a80800000000000000
+      internalID: -8475238034860172152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_29
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1721
+        width: 33
+        height: 35
+      alignment: 9
+      pivot: {x: 0.2906846, y: 0.1489418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba03207c91b317010800000000000000
+      internalID: 1184793158874181803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_30
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1721
+        width: 30
+        height: 35
+      alignment: 9
+      pivot: {x: 0.2932039, y: 0.14563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620c421212f46a870800000000000000
+      internalID: 8693723134393892902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_31
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1721
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.38821054, y: 0.12204836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c98d556a10885800800000000000000
+      internalID: 601371401112095169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_32
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1721
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.3152174, y: 0.13249119}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45daa2cb468743ef0800000000000000
+      internalID: -129346115237925548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_33
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1721
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.37523174, y: 0.12239826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3596592d8f295ed0800000000000000
+      internalID: -2424854641031867074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_34
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 1721
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4231634, y: 0.12560387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c1f17db353b10c0800000000000000
+      internalID: -4604027662927717296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_35
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1721
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.42154205, y: 0.12584269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fae0795c57e19600800000000000000
+      internalID: 473413819674192625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_36
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 1721
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.42118227, y: 0.13381924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff931bd8661edd60800000000000000
+      internalID: 7916789834571816951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_37
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 1721
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4219503, y: 0.12903225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f755317985ab4c2d0800000000000000
+      internalID: -3259275340654881409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_38
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 1721
+        width: 37
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5184777, y: 0.11622698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c7ad24d6bf83300800000000000000
+      internalID: 232211827501202555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_39
+      rect:
+        serializedVersion: 2
+        x: 2474
+        y: 1721
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6061415, y: 0.13740844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7cd2cdd4ce78040800000000000000
+      internalID: 4649944959433951152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_40
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1593
+        width: 32
+        height: 36
+      alignment: 9
+      pivot: {x: 0.57085395, y: 0.13531353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab54417956e65e00800000000000000
+      internalID: 1033266436354890669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_41
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1593
+        width: 27
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5040936, y: 0.12962405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76906b04e8428f110800000000000000
+      internalID: 1294825086258645351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_42
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1593
+        width: 27
+        height: 36
+      alignment: 9
+      pivot: {x: 0.48333332, y: 0.11805555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fd83e055db69560800000000000000
+      internalID: 7320246417345797986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_64
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1465
+        width: 27
+        height: 37
+      alignment: 9
+      pivot: {x: 0.37301588, y: 0.12837838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7daaad519d6baa90800000000000000
+      internalID: -7301621899741975169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_65
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1465
+        width: 27
+        height: 36
+      alignment: 9
+      pivot: {x: 0.56129366, y: 0.11306729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f406ee019002890800000000000000
+      internalID: -7484972612366348413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_66
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1465
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.48152003, y: 0.15741485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da9055699aa84a90800000000000000
+      internalID: -7329420817738982702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_67
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1465
+        width: 31
+        height: 34
+      alignment: 9
+      pivot: {x: 0.4014337, y: 0.14705883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4094d22f51f9e8350800000000000000
+      internalID: 6020924668447115524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_68
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1465
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.48188025, y: 0.14719388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477c4bc7b95c291d0800000000000000
+      internalID: -3345394301580032140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_69
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1465
+        width: 33
+        height: 35
+      alignment: 9
+      pivot: {x: 0.47231933, y: 0.13956045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2761366599b27b0800000000000000
+      internalID: -5247932344461528404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_70
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1465
+        width: 42
+        height: 36
+      alignment: 9
+      pivot: {x: 0.46793965, y: 0.13448845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdf52543be6f2890800000000000000
+      internalID: -7480638739800785410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_71
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1465
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.66786903, y: 0.14555256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d3f74b8ab4d8530800000000000000
+      internalID: 3858823643681209665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_72
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 1465
+        width: 33
+        height: 35
+      alignment: 9
+      pivot: {x: 0.6287081, y: 0.13233082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18dc49307eb69510800000000000000
+      internalID: 1555640110510037023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_73
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1465
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.57736516, y: 0.11609687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb815e710aed7cc0800000000000000
+      internalID: -3711553225748280388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_74
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1465
+        width: 23
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5314578, y: 0.12496025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fd592a4264b2680800000000000000
+      internalID: -8778845925468151909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_96
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1337
+        width: 27
+        height: 37
+      alignment: 9
+      pivot: {x: 0.62309366, y: 0.1281399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6102242841b238d20800000000000000
+      internalID: 3279512320740565014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_97
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1337
+        width: 31
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5575468, y: 0.12208505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4fb97e696c1a72d0800000000000000
+      internalID: -3280278139435368627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_98
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 1337
+        width: 28
+        height: 38
+      alignment: 9
+      pivot: {x: 0.55216694, y: 0.13010053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d933dbea1c1f1d0800000000000000
+      internalID: -3318658494152598202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_99
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 1337
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.55661196, y: 0.14144084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e95a38fddf0020a0800000000000000
+      internalID: -6908504382359578136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_100
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1209
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.56075174, y: 0.14171124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b248fde5f7548a6b0800000000000000
+      internalID: -5284897749364407253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_101
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1209
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.56075174, y: 0.14171124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d491d11505ef510800000000000000
+      internalID: 1584792428191763716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_102
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1209
+        width: 36
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4766082, y: 0.13485064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a2bcf8cf6dadffc0800000000000000
+      internalID: -3459418243125693791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_103
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1209
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5914733, y: 0.1480996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d03576bb2ecbc5e0800000000000000
+      internalID: -1888188931611741991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_104
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1209
+        width: 31
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5881949, y: 0.14549437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7923efe01895dc1b0800000000000000
+      internalID: -5634749147933429097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_105
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1209
+        width: 32
+        height: 36
+      alignment: 9
+      pivot: {x: 0.50603694, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d33747c97a53f5d0800000000000000
+      internalID: -3029978645209336871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_106
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1209
+        width: 24
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6612319, y: 0.12181747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f9d9dc1cddb9e80800000000000000
+      internalID: -8170693274485547207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_128
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1081
+        width: 28
+        height: 37
+      alignment: 9
+      pivot: {x: 0.62142855, y: 0.13063063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d773cdd3decbc40800000000000000
+      internalID: 5529555292447538500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_129
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1081
+        width: 26
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5983447, y: 0.10845022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11cf89aeed38b4f90800000000000000
+      internalID: -6968331004983837679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_130
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1081
+        width: 25
+        height: 43
+      alignment: 9
+      pivot: {x: 0.49641025, y: 0.09511032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f175a8fae9d296b0800000000000000
+      internalID: -5290927008989744651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_131
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1081
+        width: 24
+        height: 41
+      alignment: 9
+      pivot: {x: 0.4121377, y: 0.07370096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c058384bdeae71000800000000000000
+      internalID: 6732231121011980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_132
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1081
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.42058563, y: 0.08110937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a46d077bce39b390800000000000000
+      internalID: -7802135835846024027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_133
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1081
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4402174, y: 0.07638889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad562ed93f29ce570800000000000000
+      internalID: 8497328171964851674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_134
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 1081
+        width: 25
+        height: 42
+      alignment: 9
+      pivot: {x: 0.47904763, y: 0.09920635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cb4162e70b50b30800000000000000
+      internalID: 4252999478972562515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_135
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 1081
+        width: 31
+        height: 35
+      alignment: 9
+      pivot: {x: 0.56164384, y: 0.10841487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8b5422d34b4d920800000000000000
+      internalID: 3014232225278703810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_136
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1081
+        width: 28
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5343407, y: 0.09162896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b569ec8fca025f0800000000000000
+      internalID: -783436150544639173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_137
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 1081
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5805771, y: 0.085600905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f55893155284580800000000000000
+      internalID: -8842776837554348219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_138
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 1081
+        width: 27
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6210164, y: 0.07982401}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25d561783ca6b760800000000000000
+      internalID: 7473349990088561966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_160
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 825
+        width: 31
+        height: 36
+      alignment: 9
+      pivot: {x: 0.41019514, y: 0.12208505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9424394f8618887c0800000000000000
+      internalID: -4068859975549369783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_161
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 825
+        width: 28
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4121188, y: 0.13010053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac8c4cbd5a626cd0800000000000000
+      internalID: -2566371886824125271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_162
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 825
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40492654, y: 0.14144084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed300d11959537a0800000000000000
+      internalID: -6398043245120569887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_163
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 825
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40078673, y: 0.14171124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44bce452c2742a80800000000000000
+      internalID: -8492536818339892147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_164
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 825
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.40078673, y: 0.14171124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b29728ecdfb2dfcf0800000000000000
+      internalID: -216968837952538325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_165
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 825
+        width: 36
+        height: 37
+      alignment: 9
+      pivot: {x: 0.49561402, y: 0.13485064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2bff33e0adc1de0800000000000000
+      internalID: -1360973232835939622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_166
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 825
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.37911496, y: 0.1480996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469e0e661a1d72100800000000000000
+      internalID: 83265609275599204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_167
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 825
+        width: 31
+        height: 34
+      alignment: 9
+      pivot: {x: 0.379547, y: 0.14549437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fc13b4945707db0800000000000000
+      internalID: -4796204645494960316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_168
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 825
+        width: 32
+        height: 36
+      alignment: 9
+      pivot: {x: 0.46271306, y: 0.13636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b281ab9439e15f290800000000000000
+      internalID: -7857340356932003797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_169
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 825
+        width: 24
+        height: 37
+      alignment: 9
+      pivot: {x: 0.29710144, y: 0.12181747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8700d192f98ab70800000000000000
+      internalID: 8910546861681572069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_170
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 825
+        width: 27
+        height: 36
+      alignment: 9
+      pivot: {x: 0.40166926, y: 0.11306729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a624d2a850ea9e0800000000000000
+      internalID: -1608341925901735285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_171
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 825
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.48906818, y: 0.15741485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944bbed0904657d70800000000000000
+      internalID: 9040241817067172937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_172
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 825
+        width: 31
+        height: 34
+      alignment: 9
+      pivot: {x: 0.56630826, y: 0.14705883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8827efa31c6dcc0800000000000000
+      internalID: -3686546785834989360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_173
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 825
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.488708, y: 0.14719388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebf9a4840b73ba40800000000000000
+      internalID: 5382781238973692905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_174
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 825
+        width: 33
+        height: 35
+      alignment: 9
+      pivot: {x: 0.49737763, y: 0.13956045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345ab59c162df86a0800000000000000
+      internalID: -6444701224312003261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_175
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 825
+        width: 42
+        height: 36
+      alignment: 9
+      pivot: {x: 0.50825083, y: 0.13448845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b33a5d130edc260800000000000000
+      internalID: 7119593090584886090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_176
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 825
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.3027192, y: 0.14555256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ab14da3802b26c0800000000000000
+      internalID: -4167201280281691566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_177
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 825
+        width: 33
+        height: 35
+      alignment: 9
+      pivot: {x: 0.34098884, y: 0.13233082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d3f4481a45e2f190800000000000000
+      internalID: -7930023887448509479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_178
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 825
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.3881521, y: 0.11609687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae0c080d36ed3ee0800000000000000
+      internalID: -1279613569300951389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_179
+      rect:
+        serializedVersion: 2
+        x: 2484
+        y: 825
+        width: 23
+        height: 37
+      alignment: 9
+      pivot: {x: 0.42506394, y: 0.12496025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aca8cea3b444e800800000000000000
+      internalID: 640712585515674787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_180
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 697
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5925102, y: 0.12239826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69d4a7834d9a0310800000000000000
+      internalID: 1372081949851834733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_181
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 697
+        width: 29
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5423538, y: 0.12560387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eed4cfc9d9a21e00800000000000000
+      internalID: 1014059619070566114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_182
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 697
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5439752, y: 0.12584269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d64da9b97d82ff0800000000000000
+      internalID: -60561531651986169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_183
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 697
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.54433495, y: 0.13381924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5fd3e0270543040800000000000000
+      internalID: 4626411168011777494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_184
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 697
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.54356694, y: 0.12903225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094d285b4f6a181e0800000000000000
+      internalID: -2197291573232610160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_185
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 697
+        width: 37
+        height: 41
+      alignment: 9
+      pivot: {x: 0.4544953, y: 0.11622698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af8138453a417e20800000000000000
+      internalID: 3346537590817918885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_186
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 697
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.36528704, y: 0.13740844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8230b368ab373070800000000000000
+      internalID: 8085997250380051087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_187
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 697
+        width: 32
+        height: 36
+      alignment: 9
+      pivot: {x: 0.39789605, y: 0.13531353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343e31cf077176e10800000000000000
+      internalID: 2190745517771973443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_188
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 697
+        width: 27
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4588694, y: 0.12962405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6486f60f0dda19e70800000000000000
+      internalID: 9120261833300600902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_189
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 697
+        width: 27
+        height: 36
+      alignment: 9
+      pivot: {x: 0.47962964, y: 0.11805555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edaedb04560695c0800000000000000
+      internalID: -4209169843684987417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_190
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 697
+        width: 22
+        height: 47
+      alignment: 9
+      pivot: {x: 0.3928854, y: 0.11322849}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47847c106d4a52300800000000000000
+      internalID: 226768595311872116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_191
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 697
+        width: 22
+        height: 48
+      alignment: 9
+      pivot: {x: 0.39433813, y: 0.10873538}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd543b8dd0e57410800000000000000
+      internalID: 1474331695161564658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_192
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 697
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.34701756, y: 0.11346301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9609bd0d1e3295480800000000000000
+      internalID: -8910050934997151639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_193
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 697
+        width: 25
+        height: 45
+      alignment: 9
+      pivot: {x: 0.34701756, y: 0.1159844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faff96ffce8ee4ea0800000000000000
+      internalID: -5886511558331596881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_194
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 697
+        width: 22
+        height: 51
+      alignment: 9
+      pivot: {x: 0.3974359, y: 0.104575165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91796302505215d80800000000000000
+      internalID: -8263783137302636775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_195
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 697
+        width: 20
+        height: 52
+      alignment: 9
+      pivot: {x: 0.434375, y: 0.0989011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33807b25e57e5520800000000000000
+      internalID: 2692719254350889791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_196
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 697
+        width: 24
+        height: 50
+      alignment: 9
+      pivot: {x: 0.3614766, y: 0.104385965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcaca9440c7b6c690800000000000000
+      internalID: -7582170886219052339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_197
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 697
+        width: 27
+        height: 43
+      alignment: 9
+      pivot: {x: 0.32383665, y: 0.12403101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50521c821e0ca2710800000000000000
+      internalID: 1669358685178111237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_198
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 697
+        width: 28
+        height: 40
+      alignment: 9
+      pivot: {x: 0.313862, y: 0.1338983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be5e2130deb7b2d0800000000000000
+      internalID: -3262929603619037516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_199
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 697
+        width: 26
+        height: 40
+      alignment: 9
+      pivot: {x: 0.34001294, y: 0.13466386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc4c33f9a0eaa670800000000000000
+      internalID: 8550893863051218167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_200
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 569
+        width: 29
+        height: 38
+      alignment: 9
+      pivot: {x: 0.2948434, y: 0.13761468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4367263e53b012f20800000000000000
+      internalID: 3396007920090117684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_201
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 569
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.39276192, y: 0.13634086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c8c1f6379b1940800000000000000
+      internalID: 5267970451380421793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_202
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 569
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.46732026, y: 0.12009804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b034adf52f6b5e0800000000000000
+      internalID: -1894060099765073036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_203
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 569
+        width: 26
+        height: 50
+      alignment: 9
+      pivot: {x: 0.43155664, y: 0.10866142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bf94edc2baed5a0800000000000000
+      internalID: -6494565403425375386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_204
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 569
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5091863, y: 0.11811024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00b7bf14ed651350800000000000000
+      internalID: 5986812106211045387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_205
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 569
+        width: 21
+        height: 44
+      alignment: 9
+      pivot: {x: 0.4390701, y: 0.12347888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3713a5b33fa3b7160800000000000000
+      internalID: 7024272860161651059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_206
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 569
+        width: 21
+        height: 42
+      alignment: 9
+      pivot: {x: 0.4390701, y: 0.12935883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2e3c156baba7a90800000000000000
+      internalID: -7315329352491343200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_207
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 569
+        width: 22
+        height: 41
+      alignment: 9
+      pivot: {x: 0.42116478, y: 0.1331936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011b240e613889f00800000000000000
+      internalID: 1123792241303925008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_208
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 569
+        width: 24
+        height: 47
+      alignment: 9
+      pivot: {x: 0.46940103, y: 0.11619016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448c1d85324b9dd20800000000000000
+      internalID: 3303869865559967812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_209
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 569
+        width: 24
+        height: 44
+      alignment: 9
+      pivot: {x: 0.42773438, y: 0.12411222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12bf3f6310627b790800000000000000
+      internalID: -7514495666585601247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_210
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 569
+        width: 26
+        height: 41
+      alignment: 9
+      pivot: {x: 0.47175482, y: 0.1331936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2643dab0bf4eb40800000000000000
+      internalID: 5468771875103728333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_211
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 569
+        width: 27
+        height: 38
+      alignment: 9
+      pivot: {x: 0.41724536, y: 0.14370888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fbaae0c67c31e50800000000000000
+      internalID: 6778981131039194927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_212
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 569
+        width: 26
+        height: 38
+      alignment: 9
+      pivot: {x: 0.43329328, y: 0.14370888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5ced3efecd29fd0800000000000000
+      internalID: -2336562333773543967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_213
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 569
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.566723, y: 0.13444214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9a68830952f63c0800000000000000
+      internalID: -4364228212544853588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_214
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 569
+        width: 27
+        height: 38
+      alignment: 9
+      pivot: {x: 0.49862826, y: 0.13279727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff5687d410038820800000000000000
+      internalID: 2919177072981467125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_215
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 569
+        width: 27
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4398148, y: 0.11965812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5332469b5178ca9e0800000000000000
+      internalID: -1608762439503699147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_216
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 569
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.35230353, y: 0.12928812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ddf5bc3ef4b98200800000000000000
+      internalID: 182876263918468564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_217
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 569
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3580247, y: 0.13066202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7146260fd7cd2dd80800000000000000
+      internalID: -8227271135790472169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_218
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 569
+        width: 26
+        height: 38
+      alignment: 9
+      pivot: {x: 0.40224358, y: 0.1366228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7404c9496d831fe50800000000000000
+      internalID: 6841311803219918919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_219
+      rect:
+        serializedVersion: 2
+        x: 2485
+        y: 569
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.41833332, y: 0.1366228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60881088738f0b720800000000000000
+      internalID: 2860058680768956422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_220
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 441
+        width: 31
+        height: 42
+      alignment: 9
+      pivot: {x: 0.40748388, y: 0.12685715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3854c1ea0df5cb0800000000000000
+      internalID: -4872946825574382625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_221
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 441
+        width: 30
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3534946, y: 0.120417885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd04aa672185d2e0800000000000000
+      internalID: -2101631644805624394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_222
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 441
+        width: 28
+        height: 42
+      alignment: 9
+      pivot: {x: 0.344, y: 0.12685715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e651d91576396fd30800000000000000
+      internalID: 4464918152544589166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_223
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 441
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.39697224, y: 0.1514518}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4006a43b0e40dca60800000000000000
+      internalID: 7695812701373227012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_224
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 441
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.3804878, y: 0.15590626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082af29f0d2d80400800000000000000
+      internalID: 290713970941076096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_225
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 441
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.36585367, y: 0.15590626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3f0980d8d6f5970800000000000000
+      internalID: 8745829453878326192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_226
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 441
+        width: 33
+        height: 38
+      alignment: 9
+      pivot: {x: 0.6250354, y: 0.13453025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d744e9434b1a194a0800000000000000
+      internalID: -6588306984517352323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_227
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 441
+        width: 29
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5575935, y: 0.12274959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e167226c1af78e0800000000000000
+      internalID: -1693457062514254289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_228
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 441
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.48035118, y: 0.1266827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c63db60a6f626740800000000000000
+      internalID: 5143796225580807873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_229
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 441
+        width: 24
+        height: 43
+      alignment: 9
+      pivot: {x: 0.4725, y: 0.115116276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5090eb0f3763ed7f0800000000000000
+      internalID: -585971029923460859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_230
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 441
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.565051, y: 0.11637512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc228da00f3bfcc0800000000000000
+      internalID: -3676275398674338627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_231
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 441
+        width: 22
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5627273, y: 0.1225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e874832582edd1670800000000000000
+      internalID: 8511203135559583630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_232
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 441
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5627273, y: 0.12564103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd068c8be8416afa0800000000000000
+      internalID: -5789917667720142628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_233
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 441
+        width: 24
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5813679, y: 0.123101704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf3d52c5dce7f2b0800000000000000
+      internalID: -5550707612877766714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_234
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 441
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.62751323, y: 0.10766046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95979b5fcf4d2430800000000000000
+      internalID: 3759749015937717662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_235
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 441
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.51968825, y: 0.1294146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ebe39d822ea7480800000000000000
+      internalID: -8900553048473027008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_236
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 441
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.55760574, y: 0.12592028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d9d0d446ab5b880800000000000000
+      internalID: -8595759373814489798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_237
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 441
+        width: 21
+        height: 38
+      alignment: 9
+      pivot: {x: 0.52156335, y: 0.13282026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04cc0a03ebec1e70800000000000000
+      internalID: 9087397508485530639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_238
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 441
+        width: 21
+        height: 37
+      alignment: 9
+      pivot: {x: 0.52156335, y: 0.13641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048329a0a7c4fdbd0800000000000000
+      internalID: -2603277972549781440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_239
+      rect:
+        serializedVersion: 2
+        x: 2479
+        y: 441
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.559447, y: 0.13667953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce60c4a26c5339030800000000000000
+      internalID: 3500200460626429676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_240
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 313
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.47150734, y: 0.12644546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2110ac9f56afc0e0800000000000000
+      internalID: -2247394759454748372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_241
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 313
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.58464915, y: 0.11631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc113f6cfe25159d0800000000000000
+      internalID: -2787355504577146420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_242
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 313
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.45083332, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f662cc573274f50800000000000000
+      internalID: 6865495145792827264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_243
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 313
+        width: 20
+        height: 55
+      alignment: 9
+      pivot: {x: 0.4482906, y: 0.094794095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06e9e0fe86ef65d0800000000000000
+      internalID: -3066979319614413301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_244
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 313
+        width: 20
+        height: 49
+      alignment: 9
+      pivot: {x: 0.44099098, y: 0.10222467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60754c9a858a026a0800000000000000
+      internalID: -6475991165399967994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_245
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 313
+        width: 20
+        height: 49
+      alignment: 9
+      pivot: {x: 0.44107142, y: 0.10331633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab90b56319912e7e0800000000000000
+      internalID: -1737798394738701894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_246
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 313
+        width: 20
+        height: 52
+      alignment: 9
+      pivot: {x: 0.44247788, y: 0.09785569}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda9bfbb9d2145ea0800000000000000
+      internalID: -5885058086695363875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_247
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 313
+        width: 23
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5224578, y: 0.099479645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0061b2966b5ac6fe0800000000000000
+      internalID: -1194397598292961792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_249
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 313
+        width: 20
+        height: 45
+      alignment: 9
+      pivot: {x: 0.4487395, y: 0.11764706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8906be44bcbe2a220800000000000000
+      internalID: 2495816401783840920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_250
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 313
+        width: 25
+        height: 39
+      alignment: 9
+      pivot: {x: 0.55932206, y: 0.13407214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5305d54027069b50800000000000000
+      internalID: 6599470139149976410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_251
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 313
+        width: 26
+        height: 39
+      alignment: 9
+      pivot: {x: 0.57726043, y: 0.1300045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0166f5be08710840800000000000000
+      internalID: 5188560250285220109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_252
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 313
+        width: 29
+        height: 39
+      alignment: 9
+      pivot: {x: 0.61494255, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d7182d30365d5b0800000000000000
+      internalID: -5344256514737472177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_253
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 313
+        width: 27
+        height: 40
+      alignment: 9
+      pivot: {x: 0.6015002, y: 0.09936709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015bfff30cdcaad30800000000000000
+      internalID: 4443590207945553168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_254
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 313
+        width: 24
+        height: 43
+      alignment: 9
+      pivot: {x: 0.48583335, y: 0.115116276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142e9c81ac70f88f0800000000000000
+      internalID: -536201266053127615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_255
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 313
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.39328232, y: 0.11637512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4666488ff71272f00800000000000000
+      internalID: 1091878268174624356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_256
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 313
+        width: 22
+        height: 40
+      alignment: 9
+      pivot: {x: 0.3918182, y: 0.1225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74adba251c4185740800000000000000
+      internalID: 5140881795191659079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_257
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 313
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.3918182, y: 0.12564103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067ab70ba3fd3a050800000000000000
+      internalID: 5810733387400062816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_258
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 313
+        width: 24
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3769654, y: 0.123101704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24552a264ec6f8b60800000000000000
+      internalID: 7750533211891062082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_259
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 313
+        width: 26
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5683306, y: 0.115901455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68673904165f4f90800000000000000
+      internalID: -6967255454464907157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_260
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 313
+        width: 28
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5372671, y: 0.11897767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13eae345c8167c60800000000000000
+      internalID: 7815461438875165467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_261
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 185
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.33544973, y: 0.10766046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345cbb9b8f8fb8030800000000000000
+      internalID: 3498163282734990659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_262
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 185
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.43683347, y: 0.1294146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1930c24bf39a940800000000000000
+      internalID: 5307843678897934797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_263
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 185
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.3969397, y: 0.12592028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bea3f772dd0a0920800000000000000
+      internalID: 2957191302928903856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_264
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 185
+        width: 21
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4308176, y: 0.13282026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8379d9d31d4ac20800000000000000
+      internalID: 3216926096416520410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_265
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 185
+        width: 21
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4308176, y: 0.13641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d863389ed7cda700800000000000000
+      internalID: 553318088086612177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_266
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 185
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.40829492, y: 0.13667953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7013b9e9cad06c0800000000000000
+      internalID: -4175491482294089742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_267
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 185
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.49724266, y: 0.12644546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f5ea68588346fa0800000000000000
+      internalID: -5808455473259716832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_268
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 185
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.3736842, y: 0.11631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f233d6798201cec30800000000000000
+      internalID: 4389901503304643375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_269
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 185
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.6106594, y: 0.12928812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc1469d4195468f0800000000000000
+      internalID: -548215308550923059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_270
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 185
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.60493827, y: 0.13066202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397893329857cfde0800000000000000
+      internalID: -1298033360727603309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_271
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 185
+        width: 26
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5592949, y: 0.1366228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a792d0a25f702aa0800000000000000
+      internalID: -6187805895144859741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_272
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 185
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.1366228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e779db591e4c680800000000000000
+      internalID: -8735609343944720846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_273
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 185
+        width: 31
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5602581, y: 0.12685715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316d522f4be975500800000000000000
+      internalID: 384950793157334547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_274
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 185
+        width: 30
+        height: 44
+      alignment: 9
+      pivot: {x: 0.61317205, y: 0.120417885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1baea58b7fa31a90800000000000000
+      internalID: -7344333622252492001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_275
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 185
+        width: 28
+        height: 42
+      alignment: 9
+      pivot: {x: 0.6202857, y: 0.12685715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7e5d40c9b4544a0800000000000000
+      internalID: -6609793744628226076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_276
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 185
+        width: 29
+        height: 35
+      alignment: 9
+      pivot: {x: 0.568545, y: 0.1514518}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c04ae5261787f760800000000000000
+      internalID: 7491605034349248712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_277
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 185
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5795122, y: 0.15590626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f66aa2d21b875030800000000000000
+      internalID: 3483405749754423033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_278
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 185
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5956848, y: 0.15590626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b540abb91b3f010800000000000000
+      internalID: 1221515206346431333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_279
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 185
+        width: 33
+        height: 38
+      alignment: 9
+      pivot: {x: 0.34466156, y: 0.13453025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a873b174bcafc350800000000000000
+      internalID: 6039235516328802468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_280
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 185
+        width: 29
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4079237, y: 0.12274959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa3f527338f64630800000000000000
+      internalID: 3911086226263718646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_281
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 57
+        width: 23
+        height: 40
+      alignment: 9
+      pivot: {x: 0.47617057, y: 0.1266827}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a6ea60a1148cd90800000000000000
+      internalID: -7077335234375685509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_282
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 57
+        width: 26
+        height: 50
+      alignment: 9
+      pivot: {x: 0.52998185, y: 0.10866142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57cd894cf03ce3a0800000000000000
+      internalID: -6634874290899663012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_283
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 57
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.449147, y: 0.11811024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a643d615c68a6df30800000000000000
+      internalID: 4600049252581586026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_284
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 57
+        width: 21
+        height: 44
+      alignment: 9
+      pivot: {x: 0.51331085, y: 0.12347888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e57c494cf312130800000000000000
+      internalID: 3540180895632154209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_285
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 57
+        width: 21
+        height: 42
+      alignment: 9
+      pivot: {x: 0.51331085, y: 0.12935883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5844d8c6ec983fb10800000000000000
+      internalID: 2014104978042209413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_286
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 57
+        width: 22
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5333807, y: 0.1331936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e592ba964d7f2c0800000000000000
+      internalID: -4397812960795730422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_287
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 57
+        width: 24
+        height: 47
+      alignment: 9
+      pivot: {x: 0.48893228, y: 0.11619016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f37fd326add2201c0800000000000000
+      internalID: -4539015058461690049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_288
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 57
+        width: 24
+        height: 44
+      alignment: 9
+      pivot: {x: 0.53059894, y: 0.12411222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc59406091c356b0800000000000000
+      internalID: -5308686709904810826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_289
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 57
+        width: 26
+        height: 41
+      alignment: 9
+      pivot: {x: 0.48978364, y: 0.1331936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4af8d3f67142570800000000000000
+      internalID: 8440897368140784883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_290
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 57
+        width: 27
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5457176, y: 0.14370888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f724cf43cf95ce30800000000000000
+      internalID: 4523197061969225718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_291
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 57
+        width: 26
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5282452, y: 0.14370888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96cda11b3ffc9ec0800000000000000
+      internalID: -3558688976364779876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_292
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 57
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.40202704, y: 0.13444214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93557e7a023ce3e60800000000000000
+      internalID: 7944001337751459129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_293
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 57
+        width: 27
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4643347, y: 0.13279727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26c2e89026592ed0800000000000000
+      internalID: -2438323025240472022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_RangedAtks_Attack1_Attack2_294
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 57
+        width: 27
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5231481, y: 0.11965812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6e55395d57bf030800000000000000
+      internalID: 3529544293135279852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aac1b80095010d242854b2a538fde40d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Char_RangedAtks_Attack1_Attack2_0: -2196267048761400843
+      Char_RangedAtks_Attack1_Attack2_1: 4431486082235576629
+      Char_RangedAtks_Attack1_Attack2_10: -7240628440601042558
+      Char_RangedAtks_Attack1_Attack2_100: -5284897749364407253
+      Char_RangedAtks_Attack1_Attack2_101: 1584792428191763716
+      Char_RangedAtks_Attack1_Attack2_102: -3459418243125693791
+      Char_RangedAtks_Attack1_Attack2_103: -1888188931611741991
+      Char_RangedAtks_Attack1_Attack2_104: -5634749147933429097
+      Char_RangedAtks_Attack1_Attack2_105: -3029978645209336871
+      Char_RangedAtks_Attack1_Attack2_106: -8170693274485547207
+      Char_RangedAtks_Attack1_Attack2_107: -3766608629890774476
+      Char_RangedAtks_Attack1_Attack2_108: -4078424425941072227
+      Char_RangedAtks_Attack1_Attack2_109: -5476270858121543374
+      Char_RangedAtks_Attack1_Attack2_11: 7996870067981189075
+      Char_RangedAtks_Attack1_Attack2_110: 4766944494626922328
+      Char_RangedAtks_Attack1_Attack2_111: -279085206260463810
+      Char_RangedAtks_Attack1_Attack2_112: -119039314158171186
+      Char_RangedAtks_Attack1_Attack2_113: -8136388080474726419
+      Char_RangedAtks_Attack1_Attack2_114: -4891072658685729566
+      Char_RangedAtks_Attack1_Attack2_115: 218748197116706928
+      Char_RangedAtks_Attack1_Attack2_116: 4806168842809628568
+      Char_RangedAtks_Attack1_Attack2_117: -8206197065801771634
+      Char_RangedAtks_Attack1_Attack2_118: -1075165246315440284
+      Char_RangedAtks_Attack1_Attack2_119: 1678945957427513945
+      Char_RangedAtks_Attack1_Attack2_12: -1005885704387315829
+      Char_RangedAtks_Attack1_Attack2_120: 8187495729085849140
+      Char_RangedAtks_Attack1_Attack2_121: -453957139700394028
+      Char_RangedAtks_Attack1_Attack2_122: 5562395750445349289
+      Char_RangedAtks_Attack1_Attack2_123: -1468497314180913229
+      Char_RangedAtks_Attack1_Attack2_124: -992818022060782845
+      Char_RangedAtks_Attack1_Attack2_125: 7901989055810030372
+      Char_RangedAtks_Attack1_Attack2_126: -3402459764759376880
+      Char_RangedAtks_Attack1_Attack2_127: 972827426858030858
+      Char_RangedAtks_Attack1_Attack2_128: 5529555292447538500
+      Char_RangedAtks_Attack1_Attack2_129: -6968331004983837679
+      Char_RangedAtks_Attack1_Attack2_13: -4031086648507285837
+      Char_RangedAtks_Attack1_Attack2_130: -5290927008989744651
+      Char_RangedAtks_Attack1_Attack2_131: 6732231121011980
+      Char_RangedAtks_Attack1_Attack2_132: -7802135835846024027
+      Char_RangedAtks_Attack1_Attack2_133: 8497328171964851674
+      Char_RangedAtks_Attack1_Attack2_134: 4252999478972562515
+      Char_RangedAtks_Attack1_Attack2_135: 3014232225278703810
+      Char_RangedAtks_Attack1_Attack2_136: -783436150544639173
+      Char_RangedAtks_Attack1_Attack2_137: -8842776837554348219
+      Char_RangedAtks_Attack1_Attack2_138: 7473349990088561966
+      Char_RangedAtks_Attack1_Attack2_139: -4870990980327833132
+      Char_RangedAtks_Attack1_Attack2_14: 2988404033659444000
+      Char_RangedAtks_Attack1_Attack2_140: 3875587355082029501
+      Char_RangedAtks_Attack1_Attack2_141: -451760552382395719
+      Char_RangedAtks_Attack1_Attack2_142: 2062674395697657831
+      Char_RangedAtks_Attack1_Attack2_143: 5606913509532342482
+      Char_RangedAtks_Attack1_Attack2_144: -8516429617664316749
+      Char_RangedAtks_Attack1_Attack2_145: 4014463971987776538
+      Char_RangedAtks_Attack1_Attack2_146: -401182928950231842
+      Char_RangedAtks_Attack1_Attack2_147: 6532371771254343570
+      Char_RangedAtks_Attack1_Attack2_148: 1038210797982095254
+      Char_RangedAtks_Attack1_Attack2_149: -6473117911249467295
+      Char_RangedAtks_Attack1_Attack2_15: -4882177696839869631
+      Char_RangedAtks_Attack1_Attack2_150: -3210179775576896849
+      Char_RangedAtks_Attack1_Attack2_151: 2579309845367965999
+      Char_RangedAtks_Attack1_Attack2_152: 7711227039093378221
+      Char_RangedAtks_Attack1_Attack2_153: 7538338474445042808
+      Char_RangedAtks_Attack1_Attack2_154: 2190105840740479940
+      Char_RangedAtks_Attack1_Attack2_155: 4969270518719977296
+      Char_RangedAtks_Attack1_Attack2_156: 1383055606255406961
+      Char_RangedAtks_Attack1_Attack2_157: -9405659509484324
+      Char_RangedAtks_Attack1_Attack2_158: 6978769945190333882
+      Char_RangedAtks_Attack1_Attack2_159: -9081913131364140958
+      Char_RangedAtks_Attack1_Attack2_16: 1076862883328636863
+      Char_RangedAtks_Attack1_Attack2_160: -4068859975549369783
+      Char_RangedAtks_Attack1_Attack2_161: -2566371886824125271
+      Char_RangedAtks_Attack1_Attack2_162: -6398043245120569887
+      Char_RangedAtks_Attack1_Attack2_163: -8492536818339892147
+      Char_RangedAtks_Attack1_Attack2_164: -216968837952538325
+      Char_RangedAtks_Attack1_Attack2_165: -1360973232835939622
+      Char_RangedAtks_Attack1_Attack2_166: 83265609275599204
+      Char_RangedAtks_Attack1_Attack2_167: -4796204645494960316
+      Char_RangedAtks_Attack1_Attack2_168: -7857340356932003797
+      Char_RangedAtks_Attack1_Attack2_169: 8910546861681572069
+      Char_RangedAtks_Attack1_Attack2_17: -994939397279606140
+      Char_RangedAtks_Attack1_Attack2_170: -1608341925901735285
+      Char_RangedAtks_Attack1_Attack2_171: 9040241817067172937
+      Char_RangedAtks_Attack1_Attack2_172: -3686546785834989360
+      Char_RangedAtks_Attack1_Attack2_173: 5382781238973692905
+      Char_RangedAtks_Attack1_Attack2_174: -6444701224312003261
+      Char_RangedAtks_Attack1_Attack2_175: 7119593090584886090
+      Char_RangedAtks_Attack1_Attack2_176: -4167201280281691566
+      Char_RangedAtks_Attack1_Attack2_177: -7930023887448509479
+      Char_RangedAtks_Attack1_Attack2_178: -1279613569300951389
+      Char_RangedAtks_Attack1_Attack2_179: 640712585515674787
+      Char_RangedAtks_Attack1_Attack2_18: 2596033242896043298
+      Char_RangedAtks_Attack1_Attack2_180: 1372081949851834733
+      Char_RangedAtks_Attack1_Attack2_181: 1014059619070566114
+      Char_RangedAtks_Attack1_Attack2_182: -60561531651986169
+      Char_RangedAtks_Attack1_Attack2_183: 4626411168011777494
+      Char_RangedAtks_Attack1_Attack2_184: -2197291573232610160
+      Char_RangedAtks_Attack1_Attack2_185: 3346537590817918885
+      Char_RangedAtks_Attack1_Attack2_186: 8085997250380051087
+      Char_RangedAtks_Attack1_Attack2_187: 2190745517771973443
+      Char_RangedAtks_Attack1_Attack2_188: 9120261833300600902
+      Char_RangedAtks_Attack1_Attack2_189: -4209169843684987417
+      Char_RangedAtks_Attack1_Attack2_19: -7824184864230379773
+      Char_RangedAtks_Attack1_Attack2_190: 226768595311872116
+      Char_RangedAtks_Attack1_Attack2_191: 1474331695161564658
+      Char_RangedAtks_Attack1_Attack2_192: -8910050934997151639
+      Char_RangedAtks_Attack1_Attack2_193: -5886511558331596881
+      Char_RangedAtks_Attack1_Attack2_194: -8263783137302636775
+      Char_RangedAtks_Attack1_Attack2_195: 2692719254350889791
+      Char_RangedAtks_Attack1_Attack2_196: -7582170886219052339
+      Char_RangedAtks_Attack1_Attack2_197: 1669358685178111237
+      Char_RangedAtks_Attack1_Attack2_198: -3262929603619037516
+      Char_RangedAtks_Attack1_Attack2_199: 8550893863051218167
+      Char_RangedAtks_Attack1_Attack2_2: -754214795494080263
+      Char_RangedAtks_Attack1_Attack2_20: -678091089182476757
+      Char_RangedAtks_Attack1_Attack2_200: 3396007920090117684
+      Char_RangedAtks_Attack1_Attack2_201: 5267970451380421793
+      Char_RangedAtks_Attack1_Attack2_202: -1894060099765073036
+      Char_RangedAtks_Attack1_Attack2_203: -6494565403425375386
+      Char_RangedAtks_Attack1_Attack2_204: 5986812106211045387
+      Char_RangedAtks_Attack1_Attack2_205: 7024272860161651059
+      Char_RangedAtks_Attack1_Attack2_206: -7315329352491343200
+      Char_RangedAtks_Attack1_Attack2_207: 1123792241303925008
+      Char_RangedAtks_Attack1_Attack2_208: 3303869865559967812
+      Char_RangedAtks_Attack1_Attack2_209: -7514495666585601247
+      Char_RangedAtks_Attack1_Attack2_21: -3578378007464056480
+      Char_RangedAtks_Attack1_Attack2_210: 5468771875103728333
+      Char_RangedAtks_Attack1_Attack2_211: 6778981131039194927
+      Char_RangedAtks_Attack1_Attack2_212: -2336562333773543967
+      Char_RangedAtks_Attack1_Attack2_213: -4364228212544853588
+      Char_RangedAtks_Attack1_Attack2_214: 2919177072981467125
+      Char_RangedAtks_Attack1_Attack2_215: -1608762439503699147
+      Char_RangedAtks_Attack1_Attack2_216: 182876263918468564
+      Char_RangedAtks_Attack1_Attack2_217: -8227271135790472169
+      Char_RangedAtks_Attack1_Attack2_218: 6841311803219918919
+      Char_RangedAtks_Attack1_Attack2_219: 2860058680768956422
+      Char_RangedAtks_Attack1_Attack2_22: 4341500611302769792
+      Char_RangedAtks_Attack1_Attack2_220: -4872946825574382625
+      Char_RangedAtks_Attack1_Attack2_221: -2101631644805624394
+      Char_RangedAtks_Attack1_Attack2_222: 4464918152544589166
+      Char_RangedAtks_Attack1_Attack2_223: 7695812701373227012
+      Char_RangedAtks_Attack1_Attack2_224: 290713970941076096
+      Char_RangedAtks_Attack1_Attack2_225: 8745829453878326192
+      Char_RangedAtks_Attack1_Attack2_226: -6588306984517352323
+      Char_RangedAtks_Attack1_Attack2_227: -1693457062514254289
+      Char_RangedAtks_Attack1_Attack2_228: 5143796225580807873
+      Char_RangedAtks_Attack1_Attack2_229: -585971029923460859
+      Char_RangedAtks_Attack1_Attack2_23: 7382811900876999313
+      Char_RangedAtks_Attack1_Attack2_230: -3676275398674338627
+      Char_RangedAtks_Attack1_Attack2_231: 8511203135559583630
+      Char_RangedAtks_Attack1_Attack2_232: -5789917667720142628
+      Char_RangedAtks_Attack1_Attack2_233: -5550707612877766714
+      Char_RangedAtks_Attack1_Attack2_234: 3759749015937717662
+      Char_RangedAtks_Attack1_Attack2_235: -8900553048473027008
+      Char_RangedAtks_Attack1_Attack2_236: -8595759373814489798
+      Char_RangedAtks_Attack1_Attack2_237: 9087397508485530639
+      Char_RangedAtks_Attack1_Attack2_238: -2603277972549781440
+      Char_RangedAtks_Attack1_Attack2_239: 3500200460626429676
+      Char_RangedAtks_Attack1_Attack2_24: 949609781825063446
+      Char_RangedAtks_Attack1_Attack2_240: -2247394759454748372
+      Char_RangedAtks_Attack1_Attack2_241: -2787355504577146420
+      Char_RangedAtks_Attack1_Attack2_242: 6865495145792827264
+      Char_RangedAtks_Attack1_Attack2_243: -3066979319614413301
+      Char_RangedAtks_Attack1_Attack2_244: -6475991165399967994
+      Char_RangedAtks_Attack1_Attack2_245: -1737798394738701894
+      Char_RangedAtks_Attack1_Attack2_246: -5885058086695363875
+      Char_RangedAtks_Attack1_Attack2_247: -1194397598292961792
+      Char_RangedAtks_Attack1_Attack2_248: 2060865339019535445
+      Char_RangedAtks_Attack1_Attack2_249: 2495816401783840920
+      Char_RangedAtks_Attack1_Attack2_25: -5550384770865588073
+      Char_RangedAtks_Attack1_Attack2_250: 6599470139149976410
+      Char_RangedAtks_Attack1_Attack2_251: 5188560250285220109
+      Char_RangedAtks_Attack1_Attack2_252: -5344256514737472177
+      Char_RangedAtks_Attack1_Attack2_253: 4443590207945553168
+      Char_RangedAtks_Attack1_Attack2_254: -536201266053127615
+      Char_RangedAtks_Attack1_Attack2_255: 1091878268174624356
+      Char_RangedAtks_Attack1_Attack2_256: 5140881795191659079
+      Char_RangedAtks_Attack1_Attack2_257: 5810733387400062816
+      Char_RangedAtks_Attack1_Attack2_258: 7750533211891062082
+      Char_RangedAtks_Attack1_Attack2_259: -6967255454464907157
+      Char_RangedAtks_Attack1_Attack2_26: 7217924553692964337
+      Char_RangedAtks_Attack1_Attack2_260: 7815461438875165467
+      Char_RangedAtks_Attack1_Attack2_261: 3498163282734990659
+      Char_RangedAtks_Attack1_Attack2_262: 5307843678897934797
+      Char_RangedAtks_Attack1_Attack2_263: 2957191302928903856
+      Char_RangedAtks_Attack1_Attack2_264: 3216926096416520410
+      Char_RangedAtks_Attack1_Attack2_265: 553318088086612177
+      Char_RangedAtks_Attack1_Attack2_266: -4175491482294089742
+      Char_RangedAtks_Attack1_Attack2_267: -5808455473259716832
+      Char_RangedAtks_Attack1_Attack2_268: 4389901503304643375
+      Char_RangedAtks_Attack1_Attack2_269: -548215308550923059
+      Char_RangedAtks_Attack1_Attack2_27: 5490920695419772588
+      Char_RangedAtks_Attack1_Attack2_270: -1298033360727603309
+      Char_RangedAtks_Attack1_Attack2_271: -6187805895144859741
+      Char_RangedAtks_Attack1_Attack2_272: -8735609343944720846
+      Char_RangedAtks_Attack1_Attack2_273: 384950793157334547
+      Char_RangedAtks_Attack1_Attack2_274: -7344333622252492001
+      Char_RangedAtks_Attack1_Attack2_275: -6609793744628226076
+      Char_RangedAtks_Attack1_Attack2_276: 7491605034349248712
+      Char_RangedAtks_Attack1_Attack2_277: 3483405749754423033
+      Char_RangedAtks_Attack1_Attack2_278: 1221515206346431333
+      Char_RangedAtks_Attack1_Attack2_279: 6039235516328802468
+      Char_RangedAtks_Attack1_Attack2_28: -8475238034860172152
+      Char_RangedAtks_Attack1_Attack2_280: 3911086226263718646
+      Char_RangedAtks_Attack1_Attack2_281: -7077335234375685509
+      Char_RangedAtks_Attack1_Attack2_282: -6634874290899663012
+      Char_RangedAtks_Attack1_Attack2_283: 4600049252581586026
+      Char_RangedAtks_Attack1_Attack2_284: 3540180895632154209
+      Char_RangedAtks_Attack1_Attack2_285: 2014104978042209413
+      Char_RangedAtks_Attack1_Attack2_286: -4397812960795730422
+      Char_RangedAtks_Attack1_Attack2_287: -4539015058461690049
+      Char_RangedAtks_Attack1_Attack2_288: -5308686709904810826
+      Char_RangedAtks_Attack1_Attack2_289: 8440897368140784883
+      Char_RangedAtks_Attack1_Attack2_29: 1184793158874181803
+      Char_RangedAtks_Attack1_Attack2_290: 4523197061969225718
+      Char_RangedAtks_Attack1_Attack2_291: -3558688976364779876
+      Char_RangedAtks_Attack1_Attack2_292: 7944001337751459129
+      Char_RangedAtks_Attack1_Attack2_293: -2438323025240472022
+      Char_RangedAtks_Attack1_Attack2_294: 3529544293135279852
+      Char_RangedAtks_Attack1_Attack2_3: 6122567731937654654
+      Char_RangedAtks_Attack1_Attack2_30: 8693723134393892902
+      Char_RangedAtks_Attack1_Attack2_31: 601371401112095169
+      Char_RangedAtks_Attack1_Attack2_32: -129346115237925548
+      Char_RangedAtks_Attack1_Attack2_33: -2424854641031867074
+      Char_RangedAtks_Attack1_Attack2_34: -4604027662927717296
+      Char_RangedAtks_Attack1_Attack2_35: 473413819674192625
+      Char_RangedAtks_Attack1_Attack2_36: 7916789834571816951
+      Char_RangedAtks_Attack1_Attack2_37: -3259275340654881409
+      Char_RangedAtks_Attack1_Attack2_38: 232211827501202555
+      Char_RangedAtks_Attack1_Attack2_39: 4649944959433951152
+      Char_RangedAtks_Attack1_Attack2_4: 419638268306351106
+      Char_RangedAtks_Attack1_Attack2_40: 1033266436354890669
+      Char_RangedAtks_Attack1_Attack2_41: 1294825086258645351
+      Char_RangedAtks_Attack1_Attack2_42: 7320246417345797986
+      Char_RangedAtks_Attack1_Attack2_43: -5669292764634607059
+      Char_RangedAtks_Attack1_Attack2_44: 3216886524791486646
+      Char_RangedAtks_Attack1_Attack2_45: -2891134610155235854
+      Char_RangedAtks_Attack1_Attack2_46: -1061155219759637236
+      Char_RangedAtks_Attack1_Attack2_47: -8929078411919102824
+      Char_RangedAtks_Attack1_Attack2_48: -7361023771739745884
+      Char_RangedAtks_Attack1_Attack2_49: 3770820442380474547
+      Char_RangedAtks_Attack1_Attack2_5: 5002428156086233671
+      Char_RangedAtks_Attack1_Attack2_50: 2479788441548480681
+      Char_RangedAtks_Attack1_Attack2_51: -6168557859430887217
+      Char_RangedAtks_Attack1_Attack2_52: 5420817497762785130
+      Char_RangedAtks_Attack1_Attack2_53: 1918472450724689604
+      Char_RangedAtks_Attack1_Attack2_54: 2695733599497445221
+      Char_RangedAtks_Attack1_Attack2_55: 1396650960585838029
+      Char_RangedAtks_Attack1_Attack2_56: -2957943905644344936
+      Char_RangedAtks_Attack1_Attack2_57: 6819456238762911793
+      Char_RangedAtks_Attack1_Attack2_58: 2919551490054645017
+      Char_RangedAtks_Attack1_Attack2_59: -6002581450260446623
+      Char_RangedAtks_Attack1_Attack2_6: 2430351240640023978
+      Char_RangedAtks_Attack1_Attack2_60: 8299312079054091295
+      Char_RangedAtks_Attack1_Attack2_61: 8542925832490772359
+      Char_RangedAtks_Attack1_Attack2_62: 4586220557668637515
+      Char_RangedAtks_Attack1_Attack2_63: 4990670048589403429
+      Char_RangedAtks_Attack1_Attack2_64: -7301621899741975169
+      Char_RangedAtks_Attack1_Attack2_65: -7484972612366348413
+      Char_RangedAtks_Attack1_Attack2_66: -7329420817738982702
+      Char_RangedAtks_Attack1_Attack2_67: 6020924668447115524
+      Char_RangedAtks_Attack1_Attack2_68: -3345394301580032140
+      Char_RangedAtks_Attack1_Attack2_69: -5247932344461528404
+      Char_RangedAtks_Attack1_Attack2_7: 3999754139534879661
+      Char_RangedAtks_Attack1_Attack2_70: -7480638739800785410
+      Char_RangedAtks_Attack1_Attack2_71: 3858823643681209665
+      Char_RangedAtks_Attack1_Attack2_72: 1555640110510037023
+      Char_RangedAtks_Attack1_Attack2_73: -3711553225748280388
+      Char_RangedAtks_Attack1_Attack2_74: -8778845925468151909
+      Char_RangedAtks_Attack1_Attack2_75: -6691731772674296389
+      Char_RangedAtks_Attack1_Attack2_76: -545787717782088812
+      Char_RangedAtks_Attack1_Attack2_77: -7078809365810882595
+      Char_RangedAtks_Attack1_Attack2_78: 5864845834557738519
+      Char_RangedAtks_Attack1_Attack2_79: 1842367888632796702
+      Char_RangedAtks_Attack1_Attack2_8: -3645596723070578017
+      Char_RangedAtks_Attack1_Attack2_80: -8883575761332683358
+      Char_RangedAtks_Attack1_Attack2_81: 606109349770824413
+      Char_RangedAtks_Attack1_Attack2_82: 169872469606986900
+      Char_RangedAtks_Attack1_Attack2_83: -5074252424908145002
+      Char_RangedAtks_Attack1_Attack2_84: -7426785534339074051
+      Char_RangedAtks_Attack1_Attack2_85: 2115339566536441599
+      Char_RangedAtks_Attack1_Attack2_86: 4841715567449956108
+      Char_RangedAtks_Attack1_Attack2_87: 7344203751458165362
+      Char_RangedAtks_Attack1_Attack2_88: 4353768557023847058
+      Char_RangedAtks_Attack1_Attack2_89: -7169503305666434220
+      Char_RangedAtks_Attack1_Attack2_9: -7354487954432685093
+      Char_RangedAtks_Attack1_Attack2_90: -3841544084129905370
+      Char_RangedAtks_Attack1_Attack2_91: -7395256327174270968
+      Char_RangedAtks_Attack1_Attack2_92: -3950457540461666060
+      Char_RangedAtks_Attack1_Attack2_93: -2718734839208945951
+      Char_RangedAtks_Attack1_Attack2_94: -7030876335665900461
+      Char_RangedAtks_Attack1_Attack2_95: 1064551784494625010
+      Char_RangedAtks_Attack1_Attack2_96: 3279512320740565014
+      Char_RangedAtks_Attack1_Attack2_97: -3280278139435368627
+      Char_RangedAtks_Attack1_Attack2_98: -3318658494152598202
+      Char_RangedAtks_Attack1_Attack2_99: -6908504382359578136
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

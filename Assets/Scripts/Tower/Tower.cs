@@ -440,7 +440,34 @@ namespace TowerDefense
             currentHealth = statHealthPoints;
             if (vitals != null) vitals.ResetState();
         }
+        /// <summary>
+        /// Heilt einen aktiven Turm vollständig, ohne andere Werte zurückzusetzen.
+        /// </summary>
+        public void HealAtNight()
+        {
+            // Helden werden nicht automatisch geheilt.
+            // Mauern werden zentral über ihre WallGroup geheilt.
+            if (this is Hero ||
+                this is WallSegment ||
+                !isActiveAndEnabled ||
+                isBroken ||
+                vitals == null ||
+                vitals.IsDead ||
+                vitals.Health <= 0f)
+            {
+                return;
+            }
 
+            float missingHealth = vitals.MaxHealth - vitals.Health;
+
+            if (missingHealth <= 0f)
+                return;
+
+            // Nur HP verändern: Schilde und Statuswerte bleiben erhalten.
+            vitals.Heal(missingHealth, null, true, true);
+
+            SyncHealth();
+        }
         // ───────────────── ATTACK CORE ─────────────────
 
         public abstract void Attack((GameObject, int) _target);

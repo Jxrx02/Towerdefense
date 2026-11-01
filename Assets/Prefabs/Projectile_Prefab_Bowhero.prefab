@@ -303,7 +303,7 @@ MonoBehaviour:
     shredKey: shred
     slowAmount: 0
     slowDuration: 2
-  mode: 3
+  mode: 7
   aoeRadius: 5
   aoeVfxPrefab: {fileID: 4736630556181736464, guid: e45bb3901cec7d3409067438f9d3f4f1, type: 3}
   dotDuration: 3
@@ -321,7 +321,8 @@ MonoBehaviour:
   pierceCount: 5
   blackHolePullDuration: 2
   blackHoleRadius: 3
-  blackHoleVfxPrefab: {fileID: 4736630556181736464, guid: e45bb3901cec7d3409067438f9d3f4f1, type: 3}
+  blackHolePullSpeed: 3
+  blackHoleVfxPrefab: {fileID: 6218152979640208037, guid: 8c22adcdb8fe5594982f6fb156c930f6, type: 3}
   stickyDelay: 2
   stickyAoeRadius: 1.5
   stickyAoeDamage: 5

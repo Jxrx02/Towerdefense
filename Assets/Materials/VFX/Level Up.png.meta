@@ -1,0 +1,1113 @@
+fileFormatVersion: 2
+guid: 9a5d9529209056f43832510074e75423
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6819664423376415453
+    second: Level Up_0
+  - first:
+      213: 45474848241810509
+    second: Level Up_1
+  - first:
+      213: -9206867653877268575
+    second: Level Up_2
+  - first:
+      213: 3899971976412887226
+    second: Level Up_3
+  - first:
+      213: -8909028608726305551
+    second: Level Up_4
+  - first:
+      213: 3869554151048879330
+    second: Level Up_5
+  - first:
+      213: -8858350524460781141
+    second: Level Up_6
+  - first:
+      213: 3072346460584576389
+    second: Level Up_7
+  - first:
+      213: -4815966213594270383
+    second: Level Up_8
+  - first:
+      213: 840472155044355956
+    second: Level Up_9
+  - first:
+      213: -2954411358298803017
+    second: Level Up_10
+  - first:
+      213: -3794242804071014010
+    second: Level Up_11
+  - first:
+      213: 4620484638434473893
+    second: Level Up_12
+  - first:
+      213: -6545084766089815605
+    second: Level Up_13
+  - first:
+      213: -794796460375399413
+    second: Level Up_14
+  - first:
+      213: -8270670851765853057
+    second: Level Up_15
+  - first:
+      213: -76649671371348814
+    second: Level Up_16
+  - first:
+      213: -272142416260965608
+    second: Level Up_17
+  - first:
+      213: 1995246017863951478
+    second: Level Up_18
+  - first:
+      213: 3836524389326062259
+    second: Level Up_19
+  - first:
+      213: 1937418965125764948
+    second: Level Up_20
+  - first:
+      213: 6746531450921310851
+    second: Level Up_21
+  - first:
+      213: 6588936239323080111
+    second: Level Up_22
+  - first:
+      213: 8090989018989572838
+    second: Level Up_23
+  - first:
+      213: -1588833978838329357
+    second: Level Up_24
+  - first:
+      213: 3516940980927937098
+    second: Level Up_25
+  - first:
+      213: -8095736004826367056
+    second: Level Up_26
+  - first:
+      213: 4428378697153567977
+    second: Level Up_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level Up_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34554d2c3ac8bd40a43e911c97d34c3
+      internalID: 6819664423376415453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9715e79d27499f346aa4fd3d0b4fdece
+      internalID: 45474848241810509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0755d680dcbd7941b2911405a83de89
+      internalID: -9206867653877268575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c7f9e3c36c3784fb4d2b0d5a6e1f49
+      internalID: 3899971976412887226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_4
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbc6f5a3a3a3b84aa59622c374f9bb3
+      internalID: -8909028608726305551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce141b43947e98418248683cd817479
+      internalID: 3869554151048879330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_6
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce90534b2731ffc4a9c46846a0c4ecec
+      internalID: -8858350524460781141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_7
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa77814d1b358446a5a5b4986bcd560
+      internalID: 3072346460584576389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_8
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a05c3527bd2b0c4bbae987c259e63ed
+      internalID: -4815966213594270383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_9
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5f371f34408a942a154f061c15c317
+      internalID: 840472155044355956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_10
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7d723f3f5e87944aff3b595ef8dc32
+      internalID: -2954411358298803017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_11
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47b7d4687671724da0f86b54a2c2257
+      internalID: -3794242804071014010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_12
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323271c05d6710b47a96ba76839dfe18
+      internalID: 4620484638434473893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_13
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c7d6960d85f6d4f9cac1d0cbd3b7c3
+      internalID: -6545084766089815605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_14
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f77b430c05df624298e0bb5e3257a5a
+      internalID: -794796460375399413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_15
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bb1ebbf0e6e0648ac753830b6712a0
+      internalID: -8270670851765853057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_16
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca55932884b87554fa321ec13613d3cc
+      internalID: -76649671371348814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_17
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9c7105ea3c03742b2c808e782ef214
+      internalID: -272142416260965608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_18
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab068e6a9dcb164ead93434821cf181
+      internalID: 1995246017863951478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_19
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6dd2a2f54a16a48b5c94b417836c69
+      internalID: 3836524389326062259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_20
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcaed75ee006634418e09d8af01edfa2
+      internalID: 1937418965125764948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_21
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02199ff976e96743a9a5017e89ec1b5
+      internalID: 6746531450921310851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_22
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f472424a172865468167e69760a64fa
+      internalID: 6588936239323080111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_23
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5365fcd1d163d1e43ae470599e827f76
+      internalID: 8090989018989572838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_24
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7768e55fcd33496468b5ab34aab53dbc
+      internalID: -1588833978838329357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_25
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb7e83491737d747bf66f5443ecf88d
+      internalID: 3516940980927937098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_26
+      rect:
+        serializedVersion: 2
+        x: 2606
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5dbdeaeadf7c94eb2d5a88b86f72b2
+      internalID: -8095736004826367056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_27
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecb6dba099ec96438ddff3945af49c6
+      internalID: 4428378697153567977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_28
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896099459a3c561499e2430c9924ff4a
+      internalID: -926684307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_29
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35660d3f60fc1a44b6399f21da82900
+      internalID: 1882046405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_30
+      rect:
+        serializedVersion: 2
+        x: 2990
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68efca458281c7e4cbc74809125435a4
+      internalID: 978353611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_31
+      rect:
+        serializedVersion: 2
+        x: 3086
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfa39665d7dfa7419a29d6df485cb68
+      internalID: 2132146193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_32
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9c2894f8b3c9c43a615001b389d32a
+      internalID: -314227202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_33
+      rect:
+        serializedVersion: 2
+        x: 3278
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02c19aa1f6cb0b45b45af45a90bc9c3
+      internalID: 1015580585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_34
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb60ff4964ddf7d4393af4c8b10e29b1
+      internalID: 1249483105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_35
+      rect:
+        serializedVersion: 2
+        x: 3470
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e92f28b7a6a6d4f8c84384ba69f7f8
+      internalID: 189542411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_36
+      rect:
+        serializedVersion: 2
+        x: 3566
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6a90409e3392c43805054a42e011ed
+      internalID: 1918658315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_37
+      rect:
+        serializedVersion: 2
+        x: 3662
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d282fc8f046fa439180f097fa70503
+      internalID: 144867259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Up_38
+      rect:
+        serializedVersion: 2
+        x: 3758
+        y: 8
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c241ea6c51c778d48af171144af3d05d
+      internalID: -558033603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8adaf3a23c8ab9e46933e9648e6165cc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":104.0},"gridSpriteOffset":{"x":110.0,"y":0.0},"gridSpritePadding":{"x":26.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Level Up_0: 6819664423376415453
+      Level Up_1: 45474848241810509
+      Level Up_10: -2954411358298803017
+      Level Up_11: -3794242804071014010
+      Level Up_12: 4620484638434473893
+      Level Up_13: -6545084766089815605
+      Level Up_14: -794796460375399413
+      Level Up_15: -8270670851765853057
+      Level Up_16: -76649671371348814
+      Level Up_17: -272142416260965608
+      Level Up_18: 1995246017863951478
+      Level Up_19: 3836524389326062259
+      Level Up_2: -9206867653877268575
+      Level Up_20: 1937418965125764948
+      Level Up_21: 6746531450921310851
+      Level Up_22: 6588936239323080111
+      Level Up_23: 8090989018989572838
+      Level Up_24: -1588833978838329357
+      Level Up_25: 3516940980927937098
+      Level Up_26: -8095736004826367056
+      Level Up_27: 4428378697153567977
+      Level Up_28: -926684307
+      Level Up_29: 1882046405
+      Level Up_3: 3899971976412887226
+      Level Up_30: 978353611
+      Level Up_31: 2132146193
+      Level Up_32: -314227202
+      Level Up_33: 1015580585
+      Level Up_34: 1249483105
+      Level Up_35: 189542411
+      Level Up_36: 1918658315
+      Level Up_37: 144867259
+      Level Up_38: -558033603
+      Level Up_4: -8909028608726305551
+      Level Up_5: 3869554151048879330
+      Level Up_6: -8858350524460781141
+      Level Up_7: 3072346460584576389
+      Level Up_8: -4815966213594270383
+      Level Up_9: 840472155044355956
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
