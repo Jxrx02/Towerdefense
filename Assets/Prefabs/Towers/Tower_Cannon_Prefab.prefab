@@ -539,7 +539,7 @@ MonoBehaviour:
   towerName: Feuerturm
   towerDesc: Throws fire around
   towerInitPrice: 3
-  displayedStats: 71
+  displayedStats: 487
   statHealthPoints: 0
   currentHealth: 0
   baseArmor: 0
@@ -581,11 +581,11 @@ MonoBehaviour:
   whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
   damageFlashDuration: 0.12
   statCoinsEarnedPerSecond: 0
-  statHealthRegenPerSecond: 0
-  statRangeMultiplier: 0
-  statDmgMultiplier: 1
-  statAttackSpeedMultiplier: 0
+  statRangeMultiplier: 0.15
+  statDmgMultiplier: 0.3
+  statAttackSpeedMultiplier: 0.2
   statSlowMultiplier: 0
+  statHealthRegenPerSecond: 2
   spawnProjectileOffsetPoint: {fileID: 8153726728699983278}
   upgradePaths:
   - towerName: Gelbes Feuer

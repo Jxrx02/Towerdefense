@@ -8,7 +8,8 @@ namespace TowerDefense
         [Tooltip("16 Sprites entsprechend der 4-Bit-Nachbarschaft.")]
         [SerializeField]
         private Sprite[] wallSprites = new Sprite[16];
-
+        private Sprite[] defaultWallSprites;
+        
         [SerializeField]
         private Material unbuiltMaterial;
 
@@ -49,6 +50,7 @@ namespace TowerDefense
                 spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
 
             ValidateWallSprites();
+            defaultWallSprites = wallSprites != null ? (Sprite[])wallSprites.Clone() : null;
             boxCollider2D = GetComponent<BoxCollider2D>();
         }
 
@@ -108,7 +110,12 @@ namespace TowerDefense
         // =========================================================
         // WALL SPRITES
         // =========================================================
-
+        /// <summary>Stellt die Sprites der Grundstufe wieder her (nach dem Verkauf).</summary>
+        public virtual void ResetVisualsToBase()
+        {
+            if (defaultWallSprites != null && defaultWallSprites.Length == 16)
+                SetWallSprites(defaultWallSprites);
+        }
         public void SetWallSprites(Sprite[] newSprites)
         {
             if (newSprites == null || newSprites.Length != 16)

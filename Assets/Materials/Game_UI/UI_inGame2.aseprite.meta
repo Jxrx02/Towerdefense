@@ -2144,7 +2144,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: UI_inGame2_121
+  - name: UI_inGame2_122
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2154,29 +2154,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 483
       y: 1151
-      width: 6
-      height: 6
-    spriteID: 3185226a998b7ae4f9cdc250bd084778
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: UI_inGame2_122
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 485
-      y: 1154
-      width: 8
-      height: 7
+      width: 10
+      height: 10
     spriteID: dbc7ed6f0f55c9b449f4ce312629a654
     spriteBone: []
     spriteOutline: []

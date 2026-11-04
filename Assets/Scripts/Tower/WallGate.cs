@@ -24,12 +24,25 @@ namespace Tower
         [SerializeField]private Sprite horizontalOpen;
         [SerializeField]private Sprite verticalClosed;
         [SerializeField]private Sprite verticalOpen;
+        private Sprite defHorizontalClosed, defHorizontalOpen, defVerticalClosed, defVerticalOpen;
+
 
         protected override void Awake()
         {
             base.Awake();
 
             sr = GetComponent<SpriteRenderer>();
+
+            defHorizontalClosed = horizontalClosed;
+            defHorizontalOpen = horizontalOpen;
+            defVerticalClosed = verticalClosed;
+            defVerticalOpen = verticalOpen;
+        }
+
+        public override void ResetVisualsToBase()
+        {
+            base.ResetVisualsToBase();
+            SetGateSprites(defHorizontalClosed, defHorizontalOpen, defVerticalClosed, defVerticalOpen);
         }
 
         public void InitializeGate(bool horizontal)

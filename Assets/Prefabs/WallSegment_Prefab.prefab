@@ -911,7 +911,7 @@ MonoBehaviour:
     - upgradeName: Wooden Wall
       description: A simple wooden wall blocks the enemies paths but can be broken
         by their attcks.
-      researchCost: 1
+      researchCost: 2
       bonus:
         health: 0
         healthRegen: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
         magicPenFlat: 0
         magicPenPercent: 0
         omnivamp: 0
-      upgradeCost: 80
+      upgradeCost: 2
       damageIncrease: 0
       rangeIncrease: 0
       attackSpeedIncrease: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
       gateVerticalOpen: {fileID: -1224501830, guid: 5d239126d75b88942ae4b69d602782d0, type: 3}
     - upgradeName: Stone Wall
       description: A stone wall has more health than a wooden wall
-      researchCost: 1
+      researchCost: 3
       bonus:
         health: 0
         healthRegen: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
         magicPenFlat: 0
         magicPenPercent: 0
         omnivamp: 0
-      upgradeCost: 50
+      upgradeCost: 3
       damageIncrease: 0
       rangeIncrease: 0
       attackSpeedIncrease: 0
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     - upgradeName: 'Reinforced Wall '
       description: A reinforced wall has more health than a stone wall and also gets
         some armor blocking physical damage
-      researchCost: 1
+      researchCost: 4
       bonus:
         health: 0
         healthRegen: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
         magicPenFlat: 0
         magicPenPercent: 0
         omnivamp: 0
-      upgradeCost: 80
+      upgradeCost: 4
       damageIncrease: 0
       rangeIncrease: 0
       attackSpeedIncrease: 0

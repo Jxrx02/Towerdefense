@@ -22,7 +22,8 @@ namespace TowerDefense
         [Header("Coins")]
         [SerializeField] private Transform coinContainer;
         [SerializeField] private CoinUI coinPrefab;
-
+        [SerializeField] private GameObject promptRoot;   // "Press [E] to ..." mit Münzen
+        
         [Header("Upgrade Info")]
         [SerializeField] private GameObject upgradeInfoPanel;
         [SerializeField] private Text upgradeTitle;
@@ -54,6 +55,17 @@ namespace TowerDefense
         [SerializeField] private Text txtTargetPreference;
         [SerializeField] private Button btnPrevTarget;
         [SerializeField] private Button btnNextTarget;
+        [SerializeField] private GameObject towerInfoRoot;   // ganzer Info-Block (Divider, Level, XP, Ziel)
+
+        [Header("Target Type (aufklappbar)")]
+        [SerializeField] private Button btnTargetToggle;
+        [SerializeField] private Text txtTargetArrow;
+        [SerializeField] private GameObject targetPanel;
+        [SerializeField] private Transform targetGrid;
+        [SerializeField] private Color targetCellColor = new Color(0.27f, 0.20f, 0.14f, 1f);
+        [SerializeField] private Color targetCellSelectedColor = new Color(0.82f, 0.55f, 0.20f, 1f);
+
+        
         [Header("Sell (Turm + Wall)")]
         [SerializeField] private GameObject sellRoot;         // Pnl:Sell
         [SerializeField] private Button btnSell;
@@ -81,7 +93,8 @@ namespace TowerDefense
         [SerializeField] public Sprite rangeMultiplierIcon;
         [SerializeField] public Sprite attackSpeedMultiplierIcon;
         [SerializeField] public Sprite slowMultiplierIcon;
-
+        [SerializeField] public Sprite regenMultiplierIcon;
+        [SerializeField] public Sprite omnivampMultiplierIcon;
         [Header("Stat Icons (LoL-Stats)")]
         [Tooltip("Fehlt ein Icon, steht stattdessen der Stat-Name hinter dem Wert.")]
         [SerializeField] public Sprite armorIcon;
@@ -128,10 +141,32 @@ namespace TowerDefense
         private float inspectTimer;
         private readonly List<InspectStat> inspectBuffer = new List<InspectStat>();
         private readonly List<UpgradeStatEntry> inspectEntries = new List<UpgradeStatEntry>();
-
+        
+        
+        /// <summary>Reihenfolge der Felder im aufgeklappten Panel (Builder und Popup nutzen dieselbe Liste).</summary>
+        public static readonly TargetType[] TargetOrder =
+        {
+            TargetType.First,     TargetType.Last,
+            TargetType.Nearest,   TargetType.Farthest,
+            TargetType.Strongest, TargetType.Weakest,
+            TargetType.Armored,   TargetType.MagicResistant,
+            TargetType.Shielded,  TargetType.Wounded,
+            TargetType.Random
+        };
+        public static string TargetLabel(TargetType t)
+        {
+            switch (t)
+            {
+                case TargetType.MagicResistant: return "Resistant";
+                default: return t.ToString();
+            }
+        }
+        private readonly List<Image> targetCellImages = new List<Image>();
+        
         /// <summary>Index des aktuell gewählten Turms (Kauf) bzw. Upgrade-Pfads (Upgrade).</summary>
         public int SelectedIndex => selectedIndex;
-
+        public Tower CurrentUpgradeTarget =>
+            mode == PopupMode.TowerUpgrade ? upgradeTarget : null;
         private void Awake()
         {
             if (instance == null)
@@ -147,8 +182,8 @@ namespace TowerDefense
 
             Hide();
 
-            if (btnPrevTarget != null) btnPrevTarget.onClick.AddListener(OnPrevTargetClicked);
-            if (btnNextTarget != null) btnNextTarget.onClick.AddListener(OnNextTargetClicked);
+            if (btnTargetToggle != null) btnTargetToggle.onClick.AddListener(ToggleTargetPanel);
+            BindTargetCells();
             if (btnSell != null)       btnSell.onClick.AddListener(OnSellClicked);
         }
 
@@ -241,13 +276,18 @@ namespace TowerDefense
                     upgradeDescription.text = description;
 
                 if (upgradeCost != null)
-                    upgradeCost.text = $"{goldCost} Gold";
+                {
+                    upgradeCost.text = goldCost > 0 ? $"{goldCost} Gold" : "";
+                    upgradeCost.gameObject.SetActive(goldCost > 0);
+                }
             }
-
-            Position(worldPosition);
+// Ohne Aktion (maximal, gesperrt, Inspektion) kein "Press E"
+            if (promptRoot != null)
+                promptRoot.SetActive(!string.IsNullOrEmpty(interactiontext));
+            
+            anchorPosition = worldPosition;
             interactionText.text = interactiontext;
             gameObject.SetActive(true);
-
             RebuildLayout();
         }
 
@@ -301,8 +341,75 @@ namespace TowerDefense
                 LayoutRebuilder.ForceRebuildLayoutImmediate(upgradeInfoPanel.transform as RectTransform);
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+            Position(anchorPosition);
+        }
+        private void BindTargetCells()
+        {
+            targetCellImages.Clear();
+            if (targetGrid == null || targetGrid.childCount == 0) return;
+
+            Transform template = targetGrid.GetChild(0);
+
+            for (int i = targetGrid.childCount; i < TargetOrder.Length; i++)
+                Instantiate(template.gameObject, targetGrid, false);
+
+            for (int i = targetGrid.childCount - 1; i >= TargetOrder.Length; i--)
+            {
+                Transform extra = targetGrid.GetChild(i);
+                extra.SetParent(null);
+                Destroy(extra.gameObject);
+            }
+
+            for (int i = 0; i < TargetOrder.Length; i++)
+            {
+                Transform cell = targetGrid.GetChild(i);
+                TargetType type = TargetOrder[i];
+
+                cell.name = type.ToString();
+
+                Text label = cell.GetComponentInChildren<Text>(true);
+                if (label != null) label.text = TargetLabel(type);
+
+                targetCellImages.Add(cell.GetComponent<Image>());
+
+                if (cell.TryGetComponent(out Button button))
+                    button.onClick.AddListener(() => OnTargetCellClicked(type));
+            }
         }
 
+        private void ToggleTargetPanel()
+        {
+            if (mode != PopupMode.TowerUpgrade || targetPanel == null) return;
+
+            bool open = !targetPanel.activeSelf;
+            targetPanel.SetActive(open);
+
+            if (txtTargetArrow != null)
+                txtTargetArrow.text = open ? "<" : ">";
+
+            if (open)
+                LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)targetPanel.transform);
+
+            RebuildLayout();
+        }
+        private void OnTargetCellClicked(TargetType type)
+        {
+            if (mode != PopupMode.TowerUpgrade || upgradeTarget == null)
+                return;
+
+            upgradeTarget.SetTargetType(type);
+            RefreshTowerInfo(true);
+            ToggleTargetPanel();          // nach der Wahl wieder zuklappen
+        }
+
+        private void UpdateTargetCells(TargetType selected)
+        {
+            for (int i = 0; i < targetCellImages.Count; i++)
+            {
+                if (targetCellImages[i] != null)
+                    targetCellImages[i].color = TargetOrder[i] == selected ? targetCellSelectedColor : targetCellColor;
+            }
+        }
         // --------------------------------------------------
         // TOWER PURCHASE
         // --------------------------------------------------
@@ -528,7 +635,7 @@ namespace TowerDefense
                 if (!upgradeTarget.IsUpgradeUnlocked(selectedIndex))
                 {
                     ShowInternal(anchorPosition, "locked",
-                        $"Locked: {next.upgradeName} (Lv {currentPathLevel + 1}/{maxLevel})",
+                        $"Locked: {next.upgradeName} (Lv {currentPathLevel }/{maxLevel})",
                         0, "This upgrade has not been researched yet.", true);
                     ShowUpgradeStats(null);
                     return;
@@ -537,7 +644,7 @@ namespace TowerDefense
                 ShowInternal(
                     anchorPosition,
                     "to upgrade",
-                    $"Upgrade: {next.upgradeName} (Lv {currentPathLevel + 1}/{maxLevel})",
+                    $"Upgrade: {next.upgradeName} (Lv {currentPathLevel}/{maxLevel})",
                     next.upgradeCost,
                     next.description,
                     true
@@ -599,12 +706,12 @@ namespace TowerDefense
         // --------------------------------------------------
 
         // Farben der LoL-Stats
-        private static readonly Color armorColor = new Color(1f, 0.8f, 0.3f);
-        private static readonly Color magicResistColor = new Color(0.5f, 0.6f, 1f);
-        private static readonly Color critColor = new Color(1f, 0.5f, 0.1f);
-        private static readonly Color penColor = new Color(0.9f, 0.25f, 0.25f);
-        private static readonly Color magicPenColor = new Color(0.7f, 0.3f, 1f);
-        private static readonly Color omnivampColor = new Color(0.9f, 0.1f, 0.5f);
+        private static readonly Color armorColor       = new Color(0.95f, 0.78f, 0.35f);
+        private static readonly Color magicResistColor = new Color(0.55f, 0.68f, 0.95f);
+        private static readonly Color critColor        = new Color(1f, 0.58f, 0.22f);
+        private static readonly Color penColor         = new Color(0.90f, 0.35f, 0.30f);
+        private static readonly Color magicPenColor    = new Color(0.72f, 0.45f, 0.95f);
+        private static readonly Color omnivampColor    = new Color(0.90f, 0.30f, 0.55f);
 
         private List<UpgradeStatData> BuildPurchaseStats(Tower t)
         {
@@ -640,7 +747,11 @@ namespace TowerDefense
 
             AddStat(list, t, TowerDisplayedStats.SlowMultiplier, "Slow Mult.",
                 0, t.statSlowMultiplier * 100f, slowMultiplierIcon, new Color(0.6f, 0.4f, 1f), "%");
+AddStat(list, t, TowerDisplayedStats.RegenMultiplier, "Regen Mult.",
+    0, t.statRegenMultiplier * 100f, regenMultiplierIcon, new Color(0.3f, 1f, 0.3f), "%");
 
+AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
+    0, t.statOmnivampMultiplier * 100f, omnivampMultiplierIcon, omnivampColor, "%");
             // LoL-Stats: beim Kauf nur anzeigen, wenn sie einen Wert haben (sonst viele Nullzeilen)
             OffenseStats o = t.offense;
 
@@ -723,7 +834,13 @@ namespace TowerDefense
             AddStat(list, t, TowerDisplayedStats.SlowMultiplier, "Slow Mult.",
                 t.statSlowMultiplier * 100f, (t.statSlowMultiplier + lvl.slowMultiplier) * 100f,
                 slowMultiplierIcon, new Color(0.6f, 0.4f, 1f), "%", 0, true);
+AddStat(list, t, TowerDisplayedStats.RegenMultiplier, "Regen Mult.",
+    t.statRegenMultiplier * 100f, (t.statRegenMultiplier + lvl.regenMultiplier) * 100f,
+    regenMultiplierIcon, new Color(0.3f, 1f, 0.3f), "%", 0, true);
 
+AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
+    t.statOmnivampMultiplier * 100f, (t.statOmnivampMultiplier + lvl.omnivampMultiplier) * 100f,
+    omnivampMultiplierIcon, omnivampColor, "%", 0, true);
             // LoL-Stats (Prozentwerte werden als 0..100 angezeigt)
             OffenseStats o = t.offense;
 
@@ -829,13 +946,26 @@ namespace TowerDefense
         // TOWER INFO (Level, XP, Target, Sell)
         // --------------------------------------------------
 
-        private void SetTowerInfoActive(bool active)
-        {
-            if (txtLevel != null)       txtLevel.gameObject.SetActive(active);
-            if (experienceBar != null)  experienceBar.gameObject.SetActive(active);
-            if (targetTypeRoot != null) targetTypeRoot.SetActive(active);
+        private Tower InfoTower =>
+            mode == PopupMode.TowerUpgrade ? upgradeTarget :
+            mode == PopupMode.Inspect ? inspectTarget as Tower : null;
 
-            SetSellActive(active);
+        private void SetTowerInfoActive(bool active) => SetTowerInfoActive(active, active);
+
+        private void SetTowerInfoActive(bool showLevel, bool showControls)
+        {
+            if (towerInfoRoot != null)  towerInfoRoot.SetActive(showLevel);   // Divider, Level, XP-Balken
+            if (txtLevel != null)       txtLevel.gameObject.SetActive(showLevel);
+            if (experienceBar != null)  experienceBar.gameObject.SetActive(showLevel);
+            if (targetTypeRoot != null) targetTypeRoot.SetActive(showControls);
+
+            if (!showControls)
+            {
+                if (targetPanel != null) targetPanel.SetActive(false);
+                if (txtTargetArrow != null) txtTargetArrow.text = ">";
+            }
+
+            SetSellActive(showControls);
             RebuildLayout();
         }
 
@@ -862,8 +992,7 @@ namespace TowerDefense
 
         private void RefreshTowerInfo(bool force = false)
         {
-            Tower t = upgradeTarget;
-
+            Tower t = InfoTower;
             if (t == null)
                 return;
 
@@ -897,7 +1026,9 @@ namespace TowerDefense
                 experienceText.text = $"{t.experience} / {t.requiredExperience} Exp";
 
             if (txtTargetPreference != null)
-                txtTargetPreference.text = t.targetPreference.ToString();
+                txtTargetPreference.text = TargetLabel(t.targetPreference);
+
+            UpdateTargetCells(t.targetPreference);
 
             if (txtSellPrice != null)
                 txtSellPrice.text = $"{sellPrice} Coins";
@@ -961,7 +1092,7 @@ namespace TowerDefense
                 TowerUpgradeLevel level = wall.WallGroup.GetCurrentUpgrade();
                 if (level != null)
                 {
-                    title = level.upgradeName;
+                    title = $"{level.upgradeName} (Lv {wall.WallGroup.WallLevel + 1}/{wall.WallGroup.LevelCount})";
                     description = level.description;
                 }
             }
@@ -990,7 +1121,8 @@ namespace TowerDefense
             inspectEntries.Clear();
 
             ClearEntries();
-            SetTowerInfoActive(false);
+            bool showLevel = target is Tower inspected && !(inspected is WallSegment);
+            SetTowerInfoActive(showLevel, false);
             wallSellAction = null;
 
             if (towerSelectionPanel != null)
@@ -1005,6 +1137,7 @@ namespace TowerDefense
                 upgradeCost.text = "";
 
             RefreshInspect();
+            RefreshTowerInfo(true);
         }
 
         private void UpdateInspect()
@@ -1015,14 +1148,15 @@ namespace TowerDefense
                 return;
             }
 
-            // Bewegliche Ziele (Gegner, Held): Popup folgt
-            Position(GetInspectPosition());
+            anchorPosition = GetInspectPosition();
+            Position(anchorPosition);
 
             inspectTimer -= Time.unscaledDeltaTime;
             if (inspectTimer <= 0f)
             {
                 inspectTimer = inspectRefreshInterval;
                 RefreshInspect();
+                RefreshTowerInfo();
             }
         }
 
@@ -1058,12 +1192,15 @@ namespace TowerDefense
                 InspectStats.Collect(tower, inspectBuffer);
             else if (inspectTarget is Enemy enemy)
                 InspectStats.Collect(enemy, inspectBuffer);
+            
+            inspectBuffer.RemoveAll(s => s.id == StatId.Level && inspectTarget is Tower);
 
             // Zeilen nur neu bauen, wenn sich die Zeilenliste ändert (z. B. Shred beginnt: Rüstung zeigt "alt → neu").
             // Sonst werden nur die Werte aktualisiert, das spart Layout-Arbeit.
             var key = new System.Text.StringBuilder();
             foreach (InspectStat stat in inspectBuffer)
                 key.Append((int)stat.id).Append(stat.Changed ? '~' : '.').Append(',');
+
 
             string newKey = key.ToString();
 
@@ -1139,6 +1276,8 @@ namespace TowerDefense
                 case StatId.GiveDamage: return damageMultiplierIcon;
                 case StatId.GiveAttackSpeed: return attackSpeedMultiplierIcon;
                 case StatId.GiveSlow: return slowMultiplierIcon;
+                case StatId.GiveRegen:    return regenMultiplierIcon;
+                case StatId.GiveOmnivamp: return omnivampMultiplierIcon;
                 default: return null;
             }
         }
@@ -1170,6 +1309,8 @@ namespace TowerDefense
                 case StatId.Regen: return new Color(0.3f, 1f, 0.3f);
                 case StatId.Gold: return new Color(1f, 0.84f, 0f);
                 case StatId.MoveSpeed: return new Color(0.9f, 0.9f, 0.5f);
+                case StatId.GiveRegen:    return new Color(0.3f, 1f, 0.3f);
+                case StatId.GiveOmnivamp: return omnivampColor;
                 default: return Color.white;
             }
         }
@@ -1227,22 +1368,18 @@ namespace TowerDefense
 
         private void CreateCoins(int amount)
         {
-            for (int i = coinContainer.childCount - 1; i >= 0; i--)
-            {
-                Destroy(coinContainer.GetChild(i).gameObject);
-            }
-
+            DestroyChildren(coinContainer);   // entfernt sofort aus dem Layout
             coins.Clear();
 
             for (int i = 0; i < amount; i++)
             {
-                CoinUI coin = Instantiate(
-                    coinPrefab,
-                    coinContainer
-                );
+                CoinUI coin = Instantiate(coinPrefab, coinContainer, false);
+
+                RectTransform coinRect = (RectTransform)coin.transform;
+                coinRect.localScale = Vector3.one;          // Prefab war evtl. für den World-Space-Canvas skaliert
+                coinRect.localRotation = Quaternion.identity;
 
                 coin.ResetCoin();
-
                 coins.Add(coin);
             }
         }
@@ -1296,6 +1433,7 @@ namespace TowerDefense
         // --------------------------------------------------
         // POSITION
         // --------------------------------------------------
+        private Camera worldCamera;
 
         private void Position(Vector3 worldPosition)
         {
@@ -1310,27 +1448,36 @@ namespace TowerDefense
                 return;
             }
 
-            Camera cam = canvas.renderMode == RenderMode.ScreenSpaceOverlay
-                ? null
-                : canvas.worldCamera;
+            if (worldCamera == null)
+                worldCamera = Camera.main;
+            if (worldCamera == null)
+                return;
 
-            Vector2 screenPosition =
-                RectTransformUtility.WorldToScreenPoint(
-                    cam,
-                    worldPosition
-                );
+            // Welt -> Bildschirm immer mit der Spielkamera, nicht mit der UI-Kamera (bei Overlay null)
+            Vector2 screenPoint = worldCamera.WorldToScreenPoint(worldPosition);
+            Camera uiCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+            RectTransform parent = (RectTransform)rectTransform.parent;
 
-            RectTransform canvasRect =
-                canvas.transform as RectTransform;
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(parent, screenPoint, uiCamera, out Vector2 local))
+                return;
 
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                canvasRect,
-                screenPosition,
-                cam,
-                out Vector2 localPosition
-            );
+            Rect area = parent.rect;
+            Vector2 pos = local - area.center;          // anchoredPosition bezieht sich auf die Mitte (Anker 0.5/0.5)
 
-            rectTransform.anchoredPosition = localPosition;
+            // Im Bild halten (Pivot = unten Mitte)
+            const float margin = 8f;
+            float extraRight = mode == PopupMode.TowerUpgrade ? 240f : 0f;   // Platz für das Ziel-Panel rechts
+            Vector2 size = rectTransform.rect.size;
+
+            float minX = -area.width * 0.5f + size.x * 0.5f + margin;
+            float maxX =  area.width * 0.5f - size.x * 0.5f - extraRight - margin;
+            float minY = -area.height * 0.5f + margin;
+            float maxY =  area.height * 0.5f - size.y - margin;
+
+            if (maxX > minX) pos.x = Mathf.Clamp(pos.x, minX, maxX);
+            if (maxY > minY) pos.y = Mathf.Clamp(pos.y, minY, maxY);
+
+            rectTransform.anchoredPosition = pos;
         }
     }
 }

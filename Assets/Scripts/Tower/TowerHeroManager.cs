@@ -57,10 +57,7 @@ namespace TowerDefense
 
                 }
             }
-            OneClickInWorldListener.ListenOnce((Vector3 pos) =>
-            {
-                instance.DeselectTower();
-            });
+
 
         }
 

@@ -12,8 +12,7 @@ namespace TowerDefense
         [Tooltip("Steht hinter dem neuen Wert. Zeigt den Stat-Namen, wenn kein Icon zugewiesen ist.")]
         [SerializeField] private Text suffixNewValueText;
 
-        [Header("Optional")]
-        [SerializeField] private Image arrow;
+        [SerializeField] private Graphic arrow;   
 
         public void Setup(
             Sprite icon,

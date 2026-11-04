@@ -627,6 +627,13 @@ namespace TowerDefense
             cur_coins += enemy.GetComponent<Enemy>().enemyConfig.goldReward;
             UpdateStats();
         }
+        public void SoldObjectReturnCoins(int coins)
+        {
+            cur_coins += coins;
+            UpdateStats();
+        }
+
+        
 
         public void ShowDeathScreen()
         {

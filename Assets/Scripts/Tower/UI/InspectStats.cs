@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace TowerDefense
 {
-    public enum StatId
-    {
-        Level, Health, Shield, Block, AntiHeal, Armor, MagicResist,
-        Damage, AttackSpeed, Range, Crit, CritDamage, Lethality, ArmorPen, MagicPen, MagicPenPercent,
-        Omnivamp, Regen, MoveSpeed, Evasion, Gold,
-        GiveRange, GiveDamage, GiveAttackSpeed, GiveSlow
-    }
+public enum StatId
+{
+    Level, Health, Shield, Block, AntiHeal, Armor, MagicResist,
+    Damage, AttackSpeed, Range, Crit, CritDamage, Lethality, ArmorPen, MagicPen, MagicPenPercent,
+    Omnivamp, Regen, MoveSpeed, Evasion, Gold,
+    GiveRange, GiveDamage, GiveAttackSpeed, GiveSlow,
+    GiveRegen, GiveOmnivamp
+}
 
     /// <summary>Eine Zeile im Inspektions-Popup. baseValue ist der Grundwert, value der aktuelle (z. B. nach Shred oder Aura).</summary>
     public struct InspectStat
@@ -74,7 +75,13 @@ namespace TowerDefense
 
             AddOffense(list, t.offense);
 
-            AddIfNonZero(list, StatId.Regen, "Regen/sec", t.statHealthRegenPerSecond, "/s", 1);
+            // Regen: Grundwert gegen Wert mit Aura (zeigt auch Türme, die nur durch die Aura Regen bekommen)
+            if (t.statHealthPoints > 0 &&
+                (!Mathf.Approximately(t.statHealthRegenPerSecond, 0f) || !Mathf.Approximately(t.EffectiveRegen, 0f)))
+            {
+                list.Add(InspectStat.Make(StatId.Regen, "Regen/sec",
+                    t.EffectiveRegen, t.statHealthRegenPerSecond, "/s", 1));
+            }
             AddIfNonZero(list, StatId.Gold, "Gold/sec", t.statCoinsEarnedPerSecond, "/s", 1);
 
             // Aura, die dieser Turm an andere abgibt
@@ -82,6 +89,8 @@ namespace TowerDefense
             AddIfNonZero(list, StatId.GiveDamage, "Aura Damage", t.statDmgMultiplier * 100f, "%", 0);
             AddIfNonZero(list, StatId.GiveAttackSpeed, "Aura Atk Speed", t.statAttackSpeedMultiplier * 100f, "%", 0);
             AddIfNonZero(list, StatId.GiveSlow, "Aura Slow", t.statSlowMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveRegen, "Aura Regen", t.statRegenMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveOmnivamp, "Aura Omnivamp", t.statOmnivampMultiplier * 100f, "%", 0);
         }
         private static void CollectWall(WallSegment wall, List<InspectStat> list)
         {
@@ -94,7 +103,7 @@ namespace TowerDefense
             AddHealth(list, v);
             AddDefense(list, v, v.BaseArmor, v.BaseMagicResist);
         
-            list.Add(InspectStat.Make(StatId.Level, "Level", group.WallLevel + 1, group.WallLevel + 1));
+            //list.Add(InspectStat.Make(StatId.Level, "Level", group.WallLevel + 1, group.WallLevel + 1));
         }
         // ------------------------------------------------------------------ Gegner
         public static void Collect(Enemy e, List<InspectStat> list)
@@ -160,7 +169,7 @@ namespace TowerDefense
                 list.Add(InspectStat.Make(StatId.MagicResist, "Magic Resist", mr, baseMr));
         }
 
-        private static void AddOffense(List<InspectStat> list, OffenseStats o)
+        private static void AddOffense(List<InspectStat> list, OffenseStats o, float auraOmnivamp = 0f)
         {
             if (o == null) return;
 
@@ -174,7 +183,11 @@ namespace TowerDefense
             AddIfNonZero(list, StatId.ArmorPen, "Armor Pen", o.armorPenPercent * 100f, "%", 0);
             AddIfNonZero(list, StatId.MagicPen, "Magic Pen", o.magicPenFlat, "", 0);
             AddIfNonZero(list, StatId.MagicPenPercent, "Magic Pen", o.magicPenPercent * 100f, "%", 0);
-            AddIfNonZero(list, StatId.Omnivamp, "Omnivamp", o.omnivamp * 100f, "%", 0);
+
+            float omni = o.omnivamp * 100f;
+            if (!Mathf.Approximately(omni, 0f))
+                list.Add(InspectStat.Make(StatId.Omnivamp, "Omnivamp",
+                    omni * (1f + auraOmnivamp), omni, "%", 0));
         }
 
         private static void AddIfNonZero(List<InspectStat> list, StatId id, string name, float value,

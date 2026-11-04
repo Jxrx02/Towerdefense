@@ -33,8 +33,9 @@ namespace ScriptableObjects
         public float rangeMultiplier;
         public float dmgMultiplier;
         public float attackSpeedMultiplier;
-
         public float slowMultiplier;
+        public float regenMultiplier;
+        public float omnivampMultiplier;
         
         [Header("New Sprites")]
         public Sprite[] idle_sprites;

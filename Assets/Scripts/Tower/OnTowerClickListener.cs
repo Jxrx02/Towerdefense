@@ -1,72 +1,22 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 namespace TowerDefense
 {
     [RequireComponent(typeof(Tower))]
-    public class OnTowerClickListener: MonoBehaviour
+    public class OnTowerClickListener : MonoBehaviour
     {
-        public Vector2 size = new Vector2(1.3f, 1.3f); // Größe des Colliders
-        public Vector2 offset = new Vector2(0, .5f); // Größe des Colliders
-        [HideInInspector] public Boolean _enabled = true;
-        
-        private Vector2 colliderCenter;
+        public Vector2 size = new Vector2(1.3f, 1.3f);
+        public Vector2 offset = new Vector2(0, .5f);
+        [HideInInspector] public bool _enabled = true;
 
-        private Tower tower;
-
-		private Camera _mainCamera;
+        /// <summary>Klickbox in Weltkoordinaten (wird vom InspectClickHandler ausgewertet).</summary>
+        public Bounds WorldBounds =>
+            new Bounds(transform.position + (Vector3)offset, new Vector3(size.x, size.y, 1f));
 
         private void OnDrawGizmosSelected()
         {
-            // Collider in der Szene zeichnen
             Gizmos.color = Color.green;
-            colliderCenter = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y);
-            Gizmos.DrawWireCube(colliderCenter, size);
+            Gizmos.DrawWireCube(transform.position + (Vector3)offset, size);
         }
-
-        private void Awake()
-        {
-            tower = GetComponent<Tower>();
-			_mainCamera = Camera.main;
-
-        }
-
-        private void Update()
-        {
-            if (Input.GetMouseButtonDown(0) && _enabled)
-            {
-               
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    // Wenn der Mauszeiger über einem UI-Element ist, tue nichts
-                    return;
-                }
-                
-                Vector3 mouseWorldPos = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                
-                if (IsPointInsideCollider(mouseWorldPos))
-                {
-                    Debug.Log($"Objekt {gameObject.name} wurde angeklickt!");
-                    TowerHeroManager.instance.SelectTower(tower); 
-                }
-
-            }
-        }
-
-        private bool IsPointInsideCollider(Vector3 point)
-        {
-            colliderCenter = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y);
-            Vector2 halfSize = size / 2;
-
-            // Überprüfen, ob der Punkt innerhalb der Collider-Grenzen liegt
-            return point.x >= colliderCenter.x - halfSize.x &&
-                   point.x <= colliderCenter.x + halfSize.x &&
-                   point.y >= colliderCenter.y - halfSize.y &&
-                   point.y <= colliderCenter.y + halfSize.y;
-        }
-        
-        
     }
 }

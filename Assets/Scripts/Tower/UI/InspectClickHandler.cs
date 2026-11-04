@@ -51,69 +51,106 @@ namespace TowerDefense
             }
         }
 
-        private void HandleClick()
+       private void HandleClick()
+{
+    InteractionPopup popup = InteractionPopup.instance;
+
+    if (worldCamera == null)
+        worldCamera = Camera.main;
+    if (worldCamera == null)
+        return;
+
+    Vector3 world = worldCamera.ScreenToWorldPoint(Input.mousePosition);
+
+    Tower hitTower = null;
+    OnTowerClickListener hitListener = null;
+    Enemy hitEnemy = null;
+    float bestArea = float.MaxValue;
+
+    // Türme, Held und Mauern
+    foreach (Tower t in Tower.Active)
+    {
+        if (t == null || !t.gameObject.activeInHierarchy)
+            continue;
+
+        // Mauern nur, wenn sie gebaut sind
+        if (t is WallSegment wall && !wall.IsBuilt)
+            continue;
+
+        float area;
+        bool hit;
+
+        if (t.TryGetComponent(out OnTowerClickListener listener))
         {
-            InteractionPopup popup = InteractionPopup.instance;
-
-            // Kauf-/Upgrade-/Mauer-Popup hat Vorrang
-            if (popup.IsBusyWithInteraction)
-                return;
-
-            if (worldCamera == null)
-                worldCamera = Camera.main;
-            if (worldCamera == null)
-                return;
-
-            Vector3 world = worldCamera.ScreenToWorldPoint(Input.mousePosition);
-
-            Tower hitTower = null;
-            Enemy hitEnemy = null;
-            float bestArea = float.MaxValue;
-
-            // Türme und Held (Mauern nicht)
-            foreach (Tower t in Tower.Active)
+            hit = TryHitBounds(listener.WorldBounds, world, out area);
+            if (hit && area < bestArea)
             {
-                if (t == null || !t.gameObject.activeInHierarchy)
-                    continue;
-
-                // Mauern nur, wenn sie gebaut sind (Blaupausen und zerstörte Mauern sind nicht klickbar)
-                if (t is WallSegment wall && !wall.IsBuilt)
-                    continue;
-
-                if (TryHit(t.gameObject, world, out float area) && area < bestArea)
-                {
-                    bestArea = area;
-                    hitTower = t;
-                    hitEnemy = null;
-                }
+                bestArea = area;
+                hitTower = t;
+                hitListener = listener;
+                hitEnemy = null;
             }
-
-            // Gegner
-            if (TowerHeroManager.instance != null)
-            {
-                foreach (GameObject go in TowerHeroManager.instance.enemies)
-                {
-                    if (go == null) continue;
-
-                    Enemy e = go.GetComponent<Enemy>();
-                    if (e == null || (e.Vitals != null && e.Vitals.IsDead)) continue;
-
-                    if (TryHit(go, world, out float area) && area < bestArea)
-                    {
-                        bestArea = area;
-                        hitEnemy = e;
-                        hitTower = null;
-                    }
-                }
-            }
-
-            if (hitEnemy != null)
-                popup.ShowInspect(hitEnemy);
-            else if (hitTower != null)
-                popup.ShowInspect(hitTower);
-            else if (popup.IsInspecting)
-                popup.Hide();
         }
+        else if (TryHit(t.gameObject, world, out area) && area < bestArea)
+        {
+            bestArea = area;
+            hitTower = t;
+            hitListener = null;
+            hitEnemy = null;
+        }
+    }
+
+    // Gegner
+    if (TowerHeroManager.instance != null)
+    {
+        foreach (GameObject go in TowerHeroManager.instance.enemies)
+        {
+            if (go == null) continue;
+
+            Enemy e = go.GetComponent<Enemy>();
+            if (e == null || (e.Vitals != null && e.Vitals.IsDead)) continue;
+
+            if (TryHit(go, world, out float area) && area < bestArea)
+            {
+                bestArea = area;
+                hitEnemy = e;
+                hitTower = null;
+                hitListener = null;
+            }
+        }
+    }
+
+    // Highlight / Auswahl (nur Türme mit Klickbox, Mauern haben keinen Range-Indikator)
+    if (TowerHeroManager.instance != null)
+    {
+        if (hitTower != null && hitListener != null && hitListener._enabled)
+            TowerHeroManager.instance.SelectTower(hitTower);
+        else
+            TowerHeroManager.instance.DeselectTower();
+    }
+
+    // Kauf-/Upgrade-/Mauer-Popup hat Vorrang vor der Inspektion
+    if (popup.IsBusyWithInteraction)
+        return;
+
+    if (hitEnemy != null)
+        popup.ShowInspect(hitEnemy);
+    else if (hitTower != null)
+        popup.ShowInspect(hitTower);
+    else if (popup.IsInspecting)
+        popup.Hide();
+}
+
+private static bool TryHitBounds(Bounds b, Vector3 world, out float area)
+{
+    area = 0f;
+
+    if (!b.Contains(new Vector3(world.x, world.y, b.center.z)))
+        return false;
+
+    area = b.size.x * b.size.y;
+    return true;
+}
 
         private bool TryHit(GameObject go, Vector3 world, out float area)
         {

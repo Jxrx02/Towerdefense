@@ -23,6 +23,8 @@ namespace TowerDefense
         RangeMultiplier = 1 << 7,
         AttackSpeedMultiplier = 1 << 8,
         SlowMultiplier = 1 << 9,
+        RegenMultiplier = 1 << 16,
+        OmnivampMultiplier = 1 << 17,
         Armor = 1 << 10,
         MagicResist = 1 << 11,
         CritChance = 1 << 12,
@@ -36,7 +38,14 @@ namespace TowerDefense
         First,
         Last,
         Strongest,
-        Nearest
+        Nearest,
+        Farthest,
+        Weakest,
+        Armored,
+        MagicResistant,
+        Shielded,
+        Wounded,
+        Random
     }
 
     public abstract class Tower : MonoBehaviour, IDamageable
@@ -121,7 +130,9 @@ namespace TowerDefense
         [SerializeField] public float statDmgMultiplier;
         [SerializeField] public float statAttackSpeedMultiplier;
         [SerializeField] public float statSlowMultiplier;
-
+        [SerializeField] public float statRegenMultiplier;
+        [SerializeField] public float statOmnivampMultiplier;
+        
         [Header("Upgrades")]
         [SerializeField] protected Transform spawnProjectileOffsetPoint;
         public UpgradePath[] upgradePaths = new UpgradePath[3];
@@ -174,7 +185,12 @@ namespace TowerDefense
         private const float MaxAuraBonus = 1.5f;      // Obergrenze (+150 %) für Reichweite, Schaden und Angriffstempo
         private const float MaxAuraSlow = 0.8f;
         private const float AuraSlowDuration = 2f;    // Sekunden, die der Slow nach einem Treffer anhält
+        public float AuraRegen { get; private set; }
+        public float AuraOmnivamp { get; private set; }
 
+        /// <summary>Regeneration inklusive Aura-Bonus.</summary>
+        public float EffectiveRegen => statHealthRegenPerSecond * (1f + AuraRegen);
+        
         public float AuraRange { get; private set; }
         public float AuraDamage { get; private set; }
         public float AuraAttackSpeed { get; private set; }
@@ -217,7 +233,7 @@ namespace TowerDefense
             if (vitals != null)
             {
                 vitals.SetMaxHealth(statHealthPoints, true);
-                vitals.SetRegen(statHealthRegenPerSecond);
+                vitals.SetRegen(EffectiveRegen);
                 vitals.BaseArmor += baseArmor;
                 vitals.BaseMagicResist += baseMagicResist;
 
@@ -225,7 +241,9 @@ namespace TowerDefense
                 vitals.Healed += _ => SyncHealth();
                 vitals.Died += _ => BreakTower();
             }
-
+            if (levelConfig != null && requiredExperience <= 0)
+                CalculateRequiredExp();
+            
             RefreshSupporterRegistration();
         }
 
@@ -276,8 +294,8 @@ namespace TowerDefense
 
         private bool HasSupportStats =>
             statRangeMultiplier != 0f || statDmgMultiplier != 0f ||
-            statAttackSpeedMultiplier != 0f || statSlowMultiplier != 0f;
-
+            statAttackSpeedMultiplier != 0f || statSlowMultiplier != 0f ||
+            statRegenMultiplier != 0f || statOmnivampMultiplier != 0f;
         /// <summary>Trägt diesen Turm als Support-Turm ein oder aus, je nachdem ob er Aura-Werte hat.</summary>
         private void RefreshSupporterRegistration()
         {
@@ -309,6 +327,7 @@ namespace TowerDefense
         private void RecalculateAura()
         {
             float rangeBonus = 0f, damageBonus = 0f, attackSpeedBonus = 0f, slow = 0f;
+            float regenBonus = 0f, omnivampBonus = 0f;
 
             for (int i = 0; i < Supporters.Count; i++)
             {
@@ -322,27 +341,39 @@ namespace TowerDefense
                 damageBonus += support.statDmgMultiplier;
                 attackSpeedBonus += support.statAttackSpeedMultiplier;
                 slow += support.statSlowMultiplier;
+                regenBonus += support.statRegenMultiplier;
+                omnivampBonus += support.statOmnivampMultiplier;
             }
 
             rangeBonus = Mathf.Clamp(rangeBonus, 0f, MaxAuraBonus);
             damageBonus = Mathf.Clamp(damageBonus, 0f, MaxAuraBonus);
             attackSpeedBonus = Mathf.Clamp(attackSpeedBonus, 0f, MaxAuraBonus);
             slow = Mathf.Clamp(slow, 0f, MaxAuraSlow);
+            regenBonus = Mathf.Clamp(regenBonus, 0f, MaxAuraBonus);
+            omnivampBonus = Mathf.Clamp(omnivampBonus, 0f, MaxAuraBonus);
 
             bool rangeChanged = !Mathf.Approximately(rangeBonus, AuraRange);
+            bool regenChanged = !Mathf.Approximately(regenBonus, AuraRegen);
 
             ShowAuraDiff("Aura Range %", AuraRange, rangeBonus, new Color(0.5f, 0.9f, 1f));
             ShowAuraDiff("Aura Dmg %", AuraDamage, damageBonus, new Color(1f, 0.4f, 0.4f));
             ShowAuraDiff("Aura AtkSpeed %", AuraAttackSpeed, attackSpeedBonus, new Color(1f, 0.7f, 0.2f));
             ShowAuraDiff("Aura Slow %", AuraSlow, slow, new Color(0.6f, 0.4f, 1f));
+            ShowAuraDiff("Aura Regen %", AuraRegen, regenBonus, new Color(0.3f, 1f, 0.3f));
+            ShowAuraDiff("Aura Omnivamp %", AuraOmnivamp, omnivampBonus, new Color(0.9f, 0.1f, 0.5f));
 
             AuraRange = rangeBonus;
             AuraDamage = damageBonus;
             AuraAttackSpeed = attackSpeedBonus;
             AuraSlow = slow;
+            AuraRegen = regenBonus;
+            AuraOmnivamp = omnivampBonus;
 
             if (rangeChanged)
                 DrawRangeIndicatior();
+
+            if (regenChanged && vitals != null)
+                vitals.SetRegen(EffectiveRegen);
         }
 
         private void ShowAuraDiff(string label, float oldValue, float newValue, Color color)
@@ -372,7 +403,7 @@ namespace TowerDefense
                 if (b.health != 0) vitals.AddMaxHealth(b.health);
                 vitals.BaseArmor += b.armor;
                 vitals.BaseMagicResist += b.magicResist;
-                vitals.SetRegen(statHealthRegenPerSecond);
+                vitals.SetRegen(EffectiveRegen);
             }
 
             DrawRangeIndicatior();
@@ -552,7 +583,7 @@ namespace TowerDefense
 
             // Die Schadensart kommt vom Projektil-Prefab (Projectile.damageType)
             DamageInfo info = offense.CreateDamage(finalTowerDamage, DamageType.Physical, gameObject);
-
+            info.omnivamp *= (1f + AuraOmnivamp);
             // Slow-Aura: Treffer verlangsamen den Gegner
             if (AuraSlow > 0f)
             {
@@ -590,10 +621,58 @@ namespace TowerDefense
                 case TargetType.Last:      return (FindLastEnemy(enemies), enemies.Count - 1);
                 case TargetType.Strongest: return FindStrongestEnemy(enemies);
                 case TargetType.Nearest:   return FindNearestEnemy(enemies);
+                case TargetType.Farthest:       return FindFarthestEnemy(enemies);
+                case TargetType.Weakest:        return FindBest(enemies, go => -HealthOf(go));
+                case TargetType.Armored:        return FindBest(enemies, go => VitalsOf(go) != null ? VitalsOf(go).BaseArmor : 0f);
+                case TargetType.MagicResistant: return FindBest(enemies, go => VitalsOf(go) != null ? VitalsOf(go).BaseMagicResist : 0f);
+                case TargetType.Shielded:        return FindBest(enemies, go => VitalsOf(go) != null ? VitalsOf(go).Shield : 0f);
+
+                case TargetType.Wounded:        return FindBest(enemies, go => { var v = VitalsOf(go); return v != null ? -(v.Health / Mathf.Max(1f, v.MaxHealth)) : 0f; });
+                case TargetType.Random:
+                    if (enemies.Count == 0) return (null, 0);
+                    int r = UnityEngine.Random.Range(0, enemies.Count);
+                    return (enemies[r], r);
                 default:                   return (null, 0);
             }
         }
+        private static Vitals VitalsOf(GameObject go)
+            => go != null && go.TryGetComponent(out Enemy e) ? e.Vitals : null;
 
+        private static float HealthOf(GameObject go)
+        {
+            Vitals v = VitalsOf(go);
+            return v != null ? v.Health + v.Shield : 0f;
+        }
+
+        private (GameObject, int) FindBest(List<GameObject> enemies, Func<GameObject, float> score)
+        {
+            GameObject best = null;
+            int bestPos = 0;
+            float bestScore = float.NegativeInfinity;
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i] == null) continue;
+                float s = score(enemies[i]);
+                if (s > bestScore) { bestScore = s; best = enemies[i]; bestPos = i; }
+            }
+            return (best, bestPos);
+        }
+
+        private (GameObject, int) FindFarthestEnemy(List<GameObject> enemies)
+        {
+            GameObject farthest = null;
+            float longest = -1f;
+            int bestPos = 0;
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i] == null) continue;
+                float d = Vector3.Distance(transform.position, enemies[i].transform.position);
+                if (d > longest) { longest = d; farthest = enemies[i]; bestPos = i; }
+            }
+            return (farthest, bestPos);
+        }
         private GameObject FindFirstEnemy(List<GameObject> enemies)
             => enemies.Count > 0 ? enemies[0] : null;
 
@@ -646,7 +725,10 @@ namespace TowerDefense
             targetPreference = (TargetType)(((int)targetPreference + 1) %
                                             System.Enum.GetValues(typeof(TargetType)).Length);
         }
-
+        public void SetTargetType(TargetType targetpreference)
+        {
+            targetPreference = targetpreference;
+        }
         public void PreviousTargetType()
         {
             int count = System.Enum.GetValues(typeof(TargetType)).Length;
@@ -782,6 +864,8 @@ namespace TowerDefense
                 float oldRangeMult        = statRangeMultiplier;
                 float oldAtkSpeedMult     = statAttackSpeedMultiplier;
                 float oldSlowMult         = statSlowMultiplier;
+                float oldRegenMult   = statRegenMultiplier;
+                float oldOmniMult    = statOmnivampMultiplier;
 
                 towerName              = lvl.upgradeName;
                 towerDesc              = lvl.description;
@@ -801,7 +885,9 @@ namespace TowerDefense
                 statDmgMultiplier        += lvl.dmgMultiplier;
                 statAttackSpeedMultiplier+= lvl.attackSpeedMultiplier;
                 statSlowMultiplier       += lvl.slowMultiplier;
-
+                statRegenMultiplier     += lvl.regenMultiplier;
+                statOmnivampMultiplier  += lvl.omnivampMultiplier;
+                
                 // Neue Stats (Rüstung, MR, Crit, Penetration, Omnivamp ...) und optionale Zusatzwerte
                 ApplyBonus(lvl.bonus);
                 RefreshSupporterRegistration();
@@ -830,7 +916,9 @@ namespace TowerDefense
                     statDiffDisplay.ShowDiff("Range Mult.",    oldRangeMult,      statRangeMultiplier,        new Color(0.5f, 0.9f, 1f));
                     statDiffDisplay.ShowDiff("AtkSpeed Mult.", oldAtkSpeedMult,   statAttackSpeedMultiplier,  new Color(1f, 0.7f, 0.2f));
                     statDiffDisplay.ShowDiff("Slow Mult.",     oldSlowMult,       statSlowMultiplier,         new Color(0.6f, 0.4f, 1f));
-
+                    statDiffDisplay.ShowDiff("Regen Mult.",    oldRegenMult, statRegenMultiplier,    new Color(0.3f, 1f, 0.3f));
+                    statDiffDisplay.ShowDiff("Omnivamp Mult.", oldOmniMult,  statOmnivampMultiplier, new Color(0.9f, 0.1f, 0.5f));
+                    
                     ShowProjectileDiff(oldProjectilePrefab, projectilePrefab);
                     ShowBonusDiff(lvl.bonus, false);
                 }
@@ -1141,7 +1229,7 @@ namespace TowerDefense
 
         public void SellTower()
         {
-            LevelManager.instance.cur_coins += CalculateSellPrice();
+            LevelManager.instance.SoldObjectReturnCoins(CalculateSellPrice());
 
             DestroyTower();
         }

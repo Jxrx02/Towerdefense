@@ -31,7 +31,8 @@ public class WallGroup : MonoBehaviour
 
     private int hp;
     public int HP => hp;
-    
+    public int LevelCount =>
+        wallUpgradePath != null && wallUpgradePath.levels != null ? wallUpgradePath.levels.Length : 1;
     // =========================================================
     public Vitals healthBarVitals;
     private HealthBar groupHealthBar;
@@ -762,9 +763,6 @@ public class WallGroup : MonoBehaviour
             cost = 0;
             description = "This wall is fully upgraded.";
             action = null;
-            HideInteractionPopup();
-
-            return;
         }
 
         ShowInteractionPopup(
@@ -865,6 +863,7 @@ public class WallGroup : MonoBehaviour
 
         string title;
         int segmentCount = segments.Count;
+        int total = LevelCount;
 
         TowerUpgradeLevel currentLevel = GetCurrentUpgrade();
         TowerUpgradeLevel nextLevel = GetNextUpgrade();
@@ -887,9 +886,9 @@ public class WallGroup : MonoBehaviour
         }
         else if (isDestroyed)
         {
-            title = currentLevel == null
-                ? "Repair: " + towername
-                : "Repair: " + currentLevel.upgradeName;
+            // Repair
+            title = (currentLevel == null ? "Repair: " + towername : "Repair: " + currentLevel.upgradeName)
+                    + $" (Lv {wallLevel + 1}/{total})";
 
             if (segmentCount > 0)
             {
@@ -905,9 +904,11 @@ public class WallGroup : MonoBehaviour
         }
         else if (isBuilt && !isDestroyed && nextLevel != null)
         {
-            title = currentLevel == null
-                ? "Upgrade: " + towername + " to " + nextLevel.upgradeName
-                : "Upgrade: " + currentLevel.upgradeName + " to " + nextLevel.upgradeName;
+            // Upgrade (zeigt die Zielstufe)
+            title = (currentLevel == null
+                        ? "Upgrade: " + towername + " to " + nextLevel.upgradeName
+                        : "Upgrade: " + currentLevel.upgradeName + " to " + nextLevel.upgradeName)
+                    + $" (Lv {wallLevel + 1}/{total})";
 
             int newHealth =
                 maxHP + nextLevel.healthpoints * segmentCount;
@@ -923,7 +924,9 @@ public class WallGroup : MonoBehaviour
         }
         else
         {
-            title = (currentLevel != null ? currentLevel.upgradeName : towername) + " (Max)";
+            // Max
+            title = (currentLevel != null ? currentLevel.upgradeName : towername)
+                    + $" (Lv {wallLevel + 1}/{total} Max)";
         }
 
         InteractionPopup.instance.Show(
@@ -958,7 +961,7 @@ public class WallGroup : MonoBehaviour
                 total += lvl.upgradeCost * segments.Count;
         }
 
-        return total;
+        return (int)(total * 0.7f);
     }
 
     public void SellWall()
@@ -966,7 +969,8 @@ public class WallGroup : MonoBehaviour
         if (!isBuilt || isDestroyed)
             return;
 
-        LevelManager.instance.cur_coins += GetSellPrice();
+        
+        LevelManager.instance.SoldObjectReturnCoins(GetSellPrice());
 
         // Alle HP-Boni (Level 0 bis aktuell) zurücknehmen
         int hpPerSegment = 0;
@@ -1000,6 +1004,12 @@ public class WallGroup : MonoBehaviour
         isDestroyed = false;
         wallLevel = 0;
 
+        foreach (WallSegment segment in segments.Values)
+        {
+            if (segment != null)
+                segment.ResetVisualsToBase();
+        }
+        
         SetUnbuiltVisual();
         RefreshVisuals();
 
