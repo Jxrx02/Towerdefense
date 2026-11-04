@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TowerDefense
 {
@@ -116,6 +117,22 @@ namespace TowerDefense
             if (defaultWallSprites != null && defaultWallSprites.Length == 16)
                 SetWallSprites(defaultWallSprites);
         }
+        protected override void RestoreNormalMaterial()
+        {
+            if (spriteRenderer == null)
+                return;
+
+            Material normal = IsBuilt ? builtMaterial : unbuiltMaterial;
+
+            if (normal != null)
+                spriteRenderer.material = normal;
+        }
+
+
+        public override void ShowInteractionIndicator(Boolean _isInteracted)
+        {
+            
+        }
         public void SetWallSprites(Sprite[] newSprites)
         {
             if (newSprites == null || newSprites.Length != 16)
@@ -217,6 +234,7 @@ namespace TowerDefense
 
         public void SetUnbuiltVisual()
         {
+            CancelDamageFlash();
             if (spriteRenderer != null && unbuiltMaterial != null)
             {
                 spriteRenderer.material = unbuiltMaterial;
@@ -229,19 +247,19 @@ namespace TowerDefense
         // DAMAGE
         // =========================================================
 
-
-
+        
         public override DamageResult TakeDamage(DamageInfo info)
         {
             if (wallGroup.healthBarVitals == null)
                 return default;
 
             wallGroup.TakeDamage(info);
-            PlayDamageFlash();
+
+            if (!wallGroup.IsDestroyed)
+                PlayDamageFlash();
 
             return wallGroup.healthBarVitals.TakeDamage(info);
         }
-        
 
 
         // =========================================================

@@ -720,20 +720,12 @@ namespace TowerDefense
             return (nearest, bestPos);
         }
 
-        public void NextTargetType()
-        {
-            targetPreference = (TargetType)(((int)targetPreference + 1) %
-                                            System.Enum.GetValues(typeof(TargetType)).Length);
-        }
+
         public void SetTargetType(TargetType targetpreference)
         {
             targetPreference = targetpreference;
         }
-        public void PreviousTargetType()
-        {
-            int count = System.Enum.GetValues(typeof(TargetType)).Length;
-            targetPreference = (TargetType)(((int)targetPreference - 1 + count) % count);
-        }
+
 
         // ───────────────── UI / SELECTION ─────────────────
 
@@ -782,12 +774,17 @@ namespace TowerDefense
             }
             else
             {
-                if (notOutlinedMaterial != null && this is not WallSegment)
-                    sr.material = notOutlinedMaterial;
+                RestoreNormalMaterial();
+
             }
         }
-
-        public void SetInteraction(Boolean _isInteracted)
+        /// <summary>Material ohne Outline wiederherstellen. Mauern überschreiben das (gebaut/ungebaut).</summary>
+        protected virtual void RestoreNormalMaterial()
+        {
+            if (notOutlinedMaterial != null)
+                sr.material = notOutlinedMaterial;
+        }
+        public virtual void ShowInteractionIndicator(Boolean _isInteracted)
         {
             isInteracted = _isInteracted;
             DrawInteractionIndicatior();
@@ -1002,6 +999,23 @@ namespace TowerDefense
             foreach (var entry in originalMaterials)
             {
                 if (entry.Key != null)
+                    entry.Key.sharedMaterial = entry.Value;
+            }
+
+            originalMaterials.Clear();
+        }
+        /// <summary>Bricht den Flash ab, ohne das Haupt-Material zurückzusetzen (Mauern wechseln es selbst).</summary>
+        protected void CancelDamageFlash()
+        {
+            if (damageFlashCoroutine != null)
+            {
+                StopCoroutine(damageFlashCoroutine);
+                damageFlashCoroutine = null;
+            }
+
+            foreach (var entry in originalMaterials)
+            {
+                if (entry.Key != null && entry.Key != sr)
                     entry.Key.sharedMaterial = entry.Value;
             }
 

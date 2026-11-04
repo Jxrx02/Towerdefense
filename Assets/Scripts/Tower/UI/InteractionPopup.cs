@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace TowerDefense
 {
@@ -71,7 +72,9 @@ namespace TowerDefense
         [SerializeField] private Button btnSell;
         [SerializeField] private Text txtSellPrice;
         private Action wallSellAction;
-
+        private bool sellArmed;
+        private float sellArmedUntil;
+        private Text sellLabel;
         // Cache, damit die Texte nur bei Änderung neu geschrieben werden
         private int shownLevel = -1;
         private int shownExp = -1;
@@ -105,7 +108,8 @@ namespace TowerDefense
         [SerializeField] public Sprite armorPenIcon;
         [SerializeField] public Sprite magicPenIcon;
         [SerializeField] public Sprite omnivampIcon;
-
+        [SerializeField] public Sprite xpIcon;
+        
         [Header("Stat Icons (Inspektion)")]
         [SerializeField] public Sprite shieldIcon;
         [SerializeField] public Sprite blockIcon;
@@ -183,12 +187,19 @@ namespace TowerDefense
             Hide();
 
             if (btnTargetToggle != null) btnTargetToggle.onClick.AddListener(ToggleTargetPanel);
+            if (btnSell != null) btnSell.onClick.AddListener(OnSellClicked);  
             BindTargetCells();
-            if (btnSell != null)       btnSell.onClick.AddListener(OnSellClicked);
+            if (btnSell != null)
+            {
+                Transform labelTransform = btnSell.transform.Find("Label");
+                if (labelTransform != null) sellLabel = labelTransform.GetComponent<Text>();
+            }
         }
 
         private void Update()
         {
+            if (sellArmed && Time.unscaledTime > sellArmedUntil)
+                DisarmSell();
             if (mode == PopupMode.Inspect)
             {
                 UpdateInspect();
@@ -300,17 +311,20 @@ namespace TowerDefense
 
             if (stats != null)
             {
-                foreach (UpgradeStatData stat in stats)
-                {
-                    if (stat == null)
-                        continue;
+foreach (UpgradeStatData stat in stats)
+{
+    if (stat == null)
+        continue;
 
-                    UpgradeStatEntry entry = Instantiate(upgradeStatPrefab, upgradeStatsContainer);
+    UpgradeStatEntry entry = Instantiate(upgradeStatPrefab, upgradeStatsContainer);
 
-                    entry.Setup(
-                        stat.icon, stat.oldValue, stat.newValue, stat.color,
-                        stat.suffixNewValueOnly, stat.suffix, stat.decimals);
-                }
+    if (stat.single)
+        entry.SetupSingle(stat.icon, stat.newValue, stat.color,
+            stat.suffixNewValueOnly, stat.suffix, stat.decimals);
+    else
+        entry.Setup(stat.icon, stat.oldValue, stat.newValue, stat.color,
+            stat.suffixNewValueOnly, stat.suffix, stat.decimals);
+}
             }
 
             RebuildLayout();
@@ -379,11 +393,12 @@ namespace TowerDefense
 
         private void ToggleTargetPanel()
         {
-            if (mode != PopupMode.TowerUpgrade || targetPanel == null) return;
+            if (ControlTarget == null || targetPanel == null) return;
 
             bool open = !targetPanel.activeSelf;
             targetPanel.SetActive(open);
-
+            DisarmSell();
+            UpdateSellInteractable();
             if (txtTargetArrow != null)
                 txtTargetArrow.text = open ? "<" : ">";
 
@@ -394,10 +409,10 @@ namespace TowerDefense
         }
         private void OnTargetCellClicked(TargetType type)
         {
-            if (mode != PopupMode.TowerUpgrade || upgradeTarget == null)
-                return;
+            Tower t = ControlTarget;
+            if (t == null) return;
 
-            upgradeTarget.SetTargetType(type);
+            t.SetTargetType(type);
             RefreshTowerInfo(true);
             ToggleTargetPanel();          // nach der Wahl wieder zuklappen
         }
@@ -626,9 +641,8 @@ namespace TowerDefense
 
                 if (next == null)
                 {
-                    ShowInternal(anchorPosition, "", $"Maximal (Lv {maxLevel}/{maxLevel})",
-                        0, "This path is fully upgraded.", true);
-                    ShowUpgradeStats(null);
+                    ShowInternal(anchorPosition, "", TowerTitle(upgradeTarget), 0, upgradeTarget.towerDesc, true);
+                    ShowUpgradeStats(BuildUpgradeStats(upgradeTarget, null));   // alle aktuellen Werte
                     return;
                 }
 
@@ -787,97 +801,114 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
         }
 
         private List<UpgradeStatData> BuildUpgradeStats(Tower t, TowerUpgradeLevel lvl)
-        {
-            var list = new List<UpgradeStatData>();
+{
+    var list = new List<UpgradeStatData>();
 
-            // Neue Stats (Rüstung, MR, Crit, Penetration, Omnivamp ...) stehen in lvl.bonus
-            StatBonus b = lvl.bonus ?? new StatBonus();
+    // Ohne Upgrade (lvl == null) ändert sich nichts: es erscheinen nur die aktuellen Werte
+    StatBonus b = lvl != null && lvl.bonus != null ? lvl.bonus : new StatBonus();
+    float L(System.Func<TowerUpgradeLevel, float> f) => lvl != null ? f(lvl) : 0f;
 
-            float newShotTime = Mathf.Max(0.1f, t.timeInBetweenShots - lvl.timeInBetweenShotsDecrease - b.cooldownDecrease);
+    float dDamage    = L(x => x.damageIncrease);
+    float dRange     = L(x => x.rangeIncrease);
+    float dShotTime  = L(x => x.timeInBetweenShotsDecrease);
+    float dHealth    = L(x => x.healthpoints);
+    float dGold      = L(x => x.coinsEarnedPerSecond);
+    float dRegen     = L(x => x.healthRegenPerSecond);
+    float dDmgMult   = L(x => x.dmgMultiplier);
+    float dRangeMult = L(x => x.rangeMultiplier);
+    float dAtkMult   = L(x => x.attackSpeedMultiplier);
+    float dSlowMult  = L(x => x.slowMultiplier);
+    float dRegenMult = L(x => x.regenMultiplier);
+    float dOmniMult  = L(x => x.omnivampMultiplier);
 
-            AddStat(list, t, TowerDisplayedStats.Damage, "Damage",
-                t.damage, t.damage + lvl.damageIncrease + b.damage, damageIcon, Color.red,
-                "", 0, true);
+    float newShotTime = Mathf.Max(0.1f, t.timeInBetweenShots - dShotTime - b.cooldownDecrease);
 
-            AddStat(list, t, TowerDisplayedStats.Range, "Range",
-                t.range, t.range + lvl.rangeIncrease + b.range, rangeIcon, new Color(0.2f, 0.8f, 1f),
-                "", 1, true);
+    AddStat(list, t, TowerDisplayedStats.Damage, "Damage",
+        t.damage, t.damage + dDamage + b.damage, damageIcon, Color.red, "", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.AttackSpeed, "Attack Speed",
-                1f / Mathf.Max(0.1f, t.timeInBetweenShots), 1f / newShotTime,
-                attackSpeedIcon, new Color(1f, 0.35f, 0.6f), "/s", 1, true);
+    AddStat(list, t, TowerDisplayedStats.Range, "Range",
+        t.range, t.range + dRange + b.range, rangeIcon, new Color(0.2f, 0.8f, 1f), "", 1, true);
 
-            AddStat(list, t, TowerDisplayedStats.Health, "Health",
-                t.statHealthPoints, t.statHealthPoints + lvl.healthpoints + b.health,
-                healthIcon, new Color(0.13f, 0.55f, 0.13f), "", 0, true);
+    AddStat(list, t, TowerDisplayedStats.AttackSpeed, "Attack Speed",
+        1f / Mathf.Max(0.1f, t.timeInBetweenShots), 1f / newShotTime,
+        attackSpeedIcon, new Color(1f, 0.35f, 0.6f), "/s", 1, true);
 
-            AddStat(list, t, TowerDisplayedStats.Gold, "Gold/sec",
-                t.statCoinsEarnedPerSecond, t.statCoinsEarnedPerSecond + lvl.coinsEarnedPerSecond,
-                goldIcon, new Color(1f, 0.84f, 0f), "/s", 1, true);
+    AddStat(list, t, TowerDisplayedStats.Health, "Health",
+        t.statHealthPoints, t.statHealthPoints + dHealth + b.health,
+        healthIcon, new Color(0.13f, 0.55f, 0.13f), "", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Regen, "Regen/sec",
-                t.statHealthRegenPerSecond, t.statHealthRegenPerSecond + lvl.healthRegenPerSecond + b.healthRegen,
-                regenIcon, new Color(0.3f, 1f, 0.3f), "/s", 1, true);
+    AddStat(list, t, TowerDisplayedStats.Gold, "Gold/sec",
+        t.statCoinsEarnedPerSecond, t.statCoinsEarnedPerSecond + dGold,
+        goldIcon, new Color(1f, 0.84f, 0f), "/s", 1, true);
 
-            AddStat(list, t, TowerDisplayedStats.DamageMultiplier, "Dmg Mult.",
-                t.statDmgMultiplier * 100f, (t.statDmgMultiplier + lvl.dmgMultiplier) * 100f,
-                damageMultiplierIcon, new Color(1f, 0.4f, 0.4f), "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.Regen, "Regen/sec",
+        t.statHealthRegenPerSecond, t.statHealthRegenPerSecond + dRegen + b.healthRegen,
+        regenIcon, new Color(0.3f, 1f, 0.3f), "/s", 1, true);
 
-            AddStat(list, t, TowerDisplayedStats.RangeMultiplier, "Range Mult.",
-                t.statRangeMultiplier * 100f, (t.statRangeMultiplier + lvl.rangeMultiplier) * 100f,
-                rangeMultiplierIcon, new Color(0.5f, 0.9f, 1f), "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.DamageMultiplier, "Dmg Mult.",
+        t.statDmgMultiplier * 100f, (t.statDmgMultiplier + dDmgMult) * 100f,
+        damageMultiplierIcon, new Color(1f, 0.4f, 0.4f), "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.AttackSpeedMultiplier, "AtkSpeed Mult.",
-                t.statAttackSpeedMultiplier * 100f, (t.statAttackSpeedMultiplier + lvl.attackSpeedMultiplier) * 100f,
-                attackSpeedMultiplierIcon, new Color(1f, 0.7f, 0.2f), "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.RangeMultiplier, "Range Mult.",
+        t.statRangeMultiplier * 100f, (t.statRangeMultiplier + dRangeMult) * 100f,
+        rangeMultiplierIcon, new Color(0.5f, 0.9f, 1f), "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.SlowMultiplier, "Slow Mult.",
-                t.statSlowMultiplier * 100f, (t.statSlowMultiplier + lvl.slowMultiplier) * 100f,
-                slowMultiplierIcon, new Color(0.6f, 0.4f, 1f), "%", 0, true);
-AddStat(list, t, TowerDisplayedStats.RegenMultiplier, "Regen Mult.",
-    t.statRegenMultiplier * 100f, (t.statRegenMultiplier + lvl.regenMultiplier) * 100f,
-    regenMultiplierIcon, new Color(0.3f, 1f, 0.3f), "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.AttackSpeedMultiplier, "AtkSpeed Mult.",
+        t.statAttackSpeedMultiplier * 100f, (t.statAttackSpeedMultiplier + dAtkMult) * 100f,
+        attackSpeedMultiplierIcon, new Color(1f, 0.7f, 0.2f), "%", 0, true);
 
-AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
-    t.statOmnivampMultiplier * 100f, (t.statOmnivampMultiplier + lvl.omnivampMultiplier) * 100f,
-    omnivampMultiplierIcon, omnivampColor, "%", 0, true);
-            // LoL-Stats (Prozentwerte werden als 0..100 angezeigt)
-            OffenseStats o = t.offense;
+    AddStat(list, t, TowerDisplayedStats.SlowMultiplier, "Slow Mult.",
+        t.statSlowMultiplier * 100f, (t.statSlowMultiplier + dSlowMult) * 100f,
+        slowMultiplierIcon, new Color(0.6f, 0.4f, 1f), "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Armor, "Armor",
-                t.Armor, t.Armor + b.armor, armorIcon, armorColor, "", 0, true);
+    AddStat(list, t, TowerDisplayedStats.RegenMultiplier, "Regen Mult.",
+        t.statRegenMultiplier * 100f, (t.statRegenMultiplier + dRegenMult) * 100f,
+        regenMultiplierIcon, new Color(0.3f, 1f, 0.3f), "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.MagicResist, "Magic Resist",
-                t.MagicResist, t.MagicResist + b.magicResist, magicResistIcon, magicResistColor, "", 0, true);
+    AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
+        t.statOmnivampMultiplier * 100f, (t.statOmnivampMultiplier + dOmniMult) * 100f,
+        omnivampMultiplierIcon, omnivampColor, "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.CritChance, "Crit",
-                o.critChance * 100f, Mathf.Min(1f, o.critChance + b.critChance) * 100f,
-                critChanceIcon, critColor, "%", 0, true);
+    // LoL-Stats (Prozentwerte als 0..100)
+    OffenseStats o = t.offense;
 
-            AddStat(list, t, TowerDisplayedStats.CritDamage, "Crit Damage",
-                o.critDamage * 100f, (o.critDamage + b.critDamage) * 100f,
-                critDamageIcon, critColor, "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.Armor, "Armor",
+        t.Armor, t.Armor + b.armor, armorIcon, armorColor, "", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Penetration, "Lethality",
-                o.lethality, o.lethality + b.lethality, lethalityIcon, penColor, "", 0, true);
+    AddStat(list, t, TowerDisplayedStats.MagicResist, "Magic Resist",
+        t.MagicResist, t.MagicResist + b.magicResist, magicResistIcon, magicResistColor, "", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Penetration, "Armor Pen",
-                o.armorPenPercent * 100f, Mathf.Min(1f, o.armorPenPercent + b.armorPenPercent) * 100f,
-                armorPenIcon, penColor, "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.CritChance, "Crit",
+        o.critChance * 100f, Mathf.Min(1f, o.critChance + b.critChance) * 100f,
+        critChanceIcon, critColor, "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Penetration, "Magic Pen",
-                o.magicPenFlat, o.magicPenFlat + b.magicPenFlat, magicPenIcon, magicPenColor, "", 0, true);
+    // Crit-Schaden hat einen Grundwert, ist aber ohne Crit-Chance bedeutungslos
+    if (o.critChance > 0f || b.critChance > 0f || !Mathf.Approximately(b.critDamage, 0f))
+        AddStat(list, t, TowerDisplayedStats.CritDamage, "Crit Damage",
+            o.critDamage * 100f, (o.critDamage + b.critDamage) * 100f,
+            critDamageIcon, critColor, "%", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Penetration, "Magic Pen",
-                o.magicPenPercent * 100f, Mathf.Min(1f, o.magicPenPercent + b.magicPenPercent) * 100f,
-                magicPenIcon, magicPenColor, "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.Penetration, "Lethality",
+        o.lethality, o.lethality + b.lethality, lethalityIcon, penColor, "", 0, true);
 
-            AddStat(list, t, TowerDisplayedStats.Omnivamp, "Omnivamp",
-                o.omnivamp * 100f, Mathf.Min(1f, o.omnivamp + b.omnivamp) * 100f,
-                omnivampIcon, omnivampColor, "%", 0, true);
+    AddStat(list, t, TowerDisplayedStats.Penetration, "Armor Pen",
+        o.armorPenPercent * 100f, Mathf.Min(1f, o.armorPenPercent + b.armorPenPercent) * 100f,
+        armorPenIcon, penColor, "%", 0, true);
 
-            return list;
-        }
+    AddStat(list, t, TowerDisplayedStats.Penetration, "Magic Pen",
+        o.magicPenFlat, o.magicPenFlat + b.magicPenFlat, magicPenIcon, magicPenColor, "", 0, true);
+
+    AddStat(list, t, TowerDisplayedStats.Penetration, "Magic Pen",
+        o.magicPenPercent * 100f, Mathf.Min(1f, o.magicPenPercent + b.magicPenPercent) * 100f,
+        magicPenIcon, magicPenColor, "%", 0, true);
+
+    AddStat(list, t, TowerDisplayedStats.Omnivamp, "Omnivamp",
+        o.omnivamp * 100f, Mathf.Min(1f, o.omnivamp + b.omnivamp) * 100f,
+        omnivampIcon, omnivampColor, "%", 0, true);
+
+    // Geänderte zuerst, unveränderte darunter (OrderBy ist stabil)
+    return list.OrderBy(s => s.single).ToList();
+}
 
         /// <summary>Wie AddStat im Kauf-Modus, aber ohne Zeile, wenn der Wert 0 ist.</summary>
         private void AddNonZeroStat(
@@ -896,7 +927,19 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
 
             AddStat(list, t, flag, statName, 0, value, icon, color, suffix, decimals);
         }
+/// <summary>Gedämpfte Variante für unveränderte Werte (zieht die Farbe zum Sand-Ton).</summary>
+private static Color MutedColor(Color c)
+    => Color.Lerp(c, new Color(0.74f, 0.67f, 0.55f), 0.5f);
+/// <summary>"Flummi (Lv 2/2)": aktueller Name plus Stufe des gewählten Pfads. Ohne Pfad nur der Name.</summary>
+private static string TowerTitle(Tower t)
+{
+    int a = t.GetActivePathIndex();
 
+    if (a < 0 || t.upgradePaths[a] == null || t.upgradePaths[a].levels == null)
+        return t.towerName;
+
+    return $"{t.towerName} (Lv {t.pathLevels[a]}/{t.upgradePaths[a].levels.Length})";
+}
         /// <summary>
         /// Upgrade-Ansicht (onlyIfChanged): zeigt nur Stats, die sich durch das Upgrade ändern.
         /// Kauf-Ansicht: zeigt die am Turm als "displayedStats" markierten Stats
@@ -921,8 +964,19 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
                 // Upgrade-Ansicht: genau die Stats, die dieses Upgrade verändert, unabhängig von displayedStats.
                 // Änderungen, die in der gewählten Nachkommastelle nicht sichtbar wären, werden übersprungen.
                 float epsilon = 0.5f * Mathf.Pow(10f, -Mathf.Max(0, decimals));
+
                 if (Mathf.Abs(newValue - oldValue) < epsilon)
+                {
+                    // Unverändert: nur zeigen, wenn der Turm den Stat überhaupt hat
+                    if (Mathf.Abs(newValue) < epsilon)
+                        return;
+
+                    list.Add(new UpgradeStatData(
+                            statName, oldValue, newValue, icon, MutedColor(color),
+                            icon == null ? " " + statName : "", suffix, decimals)
+                        { single = true });
                     return;
+                }
             }
             else
             {
@@ -950,22 +1004,24 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
             mode == PopupMode.TowerUpgrade ? upgradeTarget :
             mode == PopupMode.Inspect ? inspectTarget as Tower : null;
 
-        private void SetTowerInfoActive(bool active) => SetTowerInfoActive(active, active);
+        private void SetTowerInfoActive(bool active) => SetTowerInfoActive(active, active, active);
 
-        private void SetTowerInfoActive(bool showLevel, bool showControls)
+        private void SetTowerInfoActive(bool showLevel, bool showTarget, bool showSell)
         {
-            if (towerInfoRoot != null)  towerInfoRoot.SetActive(showLevel);   // Divider, Level, XP-Balken
+            if (towerInfoRoot != null)  towerInfoRoot.SetActive(showLevel);
             if (txtLevel != null)       txtLevel.gameObject.SetActive(showLevel);
             if (experienceBar != null)  experienceBar.gameObject.SetActive(showLevel);
-            if (targetTypeRoot != null) targetTypeRoot.SetActive(showControls);
+            if (targetTypeRoot != null) targetTypeRoot.SetActive(showTarget);
 
-            if (!showControls)
+            if (!showTarget)
             {
                 if (targetPanel != null) targetPanel.SetActive(false);
                 if (txtTargetArrow != null) txtTargetArrow.text = ">";
             }
 
-            SetSellActive(showControls);
+            if (!showSell && btnSell != null) btnSell.interactable = true;
+
+            SetSellActive(showSell);
             RebuildLayout();
         }
 
@@ -973,6 +1029,7 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
         {
             if (sellRoot != null)
                 sellRoot.SetActive(active);
+            DisarmSell();
         }
 
         /// <summary>Sell-Button für Walls (voller Preis, Aktion kommt von der WallGroup).</summary>
@@ -993,7 +1050,8 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
         private void RefreshTowerInfo(bool force = false)
         {
             Tower t = InfoTower;
-            if (t == null)
+            UpdateSellInteractable();
+            if (t == null || t is WallSegment)
                 return;
 
             int sellPrice = t.CalculateSellPrice();
@@ -1034,39 +1092,37 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
                 txtSellPrice.text = $"{sellPrice} Coins";
         }
 
-        private void OnPrevTargetClicked()
-        {
-            if (mode != PopupMode.TowerUpgrade || upgradeTarget == null)
-                return;
-
-            upgradeTarget.PreviousTargetType();
-            RefreshTowerInfo();
-        }
-
-        private void OnNextTargetClicked()
-        {
-            if (mode != PopupMode.TowerUpgrade || upgradeTarget == null)
-                return;
-
-            upgradeTarget.NextTargetType();
-            RefreshTowerInfo();
-        }
-
         private void OnSellClicked()
         {
-            if (mode == PopupMode.Wall)
+            // Erster Klick scharf stellen, zweiter verkauft
+            if (!sellArmed)
             {
-                Action action = wallSellAction;
-                wallSellAction = null;
-                action?.Invoke();   // WallGroup kümmert sich selbst um den Popup
+                ArmSell();
                 return;
             }
 
-            if (mode != PopupMode.TowerUpgrade || upgradeTarget == null)
-                return;
+            DisarmSell();
 
-            upgradeTarget.SellTower();   // schließt den Popup über StopUpgradeInteraction
-            Hide();
+            if (mode == PopupMode.Wall || (mode == PopupMode.Inspect && inspectTarget is WallSegment))
+            {
+                Action action = wallSellAction;
+                wallSellAction = null;
+                action?.Invoke();
+
+                // Steht der Held in Reichweite, hat die WallGroup schon "to build" gezeigt (Modus Wall).
+                // Sonst bleibt die Inspektion offen, also schließen.
+                if (mode == PopupMode.Inspect)
+                    Hide();
+                return;
+            }
+            
+
+            Tower t = ControlTarget;
+            if (t == null || !HasSellControl(t)) return;
+
+            t.SellTower();   // schließt das Popup über StopUpgradeInteraction
+            Hide();  // schließt den Popup über StopUpgradeInteraction
+
         }
 
         // --------------------------------------------------
@@ -1083,7 +1139,7 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
             if (tower == null || IsBusyWithInteraction)
                 return;
 
-            string title = tower.towerName;
+            string title = TowerTitle(tower);
             string description = tower.towerDesc;
 
             // Mauern: Name und Beschreibung der aktuellen Ausbaustufe der Gruppe
@@ -1121,10 +1177,22 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
             inspectEntries.Clear();
 
             ClearEntries();
-            bool showLevel = target is Tower inspected && !(inspected is WallSegment);
-            SetTowerInfoActive(showLevel, false);
+            Tower inspectedTower = target as Tower;
+            bool showLevel = inspectedTower != null && !(inspectedTower is WallSegment);
+            SetTowerInfoActive(showLevel, HasTargetControls(inspectedTower), HasSellControl(inspectedTower));            
             wallSellAction = null;
+            // Gebaute Mauer: Sell-Button auch in der Inspektion
+            if (inspectedTower is WallSegment ws && ws.WallGroup != null && ws.IsBuilt)
+            {
+                WallGroup group = ws.WallGroup;
+                wallSellAction = group.SellWall;
 
+                if (txtSellPrice != null)
+                    txtSellPrice.text = $"{group.GetSellPrice()} Coins";
+
+                SetSellActive(true);
+            }
+            
             if (towerSelectionPanel != null)
                 towerSelectionPanel.SetActive(false);
 
@@ -1278,6 +1346,8 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
                 case StatId.GiveSlow: return slowMultiplierIcon;
                 case StatId.GiveRegen:    return regenMultiplierIcon;
                 case StatId.GiveOmnivamp: return omnivampMultiplierIcon;
+                case StatId.XpDrop: return xpIcon;
+                
                 default: return null;
             }
         }
@@ -1311,6 +1381,8 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
                 case StatId.MoveSpeed: return new Color(0.9f, 0.9f, 0.5f);
                 case StatId.GiveRegen:    return new Color(0.3f, 1f, 0.3f);
                 case StatId.GiveOmnivamp: return omnivampColor;
+                case StatId.XpDrop: return new Color(0.62f, 0.80f, 0.38f);   // gleiches Grün wie der XP-Balken
+                
                 default: return Color.white;
             }
         }
@@ -1342,6 +1414,7 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
             if (upgradeInfoPanel != null)
                 upgradeInfoPanel.SetActive(false);
 
+            DisarmSell();
             ClearUpgradeStats();
 
             ResetProgress();
@@ -1361,7 +1434,37 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
 
             DestroyChildren(upgradeStatsContainer);
         }
+        private void ArmSell()
+        {
+            sellArmed = true;
+            sellArmedUntil = Time.unscaledTime + 2.5f;
+            if (sellLabel != null) sellLabel.text = "Click again";
+        }
 
+        private void DisarmSell()
+        {
+            sellArmed = false;
+            if (sellLabel != null) sellLabel.text = "Sell";
+        }
+        
+        private static bool HasTargetControls(Tower t) => t != null && !(t is WallSegment);
+        private static bool HasSellControl(Tower t) => t != null && !(t is Hero) && !(t is WallSegment);
+        /// <summary>Turm, dessen Ziel und Verkauf das Popup gerade steuert (Upgrade oder Inspektion), sonst null.</summary>
+        private Tower ControlTarget =>
+            (mode == PopupMode.TowerUpgrade || mode == PopupMode.Inspect) && HasTargetControls(InfoTower)
+                ? InfoTower : null;
+
+        /// <summary>Verkaufen nur am Tag und nicht, solange das Ziel-Panel offen ist (Fehlklick-Schutz).</summary>
+        private void UpdateSellInteractable()
+        {
+            if (btnSell == null || mode == PopupMode.Wall)
+                return;
+
+            bool panelOpen = targetPanel != null && targetPanel.activeSelf;
+            bool day = LevelManager.instance != null && LevelManager.instance.isDay;
+
+            btnSell.interactable = !panelOpen && day;
+        }
         // --------------------------------------------------
         // COINS
         // --------------------------------------------------
@@ -1466,7 +1569,7 @@ AddStat(list, t, TowerDisplayedStats.OmnivampMultiplier, "Omnivamp Mult.",
 
             // Im Bild halten (Pivot = unten Mitte)
             const float margin = 8f;
-            float extraRight = mode == PopupMode.TowerUpgrade ? 240f : 0f;   // Platz für das Ziel-Panel rechts
+            float extraRight = ControlTarget != null ? 240f : 0f;
             Vector2 size = rectTransform.rect.size;
 
             float minX = -area.width * 0.5f + size.x * 0.5f + margin;

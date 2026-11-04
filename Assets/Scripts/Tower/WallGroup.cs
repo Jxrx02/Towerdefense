@@ -40,7 +40,7 @@ public class WallGroup : MonoBehaviour
     private GameObject damageCanvasObject;
     private readonly List<Vitals> segmentVitals = new List<Vitals>();
     // =========================================================
-
+    private bool heroInRange;
     [Header("Wall Upgrade")]
     [SerializeField] private UpgradePath wallUpgradePath;
 
@@ -715,7 +715,8 @@ public class WallGroup : MonoBehaviour
         int cost = 0;
         
         SetGateOpen(true);
-
+        if (hero != null) heroInRange = true;
+        
         if (!LevelManager.instance.isDay)
             return;
         
@@ -761,7 +762,9 @@ public class WallGroup : MonoBehaviour
         {
             interactionText = "";
             cost = 0;
-            description = "This wall is fully upgraded.";
+            
+            TowerUpgradeLevel current = GetCurrentUpgrade();
+            description = current != null ? "This wall is fully upgraded.\n"+current.description : towerdesc;
             action = null;
         }
 
@@ -779,7 +782,7 @@ public class WallGroup : MonoBehaviour
     }
     public void ExitInteractionRange(Hero hero)
     {
-
+        heroInRange = false;
         StopHold();
         SetGateOpen(false);
 
@@ -924,9 +927,17 @@ public class WallGroup : MonoBehaviour
         }
         else
         {
-            // Max
-            title = (currentLevel != null ? currentLevel.upgradeName : towername)
-                    + $" (Lv {wallLevel + 1}/{total} Max)";
+            // Gleiche Anzeige wie in der Inspektion: Name (Lv x/y), aktuelle HP
+            title = $"{(currentLevel != null ? currentLevel.upgradeName : towername)} (Lv {wallLevel + 1}/{LevelCount})";
+
+            stats.Add(new UpgradeStatData(
+                "Health",
+                hp,
+                hp,
+                InteractionPopup.instance.healthIcon,
+                new Color(0.3f, 0.85f, 0.35f),
+                $" / {maxHP} HP"
+            ) { single = true });
         }
 
         InteractionPopup.instance.Show(
@@ -975,8 +986,7 @@ public class WallGroup : MonoBehaviour
         // Alle HP-Boni (Level 0 bis aktuell) zurücknehmen
         int hpPerSegment = 0;
 
-        for (int l = 0; l <= wallLevel; l++)
-        {
+        for (int l = 1; l <= wallLevel; l++) {
             TowerUpgradeLevel lvl = GetUpgradeLevel(l);
 
             if (lvl != null)
@@ -1022,7 +1032,10 @@ public class WallGroup : MonoBehaviour
         }
 
         // Held steht noch in Reichweite: sofort wieder "to build" anzeigen
-        EnterInteractionRange(null);
+        if (heroInRange)
+            EnterInteractionRange(null);
+        else
+            InteractionPopup.instance?.Hide();
     }
     // =========================================================
     // REMOVE SEGMENT
@@ -1140,8 +1153,11 @@ public class WallGroup : MonoBehaviour
     }
     public void SetGateOpen(bool isOpen)
     {
-        if (IsGateOpen() == isOpen)
+        bool open = isOpen || !isBuilt;
+
+        if (IsGateOpen() == open)
             return;
-        wallGate.SetGateOpen(isOpen);
+
+        wallGate.SetGateOpen(open);
     }
 }

@@ -15,7 +15,7 @@ namespace TowerDefense
         public string suffixNewValueOnly;
 
         public int decimals;
-
+        public bool single;   // true = unveränderter Wert, nur aktueller Wert ohne "alt › neu"
         public UpgradeStatData(
             string statName,
             float oldValue,

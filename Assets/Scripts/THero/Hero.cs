@@ -148,13 +148,13 @@ namespace TowerDefense
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interactionMode = !interactionMode;
-                SetInteraction(true);
+                ShowInteractionIndicator(true);
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 interactionMode = !interactionMode;
-                SetInteraction(false);
+                ShowInteractionIndicator(false);
             }
         }
 
@@ -681,14 +681,14 @@ namespace TowerDefense
             if (currentTower != null && LevelManager.instance.isDay)
             {
                 currentTower.SetHighlighted(false);
-                currentTower.SetInteraction(false);
+                currentTower.ShowInteractionIndicator(false);
                 currentTower.SetIsSelected(false);
             }
 
             if (currentTower is not WallSegment && LevelManager.instance.isDay)
             {
                 currentTower.SetHighlighted(true);
-                currentTower.SetInteraction(true);
+                currentTower.ShowInteractionIndicator(true);
             }
 
             if (currentTower is WallSegment wall)
@@ -722,10 +722,10 @@ namespace TowerDefense
             }
 
             tower.SetHighlighted(false);
-            tower.SetInteraction(false);
+            tower.ShowInteractionIndicator(false);
             tower.SetIsSelected(false);
 
-            SetInteraction(false);
+            ShowInteractionIndicator(false);
 
             TowerHeroManager.instance.DeselectTower();
         }

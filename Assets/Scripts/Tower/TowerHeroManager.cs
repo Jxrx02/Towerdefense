@@ -125,14 +125,14 @@ namespace TowerDefense
             if (instance.selectedTower != null && instance.selectedTower != tower)
             {
                 instance.selectedTower.SetIsSelected(false);
-                instance.selectedTower.SetInteraction(false);
+                instance.selectedTower.ShowInteractionIndicator(false);
                 instance.selectedTower.SetHighlighted(false);
 
             }
 
             instance.selectedTower = tower;
             instance.selectedTower.SetIsSelected(true);
-            instance.selectedTower.SetInteraction(true);
+            instance.selectedTower.ShowInteractionIndicator(true);
             instance.selectedTower.SetHighlighted(true);
             
         }
@@ -142,7 +142,7 @@ namespace TowerDefense
             if (instance.selectedTower != null)
             {
                 instance.selectedTower.SetIsSelected(false);
-                instance.selectedTower.SetInteraction(false);
+                instance.selectedTower.ShowInteractionIndicator(false);
                 instance.selectedTower.SetHighlighted(false);
                 instance.selectedTower = null;
             }

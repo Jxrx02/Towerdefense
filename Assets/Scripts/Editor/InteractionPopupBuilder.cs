@@ -50,7 +50,7 @@ private const float SelectionCellHeight = 84f;
         private static readonly Color BarBackColor = new Color(0.16f, 0.12f, 0.09f, 1f);     // #291F17
         private static readonly Color XpColor     = new Color(0.62f, 0.80f, 0.38f);          // Blattgrün #9ECC61
         private static readonly Color ButtonColor = new Color(0.27f, 0.20f, 0.14f, 1f);      // Holz #453324
-        private static readonly Color SellColor   = new Color(0.48f, 0.19f, 0.14f, 1f);      // Rostrot #7A3024
+        private static readonly Color SellColor = new Color(0.30f, 0.16f, 0.13f, 1f);   // dunkles Rostbraun statt Rostrot
         private static readonly Color KeyColor    = new Color(0.17f, 0.13f, 0.10f, 1f);      // #2B211A
         private static readonly Color DividerColor = new Color(0.62f, 0.46f, 0.27f, 0.35f);  // Bronze, blass
         private static readonly Color SelectedColor = new Color(0.82f, 0.55f, 0.20f, 1f);    // Kupfer #D18C33
@@ -297,6 +297,9 @@ private const float SelectionCellHeight = 84f;
     info.targetGrid = grid;
 
     // ---- Verkaufen (auch bei Mauern) ----
+    Image sellDivider = NewImage("SellDivider", parent, DividerColor);
+    SetSize(sellDivider.gameObject, height: 1f);
+    
     info.sell = NewButton("Sell", parent, SellColor);
     AddHorizontal(info.sell.gameObject, new RectOffset(8, 8, 5, 5), 6f, TextAnchor.MiddleCenter);
     info.sellRoot = info.sell.gameObject;

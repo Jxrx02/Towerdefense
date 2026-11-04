@@ -10,7 +10,7 @@ public enum StatId
     Damage, AttackSpeed, Range, Crit, CritDamage, Lethality, ArmorPen, MagicPen, MagicPenPercent,
     Omnivamp, Regen, MoveSpeed, Evasion, Gold,
     GiveRange, GiveDamage, GiveAttackSpeed, GiveSlow,
-    GiveRegen, GiveOmnivamp
+    GiveRegen, GiveOmnivamp, XpDrop
 }
 
     /// <summary>Eine Zeile im Inspektions-Popup. baseValue ist der Grundwert, value der aktuelle (z. B. nach Shred oder Aura).</summary>
@@ -133,6 +133,7 @@ public enum StatId
             AddIfNonZero(list, StatId.Evasion, "Evasion", cfg.evasionChance, "%", 0);
             AddIfNonZero(list, StatId.Regen, "Regen/sec", cfg.healthRegenPerSecond, "/s", 1);
             AddIfNonZero(list, StatId.Gold, "Gold", cfg.goldReward, "", 0);
+            AddIfNonZero(list, StatId.XpDrop, "XP Drop", cfg.xpDrop, "", 0);
         }
 
         // ------------------------------------------------------------------ Bausteine
