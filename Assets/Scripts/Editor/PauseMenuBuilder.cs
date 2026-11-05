@@ -9,19 +9,16 @@ using UnityEngine.UI;
 namespace TowerDefense.EditorTools
 {
     /// <summary>
-    /// Baut das komplette Pausemenü im Stil des InteractionPopup:
+    /// Baut das komplette Pausemenü im Stil des InteractionPopup.
     ///
     ///   MainPanel     Links:  Titel, Continue / Settings / Restart / Quit, Wave-Browser
-    ///                 Mitte:  Loadout (Waffe, Perks, Mutatoren + Detailtext), Quests
-    ///                 Rechts: Score-Zusammensetzung
-    ///   SettingsPanel Tabs Video / Audio / Gameplay / Controls (inkl. Rebinding-Liste)
-    ///   ConfirmDialog "Wirklich beenden?"
+    ///                 Mitte:  Score-Aufschlüsselung (Basis | Trennlinie | Multiplikator je Perk und Mutator | Gesamt)
+    ///                 Rechts: Loadout (Waffe, Perks, Mutatoren, Detailtext) und Quests
+    ///   SettingsPanel gleiche Ränder wie das Hauptmenü, Tabs Video / Audio / Gameplay / Controls
+    ///   EnemyInfoPanel  Klick auf eine Wave-Zeile
+    ///   ConfirmDialog
     ///
-    /// Erzeugt zusätzlich die Prefabs (Loadout-Icon, Quest, Quest-Bedingungs-Icon, Binding-Zeile),
-    /// verdrahtet alle Felder von PauseMenuUI / SettingsPanel / ConfirmDialog / PauseHotkey und
-    /// trägt das neue Canvas im LevelManager als pauseCanvas ein. Das alte Pause-Canvas wird deaktiviert.
-    ///
-    /// Aufruf: Tools > UI > Pausemenü neu aufbauen   (kann beliebig oft wiederholt werden)
+    /// Aufruf: Tools > UI > Pausemenü neu aufbauen   (beliebig oft wiederholbar)
     /// </summary>
     public static class PauseMenuBuilder
     {
@@ -33,12 +30,21 @@ namespace TowerDefense.EditorTools
         private const int ButtonSize = 22;
 
         private const float LeftWidth = 420f;
-        private const float MiddleWidth = 440f;
-        private const float RightWidth = 340f;
-        private const float SettingsWidth = 900f;
-        private const float SettingsPagesHeight = 440f;
+        private const float MiddleWidth = 520f;   // Score: Label + Multiplikator + Wert brauchen Platz
+        private const float RightWidth = 440f;
+
+        // Gleiche Ränder für Hauptmenü und Settings
+        private static readonly RectOffset ScreenPadding = new RectOffset(60, 60, 90, 60);
+
+        private const float SettingsPagesHeight = 380f;
+        private const float RowHeight = 34f;
 
         private const float IconSize = 56f;
+
+        // Muss über dem HUD-Canvas liegen, sonst scheinen HUD-Elemente durch das Menü.
+        // Ein Fade-Canvas (SceneFadeIn) braucht eine höhere Ordnung als dieser Wert.
+        private const int PauseSortingOrder = 500;
+        private const int FpsSortingOrder = 600;
 
         private const string PrefabFolder = "Assets/UI/Generated";
         private const string RootName = "PauseCanvas (neu)";
@@ -87,6 +93,21 @@ namespace TowerDefense.EditorTools
             GameObject questPrefab = CreateQuestPrefab(font, conditionIconPrefab);
             GameObject loadoutButtonPrefab = CreateLoadoutButtonPrefab();
             GameObject bindingRowPrefab = CreateBindingRowPrefab(font);
+            WaveEnemyEntry waveEntryPrefab = CreateWaveEntryPrefab(font);
+            GameObject statRowPrefab = CreateEnemyStatRowPrefab(font);
+            GameObject statHeaderPrefab = CreateEnemyStatHeaderPrefab(font);
+            ScoreRow scoreRowPrefab = CreateScoreRowPrefab(font);
+            GameObject scoreHeaderPrefab = CreateScoreHeaderPrefab(font);
+            GameObject scoreDividerPrefab = CreateScoreDividerPrefab();
+
+            if (scoreRowPrefab == null || waveEntryPrefab == null)
+            {
+                EditorUtility.DisplayDialog("Pausemenü",
+                    "Die Prefab-Komponenten ScoreRow bzw. WaveEnemyEntry konnten nicht erzeugt werden.\n\n" +
+                    "Jede Klasse muss in einer eigenen Datei liegen (ScoreRow.cs, WaveEnemyEntry.cs, ...). " +
+                    "Alte Dateien PauseExtras.cs und PauseEnemyUI.cs löschen und die Console auf Compile-Fehler prüfen.", "OK");
+                return;
+            }
 
             // ---------- Canvas ----------
             GameObject root = new GameObject(RootName, typeof(RectTransform));
@@ -94,7 +115,7 @@ namespace TowerDefense.EditorTools
 
             Canvas canvas = root.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 100;
+            canvas.sortingOrder = PauseSortingOrder;
 
             CanvasScaler scaler = root.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
@@ -114,15 +135,15 @@ namespace TowerDefense.EditorTools
             // ======================================================
             RectTransform main = NewRect("MainPanel", root.transform);
             Stretch(main);
-            HorizontalLayoutGroup mainLayout = AddHorizontal(main.gameObject, new RectOffset(60, 60, 90, 60), 24f, TextAnchor.UpperCenter);
-            mainLayout.childForceExpandHeight = false;
+            AddHorizontal(main.gameObject, ScreenPadding, 24f, TextAnchor.UpperCenter);
 
-            // ---------- Linke Spalte ----------
             RectTransform left = NewColumn("Left", main, LeftWidth);
+            RectTransform middle = NewColumn("Middle", main, MiddleWidth);
+            RectTransform right = NewColumn("Right", main, RightWidth);
 
+            // ---------- Links: Menü + Waves ----------
             Text title = NewText("Title", left, font, TitleSize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
             title.text = "Paused";
-            title.horizontalOverflow = HorizontalWrapMode.Overflow;
             SetSize(title.gameObject, height: 72f);
 
             Button btnContinue = NewMenuButton(left, font, "Continue");
@@ -142,14 +163,31 @@ namespace TowerDefense.EditorTools
             SetSize(txtWaveTitle.gameObject, flexibleWidth: 1f);
             Button btnNextWave = NewArrowButton("Next", waveHeader, font, ">");
 
-            RectTransform waveScroll = NewScroll("WaveScroll", waveCard, 330f);
-            Text txtWaveInfo = NewText("Info", waveScroll, font, SmallSize, DimColor, TextAnchor.UpperLeft);
-            txtWaveInfo.lineSpacing = 1.3f;
+            RectTransform waveEntries = NewScroll("WaveScroll", waveCard, 300f, 4f);
 
-            // ---------- Mittlere Spalte ----------
-            RectTransform middle = NewColumn("Middle", main, MiddleWidth);
+            Image waveDivider = NewImage("Divider", waveCard, DividerColor);
+            SetSize(waveDivider.gameObject, height: 1f);
 
-            RectTransform loadoutCard = CreateCard("LoadoutCard", middle, out _);
+            Text txtWaveSummary = NewText("Summary", waveCard, font, SmallSize + 2, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtWaveSummary.gameObject, height: 26f);
+
+            // ---------- Mitte: Score ----------
+            RectTransform scoreCard = CreateCard("ScoreCard", middle, out GameObject scoreOuter);
+            SectionHeader(scoreCard, font, "Score");
+
+            RectTransform scoreRows = NewRect("Rows", scoreCard);
+            AddVertical(scoreRows.gameObject, new RectOffset(0, 0, 0, 0), 2f);
+
+            ScorePanelUI scorePanel = scoreOuter.AddComponent<ScorePanelUI>();
+            SerializedObject sc = new SerializedObject(scorePanel);
+            Set(sc, "container", scoreRows);
+            Set(sc, "rowPrefab", scoreRowPrefab);
+            Set(sc, "headerPrefab", scoreHeaderPrefab);
+            Set(sc, "dividerPrefab", scoreDividerPrefab);
+            sc.ApplyModifiedPropertiesWithoutUndo();
+
+            // ---------- Rechts: Loadout + Quests ----------
+            RectTransform loadoutCard = CreateCard("LoadoutCard", right, out _);
             SectionHeader(loadoutCard, font, "Loadout");
 
             // Wie in LevelLoadoutUI: 1 Waffe, 5 Perks, 3 Mutatoren (LevelSelectorManager.StartLevel erzwingt das)
@@ -161,47 +199,27 @@ namespace TowerDefense.EditorTools
             SetSize(loadoutDivider.gameObject, height: 1f);
 
             Text detailTitle = NewText("DetailTitle", loadoutCard, font, BodySize, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold);
-            Text detailText = NewText("Detail", loadoutCard, font, SmallSize, DimColor, TextAnchor.UpperLeft);
+            Text detailText = NewText("Detail", loadoutCard, font, SmallSize, DimColor, TextAnchor.UpperLeft, wrap: true);
             detailText.lineSpacing = 1.3f;
             MinHeight(detailText.gameObject, 96f);
 
-            RectTransform questCard = CreateCard("QuestCard", middle, out _);
+            RectTransform questCard = CreateCard("QuestCard", right, out _);
             SectionHeader(questCard, font, "Quests");
-            RectTransform questScroll = NewScroll("QuestScroll", questCard, 250f, 6f);
-
-            // ---------- Rechte Spalte ----------
-            RectTransform right = NewColumn("Right", main, RightWidth);
-
-            RectTransform scoreCard = CreateCard("ScoreCard", right, out _);
-            SectionHeader(scoreCard, font, "Score");
-
-            RectTransform scoreRow = NewRect("ScoreRow", scoreCard);
-            AddHorizontal(scoreRow.gameObject, new RectOffset(0, 0, 0, 0), 10f, TextAnchor.UpperLeft);
-
-            Text scoreLabels = NewText("Labels", scoreRow, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft);
-            scoreLabels.lineSpacing = 1.5f;
-            SetSize(scoreLabels.gameObject, flexibleWidth: 1f);
-
-            Text scoreValues = NewText("Values", scoreRow, font, SmallSize + 2, TextColor, TextAnchor.UpperRight);
-            scoreValues.lineSpacing = 1.5f;
-            SetSize(scoreValues.gameObject, width: 110f);
+            RectTransform questScroll = NewScroll("QuestScroll", questCard, 230f, 6f);
 
             // ======================================================
-            // SETTINGS PANEL
+            // SETTINGS PANEL (gleiche Ränder wie MainPanel)
             // ======================================================
             RectTransform settingsRoot = NewRect("SettingsPanel", root.transform);
             Stretch(settingsRoot);
-            VerticalLayoutGroup settingsLayout = AddVertical(settingsRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
-            settingsLayout.childAlignment = TextAnchor.MiddleCenter;
-            settingsLayout.childForceExpandWidth = false;
-            settingsLayout.childForceExpandHeight = false;
+            VerticalLayoutGroup settingsLayout = AddVertical(settingsRoot.gameObject, ScreenPadding, 14f);
+            settingsLayout.childAlignment = TextAnchor.UpperCenter;
 
-            RectTransform settingsCard = CreateCard("Card", settingsRoot, out GameObject settingsOuter, new RectOffset(24, 24, 18, 20));
-            SetSize(settingsOuter, width: SettingsWidth);
-
-            Text settingsTitle = NewText("Title", settingsCard, font, TitleSize - 6, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Text settingsTitle = NewText("Title", settingsRoot, font, TitleSize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
             settingsTitle.text = "Settings";
-            SetSize(settingsTitle.gameObject, height: 56f);
+            SetSize(settingsTitle.gameObject, height: 72f);
+
+            RectTransform settingsCard = CreateCard("Card", settingsRoot, out _, new RectOffset(24, 24, 16, 18));
 
             RectTransform tabRow = NewRect("Tabs", settingsCard);
             AddHorizontal(tabRow.gameObject, new RectOffset(0, 0, 0, 0), 6f, TextAnchor.MiddleCenter);
@@ -260,6 +278,56 @@ namespace TowerDefense.EditorTools
             Button btnBack = NewMenuButton(settingsCard, font, "Back", ButtonSize, 44f);
 
             // ======================================================
+            // ENEMY INFO PANEL
+            // ======================================================
+            Image enemyRoot = NewImage("EnemyInfoPanel", root.transform, new Color(0f, 0f, 0f, 0.6f), true);
+            Stretch(enemyRoot.rectTransform);
+            VerticalLayoutGroup enemyLayout = AddVertical(enemyRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
+            enemyLayout.childAlignment = TextAnchor.MiddleCenter;
+            enemyLayout.childForceExpandWidth = false;
+
+            RectTransform enemyCard = CreateCard("Card", enemyRoot.transform, out GameObject enemyOuter, new RectOffset(24, 24, 18, 20));
+            SetSize(enemyOuter, width: 640f, flexibleWidth: 0f);
+
+            RectTransform enemyHead = NewRect("Head", enemyCard);
+            AddHorizontal(enemyHead.gameObject, new RectOffset(0, 0, 0, 0), 16f, TextAnchor.UpperLeft);
+
+            Image enemyIconBack = NewImage("IconBack", enemyHead, KeyColor);
+            SetSize(enemyIconBack.gameObject, 104f, 104f);
+            AddBorder(enemyIconBack.gameObject);
+            Image enemyIcon = NewImage("Icon", enemyIconBack.transform, Color.white);
+            enemyIcon.preserveAspect = true;
+            Stretch(enemyIcon.rectTransform);
+            enemyIcon.rectTransform.offsetMin = new Vector2(8f, 8f);
+            enemyIcon.rectTransform.offsetMax = new Vector2(-8f, -8f);
+
+            RectTransform enemyHeadText = NewRect("Text", enemyHead);
+            AddVertical(enemyHeadText.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            SetSize(enemyHeadText.gameObject, flexibleWidth: 1f);
+
+            Text enemyName = NewText("Name", enemyHeadText, font, TitleSize - 12, TextColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            Text enemyDescription = NewText("Description", enemyHeadText, font, SmallSize, DimColor, TextAnchor.UpperLeft, wrap: true);
+            enemyDescription.lineSpacing = 1.3f;
+
+            Image enemyAccent = NewImage("Accent", enemyCard, BorderColor);
+            SetSize(enemyAccent.gameObject, height: 2f);
+
+            RectTransform enemyStats = NewScroll("StatsScroll", enemyCard, 380f, 2f);
+
+            Button enemyClose = NewMenuButton(enemyCard, font, "Close", ButtonSize, 44f);
+
+            EnemyInfoPanel enemyPanel = enemyRoot.gameObject.AddComponent<EnemyInfoPanel>();
+            SerializedObject ep = new SerializedObject(enemyPanel);
+            Set(ep, "icon", enemyIcon);
+            Set(ep, "txtName", enemyName);
+            Set(ep, "txtDescription", enemyDescription);
+            Set(ep, "statContainer", enemyStats);
+            Set(ep, "statRowPrefab", statRowPrefab);
+            Set(ep, "statHeaderPrefab", statHeaderPrefab);
+            Set(ep, "btnClose", enemyClose);
+            ep.ApplyModifiedProperties();
+
+            // ======================================================
             // CONFIRM DIALOG
             // ======================================================
             Image dialogRoot = NewImage("ConfirmDialog", root.transform, new Color(0f, 0f, 0f, 0.6f), true);
@@ -267,12 +335,11 @@ namespace TowerDefense.EditorTools
             VerticalLayoutGroup dialogLayout = AddVertical(dialogRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
             dialogLayout.childAlignment = TextAnchor.MiddleCenter;
             dialogLayout.childForceExpandWidth = false;
-            dialogLayout.childForceExpandHeight = false;
 
             RectTransform dialogCard = CreateCard("Card", dialogRoot.transform, out GameObject dialogOuter, new RectOffset(24, 24, 20, 22));
-            SetSize(dialogOuter, width: 560f);
+            SetSize(dialogOuter, width: 560f, flexibleWidth: 0f);
 
-            Text dialogMessage = NewText("Message", dialogCard, font, BodySize + 2, TextColor, TextAnchor.MiddleCenter);
+            Text dialogMessage = NewText("Message", dialogCard, font, BodySize + 2, TextColor, TextAnchor.MiddleCenter, wrap: true);
             MinHeight(dialogMessage.gameObject, 80f);
 
             RectTransform dialogButtons = NewRect("Buttons", dialogCard);
@@ -344,6 +411,7 @@ namespace TowerDefense.EditorTools
 
             // ======================================================
             // PauseMenuUI verdrahten
+            // (sceneFader wird zur Laufzeit automatisch gefunden)
             // ======================================================
             SerializedObject pm = new SerializedObject(menu);
             Set(pm, "btnContinue", btnContinue);
@@ -359,7 +427,10 @@ namespace TowerDefense.EditorTools
             Set(pm, "btnPrevWave", btnPrevWave);
             Set(pm, "btnNextWave", btnNextWave);
             Set(pm, "txtWaveTitle", txtWaveTitle);
-            Set(pm, "txtWaveInfo", txtWaveInfo);
+            Set(pm, "waveEntryContainer", waveEntries);
+            Set(pm, "waveEntryPrefab", waveEntryPrefab);
+            Set(pm, "txtWaveSummary", txtWaveSummary);
+            Set(pm, "enemyInfoPanel", enemyPanel);
 
             Set(pm, "weaponContainer", weaponRow);
             Set(pm, "perkContainer", perkRow);
@@ -372,8 +443,7 @@ namespace TowerDefense.EditorTools
             Set(pm, "questContainer", questScroll);
             Set(pm, "questPrefab", questPrefab);
 
-            Set(pm, "txtScoreLabels", scoreLabels);
-            Set(pm, "txtScoreValues", scoreValues);
+            Set(pm, "scorePanel", scorePanel);
             pm.ApplyModifiedProperties();
 
             // ======================================================
@@ -404,14 +474,15 @@ namespace TowerDefense.EditorTools
             // Startzustand: Menü aus, Unterpanels aus
             settingsRoot.gameObject.SetActive(false);
             dialogRoot.gameObject.SetActive(false);
+            enemyRoot.gameObject.SetActive(false);
             root.SetActive(false);
 
             EditorSceneManager.MarkSceneDirty(root.scene);
             Selection.activeGameObject = root;
 
             Debug.Log("Pausemenü aufgebaut und verdrahtet. Das alte Pause-Canvas ist deaktiviert und kann gelöscht werden.\n" +
-                      "Bitte noch prüfen: PauseMenuUI > 'Map Scene Name' (Standard: LevelSelector) und die Ziel-Szene in den Build Settings.\n" +
-                      "Optional: GameSettings.Mixer per Script setzen, falls du einen AudioMixer nutzt.");
+                      $"Pause-Canvas Sorting Order: {PauseSortingOrder}. Ein Fade-Canvas muss höher liegen, damit der Fade über dem Menü sichtbar ist.\n" +
+                      "Bitte prüfen: PauseMenuUI > 'Map Scene Name' und die Ziel-Szene in den Build Settings.");
         }
 
         // ------------------------------------------------------------------
@@ -438,7 +509,6 @@ namespace TowerDefense.EditorTools
         {
             EnsureFolder(PrefabFolder);
 
-            // Rahmen + Inhalt, wie die Karten des Popups
             GameObject root = new GameObject("PauseQuest", typeof(RectTransform));
             Image border = root.AddComponent<Image>();
             border.color = BorderColor;
@@ -456,10 +526,9 @@ namespace TowerDefense.EditorTools
             RectTransform conditions = NewRect("Conditions", nameRow);
             AddHorizontal(conditions.gameObject, new RectOffset(0, 0, 0, 0), 4f, TextAnchor.MiddleRight);
 
-            Text description = NewText("Description", inner.transform, font, SmallSize, DimColor, TextAnchor.UpperLeft);
+            Text description = NewText("Description", inner.transform, font, SmallSize, DimColor, TextAnchor.UpperLeft, wrap: true);
             description.lineSpacing = 1.25f;
 
-            // Erledigt-Overlay: grüne Tönung, zählt nicht im Layout
             Image overlay = NewImage("CompletedOverlay", inner.transform, new Color(XpColor.r, XpColor.g, XpColor.b, 0.16f));
             overlay.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
             Stretch(overlay.rectTransform);
@@ -485,10 +554,7 @@ namespace TowerDefense.EditorTools
             return saved;
         }
 
-        /// <summary>
-        /// Prefab mit dem vorhandenen LoadoutSelectionButton-Script (gleiche Felder wie dein btnPrefab):
-        /// border = Auswahlrahmen (Root-Image), background = Typfarbe, icon, selectedObject = Marker.
-        /// </summary>
+        /// <summary>Prefab mit dem vorhandenen LoadoutSelectionButton-Script (gleiche Felder wie dein btnPrefab).</summary>
         private static GameObject CreateLoadoutButtonPrefab()
         {
             EnsureFolder(PrefabFolder);
@@ -496,7 +562,6 @@ namespace TowerDefense.EditorTools
             GameObject root = new GameObject("LoadoutButton", typeof(RectTransform));
             SetSize(root, IconSize, IconSize);
 
-            // Auswahlrahmen: LoadoutSelectionButton schaltet border.enabled je nach Auswahl
             Image border = root.AddComponent<Image>();
             border.color = SelectedColor;
             border.raycastTarget = false;
@@ -512,7 +577,6 @@ namespace TowerDefense.EditorTools
             icon.rectTransform.offsetMin = new Vector2(6f, 6f);
             icon.rectTransform.offsetMax = new Vector2(-6f, -6f);
 
-            // Marker unten am Button
             Image marker = NewImage("Selected", root.transform, GoldColor);
             marker.rectTransform.anchorMin = new Vector2(0f, 0f);
             marker.rectTransform.anchorMax = new Vector2(1f, 0f);
@@ -520,7 +584,6 @@ namespace TowerDefense.EditorTools
             marker.rectTransform.offsetMax = new Vector2(-8f, 8f);
             marker.gameObject.SetActive(false);
 
-            // Button muss auf dem Root liegen: LoadoutSelectionButton.Awake nutzt GetComponent<Button>()
             Button button = root.AddComponent<Button>();
             button.targetGraphic = background;
             button.colors = ButtonColors();
@@ -539,20 +602,168 @@ namespace TowerDefense.EditorTools
             return saved;
         }
 
+        private static WaveEnemyEntry CreateWaveEntryPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("WaveEnemyEntry", typeof(RectTransform));
+            Image background = root.AddComponent<Image>();
+            background.color = ButtonColor;
+            AddBorder(root);
+            AddHorizontal(root, new RectOffset(8, 8, 6, 6), 10f, TextAnchor.MiddleLeft);
+            MinHeight(root, 48f);
+
+            Button button = root.AddComponent<Button>();
+            button.targetGraphic = background;
+            button.colors = ButtonColors();
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            Image icon = NewImage("Icon", root.transform, Color.white);
+            icon.preserveAspect = true;
+            SetSize(icon.gameObject, 36f, 36f);
+
+            Text label = NewText("Label", root.transform, font, BodySize - 2, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(label.gameObject, flexibleWidth: 1f);
+
+            Text gold = NewText("Gold", root.transform, font, SmallSize, GoldColor, TextAnchor.MiddleRight, FontStyle.Bold);
+            SetSize(gold.gameObject, width: 90f);
+
+            Image info = NewImage("Info", root.transform, KeyColor);
+            SetSize(info.gameObject, 24f, 24f);
+            AddBorder(info.gameObject);
+            Text i = NewText("I", info.transform, font, SmallSize, DimColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            i.text = "i";
+            Stretch(i.rectTransform);
+
+            WaveEnemyEntry entry = root.AddComponent<WaveEnemyEntry>();
+            SerializedObject so = new SerializedObject(entry);
+            Set(so, "icon", icon);
+            Set(so, "txtLabel", label);
+            Set(so, "txtGold", gold);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/WaveEnemyEntry.prefab");
+            Object.DestroyImmediate(root);
+            return AssetDatabase.LoadAssetAtPath<GameObject>($"{PrefabFolder}/WaveEnemyEntry.prefab").GetComponent<WaveEnemyEntry>();
+        }
+
+        private static GameObject CreateEnemyStatRowPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("EnemyStatRow", typeof(RectTransform));
+            AddHorizontal(root, new RectOffset(0, 0, 0, 0), 12f, TextAnchor.MiddleLeft);
+            SetSize(root, height: 26f);
+
+            Text label = NewText("Label", root.transform, font, SmallSize + 2, DimColor, TextAnchor.MiddleLeft);
+            SetSize(label.gameObject, flexibleWidth: 1f);
+
+            NewText("Value", root.transform, font, SmallSize + 2, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/EnemyStatRow.prefab");
+            Object.DestroyImmediate(root);
+            return saved;
+        }
+
+        private static GameObject CreateEnemyStatHeaderPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("EnemyStatHeader", typeof(RectTransform));
+            AddVertical(root, new RectOffset(0, 0, 10, 0), 2f);
+
+            NewText("Label", root.transform, font, HeaderSize, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold);
+
+            Image divider = NewImage("Divider", root.transform, DividerColor);
+            SetSize(divider.gameObject, height: 1f);
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/EnemyStatHeader.prefab");
+            Object.DestroyImmediate(root);
+            return saved;
+        }
+
+        // ---- Score ----
+
+        private static ScoreRow CreateScoreRowPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ScoreRow", typeof(RectTransform));
+            Image background = root.AddComponent<Image>();
+            background.color = new Color(0f, 0f, 0f, 0f);     // wird beim Highlight eingefärbt
+            background.raycastTarget = false;
+            AddHorizontal(root, new RectOffset(6, 6, 2, 2), 8f, TextAnchor.MiddleLeft);
+            MinHeight(root, 28f);
+
+            Text label = NewText("Label", root.transform, font, SmallSize + 2, DimColor, TextAnchor.MiddleLeft);
+            SetSize(label.gameObject, flexibleWidth: 1f);
+
+            Text middle = NewText("Middle", root.transform, font, SmallSize + 2, DimColor, TextAnchor.MiddleRight, FontStyle.Bold);
+            SetSize(middle.gameObject, width: 84f);
+
+            Text value = NewText("Value", root.transform, font, SmallSize + 2, TextColor, TextAnchor.MiddleRight);
+            SetSize(value.gameObject, width: 96f);
+
+            ScoreRow row = root.AddComponent<ScoreRow>();
+            SerializedObject so = new SerializedObject(row);
+            Set(so, "background", background);
+            Set(so, "txtLabel", label);
+            Set(so, "txtMiddle", middle);
+            Set(so, "txtValue", value);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ScoreRow.prefab");
+            Object.DestroyImmediate(root);
+            return AssetDatabase.LoadAssetAtPath<GameObject>($"{PrefabFolder}/ScoreRow.prefab").GetComponent<ScoreRow>();
+        }
+
+        private static GameObject CreateScoreHeaderPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ScoreHeader", typeof(RectTransform));
+            AddVertical(root, new RectOffset(6, 6, 6, 2), 0f);
+
+            NewText("Label", root.transform, font, HeaderSize, DimColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ScoreHeader.prefab");
+            Object.DestroyImmediate(root);
+            return saved;
+        }
+
+        /// <summary>Trennlinie zwischen Basis-Werten und Multiplikatoren bzw. Ergebnis.</summary>
+        private static GameObject CreateScoreDividerPrefab()
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ScoreDivider", typeof(RectTransform));
+            SetSize(root, height: 16f);
+
+            Image line = NewImage("Line", root.transform, BorderColor);
+            line.rectTransform.anchorMin = new Vector2(0f, 0.5f);
+            line.rectTransform.anchorMax = new Vector2(1f, 0.5f);
+            line.rectTransform.sizeDelta = new Vector2(0f, 2f);
+            line.rectTransform.anchoredPosition = Vector2.zero;
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ScoreDivider.prefab");
+            Object.DestroyImmediate(root);
+            return saved;
+        }
+
         private static GameObject CreateBindingRowPrefab(Font font)
         {
             EnsureFolder(PrefabFolder);
 
             GameObject root = new GameObject("BindingRow", typeof(RectTransform));
             AddHorizontal(root, new RectOffset(0, 0, 0, 0), 12f, TextAnchor.MiddleLeft);
-            SetSize(root, height: 34f);
+            SetSize(root, height: RowHeight);
 
             // Wichtig: Das Label ist das ERSTE Text-Kind (SettingsPanel nutzt GetComponentInChildren<Text>)
             Text label = NewText("Label", root.transform, font, BodySize, TextColor, TextAnchor.MiddleLeft);
             SetSize(label.gameObject, flexibleWidth: 1f);
 
             Button key = NewButton("Key", root.transform, ButtonColor);
-            SetSize(key.gameObject, 220f, 32f);
+            SetSize(key.gameObject, 260f, 30f);
             AddBorder(key.gameObject);
 
             Text keyText = NewText("Text", key.transform, font, SmallSize + 2, GoldColor, TextAnchor.MiddleCenter, FontStyle.Bold);
@@ -570,7 +781,7 @@ namespace TowerDefense.EditorTools
 
             Canvas canvas = go.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 90;
+            canvas.sortingOrder = FpsSortingOrder;
 
             CanvasScaler scaler = go.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
@@ -582,7 +793,7 @@ namespace TowerDefense.EditorTools
             rect.anchorMin = rect.anchorMax = new Vector2(1f, 1f);
             rect.pivot = new Vector2(1f, 1f);
             rect.anchoredPosition = new Vector2(-16f, -12f);
-            rect.sizeDelta = new Vector2(200f, 30f);
+            rect.sizeDelta = new Vector2(240f, 30f);
             AddOutline(text);
             text.gameObject.SetActive(false);
 
@@ -609,10 +820,7 @@ namespace TowerDefense.EditorTools
             return row;
         }
 
-        /// <summary>
-        /// Übernimmt colorWeapon / colorPerk / colorMutator aus LevelLoadoutUI, falls sie in einer
-        /// geöffneten Szene liegt (in der Regel die Map-Szene, dann bleiben die Standardfarben).
-        /// </summary>
+        /// <summary>Übernimmt colorWeapon / colorPerk / colorMutator aus LevelLoadoutUI, falls in einer geöffneten Szene vorhanden.</summary>
         private static void CopyLoadoutColors(SerializedObject pm)
         {
             LevelLoadoutUI ui = Object.FindFirstObjectByType<LevelLoadoutUI>(FindObjectsInactive.Include);
@@ -625,7 +833,6 @@ namespace TowerDefense.EditorTools
                 SerializedProperty from = source.FindProperty(field);
                 SerializedProperty to = pm.FindProperty(field);
 
-                // Alpha 0 = im Inspector nie gesetzt
                 if (from != null && to != null && from.colorValue.a > 0.01f)
                     to.colorValue = from.colorValue;
             }
@@ -635,11 +842,11 @@ namespace TowerDefense.EditorTools
         {
             RectTransform page = NewRect(name, parent);
             Stretch(page);
-            AddVertical(page.gameObject, new RectOffset(0, 0, 6, 0), 8f);
+            AddVertical(page.gameObject, new RectOffset(0, 0, 6, 0), 6f);
             return page;
         }
 
-        private static RectTransform NewRow(string name, Transform parent, Font font, string label, float height = 38f)
+        private static RectTransform NewRow(string name, Transform parent, Font font, string label, float height = RowHeight)
         {
             RectTransform row = NewRect(name, parent);
             AddHorizontal(row.gameObject, new RectOffset(0, 0, 0, 0), 12f, TextAnchor.MiddleLeft);
@@ -659,8 +866,9 @@ namespace TowerDefense.EditorTools
 
             prev = NewArrowButton("Prev", row, font, "<");
 
+            // Breit genug für "1920 x 1080 @ 60Hz" in der Pixelschrift, einzeilig
             value = NewText("Value", row, font, BodySize, TextColor, TextAnchor.MiddleCenter, FontStyle.Bold);
-            SetSize(value.gameObject, width: 250f);
+            SetSize(value.gameObject, width: 380f);
 
             next = NewArrowButton("Next", row, font, ">");
         }
@@ -693,7 +901,7 @@ namespace TowerDefense.EditorTools
             RectTransform row = NewRow(label, parent, font, label);
 
             Image back = NewImage("Slider", row, BarBackColor, true);
-            SetSize(back.gameObject, 250f, 18f);
+            SetSize(back.gameObject, 300f, 18f);
             AddBorder(back.gameObject);
 
             RectTransform fillArea = NewRect("Fill Area", back.transform);
@@ -724,8 +932,9 @@ namespace TowerDefense.EditorTools
             slider.value = 1f;
             slider.navigation = new Navigation { mode = Navigation.Mode.None };
 
+            // Breit genug für "1.00" (Pixelschrift), einzeilig
             valueText = NewText("Value", row, font, BodySize, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
-            SetSize(valueText.gameObject, width: 64f);
+            SetSize(valueText.gameObject, width: 90f);
 
             return slider;
         }
@@ -734,10 +943,10 @@ namespace TowerDefense.EditorTools
         {
             RectTransform row = NewRect("ResetRow", parent);
             AddHorizontal(row.gameObject, new RectOffset(0, 0, 8, 0), 0f, TextAnchor.MiddleRight);
-            SetSize(row.gameObject, height: 44f);
+            SetSize(row.gameObject, height: 46f);
 
             Button button = NewMenuButton(row, font, label, SmallSize + 2, 36f);
-            SetSize(button.gameObject, width: 300f);
+            SetSize(button.gameObject, width: 380f);
             return button;
         }
 
@@ -745,11 +954,15 @@ namespace TowerDefense.EditorTools
         // Bausteine (gleiche Idee wie im InteractionPopupBuilder)
         // ------------------------------------------------------------------
 
+        /// <summary>
+        /// Spalte mit Mindestbreite. Zusätzlicher Platz wird im Verhältnis der Breiten verteilt,
+        /// dadurch füllen die Spalten die Fläche innerhalb der Ränder (wie das bisherige Layout).
+        /// </summary>
         private static RectTransform NewColumn(string name, Transform parent, float width)
         {
             RectTransform column = NewRect(name, parent);
             AddVertical(column.gameObject, new RectOffset(0, 0, 0, 0), 14f);
-            SetSize(column.gameObject, width: width);
+            SetSize(column.gameObject, width: width, flexibleWidth: width / 100f);
             return column;
         }
 
@@ -887,8 +1100,12 @@ namespace TowerDefense.EditorTools
             return image;
         }
 
+        /// <summary>
+        /// Standard: einzeilig (kein Umbruch, Text läuft bei Platzmangel über, statt in die nächste Zeile zu rutschen).
+        /// Mit wrap: true für Beschreibungen und Fließtext.
+        /// </summary>
         private static Text NewText(string name, Transform parent, Font font, int size, Color color,
-            TextAnchor anchor, FontStyle style = FontStyle.Normal)
+            TextAnchor anchor, FontStyle style = FontStyle.Normal, bool wrap = false)
         {
             RectTransform rect = NewRect(name, parent);
             Text text = rect.gameObject.AddComponent<Text>();
@@ -897,7 +1114,7 @@ namespace TowerDefense.EditorTools
             text.color = color;
             text.alignment = anchor;
             text.fontStyle = style;
-            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.horizontalOverflow = wrap ? HorizontalWrapMode.Wrap : HorizontalWrapMode.Overflow;
             text.verticalOverflow = VerticalWrapMode.Overflow;
             text.supportRichText = true;
             text.raycastTarget = false;

@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 using LevelSelector;
 using LevelSelector.Definitions;
 using LoadingScreen;
@@ -22,10 +20,9 @@ namespace TowerDefense
         [SerializeField] private Button btnSettings;
         [SerializeField] private Button btnRestart;
         [SerializeField] private Button btnQuit;
-        
+        [SerializeField] private string mapSceneName = "LevelSelector";
 
         [Header("Dialog / Fade")]
-        [SerializeField] private SceneFadeIn sceneFadeIn;
         [SerializeField] private ConfirmDialog confirmDialog;
         [SerializeField] private CanvasGroup canvasGroup;   // auf dem Pause-Canvas-Root
         [SerializeField] private float fadeTime = 0.15f;
@@ -38,7 +35,14 @@ namespace TowerDefense
         [SerializeField] private Button btnPrevWave;
         [SerializeField] private Button btnNextWave;
         [SerializeField] private Text txtWaveTitle;     // "NIGHT: 1/8"
-        [SerializeField] private Text txtWaveInfo;      // Mobs, Gold, Stats (Rich Text)
+        [SerializeField] private Transform waveEntryContainer;
+        [SerializeField] private WaveEnemyEntry waveEntryPrefab;
+        [SerializeField] private Text txtWaveSummary;
+        [SerializeField] private EnemyInfoPanel enemyInfoPanel;
+
+        [Header("Scene Change")]
+        [Tooltip("SceneFadeIn aus der Szene. Szenenwechsel laufen darüber (Fade, dann LoaderInfo).")]
+        [SerializeField] private SceneFadeIn sceneFader;
 
         [Header("Loadout (nutzt LoadoutSelectionButton)")]
         [SerializeField] private Transform weaponContainer;
@@ -58,11 +62,11 @@ namespace TowerDefense
         [SerializeField] private GameObject questPrefab;        // dein QuestUI-Prefab
 
         [Header("Score")]
-        [SerializeField] private Text txtScoreLabels;   // linke Spalte
-        [SerializeField] private Text txtScoreValues;   // rechte Spalte (rechtsbündig)
+        [SerializeField] private ScorePanelUI scorePanel;
 
         private int _shownWave;
         private int _openedFrame;
+        private bool _leaving;
         private WaveManager _waveManager;
 
         private void Awake()
@@ -82,25 +86,27 @@ namespace TowerDefense
 
             ShowMain();
             if (confirmDialog != null) confirmDialog.Close();
+            if (enemyInfoPanel != null) enemyInfoPanel.Close();
+            if (sceneFader == null) sceneFader = FindFirstObjectByType<SceneFadeIn>(FindObjectsInactive.Include);
             StopAllCoroutines();
             if (canvasGroup != null) StartCoroutine(FadeIn());
 
             _shownWave = _waveManager != null ? _waveManager.currentWaveIndex : 0;
             RefreshWave();
+            if (scorePanel != null) scorePanel.Rebuild();
             RefreshLoadout();
             RefreshQuests();
         }
 
         private void Update()
         {
-            // Score live aktualisieren (Time.time steht bei timeScale 0, daher stabil)
-            RefreshScore();
-
-            // Schließen-Reihenfolge: Dialog -> Settings -> Menü
+            // Schließen-Reihenfolge: Dialog -> Gegner-Panel -> Settings -> Menü
             if (Time.frameCount != _openedFrame && KeyBindings.Down(GameAction.Pause) && !(settingsPanel != null && settingsPanel.IsRebinding))
             {
                 if (confirmDialog != null && confirmDialog.IsOpen)
                     confirmDialog.Close();
+                else if (enemyInfoPanel != null && enemyInfoPanel.IsOpen)
+                    enemyInfoPanel.Close();
                 else if (settingsPanel != null && settingsPanel.gameObject.activeSelf)
                     ShowMain();
                 else
@@ -141,20 +147,36 @@ namespace TowerDefense
             });
         }
 
-        // Zentrale Stelle für Szenenwechsel über deinen Ladebildschirm (Szene 0 -> SceneLoader).
-        // Time.timeScale MUSS wieder 1 sein: SceneLoader nutzt Invoke und Time.deltaTime.
-        // Mit Fade: den Aufruf in den beiden Methoden gegen deine Fade-Klasse tauschen
-        // (Wrapper muss auf dem Fade-Objekt laufen, nicht auf diesem Menü).
+        // Zentrale Stelle für Szenenwechsel: immer über SceneFadeIn (Fade-Out, danach LoaderInfo).
+        // Time.timeScale setzt SceneFadeIn selbst zurück, direkt bevor der Loader startet.
         private void LoadScene(int buildIndex)
         {
-            Time.timeScale = 1f;
-            sceneFadeIn.FadeToScene(buildIndex);
+            if (_leaving) return;
+            _leaving = true;
+
+            if (sceneFader != null)
+                sceneFader.FadeToScene(buildIndex);
+            else
+            {
+                Debug.LogWarning("PauseMenuUI: Kein SceneFadeIn gefunden, lade ohne Fade.");
+                Time.timeScale = 1f;
+                LoaderInfo.LoadScene(buildIndex);
+            }
         }
 
         private void LoadScene(string sceneName)
         {
-            Time.timeScale = 1f;
-            sceneFadeIn.FadeToScene(sceneName);
+            if (_leaving) return;
+            _leaving = true;
+
+            if (sceneFader != null)
+                sceneFader.FadeToScene(sceneName);
+            else
+            {
+                Debug.LogWarning("PauseMenuUI: Kein SceneFadeIn gefunden, lade ohne Fade.");
+                Time.timeScale = 1f;
+                LoaderInfo.LoadScene(sceneName);
+            }
         }
 
         // Unscaled, weil Time.timeScale beim Pausieren 0 ist
@@ -188,12 +210,11 @@ namespace TowerDefense
 
             btnPrevWave.interactable = _shownWave > 0;
             btnNextWave.interactable = _shownWave < total - 1;
-
             txtWaveTitle.text = $"NIGHT: {_shownWave + 1}/{total}";
 
-            // Aggregieren: pro EnemyConfig Anzahl summieren
-            var counts = new Dictionary<ScriptableObject, int>();
-            var order = new List<ScriptableObject>();
+            // Pro Gegnertyp die Anzahl über alle Bursts der Welle summieren
+            var counts = new Dictionary<EnemyConfig, int>();
+            var order = new List<EnemyConfig>();
 
             foreach (var burst in waves[_shownWave].bursts)
             {
@@ -201,75 +222,44 @@ namespace TowerDefense
                 {
                     if (cfg == null || cfg.enemyConfig == null) continue;
 
-                    var key = cfg.enemyConfig;
-                    if (!counts.ContainsKey(key))
+                    EnemyConfig enemy = cfg.enemyConfig;
+                    if (!counts.ContainsKey(enemy))
                     {
-                        counts[key] = 0;
-                        order.Add(key);
+                        counts[enemy] = 0;
+                        order.Add(enemy);
                     }
-                    counts[key] += cfg.spawnCount;
+                    counts[enemy] += cfg.spawnCount;
                 }
             }
 
-            var sb = new StringBuilder();
+            Clear(waveEntryContainer);
+
             int totalEnemies = 0;
             int totalGold = 0;
 
-            foreach (var key in order)
+            foreach (EnemyConfig enemy in order)
             {
-                var enemyCfg = (EnemyConfig)key;
-                int count = counts[key];
-                int gold = count * enemyCfg.goldReward;
-
+                int count = counts[enemy];
                 totalEnemies += count;
-                totalGold += gold;
+                totalGold += count * enemy.goldReward;
 
-                sb.AppendLine($"<b>{count}x {enemyCfg.name}</b>   <color=#E8B04A>{gold} Gold</color>");
-                sb.AppendLine(BuildStatLine(enemyCfg));
-                sb.AppendLine();
+                WaveEnemyEntry entry = Instantiate(waveEntryPrefab, waveEntryContainer);
+                entry.Setup(enemy, count, OpenEnemyInfo);
             }
 
-            sb.AppendLine($"<b>Gesamt:</b> {totalEnemies} Gegner  |  <color=#E8B04A>{totalGold} Gold</color>");
-            txtWaveInfo.text = sb.ToString();
+            txtWaveSummary.text = $"{totalEnemies} enemies   |   {totalGold} Gold";
         }
 
-        /// <summary>
-        /// Liest alle öffentlichen int/float-Felder des EnemyConfig per Reflection aus
-        /// (Health, Speed, ... – egal wie sie bei dir heißen). goldReward wird übersprungen,
-        /// weil es separat angezeigt wird.
-        /// </summary>
-        private static string BuildStatLine(EnemyConfig cfg)
+        private void OpenEnemyInfo(EnemyConfig config)
         {
-            var parts = new List<string>();
-
-            foreach (FieldInfo f in cfg.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance))
-            {
-                if (f.Name == "goldReward") continue;
-
-                if (f.FieldType == typeof(int) || f.FieldType == typeof(float))
-                {
-                    object v = f.GetValue(cfg);
-                    string val = v is float fl ? fl.ToString("0.##") : v.ToString();
-                    parts.Add($"{Nicify(f.Name)}: {val}");
-                }
-            }
-
-            return parts.Count == 0 ? "  –" : "  " + string.Join("   ", parts);
-        }
-
-        private static string Nicify(string fieldName)
-        {
-#if UNITY_EDITOR
-            return UnityEditor.ObjectNames.NicifyVariableName(fieldName);
-#else
-            return fieldName;
-#endif
+            if (enemyInfoPanel != null)
+                enemyInfoPanel.Open(config);
         }
 
         // ── Loadout ────────────────────────────────────────────────
 
         private readonly List<LoadoutSelectionButton> _loadoutButtons = new();
-        private readonly List<(string title, string text)> _loadoutDetails = new();
+        private readonly List<(string title, string text, ScriptableObject def)> _loadoutDetails = new();
 
         private void RefreshLoadout()
         {
@@ -294,7 +284,7 @@ namespace TowerDefense
                 if (btn != null)
                 {
                     btn.SetupWeapon(w, _loadoutButtons.Count, colorWeapon, OnLoadoutClicked);
-                    RegisterLoadoutButton(btn, w.weaponName,
+                    RegisterLoadoutButton(btn, w, w.weaponName,
                         $"PASSIVE\n{w.passiveDescription}\n\nACTIVE\n{w.activeDescription}");
                 }
             }
@@ -307,7 +297,7 @@ namespace TowerDefense
                 if (btn == null) continue;
 
                 btn.SetupPerk(perk, _loadoutButtons.Count, colorPerk, OnLoadoutClicked);
-                RegisterLoadoutButton(btn, perk.perkName,
+                RegisterLoadoutButton(btn, perk, perk.perkName,
                     $"{perk.description}\n\nScore: x{perk.ScoreMultiplier:0.00}");
             }
 
@@ -319,7 +309,7 @@ namespace TowerDefense
                 if (btn == null) continue;
 
                 btn.SetupMutator(mutator, _loadoutButtons.Count, colorMutator, OnLoadoutClicked);
-                RegisterLoadoutButton(btn, mutator.mutatorName,
+                RegisterLoadoutButton(btn, mutator, mutator.mutatorName,
                     $"{mutator.description}\n\nScore: x{mutator.ScoreMultiplier:0.00}");
             }
         }
@@ -339,10 +329,10 @@ namespace TowerDefense
             return btn;
         }
 
-        private void RegisterLoadoutButton(LoadoutSelectionButton btn, string title, string text)
+        private void RegisterLoadoutButton(LoadoutSelectionButton btn, ScriptableObject def, string title, string text)
         {
             _loadoutButtons.Add(btn);
-            _loadoutDetails.Add((title, text));
+            _loadoutDetails.Add((title, text, def));
         }
 
         private void OnLoadoutClicked(int index)
@@ -353,6 +343,10 @@ namespace TowerDefense
                 _loadoutButtons[i].SetSelected(i == index);
 
             ShowDetail(_loadoutDetails[index].title, _loadoutDetails[index].text);
+
+            // Zugehörigen Multiplikator im Score hervorheben (Waffe hat keinen -> Highlight wird gelöscht)
+            if (scorePanel != null)
+                scorePanel.Highlight(_loadoutDetails[index].def);
         }
 
         private void ShowDetail(string title, string text)
@@ -383,36 +377,6 @@ namespace TowerDefense
 
                 ui.Setup(quest, completed);
             }
-        }
-
-        // ── Score ──────────────────────────────────────────────────
-
-        private void RefreshScore()
-        {
-            if (txtScoreLabels == null || txtScoreValues == null || LevelManager.instance == null) return;
-
-            var s = LevelManager.instance.GetScoreBreakdown();
-
-            // Beide Texte haben exakt gleich viele Zeilen, dadurch stehen Label und Wert auf einer Höhe
-            txtScoreLabels.text =
-                $"Kills ({s.kills} x 10)\n" +
-                $"Waves ({s.waves} x 100)\n" +
-                $"Gold ({s.gold} x 2)\n" +
-                $"Time bonus ({s.timeSeconds}s)\n" +
-                "\n" +
-                "Base\n" +
-                "Multiplier\n" +
-                "<b>Total</b>";
-
-            txtScoreValues.text =
-                $"{s.killScore}\n" +
-                $"{s.waveScore}\n" +
-                $"{s.goldScore}\n" +
-                $"{s.timeBonus}\n" +
-                "\n" +
-                $"{s.baseScore}\n" +
-                $"x{s.multiplier:0.00}\n" +
-                $"<b>{s.total}</b>";
         }
 
         // ── Hilfen ─────────────────────────────────────────────────
