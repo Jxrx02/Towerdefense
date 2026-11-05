@@ -12,7 +12,6 @@ public class ShadowEffect : MonoBehaviour
     public Material material;
     GameObject shadow;
 
-    // Start is called before the first frame update
     void Start()
     {
         shadow = new GameObject("Shadow");
@@ -35,7 +34,6 @@ public class ShadowEffect : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         shadow.transform.localPosition = offset;

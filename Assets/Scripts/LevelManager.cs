@@ -108,8 +108,30 @@ namespace TowerDefense
             else                                Destroy(gameObject);
 
             SetStartWaveButtonVisible(true);
+            Time.timeScale = 1f;   
 
-
+        }
+        private void Update()
+        {
+            if (Time.timeScale == 0f) return;
+ 
+            if (KeyBindings.Down(GameAction.FastForward))
+                Button_DoubleTime();
+ 
+            if (KeyBindings.Down(GameAction.StartWave) && btn_startWave != null && btn_startWave.gameObject.activeSelf)
+                StartWaveButton();
+        }
+        
+        private void OnDestroy()
+        {
+            Actions.onEnemyReachedEnd   -= LoseHealth;
+            Actions.onEnemyDeath        -= GainCoins;
+            Actions.onLvlComplete       -= LvlCompleted;
+            Actions.onWaveSpawnComplete -= OnWaveSpawnComplete;
+            Actions.onHeroDeath         -= LoseHealth;
+            Actions.onWaveCleared       -= OnWaveCleared;
+ 
+            if (instance == this) instance = null;
         }
 
         // ── Wave-Events ───────────────────────────────────────────
@@ -387,6 +409,56 @@ namespace TowerDefense
         }
 
         private LevelLoadout loadout;
+        
+        public struct ScoreBreakdown
+        {
+            public int kills, killScore;
+            public int waves, waveScore;
+            public int gold, goldScore;
+            public int timeSeconds, timeBonus;
+            public int baseScore;
+            public float multiplier;
+            public int total;
+        }
+ 
+        /// <summary>Live-Aufschlüsselung für das Pausemenü (gleiche Formel wie CalculateLevelScore).</summary>
+        public ScoreBreakdown GetScoreBreakdown()
+        {
+            var b = new ScoreBreakdown();
+ 
+            b.kills = _enemiesKilled;
+            b.killScore = b.kills * 10;
+ 
+            b.waves = _waveIndex;
+            b.waveScore = b.waves * 100;
+ 
+            b.gold = cur_coins;
+            b.goldScore = b.gold * 2;
+ 
+            b.timeSeconds = _waveIndex > 0 || _levelStartTime > 0f
+                ? Mathf.Max(0, Mathf.RoundToInt(Time.time - _levelStartTime))
+                : 0;
+            b.timeBonus = Mathf.Max(0, 1000 - b.timeSeconds * 2);
+ 
+            b.baseScore = b.killScore + b.waveScore + b.goldScore + b.timeBonus;
+ 
+            var current = LevelLoadoutManager.Instance != null
+                ? LevelLoadoutManager.Instance.CurrentLoadout
+                : null;
+ 
+            b.multiplier = 1f;
+            if (current != null)
+            {
+                foreach (var perk in current.perks)
+                    if (perk != null) b.multiplier *= perk.ScoreMultiplier;
+                foreach (var mutator in current.mutators)
+                    if (mutator != null) b.multiplier *= mutator.ScoreMultiplier;
+            }
+ 
+            b.total = (int)Mathf.Max(0, b.baseScore * b.multiplier);
+            return b;
+        }
+        
         public void FinishLevel()
         {
             if (_levelFinished)
@@ -618,7 +690,8 @@ namespace TowerDefense
 
             UpdateStats();
 
-            CameraZoom.Instance.ShakeCamera(0.3f, 0.25f);
+            if (GameSettings.ScreenShake)
+                CameraZoom.Instance.ShakeCamera(0.3f, 0.25f);
         }
 
         public void GainCoins(GameObject enemy)

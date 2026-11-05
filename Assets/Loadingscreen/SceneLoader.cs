@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,25 +9,38 @@ namespace LoadingScreen
     public static class LoaderInfo
     {
         private static int _sceneToLoad = 1;
-
+ 
         public static void LoadScene(int no)
         {
             _sceneToLoad = no;
             SceneManager.LoadSceneAsync(0);
         }
-
+ 
         public static void LoadScene(string name)
         {
-            _sceneToLoad = SceneManager.GetSceneByName(name).buildIndex;
+            _sceneToLoad = GetBuildIndexByName(name);
             SceneManager.LoadSceneAsync(0);
         }
-
+ 
         public static int GetSceneToLoad()
         {
             return _sceneToLoad;
         }
+ 
+        private static int GetBuildIndexByName(string name)
+        {
+            for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+            {
+                string path = SceneUtility.GetScenePathByBuildIndex(i);
+ 
+                if (Path.GetFileNameWithoutExtension(path) == name)
+                    return i;
+            }
+ 
+            Debug.LogError($"LoaderInfo: Szene '{name}' ist nicht in den Build Settings.");
+            return -1;
+        }
     }
-
 
     public class SceneLoader : MonoBehaviour {
 
