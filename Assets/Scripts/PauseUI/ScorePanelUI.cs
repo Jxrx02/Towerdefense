@@ -32,7 +32,15 @@ namespace TowerDefense
         // Perk/Mutator-Definition -> zugehörige Zeile (für das Highlight)
         private readonly Dictionary<ScriptableObject, ScoreRow> _multiplierRows = new();
 
+        /// <summary>Live-Werte (Pausemenü).</summary>
         public void Rebuild()
+        {
+            if (LevelManager.instance == null) return;
+            Rebuild(LevelManager.instance.GetScoreBreakdown());
+        }
+
+        /// <summary>Eingefrorene Werte (Victory-Screen).</summary>
+        public void Rebuild(LevelManager.ScoreBreakdown s)
         {
             if (container == null || rowPrefab == null || headerPrefab == null || dividerPrefab == null)
             {
@@ -49,10 +57,6 @@ namespace TowerDefense
             }
 
             _multiplierRows.Clear();
-
-            if (LevelManager.instance == null) return;
-
-            var s = LevelManager.instance.GetScoreBreakdown();
 
             // ── Basis ──
             Header("Base");

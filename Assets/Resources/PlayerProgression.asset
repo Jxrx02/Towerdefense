@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60ce9daeff48544aa8af73a886b5ce8, type: 3}
+  m_Name: PlayerProgression
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSelector.Definitions.PlayerProgressionDefinition
+  xpPerScorePoint: 0.25
+  levels:
+  - xpRequired: 0
+    unlockPerk: {fileID: 11400000, guid: 689852b3d77210b48b78194bfb9babea, type: 2}
+  - xpRequired: 1500
+    unlockPerk: {fileID: 11400000, guid: 21e5dbab79ac06c45b948f5a3a6bdbdf, type: 2}
+  - xpRequired: 2500
+    unlockPerk: {fileID: 0}
+  - xpRequired: 3500
+    unlockPerk: {fileID: 0}
+  - xpRequired: 5000
+    unlockPerk: {fileID: 0}
+  - xpRequired: 7000
+    unlockPerk: {fileID: 0}

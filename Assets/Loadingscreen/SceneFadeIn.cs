@@ -2,7 +2,45 @@
 using LoadingScreen;
 using UnityEngine;
 using UnityEngine.UI;
+using LoadingScreen;
+using UnityEngine;
 
+namespace TowerDefense
+{
+    /// <summary>
+    /// Szenenwechsel immer über SceneFadeIn (Fade-Out, danach LoaderInfo). Ohne SceneFadeIn in der Szene wird direkt geladen.
+    /// </summary>
+    public static class SceneTransition
+    {
+        public static void Load(int buildIndex)
+        {
+            SceneFadeIn fader = Object.FindFirstObjectByType<SceneFadeIn>(FindObjectsInactive.Include);
+
+            if (fader != null)
+            {
+                fader.FadeToScene(buildIndex);
+                return;
+            }
+
+            Time.timeScale = 1f;   // SceneLoader nutzt Invoke und Time.deltaTime
+            LoaderInfo.LoadScene(buildIndex);
+        }
+
+        public static void Load(string sceneName)
+        {
+            SceneFadeIn fader = Object.FindFirstObjectByType<SceneFadeIn>(FindObjectsInactive.Include);
+
+            if (fader != null)
+            {
+                fader.FadeToScene(sceneName);
+                return;
+            }
+
+            Time.timeScale = 1f;
+            LoaderInfo.LoadScene(sceneName);
+        }
+    }
+}
 
 public class SceneFadeIn : MonoBehaviour
 {
@@ -68,3 +106,4 @@ public class SceneFadeIn : MonoBehaviour
         yield return new WaitForSecondsRealtime(fadeDuration);
     }
 }
+

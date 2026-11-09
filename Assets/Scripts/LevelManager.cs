@@ -28,7 +28,6 @@ namespace TowerDefense
         public GameObject pauseCanvas;
         public GameObject gameCanvas;
         public GameObject deathScreen;
-        public GameObject questionPanel;
         public GameObject endScreen;
 
         public Text txt_money;
@@ -76,7 +75,8 @@ namespace TowerDefense
         private bool _levelFinished;
         
         public bool isDay = true;
-
+        /// <summary>True nach Sieg oder Niederlage. Dann lässt sich das Pausemenü nicht mehr per Taste öffnen.</summary>
+        public bool GameOver { get; private set; }
         private void Awake()
         {
             statDiffDisplay = GetComponent<StatDiffDisplay>();
@@ -405,7 +405,10 @@ namespace TowerDefense
             if (!_allWavesSpawned) return;
             FinishLevel();
             FindAnyObjectByType<LevelUnlocker>().CompleteLevel();
-            endScreen.gameObject.SetActive(true);
+ 
+            // Fallback, falls FinishLevel abgebrochen hat (z. B. Level direkt im Editor gestartet, ohne Loadout)
+            if (!GameOver)
+                ShowVictory(GetScoreBreakdown(), 0);
         }
 
         private LevelLoadout loadout;
@@ -487,6 +490,8 @@ namespace TowerDefense
 
             int completionTime = Mathf.Max(0, Mathf.RoundToInt(Time.time - _levelStartTime));
             int score = CalculateLevelScore(completionTime);
+            
+            ScoreBreakdown breakdown = GetScoreBreakdown();
 
             LevelResult result = new LevelResult
             {
@@ -497,7 +502,9 @@ namespace TowerDefense
                 remainingHealth = cur_health,
                 enemiesKilled = _enemiesKilled,
                 wavesCompleted = _waveIndex,
-                coinsEarned = cur_coins - start_coins <=0?0:cur_coins-start_coins
+                coinsEarned = cur_coins - start_coins <=0?0:cur_coins-start_coins,
+                scoreMultiplier = breakdown.multiplier
+
             };
 
             LevelDefinition levelDefinition = loadout.levelDefinition;
@@ -507,7 +514,8 @@ namespace TowerDefense
                 Debug.LogError("Keine LevelDefinition im aktuellen Loadout gefunden.");
                 return;
             }
-
+            int previousHighscore = LevelProgressManager.Instance.GetHighscore(result.levelIndex);
+            
             LevelProgressManager.Instance.CompleteLevel(
                 result,
                 levelDefinition);
@@ -526,10 +534,22 @@ namespace TowerDefense
 
             Debug.Log(BuildScoreMultiplierDebug());
             
-            if (endScreen != null)
-                endScreen.SetActive(true);
-        }
+            ShowVictory(breakdown, previousHighscore);
 
+        }
+        private void ShowVictory(ScoreBreakdown breakdown, int previousHighscore)
+        {
+            GameOver = true;
+ 
+            VictoryScreenUI ui = endScreen != null ? endScreen.GetComponent<VictoryScreenUI>() : null;
+ 
+            if (ui != null)
+                ui.Show(breakdown, previousHighscore);   // speichert XP, zeigt Level-Ups und neue Perks
+            else if (endScreen != null)
+                endScreen.SetActive(true);               // altes Verhalten, falls das neue Canvas fehlt
+        }
+        
+        
         private int CalculateLevelScore(int completionTime)
         {
             int score = 0;
@@ -710,36 +730,17 @@ namespace TowerDefense
 
         public void ShowDeathScreen()
         {
-            deathScreen.gameObject.SetActive(true);
+            if (GameOver) return;      // LoseHealth kann mehrfach feuern
+            GameOver = true;
+ 
+            PauseMenuUI menu = pauseCanvas != null ? pauseCanvas.GetComponent<PauseMenuUI>() : null;
+            if (menu != null)
+                menu.SetMode(PauseMenuUI.Mode.Died);
+ 
+            pauseCanvas.SetActive(true);
             Time.timeScale = 0;
         }
+        
 
-        public void ReviveFailed()
-        {
-            Time.timeScale = 1;
-            questionPanel.gameObject.SetActive(false);
-            deathScreen.GetComponentInChildren<Button>().interactable = false;
-            deathScreen.gameObject.SetActive(true);
-        }
-
-        public void DoRevive()
-        {
-            for (int i = 0; i < 6; i++)
-            {
-                try
-                {
-                    GameObject enemy = TowerHeroManager.instance.enemies[0];
-                    TowerHeroManager.instance.UnregisterEnemy(enemy);
-                    Destroy(enemy);
-                }
-                catch { }
-            }
-
-            cur_health += 5;
-            UpdateStats();
-            deathScreen.gameObject.SetActive(false);
-            questionPanel.gameObject.SetActive(false);
-            Time.timeScale = 1;
-        }
     }
 }

@@ -19,6 +19,10 @@ namespace LevelSelector
     public class LevelProgressSaveData
     {
         public int unlockedLevel = 1;
+
+        // Spieler-XP für das Level-System (Perk-Freischaltungen). Alte Savegames laden mit 0.
+        public int playerXp;
+
         public List<LevelProgress> levels = new();
     }
 
@@ -55,6 +59,36 @@ namespace LevelSelector
 
             return Instance.data.unlockedLevel;
         }
+
+        // ── Spieler-XP ────────────────────────────────────────────
+
+        public static int GetPlayerXp()
+        {
+            return Instance != null ? Instance.data.playerXp : 0;
+        }
+
+        public static void AddPlayerXp(int amount)
+        {
+            if (Instance == null)
+            {
+                Debug.LogWarning("LevelProgressManager.AddPlayerXp: Kein LevelProgressManager vorhanden, XP wurden nicht gespeichert.");
+                return;
+            }
+
+            Instance.data.playerXp = Mathf.Max(0, Instance.data.playerXp + amount);
+            Instance.Save();
+        }
+
+        /// <summary>Zum Testen: Spieler-XP zurücksetzen.</summary>
+        public static void ResetPlayerXp()
+        {
+            if (Instance == null) return;
+
+            Instance.data.playerXp = 0;
+            Instance.Save();
+        }
+
+        // ── Level ─────────────────────────────────────────────────
 
         public int GetHighscore(int levelIndex)
         {

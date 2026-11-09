@@ -63,9 +63,15 @@ namespace LevelSelector
                 return;
             }
 
-            if (loadout.perks.Count != 5)
+            int unlockedPerks = 0;
+            foreach (var perk in loadout.levelDefinition.availablePerks)
+                if (PlayerProgress.IsPerkUnlocked(perk)) unlockedPerks++;
+ 
+            int requiredPerks = Mathf.Min(5, unlockedPerks);
+ 
+            if (loadout.perks.Count != requiredPerks)
             {
-                Debug.LogWarning("Es müssen 5 Perks ausgewählt werden.");
+                Debug.LogWarning($"Es müssen {requiredPerks} Perks ausgewählt werden.");
                 return;
             }
 

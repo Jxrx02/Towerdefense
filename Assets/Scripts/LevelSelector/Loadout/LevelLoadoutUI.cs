@@ -136,7 +136,9 @@ namespace LevelSelector
             for (int i = 0; i < currentLevel.availablePerks.Count; i++)
             {
                 PerkDefinition perk = currentLevel.availablePerks[i];
-
+                if (!PlayerProgress.IsPerkUnlocked(perk))
+                    continue;
+                
                 GameObject obj = Instantiate(btnPrefab, perkContainer);
 
                 LoadoutSelectionButton button =
@@ -150,7 +152,7 @@ namespace LevelSelector
                     continue;
                 }
 
-                int index = i;
+                int index = perkButtons.Count;
 
                 button.SetupPerk(
                     perk,

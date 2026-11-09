@@ -15,6 +15,13 @@ namespace TowerDefense
     /// </summary>
     public class PauseMenuUI : MonoBehaviour
     {
+        public enum Mode { Paused, Died }
+
+        [Header("Titel / Modus")]
+        [SerializeField] private Text txtTitle;
+        [SerializeField] private Color pausedColor = new Color(0.96f, 0.92f, 0.82f);
+        [SerializeField] private Color diedColor = new Color(0.90f, 0.35f, 0.30f);
+
         [Header("Main Buttons")]
         [SerializeField] private Button btnContinue;
         [SerializeField] private Button btnSettings;
@@ -66,6 +73,7 @@ namespace TowerDefense
 
         private int _shownWave;
         private int _openedFrame;
+        private Mode _mode = Mode.Paused;
         private bool _leaving;
         private WaveManager _waveManager;
 
@@ -81,6 +89,7 @@ namespace TowerDefense
 
         private void OnEnable()
         {
+            ApplyMode();
             _openedFrame = Time.frameCount; // verhindert, dass dieselbe ESC-Taste sofort wieder schließt
             _waveManager = FindFirstObjectByType<WaveManager>();
 
@@ -109,14 +118,42 @@ namespace TowerDefense
                     enemyInfoPanel.Close();
                 else if (settingsPanel != null && settingsPanel.gameObject.activeSelf)
                     ShowMain();
-                else
+                else if (_mode != Mode.Died)
                     OnContinue();
             }
         }
 
         // ── Hauptbuttons ───────────────────────────────────────────
 
-        private void OnContinue() => LevelManager.instance.UnPause();
+        private void OnContinue()
+        {
+            if (_mode == Mode.Died) return;
+            LevelManager.instance.UnPause();
+        }
+
+        /// <summary>
+        /// Death-Screen: gleiches Menü, Titel "Died", kein Continue.
+        /// Vor dem Aktivieren des Canvas aufrufen (wirkt auch bei bereits offenem Menü).
+        /// </summary>
+        public void SetMode(Mode mode)
+        {
+            _mode = mode;
+            ApplyMode();
+        }
+
+        private void ApplyMode()
+        {
+            bool died = _mode == Mode.Died;
+
+            if (txtTitle != null)
+            {
+                txtTitle.text = died ? "You died!" : "Paused";
+                txtTitle.color = died ? diedColor : pausedColor;
+            }
+
+            if (btnContinue != null)
+                btnContinue.gameObject.SetActive(!died);
+        }
 
         private void OnSettings()
         {
@@ -132,19 +169,29 @@ namespace TowerDefense
 
         private void OnRestart()
         {
-            confirmDialog.Open("Restart level? Progress will be lost.", () =>
-            {
-                // LevelLoadoutManager ist DontDestroyOnLoad -> Loadout bleibt erhalten
+            if(_mode == Mode.Died)
                 LoadScene(SceneManager.GetActiveScene().buildIndex);   // int
-            });
+            else
+            {
+                confirmDialog.Open("Restart level? Progress will be lost.", () =>
+                {
+                    // LevelLoadoutManager ist DontDestroyOnLoad -> Loadout bleibt erhalten
+                    LoadScene(SceneManager.GetActiveScene().buildIndex);   // int
+                });
+            }
         }
 
         private void OnQuit()
         {
-            confirmDialog.Open("Back to map? Progress will be lost.", () =>
+            if(_mode == Mode.Died)
+                LoadScene(SceneManager.GetActiveScene().buildIndex);   // int
+            else
             {
-                LoadScene(1);                            
-            });
+                confirmDialog.Open("Back to map? Progress will be lost.", () =>
+                {
+                    LoadScene(mapSceneName); // string
+                });
+            }
         }
 
         // Zentrale Stelle für Szenenwechsel: immer über SceneFadeIn (Fade-Out, danach LoaderInfo).

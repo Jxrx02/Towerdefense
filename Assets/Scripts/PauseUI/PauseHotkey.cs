@@ -21,12 +21,9 @@ namespace TowerDefense
 
         private bool CanPause()
         {
+            // Nach Sieg oder Niederlage gehört das Menü dem Victory-/Death-Screen
             var lm = LevelManager.instance;
-            if (lm == null) return false;
-            if (lm.deathScreen != null && lm.deathScreen.activeSelf) return false;
-            if (lm.endScreen != null && lm.endScreen.activeSelf) return false;
-            if (lm.questionPanel != null && lm.questionPanel.activeSelf) return false;
-            return true;
+            return lm != null && !lm.GameOver;
         }
 
         private void Update()

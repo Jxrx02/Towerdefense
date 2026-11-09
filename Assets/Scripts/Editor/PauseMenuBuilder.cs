@@ -6,6 +6,316 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
+using System.Collections.Generic;
+using LevelSelector;
+using LevelSelector.Definitions;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace TowerDefense.EditorTools
+{
+    /// <summary>
+    /// Victory-Screen im Stil des Pausemenüs.
+    ///
+    ///   Links:  Titel "Victory." (+ optionale Krone) und die Score-Aufschlüsselung (wie im Pausemenü)
+    ///   Rechts: Highscore (+ NEW RECORD!), Spieler-Level mit XP-Balken und Vorschau des nächsten Perks,
+    ///           Buttons "Back to Map" / "Restart"
+    ///   Popup:  "NEW PERK" bei jedem Level-Up
+    ///
+    /// Legt außerdem Assets/Resources/PlayerProgression.asset an (falls nicht vorhanden) und trägt
+    /// das neue Canvas im LevelManager als endScreen ein.
+    /// Aufruf: Tools > UI > Victory-Screen neu aufbauen
+    /// </summary>
+    public static partial class PauseMenuBuilder
+    {
+        private const string VictoryRootName = "VictoryCanvas (neu)";
+        private const string ProgressionFolder = "Assets/Resources";
+        private const string ProgressionPath = ProgressionFolder + "/PlayerProgression.asset";
+
+        [MenuItem("Tools/UI/Victory-Screen neu aufbauen")]
+        private static void BuildVictory()
+        {
+            LevelManager levelManager = Object.FindFirstObjectByType<LevelManager>(FindObjectsInactive.Include);
+
+            if (levelManager == null)
+            {
+                EditorUtility.DisplayDialog("Victory-Screen",
+                    "In der Szene wurde kein LevelManager gefunden. Öffne die Level-Szene.", "OK");
+                return;
+            }
+
+            Font font = FindFont();
+
+            foreach (VictoryScreenUI old in Object.FindObjectsByType<VictoryScreenUI>(
+                         FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                Undo.DestroyObjectImmediate(old.gameObject);
+            }
+
+            EnsureEventSystem();
+            EnsureProgressionAsset();
+
+            // Score-Prefabs werden mit dem Pausemenü geteilt
+            ScoreRow scoreRowPrefab = CreateScoreRowPrefab(font);
+            GameObject scoreHeaderPrefab = CreateScoreHeaderPrefab(font);
+            GameObject scoreDividerPrefab = CreateScoreDividerPrefab();
+
+            if (scoreRowPrefab == null)
+            {
+                EditorUtility.DisplayDialog("Victory-Screen",
+                    "Die Prefab-Komponente ScoreRow konnte nicht erzeugt werden. Liegt ScoreRow.cs als eigene Datei im Projekt " +
+                    "und gibt es Compile-Fehler in der Console?", "OK");
+                return;
+            }
+
+            // ---------- Canvas ----------
+            GameObject root = new GameObject(VictoryRootName, typeof(RectTransform));
+            Undo.RegisterCreatedObjectUndo(root, "Victory-Screen neu aufbauen");
+
+            Canvas canvas = root.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = PauseSortingOrder;
+
+            CanvasScaler scaler = root.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+
+            root.AddComponent<GraphicRaycaster>();
+            CanvasGroup canvasGroup = root.AddComponent<CanvasGroup>();
+            VictoryScreenUI victory = root.AddComponent<VictoryScreenUI>();
+
+            Image dim = NewImage("Dim", root.transform, DimBackColor, true);
+            Stretch(dim.rectTransform);
+
+            RectTransform main = NewRect("MainPanel", root.transform);
+            Stretch(main);
+            AddHorizontal(main.gameObject, ScreenPadding, 24f, TextAnchor.UpperCenter);
+
+            RectTransform left = NewColumn("Left", main, 560f);
+            RectTransform right = NewColumn("Right", main, 440f);
+
+            // ---------- Links: Titel + Score ----------
+            RectTransform titleRow = NewRect("TitleRow", left);
+            AddHorizontal(titleRow.gameObject, new RectOffset(0, 0, 0, 0), 14f, TextAnchor.MiddleLeft);
+            SetSize(titleRow.gameObject, height: 72f);
+
+            // Krone: Sprite im Inspector zuweisen (ohne Sprite wird das Bild ausgeblendet)
+            Image crown = NewImage("Crown", titleRow, Color.white);
+            crown.preserveAspect = true;
+            SetSize(crown.gameObject, 56f, 56f);
+
+            Text title = NewText("Title", titleRow, font, TitleSize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            title.text = "Victory.";
+
+            RectTransform scoreCard = CreateCard("ScoreCard", left, out GameObject scoreOuter);
+            SectionHeader(scoreCard, font, "Score");
+
+            RectTransform scoreRows = NewRect("Rows", scoreCard);
+            AddVertical(scoreRows.gameObject, new RectOffset(0, 0, 0, 0), 2f);
+
+            ScorePanelUI scorePanel = scoreOuter.AddComponent<ScorePanelUI>();
+            SerializedObject sc = new SerializedObject(scorePanel);
+            Set(sc, "container", scoreRows);
+            Set(sc, "rowPrefab", scoreRowPrefab);
+            Set(sc, "headerPrefab", scoreHeaderPrefab);
+            Set(sc, "dividerPrefab", scoreDividerPrefab);
+            sc.ApplyModifiedPropertiesWithoutUndo();
+
+            // ---------- Rechts: Highscore ----------
+            RectTransform highscoreCard = CreateCard("HighscoreCard", right, out _);
+            SectionHeader(highscoreCard, font, "Highscore");
+
+            Text txtHighscore = NewText("Highscore", highscoreCard, font, BodySize, DimColor, TextAnchor.MiddleLeft);
+            Text txtNewRecord = NewText("NewRecord", highscoreCard, font, BodySize, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            txtNewRecord.text = "NEW RECORD!";
+
+            // ---------- Rechts: Level ----------
+            RectTransform levelCard = CreateCard("LevelCard", right, out GameObject levelOuter);
+            SectionHeader(levelCard, font, "Level");
+
+            RectTransform levelRow = NewRect("LevelRow", levelCard);
+            AddHorizontal(levelRow.gameObject, new RectOffset(0, 0, 4, 0), 14f, TextAnchor.MiddleLeft);
+
+            RectTransform levelLeft = NewRect("Left", levelRow);
+            AddVertical(levelLeft.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            SetSize(levelLeft.gameObject, flexibleWidth: 1f);
+
+            Text txtLevel = NewText("Level", levelLeft, font, BodySize + 2, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+
+            Image barBack = NewImage("Bar", levelLeft, BarBackColor);
+            SetSize(barBack.gameObject, height: 24f);
+            AddBorder(barBack.gameObject);
+
+            // Füllung wird im Script über anchorMax.x gesteuert
+            Image fill = NewImage("Fill", barBack.transform, SelectedColor);
+            fill.rectTransform.anchorMin = new Vector2(0f, 0f);
+            fill.rectTransform.anchorMax = new Vector2(0f, 1f);
+            fill.rectTransform.offsetMin = new Vector2(0f, 2f);
+            fill.rectTransform.offsetMax = new Vector2(0f, -2f);
+
+            Text txtXp = NewText("BarText", barBack.transform, font, SmallSize, TextColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Stretch(txtXp.rectTransform);
+            AddOutline(txtXp);
+
+            Text txtXpGained = NewText("XpGained", levelLeft, font, SmallSize + 2, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+
+            // Vorschau des nächsten Perks
+            Image nextBack = NewImage("NextPerk", levelRow, KeyColor);
+            SetSize(nextBack.gameObject, 56f, 56f);
+            AddBorder(nextBack.gameObject);
+            Image nextIcon = NewImage("Icon", nextBack.transform, Color.white);
+            nextIcon.preserveAspect = true;
+            Stretch(nextIcon.rectTransform);
+            nextIcon.rectTransform.offsetMin = new Vector2(6f, 6f);
+            nextIcon.rectTransform.offsetMax = new Vector2(-6f, -6f);
+
+            // ---------- Rechts: Buttons ----------
+            Button btnMap = NewMenuButton(right, font, "Back to Map");
+            Button btnRestart = NewMenuButton(right, font, "Try again");
+
+            // ---------- Popup: NEW PERK ----------
+            Image popupRoot = NewImage("PerkPopup", root.transform, new Color(0f, 0f, 0f, 0.7f), true);
+            Stretch(popupRoot.rectTransform);
+
+            // Klick irgendwo schließt das Popup (Klicks auf die Karte laufen zum Root-Button durch)
+            Button popupButton = popupRoot.gameObject.AddComponent<Button>();
+            popupButton.targetGraphic = popupRoot;
+            popupButton.transition = Selectable.Transition.None;
+            popupButton.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            VerticalLayoutGroup popupLayout = AddVertical(popupRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
+            popupLayout.childAlignment = TextAnchor.MiddleCenter;
+            popupLayout.childForceExpandWidth = false;
+
+            RectTransform popupCard = CreateCard("Card", popupRoot.transform, out GameObject popupOuter, new RectOffset(32, 32, 24, 26));
+            SetSize(popupOuter, width: 600f, flexibleWidth: 0f);
+
+            Text popupHeader = NewText("Header", popupCard, font, BodySize + 2, DimColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            popupHeader.text = "NEW PERK";
+
+            Image popupAccent = NewImage("Accent", popupCard, BorderColor);
+            SetSize(popupAccent.gameObject, height: 2f);
+
+            RectTransform popupRow = NewRect("Row", popupCard);
+            AddHorizontal(popupRow.gameObject, new RectOffset(0, 0, 10, 10), 22f, TextAnchor.MiddleLeft);
+
+            RectTransform popupText = NewRect("Text", popupRow);
+            AddVertical(popupText.gameObject, new RectOffset(0, 0, 0, 0), 8f);
+            SetSize(popupText.gameObject, flexibleWidth: 1f);
+
+            Text txtPerkName = NewText("Name", popupText, font, BodySize + 6, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            Text txtPerkDescription = NewText("Description", popupText, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
+            txtPerkDescription.lineSpacing = 1.3f;
+
+            Image perkIconBack = NewImage("IconBack", popupRow, KeyColor);
+            SetSize(perkIconBack.gameObject, 104f, 104f);
+            AddBorder(perkIconBack.gameObject);
+            Image perkIcon = NewImage("Icon", perkIconBack.transform, Color.white);
+            perkIcon.preserveAspect = true;
+            Stretch(perkIcon.rectTransform);
+            perkIcon.rectTransform.offsetMin = new Vector2(8f, 8f);
+            perkIcon.rectTransform.offsetMax = new Vector2(-8f, -8f);
+
+            Text popupHint = NewText("Hint", popupCard, font, SmallSize, DimColor, TextAnchor.MiddleCenter);
+            popupHint.text = "Click to continue";
+
+            // ---------- Verdrahten ----------
+            SerializedObject vs = new SerializedObject(victory);
+            Set(vs, "crownIcon", crown);
+            Set(vs, "scorePanel", scorePanel);
+            Set(vs, "txtHighscore", txtHighscore);
+            Set(vs, "newRecordObject", txtNewRecord.gameObject);
+            Set(vs, "levelCard", levelOuter);
+            Set(vs, "txtLevel", txtLevel);
+            Set(vs, "txtXpGained", txtXpGained);
+            Set(vs, "txtXp", txtXp);
+            Set(vs, "barFill", fill.rectTransform);
+            Set(vs, "nextPerkRoot", nextBack.gameObject);
+            Set(vs, "nextPerkIcon", nextIcon);
+            Set(vs, "perkPopup", popupRoot.gameObject);
+            Set(vs, "txtPerkName", txtPerkName);
+            Set(vs, "txtPerkDescription", txtPerkDescription);
+            Set(vs, "imgPerkIcon", perkIcon);
+            Set(vs, "btnPerkContinue", popupButton);
+            Set(vs, "btnMap", btnMap);
+            Set(vs, "btnRestart", btnRestart);
+            Set(vs, "canvasGroup", canvasGroup);
+
+            // Map-Szene vom Pausemenü übernehmen, falls dort schon gesetzt
+            PauseMenuUI pause = Object.FindFirstObjectByType<PauseMenuUI>(FindObjectsInactive.Include);
+            if (pause != null)
+            {
+                SerializedProperty source = new SerializedObject(pause).FindProperty("mapSceneName");
+                SerializedProperty target = vs.FindProperty("mapSceneName");
+                if (source != null && target != null)
+                    target.stringValue = source.stringValue;
+            }
+
+            vs.ApplyModifiedProperties();
+
+            // LevelManager.endScreen = neues Victory-Canvas, alten Screen ausschalten
+            SerializedObject lm = new SerializedObject(levelManager);
+            SerializedProperty endProperty = lm.FindProperty("endScreen");
+
+            if (endProperty != null)
+            {
+                GameObject oldEnd = endProperty.objectReferenceValue as GameObject;
+                endProperty.objectReferenceValue = root;
+                lm.ApplyModifiedProperties();
+
+                if (oldEnd != null && oldEnd != root)
+                {
+                    Undo.RecordObject(oldEnd, "Alten Victory-Screen deaktivieren");
+                    oldEnd.SetActive(false);
+                }
+            }
+
+            popupRoot.gameObject.SetActive(false);
+            root.SetActive(false);
+
+            EditorSceneManager.MarkSceneDirty(root.scene);
+            Selection.activeGameObject = root;
+
+            Debug.Log("Victory-Screen aufgebaut und als LevelManager.endScreen eingetragen.\n" +
+                      "Optional: Krone als Sprite im Feld 'Crown Icon' zuweisen. " +
+                      $"Perks pro Stufe im Asset {ProgressionPath} eintragen.");
+        }
+
+        /// <summary>Legt das Progressions-Asset mit Beispielstufen an. Perks pro Stufe trägst du selbst ein.</summary>
+        private static void EnsureProgressionAsset()
+        {
+            if (AssetDatabase.LoadAssetAtPath<PlayerProgressionDefinition>(ProgressionPath) != null)
+                return;
+
+            EnsureFolder(ProgressionFolder);
+
+            PlayerProgressionDefinition asset = ScriptableObject.CreateInstance<PlayerProgressionDefinition>();
+            asset.xpPerScorePoint = 0.25f;
+            asset.levels = new List<ProgressionLevel>
+            {
+                new ProgressionLevel { xpRequired = 0 },
+                new ProgressionLevel { xpRequired = 1500 },
+                new ProgressionLevel { xpRequired = 2500 },
+                new ProgressionLevel { xpRequired = 3500 },
+                new ProgressionLevel { xpRequired = 5000 },
+                new ProgressionLevel { xpRequired = 7000 },
+            };
+
+            AssetDatabase.CreateAsset(asset, ProgressionPath);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log($"PlayerProgression-Asset angelegt: {ProgressionPath}. Trage dort pro Stufe den freizuschaltenden Perk ein.");
+        }
+    }
+}
+#endif
+
+
 namespace TowerDefense.EditorTools
 {
     /// <summary>
@@ -20,7 +330,7 @@ namespace TowerDefense.EditorTools
     ///
     /// Aufruf: Tools > UI > Pausemenü neu aufbauen   (beliebig oft wiederholbar)
     /// </summary>
-    public static class PauseMenuBuilder
+    public static partial class PauseMenuBuilder
     {
         // ---------- Stil (hier anpassen) ----------
         private const int TitleSize = 44;
@@ -148,7 +458,7 @@ namespace TowerDefense.EditorTools
 
             Button btnContinue = NewMenuButton(left, font, "Continue");
             Button btnSettings = NewMenuButton(left, font, "Settings");
-            Button btnRestart = NewMenuButton(left, font, "Restart");
+            Button btnRestart = NewMenuButton(left, font, "Try again");
             Button btnQuit = NewMenuButton(left, font, "Quit to Map");
 
             RectTransform waveCard = CreateCard("WaveCard", left, out _);
@@ -414,6 +724,7 @@ namespace TowerDefense.EditorTools
             // (sceneFader wird zur Laufzeit automatisch gefunden)
             // ======================================================
             SerializedObject pm = new SerializedObject(menu);
+            Set(pm, "txtTitle", title);
             Set(pm, "btnContinue", btnContinue);
             Set(pm, "btnSettings", btnSettings);
             Set(pm, "btnRestart", btnRestart);
@@ -469,6 +780,15 @@ namespace TowerDefense.EditorTools
             {
                 Undo.RecordObject(oldPause, "Altes Pausemenü deaktivieren");
                 oldPause.SetActive(false);
+            }
+
+            // Death-Screen läuft jetzt über dieses Menü (Modus "Died"): alten Screen ausschalten
+            SerializedProperty deathProperty = lm.FindProperty("deathScreen");
+            GameObject oldDeath = deathProperty != null ? deathProperty.objectReferenceValue as GameObject : null;
+            if (oldDeath != null && oldDeath != root)
+            {
+                Undo.RecordObject(oldDeath, "Alten Death-Screen deaktivieren");
+                oldDeath.SetActive(false);
             }
 
             // Startzustand: Menü aus, Unterpanels aus
