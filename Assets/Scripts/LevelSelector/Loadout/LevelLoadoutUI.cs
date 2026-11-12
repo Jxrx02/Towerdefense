@@ -561,12 +561,10 @@ namespace LevelSelector
             LevelLoadout loadout = LevelLoadoutManager.Instance != null ? LevelLoadoutManager.Instance.CurrentLoadout : null;
             if (loadout == null || currentLevel == null) return;
 
-            int requiredPerks = LevelSelectorManager.GetRequiredPerks(currentLevel);
-            int requiredMutators = LevelSelectorManager.GetRequiredMutators(currentLevel);
-
+            // Perks und Mutatoren sind optional (0 bis Max). Gold = Obergrenze erreicht.
             SetCounter(txtWeaponCounter, loadout.weapon != null ? 1 : 0, MaxWeapons);
-            SetCounter(txtPerkCounter, loadout.perks.Count, requiredPerks);
-            SetCounter(txtMutatorCounter, loadout.mutators.Count, requiredMutators);
+            SetCounter(txtPerkCounter, loadout.perks.Count, LevelSelectorManager.MaxPerks);
+            SetCounter(txtMutatorCounter, loadout.mutators.Count, LevelSelectorManager.MaxMutators);
 
             // Score-Multiplikator der aktuellen Auswahl
             float multiplier = 1f;
@@ -585,10 +583,10 @@ namespace LevelSelector
             txtStartHint.color = blocker == null ? positiveColor : dimColor;
         }
 
-        private void SetCounter(Text text, int count, int required)
+        private void SetCounter(Text text, int count, int max)
         {
-            text.text = $"{count}/{required}";
-            text.color = count >= required ? goldColor : dimColor;
+            text.text = $"{count}/{max}";
+            text.color = count >= max ? goldColor : dimColor;
         }
 
         // ── Letztes Loadout merken ────────────────────────────────

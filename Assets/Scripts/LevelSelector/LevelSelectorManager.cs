@@ -53,32 +53,9 @@ namespace LevelSelector
         }
 
         // ── Regeln für ein gültiges Loadout ───────────────────────
-
-        /// <summary>So viele Perks müssen gewählt werden: max. 5, aber nie mehr, als freigeschaltet sind.</summary>
-        public static int GetRequiredPerks(LevelDefinition level)
-        {
-            if (level == null || level.availablePerks == null) return 0;
-
-            int unlocked = 0;
-            foreach (var perk in level.availablePerks)
-                if (perk != null && PlayerProgress.IsPerkUnlocked(perk))
-                    unlocked++;
-
-            return Mathf.Min(unlocked,MaxPerks);
-        }
-
-        /// <summary>So viele Mutatoren müssen gewählt werden: max. 3, aber nie mehr, als das Level anbietet.</summary>
-        public static int GetRequiredMutators(LevelDefinition level)
-        {
-            if (level == null || level.availableMutators == null) return 0;
-
-            int available = 0;
-            foreach (var mutator in level.availableMutators)
-                if (mutator != null)
-                    available++;
-
-            return Mathf.Min(available,MaxMutators);
-        }
+        //
+        // Perks (max. MaxPerks) und Mutatoren (max. MaxMutators) sind optional: 0 bis Max, mit 0 lässt sich starten.
+        // Die Obergrenzen erzwingt LevelLoadoutUI beim Auswählen. Pflicht ist nur die Waffe.
 
         /// <summary>Null, wenn das Loadout startklar ist. Sonst ein kurzer Hinweis, was noch fehlt.</summary>
         public static string GetStartBlocker(LevelLoadout loadout)
@@ -88,14 +65,6 @@ namespace LevelSelector
 
             if (loadout.weapon == null)
                 return "Select a weapon.";
-
-            int perksMissing = GetRequiredPerks(loadout.levelDefinition) - loadout.perks.Count;
-            if (perksMissing > 0)
-                return perksMissing == 1 ? "Select 1 more perk." : $"Select {perksMissing} more perks.";
-
-            int mutatorsMissing = GetRequiredMutators(loadout.levelDefinition) - loadout.mutators.Count;
-            if (mutatorsMissing > 0)
-                return mutatorsMissing == 1 ? "Select 1 more mutator." : $"Select {mutatorsMissing} more mutators.";
 
             return null;
         }
@@ -108,7 +77,7 @@ namespace LevelSelector
             TryStartLevel();
         }
 
-        /// <summary>Prüft das Loadout und wendet es an. false = Loadout unvollständig.</summary>
+        /// <summary>Prüft das Loadout (Waffe gewählt) und wendet es an. false = Loadout unvollständig.</summary>
         public bool TryStartLevel()
         {
             if (LevelLoadoutManager.Instance == null)
