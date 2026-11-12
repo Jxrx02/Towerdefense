@@ -28,3 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f0531ebf250017489435d01fdcd34ac, type: 2}
   quests:
   - {fileID: 11400000, guid: c88d84d7a966a4647a4940c48e618e3e, type: 2}
+  enemyPreview:
+  - {fileID: 11400000, guid: e6c28baf8304a3340aea424039b9e269, type: 2}
+  - {fileID: 11400000, guid: 532836aacb9a66c42b5df337e594dae9, type: 2}
+  - {fileID: 11400000, guid: ea59485e6c19253488c5da16a7e05900, type: 2}

@@ -11,7 +11,11 @@ using LevelSelector.Definitions;
 
 namespace TowerDefense
 {
-    public class Hero : Tower, IHeroCombatHost
+    /// <summary>
+    /// Der Held. Im Level kämpft er (HeroCombat, Ausdauer, Block, Dash ...), auf der Übersichtskarte läuft er nur
+    /// und öffnet am Level-Knoten das Loadout. Die Karten-Logik steht in Hero.Overworld.cs (partial).
+    /// </summary>
+    public partial class Hero : Tower, IHeroCombatHost
     {
         private static readonly HeroAnim[] IdleOrder = { HeroAnim.Idle };
         private static readonly HeroAnim[] CombatIdleOrder = { HeroAnim.CombatIdle, HeroAnim.Idle };
@@ -75,6 +79,9 @@ namespace TowerDefense
         {
             base.Awake();
 
+            Instance = this;
+            DetectSceneMode();   // Karte oder Level (Hero.Overworld.cs)
+
             // Der HeroAnimator ersetzt SpriteAnim für den Helden (beide würden denselben SpriteRenderer beschreiben)
             if (TryGetComponent(out SpriteAnim legacyAnimation))
                 legacyAnimation.enabled = false;
@@ -84,6 +91,9 @@ namespace TowerDefense
                 animator = gameObject.AddComponent<HeroAnimator>();
 
             motor = new HeroMotor(transform, CanMoveTo);
+
+
+
             combat = new HeroCombat(this, animator, motor);
             
             targetIndicator = GetComponent<HeroTargetIndicator>();
@@ -101,23 +111,34 @@ namespace TowerDefense
 
         private void Start()
         {
-            TowerHeroManager.instance.RegisterTower(gameObject);
-
-            spawnPosition = transform.position;
-            targetPosition = transform.position;
-
-            if (Vitals != null)
-                Vitals.Damaged += OnVitalsDamaged;
-            
             if(LevelLoadoutManager.Instance != null)
                 EquipFromLoadout();
             else
                 EquipWeapon(defaultWeapon);
 
             SetFacing(FacingDirection.Down);
+            spawnPosition = transform.position;
+            targetPosition = transform.position;
+            
+            if (Vitals != null)
+                Vitals.Damaged += OnVitalsDamaged;
+            
+            TowerHeroManager.instance.RegisterTower(gameObject);
+
+            if (IsOverworld)
+            {
+                StartOverworld();
+                return;
+            }
+            
         }
         private void Update()
         {
+            if (IsOverworld)
+            {
+                UpdateOverworld();
+            }
+
             if (state == HeroState.Dead || weapon == null)
                 return;
 
@@ -238,6 +259,9 @@ namespace TowerDefense
         {
             base.OnDestroy();
 
+            if (Instance == this)
+                Instance = null;
+
             combat?.Dispose();
 
             if (Vitals != null)
@@ -264,7 +288,10 @@ namespace TowerDefense
         public void EquipWeapon(WeaponDefinition definition)
         {
             EquipWeapon(definition != null ? definition.heroConfig : null);
-            weapon.activeAbility = definition.active;
+
+            // weapon bleibt null, wenn weder Loadout noch Default-Waffe eine Konfiguration liefern
+            if (definition != null && weapon != null)
+                weapon.activeAbility = definition.active;
         }
 
         public void EquipWeapon(HeroWeaponConfig config)
@@ -333,7 +360,8 @@ namespace TowerDefense
         
             if (input.walk || slow) return HeroAnim.Walk;
             
-            bool canSprint = vitals != null && vitals.Health >= vitals.MaxHealth;
+            // Im Level darf nur mit vollen HP gesprintet werden, auf der Karte immer
+            bool canSprint = IsOverworld || (vitals != null && vitals.Health >= vitals.MaxHealth);
             if (input.sprint && !locked && canSprint) return HeroAnim.Sprint;
             return HeroAnim.Run;
         }
@@ -352,10 +380,15 @@ namespace TowerDefense
                 return;
         
             HeroAnim locomotion = ChooseLocomotion(input, reference, locked, slow);
-            float speed = runSpeed * motorSettings.SpeedFactor(locomotion) * multiplier * weapon.moveSpeedMultiplier;
+
+            // Auf der Karte ist keine Waffe ausgerüstet
+            float weaponFactor = weapon != null ? weapon.moveSpeedMultiplier : 1f;
+            float speed = runSpeed * motorSettings.SpeedFactor(locomotion) * multiplier * weaponFactor;
         
             motor.Move(input.move, speed, dt);
-            ysort.UpdateSorting();
+
+            if (ysort != null)
+                ysort.UpdateSorting();
         }
         
         private void PlayFreeAnimation(HeroInputState input, bool moving)
@@ -515,7 +548,8 @@ namespace TowerDefense
         // ------------------------------------------------------------------
         protected override void BreakTower()
         {
-            if (state == HeroState.Dead)
+            // Auf der Karte kann der Held nicht fallen (es gibt dort keinen Kampf)
+            if (IsOverworld || state == HeroState.Dead)
                 return;
 
             StartCoroutine(DownedRoutine());
@@ -731,6 +765,10 @@ namespace TowerDefense
         }
         private bool CanMoveTo(Vector3 newPosition)
         {
+            // Auf der Karte gibt es weder TowerHeroManager noch Mauern
+            if (TowerHeroManager.instance == null)
+                return true;
+
             foreach (GameObject wallObject in TowerHeroManager.instance.walls)
             {
                 if (wallObject == null)
@@ -777,4 +815,180 @@ namespace TowerDefense
         
     }
     
+}
+
+namespace TowerDefense
+{
+    public enum HeroSceneMode
+    {
+        /// <summary>Karte, wenn die Szene Level-Knoten (LevelNode) enthält, sonst Level.</summary>
+        Auto,
+        Level,
+        Overworld
+    }
+
+    /// <summary>
+    /// Karten-Verhalten des Helden (ersetzt den früheren OverworldHero).
+    ///
+    /// Auf der Übersichtskarte läuft der Held mit seiner normalen Bewegung und seinen Laufanimationen
+    /// (Idle / Walk / Run / Sprint, 8 Richtungen). Am Level-Knoten in Reichweite öffnet die
+    /// Interaktionstaste das Loadout (LevelSelectorManager.OpenLevel).
+    ///
+    /// Bewegung und Tasten sind dieselben wie im Level (HeroInputSettings, Horizontal/Vertical-Achsen).
+    /// </summary>
+    public partial class Hero
+    {
+        [Header("Übersichtskarte")]
+        [Tooltip("Auto: Karte, wenn die Szene Level-Knoten enthält. Sonst explizit wählen.")]
+        [SerializeField] private HeroSceneMode sceneMode = HeroSceneMode.Auto;
+        
+
+        [Tooltip("Faktor auf das Lauftempo (die Karte ist größer als ein Level)")]
+        [SerializeField] private float overworldSpeedMultiplier = 1.25f;
+
+        [SerializeField] private Vector2 overworldBoundsMin = new Vector2(-60f, -30f);
+        [SerializeField] private Vector2 overworldBoundsMax = new Vector2(60f, 30f);
+
+        [SerializeField] private KeyCode interactKey = KeyCode.E;
+
+        private bool returningToMap;
+
+        /// <summary>Der Held der aktuellen Szene (Karte oder Level).</summary>
+        public static Hero Instance { get; private set; }
+
+        /// <summary>true auf der Übersichtskarte.</summary>
+        public bool IsOverworld { get; private set; }
+
+        public KeyCode InteractKey => interactKey;
+
+        /// <summary>Level-Knoten in Reichweite (nächster), sonst null.</summary>
+        public LevelNode NearestNode { get; private set; }
+
+        /// <summary>Hauptmenü oder Loadout-Screen ist offen: der Held steht still.</summary>
+        public static bool IsMapBlocked => MainMenuUI.IsOpen || LevelLoadoutUI.IsOpen;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetHeroStatics()   // nötig, falls "Domain Reload" aus ist
+        {
+            Instance = null;
+        }
+
+        // ------------------------------------------------------------------
+        // Aufbau
+        // ------------------------------------------------------------------
+        private void DetectSceneMode()
+        {
+            IsOverworld =
+                sceneMode == HeroSceneMode.Overworld ||
+                (sceneMode == HeroSceneMode.Auto &&
+                 FindFirstObjectByType<LevelNode>(FindObjectsInactive.Include) != null);
+
+            // Vor MainMenuUI.Start lesen: danach steht MenuShown immer auf true
+            if (IsOverworld)
+                returningToMap = OverworldSession.MenuShown;
+        }
+        
+        private void StartOverworld()
+        {
+            spawnPosition = transform.position;
+            targetPosition = transform.position;
+
+            SetFacing(FacingDirection.Down);
+
+            // Zurück aus einem Level: am zuletzt gespielten Knoten starten
+            if (returningToMap)
+                PlaceAtLastNode();
+        }
+
+        // ------------------------------------------------------------------
+        // Jeden Frame
+        // ------------------------------------------------------------------
+        private void UpdateOverworld()
+        {
+            if (IsMapBlocked)
+            {
+                animator.PlayLooped(IdleOrder);
+                return;
+            }
+            
+            ClampToMapBounds();
+            
+            FindNearestNode();
+
+            if (NearestNode != null && Input.GetKeyDown(interactKey))
+                InteractWithNode(NearestNode);
+        }
+
+        private void ClampToMapBounds()
+        {
+            Vector3 position = transform.position;
+            position.x = Mathf.Clamp(position.x, overworldBoundsMin.x, overworldBoundsMax.x);
+            position.y = Mathf.Clamp(position.y, overworldBoundsMin.y, overworldBoundsMax.y);
+            transform.position = position;
+        }
+
+        // ------------------------------------------------------------------
+        // Level-Knoten
+        // ------------------------------------------------------------------
+        private void FindNearestNode()
+        {
+            LevelNode found = null;
+            float best = float.MaxValue;
+
+            foreach (LevelNode node in LevelNode.All)
+            {
+                float distance = Vector2.Distance(transform.position, node.transform.position);
+
+                if (distance <= node.InteractRadius && distance < best)
+                {
+                    best = distance;
+                    found = node;
+                }
+            }
+
+            NearestNode = found;
+        }
+
+        private void InteractWithNode(LevelNode node)
+        {
+            if (!node.IsUnlocked || node.Level == null)
+                return;
+
+            if (LevelSelectorManager.Instance == null)
+            {
+                Debug.LogError("Hero (Karte): LevelSelectorManager wurde nicht gefunden.", this);
+                return;
+            }
+
+            LevelSelectorManager.Instance.OpenLevel(node.Level);
+        }
+
+        private void PlaceAtLastNode()
+        {
+            foreach (LevelNode node in LevelNode.All)
+            {
+                if (node.Level != null && node.Level.levelIndex == OverworldSession.LastLevelIndex)
+                {
+                    TeleportTo(node.HeroSpawnPosition);
+                    return;
+                }
+            }
+        }
+
+        // ------------------------------------------------------------------
+        // Teleport (Karte und Level, z. B. für die geplanten Portale)
+        // ------------------------------------------------------------------
+        /// <summary>Setzt den Helden sofort an eine Position (Z bleibt) und bricht laufende Impulse ab.</summary>
+        public void TeleportTo(Vector3 position)
+        {
+            position.z = transform.position.z;
+            transform.position = position;
+            targetPosition = position;
+
+            motor?.CancelImpulse();
+
+            if (ysort != null)
+                ysort.UpdateSorting();
+        }
+    }
 }

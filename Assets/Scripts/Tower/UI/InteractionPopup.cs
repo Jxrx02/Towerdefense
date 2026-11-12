@@ -434,15 +434,23 @@ foreach (UpgradeStatData stat in stats)
         {
             purchaseTowers.Clear();
 
+            var research = TowerDefense.Research.ResearchManager.Instance;
+ 
             foreach (GameObject prefab in towerPrefabs)
             {
                 if (prefab == null)
                     continue;
-
+ 
                 Tower t = prefab.GetComponent<Tower>();
-
-                if (t != null)
-                    purchaseTowers.Add(t);
+ 
+                if (t == null)
+                    continue;
+ 
+                // Ohne ResearchManager (Level direkt im Editor) sind alle Türme verfügbar
+                if (research != null && !research.IsTowerUnlocked(t.towerName))
+                    continue;
+ 
+                purchaseTowers.Add(t);
             }
 
             if (purchaseTowers.Count == 0)

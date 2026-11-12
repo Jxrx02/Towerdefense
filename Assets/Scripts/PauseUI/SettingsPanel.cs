@@ -53,6 +53,9 @@ namespace TowerDefense
 
         public bool IsRebinding => _rebinding.HasValue;
 
+        /// <summary>Wird beim Klick auf "Back" ausgelöst (Hauptmenü nutzt das statt PauseMenuUI).</summary>
+        public event System.Action BackRequested;
+
         // ── Setup ─────────────────────────────────────────────────
 
         private void Awake()
@@ -99,7 +102,11 @@ namespace TowerDefense
             btnResetGameplay.onClick.AddListener(() => { GameSettings.ResetGameplay(); RefreshAll(); });
             btnResetControls.onClick.AddListener(() => { KeyBindings.ResetAll(); RefreshBindingTexts(); });
 
-            btnBack.onClick.AddListener(() => pauseMenu.ShowMain());
+            btnBack.onClick.AddListener(() =>
+            {
+                if (pauseMenu != null) pauseMenu.ShowMain();
+                BackRequested?.Invoke();
+            });
 
             BuildBindingRows();
         }

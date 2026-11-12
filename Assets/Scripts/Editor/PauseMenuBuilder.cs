@@ -4,12 +4,14 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using LevelSelector;
 using LevelSelector.Definitions;
+using TowerDefense.Research;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -374,6 +376,7 @@ namespace TowerDefense.EditorTools
         private static readonly Color DimBackColor  = new Color(0.04f, 0.03f, 0.02f, 0.82f);
 
         // ------------------------------------------------------------------
+
 
         [MenuItem("Tools/UI/Pausemenü neu aufbauen")]
         private static void Build()
@@ -1590,6 +1593,1620 @@ namespace TowerDefense.EditorTools
 
                 current = next;
             }
+        }
+    }
+}
+#endif
+
+
+#if UNITY_EDITOR
+
+
+namespace TowerDefense.EditorTools
+{
+    /// <summary>
+    /// Baut den Loadout-Screen (Stil des Pausemenüs) in der Karten-Szene und ersetzt die alte LevelLoadoutUI:
+    ///   - übernimmt Farben (colorWeapon/Perk/Mutator) und die Start-Button-Events des alten Screens
+    ///     (ohne den StartLevel-Aufruf, den der neue Start-Button selbst macht)
+    ///   - blendet die alte UI aus, ohne Objekte zu deaktivieren, auf denen deine Manager liegen
+    /// Aufruf: Tools > UI > Loadout-Screen neu aufbauen
+    /// </summary>
+    public static partial class PauseMenuBuilder
+    {
+        private const string LoadoutRootName = "LoadoutCanvas (neu)";
+        private const int LoadoutSortingOrder = 300;
+
+        // Objekte, die diese Komponenten tragen, werden nie deaktiviert (nur ihre UI-Kinder)
+        private static readonly string[] KeepAliveTypeNames =
+        {
+            "LevelSelectorManager", "LevelLoadoutManager", "LevelProgressManager", "ResearchManager",
+            "LevelUnlocker", "SceneFadeIn", "EventSystem", "Camera", "AudioListener", "AudioSource"
+        };
+
+        [MenuItem("Tools/UI/Loadout-Screen neu aufbauen")]
+        private static void BuildLoadoutMenu() => BuildLoadout();
+
+        private static void BuildLoadout()
+        {
+            LevelSelectorManager selector = Object.FindFirstObjectByType<LevelSelectorManager>(FindObjectsInactive.Include);
+
+            if (selector == null)
+            {
+                EditorUtility.DisplayDialog("Loadout-Screen",
+                    "In der Szene wurde kein LevelSelectorManager gefunden. Öffne die Karten-/Level-Auswahl-Szene.", "OK");
+                return;
+            }
+
+            Font font = FindFont();
+
+            // Vorherige neue Version entfernen, dann alte (Legacy-)Komponenten einsammeln
+            foreach (LevelLoadoutUI ui in Object.FindObjectsByType<LevelLoadoutUI>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (ui.gameObject.name == LoadoutRootName)
+                    Undo.DestroyObjectImmediate(ui.gameObject);
+            }
+
+            LevelLoadoutUI[] legacy = Object.FindObjectsByType<LevelLoadoutUI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+            EnsureEventSystem();
+
+            // ---------- Prefabs ----------
+            GameObject conditionIconPrefab = CreateConditionIconPrefab();
+            GameObject questPrefab = CreateQuestPrefab(font, conditionIconPrefab);
+            GameObject loadoutButtonPrefab = CreateLoadoutButtonPrefab();
+            GameObject enemyIconPrefab = CreateEnemyIconPrefab();
+            GameObject statRowPrefab = CreateEnemyStatRowPrefab(font);
+            GameObject statHeaderPrefab = CreateEnemyStatHeaderPrefab(font);
+
+            // ---------- Canvas ----------
+            GameObject root = new GameObject(LoadoutRootName, typeof(RectTransform));
+            Undo.RegisterCreatedObjectUndo(root, "Loadout-Screen neu aufbauen");
+
+            Canvas canvas = root.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = LoadoutSortingOrder;
+
+            CanvasScaler scaler = root.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+
+            root.AddComponent<GraphicRaycaster>();
+            LevelLoadoutUI loadoutUi = root.AddComponent<LevelLoadoutUI>();
+
+            RectTransform screen = NewRect("Screen", root.transform);
+            Stretch(screen);
+            CanvasGroup canvasGroup = screen.gameObject.AddComponent<CanvasGroup>();
+
+            Image dim = NewImage("Dim", screen, DimBackColor, true);
+            Stretch(dim.rectTransform);
+
+            RectTransform main = NewRect("MainPanel", screen);
+            Stretch(main);
+            AddHorizontal(main.gameObject, ScreenPadding, 24f, TextAnchor.UpperCenter);
+
+            RectTransform left = NewColumn("Left", main, 440f);
+            RectTransform middle = NewColumn("Middle", main, 620f);
+            RectTransform right = NewColumn("Right", main, 440f);
+
+            // ======================================================
+            // LINKS: Level, Spieler-Level, Gegner, Quests
+            // ======================================================
+            Text txtLevelName = NewText("LevelName", left, font, TitleSize - 4, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtLevelName.gameObject, height: 72f);
+
+            RectTransform levelCard = CreateCard("LevelCard", left, out _);
+            SectionHeader(levelCard, font, "Mission");
+
+            Text txtLevelDescription = NewText("Description", levelCard, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
+            txtLevelDescription.lineSpacing = 1.3f;
+            MinHeight(txtLevelDescription.gameObject, 48f);
+
+            Image levelDivider = NewImage("Divider", levelCard, DividerColor);
+            SetSize(levelDivider.gameObject, height: 1f);
+
+            RectTransform highscoreRow = NewRow("Highscore", levelCard, font, "Highscore");
+            Text txtHighscore = NewText("Value", highscoreRow, font, BodySize, GoldColor, TextAnchor.MiddleRight, FontStyle.Bold);
+
+            // Spieler-Level
+            RectTransform playerRoot = NewRect("PlayerLevel", levelCard);
+            AddVertical(playerRoot.gameObject, new RectOffset(0, 0, 4, 0), 6f);
+
+            RectTransform playerRow = NewRect("Row", playerRoot);
+            AddHorizontal(playerRow.gameObject, new RectOffset(0, 0, 0, 0), 8f, TextAnchor.MiddleLeft);
+            SetSize(playerRow.gameObject, height: 28f);
+            Text txtPlayerLevel = NewText("Level", playerRow, font, BodySize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtPlayerLevel.gameObject, flexibleWidth: 1f);
+            Text txtPlayerXp = NewText("Xp", playerRow, font, SmallSize + 2, DimColor, TextAnchor.MiddleRight);
+
+            Image playerBar = NewImage("Bar", playerRoot, BarBackColor);
+            SetSize(playerBar.gameObject, height: 14f);
+            AddBorder(playerBar.gameObject);
+            Image playerFill = NewImage("Fill", playerBar.transform, SelectedColor);
+            playerFill.rectTransform.anchorMin = new Vector2(0f, 0f);
+            playerFill.rectTransform.anchorMax = new Vector2(0f, 1f);
+            playerFill.rectTransform.offsetMin = new Vector2(0f, 2f);
+            playerFill.rectTransform.offsetMax = new Vector2(0f, -2f);
+
+            RectTransform nextRow = NewRect("Next", playerRoot);
+            AddHorizontal(nextRow.gameObject, new RectOffset(0, 0, 4, 0), 10f, TextAnchor.MiddleLeft);
+            Image nextBack = NewImage("IconBack", nextRow, KeyColor);
+            SetSize(nextBack.gameObject, 40f, 40f);
+            AddBorder(nextBack.gameObject);
+            Image nextIcon = NewImage("Icon", nextBack.transform, Color.white);
+            nextIcon.preserveAspect = true;
+            Stretch(nextIcon.rectTransform);
+            nextIcon.rectTransform.offsetMin = new Vector2(4f, 4f);
+            nextIcon.rectTransform.offsetMax = new Vector2(-4f, -4f);
+            Text txtNext = NewText("Text", nextRow, font, SmallSize, DimColor, TextAnchor.MiddleLeft, wrap: true);
+            SetSize(txtNext.gameObject, flexibleWidth: 1f);
+
+            // Gegner-Vorschau
+            RectTransform enemyCard = CreateCard("EnemyCard", left, out GameObject enemyOuter);
+            SectionHeader(enemyCard, font, "Enemies");
+            RectTransform enemyGrid = NewRect("Icons", enemyCard);
+            GridLayoutGroup enemyLayout = enemyGrid.gameObject.AddComponent<GridLayoutGroup>();
+            enemyLayout.cellSize = new Vector2(52f, 52f);
+            enemyLayout.spacing = new Vector2(6f, 6f);
+            enemyLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            enemyLayout.constraintCount = 7;
+            enemyLayout.childAlignment = TextAnchor.UpperLeft;
+            MinHeight(enemyGrid.gameObject, 52f);
+            Text enemyHint = NewText("Hint", enemyCard, font, SmallSize, DimColor, TextAnchor.UpperLeft);
+            enemyHint.text = "Click an enemy to see its stats.";
+
+            // Quests
+            RectTransform questCard = CreateCard("QuestCard", left, out _);
+            SectionHeader(questCard, font, "Quests");
+            RectTransform questScroll = NewScroll("QuestScroll", questCard, 200f, 6f);
+
+            // ======================================================
+            // MITTE: Waffe, Perks, Mutatoren
+            // ======================================================
+            RectTransform weaponCard = CreateCard("WeaponCard", middle, out _);
+            Text txtWeaponCounter = CounterHeader(weaponCard, font, "Weapon");
+            RectTransform weaponGrid = NewSelectionGrid(weaponCard);
+
+            RectTransform perkCard = CreateCard("PerkCard", middle, out _);
+            Text txtPerkCounter = CounterHeader(perkCard, font, "Perks");
+            RectTransform perkGrid = NewSelectionGrid(perkCard);
+
+            RectTransform mutatorCard = CreateCard("MutatorCard", middle, out _);
+            Text txtMutatorCounter = CounterHeader(mutatorCard, font, "Mutators");
+            RectTransform mutatorGrid = NewSelectionGrid(mutatorCard);
+
+            // ======================================================
+            // RECHTS: Details, Zusammenfassung, Buttons
+            // ======================================================
+            RectTransform detailCard = CreateCard("DetailCard", right, out _);
+            SectionHeader(detailCard, font, "Details");
+
+            Text detailEmpty = NewText("Empty", detailCard, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
+            detailEmpty.text = "Select a weapon, perk or mutator to see its details.";
+            MinHeight(detailEmpty.gameObject, 60f);
+
+            RectTransform detailRoot = NewRect("Content", detailCard);
+            AddVertical(detailRoot.gameObject, new RectOffset(0, 0, 0, 0), 8f);
+
+            RectTransform detailHead = NewRect("Head", detailRoot);
+            AddHorizontal(detailHead.gameObject, new RectOffset(0, 0, 0, 0), 14f, TextAnchor.UpperLeft);
+
+            Image detailIconBack = NewImage("IconBack", detailHead, KeyColor);
+            SetSize(detailIconBack.gameObject, 88f, 88f);
+            AddBorder(detailIconBack.gameObject);
+            Image detailIcon = NewImage("Icon", detailIconBack.transform, Color.white);
+            detailIcon.preserveAspect = true;
+            Stretch(detailIcon.rectTransform);
+            detailIcon.rectTransform.offsetMin = new Vector2(8f, 8f);
+            detailIcon.rectTransform.offsetMax = new Vector2(-8f, -8f);
+
+            RectTransform detailHeadText = NewRect("Text", detailHead);
+            AddVertical(detailHeadText.gameObject, new RectOffset(0, 0, 0, 0), 4f);
+            SetSize(detailHeadText.gameObject, flexibleWidth: 1f);
+            Text txtDetailName = NewText("Name", detailHeadText, font, BodySize + 2, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            Text txtDetailType = NewText("Type", detailHeadText, font, SmallSize, DimColor, TextAnchor.UpperLeft);
+            Text txtDetailMultiplier = NewText("Multiplier", detailHeadText, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, FontStyle.Bold);
+
+            Image detailDivider = NewImage("Divider", detailRoot, DividerColor);
+            SetSize(detailDivider.gameObject, height: 1f);
+
+            Text txtDetailBody = NewText("Body", detailRoot, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
+            txtDetailBody.lineSpacing = 1.3f;
+            MinHeight(txtDetailBody.gameObject, 150f);
+
+            RectTransform summaryCard = CreateCard("SummaryCard", right, out _);
+            SectionHeader(summaryCard, font, "Loadout");
+
+            RectTransform weaponSummaryRow = NewRow("Weapon", summaryCard, font, "Weapon");
+            Text txtSummaryWeapon = NewText("Value", weaponSummaryRow, font, BodySize, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
+
+            RectTransform multiplierRow = NewRow("Multiplier", summaryCard, font, "Score multiplier");
+            Text txtSummaryMultiplier = NewText("Value", multiplierRow, font, BodySize, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
+
+            Text txtStartHint = NewText("Hint", summaryCard, font, SmallSize + 2, DimColor, TextAnchor.MiddleCenter);
+            SetSize(txtStartHint.gameObject, height: 28f);
+
+            Button btnStart = NewMenuButton(summaryCard, font, "Start", ButtonSize + 4, 56f);
+            btnStart.GetComponent<Image>().color = new Color(0.55f, 0.36f, 0.15f, 1f);
+            btnStart.GetComponentInChildren<Text>().color = GoldColor;
+
+            RectTransform smallButtons = NewRect("Buttons", summaryCard);
+            AddHorizontal(smallButtons.gameObject, new RectOffset(0, 0, 0, 0), 10f, TextAnchor.MiddleCenter);
+            SetSize(smallButtons.gameObject, height: 42f);
+            Button btnClear = NewMenuButton(smallButtons, font, "Clear", SmallSize + 2, 42f);
+            SetSize(btnClear.gameObject, flexibleWidth: 1f);
+            Button btnBack = NewMenuButton(smallButtons, font, "Back", SmallSize + 2, 42f);
+            SetSize(btnBack.gameObject, flexibleWidth: 1f);
+
+            // ======================================================
+            // Gegner-Panel (Overlay)
+            // ======================================================
+            EnemyInfoPanel enemyPanel = CreateEnemyInfoOverlay(screen, font, statRowPrefab, statHeaderPrefab);
+
+            // ======================================================
+            // Verdrahten
+            // ======================================================
+            SerializedObject so = new SerializedObject(loadoutUi);
+
+            Set(so, "panel", screen.gameObject);
+            Set(so, "canvasGroup", canvasGroup);
+
+            Set(so, "txtLevelName", txtLevelName);
+            Set(so, "txtLevelDescription", txtLevelDescription);
+            Set(so, "txtHighscore", txtHighscore);
+
+            Set(so, "playerLevelRoot", playerRoot.gameObject);
+            Set(so, "txtPlayerLevel", txtPlayerLevel);
+            Set(so, "txtPlayerXp", txtPlayerXp);
+            Set(so, "playerBarFill", playerFill.rectTransform);
+            Set(so, "nextUnlockRoot", nextRow.gameObject);
+            Set(so, "nextUnlockIcon", nextIcon);
+            Set(so, "txtNextUnlock", txtNext);
+
+            Set(so, "enemyCard", enemyOuter);
+            Set(so, "enemyContainer", enemyGrid);
+            Set(so, "enemyIconPrefab", enemyIconPrefab);
+            Set(so, "enemyInfoPanel", enemyPanel);
+
+            Set(so, "weaponContainer", weaponGrid);
+            Set(so, "perkContainer", perkGrid);
+            Set(so, "mutatorContainer", mutatorGrid);
+            Set(so, "questContainer", questScroll);
+            Set(so, "txtWeaponCounter", txtWeaponCounter);
+            Set(so, "txtPerkCounter", txtPerkCounter);
+            Set(so, "txtMutatorCounter", txtMutatorCounter);
+
+            Set(so, "detailEmpty", detailEmpty.gameObject);
+            Set(so, "detailRoot", detailRoot.gameObject);
+            Set(so, "detailIcon", detailIcon);
+            Set(so, "txtDetailType", txtDetailType);
+            Set(so, "txtDetailName", txtDetailName);
+            Set(so, "txtDetailMultiplier", txtDetailMultiplier);
+            Set(so, "txtDetailBody", txtDetailBody);
+
+            Set(so, "txtSummaryWeapon", txtSummaryWeapon);
+            Set(so, "txtSummaryMultiplier", txtSummaryMultiplier);
+            Set(so, "txtStartHint", txtStartHint);
+            Set(so, "btnStart", btnStart);
+            Set(so, "btnClear", btnClear);
+            Set(so, "btnBack", btnBack);
+
+            Set(so, "questPrefab", questPrefab);
+            Set(so, "btnPrefab", loadoutButtonPrefab);
+
+            // ---------- Altes übernehmen: Farben, Start-Events ----------
+            int hidden = 0;
+            int copiedCalls = 0;
+
+            foreach (LevelLoadoutUI old in legacy)
+            {
+                if (old == null || old == loadoutUi) continue;
+
+                SerializedObject oldSo = new SerializedObject(old);
+
+                foreach (string field in new[] { "colorWeapon", "colorPerk", "colorMutator" })
+                {
+                    SerializedProperty from = oldSo.FindProperty(field);
+                    SerializedProperty to = so.FindProperty(field);
+
+                    if (from != null && to != null && from.colorValue.a > 0.01f)
+                        to.colorValue = from.colorValue;
+                }
+
+                SerializedProperty oldPanel = oldSo.FindProperty("panel");
+                GameObject oldPanelObject = oldPanel != null ? oldPanel.objectReferenceValue as GameObject : null;
+                hidden += HideLegacy(oldPanelObject);
+            }
+
+            // Start-Button des alten Screens: Szenenwechsel-Aufrufe übernehmen (StartLevel macht der neue Button selbst)
+            Button oldStart = FindButtonByName("Btn_Start", root.transform);
+            if (oldStart != null)
+                copiedCalls = CopyClickCalls(oldStart, so.FindProperty("onStartConfirmed.m_PersistentCalls.m_Calls"), "StartLevel");
+
+            so.ApplyModifiedProperties();
+
+            // Alte Komponenten entfernen (gleiche Klasse: sonst gäbe es zwei Singletons)
+            foreach (LevelLoadoutUI old in legacy)
+            {
+                if (old != null && old != loadoutUi)
+                    Undo.DestroyObjectImmediate(old);
+            }
+
+            // Der alte Loadout-Screen hing am Selector-Canvas: Rest der alten UI ebenfalls ausblenden
+            Canvas selectorCanvas = selector.GetComponentInParent<Canvas>();
+            if (selectorCanvas != null)
+                hidden += HideLegacy(selectorCanvas.rootCanvas.gameObject);
+
+            enemyPanel.gameObject.SetActive(false);
+            screen.gameObject.SetActive(false);
+
+            EditorSceneManager.MarkSceneDirty(root.scene);
+            Selection.activeGameObject = root;
+
+            Debug.Log($"Loadout-Screen aufgebaut. {hidden} alte UI-Objekte ausgeblendet, {copiedCalls} Start-Aufrufe übernommen.\n" +
+                      "Falls der Szenenwechsel bisher nicht am Start-Button hing: LevelLoadoutUI > 'On Start Confirmed' eintragen.\n" +
+                      "Optional: LevelDefinition > 'Enemy Preview' füllen (Gegner-Vorschau).");
+        }
+
+        // ------------------------------------------------------------------
+        // Bausteine nur für den Loadout-Screen
+        // ------------------------------------------------------------------
+
+        /// <summary>Titel links, Zähler ("2/5") rechts, darunter die Akzentlinie.</summary>
+        private static Text CounterHeader(Transform parent, Font font, string title)
+        {
+            RectTransform row = NewRect("Header", parent);
+            AddHorizontal(row.gameObject, new RectOffset(0, 0, 0, 0), 8f, TextAnchor.MiddleLeft);
+
+            Text label = NewText("Title", row, font, HeaderSize, DimColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            label.text = title.ToUpperInvariant();
+            SetSize(label.gameObject, flexibleWidth: 1f);
+
+            Text counter = NewText("Counter", row, font, HeaderSize + 2, DimColor, TextAnchor.MiddleRight, FontStyle.Bold);
+
+            Image accent = NewImage("Accent", parent, BorderColor);
+            SetSize(accent.gameObject, height: 2f);
+
+            return counter;
+        }
+
+        private static RectTransform NewSelectionGrid(Transform parent)
+        {
+            RectTransform grid = NewRect("Items", parent);
+            GridLayoutGroup layout = grid.gameObject.AddComponent<GridLayoutGroup>();
+            layout.cellSize = new Vector2(64f, 64f);
+            layout.spacing = new Vector2(6f, 6f);
+            layout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            layout.constraintCount = 8;
+            layout.childAlignment = TextAnchor.UpperLeft;
+            MinHeight(grid.gameObject, 64f);
+            return grid;
+        }
+
+        private static GameObject CreateEnemyIconPrefab()
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("EnemyIcon", typeof(RectTransform));
+            Image background = root.AddComponent<Image>();
+            background.color = KeyColor;
+            AddBorder(root);
+            SetSize(root, 52f, 52f);
+
+            Button button = root.AddComponent<Button>();
+            button.targetGraphic = background;
+            button.colors = ButtonColors();
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            Image icon = NewImage("Icon", root.transform, Color.white);
+            icon.preserveAspect = true;
+            Stretch(icon.rectTransform);
+            icon.rectTransform.offsetMin = new Vector2(4f, 4f);
+            icon.rectTransform.offsetMax = new Vector2(-4f, -4f);
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/EnemyIcon.prefab");
+            Object.DestroyImmediate(root);
+            return saved;
+        }
+
+        /// <summary>Gleiches Gegner-Panel wie im Pausemenü, hier als Overlay im Loadout-Screen.</summary>
+        private static EnemyInfoPanel CreateEnemyInfoOverlay(Transform parent, Font font, GameObject statRowPrefab, GameObject statHeaderPrefab)
+        {
+            Image enemyRoot = NewImage("EnemyInfoPanel", parent, new Color(0f, 0f, 0f, 0.6f), true);
+            Stretch(enemyRoot.rectTransform);
+            VerticalLayoutGroup layout = AddVertical(enemyRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
+            layout.childAlignment = TextAnchor.MiddleCenter;
+            layout.childForceExpandWidth = false;
+
+            RectTransform card = CreateCard("Card", enemyRoot.transform, out GameObject outer, new RectOffset(24, 24, 18, 20));
+            SetSize(outer, width: 640f, flexibleWidth: 0f);
+
+            RectTransform head = NewRect("Head", card);
+            AddHorizontal(head.gameObject, new RectOffset(0, 0, 0, 0), 16f, TextAnchor.UpperLeft);
+
+            Image iconBack = NewImage("IconBack", head, KeyColor);
+            SetSize(iconBack.gameObject, 104f, 104f);
+            AddBorder(iconBack.gameObject);
+            Image icon = NewImage("Icon", iconBack.transform, Color.white);
+            icon.preserveAspect = true;
+            Stretch(icon.rectTransform);
+            icon.rectTransform.offsetMin = new Vector2(8f, 8f);
+            icon.rectTransform.offsetMax = new Vector2(-8f, -8f);
+
+            RectTransform headText = NewRect("Text", head);
+            AddVertical(headText.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            SetSize(headText.gameObject, flexibleWidth: 1f);
+
+            Text name = NewText("Name", headText, font, TitleSize - 12, TextColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            Text description = NewText("Description", headText, font, SmallSize, DimColor, TextAnchor.UpperLeft, wrap: true);
+            description.lineSpacing = 1.3f;
+
+            Image accent = NewImage("Accent", card, BorderColor);
+            SetSize(accent.gameObject, height: 2f);
+
+            RectTransform stats = NewScroll("StatsScroll", card, 380f, 2f);
+            Button close = NewMenuButton(card, font, "Close", ButtonSize, 44f);
+
+            EnemyInfoPanel panel = enemyRoot.gameObject.AddComponent<EnemyInfoPanel>();
+            SerializedObject so = new SerializedObject(panel);
+            Set(so, "icon", icon);
+            Set(so, "txtName", name);
+            Set(so, "txtDescription", description);
+            Set(so, "statContainer", stats);
+            Set(so, "statRowPrefab", statRowPrefab);
+            Set(so, "statHeaderPrefab", statHeaderPrefab);
+            Set(so, "btnClose", close);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            return panel;
+        }
+
+        // ------------------------------------------------------------------
+        // Alte UI sicher ausblenden / Verlinkungen übernehmen
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Deaktiviert ein altes UI-Objekt. Trägt es (oder ein Kind) einen deiner Manager, bleibt es aktiv:
+        /// dann werden nur seine eigenen Grafiken ausgeschaltet und die Kinder einzeln behandelt.
+        /// Gibt die Zahl der deaktivierten Objekte zurück.
+        /// </summary>
+        private static int HideLegacy(GameObject go)
+        {
+            if (go == null) return 0;
+
+            if (!HostsKeepAlive(go))
+            {
+                if (!go.activeSelf) return 0;
+
+                Undo.RecordObject(go, "Alte UI ausblenden");
+                go.SetActive(false);
+                return 1;
+            }
+
+            foreach (Graphic graphic in go.GetComponents<Graphic>())
+            {
+                Undo.RecordObject(graphic, "Alte UI ausblenden");
+                graphic.enabled = false;
+            }
+
+            int count = 0;
+            foreach (Transform child in go.transform)
+                count += HideLegacy(child.gameObject);
+
+            return count;
+        }
+
+        private static bool HostsKeepAlive(GameObject go)
+        {
+            foreach (Component component in go.GetComponentsInChildren<Component>(true))
+            {
+                if (component == null) continue;
+
+                string typeName = component.GetType().Name;
+                foreach (string keep in KeepAliveTypeNames)
+                    if (typeName == keep)
+                        return true;
+            }
+
+            return false;
+        }
+
+        private static Button FindButtonByName(string buttonName, Transform exclude)
+        {
+            foreach (Button button in Object.FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (button.name == buttonName && !button.transform.IsChildOf(exclude))
+                    return button;
+            }
+
+            return null;
+        }
+
+        /// <summary>Kopiert die Inspector-Aufrufe eines Buttons in ein UnityEvent und lässt eine Methode aus.</summary>
+        /// <summary>Kopiert die Inspector-Aufrufe eines Buttons in ein UnityEvent und lässt eine Methode aus.</summary>
+        private static int CopyClickCalls(Button source, SerializedProperty destinationCalls, string skipMethod)
+        {
+            SerializedObject sourceObject = new SerializedObject(source);
+            SerializedProperty sourceCalls = sourceObject.FindProperty("m_OnClick.m_PersistentCalls.m_Calls");
+
+            if (sourceCalls == null || destinationCalls == null)
+                return 0;
+
+            destinationCalls.ClearArray();
+            int copied = 0;
+
+            for (int i = 0; i < sourceCalls.arraySize; i++)
+            {
+                SerializedProperty sourceCall = sourceCalls.GetArrayElementAtIndex(i);
+                string methodName = sourceCall.FindPropertyRelative("m_MethodName").stringValue;
+
+                if (methodName == skipMethod)
+                    continue;
+
+                int destinationIndex = destinationCalls.arraySize;
+                destinationCalls.InsertArrayElementAtIndex(destinationIndex);
+
+                SerializedProperty destinationCall = destinationCalls.GetArrayElementAtIndex(destinationIndex);
+
+                CopyProperty(sourceCall, destinationCall, "m_Target");
+                CopyProperty(sourceCall, destinationCall, "m_TargetAssemblyTypeName");
+                CopyProperty(sourceCall, destinationCall, "m_MethodName");
+                CopyProperty(sourceCall, destinationCall, "m_Mode");
+                CopyProperty(sourceCall, destinationCall, "m_Arguments");
+                CopyProperty(sourceCall, destinationCall, "m_CallState");
+
+                copied++;
+            }
+
+            return copied;
+        }
+
+        private static void CopyProperty(SerializedProperty source, SerializedProperty destination, string propertyName)
+        {
+            SerializedProperty sourceProperty = source.FindPropertyRelative(propertyName);
+            SerializedProperty destinationProperty = destination.FindPropertyRelative(propertyName);
+
+            if (sourceProperty == null || destinationProperty == null)
+                return;
+
+            destinationProperty.serializedObject.CopyFromSerializedProperty(sourceProperty);
+        }
+        /// <summary>Schrift aus irgendeinem Text der Szene (Pixelschrift), die nicht die Standardschrift ist.</summary>
+        private static Font FindSceneFont()
+        {
+            foreach (Text text in Object.FindObjectsByType<Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                Font font = text.font;
+                if (font == null) continue;
+
+                string fontName = font.name;
+                if (fontName.Contains("Arial") || fontName.Contains("LegacyRuntime")) continue;
+
+                return font;
+            }
+
+            return null;
+        }
+    }
+}
+#endif
+
+#if UNITY_EDITOR
+
+namespace TowerDefense.EditorTools
+{
+    /// <summary>
+    /// Hauptmenü + begehbare Übersichtskarte (Stil des Pausemenüs).
+    ///
+    ///   MainMenuCanvas   Play / Research / Settings / Quit (ESC = Pause der Karte)
+    ///   Overworld        Held (WASD), ein Level-Knoten pro LevelDefinition im Projekt, Platzhalter-Boden, Kamera-Follow
+    ///   OverworldUI      Popup über dem Knoten in Reichweite: Name, Highscore, Quests, "Press [E] to select"
+    ///
+    /// Übernimmt deine bestehende Szene:
+    ///   - ResearchCanvas bleibt unangetastet, "Research" blendet es ein
+    ///   - alte Hauptmenü-UI und alte Level-Auswahl werden ausgeblendet (Objekte mit deinen Managern bleiben aktiv)
+    ///   - Button-Aufrufe, die das alte Hauptmenü wieder einschalten wollten, werden auf das neue umgeleitet
+    ///
+    /// Aufruf: Tools > UI > Hauptmenü + Übersichtskarte neu aufbauen
+    ///         oder Tools > UI > Alles für die Karten-Szene (inkl. Loadout-Screen)
+    /// </summary>
+    public static partial class PauseMenuBuilder
+    {
+        private const string MenuRootName = "MainMenuCanvas (neu)";
+        private const string OverworldRootName = "Overworld (neu)";
+        private const string OverworldUiName = "OverworldUI (neu)";
+        private const int MenuSortingOrder = 100;
+        private const int OverworldUiSortingOrder = 20;
+
+        [MenuItem("Tools/UI/Hauptmenü + Übersichtskarte neu aufbauen")]
+        private static void BuildMainMenuMenu() => BuildMainMenuAndOverworld();
+
+        [MenuItem("Tools/UI/Alles für die Karten-Szene (Hauptmenü, Karte, Loadout)")]
+        private static void BuildEverythingForMap()
+        {
+            BuildLoadout();
+            BuildMainMenuAndOverworld();
+        }
+
+        private static void BuildMainMenuAndOverworld()
+        {
+            Font font = FindFont();
+
+            // ---------- Vorherige Version entfernen ----------
+            foreach (MainMenuUI old in Object.FindObjectsByType<MainMenuUI>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+                Undo.DestroyObjectImmediate(old.gameObject);
+
+            foreach (LevelNodePopup old in Object.FindObjectsByType<LevelNodePopup>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+                Undo.DestroyObjectImmediate(old.gameObject);
+
+            GameObject previousOverworld = FindSceneRoot(OverworldRootName);
+            if (previousOverworld != null)
+                Undo.DestroyObjectImmediate(previousOverworld);
+
+            EnsureEventSystem();
+
+            // ---------- Bestehende Szene erkennen ----------
+            GameObject oldMenu = FindOldMenuCanvas();
+            GameObject research = FindSceneRoot("ResearchCanvas");
+
+            // ---------- Prefabs ----------
+            GameObject bindingRowPrefab = CreateBindingRowPrefab(font);
+            GameObject nodeQuestRowPrefab = CreateNodeQuestRowPrefab(font);
+
+            // ======================================================
+            // MAIN MENU CANVAS
+            // ======================================================
+            GameObject root = new GameObject(MenuRootName, typeof(RectTransform));
+            Undo.RegisterCreatedObjectUndo(root, "Hauptmenü neu aufbauen");
+
+            Canvas canvas = root.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = MenuSortingOrder;
+
+            CanvasScaler scaler = root.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+
+            root.AddComponent<GraphicRaycaster>();
+            MainMenuUI menu = root.AddComponent<MainMenuUI>();
+
+            RectTransform menuPanel = NewRect("MenuPanel", root.transform);
+            Stretch(menuPanel);
+
+            // Abdunklung: die Karte bleibt dahinter sichtbar
+            Image menuDim = NewImage("Dim", menuPanel, new Color(DimBackColor.r, DimBackColor.g, DimBackColor.b, 0.62f), true);
+            Stretch(menuDim.rectTransform);
+
+            RectTransform column = NewRect("Column", menuPanel);
+            column.anchorMin = new Vector2(0f, 0f);
+            column.anchorMax = new Vector2(0f, 1f);
+            column.pivot = new Vector2(0f, 0.5f);
+            column.sizeDelta = new Vector2(480f, -160f);
+            column.anchoredPosition = new Vector2(100f, 0f);
+            VerticalLayoutGroup columnLayout = AddVertical(column.gameObject, new RectOffset(0, 0, 0, 0), 14f);
+            columnLayout.childAlignment = TextAnchor.MiddleLeft;
+
+            Text title = NewText("Title", column, font, TitleSize + 24, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            title.text = Application.productName;
+            SetSize(title.gameObject, height: 110f);
+
+            Image titleAccent = NewImage("Accent", column, BorderColor);
+            SetSize(titleAccent.gameObject, height: 3f);
+
+            RectTransform spacer = NewRect("Spacer", column);
+            SetSize(spacer.gameObject, height: 24f);
+
+            Button btnPlay = NewMenuButton(column, font, "Play", ButtonSize + 2, 56f);
+            Button btnResearch = NewMenuButton(column, font, "Research", ButtonSize + 2, 56f);
+            Button btnSettings = NewMenuButton(column, font, "Settings", ButtonSize + 2, 56f);
+            Button btnQuit = NewMenuButton(column, font, "Quit", ButtonSize + 2, 56f);
+
+            Text txtProfile = NewText("Profile", column, font, SmallSize + 2, DimColor, TextAnchor.MiddleLeft);
+            SetSize(txtProfile.gameObject, height: 40f);
+
+            Text version = NewText("Version", menuPanel, font, SmallSize, DimColor, TextAnchor.LowerRight);
+            version.text = "v" + Application.version;
+            version.rectTransform.anchorMin = version.rectTransform.anchorMax = new Vector2(1f, 0f);
+            version.rectTransform.pivot = new Vector2(1f, 0f);
+            version.rectTransform.anchoredPosition = new Vector2(-30f, 24f);
+            version.rectTransform.sizeDelta = new Vector2(300f, 30f);
+
+            SettingsPanel settings = CreateSettingsPanel(root.transform, font, bindingRowPrefab);
+            ConfirmDialog quitDialog = CreateConfirmDialog(root.transform, font);
+
+            // ======================================================
+            // ÜBERSICHTSKARTE + POPUP
+            // ======================================================
+            int nodeCount = BuildOverworld(font, nodeQuestRowPrefab);
+
+            // ======================================================
+            // MainMenuUI verdrahten
+            // ======================================================
+            SerializedObject so = new SerializedObject(menu);
+            Set(so, "menuPanel", menuPanel.gameObject);
+            Set(so, "settingsPanel", settings);
+            Set(so, "confirmDialog", quitDialog);
+            Set(so, "researchCanvas", research);
+            Set(so, "btnPlay", btnPlay);
+            Set(so, "txtPlay", btnPlay.GetComponentInChildren<Text>());
+            Set(so, "btnResearch", btnResearch);
+            Set(so, "btnSettings", btnSettings);
+            Set(so, "btnQuit", btnQuit);
+            Set(so, "txtProfile", txtProfile);
+            so.ApplyModifiedProperties();
+
+            // ======================================================
+            // Alte UI übernehmen / ausblenden
+            // ======================================================
+            int retargeted = oldMenu != null ? RetargetOldMenuCalls(oldMenu, root) : 0;
+            int hidden = 0;
+
+            if (oldMenu != null)
+                hidden += HideLegacy(oldMenu);
+
+            LevelSelectorManager selector = Object.FindFirstObjectByType<LevelSelectorManager>(FindObjectsInactive.Include);
+            Canvas selectorCanvas = selector != null ? selector.GetComponentInParent<Canvas>() : null;
+            if (selectorCanvas != null && !IsNewUi(selectorCanvas.rootCanvas.gameObject))
+                hidden += HideLegacy(selectorCanvas.rootCanvas.gameObject);
+
+            settings.gameObject.SetActive(false);
+            quitDialog.gameObject.SetActive(false);
+
+            EditorSceneManager.MarkSceneDirty(root.scene);
+            Selection.activeGameObject = root;
+
+            Debug.Log($"Hauptmenü + Übersichtskarte aufgebaut: {nodeCount} Level-Knoten, {hidden} alte UI-Objekte ausgeblendet, " +
+                      $"{retargeted} Button-Aufrufe auf das neue Menü umgeleitet.\n" +
+                      (research == null ? "Kein 'ResearchCanvas' gefunden: der Research-Button bleibt ausgeblendet.\n" : "") +
+                      (oldMenu == null ? "Kein altes Hauptmenü ('Canvas' im Szenen-Root) gefunden. Wähle es vorher aus, wenn es anders heißt.\n" : "") +
+                      "Der Held ist ein Platzhalter-Kreis: Sprites im OverworldHero zuweisen (Idle/Walk). " +
+                      "Der graue Platzhalter-Boden kann gelöscht werden, sobald deine Map-Tiles stehen.\n" +
+                      $"Canvas-Sorting: Menü {MenuSortingOrder}, Loadout {LoadoutSortingOrder}. Das Fade-Canvas muss höher liegen.");
+        }
+
+        // ------------------------------------------------------------------
+        // Übersichtskarte
+        // ------------------------------------------------------------------
+
+        private static int BuildOverworld(Font font, GameObject questRowPrefab)
+        {
+            Sprite knob = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Knob.psd");
+            Sprite square = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+
+            GameObject overworld = new GameObject(OverworldRootName);
+            Undo.RegisterCreatedObjectUndo(overworld, "Übersichtskarte aufbauen");
+
+            // Platzhalter-Boden (hinter allem, damit deine Tilemap darüber liegt)
+            GameObject ground = new GameObject("Placeholder Ground (löschen, sobald die Map steht)");
+            ground.transform.SetParent(overworld.transform);
+            SpriteRenderer groundRenderer = ground.AddComponent<SpriteRenderer>();
+            groundRenderer.sprite = square;
+            groundRenderer.drawMode = SpriteDrawMode.Sliced;
+            groundRenderer.size = new Vector2(140f, 80f);
+            groundRenderer.color = new Color(0.30f, 0.46f, 0.26f);
+            groundRenderer.sortingOrder = -200;
+
+            // Level aus dem Projekt
+            List<LevelDefinition> levels = new List<LevelDefinition>();
+            foreach (string guid in AssetDatabase.FindAssets("t:LevelDefinition"))
+            {
+                LevelDefinition level = AssetDatabase.LoadAssetAtPath<LevelDefinition>(AssetDatabase.GUIDToAssetPath(guid));
+                if (level != null) levels.Add(level);
+            }
+            levels.Sort((a, b) => a.levelIndex.CompareTo(b.levelIndex));
+
+            Vector3[] positions = new Vector3[levels.Count];
+            for (int i = 0; i < positions.Length; i++)
+                positions[i] = new Vector3(i * 8f, Mathf.Sin(i * 1.3f) * 3f, 0f);
+
+            // Gepunkteter Weg zwischen den Knoten
+            GameObject pathRoot = new GameObject("Path");
+            pathRoot.transform.SetParent(overworld.transform);
+
+            for (int i = 0; i < positions.Length - 1; i++)
+            {
+                int dots = Mathf.Max(2, Mathf.FloorToInt(Vector3.Distance(positions[i], positions[i + 1]) / 0.9f));
+
+                for (int k = 1; k < dots; k++)
+                {
+                    GameObject dot = new GameObject("Dot");
+                    dot.transform.SetParent(pathRoot.transform);
+                    dot.transform.position = Vector3.Lerp(positions[i], positions[i + 1], k / (float)dots);
+                    dot.transform.localScale = Vector3.one * 0.25f;
+
+                    SpriteRenderer dotRenderer = dot.AddComponent<SpriteRenderer>();
+                    dotRenderer.sprite = knob;
+                    dotRenderer.color = new Color(0.82f, 0.74f, 0.55f, 0.85f);
+                    dotRenderer.sortingOrder = -50;
+                }
+            }
+
+            // Level-Knoten
+            GameObject nodesRoot = new GameObject("LevelNodes");
+            nodesRoot.transform.SetParent(overworld.transform);
+
+            Font labelFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
+            for (int i = 0; i < levels.Count; i++)
+            {
+                LevelDefinition level = levels[i];
+
+                GameObject nodeObject = new GameObject($"LevelNode {level.levelIndex} ({level.levelName})");
+                nodeObject.transform.SetParent(nodesRoot.transform);
+                nodeObject.transform.position = positions[i];
+
+                GameObject markerObject = new GameObject("Marker");
+                markerObject.transform.SetParent(nodeObject.transform, false);
+                markerObject.transform.localScale = Vector3.one * 1.6f;
+
+                SpriteRenderer markerRenderer = markerObject.AddComponent<SpriteRenderer>();
+                markerRenderer.sprite = knob;
+                markerRenderer.sortingOrder = 5;
+
+                if (labelFont != null)
+                {
+                    GameObject labelObject = new GameObject("Label");
+                    labelObject.transform.SetParent(nodeObject.transform, false);
+
+                    TextMesh label = labelObject.AddComponent<TextMesh>();
+                    label.font = labelFont;
+                    label.text = level.levelIndex.ToString();
+                    label.anchor = TextAnchor.MiddleCenter;
+                    label.alignment = TextAlignment.Center;
+                    label.characterSize = 0.18f;
+                    label.fontSize = 64;
+                    label.color = Color.black;
+
+                    MeshRenderer labelRenderer = labelObject.GetComponent<MeshRenderer>();
+                    labelRenderer.sharedMaterial = labelFont.material;
+                    labelRenderer.sortingOrder = 6;
+                }
+
+                LevelNode node = nodeObject.AddComponent<LevelNode>();
+                SerializedObject nodeSo = new SerializedObject(node);
+                Set(nodeSo, "level", level);
+                Set(nodeSo, "marker", markerRenderer);
+                nodeSo.ApplyModifiedPropertiesWithoutUndo();
+            }
+
+            // Held (Platzhalter-Kreis: Sprites im OverworldHero zuweisen)
+            GameObject heroObject = new GameObject("Hero (Karte)");
+            heroObject.transform.SetParent(overworld.transform);
+            heroObject.transform.position = positions.Length > 0 ? positions[0] + new Vector3(-3.5f, -1f, 0f) : Vector3.zero;
+            heroObject.transform.localScale = Vector3.one * 0.9f;
+
+            SpriteRenderer heroRenderer = heroObject.AddComponent<SpriteRenderer>();
+            heroRenderer.sprite = knob;
+            heroRenderer.color = new Color(1f, 0.78f, 0.29f);
+            heroRenderer.sortingOrder = 10;
+
+            OverworldHero hero = heroObject.AddComponent<OverworldHero>();
+            SerializedObject heroSo = new SerializedObject(hero);
+            Set(heroSo, "spriteRenderer", heroRenderer);
+            heroSo.ApplyModifiedPropertiesWithoutUndo();
+
+            // Kamera folgt dem Helden
+            Camera camera = Camera.main != null ? Camera.main : Object.FindFirstObjectByType<Camera>(FindObjectsInactive.Include);
+
+            if (camera == null)
+                Debug.LogWarning("Keine Kamera in der Szene gefunden: OverworldCamera nicht hinzugefügt.");
+            else if (camera.GetComponent<OverworldCamera>() == null)
+                Undo.AddComponent<OverworldCamera>(camera.gameObject);
+
+            BuildNodePopup(font, questRowPrefab);
+
+            return levels.Count;
+        }
+
+        /// <summary>Popup über dem Level-Knoten in Reichweite, im Stil des InteractionPopup.</summary>
+        private static void BuildNodePopup(Font font, GameObject questRowPrefab)
+        {
+            GameObject uiRoot = new GameObject(OverworldUiName, typeof(RectTransform));
+            Undo.RegisterCreatedObjectUndo(uiRoot, "Karten-Popup aufbauen");
+
+            Canvas canvas = uiRoot.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = OverworldUiSortingOrder;
+
+            CanvasScaler scaler = uiRoot.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+
+            LevelNodePopup popup = uiRoot.AddComponent<LevelNodePopup>();
+
+            RectTransform content = CreateCard("Popup", uiRoot.transform, out GameObject outer, new RectOffset(16, 16, 12, 14));
+
+            RectTransform rootRect = (RectTransform)outer.transform;
+            rootRect.anchorMin = rootRect.anchorMax = new Vector2(0.5f, 0.5f);
+            rootRect.pivot = new Vector2(0.5f, 0f);
+            rootRect.sizeDelta = new Vector2(420f, 0f);
+
+            ContentSizeFitter fitter = outer.AddComponent<ContentSizeFitter>();
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+
+            Text txtName = NewText("Name", content, font, BodySize + 4, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            Text txtHighscore = NewText("Highscore", content, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft);
+
+            Image accent = NewImage("Accent", content, BorderColor);
+            SetSize(accent.gameObject, height: 2f);
+
+            RectTransform quests = NewRect("Quests", content);
+            AddVertical(quests.gameObject, new RectOffset(0, 0, 0, 0), 4f);
+
+            Image divider = NewImage("Divider", content, DividerColor);
+            SetSize(divider.gameObject, height: 1f);
+
+            // "Press [E] to select"
+            RectTransform prompt = NewRect("Prompt", content);
+            AddHorizontal(prompt.gameObject, new RectOffset(0, 0, 0, 0), 8f, TextAnchor.MiddleCenter);
+            SetSize(prompt.gameObject, height: 34f);
+
+            Text press = NewText("Press", prompt, font, BodySize, TextColor, TextAnchor.MiddleCenter);
+            press.text = "Press";
+            AddOutline(press);
+
+            Image keyBack = NewImage("Key", prompt, KeyColor);
+            SetSize(keyBack.gameObject, 30f, 30f);
+            AddBorder(keyBack.gameObject);
+            Text txtKey = NewText("Text", keyBack.transform, font, BodySize - 2, TextColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Stretch(txtKey.rectTransform);
+            txtKey.text = "E";
+
+            Text action = NewText("Action", prompt, font, BodySize, TextColor, TextAnchor.MiddleCenter);
+            action.text = "to select";
+            AddOutline(action);
+
+            Text locked = NewText("Locked", content, font, SmallSize + 2, new Color(0.90f, 0.35f, 0.30f),
+                TextAnchor.MiddleCenter, FontStyle.Bold, wrap: true);
+
+            SerializedObject so = new SerializedObject(popup);
+            Set(so, "root", rootRect);
+            Set(so, "txtName", txtName);
+            Set(so, "txtHighscore", txtHighscore);
+            Set(so, "questContainer", quests);
+            Set(so, "questRowPrefab", questRowPrefab);
+            Set(so, "promptRoot", prompt.gameObject);
+            Set(so, "txtKey", txtKey);
+            Set(so, "lockedRoot", locked.gameObject);
+            Set(so, "txtLocked", locked);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            outer.SetActive(false);
+        }
+
+        private static GameObject CreateNodeQuestRowPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject go = new GameObject("NodeQuestRow", typeof(RectTransform));
+            Text text = go.AddComponent<Text>();
+            text.font = font;
+            text.fontSize = SmallSize + 2;
+            text.color = TextColor;
+            text.alignment = TextAnchor.UpperLeft;
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
+            text.supportRichText = true;
+            text.raycastTarget = false;
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(go, $"{PrefabFolder}/NodeQuestRow.prefab");
+            Object.DestroyImmediate(go);
+            return saved;
+        }
+
+        // ------------------------------------------------------------------
+        // Settings + Dialog (gleiche Bausteine wie im Pausemenü, ohne PauseMenuUI)
+        // ------------------------------------------------------------------
+
+        private static SettingsPanel CreateSettingsPanel(Transform parent, Font font, GameObject bindingRowPrefab)
+        {
+            RectTransform settingsRoot = NewRect("SettingsPanel", parent);
+            Stretch(settingsRoot);
+
+            // Eigene Abdunklung (zählt nicht im Layout)
+            Image dim = NewImage("Dim", settingsRoot, DimBackColor, true);
+            dim.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
+            Stretch(dim.rectTransform);
+
+            VerticalLayoutGroup layout = AddVertical(settingsRoot.gameObject, ScreenPadding, 14f);
+            layout.childAlignment = TextAnchor.UpperCenter;
+
+            Text settingsTitle = NewText("Title", settingsRoot, font, TitleSize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            settingsTitle.text = "Settings";
+            SetSize(settingsTitle.gameObject, height: 72f);
+
+            RectTransform card = CreateCard("Card", settingsRoot, out _, new RectOffset(24, 24, 16, 18));
+
+            RectTransform tabRow = NewRect("Tabs", card);
+            AddHorizontal(tabRow.gameObject, new RectOffset(0, 0, 0, 0), 6f, TextAnchor.MiddleCenter);
+            SetSize(tabRow.gameObject, height: 42f);
+
+            string[] tabNames = { "Video", "Audio", "Gameplay", "Controls" };
+            Button[] tabButtons = new Button[tabNames.Length];
+            for (int i = 0; i < tabNames.Length; i++)
+            {
+                tabButtons[i] = NewMenuButton(tabRow, font, tabNames[i], SmallSize + 2, 42f);
+                SetSize(tabButtons[i].gameObject, flexibleWidth: 1f);
+            }
+
+            Image tabDivider = NewImage("Divider", card, DividerColor);
+            SetSize(tabDivider.gameObject, height: 1f);
+
+            RectTransform pages = NewRect("Pages", card);
+            SetSize(pages.gameObject, height: SettingsPagesHeight);
+
+            RectTransform pageVideo = NewPage("Video", pages);
+            NewArrowRow(pageVideo, font, "Resolution", out Button resPrev, out Text txtResolution, out Button resNext);
+            Toggle toggleFullscreen = NewToggleRow(pageVideo, font, "Fullscreen");
+            Toggle toggleVSync = NewToggleRow(pageVideo, font, "V-Sync");
+            Toggle togglePost = NewToggleRow(pageVideo, font, "Post Processing");
+            NewArrowRow(pageVideo, font, "Anti Aliasing", out Button aaPrev, out Text txtAa, out Button aaNext);
+            Slider sliderRenderScale = NewSliderRow(pageVideo, font, "Render Scale", out Text txtRenderScale);
+            Button resetVideo = NewResetRow(pageVideo, font, "Reset Video Settings");
+
+            RectTransform pageAudio = NewPage("Audio", pages);
+            Slider sliderMaster = NewSliderRow(pageAudio, font, "Master", out Text txtMaster);
+            Slider sliderGameplay = NewSliderRow(pageAudio, font, "Gameplay", out Text txtGameplay);
+            Slider sliderMusic = NewSliderRow(pageAudio, font, "Music", out Text txtMusic);
+            Slider sliderEnvironment = NewSliderRow(pageAudio, font, "Environment", out Text txtEnvironment);
+            Button resetAudio = NewResetRow(pageAudio, font, "Reset Audio Settings");
+
+            RectTransform pageGameplay = NewPage("Gameplay", pages);
+            Toggle toggleShake = NewToggleRow(pageGameplay, font, "Screen Shake");
+            Toggle toggleDamage = NewToggleRow(pageGameplay, font, "Damage Numbers");
+            Toggle toggleHealthBars = NewToggleRow(pageGameplay, font, "Health Bars");
+            Toggle toggleAutoPause = NewToggleRow(pageGameplay, font, "Pause on Focus Loss");
+            Toggle toggleFps = NewToggleRow(pageGameplay, font, "Show FPS");
+            Button resetGameplay = NewResetRow(pageGameplay, font, "Reset Gameplay Settings");
+
+            RectTransform pageControls = NewPage("Controls", pages);
+            RectTransform bindings = NewRect("Bindings", pageControls);
+            AddVertical(bindings.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            Button resetControls = NewResetRow(pageControls, font, "Reset Controls");
+
+            Image backDivider = NewImage("Divider", card, DividerColor);
+            SetSize(backDivider.gameObject, height: 1f);
+
+            Button btnBack = NewMenuButton(card, font, "Back", ButtonSize, 44f);
+
+            SettingsPanel settings = settingsRoot.gameObject.AddComponent<SettingsPanel>();
+            SerializedObject sp = new SerializedObject(settings);
+            SetArray(sp, "tabButtons", tabButtons);
+            SetArray(sp, "tabPanels", new Object[] { pageVideo.gameObject, pageAudio.gameObject, pageGameplay.gameObject, pageControls.gameObject });
+
+            Set(sp, "btnResPrev", resPrev);
+            Set(sp, "btnResNext", resNext);
+            Set(sp, "txtResolution", txtResolution);
+            Set(sp, "toggleFullscreen", toggleFullscreen);
+            Set(sp, "toggleVSync", toggleVSync);
+            Set(sp, "togglePost", togglePost);
+            Set(sp, "btnAaPrev", aaPrev);
+            Set(sp, "btnAaNext", aaNext);
+            Set(sp, "txtAa", txtAa);
+            Set(sp, "sliderRenderScale", sliderRenderScale);
+            Set(sp, "txtRenderScale", txtRenderScale);
+            Set(sp, "btnResetVideo", resetVideo);
+
+            Set(sp, "sliderMaster", sliderMaster);
+            Set(sp, "sliderGameplay", sliderGameplay);
+            Set(sp, "sliderMusic", sliderMusic);
+            Set(sp, "sliderEnvironment", sliderEnvironment);
+            Set(sp, "txtMaster", txtMaster);
+            Set(sp, "txtGameplay", txtGameplay);
+            Set(sp, "txtMusic", txtMusic);
+            Set(sp, "txtEnvironment", txtEnvironment);
+            Set(sp, "btnResetAudio", resetAudio);
+
+            Set(sp, "toggleShake", toggleShake);
+            Set(sp, "toggleDamageNumbers", toggleDamage);
+            Set(sp, "toggleHealthBars", toggleHealthBars);
+            Set(sp, "toggleAutoPause", toggleAutoPause);
+            Set(sp, "toggleFps", toggleFps);
+            Set(sp, "btnResetGameplay", resetGameplay);
+
+            Set(sp, "bindingContainer", bindings);
+            Set(sp, "bindingRowPrefab", bindingRowPrefab);
+            Set(sp, "btnResetControls", resetControls);
+
+            Set(sp, "btnBack", btnBack);   // Zurück läuft über SettingsPanel.BackRequested (MainMenuUI)
+            sp.ApplyModifiedPropertiesWithoutUndo();
+
+            return settings;
+        }
+
+        private static ConfirmDialog CreateConfirmDialog(Transform parent, Font font)
+        {
+            Image dialogRoot = NewImage("ConfirmDialog", parent, new Color(0f, 0f, 0f, 0.6f), true);
+            Stretch(dialogRoot.rectTransform);
+
+            VerticalLayoutGroup layout = AddVertical(dialogRoot.gameObject, new RectOffset(0, 0, 0, 0), 0f);
+            layout.childAlignment = TextAnchor.MiddleCenter;
+            layout.childForceExpandWidth = false;
+
+            RectTransform card = CreateCard("Card", dialogRoot.transform, out GameObject outer, new RectOffset(24, 24, 20, 22));
+            SetSize(outer, width: 560f, flexibleWidth: 0f);
+
+            Text message = NewText("Message", card, font, BodySize + 2, TextColor, TextAnchor.MiddleCenter, wrap: true);
+            MinHeight(message.gameObject, 80f);
+
+            RectTransform buttons = NewRect("Buttons", card);
+            AddHorizontal(buttons.gameObject, new RectOffset(0, 0, 0, 0), 16f, TextAnchor.MiddleCenter);
+            SetSize(buttons.gameObject, height: 46f);
+
+            Button yes = NewMenuButton(buttons, font, "Yes", ButtonSize, 46f);
+            SetSize(yes.gameObject, flexibleWidth: 1f);
+            Button no = NewMenuButton(buttons, font, "No", ButtonSize, 46f);
+            SetSize(no.gameObject, flexibleWidth: 1f);
+
+            ConfirmDialog dialog = dialogRoot.gameObject.AddComponent<ConfirmDialog>();
+            SerializedObject so = new SerializedObject(dialog);
+            Set(so, "txtMessage", message);
+            Set(so, "btnYes", yes);
+            Set(so, "btnNo", no);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            return dialog;
+        }
+
+        // ------------------------------------------------------------------
+        // Bestehende Szene
+        // ------------------------------------------------------------------
+
+        private static bool IsNewUi(GameObject go) => go != null && go.name.EndsWith("(neu)");
+
+        private static GameObject FindSceneRoot(string rootName)
+        {
+            foreach (GameObject root in SceneManager.GetActiveScene().GetRootGameObjects())
+                if (root.name == rootName)
+                    return root;
+
+            return null;
+        }
+
+        /// <summary>Alte Hauptmenü-UI: das ausgewählte Canvas, sonst das Szenen-Root-Objekt "Canvas".</summary>
+        private static GameObject FindOldMenuCanvas()
+        {
+            GameObject selected = Selection.activeGameObject;
+
+            if (selected != null)
+            {
+                Canvas selectedCanvas = selected.GetComponentInParent<Canvas>();
+                GameObject selectedRoot = selectedCanvas != null ? selectedCanvas.rootCanvas.gameObject : null;
+
+                if (selectedRoot != null && !IsNewUi(selectedRoot) && selectedRoot.name != "ResearchCanvas")
+                    return selectedRoot;
+            }
+
+            foreach (GameObject root in SceneManager.GetActiveScene().GetRootGameObjects())
+            {
+                if (root.name == "Canvas" && root.GetComponent<Canvas>() != null)
+                    return root;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Buttons außerhalb des alten Menüs (z. B. "Zurück" im ResearchCanvas), die das alte Menü per SetActive(true)
+        /// wieder einschalten wollten, zeigen danach auf das neue Menü. SetActive(false)-Aufrufe bleiben unverändert.
+        /// </summary>
+        private static int RetargetOldMenuCalls(GameObject oldMenu, GameObject newRoot)
+        {
+            int count = 0;
+
+            foreach (Button button in Object.FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (button.transform.IsChildOf(oldMenu.transform) || button.transform.IsChildOf(newRoot.transform))
+                    continue;
+
+                SerializedObject so = new SerializedObject(button);
+                SerializedProperty calls = so.FindProperty("m_OnClick.m_PersistentCalls.m_Calls");
+                if (calls == null) continue;
+
+                bool changed = false;
+
+                for (int i = 0; i < calls.arraySize; i++)
+                {
+                    SerializedProperty call = calls.GetArrayElementAtIndex(i);
+                    SerializedProperty target = call.FindPropertyRelative("m_Target");
+
+                    if (target.objectReferenceValue != oldMenu) continue;
+                    if (call.FindPropertyRelative("m_MethodName").stringValue != "SetActive") continue;
+                    if (!call.FindPropertyRelative("m_Arguments.m_BoolArgument").boolValue) continue;
+
+                    target.objectReferenceValue = newRoot;
+                    changed = true;
+                    count++;
+                }
+
+                if (changed)
+                    so.ApplyModifiedProperties();
+            }
+
+            return count;
+        }
+    }
+}
+#endif
+
+
+
+#if UNITY_EDITOR
+
+
+namespace TowerDefense.EditorTools
+{
+    /// <summary>
+    /// Baut die Forschungs-Ansicht (Skilltree) im Stil des Pausemenüs.
+    ///
+    ///   Links    Titel, Forschungspunkte, Liste aller Türme
+    ///   Mitte    Skilltree des gewählten Turms (scrollbar, Zoom nicht nötig)
+    ///   Rechts   Details, Unlock/Research-Button, Zurück, Reset
+    ///
+    /// Das Canvas heißt "ResearchCanvas" und startet deaktiviert: MainMenuUI findet es über diesen Namen,
+    /// blendet es bei "Research" ein und erkennt das Zurück (Canvas wird deaktiviert) automatisch.
+    /// Ein vorhandenes altes ResearchCanvas wird in "ResearchCanvas (alt)" umbenannt und ausgeschaltet.
+    /// Liegt der ResearchManager darunter, bleibt das Objekt aktiv (sonst würde der Manager verschwinden).
+    ///
+    /// Aufruf: Tools > UI > Research-Skilltree neu aufbauen   (danach ggf. "Hauptmenü + Übersichtskarte" erneut ausführen,
+    /// damit MainMenuUI das neue Canvas referenziert)
+    /// </summary>
+    public static partial class PauseMenuBuilder
+    {
+        private const string ResearchRootName = "ResearchCanvas";
+        private const int ResearchSortingOrder = 200;
+
+        private const float ResearchNodeSize = 76f;
+
+        [MenuItem("Tools/UI/Research-Skilltree neu aufbauen")]
+        private static void BuildResearch()
+        {
+            Font font = FindFont();
+
+            // Altes Canvas wegräumen (außer es enthält den Manager)
+            GameObject old = FindSceneRoot(ResearchRootName);
+            if (old != null)
+            {
+                bool hasManager = old.GetComponentInChildren<ResearchManager>(true) != null;
+
+                Undo.RecordObject(old, "Altes ResearchCanvas umbenennen");
+                old.name = ResearchRootName + " (alt)";
+
+                if (!hasManager)
+                    old.SetActive(false);
+                else
+                    Debug.LogWarning("Research-Skilltree: Das alte ResearchCanvas enthält den ResearchManager und bleibt aktiv. " +
+                                     "Verschiebe den Manager auf ein eigenes Objekt und lösche das alte Canvas.");
+            }
+
+            EnsureEventSystem();
+
+            ResearchNodeView nodePrefab = CreateResearchNodePrefab(font);
+            ResearchTowerButton towerButtonPrefab = CreateResearchTowerButtonPrefab(font);
+
+            // ---------- Canvas ----------
+            GameObject root = new GameObject(ResearchRootName, typeof(RectTransform));
+            Undo.RegisterCreatedObjectUndo(root, "Research-Skilltree neu aufbauen");
+
+            Canvas canvas = root.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = ResearchSortingOrder;
+
+            CanvasScaler scaler = root.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+
+            root.AddComponent<GraphicRaycaster>();
+            ResearchTreeUI tree = root.AddComponent<ResearchTreeUI>();
+
+            Image dim = NewImage("Dim", root.transform, DimBackColor, true);
+            Stretch(dim.rectTransform);
+
+            RectTransform main = NewRect("MainPanel", root.transform);
+            Stretch(main);
+            AddHorizontal(main.gameObject, ScreenPadding, 24f, TextAnchor.UpperCenter);
+
+            RectTransform left = NewColumn("Left", main, 360f);
+            RectTransform middle = NewColumn("Middle", main, 760f);
+            RectTransform right = NewColumn("Right", main, 440f);
+
+            // ---------- Links: Titel, Punkte, Turm-Liste ----------
+            Text title = NewText("Title", left, font, TitleSize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            title.text = "Research";
+            SetSize(title.gameObject, height: 72f);
+
+            RectTransform pointsCard = CreateCard("PointsCard", left, out _);
+            Text txtPoints = NewText("Points", pointsCard, font, BodySize, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtPoints.gameObject, height: 30f);
+
+            RectTransform listCard = CreateCard("TowerCard", left, out _);
+            SectionHeader(listCard, font, "Towers");
+            RectTransform towerList = NewScroll("TowerScroll", listCard, 560f, 4f);
+
+            // ---------- Mitte: Baum ----------
+            RectTransform treeCard = CreateCard("TreeCard", middle, out _);
+            SectionHeader(treeCard, font, "Upgrades");
+            RectTransform treeContent = NewTreeScroll("TreeScroll", treeCard, 700f);
+
+            Text keyHints = NewText("KeyHints", treeCard, font, SmallSize, DimColor, TextAnchor.MiddleLeft, wrap: true);
+            MinHeight(keyHints.gameObject, 22f);
+
+            // ---------- Rechts: Details ----------
+            RectTransform detailCard = CreateCard("DetailCard", right, out _);
+
+            Text txtTitle = NewText("Title", detailCard, font, BodySize + 6, GoldColor, TextAnchor.UpperLeft, FontStyle.Bold, wrap: true);
+            Text txtSubtitle = NewText("Subtitle", detailCard, font, SmallSize, DimColor, TextAnchor.UpperLeft, wrap: true);
+
+            Image accent = NewImage("Accent", detailCard, BorderColor);
+            SetSize(accent.gameObject, height: 2f);
+
+            Text txtDescription = NewText("Description", detailCard, font, SmallSize + 2, TextColor, TextAnchor.UpperLeft, wrap: true);
+            txtDescription.lineSpacing = 1.3f;
+            MinHeight(txtDescription.gameObject, 90f);
+
+            Image statDivider = NewImage("Divider", detailCard, DividerColor);
+            SetSize(statDivider.gameObject, height: 1f);
+
+            Text txtStats = NewText("Stats", detailCard, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
+            txtStats.lineSpacing = 1.25f;
+            MinHeight(txtStats.gameObject, 150f);
+
+            Text txtHint = NewText("Hint", detailCard, font, SmallSize, new Color(0.90f, 0.35f, 0.30f), TextAnchor.MiddleLeft, wrap: true);
+            MinHeight(txtHint.gameObject, 24f);
+
+            Button btnAction = NewMenuButton(detailCard, font, "Research", ButtonSize, 50f);
+            Text txtAction = btnAction.GetComponentInChildren<Text>();
+
+            Button btnBack = NewMenuButton(right, font, "Back");
+            Button btnReset = NewMenuButton(right, font, "Reset research", SmallSize + 2, 40f);
+
+            ConfirmDialog confirm = CreateConfirmDialog(root.transform, font);
+
+            // ---------- Verdrahten ----------
+            SerializedObject so = new SerializedObject(tree);
+
+            Set(so, "towerListContainer", towerList);
+            Set(so, "towerButtonPrefab", towerButtonPrefab);
+
+            Set(so, "treeContent", treeContent);
+            Set(so, "nodePrefab", nodePrefab);
+            Set(so, "pathLabelPrefab", CreatePathLabelPrefab(font));
+
+            Set(so, "txtTitle", txtTitle);
+            Set(so, "txtSubtitle", txtSubtitle);
+            Set(so, "txtDescription", txtDescription);
+            Set(so, "txtStats", txtStats);
+            Set(so, "txtHint", txtHint);
+            Set(so, "btnAction", btnAction);
+            Set(so, "txtAction", txtAction);
+
+            Set(so, "txtScreenTitle", title);
+            Set(so, "txtTowersHeader", listCard.Find("Header").GetComponent<Text>());
+            Set(so, "txtUpgradesHeader", treeCard.Find("Header").GetComponent<Text>());
+            Set(so, "txtKeyHints", keyHints);
+            Set(so, "txtPoints", txtPoints);
+            Set(so, "btnBack", btnBack);
+            Set(so, "btnReset", btnReset);
+            Set(so, "confirmDialog", confirm);
+            Set(so, "closeTarget", root);
+            so.ApplyModifiedProperties();
+
+            root.SetActive(false);
+
+            EditorSceneManager.MarkSceneDirty(root.scene);
+            Selection.activeGameObject = root;
+
+            Debug.Log("Research-Skilltree aufgebaut (ResearchCanvas, startet deaktiviert).\n" +
+                      "1) Im ResearchManager prüfen: Tower Prefabs, 'Starting Unlocked Towers', Kosten.\n" +
+                      "2) 'Hauptmenü + Übersichtskarte' erneut ausführen, damit MainMenuUI das neue Canvas findet " +
+                      "(oder 'Research Canvas' im MainMenuUI von Hand zuweisen).\n" +
+                      "3) Beschreibung/Basiswerte der Türme stehen in TowerResearchInfo (ResearchManager.LoadTowersFromPrefabs).");
+        }
+
+        // ------------------------------------------------------------------
+        // Prefabs
+        // ------------------------------------------------------------------
+
+        private static ResearchNodeView CreateResearchNodePrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ResearchNode", typeof(RectTransform));
+            ((RectTransform)root.transform).sizeDelta = new Vector2(ResearchNodeSize, ResearchNodeSize);
+
+            // Auswahlrahmen (größer als der Knoten, liegt dahinter)
+            Image selected = NewImage("Selected", root.transform, Color.white);
+            selected.rectTransform.anchorMin = Vector2.zero;
+            selected.rectTransform.anchorMax = Vector2.one;
+            selected.rectTransform.offsetMin = new Vector2(-6f, -6f);
+            selected.rectTransform.offsetMax = new Vector2(6f, 6f);
+            selected.color = SelectedColor;
+
+            Image border = NewImage("Border", root.transform, BorderColor);
+            Stretch(border.rectTransform);
+
+            Image background = NewImage("Background", border.transform, ButtonColor, true);
+            Stretch(background.rectTransform);
+            background.rectTransform.offsetMin = new Vector2(3f, 3f);
+            background.rectTransform.offsetMax = new Vector2(-3f, -3f);
+
+            Image icon = NewImage("Icon", background.transform, Color.white);
+            icon.preserveAspect = true;
+            Stretch(icon.rectTransform);
+            icon.rectTransform.offsetMin = new Vector2(8f, 8f);
+            icon.rectTransform.offsetMax = new Vector2(-8f, -8f);
+
+            // Sperr-Overlay
+            Image lockOverlay = NewImage("Lock", background.transform, new Color(0f, 0f, 0f, 0.55f));
+            Stretch(lockOverlay.rectTransform);
+            Text lockText = NewText("Label", lockOverlay.transform, font, SmallSize, DimColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            lockText.text = "LOCKED";
+            Stretch(lockText.rectTransform);
+
+            // Marker "erforscht" (Haken unten rechts)
+            Image marker = NewImage("Researched", root.transform, GoldColor);
+            marker.rectTransform.anchorMin = marker.rectTransform.anchorMax = new Vector2(1f, 0f);
+            marker.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+            marker.rectTransform.sizeDelta = new Vector2(24f, 24f);
+            marker.rectTransform.anchoredPosition = new Vector2(-4f, 4f);
+            AddBorder(marker.gameObject);
+            Text check = NewText("Check", marker.transform, font, SmallSize, KeyColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            check.text = "✓";
+            Stretch(check.rectTransform);
+
+            // Stufen-Nummer oben links
+            Text badge = NewText("Badge", root.transform, font, SmallSize, TextColor, TextAnchor.UpperLeft, FontStyle.Bold);
+            badge.rectTransform.anchorMin = badge.rectTransform.anchorMax = new Vector2(0f, 1f);
+            badge.rectTransform.pivot = new Vector2(0f, 1f);
+            badge.rectTransform.anchoredPosition = new Vector2(6f, -4f);
+            badge.rectTransform.sizeDelta = new Vector2(30f, 20f);
+            AddOutline(badge);
+
+            // Kosten unter dem Knoten
+            Text cost = NewText("Cost", root.transform, font, SmallSize, GoldColor, TextAnchor.UpperCenter, FontStyle.Bold);
+            cost.rectTransform.anchorMin = new Vector2(0f, 0f);
+            cost.rectTransform.anchorMax = new Vector2(1f, 0f);
+            cost.rectTransform.pivot = new Vector2(0.5f, 1f);
+            cost.rectTransform.anchoredPosition = new Vector2(0f, -8f);
+            cost.rectTransform.sizeDelta = new Vector2(40f, 22f);
+            AddOutline(cost);
+
+            Button button = root.AddComponent<Button>();
+            button.targetGraphic = background;
+            button.colors = ButtonColors();
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            ResearchNodeView view = root.AddComponent<ResearchNodeView>();
+            SerializedObject so = new SerializedObject(view);
+            Set(so, "border", border);
+            Set(so, "background", background);
+            Set(so, "icon", icon);
+            Set(so, "lockOverlay", lockOverlay.gameObject);
+            Set(so, "lockLabel", lockText);
+            Set(so, "researchedMarker", marker.gameObject);
+            Set(so, "selectedFrame", selected.gameObject);
+            Set(so, "badge", badge);
+            Set(so, "costText", cost);
+            Set(so, "button", button);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ResearchNode.prefab");
+            Object.DestroyImmediate(root);
+            return saved.GetComponent<ResearchNodeView>();
+        }
+
+        private static ResearchTowerButton CreateResearchTowerButtonPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ResearchTowerButton", typeof(RectTransform));
+            Image background = root.AddComponent<Image>();
+            background.color = ButtonColor;
+            AddBorder(root);
+            AddHorizontal(root, new RectOffset(8, 8, 6, 6), 10f, TextAnchor.MiddleLeft);
+            MinHeight(root, 56f);
+
+            Button button = root.AddComponent<Button>();
+            button.targetGraphic = background;
+            button.colors = ButtonColors();
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            Image icon = NewImage("Icon", root.transform, Color.white);
+            icon.preserveAspect = true;
+            SetSize(icon.gameObject, 40f, 40f);
+
+            RectTransform texts = NewRect("Texts", root.transform);
+            AddVertical(texts.gameObject, new RectOffset(0, 0, 0, 0), 0f);
+            SetSize(texts.gameObject, flexibleWidth: 1f);
+
+            Text name = NewText("Name", texts, font, BodySize - 2, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Text status = NewText("Status", texts, font, SmallSize, DimColor, TextAnchor.MiddleLeft);
+
+            // Auswahl-Balken links, ignoriert das Layout
+            Image marker = NewImage("Selected", root.transform, SelectedColor);
+            marker.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
+            marker.rectTransform.anchorMin = new Vector2(0f, 0f);
+            marker.rectTransform.anchorMax = new Vector2(0f, 1f);
+            marker.rectTransform.pivot = new Vector2(0f, 0.5f);
+            marker.rectTransform.sizeDelta = new Vector2(4f, 0f);
+            marker.rectTransform.anchoredPosition = Vector2.zero;
+
+            ResearchTowerButton view = root.AddComponent<ResearchTowerButton>();
+            SerializedObject so = new SerializedObject(view);
+            Set(so, "icon", icon);
+            Set(so, "txtName", name);
+            Set(so, "txtStatus", status);
+            Set(so, "selectedMarker", marker.gameObject);
+            Set(so, "button", button);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ResearchTowerButton.prefab");
+            Object.DestroyImmediate(root);
+            return saved.GetComponent<ResearchTowerButton>();
+        }
+
+        private static Text CreatePathLabelPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ResearchPathLabel", typeof(RectTransform));
+            Text label = root.AddComponent<Text>();
+            label.font = font;
+            label.fontSize = SmallSize;
+            label.fontStyle = FontStyle.Bold;
+            label.color = DimColor;
+            label.alignment = TextAnchor.LowerLeft;
+            label.horizontalOverflow = HorizontalWrapMode.Overflow;
+            label.verticalOverflow = VerticalWrapMode.Overflow;
+            label.raycastTarget = false;
+            ((RectTransform)root.transform).sizeDelta = new Vector2(240f, 24f);
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ResearchPathLabel.prefab");
+            Object.DestroyImmediate(root);
+            return saved.GetComponent<Text>();
+        }
+
+        // ------------------------------------------------------------------
+        // Bausteine
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// Scrollbereich in beide Richtungen für den Baum. Der Content hat feste Größe (setzt ResearchTreeUI)
+        /// und ist oben links verankert, die Knoten werden per anchoredPosition platziert.
+        /// </summary>
+        private static RectTransform NewTreeScroll(string name, Transform parent, float height)
+        {
+            Image root = NewImage(name, parent, new Color(0f, 0f, 0f, 0.18f), true);
+            SetSize(root.gameObject, height: height);
+            AddBorder(root.gameObject);
+
+            RectTransform viewport = NewRect("Viewport", root.transform);
+            Stretch(viewport);
+            viewport.gameObject.AddComponent<RectMask2D>();
+
+            RectTransform content = NewRect("Content", viewport);
+            content.anchorMin = content.anchorMax = new Vector2(0f, 1f);
+            content.pivot = new Vector2(0f, 1f);
+            content.anchoredPosition = Vector2.zero;
+            content.sizeDelta = new Vector2(1200f, 600f);
+
+            ScrollRect scroll = root.gameObject.AddComponent<ScrollRect>();
+            scroll.viewport = viewport;
+            scroll.content = content;
+            scroll.horizontal = true;
+            scroll.vertical = true;
+            scroll.movementType = ScrollRect.MovementType.Clamped;
+            scroll.scrollSensitivity = 30f;
+
+            return content;
         }
     }
 }

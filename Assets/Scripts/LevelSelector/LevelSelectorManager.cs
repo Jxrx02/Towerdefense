@@ -5,6 +5,9 @@ namespace LevelSelector
 {
     public class LevelSelectorManager : MonoBehaviour
     {
+        public const int MaxPerks = 5;
+        public const int MaxMutators = 3;
+
         public static LevelSelectorManager Instance { get; private set; }
 
         public LevelDefinition CurrentLevel { get; private set; }
@@ -49,41 +52,82 @@ namespace LevelSelector
             LevelLoadoutUI.Instance.Show(level);
         }
 
+        // ── Regeln für ein gültiges Loadout ───────────────────────
 
-        public void StartLevel()
+        /// <summary>So viele Perks müssen gewählt werden: max. 5, aber nie mehr, als freigeschaltet sind.</summary>
+        public static int GetRequiredPerks(LevelDefinition level)
         {
-            var loadout = LevelLoadoutManager.Instance.CurrentLoadout;
+            if (level == null || level.availablePerks == null) return 0;
 
+            int unlocked = 0;
+            foreach (var perk in level.availablePerks)
+                if (perk != null && PlayerProgress.IsPerkUnlocked(perk))
+                    unlocked++;
+
+            return Mathf.Min(unlocked,MaxPerks);
+        }
+
+        /// <summary>So viele Mutatoren müssen gewählt werden: max. 3, aber nie mehr, als das Level anbietet.</summary>
+        public static int GetRequiredMutators(LevelDefinition level)
+        {
+            if (level == null || level.availableMutators == null) return 0;
+
+            int available = 0;
+            foreach (var mutator in level.availableMutators)
+                if (mutator != null)
+                    available++;
+
+            return Mathf.Min(available,MaxMutators);
+        }
+
+        /// <summary>Null, wenn das Loadout startklar ist. Sonst ein kurzer Hinweis, was noch fehlt.</summary>
+        public static string GetStartBlocker(LevelLoadout loadout)
+        {
             if (loadout == null)
-                return;
+                return "No level selected.";
 
             if (loadout.weapon == null)
-            {
-                Debug.LogWarning("Keine Waffe ausgewählt.");
-                return;
-            }
+                return "Select a weapon.";
 
-            int unlockedPerks = 0;
-            foreach (var perk in loadout.levelDefinition.availablePerks)
-                if (PlayerProgress.IsPerkUnlocked(perk)) unlockedPerks++;
- 
-            int requiredPerks = Mathf.Min(5, unlockedPerks);
- 
-            if (loadout.perks.Count != requiredPerks)
-            {
-                Debug.LogWarning($"Es müssen {requiredPerks} Perks ausgewählt werden.");
-                return;
-            }
+            int perksMissing = GetRequiredPerks(loadout.levelDefinition) - loadout.perks.Count;
+            if (perksMissing > 0)
+                return perksMissing == 1 ? "Select 1 more perk." : $"Select {perksMissing} more perks.";
 
-            if (loadout.mutators.Count != 3)
+            int mutatorsMissing = GetRequiredMutators(loadout.levelDefinition) - loadout.mutators.Count;
+            if (mutatorsMissing > 0)
+                return mutatorsMissing == 1 ? "Select 1 more mutator." : $"Select {mutatorsMissing} more mutators.";
+
+            return null;
+        }
+
+        // ── Start ─────────────────────────────────────────────────
+
+        /// <summary>Für Inspector-Events (UnityEvents zeigen nur void-Methoden).</summary>
+        public void StartLevel()
+        {
+            TryStartLevel();
+        }
+
+        /// <summary>Prüft das Loadout und wendet es an. false = Loadout unvollständig.</summary>
+        public bool TryStartLevel()
+        {
+            if (LevelLoadoutManager.Instance == null)
+                return false;
+
+            var loadout = LevelLoadoutManager.Instance.CurrentLoadout;
+            string blocker = GetStartBlocker(loadout);
+
+            if (blocker != null)
             {
-                Debug.LogWarning("Es müssen 3 Mutatoren ausgewählt werden.");
-                return;
+                Debug.LogWarning(blocker);
+                return false;
             }
 
             LevelLoadoutManager.Instance.ApplyLoadout();
 
-            // Dein bestehender Szenenwechsel kommt hier hin.
+            // Der Szenenwechsel hängt am Start-Button des neuen Loadout-Screens
+            // (LevelLoadoutUI > On Start Confirmed).
+            return true;
         }
     }
 }

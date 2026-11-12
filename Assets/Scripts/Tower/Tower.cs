@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using ScriptableObjects;
-using TowerDefense.GridMovement;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TowerDefense
 {
@@ -165,7 +162,10 @@ namespace TowerDefense
         protected Vitals vitals;
         public Vitals Vitals => vitals;
         public TargetCategory Category => category;
-
+        /// <summary>
+        /// Name des Turms im ResearchManager. Wird in Awake festgehalten, bevor ein Upgrade towerName umbenennt.
+        /// </summary>
+        public string ResearchId { get; private set; }
         /// <summary>
         /// Rüstung und MR für die Anzeige. Funktionieren auch auf einem Prefab (Awake ist dort nie gelaufen).
         /// </summary>
@@ -202,6 +202,8 @@ namespace TowerDefense
         // ───────────────── INIT ─────────────────
         protected virtual void Awake()
         {
+            ResearchId = towerName;   // vor allen Upgrades, die towerName überschreiben
+
             spriteAnim = GetComponent<SpriteAnim>();
 
             if (spriteAnim != null)
@@ -1148,20 +1150,21 @@ namespace TowerDefense
 
         public bool IsUpgradeUnlocked(int pathIndex)
         {
-            var path = upgradePaths[pathIndex];
-            int level = pathLevels[pathIndex];
-
-            if (path == null || level >= path.levels.Length)
+            if (pathIndex < 0 || pathIndex >= upgradePaths.Length || pathIndex >= pathLevels.Length)
                 return false;
-
-            string pathName = path.towerName;
-            string upgradeName = path.levels[level].upgradeName;
-
-            var researchManager = TowerDefense.Research.ResearchManager.Instance;
-
-            return researchManager == null || researchManager.unlockedResearch.Any(t =>
-                t.researchedPaths.Any(p => p.pathName.Contains(pathName)) &&
-                t.researchedPaths.Any(p => p.unlockedUpgrades.Contains(upgradeName)));
+ 
+            UpgradePath path = upgradePaths[pathIndex];
+            int level = pathLevels[pathIndex];
+ 
+            if (path == null || path.levels == null || level >= path.levels.Length)
+                return false;
+ 
+            var research = TowerDefense.Research.ResearchManager.Instance;
+ 
+            if (research == null)
+                return true;
+ 
+            return research.IsUpgradeUnlocked(ResearchId, path.towerName, path.levels[level].upgradeName);
         }
 
         // ───────────────── BREAK / SELL ─────────────────

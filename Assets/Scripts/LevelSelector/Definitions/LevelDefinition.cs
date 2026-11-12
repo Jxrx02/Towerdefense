@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace LevelSelector.Definitions
@@ -21,7 +22,9 @@ namespace LevelSelector.Definitions
 
         [Header("Quests")]
         public List<LevelQuestDefinition> quests = new();
+
+        [Header("Vorschau")]
+        [Tooltip("Gegner, die im Loadout-Screen als Vorschau erscheinen (Klick zeigt ihre Werte).")]
+        public List<EnemyConfig> enemyPreview = new();
     }
-
-
 }
