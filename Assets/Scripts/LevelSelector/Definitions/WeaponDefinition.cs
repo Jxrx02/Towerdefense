@@ -25,5 +25,10 @@ namespace LevelSelector.Definitions
 
         [Header("Visuals")]
         public Sprite icon;
+
+        [Header("Unlock & Purchase")]
+        [Tooltip("Preis in Forschungspunkten. Die Freischaltung (Heldenlevel) steht in der PlayerProgressionDefinition. " +
+                 "0 = kostenlos: die Waffe ist sofort nutzbar, sobald sie freigeschaltet ist.")]
+        [Min(0)] public int purchaseCost;
     }
 }

@@ -16,13 +16,15 @@ MonoBehaviour:
   levels:
   - xpRequired: 0
     unlockPerk: {fileID: 11400000, guid: 689852b3d77210b48b78194bfb9babea, type: 2}
+    unlockMutators: []
+    unlockWeapons:
+    - {fileID: 11400000, guid: 3d4a70f71c9c1654ab8c1af690f2b53e, type: 2}
   - xpRequired: 1500
     unlockPerk: {fileID: 11400000, guid: 21e5dbab79ac06c45b948f5a3a6bdbdf, type: 2}
-  - xpRequired: 2500
-    unlockPerk: {fileID: 0}
-  - xpRequired: 3500
-    unlockPerk: {fileID: 0}
-  - xpRequired: 5000
-    unlockPerk: {fileID: 0}
-  - xpRequired: 7000
-    unlockPerk: {fileID: 0}
+    unlockMutators:
+    - {fileID: 11400000, guid: 8fd0bdf32c21c084482a1c119bd64084, type: 2}
+    - {fileID: 11400000, guid: 2f0531ebf250017489435d01fdcd34ac, type: 2}
+    unlockWeapons:
+    - {fileID: 11400000, guid: ab745b2ac90026b43ac0b1573c8bd372, type: 2}
+    - {fileID: 11400000, guid: c961a95b112f85e49a474cf98de2a9e5, type: 2}
+    - {fileID: 11400000, guid: 340ccccbd9d9b994aaa20c9558d962ca, type: 2}

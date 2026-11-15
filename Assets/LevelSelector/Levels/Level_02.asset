@@ -22,3 +22,4 @@ MonoBehaviour:
   availableMutators:
   - {fileID: 11400000, guid: 8fd0bdf32c21c084482a1c119bd64084, type: 2}
   quests: []
+  enemyPreview: []

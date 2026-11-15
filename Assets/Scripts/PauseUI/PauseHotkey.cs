@@ -29,7 +29,9 @@ namespace TowerDefense
         private void Update()
         {
             // Öffnen. Schließen übernimmt PauseMenuUI (damit Settings/Dialog zuerst zugehen).
-            if (KeyBindings.Down(GameAction.Pause) && !pauseCanvas.activeSelf && CanPause())
+            // Das Stat-Info-Fenster schließt sich mit Esc selbst: dieselbe Taste öffnet nicht zusätzlich das Pausemenü
+            if (KeyBindings.Down(GameAction.Pause) && !pauseCanvas.activeSelf && CanPause() &&
+                !StatInfoPanel.IsOpen && StatInfoPanel.LastClosedFrame != Time.frameCount)
                 LevelManager.instance.Pause();
 
             UpdateFps();

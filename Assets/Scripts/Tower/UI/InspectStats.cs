@@ -10,7 +10,8 @@ public enum StatId
     Damage, AttackSpeed, Range, Crit, CritDamage, Lethality, ArmorPen, MagicPen, MagicPenPercent,
     Omnivamp, Regen, MoveSpeed, Evasion, Gold,
     GiveRange, GiveDamage, GiveAttackSpeed, GiveSlow,
-    GiveRegen, GiveOmnivamp, XpDrop
+    GiveRegen, GiveOmnivamp, XpDrop,
+    Stamina   // neu: nur am Ende angefügt, damit bestehende Werte gleich bleiben
 }
 
     /// <summary>Eine Zeile im Inspektions-Popup. baseValue ist der Grundwert, value der aktuelle (z. B. nach Shred oder Aura).</summary>
@@ -38,9 +39,15 @@ public enum StatId
         }
     }
 
-    /// <summary>Sammelt alle aktuellen Werte eines Turms, Helden oder Gegners für das InteractionPopup.</summary>
+    /// <summary>
+    /// Sammelt alle aktuellen Werte eines Turms, Helden oder Gegners für das InteractionPopup.
+    /// Die Werte entsprechen den Formeln im Spiel, die Erklärungen dazu stehen in Texts.StatInfo.
+    /// Anzeigenamen kommen aus Texts.Stats.Of.
+    /// </summary>
     public static class InspectStats
     {
+        private static string N(StatId id) => Texts.Stats.Of(id);
+
         // ------------------------------------------------------------------ Turm und Held
         public static void Collect(Tower t, List<InspectStat> list)
         {
@@ -51,6 +58,12 @@ public enum StatId
                 CollectWall(wallSegment, list);
                 return;
             }
+
+            if (t is Hero hero)
+            {
+                CollectHero(hero, list);
+                return;
+            }
             
             Vitals v = t.Vitals;
 
@@ -59,19 +72,22 @@ public enum StatId
                 AddHealth(list, v);
             else
                 list.Add(InspectStat.Make(StatId.Health, "", t.currentHealth, t.currentHealth, "", 0,
-                    $" / {t.statHealthPoints} HP"));
+                    Texts.Stats.HealthSuffix(t.statHealthPoints)));
 
             AddDefense(list, v, v != null ? v.BaseArmor : t.Armor, v != null ? v.BaseMagicResist : t.MagicResist);
 
-            list.Add(InspectStat.Make(StatId.Level, "Level", t.level, t.level));
+            list.Add(InspectStat.Make(StatId.Level, N(StatId.Level), t.level, t.level));
 
             // Angriff (inkl. Aura-Bonus, die Aura erscheint als grüne Änderung)
             float cooldown = Mathf.Max(0.1f, t.timeInBetweenShots);
-            list.Add(InspectStat.Make(StatId.Damage, "Damage",
+
+            // Schaden und Tempo wie im Schuss: Aura wirkt auf den Schaden, Tempo = Multiplikator x (1 + Aura) / Abklingzeit
+            list.Add(InspectStat.Make(StatId.Damage, N(StatId.Damage),
                 t.damage * (1f + t.AuraDamage), t.damage));
-            list.Add(InspectStat.Make(StatId.AttackSpeed, "Attack Speed",
-                (1f + t.AuraAttackSpeed) / cooldown, 1f / cooldown, "/s", 1));
-            list.Add(InspectStat.Make(StatId.Range, "Range", t.EffectiveRange, t.range, "", 1));
+            list.Add(InspectStat.Make(StatId.AttackSpeed, N(StatId.AttackSpeed),
+                t.attackSpeedMultiplier * (1f + t.AuraAttackSpeed) / cooldown,
+                t.attackSpeedMultiplier / cooldown, "/s", 1));
+            list.Add(InspectStat.Make(StatId.Range, N(StatId.Range), t.EffectiveRange, t.range, "", 1));
 
             AddOffense(list, t.offense);
 
@@ -79,19 +95,52 @@ public enum StatId
             if (t.statHealthPoints > 0 &&
                 (!Mathf.Approximately(t.statHealthRegenPerSecond, 0f) || !Mathf.Approximately(t.EffectiveRegen, 0f)))
             {
-                list.Add(InspectStat.Make(StatId.Regen, "Regen/sec",
+                list.Add(InspectStat.Make(StatId.Regen, N(StatId.Regen),
                     t.EffectiveRegen, t.statHealthRegenPerSecond, "/s", 1));
             }
-            AddIfNonZero(list, StatId.Gold, "Gold/sec", t.statCoinsEarnedPerSecond, "/s", 1);
+            AddIfNonZero(list, StatId.Gold, Texts.Stats.GoldPerSecond, t.statCoinsEarnedPerSecond, "/s", 1);
 
             // Aura, die dieser Turm an andere abgibt
-            AddIfNonZero(list, StatId.GiveRange, "Aura Range", t.statRangeMultiplier * 100f, "%", 0);
-            AddIfNonZero(list, StatId.GiveDamage, "Aura Damage", t.statDmgMultiplier * 100f, "%", 0);
-            AddIfNonZero(list, StatId.GiveAttackSpeed, "Aura Atk Speed", t.statAttackSpeedMultiplier * 100f, "%", 0);
-            AddIfNonZero(list, StatId.GiveSlow, "Aura Slow", t.statSlowMultiplier * 100f, "%", 0);
-            AddIfNonZero(list, StatId.GiveRegen, "Aura Regen", t.statRegenMultiplier * 100f, "%", 0);
-            AddIfNonZero(list, StatId.GiveOmnivamp, "Aura Omnivamp", t.statOmnivampMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveRange, N(StatId.GiveRange), t.statRangeMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveDamage, N(StatId.GiveDamage), t.statDmgMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveAttackSpeed, N(StatId.GiveAttackSpeed), t.statAttackSpeedMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveSlow, N(StatId.GiveSlow), t.statSlowMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveRegen, N(StatId.GiveRegen), t.statRegenMultiplier * 100f, "%", 0);
+            AddIfNonZero(list, StatId.GiveOmnivamp, N(StatId.GiveOmnivamp), t.statOmnivampMultiplier * 100f, "%", 0);
         }
+
+        /// <summary>
+        /// Held: Schaden und Angriffstempo wie im Kampf (inklusive Aura und Perks aus dem Loadout), dazu Ausdauer und Lauftempo.
+        /// Das Angriffstempo ist beim Helden ein Faktor auf die Animationen ("x1.10"), keine Schüsse pro Sekunde.
+        /// </summary>
+        private static void CollectHero(Hero hero, List<InspectStat> list)
+        {
+            Vitals v = hero.Vitals;
+
+            if (v != null)
+                AddHealth(list, v);
+
+            AddDefense(list, v, v != null ? v.BaseArmor : hero.Armor, v != null ? v.BaseMagicResist : hero.MagicResist);
+
+            Stamina stamina = hero.StaminaComponent;
+            if (stamina != null)
+                list.Add(InspectStat.Make(StatId.Stamina, N(StatId.Stamina), stamina.Current, stamina.Current, "", 0,
+                    $" / {Mathf.CeilToInt(stamina.Max)}"));
+
+            list.Add(InspectStat.Make(StatId.Damage, N(StatId.Damage), hero.AttackDamageEffective, hero.AttackDamageBase));
+            list.Add(InspectStat.Make(StatId.AttackSpeed, N(StatId.AttackSpeed),
+                hero.AttackSpeedEffective, hero.AttackSpeedBase, "x", 2));
+            list.Add(InspectStat.Make(StatId.Range, N(StatId.Range), hero.EffectiveRange, hero.range, "", 1));
+
+            AddOffense(list, hero.offense);
+
+            if (!Mathf.Approximately(hero.statHealthRegenPerSecond, 0f) || !Mathf.Approximately(hero.EffectiveRegen, 0f))
+                list.Add(InspectStat.Make(StatId.Regen, N(StatId.Regen),
+                    hero.EffectiveRegen, hero.statHealthRegenPerSecond, "/s", 1));
+
+            list.Add(InspectStat.Make(StatId.MoveSpeed, N(StatId.MoveSpeed), hero.RunSpeedEffective, hero.RunSpeedBase, "", 1));
+        }
+
         private static void CollectWall(WallSegment wall, List<InspectStat> list)
         {
             WallGroup group = wall.WallGroup;
@@ -102,8 +151,6 @@ public enum StatId
         
             AddHealth(list, v);
             AddDefense(list, v, v.BaseArmor, v.BaseMagicResist);
-        
-            //list.Add(InspectStat.Make(StatId.Level, "Level", group.WallLevel + 1, group.WallLevel + 1));
         }
         // ------------------------------------------------------------------ Gegner
         public static void Collect(Enemy e, List<InspectStat> list)
@@ -122,39 +169,39 @@ public enum StatId
             if (cfg == null) return;
 
             float cooldown = Mathf.Max(0.1f, cfg.attackCooldown);
-            list.Add(InspectStat.Make(StatId.Damage, "Damage", cfg.attackDamage, cfg.attackDamage));
-            list.Add(InspectStat.Make(StatId.AttackSpeed, "Attack Speed", 1f / cooldown, 1f / cooldown, "/s", 1));
-            list.Add(InspectStat.Make(StatId.Range, "Range", cfg.attackRange, cfg.attackRange, "", 1));
-            list.Add(InspectStat.Make(StatId.MoveSpeed, "Move Speed",
+            list.Add(InspectStat.Make(StatId.Damage, N(StatId.Damage), cfg.attackDamage, cfg.attackDamage));
+            list.Add(InspectStat.Make(StatId.AttackSpeed, N(StatId.AttackSpeed), 1f / cooldown, 1f / cooldown, "/s", 1));
+            list.Add(InspectStat.Make(StatId.Range, N(StatId.Range), cfg.attackRange, cfg.attackRange, "", 1));
+            list.Add(InspectStat.Make(StatId.MoveSpeed, N(StatId.MoveSpeed),
                 cfg.movementSpeed * e.SlowMultiplier, cfg.movementSpeed, "", 1));
 
             AddOffense(list, cfg.offense);
 
-            AddIfNonZero(list, StatId.Evasion, "Evasion", cfg.evasionChance, "%", 0);
-            AddIfNonZero(list, StatId.Regen, "Regen/sec", cfg.healthRegenPerSecond, "/s", 1);
-            AddIfNonZero(list, StatId.Gold, "Gold", cfg.goldReward, "", 0);
-            AddIfNonZero(list, StatId.XpDrop, "XP Drop", cfg.xpDrop, "", 0);
+            AddIfNonZero(list, StatId.Evasion, N(StatId.Evasion), cfg.evasionChance, "%", 0);
+            AddIfNonZero(list, StatId.Regen, N(StatId.Regen), cfg.healthRegenPerSecond, "/s", 1);
+            AddIfNonZero(list, StatId.Gold, N(StatId.Gold), cfg.goldReward, "", 0);
+            AddIfNonZero(list, StatId.XpDrop, N(StatId.XpDrop), cfg.xpDrop, "", 0);
         }
 
         // ------------------------------------------------------------------ Bausteine
         private static void AddHealth(List<InspectStat> list, Vitals v)
         {
             list.Add(InspectStat.Make(StatId.Health, "", v.Health, v.Health, "", 0,
-                $" / {Mathf.CeilToInt(v.MaxHealth)} HP"));
+                Texts.Stats.HealthSuffix(Mathf.CeilToInt(v.MaxHealth))));
 
             if (v.Shield > 0.5f)
-                list.Add(InspectStat.Make(StatId.Shield, "Shield", v.Shield, v.Shield));
+                list.Add(InspectStat.Make(StatId.Shield, N(StatId.Shield), v.Shield, v.Shield));
 
             if (v.HasBlock)
             {
                 // int.MaxValue = zeitlicher Block ohne Ladungen
                 bool timed = v.BlockCharges > 999;
-                list.Add(InspectStat.Make(StatId.Block, "Block", timed ? 1f : v.BlockCharges, timed ? 1f : v.BlockCharges,
-                    "", 0, timed ? " Block aktiv" : " Block-Ladung(en)"));
+                list.Add(InspectStat.Make(StatId.Block, N(StatId.Block), timed ? 1f : v.BlockCharges, timed ? 1f : v.BlockCharges,
+                    "", 0, timed ? Texts.Stats.BlockActive : Texts.Stats.BlockCharges));
             }
 
             if (v.AntiHealPercent > 0f)
-                list.Add(InspectStat.Make(StatId.AntiHeal, "Anti-Heal", v.AntiHealPercent * 100f, v.AntiHealPercent * 100f, "%", 0));
+                list.Add(InspectStat.Make(StatId.AntiHeal, N(StatId.AntiHeal), v.AntiHealPercent * 100f, v.AntiHealPercent * 100f, "%", 0));
         }
 
         /// <summary>Rüstung und MR: Grundwert gegen aktuellen Wert (Shred senkt, Buffs erhöhen).</summary>
@@ -164,10 +211,10 @@ public enum StatId
             float mr = v != null ? v.EffectiveMagicResist : baseMr;
 
             if (!Mathf.Approximately(baseArmor, 0f) || !Mathf.Approximately(armor, baseArmor))
-                list.Add(InspectStat.Make(StatId.Armor, "Armor", armor, baseArmor));
+                list.Add(InspectStat.Make(StatId.Armor, N(StatId.Armor), armor, baseArmor));
 
             if (!Mathf.Approximately(baseMr, 0f) || !Mathf.Approximately(mr, baseMr))
-                list.Add(InspectStat.Make(StatId.MagicResist, "Magic Resist", mr, baseMr));
+                list.Add(InspectStat.Make(StatId.MagicResist, N(StatId.MagicResist), mr, baseMr));
         }
 
         private static void AddOffense(List<InspectStat> list, OffenseStats o, float auraOmnivamp = 0f)
@@ -176,18 +223,18 @@ public enum StatId
 
             if (o.critChance > 0f)
             {
-                list.Add(InspectStat.Make(StatId.Crit, "Crit", o.critChance * 100f, o.critChance * 100f, "%", 0));
-                list.Add(InspectStat.Make(StatId.CritDamage, "Crit Damage", o.critDamage * 100f, o.critDamage * 100f, "%", 0));
+                list.Add(InspectStat.Make(StatId.Crit, N(StatId.Crit), o.critChance * 100f, o.critChance * 100f, "%", 0));
+                list.Add(InspectStat.Make(StatId.CritDamage, N(StatId.CritDamage), o.critDamage * 100f, o.critDamage * 100f, "%", 0));
             }
 
-            AddIfNonZero(list, StatId.Lethality, "Lethality", o.lethality, "", 0);
-            AddIfNonZero(list, StatId.ArmorPen, "Armor Pen", o.armorPenPercent * 100f, "%", 0);
-            AddIfNonZero(list, StatId.MagicPen, "Magic Pen", o.magicPenFlat, "", 0);
-            AddIfNonZero(list, StatId.MagicPenPercent, "Magic Pen", o.magicPenPercent * 100f, "%", 0);
+            AddIfNonZero(list, StatId.Lethality, N(StatId.Lethality), o.lethality, "", 0);
+            AddIfNonZero(list, StatId.ArmorPen, N(StatId.ArmorPen), o.armorPenPercent * 100f, "%", 0);
+            AddIfNonZero(list, StatId.MagicPen, N(StatId.MagicPen), o.magicPenFlat, "", 0);
+            AddIfNonZero(list, StatId.MagicPenPercent, N(StatId.MagicPenPercent), o.magicPenPercent * 100f, "%", 0);
 
             float omni = o.omnivamp * 100f;
             if (!Mathf.Approximately(omni, 0f))
-                list.Add(InspectStat.Make(StatId.Omnivamp, "Omnivamp",
+                list.Add(InspectStat.Make(StatId.Omnivamp, N(StatId.Omnivamp),
                     omni * (1f + auraOmnivamp), omni, "%", 0));
         }
 

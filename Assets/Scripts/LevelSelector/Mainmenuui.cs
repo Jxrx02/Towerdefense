@@ -30,9 +30,6 @@ namespace LevelSelector
         [SerializeField] private Button btnSettings;
         [SerializeField] private Button btnQuit;
 
-        [Header("Texte")]
-        [SerializeField] private Text txtProfile;
-
         private bool _open;
         private bool _firstOpen;
         private bool _inResearch;
@@ -90,6 +87,10 @@ namespace LevelSelector
             if (LevelLoadoutUI.IsOpen || LevelLoadoutUI.LastClosedFrame == Time.frameCount)
                 return;
 
+            // Die Progressionsleiste schließt sich selbst mit ESC. Dieselbe Taste darf nicht auch das Menü schließen.
+            if (ProgressionBarUI.IsExpanded || ProgressionBarUI.LastCollapsedFrame == Time.frameCount)
+                return;
+
             if (confirmDialog != null && confirmDialog.IsOpen)
             {
                 confirmDialog.Close();
@@ -129,8 +130,6 @@ namespace LevelSelector
 
             txtPlay.text = _firstOpen ? "Play" : "Continue";
 
-            if (txtProfile != null)
-                txtProfile.text = $"Player level {PlayerProgress.CurrentLevel}";
         }
 
         public void Close()

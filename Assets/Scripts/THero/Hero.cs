@@ -992,3 +992,34 @@ namespace TowerDefense
         }
     }
 }
+
+
+namespace TowerDefense
+{
+    /// <summary>
+    /// Werte des Helden für die Inspektion (InspectStats, StatInfoPanel).
+    /// Dieselben Formeln wie im Kampf: IHeroCombatHost.AttackDamage / AttackSpeedMultiplier und Hero.Move.
+    /// </summary>
+    public partial class Hero
+    {
+        public Stamina StaminaComponent => stamina;
+
+        /// <summary>Schaden ohne Aura und Perks (Waffe bzw. Basiswert plus Level-Ups).</summary>
+        public float AttackDamageBase => damage;
+
+        /// <summary>Schaden inklusive Aura und Perk-Multiplikator (wie IHeroCombatHost.AttackDamage).</summary>
+        public float AttackDamageEffective => damage * (1f + AuraDamage) * loadoutDamageMultiplier;
+
+        /// <summary>Angriffstempo-Faktor ohne Aura und Perks.</summary>
+        public float AttackSpeedBase => attackSpeedMultiplier;
+
+        /// <summary>Angriffstempo-Faktor inklusive Aura und Perks (wie IHeroCombatHost.AttackSpeedMultiplier).</summary>
+        public float AttackSpeedEffective => attackSpeedMultiplier * (1f + AuraAttackSpeed) * loadoutAttackSpeedMultiplier;
+
+        /// <summary>Lauftempo ohne Waffenfaktor.</summary>
+        public float RunSpeedBase => runSpeed;
+
+        /// <summary>Lauftempo beim Laufen ohne Aktion (Lauftempo x Waffenfaktor, wie in Hero.Move).</summary>
+        public float RunSpeedEffective => runSpeed * (weapon != null ? weapon.moveSpeedMultiplier : 1f);
+    }
+}

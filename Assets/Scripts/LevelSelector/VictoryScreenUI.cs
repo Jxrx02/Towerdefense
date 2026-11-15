@@ -37,6 +37,8 @@ namespace TowerDefense
 
         [Header("Neuer Perk (Popup)")]
         [SerializeField] private GameObject perkPopup;
+        [Tooltip("Überschrift des Popups (NEW PERK / NEW WEAPON / NEW MUTATOR). Optional.")]
+        [SerializeField] private Text txtUnlockHeader;
         [SerializeField] private Text txtPerkName;
         [SerializeField] private Text txtPerkDescription;
         [SerializeField] private Image imgPerkIcon;
@@ -168,22 +170,30 @@ namespace TowerDefense
             SetFill(1f);
             yield return new WaitForSecondsRealtime(0.25f);
 
-            PerkDefinition perk = PlayerProgress.GetPerkUnlockedAtLevel(newLevel);
-            if (perk != null)
-                yield return ShowPerkPopup(perk);
+            // Mit einer Stufe können mehrere Inhalte freigeschaltet werden (Perk, Mutatoren, Waffen): einer nach dem anderen
+            foreach (ProgressionUnlock unlock in PlayerProgress.GetUnlocksAtLevel(newLevel))
+                yield return ShowUnlockPopup(unlock);
 
-            txtLevel.text = $"LEVEL {newLevel}";
+            txtLevel.text = Texts.Progression.Level(newLevel);
             SetFill(0f);
         }
 
-        private IEnumerator ShowPerkPopup(PerkDefinition perk)
+        private IEnumerator ShowUnlockPopup(ProgressionUnlock unlock)
         {
             _popupDismissed = false;
 
-            txtPerkName.text = perk.perkName;
-            txtPerkDescription.text = perk.description;
-            imgPerkIcon.sprite = perk.icon;
-            imgPerkIcon.enabled = perk.icon != null;
+            if (txtUnlockHeader != null)
+                txtUnlockHeader.text = Texts.Progression.NewUnlockHeader(unlock.kind);
+
+            // Waffen müssen nach der Freischaltung noch gekauft werden
+            string description = unlock.kind == UnlockKind.Weapon
+                ? $"{unlock.description}\n\n{Texts.Progression.WeaponPurchaseHint}"
+                : unlock.description;
+
+            txtPerkName.text = unlock.name;
+            txtPerkDescription.text = description;
+            imgPerkIcon.sprite = unlock.icon;
+            imgPerkIcon.enabled = unlock.icon != null;
 
             perkPopup.SetActive(true);
             yield return new WaitUntil(() => _popupDismissed);
@@ -194,18 +204,18 @@ namespace TowerDefense
 
         private void ApplyState(PlayerProgress.LevelState state)
         {
-            txtLevel.text = $"LEVEL {state.level}";
+            txtLevel.text = Texts.Progression.Level(state.level);
             txtXp.text = state.isMax ? "MAX" : $"{state.xpIntoLevel} / {state.xpForNext}";
             SetFill(state.Fraction);
 
             // Vorschau: nächster Perk, der noch freigeschaltet wird
-            bool hasNext = PlayerProgress.GetNextUnlock(state.level, out PerkDefinition perk, out _);
+            bool hasNext = PlayerProgress.GetNextUnlock(state.level, out ProgressionUnlock next);
             nextPerkRoot.SetActive(hasNext);
 
             if (hasNext)
             {
-                nextPerkIcon.sprite = perk.icon;
-                nextPerkIcon.enabled = perk.icon != null;
+                nextPerkIcon.sprite = next.icon;
+                nextPerkIcon.enabled = next.icon != null;
             }
         }
 

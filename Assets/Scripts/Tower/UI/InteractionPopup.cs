@@ -1321,8 +1321,27 @@ private static string TowerTitle(Tower t)
                 entry.Setup(icon, stat.baseValue, stat.value, color, label, stat.valueSuffix, stat.decimals);
             else
                 entry.SetupSingle(icon, stat.value, color, label, stat.valueSuffix, stat.decimals);
+ 
+            // Info-Button: erklärt den Stat (Wirkung, Formel, Einflüsse). Pro Zeile nur einmal anlegen.
+            if (!entry.HasInfo)
+            {
+                StatId id = stat.id;
+                StatSubject subject = CurrentInspectSubject();
+                Font font = upgradeTitle != null ? upgradeTitle.font : null;
+ 
+                entry.SetInfo(() => StatInfoPanel.Show(id, inspectBuffer, subject, font));
+            }
         }
-
+        /// <summary>Wessen Werte angezeigt werden: manche Stats funktionieren bei Held, Turm und Gegner anders.</summary>
+        private StatSubject CurrentInspectSubject()
+        {
+            switch (inspectTarget)
+            {
+                case Hero _: return StatSubject.Hero;     // Hero vor Tower prüfen, Hero ist ein Tower
+                case Enemy _: return StatSubject.Enemy;
+                default: return StatSubject.Tower;
+            }
+        }
         private Sprite IconFor(StatId id)
         {
             switch (id)
@@ -1390,7 +1409,8 @@ private static string TowerTitle(Tower t)
                 case StatId.GiveRegen:    return new Color(0.3f, 1f, 0.3f);
                 case StatId.GiveOmnivamp: return omnivampColor;
                 case StatId.XpDrop: return new Color(0.62f, 0.80f, 0.38f);   // gleiches Grün wie der XP-Balken
-                
+                case StatId.Stamina: return new Color(1f, 0.82f, 0.25f);
+
                 default: return Color.white;
             }
         }

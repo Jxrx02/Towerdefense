@@ -3211,3 +3211,400 @@ namespace TowerDefense.EditorTools
     }
 }
 #endif
+
+#if UNITY_EDITOR
+
+namespace TowerDefense.EditorTools
+{
+    /// <summary>
+    /// Baut die Progressionsleiste am unteren Rand des Hauptmenüs (wird vom Builder "Hauptmenü + Übersichtskarte" aufgerufen).
+    ///
+    ///   ProgressionBar (ProgressionBarUI, unten verankert, über die ganze Breite, wird verschoben)
+    ///     Content
+    ///       Background, TopLine
+    ///       Header   Klickfläche: Chevron | LEVEL n | XP-Balken | nächste Freischaltung | Hinweis
+    ///       Body     Levelachse (horizontal scrollbar) | Detailkarte
+    ///
+    /// Prefabs: ProgressionColumn (eine Heldenstufe) und ProgressionItem (ein Perk, Mutator oder eine Waffe).
+    /// </summary>
+    public static partial class PauseMenuBuilder
+    {
+        private const float ProgressionHeight = 440f;
+        private const float ProgressionPeek = 68f;
+        private const float ProgressionColumnWidth = 200f;
+        private const float ProgressionItemWidth = 184f;
+        private const float ProgressionItemHeight = 64f;
+
+        private static ProgressionBarUI CreateProgressionBar(Transform parent, Font font)
+        {
+            ProgressionItemView itemPrefab = CreateProgressionItemPrefab(font);
+            ProgressionColumnView columnPrefab = CreateProgressionColumnPrefab(font);
+
+            // ---------- Wurzel (wird verschoben) ----------
+            RectTransform rootRect = NewRect("ProgressionBar", parent);
+            rootRect.anchorMin = new Vector2(0f, 0f);
+            rootRect.anchorMax = new Vector2(1f, 0f);
+            rootRect.pivot = new Vector2(0.5f, 0f);
+            rootRect.sizeDelta = new Vector2(0f, ProgressionHeight);
+            rootRect.anchoredPosition = new Vector2(0f, -(ProgressionHeight - ProgressionPeek));   // eingeklappt
+
+            CanvasGroup group = rootRect.gameObject.AddComponent<CanvasGroup>();
+            ProgressionBarUI bar = rootRect.gameObject.AddComponent<ProgressionBarUI>();
+
+            RectTransform content = NewRect("Content", rootRect);
+            Stretch(content);
+
+            Image background = NewImage("Background", content, new Color(PanelColor.r, PanelColor.g, PanelColor.b, 0.97f), true);
+            Stretch(background.rectTransform);
+
+            Image topLine = NewImage("TopLine", content, BorderColor);
+            topLine.rectTransform.anchorMin = new Vector2(0f, 1f);
+            topLine.rectTransform.anchorMax = new Vector2(1f, 1f);
+            topLine.rectTransform.pivot = new Vector2(0.5f, 1f);
+            topLine.rectTransform.sizeDelta = new Vector2(0f, 2f);
+
+            // ---------- Kopfzeile ----------
+            Image headerImage = NewImage("Header", content, new Color(0f, 0f, 0f, 0f), true);
+            RectTransform header = headerImage.rectTransform;
+            header.anchorMin = new Vector2(0f, 1f);
+            header.anchorMax = new Vector2(1f, 1f);
+            header.pivot = new Vector2(0.5f, 1f);
+            header.sizeDelta = new Vector2(0f, ProgressionPeek);
+            AddHorizontal(header.gameObject, new RectOffset(40, 40, 10, 10), 22f, TextAnchor.MiddleCenter);
+
+            Button headerButton = headerImage.gameObject.AddComponent<Button>();
+            headerButton.targetGraphic = headerImage;
+            headerButton.transition = Selectable.Transition.None;
+            headerButton.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            Text chevron = NewText("Chevron", header, font, BodySize + 8, GoldColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            chevron.text = ">";
+            SetSize(chevron.gameObject, 30f, 30f);
+
+            Text txtLevel = NewText("Level", header, font, BodySize + 6, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtLevel.gameObject, 170f, 34f);
+
+            Image xpBack = NewImage("XpBar", header, BarBackColor);
+            SetSize(xpBack.gameObject, height: 26f, flexibleWidth: 1f);
+            AddBorder(xpBack.gameObject);
+
+            Image xpFill = NewImage("Fill", xpBack.transform, SelectedColor);
+            Stretch(xpFill.rectTransform);
+
+            Text txtXp = NewText("XpText", xpBack.transform, font, SmallSize, TextColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Stretch(txtXp.rectTransform);
+            AddOutline(txtXp);
+
+            RectTransform nextRoot = NewRect("Next", header);
+            AddHorizontal(nextRoot.gameObject, new RectOffset(0, 0, 0, 0), 10f, TextAnchor.MiddleLeft);
+            SetSize(nextRoot.gameObject, width: 420f, height: 40f);
+
+            Image nextIconBack = NewImage("IconBack", nextRoot, KeyColor);
+            SetSize(nextIconBack.gameObject, 36f, 36f);
+            AddBorder(nextIconBack.gameObject);
+            Image nextIcon = NewImage("Icon", nextIconBack.transform, Color.white);
+            nextIcon.preserveAspect = true;
+            Stretch(nextIcon.rectTransform);
+            nextIcon.rectTransform.offsetMin = new Vector2(3f, 3f);
+            nextIcon.rectTransform.offsetMax = new Vector2(-3f, -3f);
+
+            Text txtNext = NewText("NextText", nextRoot, font, SmallSize, DimColor, TextAnchor.MiddleLeft);
+            SetSize(txtNext.gameObject, flexibleWidth: 1f);
+
+            Text txtHint = NewText("Hint", header, font, SmallSize, DimColor, TextAnchor.MiddleRight);
+            SetSize(txtHint.gameObject, 180f, 30f);
+
+            // ---------- Körper: Levelachse + Details ----------
+            RectTransform body = NewRect("Body", content);
+            body.anchorMin = new Vector2(0f, 0f);
+            body.anchorMax = new Vector2(1f, 1f);
+            body.offsetMin = Vector2.zero;
+            body.offsetMax = new Vector2(0f, -ProgressionPeek);
+
+            CanvasGroup bodyGroup = body.gameObject.AddComponent<CanvasGroup>();
+            HorizontalLayoutGroup bodyLayout = AddHorizontal(body.gameObject, new RectOffset(40, 40, 8, 24), 24f, TextAnchor.UpperLeft);
+            bodyLayout.childForceExpandHeight = true;
+
+            // Levelachse
+            Image timeline = NewImage("Timeline", body, new Color(0f, 0f, 0f, 0.22f), true);
+            SetSize(timeline.gameObject, flexibleWidth: 1f);
+            AddBorder(timeline.gameObject);
+
+            RectTransform viewport = NewRect("Viewport", timeline.transform);
+            Stretch(viewport);
+            viewport.offsetMin = new Vector2(8f, 6f);
+            viewport.offsetMax = new Vector2(-8f, -6f);
+            viewport.gameObject.AddComponent<RectMask2D>();
+
+            RectTransform timelineContent = NewRect("Content", viewport);
+            timelineContent.anchorMin = new Vector2(0f, 0f);
+            timelineContent.anchorMax = new Vector2(0f, 1f);
+            timelineContent.pivot = new Vector2(0f, 0.5f);
+            timelineContent.sizeDelta = Vector2.zero;
+            HorizontalLayoutGroup timelineLayout = AddHorizontal(timelineContent.gameObject, new RectOffset(0, 0, 0, 0), 0f, TextAnchor.UpperLeft);
+            timelineLayout.childForceExpandHeight = false;
+            ContentSizeFitter timelineFitter = timelineContent.gameObject.AddComponent<ContentSizeFitter>();
+            timelineFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+            ScrollRect scroll = timeline.gameObject.AddComponent<ScrollRect>();
+            scroll.viewport = viewport;
+            scroll.content = timelineContent;
+            scroll.horizontal = true;
+            scroll.vertical = false;
+            scroll.movementType = ScrollRect.MovementType.Clamped;
+            scroll.scrollSensitivity = 40f;
+
+            // Detailkarte
+            RectTransform detail = CreateCard("DetailCard", body, out GameObject detailOuter, new RectOffset(16, 16, 12, 14));
+            SetSize(detailOuter, width: 440f, flexibleWidth: 0f);
+            detail.gameObject.AddComponent<LayoutElement>().flexibleHeight = 1f;
+
+            Text detailEmptyText = NewText("Empty", detail, font, SmallSize + 2, DimColor, TextAnchor.MiddleLeft, wrap: true);
+
+            RectTransform detailRoot = NewRect("Detail", detail);
+            AddVertical(detailRoot.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            detailRoot.gameObject.AddComponent<LayoutElement>().flexibleHeight = 1f;
+
+            RectTransform head = NewRect("Head", detailRoot);
+            AddHorizontal(head.gameObject, new RectOffset(0, 0, 0, 0), 12f, TextAnchor.MiddleLeft);
+
+            Image detailIconBack = NewImage("IconBack", head, KeyColor);
+            SetSize(detailIconBack.gameObject, 64f, 64f);
+            AddBorder(detailIconBack.gameObject);
+            Image detailIcon = NewImage("Icon", detailIconBack.transform, Color.white);
+            detailIcon.preserveAspect = true;
+            Stretch(detailIcon.rectTransform);
+            detailIcon.rectTransform.offsetMin = new Vector2(6f, 6f);
+            detailIcon.rectTransform.offsetMax = new Vector2(-6f, -6f);
+
+            RectTransform headTexts = NewRect("Texts", head);
+            AddVertical(headTexts.gameObject, new RectOffset(0, 0, 0, 0), 2f);
+            SetSize(headTexts.gameObject, flexibleWidth: 1f);
+            Text txtDetailKind = NewText("Kind", headTexts, font, SmallSize, DimColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            Text txtDetailName = NewText("Name", headTexts, font, BodySize, GoldColor, TextAnchor.MiddleLeft, FontStyle.Bold, wrap: true);
+
+            Image detailAccent = NewImage("Accent", detailRoot, BorderColor);
+            SetSize(detailAccent.gameObject, height: 2f);
+
+            Text txtDetailBody = NewText("Body", detailRoot, font, SmallSize - 1, TextColor, TextAnchor.UpperLeft, wrap: true);
+            txtDetailBody.verticalOverflow = VerticalWrapMode.Truncate;
+            txtDetailBody.lineSpacing = 1.2f;
+            LayoutElement bodyElement = txtDetailBody.gameObject.AddComponent<LayoutElement>();
+            bodyElement.minHeight = 48f;
+            bodyElement.flexibleHeight = 1f;
+
+            Text txtDetailLevel = NewText("Level", detailRoot, font, SmallSize, GoodTextColor(), TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtDetailLevel.gameObject, height: 20f);
+            Text txtDetailMultiplier = NewText("Multiplier", detailRoot, font, SmallSize, DimColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(txtDetailMultiplier.gameObject, height: 20f);
+            Text txtDetailHint = NewText("Hint", detailRoot, font, SmallSize, DimColor, TextAnchor.MiddleLeft);
+            SetSize(txtDetailHint.gameObject, height: 20f);
+
+            Button btnBuy = NewMenuButton(detailRoot, font, "Buy", SmallSize + 2, 40f);
+            btnBuy.GetComponent<Image>().color = new Color(0.55f, 0.36f, 0.15f, 1f);
+            Text txtBuy = btnBuy.GetComponentInChildren<Text>();
+            txtBuy.color = GoldColor;
+
+            detailRoot.gameObject.SetActive(false);
+
+            // ---------- Verdrahten ----------
+            SerializedObject so = new SerializedObject(bar);
+
+            Set(so, "content", content.gameObject);
+            Set(so, "panelGroup", group);
+
+            Set(so, "headerButton", headerButton);
+            Set(so, "chevron", chevron.rectTransform);
+            Set(so, "txtLevel", txtLevel);
+            Set(so, "txtXp", txtXp);
+            Set(so, "barFill", xpFill.rectTransform);
+            Set(so, "txtHint", txtHint);
+            Set(so, "nextRoot", nextRoot.gameObject);
+            Set(so, "nextIcon", nextIcon);
+            Set(so, "txtNext", txtNext);
+
+            Set(so, "bodyGroup", bodyGroup);
+            Set(so, "timelineScroll", scroll);
+            Set(so, "timelineContent", timelineContent);
+            Set(so, "columnPrefab", columnPrefab);
+            Set(so, "itemPrefab", itemPrefab);
+
+            Set(so, "detailEmpty", detailEmptyText.gameObject);
+            Set(so, "txtDetailEmpty", detailEmptyText);
+            Set(so, "detailRoot", detailRoot.gameObject);
+            Set(so, "detailIcon", detailIcon);
+            Set(so, "txtDetailKind", txtDetailKind);
+            Set(so, "txtDetailName", txtDetailName);
+            Set(so, "txtDetailBody", txtDetailBody);
+            Set(so, "txtDetailLevel", txtDetailLevel);
+            Set(so, "txtDetailMultiplier", txtDetailMultiplier);
+            Set(so, "txtDetailHint", txtDetailHint);
+            Set(so, "btnBuy", btnBuy);
+            Set(so, "txtBuy", txtBuy);
+            so.ApplyModifiedProperties();
+
+            return bar;
+        }
+
+        private static Color GoodTextColor() => XpColor;
+
+        // ------------------------------------------------------------------
+        // Prefabs
+        // ------------------------------------------------------------------
+
+        /// <summary>Ein Inhalt auf der Levelachse: Icon (Farbe je Art), Name, Zustand.</summary>
+        private static ProgressionItemView CreateProgressionItemPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ProgressionItem", typeof(RectTransform));
+            Image border = root.AddComponent<Image>();
+            border.color = BorderColor;
+            AddVertical(root, new RectOffset(2, 2, 2, 2), 0f);
+            SetSize(root, ProgressionItemWidth, ProgressionItemHeight);
+
+            // Auswahlrahmen: liegt hinter dem Inhalt und zählt nicht im Layout
+            Image selected = NewImage("Selected", root.transform, SelectedColor);
+            selected.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
+            Stretch(selected.rectTransform);
+            selected.rectTransform.offsetMin = new Vector2(-3f, -3f);
+            selected.rectTransform.offsetMax = new Vector2(3f, 3f);
+            selected.transform.SetAsFirstSibling();
+
+            Image inner = NewImage("Inner", root.transform, ButtonColor, true);
+            AddHorizontal(inner.gameObject, new RectOffset(6, 6, 6, 6), 8f, TextAnchor.MiddleLeft);
+
+            Image iconBack = NewImage("IconBack", inner.transform, ButtonColor);
+            SetSize(iconBack.gameObject, 48f, 48f);
+
+            Image icon = NewImage("Icon", iconBack.transform, Color.white);
+            icon.preserveAspect = true;
+            Stretch(icon.rectTransform);
+            icon.rectTransform.offsetMin = new Vector2(4f, 4f);
+            icon.rectTransform.offsetMax = new Vector2(-4f, -4f);
+
+            Image lockOverlay = NewImage("Lock", iconBack.transform, new Color(0f, 0f, 0f, 0.55f));
+            Stretch(lockOverlay.rectTransform);
+
+            RectTransform texts = NewRect("Texts", inner.transform);
+            AddVertical(texts.gameObject, new RectOffset(0, 0, 0, 0), 2f);
+            SetSize(texts.gameObject, flexibleWidth: 1f);
+
+            Text name = NewText("Name", texts, font, SmallSize - 2, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold, wrap: true);
+            name.verticalOverflow = VerticalWrapMode.Truncate;
+            SetSize(name.gameObject, height: 34f);
+
+            Text state = NewText("State", texts, font, SmallSize - 2, DimColor, TextAnchor.MiddleLeft, FontStyle.Bold);
+            SetSize(state.gameObject, height: 18f);
+
+            Button button = root.AddComponent<Button>();
+            button.targetGraphic = inner;
+            button.colors = ButtonColors();
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+            ProgressionItemView view = root.AddComponent<ProgressionItemView>();
+            SerializedObject so = new SerializedObject(view);
+            Set(so, "border", border);
+            Set(so, "iconBackground", iconBack);
+            Set(so, "icon", icon);
+            Set(so, "lockOverlay", lockOverlay.gameObject);
+            Set(so, "selectedFrame", selected.gameObject);
+            Set(so, "txtName", name);
+            Set(so, "txtState", state);
+            Set(so, "button", button);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ProgressionItem.prefab");
+            Object.DestroyImmediate(root);
+            return saved.GetComponent<ProgressionItemView>();
+        }
+
+        /// <summary>Eine Heldenstufe: Knoten mit Verbindungslinien oben, darunter die Inhalte.</summary>
+        private static ProgressionColumnView CreateProgressionColumnPrefab(Font font)
+        {
+            EnsureFolder(PrefabFolder);
+
+            GameObject root = new GameObject("ProgressionColumn", typeof(RectTransform));
+            VerticalLayoutGroup layout = AddVertical(root, new RectOffset(0, 0, 0, 0), 6f);
+            layout.childAlignment = TextAnchor.UpperCenter;
+            SetSize(root, width: ProgressionColumnWidth);
+
+            // ---- Knotenbereich (keine Layout-Gruppe, alles per Anker) ----
+            RectTransform nodeArea = NewRect("NodeArea", root.transform);
+            SetSize(nodeArea.gameObject, height: 62f);
+
+            const float lineY = -22f;   // Mitte des Knotens
+
+            RectTransform leftLine = NewLine("LeftLine", nodeArea, 0f, 0.5f, lineY, out RectTransform leftFill);
+            RectTransform rightLine = NewLine("RightLine", nodeArea, 0.5f, 1f, lineY, out RectTransform rightFill);
+
+            Image nodeBorder = NewImage("Node", nodeArea, BorderColor);
+            RectTransform node = nodeBorder.rectTransform;
+            node.anchorMin = node.anchorMax = new Vector2(0.5f, 1f);
+            node.pivot = new Vector2(0.5f, 0.5f);
+            node.sizeDelta = new Vector2(40f, 40f);
+            node.anchoredPosition = new Vector2(0f, lineY);
+
+            Image nodeBackground = NewImage("Background", node, ButtonColor);
+            Stretch(nodeBackground.rectTransform);
+            nodeBackground.rectTransform.offsetMin = new Vector2(3f, 3f);
+            nodeBackground.rectTransform.offsetMax = new Vector2(-3f, -3f);
+
+            Text txtLevel = NewText("Level", node, font, BodySize - 2, TextColor, TextAnchor.MiddleCenter, FontStyle.Bold);
+            Stretch(txtLevel.rectTransform);
+
+            Text txtXp = NewText("Xp", nodeArea, font, SmallSize - 3, DimColor, TextAnchor.LowerCenter);
+            txtXp.rectTransform.anchorMin = new Vector2(0f, 0f);
+            txtXp.rectTransform.anchorMax = new Vector2(1f, 0f);
+            txtXp.rectTransform.pivot = new Vector2(0.5f, 0f);
+            txtXp.rectTransform.sizeDelta = new Vector2(0f, 16f);
+            txtXp.rectTransform.anchoredPosition = Vector2.zero;
+
+            // ---- Inhalte ----
+            RectTransform items = NewRect("Items", root.transform);
+            VerticalLayoutGroup itemLayout = AddVertical(items.gameObject, new RectOffset(0, 0, 0, 0), 6f);
+            itemLayout.childAlignment = TextAnchor.UpperCenter;
+            itemLayout.childForceExpandWidth = false;
+
+            ProgressionColumnView view = root.AddComponent<ProgressionColumnView>();
+            SerializedObject so = new SerializedObject(view);
+            Set(so, "leftLine", leftLine);
+            Set(so, "leftFill", leftFill);
+            Set(so, "rightLine", rightLine);
+            Set(so, "rightFill", rightFill);
+            Set(so, "node", node);
+            Set(so, "nodeBorder", nodeBorder);
+            Set(so, "nodeBackground", nodeBackground);
+            Set(so, "txtLevel", txtLevel);
+            Set(so, "txtXp", txtXp);
+            Set(so, "itemContainer", items);
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            GameObject saved = PrefabUtility.SaveAsPrefabAsset(root, $"{PrefabFolder}/ProgressionColumn.prefab");
+            Object.DestroyImmediate(root);
+            return saved.GetComponent<ProgressionColumnView>();
+        }
+
+        /// <summary>Halbe Verbindungslinie (links oder rechts vom Knoten) mit Füllung für den Fortschritt.</summary>
+        private static RectTransform NewLine(string name, Transform parent, float fromX, float toX, float y, out RectTransform fill)
+        {
+            Image back = NewImage(name, parent, BarBackColor);
+            RectTransform rect = back.rectTransform;
+            rect.anchorMin = new Vector2(fromX, 1f);
+            rect.anchorMax = new Vector2(toX, 1f);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = new Vector2(0f, 6f);
+            rect.anchoredPosition = new Vector2(0f, y);
+
+            Image fillImage = NewImage("Fill", rect, GoldColor);
+            fill = fillImage.rectTransform;
+            fill.anchorMin = new Vector2(0f, 0f);
+            fill.anchorMax = new Vector2(0f, 1f);
+            fill.offsetMin = Vector2.zero;
+            fill.offsetMax = Vector2.zero;
+
+            return rect;
+        }
+    }
+}
+#endif

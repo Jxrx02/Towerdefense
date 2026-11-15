@@ -23,6 +23,9 @@ namespace LevelSelector
         // Spieler-XP für das Level-System (Perk-Freischaltungen). Alte Savegames laden mit 0.
         public int playerXp;
 
+        // Gekaufte Waffen (Asset-Name der WeaponDefinition). Alte Savegames laden mit leerer Liste.
+        public List<string> ownedWeapons = new();
+
         public List<LevelProgress> levels = new();
     }
 
@@ -77,6 +80,33 @@ namespace LevelSelector
 
             Instance.data.playerXp = Mathf.Max(0, Instance.data.playerXp + amount);
             Instance.Save();
+        }
+
+        // ── Gekaufte Waffen ───────────────────────────────────────
+
+        public static bool IsWeaponPurchased(string weaponId)
+        {
+            return Instance != null &&
+                   Instance.data.ownedWeapons != null &&
+                   Instance.data.ownedWeapons.Contains(weaponId);
+        }
+
+        public static void MarkWeaponPurchased(string weaponId)
+        {
+            if (Instance == null)
+            {
+                Debug.LogWarning("LevelProgressManager.MarkWeaponPurchased: Kein LevelProgressManager vorhanden, Kauf wurde nicht gespeichert.");
+                return;
+            }
+
+            if (Instance.data.ownedWeapons == null)
+                Instance.data.ownedWeapons = new List<string>();
+
+            if (!Instance.data.ownedWeapons.Contains(weaponId))
+            {
+                Instance.data.ownedWeapons.Add(weaponId);
+                Instance.Save();
+            }
         }
 
         /// <summary>Zum Testen: Spieler-XP zurücksetzen.</summary>

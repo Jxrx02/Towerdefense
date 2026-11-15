@@ -4,8 +4,12 @@ using UnityEngine;
 namespace LevelSelector.Definitions
 {
     /// <summary>
-    /// Spieler-Level mit Perk-Freischaltungen. Das Asset muss unter Assets/Resources/PlayerProgression.asset liegen
-    /// (der Victory-Builder legt es an, falls es fehlt).
+    /// Spieler-Level mit Freischaltungen (Perks, Waffen, Mutatoren). Einzige Stelle, an der festgelegt wird,
+    /// auf welchem Heldenlevel etwas freigeschaltet wird. Das Asset muss unter Assets/Resources/PlayerProgression.asset
+    /// liegen (der Victory-Builder legt es an, falls es fehlt).
+    ///
+    /// Inhalte, die in keiner Stufe stehen, sind von Beginn an freigeschaltet.
+    /// Waffen müssen nach der Freischaltung zusätzlich gekauft werden (WeaponDefinition.purchaseCost, 0 = kostenlos).
     /// </summary>
     [CreateAssetMenu(fileName = "PlayerProgression", menuName = "TowerDefense/Progression/Player Progression")]
     public class PlayerProgressionDefinition : ScriptableObject
@@ -25,5 +29,11 @@ namespace LevelSelector.Definitions
 
         [Tooltip("Perk, der mit dieser Stufe freigeschaltet wird (leer = keiner).")]
         public PerkDefinition unlockPerk;
+
+        [Tooltip("Mutatoren, die mit dieser Stufe freigeschaltet werden.")]
+        public List<MutatorDefinition> unlockMutators = new();
+
+        [Tooltip("Waffen, die mit dieser Stufe zum Kauf freigeschaltet werden.")]
+        public List<WeaponDefinition> unlockWeapons = new();
     }
 }

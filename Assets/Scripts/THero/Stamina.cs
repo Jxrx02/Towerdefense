@@ -43,7 +43,13 @@ namespace TowerDefense
 
         public float Current => current;
         public float Max => maxStamina;
-        public float Percent => maxStamina > 0f ? current / maxStamina : 0f;
+ 
+        // Nur lesbar, für die Erklärung in der Inspektion (StatInfoPanel)
+        public float RegenPerSecond => regenPerSecond;
+        public float RegenDelay => regenDelay;
+        public float ExhaustionRecoverFraction => exhaustionRecoverFraction;
+        public float ExhaustedRegenMultiplier => exhaustedRegenMultiplier;
+        
         public bool IsExhausted { get; private set; }
 
         /// <summary>Z. B. während des Aufladens eines Angriffs, damit sich die Ausdauer dabei nicht füllt</summary>

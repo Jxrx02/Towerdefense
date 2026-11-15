@@ -70,6 +70,9 @@ namespace LevelSelector
         [SerializeField] private Text txtDetailName;
         [SerializeField] private Text txtDetailMultiplier;
         [SerializeField] private Text txtDetailBody;
+        [Tooltip("Kauf-Button für freigeschaltete, noch nicht gekaufte Waffen (optional)")]
+        [SerializeField] private Button btnDetailBuy;
+        [SerializeField] private Text txtDetailBuy;
 
         [Header("Zusammenfassung / Buttons")]
         [SerializeField] private Text txtSummaryWeapon;
@@ -99,6 +102,7 @@ namespace LevelSelector
         private const int MaxWeapons = 1;
 
         private LevelDefinition currentLevel;
+        private WeaponDefinition buyTarget;
 
         private readonly List<LoadoutSelectionButton> weaponButtons = new();
         private readonly List<LoadoutSelectionButton> perkButtons = new();
@@ -119,6 +123,7 @@ namespace LevelSelector
             if (btnStart != null) btnStart.onClick.AddListener(OnStartPressed);
             if (btnClear != null) btnClear.onClick.AddListener(ClearSelection);
             if (btnBack != null) btnBack.onClick.AddListener(Close);
+            if (btnDetailBuy != null) btnDetailBuy.onClick.AddListener(OnBuyPressed);
 
             if (panel != null)
                 panel.SetActive(false);
@@ -263,7 +268,7 @@ namespace LevelSelector
                 if (button == null) continue;
 
                 button.SetupWeapon(weapon, weaponButtons.Count, colorWeapon, OnWeaponSelected);
-                SetLocked(button, false, 0);
+                ApplyWeaponOverlay(button);
                 weaponButtons.Add(button);
             }
         }
@@ -282,7 +287,7 @@ namespace LevelSelector
                 button.SetupPerk(perk, perkButtons.Count, colorPerk, OnPerkSelected);
 
                 bool locked = !PlayerProgress.IsPerkUnlocked(perk);
-                SetLocked(button, locked, PlayerProgress.GetUnlockLevel(perk));
+                SetOverlay(button, locked, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(perk)), null);
 
                 perkButtons.Add(button);
             }
@@ -300,23 +305,49 @@ namespace LevelSelector
                 if (button == null) continue;
 
                 button.SetupMutator(mutator, mutatorButtons.Count, colorMutator, OnMutatorSelected);
-                SetLocked(button, false, 0);
+
+                bool locked = !PlayerProgress.IsMutatorUnlocked(mutator);
+                SetOverlay(button, locked, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(mutator)), null);
                 mutatorButtons.Add(button);
             }
         }
 
-        private static void SetLocked(LoadoutSelectionButton button, bool locked, int unlockLevel)
+        /// <summary>Overlay "Lock" des Buttons: gesperrt (LV n) oder kaufbar (Preis). Ohne Overlay im Prefab passiert nichts.</summary>
+        private static void SetOverlay(LoadoutSelectionButton button, bool show, string text, Color? color)
         {
             Transform overlay = button.transform.Find("Lock");
             if (overlay == null) return;
 
-            overlay.gameObject.SetActive(locked);
+            overlay.gameObject.SetActive(show);
 
-            if (!locked) return;
+            if (!show) return;
 
             Text label = overlay.GetComponentInChildren<Text>(true);
-            if (label != null)
-                label.text = $"LV {unlockLevel}";
+            if (label == null) return;
+
+            label.text = text;
+            if (color.HasValue) label.color = color.Value;
+        }
+
+        /// <summary>Waffe: gesperrt = LV n, kaufbar = Preis, im Besitz = kein Overlay.</summary>
+        private void ApplyWeaponOverlay(LoadoutSelectionButton button)
+        {
+            WeaponDefinition weapon = button.GetWeapon();
+
+            switch (PlayerProgress.GetWeaponState(weapon))
+            {
+                case UnlockState.Locked:
+                    SetOverlay(button, true, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(weapon)), null);
+                    break;
+
+                case UnlockState.Purchasable:
+                    SetOverlay(button, true, Texts.Research.Cost(weapon.purchaseCost), goldColor);
+                    break;
+
+                default:
+                    SetOverlay(button, false, "", null);
+                    break;
+            }
         }
 
         private void BuildQuestUI()
@@ -398,14 +429,14 @@ namespace LevelSelector
             playerBarFill.anchorMin = new Vector2(0f, 0f);
             playerBarFill.anchorMax = new Vector2(Mathf.Clamp01(state.Fraction), 1f);
 
-            bool hasNext = PlayerProgress.GetNextUnlock(state.level, out PerkDefinition perk, out int atLevel);
+            bool hasNext = PlayerProgress.GetNextUnlock(state.level, out ProgressionUnlock next);
             nextUnlockRoot.SetActive(hasNext);
 
             if (hasNext)
             {
-                nextUnlockIcon.sprite = perk.icon;
-                nextUnlockIcon.enabled = perk.icon != null;
-                txtNextUnlock.text = $"Next perk: {perk.perkName} (level {atLevel})";
+                nextUnlockIcon.sprite = next.icon;
+                nextUnlockIcon.enabled = next.icon != null;
+                txtNextUnlock.text = Texts.Progression.NextUnlock(next.kind, next.name, next.unlockLevel);
             }
         }
 
@@ -415,19 +446,88 @@ namespace LevelSelector
         {
             if (index < 0 || index >= weaponButtons.Count) return;
 
-            WeaponDefinition weapon = weaponButtons[index].GetWeapon();
+            SelectWeapon(weaponButtons[index].GetWeapon());
+        }
+
+        /// <summary>Gesperrt: Hinweis. Freigeschaltet, aber nicht gekauft: Details mit Kauf-Button. Im Besitz: ausrüsten.</summary>
+        private void SelectWeapon(WeaponDefinition weapon)
+        {
             if (weapon == null) return;
+
+            string hex = ColorUtility.ToHtmlStringRGB(goldColor);
+            string body =
+                $"<color=#{hex}>{Texts.Progression.PassiveHeader}</color>\n{weapon.passiveDescription}\n\n" +
+                $"<color=#{hex}>{Texts.Progression.ActiveHeader}</color>\n{weapon.activeDescription}";
+
+            string type = Texts.Progression.Kind(UnlockKind.Weapon);
+
+            switch (PlayerProgress.GetWeaponState(weapon))
+            {
+                case UnlockState.Locked:
+                {
+                    string negative = ColorUtility.ToHtmlStringRGB(negativeColor);
+                    ShowDetails(weapon.icon, $"{type} ({Texts.Common.Locked.ToLowerInvariant()})", weapon.weaponName,
+                        $"{body}\n\n<color=#{negative}>{Texts.Progression.UnlocksAtLevel(PlayerProgress.GetUnlockLevel(weapon))}</color>",
+                        "", dimColor);
+                    return;
+                }
+
+                case UnlockState.Purchasable:
+                {
+                    bool affordable = PlayerProgress.CanAffordWeapon(weapon);
+                    string info = affordable
+                        ? Texts.Research.Points(PlayerProgress.PointsBalance)
+                        : Texts.Progression.NotEnoughPoints(weapon.purchaseCost - PlayerProgress.PointsBalance);
+
+                    ShowDetails(weapon.icon, type, weapon.weaponName,
+                        $"{body}\n\n{Texts.Progression.WeaponPurchaseHint}", info,
+                        affordable ? goldColor : negativeColor);
+                    ShowBuy(weapon, affordable);
+                    return;
+                }
+            }
 
             LevelLoadoutManager.Instance.SetWeapon(weapon);
             RefreshSelectionVisuals();
-
-            string hex = ColorUtility.ToHtmlStringRGB(goldColor);
-            ShowDetails(weapon.icon, "Weapon", weapon.weaponName,
-                $"<color=#{hex}>PASSIVE</color>\n{weapon.passiveDescription}\n\n" +
-                $"<color=#{hex}>ACTIVE</color>\n{weapon.activeDescription}",
-                "", dimColor);
-
+            ShowDetails(weapon.icon, type, weapon.weaponName, body, "", dimColor);
             RefreshAll();
+        }
+
+        private void ShowBuy(WeaponDefinition weapon, bool affordable)
+        {
+            if (btnDetailBuy == null) return;
+
+            buyTarget = weapon;
+            btnDetailBuy.gameObject.SetActive(true);
+            btnDetailBuy.interactable = affordable;
+
+            if (txtDetailBuy != null)
+                txtDetailBuy.text = Texts.Progression.BuyButton(weapon.purchaseCost);
+        }
+
+        private void HideBuy()
+        {
+            buyTarget = null;
+
+            if (btnDetailBuy != null)
+                btnDetailBuy.gameObject.SetActive(false);
+        }
+
+        private void OnBuyPressed()
+        {
+            WeaponDefinition weapon = buyTarget;
+            if (weapon == null) return;
+
+            if (PlayerProgress.TryPurchaseWeapon(weapon) != PurchaseResult.Success)
+            {
+                SelectWeapon(weapon);   // Anzeige aktualisieren (z. B. zu wenige Punkte)
+                return;
+            }
+
+            foreach (LoadoutSelectionButton button in weaponButtons)
+                ApplyWeaponOverlay(button);
+
+            SelectWeapon(weapon);       // jetzt im Besitz: wird direkt ausgerüstet
         }
 
         private void OnPerkSelected(int index)
@@ -441,8 +541,8 @@ namespace LevelSelector
             if (!PlayerProgress.IsPerkUnlocked(perk))
             {
                 string hex = ColorUtility.ToHtmlStringRGB(negativeColor);
-                ShowDetails(perk.icon, "Perk (locked)", perk.perkName,
-                    $"{perk.description}\n\n<color=#{hex}>Unlocks at player level {PlayerProgress.GetUnlockLevel(perk)}.</color>",
+                ShowDetails(perk.icon, $"{Texts.Progression.Kind(UnlockKind.Perk)} ({Texts.Common.Locked.ToLowerInvariant()})", perk.perkName,
+                    $"{perk.description}\n\n<color=#{hex}>{Texts.Progression.UnlocksAtLevel(PlayerProgress.GetUnlockLevel(perk))}</color>",
                     "", dimColor);
                 return;
             }
@@ -462,7 +562,7 @@ namespace LevelSelector
             }
 
             RefreshSelectionVisuals();
-            ShowMultiplierDetails(perk.icon, "Perk", perk.perkName, perk.description, perk.ScoreMultiplier);
+            ShowMultiplierDetails(perk.icon, Texts.Progression.Kind(UnlockKind.Perk), perk.perkName, perk.description, perk.ScoreMultiplier);
             RefreshAll();
         }
 
@@ -472,6 +572,16 @@ namespace LevelSelector
 
             MutatorDefinition mutator = mutatorButtons[index].GetMutator();
             if (mutator == null) return;
+
+            // Gesperrt: nur Details mit Hinweis zeigen
+            if (!PlayerProgress.IsMutatorUnlocked(mutator))
+            {
+                string hex = ColorUtility.ToHtmlStringRGB(negativeColor);
+                ShowDetails(mutator.icon, $"{Texts.Progression.Kind(UnlockKind.Mutator)} ({Texts.Common.Locked.ToLowerInvariant()})", mutator.mutatorName,
+                    $"{mutator.description}\n\n<color=#{hex}>{Texts.Progression.UnlocksAtLevel(PlayerProgress.GetUnlockLevel(mutator))}</color>",
+                    "", dimColor);
+                return;
+            }
 
             LevelLoadout loadout = LevelLoadoutManager.Instance.CurrentLoadout;
 
@@ -488,7 +598,7 @@ namespace LevelSelector
             }
 
             RefreshSelectionVisuals();
-            ShowMultiplierDetails(mutator.icon, "Mutator", mutator.mutatorName, mutator.description, mutator.ScoreMultiplier);
+            ShowMultiplierDetails(mutator.icon, Texts.Progression.Kind(UnlockKind.Mutator), mutator.mutatorName, mutator.description, mutator.ScoreMultiplier);
             RefreshAll();
         }
 
@@ -529,6 +639,7 @@ namespace LevelSelector
 
         private void ClearDetails()
         {
+            HideBuy();
             if (detailEmpty != null) detailEmpty.SetActive(true);
             if (detailRoot != null) detailRoot.SetActive(false);
         }
@@ -541,6 +652,7 @@ namespace LevelSelector
 
         private void ShowDetails(Sprite icon, string type, string title, string body, string multiplierText, Color multiplierColor)
         {
+            HideBuy();
             detailEmpty.SetActive(false);
             detailRoot.SetActive(true);
 
@@ -579,7 +691,7 @@ namespace LevelSelector
 
             string blocker = LevelSelectorManager.GetStartBlocker(loadout);
             btnStart.interactable = blocker == null;
-            txtStartHint.text = blocker ?? "Ready to start.";
+            txtStartHint.text = blocker ?? Texts.Loadout.ReadyToStart;
             txtStartHint.color = blocker == null ? positiveColor : dimColor;
         }
 
@@ -619,7 +731,8 @@ namespace LevelSelector
 
             foreach (LoadoutSelectionButton button in weaponButtons)
             {
-                if (button.GetWeapon() != null && button.GetWeapon().name == parts[0])
+                if (button.GetWeapon() != null && button.GetWeapon().name == parts[0] &&
+                    PlayerProgress.IsWeaponOwned(button.GetWeapon()))
                 {
                     manager.SetWeapon(button.GetWeapon());
                     break;
@@ -645,7 +758,7 @@ namespace LevelSelector
                 foreach (LoadoutSelectionButton button in mutatorButtons)
                 {
                     MutatorDefinition mutator = button.GetMutator();
-                    if (mutator != null && mutator.name == mutatorName)
+                    if (mutator != null && mutator.name == mutatorName && PlayerProgress.IsMutatorUnlocked(mutator))
                         manager.AddMutator(mutator);
                 }
             }

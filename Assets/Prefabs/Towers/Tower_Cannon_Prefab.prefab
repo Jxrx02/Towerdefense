@@ -540,13 +540,13 @@ MonoBehaviour:
   towerDesc: Throws fire around
   towerInitPrice: 3
   displayedStats: 487
-  statHealthPoints: 0
+  statHealthPoints: 10
   currentHealth: 0
   baseArmor: 0
   baseMagicResist: 0
   bonusPerLevel:
-    health: 0
-    healthRegen: 0
+    health: 2
+    healthRegen: 0.1
     damage: 0
     range: 0
     cooldownDecrease: 0
@@ -581,11 +581,13 @@ MonoBehaviour:
   whiteFlashMaterial: {fileID: 2100000, guid: 50c771e23c26068469ab5b73285fc974, type: 2}
   damageFlashDuration: 0.12
   statCoinsEarnedPerSecond: 0
+  statHealthRegenPerSecond: 2
   statRangeMultiplier: 0.15
   statDmgMultiplier: 0.3
   statAttackSpeedMultiplier: 0.2
   statSlowMultiplier: 0
-  statHealthRegenPerSecond: 2
+  statRegenMultiplier: 0
+  statOmnivampMultiplier: 0
   spawnProjectileOffsetPoint: {fileID: 8153726728699983278}
   upgradePaths:
   - towerName: Gelbes Feuer
@@ -621,6 +623,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -6425263331777228575, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 3858346900758846222, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -687,6 +691,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 1096245686895389016, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -753,6 +759,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 1016592964953662684, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 1016592964953662684, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -819,6 +827,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -8008813947110212789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -8008813947110212789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -886,6 +896,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -1977500420919453744, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -3624002037920005303, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -956,6 +968,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -5780581611255538789, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 3688117980071290848, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1021,6 +1035,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 693303345041003404, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -3721975215164298879, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1086,6 +1102,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 8172687665410199855, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 8172687665410199855, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1153,6 +1171,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 7631460427293945420, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -7043285915854749164, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1220,6 +1240,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -1364185593318738102, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 4029695628570095493, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1290,6 +1312,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: -3926690766567389350, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1355,6 +1379,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 2319893073191214724, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1420,6 +1446,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 3616906229736979580, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 3616906229736979580, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1486,6 +1514,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 2857193278425428648, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 2857193278425428648, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
@@ -1553,6 +1583,8 @@ MonoBehaviour:
       dmgMultiplier: 0
       attackSpeedMultiplier: 0
       slowMultiplier: 0
+      regenMultiplier: 0
+      omnivampMultiplier: 0
       idle_sprites:
       - {fileID: 4751600802636722970, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
       - {fileID: 4751600802636722970, guid: 6df06cf815dbd8e41850de61de053d75, type: 3}
