@@ -87,7 +87,9 @@ namespace TowerDefense.Research
         private string _selectedTower;
         private int _selectedPath = RootPath;
         private int _selectedLevel;
-
+        
+        private StatChipBar _chips;
+        private readonly List<StatId> _detailStats = new List<StatId>();
         // Knoten, der nach dem nächsten Aufbau aufpoppen soll
         private (int path, int level)? _popAfterRebuild;
 
@@ -105,6 +107,9 @@ namespace TowerDefense.Research
             if (btnReset != null)
                 btnReset.onClick.AddListener(OnResetClicked);
 
+            if (txtStats != null)
+                _chips = StatChipBar.Create(txtStats.transform.parent, txtStats.font, txtStats.transform.GetSiblingIndex() + 1);
+            
             _treeScroll = treeContent != null ? treeContent.GetComponentInParent<ScrollRect>() : null;
             _listScroll = towerListContainer != null ? towerListContainer.GetComponentInParent<ScrollRect>() : null;
 
@@ -171,8 +176,8 @@ namespace TowerDefense.Research
 
         private void Update()
         {
-            if (Manager == null)
-                return;
+            if (StatInfoPanel.ConsumesEscape) return;
+            if (Manager == null) return;
 
             // Der Dialog gehört sich selbst: Esc schließt nur ihn, sonst wird nichts bedient
             if (confirmDialog != null && confirmDialog.IsOpen)
@@ -601,6 +606,7 @@ namespace TowerDefense.Research
 
             if (tower == null)
             {
+                if (_chips != null) _chips.Hide();
                 txtTitle.text = "";
                 txtSubtitle.text = "";
                 txtDescription.text = "";
@@ -617,7 +623,11 @@ namespace TowerDefense.Research
             else
                 ShowUpgradeDetails(tower, _selectedPath, _selectedLevel);
         }
-
+        private void RefreshStatChips(string description)
+        {
+            StatMarkup.FindStats(description, _detailStats);   // _detailStats enthält schon die Stats der Wertzeilen
+            if (_chips != null) _chips.Show(_detailStats, StatSubject.Tower);
+        }
         private void ShowTowerDetails(TowerResearchInfo tower)
         {
             bool unlocked = Manager.IsTowerUnlocked(tower.towerName);
@@ -625,8 +635,9 @@ namespace TowerDefense.Research
 
             txtTitle.text = tower.towerName;
             txtSubtitle.text = unlocked ? Texts.Common.Unlocked : Texts.Common.Locked;
-            txtDescription.text = tower.description;
+            txtDescription.text = StatMarkup.Format(tower.description);
             txtStats.text = BuildBaseStats(tower);
+            RefreshStatChips(tower.description);
             txtHint.color = badColor;
 
             if (unlocked)
@@ -649,9 +660,9 @@ namespace TowerDefense.Research
 
             txtTitle.text = level.upgradeName;
             txtSubtitle.text = Texts.Research.UpgradeSubtitle(tower.towerName, path.towerName, levelIndex + 1, path.levels.Length);
-            txtDescription.text = level.description;
+            txtDescription.text = StatMarkup.Format(level.description);
             txtStats.text = BuildUpgradeStats(level);
-
+            RefreshStatChips(level.description);
             txtHint.color = badColor;
 
             switch (status)
@@ -717,45 +728,47 @@ namespace TowerDefense.Research
 
         private string BuildBaseStats(TowerResearchInfo t)
         {
+            _detailStats.Clear();
             var sb = new StringBuilder();
-            Line(sb, Texts.Stats.Damage, t.baseDamage, "", 0, false);
-            Line(sb, Texts.Stats.Range, t.baseRange, "", 1, false);
-            Line(sb, Texts.Stats.AttackSpeed, t.baseAttackSpeed, "/s", 1, false);
-            Line(sb, Texts.Stats.Health, t.baseHealth, "", 0, false);
-            Line(sb, Texts.Stats.GoldPerSecond, t.baseGoldPerSecond, "/s", 1, false);
+            Line(sb, StatId.Damage,Texts.Stats.Damage, t.baseDamage, "", 0, false);
+            Line(sb, StatId.Range, Texts.Stats.Range, t.baseRange, "", 1, false);
+            Line(sb, StatId.AttackSpeed, Texts.Stats.AttackSpeed, t.baseAttackSpeed, "/s", 1, false);
+            Line(sb, StatId.Health, Texts.Stats.Health, t.baseHealth, "", 0, false);
+            Line(sb, StatId.Gold, Texts.Stats.GoldPerSecond, t.baseGoldPerSecond, "/s", 1, false);
             return sb.ToString().TrimEnd();
         }
 
         private string BuildUpgradeStats(TowerUpgradeLevel u)
         {
+            _detailStats.Clear();
             // bonus kann fehlen; gleiche Stats aus Upgrade und Bonus werden zu einer Zeile summiert
             StatBonus b = u.bonus ?? new StatBonus();
             var sb = new StringBuilder();
 
-            Line(sb, Texts.Stats.Damage, u.damageIncrease + b.damage, "", 0, true);
-            Line(sb, Texts.Stats.Range, u.rangeIncrease + b.range, "", 1, true);
-            Line(sb, Texts.Stats.AttackSpeed, u.attackSpeedIncrease, "", 1, true);
-            Line(sb, Texts.Stats.Cooldown, -(u.timeInBetweenShotsDecrease + b.cooldownDecrease), "s", 2, true, lowerIsBetter: true);
-            Line(sb, Texts.Stats.Health, u.healthpoints + b.health, "", 0, true);
-            Line(sb, Texts.Stats.Regen, u.healthRegenPerSecond + b.healthRegen, "/s", 1, true);
-            Line(sb, Texts.Stats.GoldPerSecond, u.coinsEarnedPerSecond, "/s", 1, true);
+            Line(sb, StatId.Damage, Texts.Stats.Damage, u.damageIncrease + b.damage, "", 0, true);
+            Line(sb, StatId.Range, Texts.Stats.Range, u.rangeIncrease + b.range, "", 1, true);
+            Line(sb, StatId.AttackSpeed, Texts.Stats.AttackSpeed, u.attackSpeedIncrease, "", 1, true);
+            Line(sb, StatId.AttackSpeed,Texts.Stats.Cooldown, -(u.timeInBetweenShotsDecrease + b.cooldownDecrease), "s", 2, true, lowerIsBetter: true);
+            Line(sb, StatId.Health,Texts.Stats.Health, u.healthpoints + b.health, "", 0, true);
+            Line(sb, StatId.Regen,Texts.Stats.Regen, u.healthRegenPerSecond + b.healthRegen, "/s", 1, true);
+            Line(sb, StatId.Gold,Texts.Stats.GoldPerSecond, u.coinsEarnedPerSecond, "/s", 1, true);
 
-            Line(sb, Texts.Stats.AuraRange, u.rangeMultiplier * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.AuraDamage, u.dmgMultiplier * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.AuraAttackSpeed, u.attackSpeedMultiplier * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.AuraSlow, u.slowMultiplier * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.AuraRegen, u.regenMultiplier * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.AuraOmnivamp, u.omnivampMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveRange,Texts.Stats.AuraRange, u.rangeMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveDamage,Texts.Stats.AuraDamage, u.dmgMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveAttackSpeed,Texts.Stats.AuraAttackSpeed, u.attackSpeedMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveSlow,Texts.Stats.AuraSlow, u.slowMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveRegen,Texts.Stats.AuraRegen, u.regenMultiplier * 100f, "%", 0, true);
+            Line(sb, StatId.GiveOmnivamp,Texts.Stats.AuraOmnivamp, u.omnivampMultiplier * 100f, "%", 0, true);
 
-            Line(sb, Texts.Stats.Armor, b.armor, "", 0, true);
-            Line(sb, Texts.Stats.MagicResist, b.magicResist, "", 0, true);
-            Line(sb, Texts.Stats.CritChance, b.critChance * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.CritDamage, b.critDamage * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.Lethality, b.lethality, "", 0, true);
-            Line(sb, Texts.Stats.ArmorPen, b.armorPenPercent * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.MagicPen, b.magicPenFlat, "", 0, true);
-            Line(sb, Texts.Stats.MagicPen, b.magicPenPercent * 100f, "%", 0, true);
-            Line(sb, Texts.Stats.Omnivamp, b.omnivamp * 100f, "%", 0, true);
+            Line(sb, StatId.Armor,Texts.Stats.Armor, b.armor, "", 0, true);
+            Line(sb, StatId.MagicResist,Texts.Stats.MagicResist, b.magicResist, "", 0, true);
+            Line(sb, StatId.Crit,Texts.Stats.CritChance, b.critChance * 100f, "%", 0, true);
+            Line(sb, StatId.CritDamage,Texts.Stats.CritDamage, b.critDamage * 100f, "%", 0, true);
+            Line(sb, StatId.Lethality,Texts.Stats.Lethality, b.lethality, "", 0, true);
+            Line(sb, StatId.ArmorPen,Texts.Stats.ArmorPen, b.armorPenPercent * 100f, "%", 0, true);
+            Line(sb, StatId.MagicPen,Texts.Stats.MagicPen, b.magicPenFlat, "", 0, true);
+            Line(sb, StatId.MagicPenPercent,Texts.Stats.MagicPen, b.magicPenPercent * 100f, "%", 0, true);
+            Line(sb, StatId.Omnivamp,Texts.Stats.Omnivamp, b.omnivamp * 100f, "%", 0, true);
 
             return sb.Length == 0 ? Texts.Research.NoStatChanges : sb.ToString().TrimEnd();
         }
@@ -764,10 +777,11 @@ namespace TowerDefense.Research
         /// Zeile "Label  Wert". Mit delta = true mit Vorzeichen und Farbe (grün = besser, rot = schlechter).
         /// lowerIsBetter: kleinere Werte sind besser (z. B. Cooldown). 0-Werte entfallen.
         /// </summary>
-        private void Line(StringBuilder sb, string label, float value, string suffix, int decimals,
+        private void Line(StringBuilder sb, StatId id, string label, float value, string suffix, int decimals,
             bool delta, bool lowerIsBetter = false)
         {
             if (Mathf.Approximately(value, 0f)) return;
+            if (!_detailStats.Contains(id)) _detailStats.Add(id);
 
             string number = value.ToString(decimals <= 0 ? "0" : "0." + new string('0', decimals),
                 System.Globalization.CultureInfo.InvariantCulture);

@@ -180,10 +180,13 @@ namespace TowerDefense
 
         private IEnumerator ShowUnlockPopup(ProgressionUnlock unlock)
         {
+
             _popupDismissed = false;
 
-            if (txtUnlockHeader != null)
-                txtUnlockHeader.text = Texts.Progression.NewUnlockHeader(unlock.kind);
+            Text header = txtUnlockHeader != null ? txtUnlockHeader : FindPopupHeader();
+            if (header != null)
+                header.text = Texts.Progression.NewUnlockHeader(unlock.kind);   // NEW PERK / NEW MUTATOR / NEW WEAPON
+
 
             // Waffen müssen nach der Freischaltung noch gekauft werden
             string description = unlock.kind == UnlockKind.Weapon
@@ -191,7 +194,7 @@ namespace TowerDefense
                 : unlock.description;
 
             txtPerkName.text = unlock.name;
-            txtPerkDescription.text = description;
+            txtPerkDescription.text = StatMarkup.Format(description, unlock.kind != UnlockKind.Weapon);
             imgPerkIcon.sprite = unlock.icon;
             imgPerkIcon.enabled = unlock.icon != null;
 
@@ -199,7 +202,16 @@ namespace TowerDefense
             yield return new WaitUntil(() => _popupDismissed);
             perkPopup.SetActive(false);
         }
-
+        private Text _headerCache;
+        private Text FindPopupHeader()
+        {
+            if (_headerCache == null)
+            {
+                Transform t = perkPopup.transform.Find("Card/Content/Header");   // wie im Builder aufgebaut
+                _headerCache = t != null ? t.GetComponent<Text>() : null;
+            }
+            return _headerCache;
+        }
         // ── Anzeige ───────────────────────────────────────────────
 
         private void ApplyState(PlayerProgress.LevelState state)

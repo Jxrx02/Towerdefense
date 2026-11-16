@@ -82,7 +82,7 @@ namespace LevelSelector
 
             if (!Input.GetKeyDown(KeyCode.Escape))
                 return;
-
+            if (StatInfoPanel.ConsumesEscape) return;
             // Der Loadout-Screen schließt sich selbst mit ESC. Dieselbe Taste darf nicht auch das Menü öffnen.
             if (LevelLoadoutUI.IsOpen || LevelLoadoutUI.LastClosedFrame == Time.frameCount)
                 return;

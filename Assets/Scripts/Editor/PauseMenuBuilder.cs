@@ -247,7 +247,8 @@ namespace TowerDefense.EditorTools
             Set(vs, "btnMap", btnMap);
             Set(vs, "btnRestart", btnRestart);
             Set(vs, "canvasGroup", canvasGroup);
-
+            Set(vs, "txtUnlockHeader", popupHeader);
+            
             // Map-Szene vom Pausemenü übernehmen, falls dort schon gesetzt
             PauseMenuUI pause = Object.FindFirstObjectByType<PauseMenuUI>(FindObjectsInactive.Include);
             if (pause != null)
@@ -1657,7 +1658,9 @@ namespace TowerDefense.EditorTools
             GameObject enemyIconPrefab = CreateEnemyIconPrefab();
             GameObject statRowPrefab = CreateEnemyStatRowPrefab(font);
             GameObject statHeaderPrefab = CreateEnemyStatHeaderPrefab(font);
-
+            ScoreRow scoreRowPrefab = CreateScoreRowPrefab(font);
+            GameObject scoreHeaderPrefab = CreateScoreHeaderPrefab(font);
+            GameObject scoreDividerPrefab = CreateScoreDividerPrefab();
             // ---------- Canvas ----------
             GameObject root = new GameObject(LoadoutRootName, typeof(RectTransform));
             Undo.RegisterCreatedObjectUndo(root, "Loadout-Screen neu aufbauen");
@@ -1709,39 +1712,8 @@ namespace TowerDefense.EditorTools
             RectTransform highscoreRow = NewRow("Highscore", levelCard, font, "Highscore");
             Text txtHighscore = NewText("Value", highscoreRow, font, BodySize, GoldColor, TextAnchor.MiddleRight, FontStyle.Bold);
 
-            // Spieler-Level
-            RectTransform playerRoot = NewRect("PlayerLevel", levelCard);
-            AddVertical(playerRoot.gameObject, new RectOffset(0, 0, 4, 0), 6f);
 
-            RectTransform playerRow = NewRect("Row", playerRoot);
-            AddHorizontal(playerRow.gameObject, new RectOffset(0, 0, 0, 0), 8f, TextAnchor.MiddleLeft);
-            SetSize(playerRow.gameObject, height: 28f);
-            Text txtPlayerLevel = NewText("Level", playerRow, font, BodySize, TextColor, TextAnchor.MiddleLeft, FontStyle.Bold);
-            SetSize(txtPlayerLevel.gameObject, flexibleWidth: 1f);
-            Text txtPlayerXp = NewText("Xp", playerRow, font, SmallSize + 2, DimColor, TextAnchor.MiddleRight);
-
-            Image playerBar = NewImage("Bar", playerRoot, BarBackColor);
-            SetSize(playerBar.gameObject, height: 14f);
-            AddBorder(playerBar.gameObject);
-            Image playerFill = NewImage("Fill", playerBar.transform, SelectedColor);
-            playerFill.rectTransform.anchorMin = new Vector2(0f, 0f);
-            playerFill.rectTransform.anchorMax = new Vector2(0f, 1f);
-            playerFill.rectTransform.offsetMin = new Vector2(0f, 2f);
-            playerFill.rectTransform.offsetMax = new Vector2(0f, -2f);
-
-            RectTransform nextRow = NewRect("Next", playerRoot);
-            AddHorizontal(nextRow.gameObject, new RectOffset(0, 0, 4, 0), 10f, TextAnchor.MiddleLeft);
-            Image nextBack = NewImage("IconBack", nextRow, KeyColor);
-            SetSize(nextBack.gameObject, 40f, 40f);
-            AddBorder(nextBack.gameObject);
-            Image nextIcon = NewImage("Icon", nextBack.transform, Color.white);
-            nextIcon.preserveAspect = true;
-            Stretch(nextIcon.rectTransform);
-            nextIcon.rectTransform.offsetMin = new Vector2(4f, 4f);
-            nextIcon.rectTransform.offsetMax = new Vector2(-4f, -4f);
-            Text txtNext = NewText("Text", nextRow, font, SmallSize, DimColor, TextAnchor.MiddleLeft, wrap: true);
-            SetSize(txtNext.gameObject, flexibleWidth: 1f);
-
+            
             // Gegner-Vorschau
             RectTransform enemyCard = CreateCard("EnemyCard", left, out GameObject enemyOuter);
             SectionHeader(enemyCard, font, "Enemies");
@@ -1812,18 +1784,25 @@ namespace TowerDefense.EditorTools
             SetSize(detailDivider.gameObject, height: 1f);
 
             Text txtDetailBody = NewText("Body", detailRoot, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
-            txtDetailBody.lineSpacing = 1.3f;
+            txtDetailBody.lineSpacing = 1.4f;
             MinHeight(txtDetailBody.gameObject, 150f);
 
-            RectTransform summaryCard = CreateCard("SummaryCard", right, out _);
-            SectionHeader(summaryCard, font, "Loadout");
 
-            RectTransform weaponSummaryRow = NewRow("Weapon", summaryCard, font, "Weapon");
-            Text txtSummaryWeapon = NewText("Value", weaponSummaryRow, font, BodySize, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
 
-            RectTransform multiplierRow = NewRow("Multiplier", summaryCard, font, "Score multiplier");
-            Text txtSummaryMultiplier = NewText("Value", multiplierRow, font, BodySize, TextColor, TextAnchor.MiddleRight, FontStyle.Bold);
+            RectTransform multiplierCard = CreateCard("MultiplierCard", right, out GameObject multiplierOuter);
+            SectionHeader(multiplierCard, font, "Multipliers");
+            RectTransform multiplierRows = NewRect("Rows", multiplierCard);
+            AddVertical(multiplierRows.gameObject, new RectOffset(0, 0, 0, 0), 2f);
 
+            ScorePanelUI multiplierPanel = multiplierOuter.AddComponent<ScorePanelUI>();
+            SerializedObject mp = new SerializedObject(multiplierPanel);
+            Set(mp, "container", multiplierRows);
+            Set(mp, "rowPrefab", scoreRowPrefab);
+            Set(mp, "headerPrefab", scoreHeaderPrefab);
+            Set(mp, "dividerPrefab", scoreDividerPrefab);
+            mp.ApplyModifiedPropertiesWithoutUndo();
+
+            RectTransform summaryCard = CreateCard("SummaryCard", right, out _);   // ohne Header: nur Hinweis + Buttons
             Text txtStartHint = NewText("Hint", summaryCard, font, SmallSize + 2, DimColor, TextAnchor.MiddleCenter);
             SetSize(txtStartHint.gameObject, height: 28f);
 
@@ -1855,14 +1834,7 @@ namespace TowerDefense.EditorTools
             Set(so, "txtLevelName", txtLevelName);
             Set(so, "txtLevelDescription", txtLevelDescription);
             Set(so, "txtHighscore", txtHighscore);
-
-            Set(so, "playerLevelRoot", playerRoot.gameObject);
-            Set(so, "txtPlayerLevel", txtPlayerLevel);
-            Set(so, "txtPlayerXp", txtPlayerXp);
-            Set(so, "playerBarFill", playerFill.rectTransform);
-            Set(so, "nextUnlockRoot", nextRow.gameObject);
-            Set(so, "nextUnlockIcon", nextIcon);
-            Set(so, "txtNextUnlock", txtNext);
+            
 
             Set(so, "enemyCard", enemyOuter);
             Set(so, "enemyContainer", enemyGrid);
@@ -1885,8 +1857,7 @@ namespace TowerDefense.EditorTools
             Set(so, "txtDetailMultiplier", txtDetailMultiplier);
             Set(so, "txtDetailBody", txtDetailBody);
 
-            Set(so, "txtSummaryWeapon", txtSummaryWeapon);
-            Set(so, "txtSummaryMultiplier", txtSummaryMultiplier);
+            Set(so, "multiplierPanel", multiplierPanel);
             Set(so, "txtStartHint", txtStartHint);
             Set(so, "btnStart", btnStart);
             Set(so, "btnClear", btnClear);
@@ -2303,10 +2274,7 @@ namespace TowerDefense.EditorTools
             Button btnResearch = NewMenuButton(column, font, "Research", ButtonSize + 2, 56f);
             Button btnSettings = NewMenuButton(column, font, "Settings", ButtonSize + 2, 56f);
             Button btnQuit = NewMenuButton(column, font, "Quit", ButtonSize + 2, 56f);
-
-            Text txtProfile = NewText("Profile", column, font, SmallSize + 2, DimColor, TextAnchor.MiddleLeft);
-            SetSize(txtProfile.gameObject, height: 40f);
-
+            
             Text version = NewText("Version", menuPanel, font, SmallSize, DimColor, TextAnchor.LowerRight);
             version.text = "v" + Application.version;
             version.rectTransform.anchorMin = version.rectTransform.anchorMax = new Vector2(1f, 0f);
@@ -2315,6 +2283,7 @@ namespace TowerDefense.EditorTools
             version.rectTransform.sizeDelta = new Vector2(300f, 30f);
 
             SettingsPanel settings = CreateSettingsPanel(root.transform, font, bindingRowPrefab);
+            CreateProgressionBar(menuPanel, font);
             ConfirmDialog quitDialog = CreateConfirmDialog(root.transform, font);
 
             // ======================================================
@@ -2335,7 +2304,6 @@ namespace TowerDefense.EditorTools
             Set(so, "btnResearch", btnResearch);
             Set(so, "btnSettings", btnSettings);
             Set(so, "btnQuit", btnQuit);
-            Set(so, "txtProfile", txtProfile);
             so.ApplyModifiedProperties();
 
             // ======================================================
@@ -2949,14 +2917,14 @@ namespace TowerDefense.EditorTools
             SetSize(accent.gameObject, height: 2f);
 
             Text txtDescription = NewText("Description", detailCard, font, SmallSize + 2, TextColor, TextAnchor.UpperLeft, wrap: true);
-            txtDescription.lineSpacing = 1.3f;
+            txtDescription.lineSpacing = 1.4f;
             MinHeight(txtDescription.gameObject, 90f);
 
             Image statDivider = NewImage("Divider", detailCard, DividerColor);
             SetSize(statDivider.gameObject, height: 1f);
 
             Text txtStats = NewText("Stats", detailCard, font, SmallSize + 2, DimColor, TextAnchor.UpperLeft, wrap: true);
-            txtStats.lineSpacing = 1.25f;
+            txtStats.lineSpacing = 1.35f;
             MinHeight(txtStats.gameObject, 150f);
 
             Text txtHint = NewText("Hint", detailCard, font, SmallSize, new Color(0.90f, 0.35f, 0.30f), TextAnchor.MiddleLeft, wrap: true);
@@ -3388,7 +3356,7 @@ namespace TowerDefense.EditorTools
 
             Text txtDetailBody = NewText("Body", detailRoot, font, SmallSize - 1, TextColor, TextAnchor.UpperLeft, wrap: true);
             txtDetailBody.verticalOverflow = VerticalWrapMode.Truncate;
-            txtDetailBody.lineSpacing = 1.2f;
+            txtDetailBody.lineSpacing = 1.4f;
             LayoutElement bodyElement = txtDetailBody.gameObject.AddComponent<LayoutElement>();
             bodyElement.minHeight = 48f;
             bodyElement.flexibleHeight = 1f;

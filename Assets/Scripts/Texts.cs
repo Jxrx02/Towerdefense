@@ -323,6 +323,9 @@ namespace TowerDefense
             public static string SelectWeapon => T("Select a weapon.", "Wähle eine Waffe.");
             public static string WeaponNotOwned => T("Buy this weapon first.", "Kaufe diese Waffe zuerst.");
             public static string ReadyToStart => T("Ready to start.", "Bereit zum Start.");
+            
+            public static string ScoreMultiplier => T("Score multiplier", "Score-Multiplikator");
+            public static string NoMultipliers => T("No multipliers selected", "Keine Multiplikatoren gewählt");
         }
     }
 }

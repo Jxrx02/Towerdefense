@@ -108,10 +108,9 @@ namespace TowerDefense
         public void SetInfo(Action onClick)
         {
             if (infoButton == null)
-                infoButton = CreateInfoButton();
+                infoButton = StatInfoButton.Create(transform, newValueText != null ? newValueText.font : null, null);
 
-            if (infoButton == null)
-                return;
+            if (infoButton == null) return;
 
             infoButton.onClick.RemoveAllListeners();
             infoButton.onClick.AddListener(() => onClick?.Invoke());

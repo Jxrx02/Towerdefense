@@ -52,8 +52,7 @@ namespace TowerDefense
 
             bool hasDescription = !string.IsNullOrWhiteSpace(cfg.description);
             txtDescription.gameObject.SetActive(hasDescription);
-            txtDescription.text = hasDescription ? cfg.description : "";
-
+            txtDescription.text = hasDescription ? StatMarkup.Format(cfg.description) : "";
             _frames = cfg.walkAnim;
             if (icon != null)
             {
@@ -82,68 +81,91 @@ namespace TowerDefense
                 Destroy(child.gameObject);
             }
 
-            // Grundwerte
             Section("Core");
-            if (c.health > 0)           Row("Health", c.health.ToString());
-            if (c.movementSpeed > 0f)   Row("Movement Speed", N(c.movementSpeed));
-            if (c.tenacity > 0)         Row("Tenacity", c.tenacity + "%");
-            if (c.xpDrop > 0)           Row("XP Drop", c.xpDrop.ToString());
-            if (c.canFly)               Row("Flying", "Yes");
+            if (c.health > 0)         Row("Health", c.health.ToString(), StatId.Health);
+            if (c.movementSpeed > 0f) Row("Movement Speed", N(c.movementSpeed), StatId.MoveSpeed);
+            if (c.tenacity > 0)       Row("Tenacity", c.tenacity + "%");
+            if (c.xpDrop > 0)         Row("XP Drop", c.xpDrop.ToString(), StatId.XpDrop);
+            if (c.canFly)             Row("Flying", "Yes");
 
-            // Verteidigung
             Section("Defense");
-            if (c.armor > 0f)                   Row("Armor", N(c.armor));
-            if (c.magicResist > 0f)             Row("Magic Resist", N(c.magicResist));
-            if (c.healthRegenPerSecond > 0f)    Row("Health Regen", N(c.healthRegenPerSecond) + "/s");
-            if (c.evasionChance > 0)            Row("Evasion", c.evasionChance + "%");
+            if (c.armor > 0f)                Row("Armor", N(c.armor), StatId.Armor);
+            if (c.magicResist > 0f)          Row("Magic Resist", N(c.magicResist), StatId.MagicResist);
+            if (c.healthRegenPerSecond > 0f) Row("Health Regen", N(c.healthRegenPerSecond) + "/s", StatId.Regen);
+            if (c.evasionChance > 0)         Row("Evasion", c.evasionChance + "%", StatId.Evasion);
 
-            // Schilde
             Section("Shields");
             if (c.startShield > 0f)
-                Row("Shield", N(c.startShield) + (c.shieldDuration > 0f ? $"  ({N(c.shieldDuration)}s)" : ""));
+                Row("Shield", N(c.startShield) + (c.shieldDuration > 0f ? $"  ({N(c.shieldDuration)}s)" : ""), StatId.Shield);
             if (c.blockCharges > 0)
             {
-                Row("Block Charges", c.blockCharges + (c.blockDuration > 0f ? $"  ({N(c.blockDuration)}s)" : ""));
+                Row("Block Charges", c.blockCharges + (c.blockDuration > 0f ? $"  ({N(c.blockDuration)}s)" : ""), StatId.Block);
                 if (c.blockRechargeTime > 0f)
-                    Row("Block Recharge", N(c.blockRechargeTime) + "s");
+                    Row("Block Recharge", N(c.blockRechargeTime) + "s", StatId.Block);
             }
 
-            // Angriff
             Section("Attack");
             if (c.attackDamage > 0)
             {
-                Row("Damage", $"{c.attackDamage} {c.damageType}");
+                Row("Damage", $"{c.attackDamage} {c.damageType}", StatId.Damage);
                 Row("Attack Type", c.isMeele ? "Melee" : "Ranged");
             }
-            if (c.attackCooldown > 0f)  Row("Attack Cooldown", N(c.attackCooldown) + "s");
-            if (c.attackRange > 0f)     Row("Attack Range", N(c.attackRange));
+            if (c.attackCooldown > 0f) Row("Attack Cooldown", N(c.attackCooldown) + "s", StatId.AttackSpeed);
+            if (c.attackRange > 0f)    Row("Attack Range", N(c.attackRange), StatId.Range);
 
             OffenseStats o = c.offense;
             if (o != null)
             {
                 if (o.critChance > 0f)
                 {
-                    Row("Crit Chance", N(o.critChance * 100f) + "%");
-                    if (o.critDamage > 0f) Row("Crit Damage", N(o.critDamage * 100f) + "%");
+                    Row("Crit Chance", N(o.critChance * 100f) + "%", StatId.Crit);
+                    if (o.critDamage > 0f) Row("Crit Damage", N(o.critDamage * 100f) + "%", StatId.CritDamage);
                 }
-                if (o.lethality > 0f)           Row("Lethality", N(o.lethality));
-                if (o.armorPenPercent > 0f)     Row("Armor Pen", N(o.armorPenPercent * 100f) + "%");
-                if (o.magicPenFlat > 0f)        Row("Magic Pen", N(o.magicPenFlat));
-                if (o.magicPenPercent > 0f)     Row("Magic Pen", N(o.magicPenPercent * 100f) + "%");
-                if (o.omnivamp > 0f)            Row("Omnivamp", N(o.omnivamp * 100f) + "%");
+                if (o.lethality > 0f)       Row("Lethality", N(o.lethality), StatId.Lethality);
+                if (o.armorPenPercent > 0f) Row("Armor Pen", N(o.armorPenPercent * 100f) + "%", StatId.ArmorPen);
+                if (o.magicPenFlat > 0f)    Row("Magic Pen", N(o.magicPenFlat), StatId.MagicPen);
+                if (o.magicPenPercent > 0f) Row("Magic Pen", N(o.magicPenPercent * 100f) + "%", StatId.MagicPenPercent);
+                if (o.omnivamp > 0f)        Row("Omnivamp", N(o.omnivamp * 100f) + "%", StatId.Omnivamp);
             }
 
-            // Verhalten
             Section("Behaviour");
-            if (c.aggroRange > 0f)  Row("Aggro Range", N(c.aggroRange));
-            if (c.leashRange > 0f)  Row("Leash Range", N(c.leashRange));
+            if (c.aggroRange > 0f) Row("Aggro Range", N(c.aggroRange));
+            if (c.leashRange > 0f) Row("Leash Range", N(c.leashRange));
             if (c.targetPriority != null && c.targetPriority.Length > 0)
                 Row("Targets", string.Join(" > ", c.targetPriority));
 
-            // Wirtschaft
             Section("Economy");
-            if (c.goldReward > 0)               Row("Gold Reward", c.goldReward.ToString());
-            if (c.penaltyOnReachingEnd > 0)     Row("Penalty at End", c.penaltyOnReachingEnd.ToString());
+            if (c.goldReward > 0)           Row("Gold Reward", c.goldReward.ToString(), StatId.Gold);
+            if (c.penaltyOnReachingEnd > 0) Row("Penalty at End", c.penaltyOnReachingEnd.ToString());
+        }
+
+        private void Row(string label, string value, StatId? stat = null)
+        {
+            if (_pendingHeader != null)
+            {
+                GameObject header = Instantiate(statHeaderPrefab, statContainer);
+                header.transform.Find("Label").GetComponent<Text>().text = _pendingHeader.ToUpperInvariant();
+                _pendingHeader = null;
+            }
+
+            GameObject row = Instantiate(statRowPrefab, statContainer);
+            Text labelText = row.transform.Find("Label").GetComponent<Text>();
+            labelText.text = label;
+            row.transform.Find("Value").GetComponent<Text>().text = value;
+
+            Font font = txtName != null ? txtName.font : null;
+
+            if (stat.HasValue)
+            {
+                StatId id = stat.Value;
+                labelText.color = StatPalette.ColorOf(id);   // gleiche Farbsprache wie überall
+
+                if (StatInfoButton.Create(row.transform, font,
+                        () => StatInfoPanel.Show(id, null, StatSubject.Enemy, font)) != null)
+                    return;
+            }
+
+            StatInfoButton.CreateSpacer(row.transform);
         }
 
         /// <summary>Überschrift wird erst angelegt, wenn der Abschnitt mindestens eine Zeile bekommt.</summary>

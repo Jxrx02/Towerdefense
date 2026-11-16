@@ -16,7 +16,7 @@ namespace TowerDefense
     /// </summary>
     public class StatInfoPanel : MonoBehaviour
     {
-        private const int SortingOrder = 450;
+        private const int SortingOrder = 550;
         private const float RefreshInterval = 0.25f;
 
         private static readonly Color DimBack = new Color(0.04f, 0.03f, 0.02f, 0.70f);
@@ -31,7 +31,8 @@ namespace TowerDefense
 
         /// <summary>Das Fenster ist offen. PauseHotkey öffnet dann das Pausemenü nicht.</summary>
         public static bool IsOpen => _instance != null && _instance.gameObject.activeSelf;
-
+        /// <summary>Esc gehört dem Fenster: Menüs im selben Frame nicht schließen.</summary>
+        public static bool ConsumesEscape => IsOpen || LastClosedFrame == Time.frameCount;
         /// <summary>Frame, in dem das Fenster geschlossen wurde (verhindert, dass dasselbe Esc das Pausemenü öffnet).</summary>
         public static int LastClosedFrame { get; private set; } = -1;
 
@@ -124,21 +125,18 @@ namespace TowerDefense
 
             SetSection(0, Texts.StatInfo.SectionEffect, entry.effect);
             SetSection(1, Texts.StatInfo.SectionInteractions, entry.interactions);
-            SetSection(2, Texts.StatInfo.SectionFormula, entry.formula);
+            SetSection(2, Texts.StatInfo.SectionFormula, entry.formula, false);   
             SetSection(3, Texts.StatInfo.SectionModifiers, entry.modifiers);
-
             _liveHeader.text = Texts.StatInfo.SectionLive.ToUpperInvariant();
         }
 
-        private void SetSection(int index, string header, string body)
+        private void SetSection(int index, string header, string body, bool paragraphs = true)
         {
             bool show = !string.IsNullOrEmpty(body);
-
             _headers[index].gameObject.SetActive(show);
             _bodies[index].gameObject.SetActive(show);
-
             _headers[index].text = header.ToUpperInvariant();
-            _bodies[index].text = body;
+            _bodies[index].text = StatMarkup.Format(body, paragraphs);   // Stats eingefärbt, Absätze luftiger
         }
 
         private void RefreshLive()
@@ -242,7 +240,7 @@ namespace TowerDefense
             content.anchorMax = new Vector2(1f, 1f);
             content.pivot = new Vector2(0.5f, 1f);
             content.sizeDelta = Vector2.zero;
-            AddVertical(content.gameObject, new RectOffset(0, 0, 0, 0), 4f);
+            AddVertical(content.gameObject, new RectOffset(0, 0, 0, 0), 6f);
             ContentSizeFitter fitter = content.gameObject.AddComponent<ContentSizeFitter>();
             fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
@@ -260,7 +258,7 @@ namespace TowerDefense
                 panel._headers[i].gameObject.AddComponent<LayoutElement>().minHeight = 26f;
 
                 panel._bodies[i] = NewText("Body" + i, content, font, 17, TextColor, TextAnchor.UpperLeft, FontStyle.Normal, true);
-                panel._bodies[i].lineSpacing = 1.25f;
+                panel._bodies[i].lineSpacing = 1.4f;
             }
 
             rootObject.SetActive(false);

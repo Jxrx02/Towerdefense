@@ -80,7 +80,9 @@ namespace LevelSelector
         private bool _expanded;
         private float _t;          // 0 = eingeklappt, 1 = ausgeklappt
         private float _hover;      // 0..1, geglättet
-
+        
+        private StatChipBar _chips; 
+        private readonly List<StatId> _chipBuffer = new List<StatId>();
         private readonly List<ColumnEntry> _columns = new List<ColumnEntry>();
         private readonly List<ProgressionItemView> _items = new List<ProgressionItemView>();
         private ScriptableObject _selected;
@@ -101,7 +103,9 @@ namespace LevelSelector
 
             if (btnBuy != null)
                 btnBuy.onClick.AddListener(OnBuyClicked);
-
+            if (txtDetailBody != null)
+                _chips = StatChipBar.Create(txtDetailBody.transform.parent, txtDetailBody.font, txtDetailBody.transform.GetSiblingIndex() + 1);
+            
             LocalizedText.Bind(txtDetailEmpty, () => Texts.Progression.SelectItem);
         }
 
@@ -158,7 +162,7 @@ namespace LevelSelector
 
         private void Update()
         {
-            if (_expanded && Input.GetKeyDown(KeyCode.Escape))
+            if (_expanded && Input.GetKeyDown(KeyCode.Escape) && !StatInfoPanel.ConsumesEscape)
             {
                 LastCollapsedFrame = Time.frameCount;
                 Collapse();
@@ -354,7 +358,10 @@ namespace LevelSelector
 
             txtDetailKind.text = Texts.Progression.Kind(unlock.kind).ToUpperInvariant();
             txtDetailName.text = unlock.name;
-            txtDetailBody.text = unlock.description;
+            txtDetailBody.text = StatMarkup.Format(unlock.description, unlock.kind != UnlockKind.Weapon);
+            _chipBuffer.Clear();
+            StatMarkup.FindStats(txtDetailBody.text, _chipBuffer);
+            if (_chips != null) _chips.Show(_chipBuffer, StatSubject.Hero);
 
             // Freischaltung (Level) und Zustand
             txtDetailLevel.text = unlock.unlockLevel > 0

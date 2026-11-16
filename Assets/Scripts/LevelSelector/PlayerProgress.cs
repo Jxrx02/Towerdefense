@@ -51,7 +51,7 @@ namespace LevelSelector
                 {
                     _definition = Resources.Load<PlayerProgressionDefinition>("PlayerProgression");
                     _loaded = true;
-                    Debug.Log("PlayerProgressionDefinition geladen: " + _definition.ToString());
+                    Debug.Log("PlayerProgressionDefinition geladen: " + (_definition != null ? _definition.name : "NICHT GEFUNDEN"));
                 }
 
                 return _definition;

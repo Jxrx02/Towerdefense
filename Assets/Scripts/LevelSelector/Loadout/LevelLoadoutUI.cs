@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using LevelSelector.Definitions;
 using ScriptableObjects;
 using TowerDefense;
@@ -13,9 +15,11 @@ namespace LevelSelector
     /// Loadout-Screen (Stil des Pausemenüs). Klassenname und API (Instance, Show, Close) wie bisher,
     /// damit LevelSelectorManager.OpenLevel unverändert funktioniert.
     ///
-    ///   Links:  Level, Highscore, Spieler-Level, Gegner-Vorschau, Quests
-    ///   Mitte:  Waffe, Perks (gesperrte mit "LV n"), Mutatoren
-    ///   Rechts: Details zum gewählten Eintrag, Score-Multiplikator, Start / Clear / Back
+    ///   Links:  Level, Highscore, Gegner-Vorschau, Quests
+    ///   Mitte:  Waffe, Perks, Mutatoren (freigeschaltete zuerst, gesperrte ausgegraut dahinter, mit "LV n")
+    ///   Rechts: Details (mit Stat-Chips), Multiplikatoren, Start / Clear / Back
+    ///
+    /// Die Heldenprogression (Level, XP, nächste Freischaltung) liegt im Hauptmenü (ProgressionBarUI).
     /// </summary>
     public class LevelLoadoutUI : MonoBehaviour
     {
@@ -37,15 +41,6 @@ namespace LevelSelector
         [SerializeField] private Text txtLevelName;
         [SerializeField] private Text txtLevelDescription;
         [SerializeField] private Text txtHighscore;
-
-        [Header("Spieler-Level")]
-        [SerializeField] private GameObject playerLevelRoot;
-        [SerializeField] private Text txtPlayerLevel;
-        [SerializeField] private Text txtPlayerXp;
-        [SerializeField] private RectTransform playerBarFill;
-        [SerializeField] private GameObject nextUnlockRoot;
-        [SerializeField] private Image nextUnlockIcon;
-        [SerializeField] private Text txtNextUnlock;
 
         [Header("Gegner-Vorschau")]
         [SerializeField] private GameObject enemyCard;
@@ -74,7 +69,10 @@ namespace LevelSelector
         [SerializeField] private Button btnDetailBuy;
         [SerializeField] private Text txtDetailBuy;
 
-        [Header("Zusammenfassung / Buttons")]
+        [Header("Multiplikatoren / Buttons")]
+        [Tooltip("ScorePanelUI auf der Multiplikator-Karte (gleiche Zeilen wie im Pausemenü)")]
+        [SerializeField] private ScorePanelUI multiplierPanel;
+        [Tooltip("Optional (alte Zusammenfassung). Mit multiplierPanel nicht mehr nötig.")]
         [SerializeField] private Text txtSummaryWeapon;
         [SerializeField] private Text txtSummaryMultiplier;
         [SerializeField] private Text txtStartHint;
@@ -84,7 +82,7 @@ namespace LevelSelector
 
         [Header("Prefabs")]
         [SerializeField] private GameObject questPrefab;   // QuestUI-Prefab
-        [SerializeField] private GameObject btnPrefab;     // LoadoutSelectionButton-Prefab (optional Kind "Lock")
+        [SerializeField] private GameObject btnPrefab;     // LoadoutSelectionButton-Prefab
 
         [Header("Farben")]
         [SerializeField] private Color colorWeapon = new Color(0.20f, 0.40f, 0.75f, 1f);
@@ -103,10 +101,15 @@ namespace LevelSelector
 
         private LevelDefinition currentLevel;
         private WeaponDefinition buyTarget;
+        private ScriptableObject focusedDefinition;   // zuletzt gewählter Perk/Mutator (Highlight im Multiplikator-Panel)
+        private StatChipBar statChips;
+        private readonly List<StatId> chipBuffer = new();
 
         private readonly List<LoadoutSelectionButton> weaponButtons = new();
         private readonly List<LoadoutSelectionButton> perkButtons = new();
         private readonly List<LoadoutSelectionButton> mutatorButtons = new();
+
+        private Font DetailFont => txtDetailName != null ? txtDetailName.font : null;
 
         // ── Lebenszyklus ──────────────────────────────────────────
 
@@ -125,6 +128,11 @@ namespace LevelSelector
             if (btnBack != null) btnBack.onClick.AddListener(Close);
             if (btnDetailBuy != null) btnDetailBuy.onClick.AddListener(OnBuyPressed);
 
+            // Info-Chips direkt unter dem Beschreibungstext (Wurzel braucht dafür keinen Builder-Umbau)
+            if (txtDetailBody != null)
+                statChips = StatChipBar.Create(txtDetailBody.transform.parent, txtDetailBody.font,
+                    txtDetailBody.transform.GetSiblingIndex() + 1);
+
             if (panel != null)
                 panel.SetActive(false);
         }
@@ -137,6 +145,10 @@ namespace LevelSelector
         private void Update()
         {
             if (!closeOnEscape || !IsOpen || !Input.GetKeyDown(KeyCode.Escape))
+                return;
+
+            // Das Stat-Info-Fenster schließt sich mit Esc selbst
+            if (StatInfoPanel.ConsumesEscape)
                 return;
 
             if (enemyInfoPanel != null && enemyInfoPanel.IsOpen)
@@ -162,6 +174,7 @@ namespace LevelSelector
             }
 
             currentLevel = level;
+            focusedDefinition = null;
             OverworldSession.LastLevelIndex = level.levelIndex;
             LevelLoadoutManager.Instance.CreateLoadout(level);
 
@@ -174,7 +187,7 @@ namespace LevelSelector
             }
 
             txtLevelName.text = level.levelName;
-            txtLevelDescription.text = level.description;
+            txtLevelDescription.text = StatMarkup.Format(level.description);
 
             int highscore = LevelProgressManager.Instance != null
                 ? LevelProgressManager.Instance.GetHighscore(level.levelIndex)
@@ -189,7 +202,6 @@ namespace LevelSelector
             BuildQuestUI();
             BuildEnemyPreview();
 
-            RefreshPlayerLevel();
             RestoreMemory();
             ClearDetails();
             RefreshAll();
@@ -256,14 +268,43 @@ namespace LevelSelector
             return button;
         }
 
+        /// <summary>
+        /// Freigeschaltete Inhalte zuerst (Reihenfolge der LevelDefinition bleibt), gesperrte dahinter nach
+        /// Freischalt-Level. OrderBy ist stabil, gleiche Ränge behalten also ihre Reihenfolge.
+        /// </summary>
+        private static List<T> Ordered<T>(List<T> source, Func<T, int> rank, Func<T, int> unlockLevel, int lockedRank)
+            where T : UnityEngine.Object
+        {
+            var items = new List<T>();
+            if (source == null) return items;
+
+            foreach (T item in source)
+                if (item != null) items.Add(item);
+
+            return items
+                .OrderBy(rank)
+                .ThenBy(item => rank(item) == lockedRank ? unlockLevel(item) : 0)
+                .ToList();
+        }
+
         private void BuildWeaponUI()
         {
-            if (currentLevel.availableWeapons == null) return;
+            List<WeaponDefinition> ordered = Ordered(
+                currentLevel.availableWeapons,
+                w =>
+                {
+                    switch (PlayerProgress.GetWeaponState(w))
+                    {
+                        case UnlockState.Locked: return 2;
+                        case UnlockState.Purchasable: return 1;
+                        default: return 0;
+                    }
+                },
+                w => PlayerProgress.GetUnlockLevel(w),
+                2);
 
-            foreach (WeaponDefinition weapon in currentLevel.availableWeapons)
+            foreach (WeaponDefinition weapon in ordered)
             {
-                if (weapon == null) continue;
-
                 LoadoutSelectionButton button = SpawnButton(weaponContainer);
                 if (button == null) continue;
 
@@ -275,19 +316,22 @@ namespace LevelSelector
 
         private void BuildPerkUI()
         {
-            if (currentLevel.availablePerks == null) return;
+            List<PerkDefinition> ordered = Ordered(
+                currentLevel.availablePerks,
+                p => PlayerProgress.IsPerkUnlocked(p) ? 0 : 1,
+                p => PlayerProgress.GetUnlockLevel(p),
+                1);
 
-            foreach (PerkDefinition perk in currentLevel.availablePerks)
+            foreach (PerkDefinition perk in ordered)
             {
-                if (perk == null) continue;
-
                 LoadoutSelectionButton button = SpawnButton(perkContainer);
                 if (button == null) continue;
 
                 button.SetupPerk(perk, perkButtons.Count, colorPerk, OnPerkSelected);
 
                 bool locked = !PlayerProgress.IsPerkUnlocked(perk);
-                SetOverlay(button, locked, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(perk)), null);
+                button.SetAvailability(locked ? UnlockState.Locked : UnlockState.Unlocked,
+                    Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(perk)), DetailFont);
 
                 perkButtons.Add(button);
             }
@@ -295,59 +339,38 @@ namespace LevelSelector
 
         private void BuildMutatorUI()
         {
-            if (currentLevel.availableMutators == null) return;
+            List<MutatorDefinition> ordered = Ordered(
+                currentLevel.availableMutators,
+                m => PlayerProgress.IsMutatorUnlocked(m) ? 0 : 1,
+                m => PlayerProgress.GetUnlockLevel(m),
+                1);
 
-            foreach (MutatorDefinition mutator in currentLevel.availableMutators)
+            foreach (MutatorDefinition mutator in ordered)
             {
-                if (mutator == null) continue;
-
                 LoadoutSelectionButton button = SpawnButton(mutatorContainer);
                 if (button == null) continue;
 
                 button.SetupMutator(mutator, mutatorButtons.Count, colorMutator, OnMutatorSelected);
 
                 bool locked = !PlayerProgress.IsMutatorUnlocked(mutator);
-                SetOverlay(button, locked, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(mutator)), null);
+                button.SetAvailability(locked ? UnlockState.Locked : UnlockState.Unlocked,
+                    Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(mutator)), DetailFont);
+
                 mutatorButtons.Add(button);
             }
         }
 
-        /// <summary>Overlay "Lock" des Buttons: gesperrt (LV n) oder kaufbar (Preis). Ohne Overlay im Prefab passiert nichts.</summary>
-        private static void SetOverlay(LoadoutSelectionButton button, bool show, string text, Color? color)
-        {
-            Transform overlay = button.transform.Find("Lock");
-            if (overlay == null) return;
-
-            overlay.gameObject.SetActive(show);
-
-            if (!show) return;
-
-            Text label = overlay.GetComponentInChildren<Text>(true);
-            if (label == null) return;
-
-            label.text = text;
-            if (color.HasValue) label.color = color.Value;
-        }
-
-        /// <summary>Waffe: gesperrt = LV n, kaufbar = Preis, im Besitz = kein Overlay.</summary>
+        /// <summary>Waffe: gesperrt = ausgegraut mit LV n, kaufbar = Preis, im Besitz = ohne Badge.</summary>
         private void ApplyWeaponOverlay(LoadoutSelectionButton button)
         {
             WeaponDefinition weapon = button.GetWeapon();
+            UnlockState state = PlayerProgress.GetWeaponState(weapon);
 
-            switch (PlayerProgress.GetWeaponState(weapon))
-            {
-                case UnlockState.Locked:
-                    SetOverlay(button, true, Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(weapon)), null);
-                    break;
+            string badge = state == UnlockState.Locked
+                ? Texts.Progression.LevelBadge(PlayerProgress.GetUnlockLevel(weapon))
+                : state == UnlockState.Purchasable ? Texts.Research.Cost(weapon.purchaseCost) : "";
 
-                case UnlockState.Purchasable:
-                    SetOverlay(button, true, Texts.Research.Cost(weapon.purchaseCost), goldColor);
-                    break;
-
-                default:
-                    SetOverlay(button, false, "", null);
-                    break;
-            }
+            button.SetAvailability(state, badge, DetailFont);
         }
 
         private void BuildQuestUI()
@@ -411,35 +434,6 @@ namespace LevelSelector
             }
         }
 
-        private void RefreshPlayerLevel()
-        {
-            PlayerProgressionDefinition definition = PlayerProgress.Definition;
-            bool has = definition != null && definition.levels != null && definition.levels.Count > 0;
-
-            if (playerLevelRoot != null)
-                playerLevelRoot.SetActive(has);
-
-            if (!has) return;
-
-            PlayerProgress.LevelState state = PlayerProgress.Evaluate(PlayerProgress.TotalXp);
-
-            txtPlayerLevel.text = $"LEVEL {state.level}";
-            txtPlayerXp.text = state.isMax ? "MAX" : $"{state.xpIntoLevel} / {state.xpForNext}";
-
-            playerBarFill.anchorMin = new Vector2(0f, 0f);
-            playerBarFill.anchorMax = new Vector2(Mathf.Clamp01(state.Fraction), 1f);
-
-            bool hasNext = PlayerProgress.GetNextUnlock(state.level, out ProgressionUnlock next);
-            nextUnlockRoot.SetActive(hasNext);
-
-            if (hasNext)
-            {
-                nextUnlockIcon.sprite = next.icon;
-                nextUnlockIcon.enabled = next.icon != null;
-                txtNextUnlock.text = Texts.Progression.NextUnlock(next.kind, next.name, next.unlockLevel);
-            }
-        }
-
         // ── Auswahl ───────────────────────────────────────────────
 
         private void OnWeaponSelected(int index)
@@ -454,10 +448,12 @@ namespace LevelSelector
         {
             if (weapon == null) return;
 
+            focusedDefinition = null;
+
             string hex = ColorUtility.ToHtmlStringRGB(goldColor);
             string body =
-                $"<color=#{hex}>{Texts.Progression.PassiveHeader}</color>\n{weapon.passiveDescription}\n\n" +
-                $"<color=#{hex}>{Texts.Progression.ActiveHeader}</color>\n{weapon.activeDescription}";
+                $"<color=#{hex}>{Texts.Progression.PassiveHeader}</color>\n{StatMarkup.Format(weapon.passiveDescription, false)}\n\n" +
+                $"<color=#{hex}>{Texts.Progression.ActiveHeader}</color>\n{StatMarkup.Format(weapon.activeDescription, false)}";
 
             string type = Texts.Progression.Kind(UnlockKind.Weapon);
 
@@ -468,7 +464,7 @@ namespace LevelSelector
                     string negative = ColorUtility.ToHtmlStringRGB(negativeColor);
                     ShowDetails(weapon.icon, $"{type} ({Texts.Common.Locked.ToLowerInvariant()})", weapon.weaponName,
                         $"{body}\n\n<color=#{negative}>{Texts.Progression.UnlocksAtLevel(PlayerProgress.GetUnlockLevel(weapon))}</color>",
-                        "", dimColor);
+                        "", dimColor, true);
                     return;
                 }
 
@@ -481,7 +477,7 @@ namespace LevelSelector
 
                     ShowDetails(weapon.icon, type, weapon.weaponName,
                         $"{body}\n\n{Texts.Progression.WeaponPurchaseHint}", info,
-                        affordable ? goldColor : negativeColor);
+                        affordable ? goldColor : negativeColor, true);
                     ShowBuy(weapon, affordable);
                     return;
                 }
@@ -489,7 +485,7 @@ namespace LevelSelector
 
             LevelLoadoutManager.Instance.SetWeapon(weapon);
             RefreshSelectionVisuals();
-            ShowDetails(weapon.icon, type, weapon.weaponName, body, "", dimColor);
+            ShowDetails(weapon.icon, type, weapon.weaponName, body, "", dimColor, true);
             RefreshAll();
         }
 
@@ -561,9 +557,11 @@ namespace LevelSelector
                 LevelLoadoutManager.Instance.AddPerk(perk);
             }
 
+            focusedDefinition = loadout.HasPerk(perk) ? perk : null;
+
             RefreshSelectionVisuals();
             ShowMultiplierDetails(perk.icon, Texts.Progression.Kind(UnlockKind.Perk), perk.perkName, perk.description, perk.ScoreMultiplier);
-            RefreshAll();
+            RefreshAll(true);
         }
 
         private void OnMutatorSelected(int index)
@@ -597,9 +595,11 @@ namespace LevelSelector
                 LevelLoadoutManager.Instance.AddMutator(mutator);
             }
 
+            focusedDefinition = loadout.HasMutator(mutator) ? mutator : null;
+
             RefreshSelectionVisuals();
             ShowMultiplierDetails(mutator.icon, Texts.Progression.Kind(UnlockKind.Mutator), mutator.mutatorName, mutator.description, mutator.ScoreMultiplier);
-            RefreshAll();
+            RefreshAll(true);
         }
 
         public void ClearSelection()
@@ -616,9 +616,11 @@ namespace LevelSelector
             foreach (MutatorDefinition mutator in new List<MutatorDefinition>(loadout.mutators))
                 manager.RemoveMutator(mutator);
 
+            focusedDefinition = null;
+
             RefreshSelectionVisuals();
             ClearDetails();
-            RefreshAll();
+            RefreshAll(true);
         }
 
         private void RefreshSelectionVisuals()
@@ -642,6 +644,7 @@ namespace LevelSelector
             HideBuy();
             if (detailEmpty != null) detailEmpty.SetActive(true);
             if (detailRoot != null) detailRoot.SetActive(false);
+            if (statChips != null) statChips.Hide();
         }
 
         private void ShowMultiplierDetails(Sprite icon, string type, string title, string description, float multiplier)
@@ -650,7 +653,9 @@ namespace LevelSelector
             ShowDetails(icon, type, title, description, $"Score x{multiplier:0.00}", color);
         }
 
-        private void ShowDetails(Sprite icon, string type, string title, string body, string multiplierText, Color multiplierColor)
+        /// <param name="formatted">true: der Text ist bereits aufbereitet (Waffen mit PASSIVE/ACTIVE-Überschriften).</param>
+        private void ShowDetails(Sprite icon, string type, string title, string body, string multiplierText,
+            Color multiplierColor, bool formatted = false)
         {
             HideBuy();
             detailEmpty.SetActive(false);
@@ -661,14 +666,23 @@ namespace LevelSelector
 
             txtDetailType.text = type;
             txtDetailName.text = title;
-            txtDetailBody.text = body;
+            txtDetailBody.text = formatted ? body : StatMarkup.Format(body);
 
             txtDetailMultiplier.gameObject.SetActive(!string.IsNullOrEmpty(multiplierText));
             txtDetailMultiplier.text = multiplierText;
             txtDetailMultiplier.color = multiplierColor;
+
+            // Ein Chip je erwähntem Stat: Klick öffnet dieselbe Erklärung wie im InteractionPopup
+            if (statChips != null)
+            {
+                chipBuffer.Clear();
+                StatMarkup.FindStats(txtDetailBody.text, chipBuffer);
+                statChips.Show(chipBuffer, StatSubject.Hero);
+            }
         }
 
-        private void RefreshAll()
+        /// <param name="pulseTotal">Auswahl hat sich geändert: Gesamtzeile leuchtet kurz auf.</param>
+        private void RefreshAll(bool pulseTotal = false)
         {
             LevelLoadout loadout = LevelLoadoutManager.Instance != null ? LevelLoadoutManager.Instance.CurrentLoadout : null;
             if (loadout == null || currentLevel == null) return;
@@ -678,16 +692,30 @@ namespace LevelSelector
             SetCounter(txtPerkCounter, loadout.perks.Count, LevelSelectorManager.MaxPerks);
             SetCounter(txtMutatorCounter, loadout.mutators.Count, LevelSelectorManager.MaxMutators);
 
-            // Score-Multiplikator der aktuellen Auswahl
-            float multiplier = 1f;
-            foreach (PerkDefinition perk in loadout.perks)
-                if (perk != null) multiplier *= perk.ScoreMultiplier;
-            foreach (MutatorDefinition mutator in loadout.mutators)
-                if (mutator != null) multiplier *= mutator.ScoreMultiplier;
+            // Multiplikatoren: gleiche Zeilen und gleiches Highlight wie im Pausemenü
+            if (multiplierPanel != null)
+            {
+                multiplierPanel.RebuildLoadoutMultipliers(loadout);
+                multiplierPanel.Highlight(focusedDefinition);
 
-            txtSummaryWeapon.text = loadout.weapon != null ? loadout.weapon.weaponName : "-";
-            txtSummaryMultiplier.text = $"x{multiplier:0.00}";
-            txtSummaryMultiplier.color = multiplier > 1.0001f ? positiveColor : (multiplier < 0.9999f ? negativeColor : dimColor);
+                if (pulseTotal)
+                    multiplierPanel.PulseTotal();
+            }
+
+            if (txtSummaryWeapon != null)
+                txtSummaryWeapon.text = loadout.weapon != null ? loadout.weapon.weaponName : "-";
+
+            if (txtSummaryMultiplier != null)
+            {
+                float multiplier = 1f;
+                foreach (PerkDefinition perk in loadout.perks)
+                    if (perk != null) multiplier *= perk.ScoreMultiplier;
+                foreach (MutatorDefinition mutator in loadout.mutators)
+                    if (mutator != null) multiplier *= mutator.ScoreMultiplier;
+
+                txtSummaryMultiplier.text = $"x{multiplier:0.00}";
+                txtSummaryMultiplier.color = multiplier > 1.0001f ? positiveColor : (multiplier < 0.9999f ? negativeColor : dimColor);
+            }
 
             string blocker = LevelSelectorManager.GetStartBlocker(loadout);
             btnStart.interactable = blocker == null;

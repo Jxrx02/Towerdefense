@@ -110,7 +110,7 @@ namespace TowerDefense
         private void Update()
         {
             // Schließen-Reihenfolge: Dialog -> Gegner-Panel -> Settings -> Menü
-            if (Time.frameCount != _openedFrame && KeyBindings.Down(GameAction.Pause) && !(settingsPanel != null && settingsPanel.IsRebinding))
+            if (Time.frameCount != _openedFrame && KeyBindings.Down(GameAction.Pause) && !(settingsPanel != null && settingsPanel.IsRebinding) && !StatInfoPanel.ConsumesEscape)
             {
                 if (confirmDialog != null && confirmDialog.IsOpen)
                     confirmDialog.Close();

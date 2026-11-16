@@ -284,8 +284,8 @@ namespace TowerDefense
                     upgradeTitle.text = title;
 
                 if (upgradeDescription != null)
-                    upgradeDescription.text = description;
-
+                    upgradeDescription.text = StatMarkup.Format(description);
+                
                 if (upgradeCost != null)
                 {
                     upgradeCost.text = goldCost > 0 ? $"{goldCost} Gold" : "";
@@ -728,12 +728,12 @@ foreach (UpgradeStatData stat in stats)
         // --------------------------------------------------
 
         // Farben der LoL-Stats
-        private static readonly Color armorColor       = new Color(0.95f, 0.78f, 0.35f);
-        private static readonly Color magicResistColor = new Color(0.55f, 0.68f, 0.95f);
-        private static readonly Color critColor        = new Color(1f, 0.58f, 0.22f);
-        private static readonly Color penColor         = new Color(0.90f, 0.35f, 0.30f);
-        private static readonly Color magicPenColor    = new Color(0.72f, 0.45f, 0.95f);
-        private static readonly Color omnivampColor    = new Color(0.90f, 0.30f, 0.55f);
+        private static Color armorColor       => StatPalette.ColorOf(StatId.Armor);
+        private static Color magicResistColor => StatPalette.ColorOf(StatId.MagicResist);
+        private static Color critColor        => StatPalette.ColorOf(StatId.Crit);
+        private static Color penColor         => StatPalette.ColorOf(StatId.ArmorPen);
+        private static Color magicPenColor    => StatPalette.ColorOf(StatId.MagicPen);
+        private static Color omnivampColor    => StatPalette.ColorOf(StatId.Omnivamp);
 
         private List<UpgradeStatData> BuildPurchaseStats(Tower t)
         {
@@ -1383,7 +1383,7 @@ private static string TowerTitle(Tower t)
         {
             // Geändert gegenüber dem Grundwert: grün = verbessert (Aura, Buff), rot = verschlechtert (Shred, Slow)
             if (stat.Changed)
-                return stat.value > stat.baseValue ? new Color(0.35f, 1f, 0.4f) : new Color(1f, 0.35f, 0.3f);
+                return StatPalette.ColorOf(stat.id);
 
             switch (stat.id)
             {
